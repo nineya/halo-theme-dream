@@ -1,0 +1,603 @@
+basic:
+  label: 基础设置
+  items:
+    small_title:
+      name: small_title
+      label: 网站副标题
+      type: text
+      placeholder: '网站副标题'
+    record_number:
+      name: record_number
+      label: 备案号
+      type: text
+      placeholder: '工信部备案号'
+    record_number_ps:
+      name: record_number_ps
+      label: 公安部备案
+      type: text
+      placeholder: '公安部备案号'
+    busuanzi:
+      name: busuanzi
+      label: busuanzi访客统计
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    night_logo:
+      name: night_logo
+      label: 黑夜模式的logo(放空默认为网站logo)
+      type: attachment
+      placeholder: '黑夜模式的logo'
+post:
+  label: 文章设置
+  items:
+    mathjax_enable:
+      name: mathjax_enable
+      label: MathJax
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    code_pretty:
+      name: code_pretty
+      label: 文章代码高亮主题
+      type: select
+      default: atom-one-light
+      options:
+        - value: a11y-dark
+          label: A 11 Y Dark
+        - value: a11y-light
+          label: A 11 Y Light
+        - value: agate
+          label: Agate
+        - value: androidstudio
+          label: Androidstudio
+        - value: an-old-hope
+          label: An Old Hope
+        - value: arduino-light
+          label: Arduino Light
+        - value: arta
+          label: Arta
+        - value: ascetic
+          label: Ascetic
+        - value: atelier-cave-dark
+          label: Atelier Cave Dark
+        - value: atelier-cave-light
+          label: Atelier Cave Light
+        - value: atelier-dune-dark
+          label: Atelier Dune Dark
+        - value: atelier-dune-light
+          label: Atelier Dune Light
+        - value: atelier-estuary-dark
+          label: Atelier Estuary Dark
+        - value: atelier-estuary-light
+          label: Atelier Estuary Light
+        - value: atelier-forest-dark
+          label: Atelier Forest Dark
+        - value: atelier-forest-light
+          label: Atelier Forest Light.
+        - value: atelier-heath-dark
+          label: Atelier Heath Dark
+        - value: atelier-heath-light
+          label: Atelier Heath Light
+        - value: atelier-lakeside-dark
+          label: Atelier Lakeside Dark
+        - value: atelier-lakeside-light
+          label: Atelier Lakeside Light
+        - value: atelier-plateau-dark
+          label: Atelier Plateau Dark
+        - value: atelier-plateau-light
+          label: Atelier Plateau Light
+        - value: atelier-savanna-dark
+          label: Atelier Savanna Dark
+        - value: atelier-savanna-light
+          label: Atelier Savanna Light
+        - value: atelier-seaside-dark
+          label: Atelier Seaside Dark
+        - value: atelier-seaside-light
+          label: Atelier Seaside Light
+        - value: atelier-sulphurpool-dark
+          label: Atelier Sulphurpool Dark
+        - value: atelier-sulphurpool-light
+          label: Atelier Sulphurpool Light
+        - value: atom-one-dark
+          label: Atom One Dark
+        - value: atom-one-dark-reasonable
+          label: Atom One Dark Reasonable
+        - value: atom-one-light
+          label: Atom One Light
+        - value: brown-paper
+          label: Brown Paper
+        - value: codepen-embed
+          label: Codepen Embed
+        - value: color-brewer
+          label: Color Brewer
+        - value: darcula
+          label: Darcula
+        - value: dark
+          label: Dark
+        - value: darkula
+          label: Darkula
+        - value: default
+          label: Default
+        - value: docco
+          label: Docco
+        - value: dracula
+          label: Dracula
+        - value: far
+          label: Far
+        - value: foundation
+          label: Foundation
+        - value: github
+          label: Github
+        - value: github-gist
+          label: Github Gist
+        - value: gml
+          label: Gml
+        - value: googlecode
+          label: Googlecode
+        - value: gradient-dark
+          label: Gradient Dark
+        - value: grayscale
+          label: Grayscale
+        - value: gruvbox-dark
+          label: Gruvbox Dark
+        - value: gruvbox-light
+          label: Gruvbox Light
+        - value: hopscotch
+          label: Hopscotch
+        - value: hybrid
+          label: Hybrid
+        - value: idea
+          label: Idea
+        - value: ir-black
+          label: Ir Black
+        - value: isbl-editor-dark
+          label: Isbl Editor Dark
+        - value: isbl-editor-light
+          label: Isbl Editor Light
+        - value: kimbie.dark
+          label: Kimbie Dark
+        - value: kimbie.light
+          label: Kimbie Light
+        - value: lightfair
+          label: Lightfair
+        - value: magula
+          label: Magula
+        - value: mono-blue
+          label: Mono Blue
+        - value: monokai
+          label: Monokai
+        - value: monokai-sublime
+          label: Monokai Sublime
+        - value: night-owl
+          label: Night Owl
+        - value: nord
+          label: Nord
+        - value: obsidian
+          label: Obsidian
+        - value: ocean
+          label: Ocean
+        - value: paraiso-dark
+          label: Paraiso Dark
+        - value: paraiso-light
+          label: Paraiso Light
+        - value: pojoaque
+          label: Pojoaque
+        - value: purebasic
+          label: Purebasic
+        - value: qtcreator_dark
+          label: Qtcreator Dark
+        - value: qtcreator_light
+          label: Qtcreator Light
+        - value: railscasts
+          label: Railscasts
+        - value: rainbow
+          label: Rainbow
+        - value: routeros
+          label: Routeros
+        - value: school-book
+          label: School Book
+        - value: shades-of-purple
+          label: Shades Of Purple
+        - value: solarized-dark
+          label: Solarized Dark
+        - value: solarized-light
+          label: Solarized Light
+        - value: sunburst
+          label: Sunburst
+        - value: tomorrow
+          label: Tomorrow
+        - value: tomorrow-night
+          label: Tomorrow Night
+        - value: tomorrow-night-blue
+          label: Tomorrow Night Blue
+        - value: tomorrow-night-bright
+          label: Tomorrow Night Bright
+        - value: tomorrow-night-eighties
+          label: Tomorrow Night Eighties
+        - value: vs
+          label: Vs
+        - value: vs2015
+          label: Vs 2015
+        - value: xcode
+          label: Xcode
+        - value: xt256
+          label: Xt 256
+        - value: zenburn
+          label: Zenburn
+    article_end:
+      name: article_end
+      label: 阅读结束文字
+      type: text
+      placeholder: '阅读结束的提示文字'
+    copyright:
+      name: copyright
+      label: 文章底部版权声明
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    share_type:
+      name: share_type
+      label: 文章分享组件
+      type: select
+      default: ''
+      options:
+        - value: ''
+          label: '无'
+        - value: addtoany
+          label: addtoany
+        - value: bdshare
+          label: bdshare
+        - value: sharejs
+          label: sharejs
+    donate_alipay:
+      name: donate_alipay
+      label: 支付宝捐赠二维码
+      type: attachment
+      placeholder: '二维码地址'
+    donate_wechat:
+      name: donate_wechat
+      label: 微信捐赠二维码
+      type: attachment
+      placeholder: '二维码地址'
+sidebar:
+  label: 侧边栏
+  items:
+    left_sidebar_sticky:
+      name: left_sidebar_sticky
+      label: 左侧边栏悬浮
+      type: select
+      default: bottom
+      options:
+        - value: top
+          label: 固定顶部
+        - value: bottom
+          label: 固定底部
+        - value: none
+          label: 不悬浮
+    right_sidebar_sticky:
+      name: right_sidebar_sticky
+      label: 右侧边栏悬浮
+      type: select
+      default: top
+      options:
+        - value: top
+          label: 固定顶部
+        - value: bottom
+          label: 固定底部
+        - value: none
+          label: 不悬浮
+    notice_content:
+      name: notice_content
+      label: 博客公告
+      type: textarea
+      placeholder: 请输入公告内容（html格式）
+    profile_avatar_type:
+      name: profile_avatar_type
+      label: 头像形状
+      type: select
+      default: 'avatar_rounded'
+      options:
+        - value: avatar_rounded
+          label: '圆形'
+        - value: avatar_square
+          label: '方形'
+    color_character:
+      name: color_character
+      label: 彩字内容
+      type: textarea
+      placeholder: 彩字内容（'','',...）
+    profile_location:
+      name: profile_location
+      label: 地理位置
+      type: text
+      placeholder: '个人所在地'
+    profile_follow_url:
+      name: profile_follow_url
+      label: (关注我)按钮地址
+      type: text
+      placeholder: '默认为博客地址'
+    social_github:
+      name: social_github
+      label: Github
+      type: text
+      placeholder: 'Github 用户名'
+    social_qq:
+      name: social_qq
+      label: QQ
+      type: text
+      placeholder: 'QQ 号'
+    social_weibo:
+      name: social_weibo
+      label: 微博
+      type: text
+      placeholder: '微博用户名'
+    social_twitter:
+      name: social_twitter
+      label: Twitter
+      type: text
+      placeholder: 'Twitter 用户名'
+    social_facebook:
+      name: social_facebook
+      label: Facebook
+      type: text
+      placeholder: 'Facebook 用户名'
+    social_email:
+      name: social_email
+      label: '邮箱'
+      type: text
+      placeholder: '邮箱地址'
+    social_telegram:
+      name: social_telegram
+      label: Telegram
+      type: text
+      placeholder: 'Telegram 用户名'
+    social_csdn:
+      name: social_csdn
+      label: CSDN
+      type: text
+      placeholder: 'CSDN 主页'
+    ad_content:
+      name: ad_content
+      label: 侧边栏广告代码
+      type: textarea
+      placeholder: '在这里黏贴广告联盟提供的广告代码'
+    sidebar_profile:
+      name: sidebar_profile
+      label: 侧边栏个人资料
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    ad_piece:
+      name: ad_piece
+      label: 侧边栏广告
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    sidebar_categories:
+      name: sidebar_categories
+      label: 侧边栏分类
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    sidebar_tagcloud:
+      name: sidebar_tagcloud
+      label: 侧边栏标签云
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    sidebar_notice:
+      name: sidebar_notice
+      label: 侧边栏公告
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    sidebar_toc:
+      name: sidebar_toc
+      label: 侧边栏目录
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    sidebar_links:
+      name: sidebar_links
+      label: 侧边栏链接
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    sidebar_recentpost:
+      name: sidebar_recentpost
+      label: 侧边栏最近文章
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    sidebar_recentcomment:
+      name: sidebar_recentcomment
+      label: 侧边栏最近评论
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    sidebar_tags:
+      name: sidebar_tags
+      label: 侧边栏标签
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+custom_links:
+  label: 自定义链接
+  items:
+    links_top:
+      name: links_top
+      label: 顶部链接
+      type: textarea
+      default: '<a class="navbar-item" target="_blank" title="我的GitHub" href="https://github.com/nineya">
+                    <i class="fab fa-github"></i>
+                </a>'
+    links_footer:
+      name: links_footer
+      label: 底部链接
+      type: textarea
+      default: '<p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        <i class="fab fa-creative-commons"></i>
+                    </a>
+                </p>
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        <i class="fab fa-creative-commons-by"></i>
+                    </a>
+                </p>'
+other:
+  label: 其他设置
+  items:
+    dynamic_line:
+      name: dynamic_line
+      label: 动态背景线
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    search_snow:
+      name: search_snow
+      label: 搜索框雪花背景
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    sakura_fall:
+      name: sakura_fall
+      label: 樱花飘落
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    gallery_plus:
+      name: gallery_plus
+      label: 画廊功能增强
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    l2dwidget:
+      name: l2dwidget
+      label: 看板娘
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    l2dwidget_mobile:
+      name: l2dwidget_mobile
+      label: 看板娘移动端显示
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    baidu_push:
+      name: baidu_push
+      label: 百度URL自动推送
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    seo360_push:
+      name: seo360_push
+      label: 360自动收录推送
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭

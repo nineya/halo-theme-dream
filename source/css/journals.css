@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+.journal .journal-header {
+	display: flex!important;
+	padding-bottom: 1rem!important;
+	padding-top: 1rem!important;
+}
+.journal .journal-header i {
+	display: block!important;
+	border-radius: 50%!important;
+	background-size: cover;
+	width: 50px;
+	height: 50px;
+}
+.journal .justify-content-center {
+	margin-left: 1rem!important;
+	display: flex!important;
+	flex-direction: column!important;
+	justify-content: center!important;
+}
+.journal .justify-content-center .has-link-black-ter {
+	font-weight: 700!important;
+}
+.journal .journal-content {
+	line-height: 1.8rem!important;
+	font-size: 1.2rem!important;
+	padding: 0 0.5rem 0.5rem 1rem!important;
+	border-bottom: 1px solid #dee2e6!important;
+}
+.journal .journal-operation .mr-4 {
+	margin-right: 1.5rem!important;
+}
+.journal .journal-operation {
+	padding: 0 1rem!important;
+	margin-top: 1.2rem!important;
+}
+.journal .journal-operation a {
+	color: #6c757d !important;
+}
+.journal .journal-operation a:hover {
+	color: #3273dc !important;
+}
+.journal .journal-operation a i {
+	margin-right: .5rem!important;
+}
+.night .journal .journal-content {
+	border-bottom: 1px solid #4a4a4a!important;
+}

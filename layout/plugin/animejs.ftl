@@ -1,0 +1,1 @@
+<script src="${theme_base!}/source/js/animation.js"></script>

@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+/*图片项*/
+.photos{
+	margin-bottom: 2rem;
+}
+.photos>.photo>h2{
+    margin: 0 0.75rem;
+  	padding: 1rem;
+    font-size: 1.2rem;
+}
+.photos .photo{
+  	padding: 0;
+}
+.photos .photo>div{
+  	float: left;
+}
+.photos .picture-item {
+    /*卡片的阴影*/
+    border-bottom-right-radius: .25rem!important;
+    border-bottom-left-radius: .25rem!important;
+}
+
+/*图片*/
+.photos .picture {
+    width: 100%;
+    height: 100%;
+    transition: transform 1.2s;
+	object-fit: cover;
+	bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.photos .picture-bottom{
+   	padding: 1rem!important;
+}
+/*图片详情，包含图片和图片描述*/
+.photos .picture-details {
+    overflow: hidden;
+    position: relative;
+	padding-top: 100%;
+}
+.photos .picture-details img{
+	border-top-left-radius: .25rem!important;
+    border-top-right-radius: .25rem!important;
+    vertical-align: middle;
+    border-style: none;
+}
+/*图片描述*/
+.photos .picture-description {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    color: #ffffff;
+    font-weight: lighter;
+    padding: .5rem;
+    background: rgba(0, 0, 0, .5);
+    transition: opacity .8s;
+    border-top-left-radius: .25rem!important;
+    border-top-right-radius: .25rem!important;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+.photos .picture-title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.photos .picture-info{
+    margin-top: .5rem!important;
+}
+.photos .picture-info .location{
+  font-size: 80%;
+}
+/*图片详情盒子划过的时候，图片描述的变化*/
+.photos .picture-details:hover .picture-description {
+    opacity: 1;
+}
+
+/*图片详情盒子划过的时候，图片的变化*/
+.photos .picture-details:hover .picture {
+    transform: scale(1.1);
+}
