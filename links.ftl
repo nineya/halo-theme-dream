@@ -1,7 +1,7 @@
 <#include "layout/layout.ftl">
 <@layout title="友链 - ${blog_title!}" canonical="${links_url!}">
 <div class="card">
-	<div class="card-image"><span class="image is-7by1"><img class="thumbnail" src="${static!}/source/images/thumbnail/2.jpg" alt="友情链接 - ${user.nickname!}的小伙伴们"></span></div>
+	<div class="card-image"><span class="image is-7by1"><img class="thumbnail" src="${static!}/source/images/links.jpg" alt="友情链接 - ${user.nickname!}的小伙伴们"></span></div>
   	<div class="card-content">
       	<h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">友情链接 - ${user.nickname!}的小伙伴们</h1>
     	<div class="content">
