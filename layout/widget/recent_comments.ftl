@@ -1,4 +1,4 @@
-<div class="card widget">
+<div class="card widget" id="comment">
     <div class="card-content">
         <h3 class="menu-label">
             最新评论

@@ -1,6 +1,6 @@
 <@linkTag method="list">
     <#if links?? && links?size gt 0>
-        <div class="card widget">
+        <div class="card widget" id="links">
             <div class="card-content">
                 <div class="menu">
                 <h3 class="menu-label">
