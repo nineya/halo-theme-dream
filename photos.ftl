@@ -1,14 +1,6 @@
 <#include "layout/layout.ftl">
 <@layout title="相册 - ${blog_title!}" canonical="${photos_url!}">
 <link rel="stylesheet" href="${theme_base!}/source/css/photos.css">
-<link rel="stylesheet" href="${theme_base!}/source/gallery/css/lightgallery.css">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-<script src="${theme_base!}/source/js/lightgallery.js" defer></script>
-<script src="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-<#if settings.gallery_plus!true>
-<script src="${theme_base!}/source/js/lg-fullscreen.js" defer></script>
-<script src="${theme_base!}/source/js/lg-zoom.js" defer></script>
-</#if>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     if (typeof ($.fn.lightGallery) === 'function') {

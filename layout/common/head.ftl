@@ -25,7 +25,6 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bulma@0.7.5/css/bulma.min.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.4.1/css/all.min.css">
     <link rel="stylesheet" href="//fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro">
-    <!-- 作用未知，不知道为啥要加在这外面 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"> -->
 
     <style>
         body>.footer,
@@ -35,8 +34,8 @@
         }
     </style>
 	
-    <#if is_post?? || is_sheet??>
-        <link rel="stylesheet" href="${theme_base!}/source/gallery/css/lightgallery.css">
+    <#if is_post?? || is_sheet?? || is_photos?? >
+        <link rel="stylesheet" href="${theme_base!}/source/plugins/lightGallery/css/lightgallery.css">
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
     </#if>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
