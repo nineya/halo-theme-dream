@@ -188,6 +188,7 @@ img.thumbnail {
 }
 .post-navigation .level-item {
   margin-bottom: 0;
+  flex-shrink: 1
 }
 .timeline {
   margin-left: 1rem;
