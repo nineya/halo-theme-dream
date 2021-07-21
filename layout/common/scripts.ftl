@@ -4,7 +4,7 @@
 <#include "../plugin/back-to-top.ftl">
 <#include "../plugin/sakura.ftl">
 <#include "../plugin/busuanzi.ftl">
-<#include "../plugin/L2Dwidget.ftl">
+<#include "../plugin/live2d.ftl">
 <#include "../plugin/baidu-push.ftl">
 <#include "../plugin/seo360-push.ftl">
 

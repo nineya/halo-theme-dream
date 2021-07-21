@@ -557,23 +557,12 @@ other:
           label: 开启
         - value: false
           label: 关闭
-    l2dwidget:
-      name: l2dwidget
+    live2d:
+      name: live2d
       label: 看板娘
       type: radio
       data-type: bool
       default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    l2dwidget_mobile:
-      name: l2dwidget_mobile
-      label: 看板娘移动端显示
-      type: radio
-      data-type: bool
-      default: false
       options:
         - value: true
           label: 开启
