@@ -1,12 +1,4 @@
-<#if settings.search_snow!true>
-<!-- 雪花插件 -->
-<script>
-if(window.screen.width>560){
-  document.write('<script src="${theme_base!}/source/js/snow.js" defer><\/script>');
-}
-</script>
-</#if>
-<div class="searchbox ins-search snow-container">
+<div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
             <form method="get" action="/search">
