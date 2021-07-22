@@ -13,11 +13,6 @@
     <canvas id="universe"></canvas>
     <script type="text/javascript" src="${theme_base!}/source/js/universe.js"></script>
     <!-- night mode -->
-	<#if settings.dynamic_line!true>
-	<!--动态线条背景-->
-	<script type="text/javascript" color="180,180,180" opacity='1' zIndex="0" count="100" src="${theme_base!}/source/js/canvas-nest.min.js">
-	</script>
-	</#if>
     <@navbar 'page' />
     <section class="section">
         <div class="container">

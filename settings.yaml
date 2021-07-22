@@ -513,17 +513,6 @@ custom_links:
 other:
   label: 其他设置
   items:
-    dynamic_line:
-      name: dynamic_line
-      label: 动态背景线
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
     search_snow:
       name: search_snow
       label: 搜索框雪花背景
