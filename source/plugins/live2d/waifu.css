@@ -14,10 +14,10 @@
     opacity: 0;
     margin: -20px 20px;
     padding: 5px 10px;
-    border: 1px solid rgba(224, 186, 140, 0.62);
+    border: 1px solid rgba(72, 175, 247, 0.9);
     border-radius: 12px;
-    background-color: rgba(236, 217, 188, 0.5);
-    box-shadow: 0 3px 15px 2px rgba(191, 158, 118, 0.2);
+    background-color: rgba(216, 238, 255, 0.8);
+    box-shadow: 0 3px 15px 2px rgba(9, 149, 255, 0.2);
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
@@ -30,6 +30,7 @@
 .waifu-tool {
     display: none;
     color: #aaa;
+    text-shadow: -1px 0 #5fa8ff, 0 1px #5fa8ff, 1px 0 #5fa8ff, 0 -1px #5fa8ff;
     top: 50px;
     right: 10px;
     position: absolute;
@@ -40,11 +41,11 @@
 .waifu-tool span {
     display: block;
     cursor: pointer;
-    color: #5b6c7d;
+    color: #c6dbf5;
     transition: 0.2s;
 }
 .waifu-tool span:hover {
-    color: #34495e;
+    color: #89bfff;
 }
 .waifu #live2d{
     position: relative;
