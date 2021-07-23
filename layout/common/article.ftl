@@ -25,18 +25,20 @@
                      <#if post.categories?? && post.categories?size gt 0>
                         <div class="level-item">
                             <#list post.categories as category>
-                                <a class="has-link-grey -link" href="${category.fullPath!}">${category.name!}</a>&nbsp;
+                                <a class="has-link-grey" href="${category.fullPath!}">${category.name!}</a>&nbsp;
                             </#list>
                         </div>
-						<div class="level-item has-text-grey">
-						🔥热度 ${(24+post.visits*0.1+post.likes*2+post.commentCount*3)?c}℃
+                         <#assign heat= (24+post.visits*0.1+post.likes*2+post.commentCount*3) />
+                         <#assign heatColor= (heat < 37)?string('ffa87e',(heat < 120)?string('fb734a','e0081c')) />
+						<div class="level-item" style="color: #${heatColor}">
+                        热度 ${heat}℃
                         </div>
                     </#if>
                 <#else>
                     <#if categories?? && categories?size gt 0>
                         <div class="level-item">
                             <#list categories as category>
-                                <a class="has-link-grey -link" href="${category.fullPath!}">${category.name!}</a>&nbsp;
+                                <a class="has-link-grey" href="${category.fullPath!}">${category.name!}</a>&nbsp;
                             </#list>
                         </div>
                     </#if>
@@ -59,7 +61,7 @@
                 ${post.formatContent!}
             </#if>
         </div>
-		
+
 		<#if !index>
 		<#if settings.article_end?? && settings.article_end!=''>
 			<div style="text-align:center;color: #ccc;font-size:14px;font-family: '幼圆'">---------本文结束<i class="fa fa-paw"></i>${settings.article_end}---------</div>
