@@ -29,6 +29,7 @@
             $('.navbar-main .navbar-menu').removeClass('is-flex-start');
         }
     }
+
     adjustNavbar();
     $(window).resize(adjustNavbar);
 
@@ -94,21 +95,57 @@
         $('.navbar-main .catalogue').on('click', toggleToc);
     }
     var columnLeft = $(".left-bottom")[0];
+
     function leftSetBottom() {
-        $(window).width() < 769 ? columnLeft.style.top = null : columnLeft ? columnLeft.style.top = $(window).height() - columnLeft.scrollHeight - 10 + "px" : setTimeout(function() {
+        $(window).width() < 769 ? columnLeft.style.top = null : columnLeft ? columnLeft.style.top = $(window).height() - columnLeft.scrollHeight - 10 + "px" : setTimeout(function () {
             columnLeft = $(".left-bottom")[0],
-            leftSetBottom()
+                leftSetBottom()
         }, 500)
     }
+
     leftSetBottom(),
-    $(window).resize(leftSetBottom);
+        $(window).resize(leftSetBottom);
     var columnRight = $(".right-bottom")[0];
+
     function rightSetBottom() {
-        $(window).width() < 769 ? columnRight.style.top = null : columnRight ? columnRight.style.top = $(window).height() - columnRight.scrollHeight - 10 + "px" : setTimeout(function() {
+        $(window).width() < 769 ? columnRight.style.top = null : columnRight ? columnRight.style.top = $(window).height() - columnRight.scrollHeight - 10 + "px" : setTimeout(function () {
             columnRight = $(".right-bottom")[0],
-            rightSetBottom()
+                rightSetBottom()
         }, 500)
     }
+
     rightSetBottom(),
-    $(window).resize(rightSetBottom);
+        $(window).resize(rightSetBottom);
 })(jQuery);
+/**
+ * 博客搭建时间倒计时功能
+ */
+function websiteTime(timeStr, dayId, timeId) {
+    var now = new Date();
+    var grt = new Date(timeStr);
+    var websiteDay = document.getElementById(dayId);
+    var websiteTime = document.getElementById(timeId);
+    setInterval(function () {
+        now.setTime(now.getTime() + 1000);
+        difference = parseInt((now - grt) / 1000);
+        seconds = difference % 60;
+        if (String(seconds).length == 1) {
+            seconds = "0" + seconds;
+        }
+        difference = parseInt(difference / 60);
+
+        minutes = difference % 60;
+        if (String(minutes).length == 1) {
+            minutes = "0" + minutes;
+        }
+        difference = parseInt(difference / 60);
+
+        hours = difference % 24;
+        if (String(hours).length == 1) {
+            hours = "0" + hours;
+        }
+        days = parseInt(difference / 24);
+        websiteDay.innerHTML = "建站 " + days + " 天 ";
+        websiteTime.innerHTML = hours + " 小时 " + minutes + " 分 " + seconds + " 秒";
+    }, 1000);
+}

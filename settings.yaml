@@ -16,6 +16,11 @@ basic:
       label: 公安部备案
       type: text
       placeholder: '公安部备案号'
+    website_time:
+      name: website_time
+      label: 建站时间
+      type: text
+      placeholder: 'YYYY/MM/dd HH:mm:ss'
     busuanzi:
       name: busuanzi
       label: busuanzi访客统计
