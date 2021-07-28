@@ -45,7 +45,7 @@ $(function () {
             $(this).parent().append(`<ul class="pre-numbering">${lis}</ul>`);
         });
     };
-	    /**
+	 /**
      * 剪切板功能
      */
     let clipBoardSupport = () => {
@@ -64,11 +64,6 @@ $(function () {
         });
 
         let clipboard = new ClipboardJS('.btn-clipboard');
-        clipboard.on('success', function (e) {
-            e.clearSelection();
-			alert("已复制到剪切板");
-            //e.trigger && $(e.trigger).attr("data-original-title", "已复制到剪切板").tooltip('show');
-        });
         clipboard.on('error', function (e) {
             e.clearSelection();
             alert("您的浏览器不支持复制");
