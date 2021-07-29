@@ -3,7 +3,7 @@
 <@layout title="搜索：${keyword} - ${blog_title!}" canonical="${blog_url!}/search?keyword=${keyword}">
 <#if (posts.content)?? && posts.content?size gt 0>
     <#list posts.content as post>
-        <@article post,'index','null',true />
+        <@article post,'null',true />
     </#list>
     <#if posts.getTotalPages() gt 1>
         <div class="card card-transparent">

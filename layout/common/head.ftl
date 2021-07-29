@@ -27,9 +27,7 @@
     <link rel="stylesheet" href="//fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro">
 
     <style>
-        body>.footer,
-        body>.navbar,
-        body>.section {
+        body>.footer, body>.navbar, body>.section {
             opacity: 0
         }
     </style>

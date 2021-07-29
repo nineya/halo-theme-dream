@@ -3,7 +3,7 @@
 <@layout title="${blog_title!}" canonical="${blog_url!}">
 <#if (posts.content)?? && posts.content?size gt 0>
     <#list posts.content as post>
-        <@article post,'index','null',true />
+        <@article post,'null',true />
     </#list>
     <#if posts.getTotalPages() gt 1>
         <div class="card card-transparent">

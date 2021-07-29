@@ -13,7 +13,7 @@
     <canvas id="universe"></canvas>
     <script type="text/javascript" src="${theme_base!}/source/js/universe.js"></script>
     <!-- night mode -->
-    <@navbar 'page' />
+    <@navbar/>
     <section class="section">
         <div class="container">
             <div class="columns">

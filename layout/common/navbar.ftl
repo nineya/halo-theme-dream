@@ -1,4 +1,4 @@
-<#macro navbar layout>
+<#macro navbar>
 <nav class="navbar navbar-main">
     <div class="container">
         <div class="navbar-brand is-flex-center">
