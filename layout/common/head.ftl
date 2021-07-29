@@ -50,7 +50,4 @@
     <#if post??>
         <link rel="stylesheet" type="text/css" href="${theme_base!}/source/plugins/highlightjs/styles/${settings.code_pretty!'atom-one-light'}.min.css">
         <link rel="stylesheet" type="text/css" href="${theme_base!}/source/css/post.css" />
-		<script src="${theme_base!}/source/plugins/highlightjs/highlight.min.js"></script>
-		<script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>  
-        <script type="text/javascript" src="${theme_base!}/source/js/post.js"></script>
     </#if>

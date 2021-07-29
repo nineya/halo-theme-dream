@@ -114,36 +114,36 @@
             </div>
         </div>
     </#if>
-</#if>
 
-<#if !index && (nextPost?? || prevPost??)>
-    <div class="card">
-        <div class="level post-navigation is-flex-wrap is-mobile card-content">
-            <#if prevPost??>
-            <div class="level-start">
-                <a class="level level-item has-link-grey article-nav-prev" href="${prevPost.fullPath!}">
-                    <i class="level-item fas fa-chevron-left"></i>
-                    <span class="level-item">${prevPost.title!}</span>
-                </a>
+    <#if nextPost?? || prevPost??>
+        <div class="card">
+            <div class="level post-navigation is-flex-wrap is-mobile card-content">
+                <#if prevPost??>
+                    <div class="level-start">
+                        <a class="level level-item has-link-grey article-nav-prev" href="${prevPost.fullPath!}">
+                            <i class="level-item fas fa-chevron-left"></i>
+                            <span class="level-item">${prevPost.title!}</span>
+                        </a>
+                    </div>
+                </#if>
+                <#if nextPost??>
+                    <div class="level-end">
+                        <a class="level level-item has-link-grey article-nav-next" href="${nextPost.fullPath!}">
+                            <span class="level-item">${nextPost.title!}</span>
+                            <i class="level-item fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </#if>
             </div>
-            </#if>
-            <#if nextPost??>
-            <div class="level-end">
-                <a class="level level-item has-link-grey article-nav-next" href="${nextPost.fullPath!}">
-                    <span class="level-item">${nextPost.title!}</span>
-                    <i class="level-item fas fa-chevron-right"></i>
-                </a>
-            </div>
-            </#if>
         </div>
-    </div>
-</#if>
-
-<#if !index>
+    </#if>
 	<#if commentType == 'post'>
 		<@comment post,"post" />
 	<#else>
 		<@comment post,"sheet" />
 	</#if>
+    <script src="${theme_base!}/source/plugins/highlightjs/highlight.min.js"></script>
+    <script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
+    <script type="text/javascript" src="${theme_base!}/source/js/post.js"></script>
 </#if>
 </#macro>

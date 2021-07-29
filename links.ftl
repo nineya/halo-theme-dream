@@ -40,7 +40,6 @@
             <li>描述：童话梦境，望仔的秘密基地</li>
           </ul>
           <p>添加友链后按以上格式在本帖留言即可,留言后看到会立即添加友链，一般和同样的博客类网站交换。</p>
-          <p>如果要更换友链信息，也按以上格式留言，或者<a href="http://sighttp.qq.com/msgrd?v=1&amp;uin=361654768" target="_blank">QQ滴滴我</a>。</p>
       </div>
 		<#if settings.share_type?? && settings.share_type!=''>
             <#include "layout/share/${settings.share_type}.ftl">
