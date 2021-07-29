@@ -41,9 +41,11 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
 
     <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    <link rel="stylesheet" href="${theme_base!}/source/css/progressbar.css">
 
     <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
-    <link rel="stylesheet" href="${theme_base!}/source/css/bundle.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/back-to-top.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/search.css">
 	<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
     <#if post??>
         <link rel="stylesheet" type="text/css" href="${theme_base!}/source/plugins/highlightjs/styles/${settings.code_pretty!'atom-one-light'}.min.css">

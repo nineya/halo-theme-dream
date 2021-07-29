@@ -2,7 +2,12 @@
     function $() {
         return Array.prototype.slice.call(document.querySelectorAll.apply(document, arguments));
     }
-
+    // 实现将右边widget拷贝的左边
+    if ($('.columns .column-right').length && $('.columns .column-right-shadow').length && !$('.columns .column-right-shadow')[0].children.length) {
+        for (const child of $('.columns .column-right')[0].children) {
+            $('.columns .column-right-shadow')[0].append(child.cloneNode(true));
+        }
+    }
     $('body > .navbar, body > .section, body > .footer').forEach(function (element) {
         element.style.transition = '0s';
         element.style.opacity = '0';

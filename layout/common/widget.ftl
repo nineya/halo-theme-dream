@@ -17,6 +17,8 @@
         <#if settings.sidebar_links!true>
             <#include "../widget/links.ftl">
         </#if>
+        <div class="column-right-shadow is-hidden-widescreen">
+        </div>
     </#if>
     <#if position == 'right'>
 		<#if settings.sidebar_notice!true>
@@ -35,26 +37,6 @@
         <#if settings.sidebar_tagcloud!true>
             <#include "../widget/tagcloud.ftl">
         </#if>
-    </#if>
-    <#if position == 'left'>
-        <div class="column-right-shadow is-hidden-widescreen">
-			<#if settings.sidebar_notice!true>
-				<#include "../widget/notice.ftl">
-			</#if>
-			<#if settings.sidebar_toc!true>
-				<@toc 'left'/>
-			</#if>
-            <#if settings.sidebar_recentpost!true>
-                <#include "../widget/recent_posts.ftl">
-            </#if>
-            <#if settings.sidebar_recentcomment!true>
-                <#include "../widget/recent_comments.ftl">
-            </#if>
-<#--            <#include "../widget/archive.ftl">-->
-            <#if settings.sidebar_tagcloud!true>
-                <#include "../widget/tagcloud.ftl">
-            </#if>
-        </div>
     </#if>
 </div>
 </#macro>

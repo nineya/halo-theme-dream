@@ -1,6 +1,20 @@
 (function ($) {
+    // 选中当前界面所对应的标签
+    var url = location.href;
+    var urlstatus = false;
+    $(".navbar-start a").each(function () {
+        if ((url + '/').indexOf($(this).attr('href')) > -1 && $(this).attr('href') != '/') {
+            $(this).addClass('is-active');
+            urlstatus = true;
+        } else {
+            $(this).removeClass('is-active');
+        }
+    });
+    if (!urlstatus) {
+        $(".navbar-start a").eq(0).addClass('is-active');
+    }
+    // 用链接和标题包装图像
     $('.article img:not(".not-gallery-item")').each(function () {
-        // wrap images with link and add caption if possible
         if ($(this).parent('a').length === 0) {
             $(this).wrap('<a class="gallery-item" href="' + $(this).attr('src') + '"></a>');
             if (this.alt) {
