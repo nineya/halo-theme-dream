@@ -385,111 +385,121 @@ sidebar:
       name: sidebar_profile
       label: 侧边栏个人资料
       type: radio
-      data-type: bool
-      default: true
+      default: left
       options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    ad_piece:
-      name: ad_piece
-      label: 侧边栏广告
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    sidebar_categories:
-      name: sidebar_categories
-      label: 侧边栏分类
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    sidebar_tagcloud:
-      name: sidebar_tagcloud
-      label: 侧边栏标签云
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    sidebar_notice:
-      name: sidebar_notice
-      label: 侧边栏公告
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
+        - value: left
+          label: 左侧
+        - value: right
+          label: 右侧
+        - value: none
           label: 关闭
     sidebar_toc:
       name: sidebar_toc
       label: 侧边栏目录
       type: radio
-      data-type: bool
-      default: true
+      default: right
       options:
-        - value: true
-          label: 开启
-        - value: false
+        - value: left
+          label: 左侧
+        - value: right
+          label: 右侧
+        - value: none
           label: 关闭
-    sidebar_links:
-      name: sidebar_links
-      label: 侧边栏链接
+    sidebar_notice:
+      name: sidebar_notice
+      label: 侧边栏公告
       type: radio
-      data-type: bool
-      default: true
+      default: right
       options:
-        - value: true
-          label: 开启
-        - value: false
+        - value: left
+          label: 左侧
+        - value: right
+          label: 右侧
+        - value: none
+          label: 关闭
+    ad_piece:
+      name: ad_piece
+      label: 侧边栏广告
+      type: radio
+      default: none
+      options:
+        - value: left
+          label: 左侧
+        - value: right
+          label: 右侧
+        - value: none
           label: 关闭
     sidebar_recentpost:
       name: sidebar_recentpost
       label: 侧边栏最近文章
       type: radio
-      data-type: bool
-      default: true
+      default: right
       options:
-        - value: true
-          label: 开启
-        - value: false
+        - value: left
+          label: 左侧
+        - value: right
+          label: 右侧
+        - value: none
           label: 关闭
     sidebar_recentcomment:
       name: sidebar_recentcomment
       label: 侧边栏最近评论
       type: radio
-      data-type: bool
-      default: false
+      default: right
       options:
-        - value: true
-          label: 开启
-        - value: false
+        - value: left
+          label: 左侧
+        - value: right
+          label: 右侧
+        - value: none
+          label: 关闭
+    sidebar_categories:
+      name: sidebar_categories
+      label: 侧边栏分类
+      type: radio
+      default: left
+      options:
+        - value: left
+          label: 左侧
+        - value: right
+          label: 右侧
+        - value: none
           label: 关闭
     sidebar_tags:
       name: sidebar_tags
       label: 侧边栏标签
       type: radio
-      data-type: bool
-      default: true
+      default: left
       options:
-        - value: true
-          label: 开启
-        - value: false
+        - value: left
+          label: 左侧
+        - value: right
+          label: 右侧
+        - value: none
+          label: 关闭
+    sidebar_tagcloud:
+      name: sidebar_tagcloud
+      label: 侧边栏标签云
+      type: radio
+      default: none
+      options:
+        - value: left
+          label: 左侧
+        - value: right
+          label: 右侧
+        - value: none
+          label: 关闭
+    sidebar_links:
+      name: sidebar_links
+      label: 侧边栏链接
+      type: radio
+      default: left
+      options:
+        - value: left
+          label: 左侧
+        - value: right
+          label: 右侧
+        - value: none
           label: 关闭
 custom_links:
   label: 自定义链接
