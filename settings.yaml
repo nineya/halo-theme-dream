@@ -58,61 +58,21 @@ post:
       default: atom-one-light
       options:
         - value: a11y-dark
-          label: A 11 Y Dark
+          label: A11y Dark
         - value: a11y-light
-          label: A 11 Y Light
+          label: A11y Light
         - value: agate
           label: Agate
-        - value: androidstudio
-          label: Androidstudio
         - value: an-old-hope
           label: An Old Hope
+        - value: androidstudio
+          label: Androidstudio
         - value: arduino-light
           label: Arduino Light
         - value: arta
           label: Arta
         - value: ascetic
           label: Ascetic
-        - value: atelier-cave-dark
-          label: Atelier Cave Dark
-        - value: atelier-cave-light
-          label: Atelier Cave Light
-        - value: atelier-dune-dark
-          label: Atelier Dune Dark
-        - value: atelier-dune-light
-          label: Atelier Dune Light
-        - value: atelier-estuary-dark
-          label: Atelier Estuary Dark
-        - value: atelier-estuary-light
-          label: Atelier Estuary Light
-        - value: atelier-forest-dark
-          label: Atelier Forest Dark
-        - value: atelier-forest-light
-          label: Atelier Forest Light.
-        - value: atelier-heath-dark
-          label: Atelier Heath Dark
-        - value: atelier-heath-light
-          label: Atelier Heath Light
-        - value: atelier-lakeside-dark
-          label: Atelier Lakeside Dark
-        - value: atelier-lakeside-light
-          label: Atelier Lakeside Light
-        - value: atelier-plateau-dark
-          label: Atelier Plateau Dark
-        - value: atelier-plateau-light
-          label: Atelier Plateau Light
-        - value: atelier-savanna-dark
-          label: Atelier Savanna Dark
-        - value: atelier-savanna-light
-          label: Atelier Savanna Light
-        - value: atelier-seaside-dark
-          label: Atelier Seaside Dark
-        - value: atelier-seaside-light
-          label: Atelier Seaside Light
-        - value: atelier-sulphurpool-dark
-          label: Atelier Sulphurpool Dark
-        - value: atelier-sulphurpool-light
-          label: Atelier Sulphurpool Light
         - value: atom-one-dark
           label: Atom One Dark
         - value: atom-one-dark-reasonable
@@ -121,44 +81,40 @@ post:
           label: Atom One Light
         - value: brown-paper
           label: Brown Paper
+        - value: brown-papersq
+          label: Brown Papersq
         - value: codepen-embed
           label: Codepen Embed
         - value: color-brewer
           label: Color Brewer
-        - value: darcula
-          label: Darcula
         - value: dark
           label: Dark
-        - value: darkula
-          label: Darkula
         - value: default
           label: Default
+        - value: devibeans
+          label: Devibeans
         - value: docco
           label: Docco
-        - value: dracula
-          label: Dracula
         - value: far
           label: Far
         - value: foundation
           label: Foundation
+        - value: github-dark-dimmed
+          label: Github Dark Dimmed
+        - value: github-dark
+          label: Github Dark
         - value: github
           label: Github
-        - value: github-gist
-          label: Github Gist
         - value: gml
           label: Gml
         - value: googlecode
           label: Googlecode
         - value: gradient-dark
           label: Gradient Dark
+        - value: gradient-light
+          label: Gradient Light
         - value: grayscale
           label: Grayscale
-        - value: gruvbox-dark
-          label: Gruvbox Dark
-        - value: gruvbox-light
-          label: Gruvbox Light
-        - value: hopscotch
-          label: Hopscotch
         - value: hybrid
           label: Hybrid
         - value: idea
@@ -169,28 +125,32 @@ post:
           label: Isbl Editor Dark
         - value: isbl-editor-light
           label: Isbl Editor Light
-        - value: kimbie.dark
+        - value: kimbie-dark
           label: Kimbie Dark
-        - value: kimbie.light
+        - value: kimbie-light
           label: Kimbie Light
         - value: lightfair
           label: Lightfair
+        - value: lioshi
+          label: Lioshi
         - value: magula
           label: Magula
         - value: mono-blue
           label: Mono Blue
-        - value: monokai
-          label: Monokai
         - value: monokai-sublime
           label: Monokai Sublime
+        - value: monokai
+          label: Monokai
         - value: night-owl
           label: Night Owl
+        - value: nnfx-dark
+          label: Nnfx dark
+        - value: nnfx-light
+          label: Nnfx Light
         - value: nord
           label: Nord
         - value: obsidian
           label: Obsidian
-        - value: ocean
-          label: Ocean
         - value: paraiso-dark
           label: Paraiso Dark
         - value: paraiso-light
@@ -199,12 +159,10 @@ post:
           label: Pojoaque
         - value: purebasic
           label: Purebasic
-        - value: qtcreator_dark
+        - value: qtcreator-dark
           label: Qtcreator Dark
-        - value: qtcreator_light
+        - value: qtcreator-light
           label: Qtcreator Light
-        - value: railscasts
-          label: Railscasts
         - value: rainbow
           label: Rainbow
         - value: routeros
@@ -213,22 +171,18 @@ post:
           label: School Book
         - value: shades-of-purple
           label: Shades Of Purple
-        - value: solarized-dark
-          label: Solarized Dark
-        - value: solarized-light
-          label: Solarized Light
+        - value: srcery
+          label: Srcery
+        - value: stackoverflow-dark
+          label: Stackoverflow Dark
+        - value: stackoverflow-light
+          label: Stackoverflow Light
         - value: sunburst
           label: Sunburst
-        - value: tomorrow
-          label: Tomorrow
-        - value: tomorrow-night
-          label: Tomorrow Night
         - value: tomorrow-night-blue
           label: Tomorrow Night Blue
         - value: tomorrow-night-bright
           label: Tomorrow Night Bright
-        - value: tomorrow-night-eighties
-          label: Tomorrow Night Eighties
         - value: vs
           label: Vs
         - value: vs2015
@@ -237,8 +191,6 @@ post:
           label: Xcode
         - value: xt256
           label: Xt 256
-        - value: zenburn
-          label: Zenburn
     article_end:
       name: article_end
       label: 阅读结束文字

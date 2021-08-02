@@ -23,12 +23,6 @@
         }
     });
 
-    // if (typeof (moment) === 'function') {
-    //     $('.article-meta time').each(function () {
-    //         $(this).text(moment($(this).attr('datetime')).fromNow());
-    //     });
-    // }
-
     // 处理表格
     $('.article > .content > table').each(function () {
         if ($(this).width() > $(this).parent().width()) {
@@ -47,23 +41,6 @@
     }
     adjustNavbar();
     $(window).resize(adjustNavbar);
-
-    var $toc = $('#toc');
-    if ($toc.length > 0) {
-        var $mask = $('<div>');
-        $mask.attr('id', 'toc-mask');
-
-        $('body').append($mask);
-
-        function toggleToc() {
-            $toc.toggleClass('is-active');
-            $mask.toggleClass('is-active');
-        }
-
-        $toc.on('click', toggleToc);
-        $mask.on('click', toggleToc);
-        $('.navbar-main .catalogue').on('click', toggleToc);
-    }
 
     // 实现widget置底
     var columnLeft = $(".left-bottom")[0];

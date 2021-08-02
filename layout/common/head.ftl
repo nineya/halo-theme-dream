@@ -46,6 +46,6 @@
     <link rel="stylesheet" href="${theme_base!}/source/css/search.css">
 	<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
     <#if post??>
-        <link rel="stylesheet" type="text/css" href="${theme_base!}/source/plugins/highlightjs/styles/${settings.code_pretty!'atom-one-light'}.min.css">
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/${settings.code_pretty!'atom-one-light'}.min.css">
         <link rel="stylesheet" type="text/css" href="${theme_base!}/source/css/post.css" />
     </#if>
