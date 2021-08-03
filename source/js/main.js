@@ -53,10 +53,12 @@
     leftSetBottom(), $(window).resize(leftSetBottom);
     var columnRight = $(".right-bottom")[0];
     function rightSetBottom() {
-        $(window).width() < 769 ? columnRight.style.top = null : columnRight ? columnRight.style.top = $(window).height() - columnRight.scrollHeight - 10 + "px" : setTimeout(function () {
-            columnRight = $(".right-bottom")[0],
-                rightSetBottom()
-        }, 500)
+        if ($(window).width() > 1215) {
+            columnRight ? columnRight.style.top = $(window).height() - columnRight.scrollHeight - 10 + "px" : setTimeout(function () {
+                columnRight = $(".right-bottom")[0],
+                    rightSetBottom()
+            }, 500)
+        }
     }
     rightSetBottom(), $(window).resize(rightSetBottom);
 })(jQuery);

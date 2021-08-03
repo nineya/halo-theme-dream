@@ -28,12 +28,12 @@
                                 <a class="has-link-grey" href="${category.fullPath!}">${category.name!}</a>&nbsp;
                             </#list>
                         </div>
-                         <#assign heat= (24+post.visits*0.1+post.likes*2+post.commentCount*3) />
-                         <#assign heatColor= (heat < 37)?string('ffa87e',(heat < 120)?string('fb734a','e0081c')) />
-						<div class="level-item" style="color: #${heatColor}">
-                        热度 ${heat}℃
-                        </div>
                     </#if>
+                    <#assign heat= (24+post.visits*0.1+post.likes*2+post.commentCount*3) />
+                    <#assign heatColor= (heat < 37)?string('ffa87e',(heat < 120)?string('fb734a','e0081c')) />
+                    <div class="level-item" style="color: #${heatColor}">
+                        热度 ${heat}℃
+                    </div>
                 <#else>
                     <#if categories?? && categories?size gt 0>
                         <div class="level-item">

@@ -26,6 +26,9 @@
                     <i class="fas fa-moon" id="night-icon"></i>
                 </a>
                 ${settings.links_top!}
+                <#if settings.sidebar_toc?? && settings.sidebar_toc != 'none'>
+                    <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a>
+                </#if>
                 <a class="navbar-item search" title="文章搜索" onclick="openSearchPanel()" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>

@@ -9,4 +9,7 @@
 <#include "../plugin/baidu-push.ftl">
 <#include "../plugin/seo360-push.ftl">
 
+<#if settings.sidebar_toc?? && settings.sidebar_toc != 'none'>
+    <script src="${theme_base!}/source/js/toc.js"></script>
+</#if>
 <script src="${theme_base!}/source/js/main.js"></script>

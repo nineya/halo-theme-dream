@@ -1,5 +1,8 @@
 (function (window, document) {
   function register($toc) {
+    // toc滚动时间和偏移量
+    const time = 20
+    const headingsOffset = 50
     const currentInView = new Set();
     const headingToMenu = new Map();
     const $menus = Array.from($toc.querySelectorAll('.menu-list > li > a'));
@@ -53,6 +56,29 @@
       observer.observe($heading);
       // smooth scroll to the heading
       if (headingToMenu.has($heading)) {
+        const $menu = headingToMenu.get($heading);
+        $menu.addEventListener('click', () => {
+          var element = document.getElementById($menu.getAttribute("href").substring(1))
+          let rect = element.getBoundingClientRect();
+          let currentY = window.pageYOffset;
+          let targetY = currentY + rect.top - headingsOffset;
+          let speed = (targetY - currentY) / time;
+          let offset = currentY > targetY ? -1 : 1;
+          let requestId;
+          function step(timestamp) {
+            currentY+=speed;
+            if(currentY * offset < targetY * offset){
+              window.scrollTo(0,currentY);
+              requestId=window.requestAnimationFrame(step);
+            }else{
+              window.scrollTo(0,targetY);
+              window.cancelAnimationFrame(requestId);
+            }
+          }
+          window.requestAnimationFrame(step);
+        });
+      }
+      if (headingToMenu.has($heading)) {
         $heading.style.scrollMargin = '1em';
       }
     }
@@ -64,3 +90,21 @@
 
   document.querySelectorAll('#toc').forEach(register);
 })(window, document);
+(function ($) {
+  const $toc = $('#toc');
+  if ($toc.length > 0) {
+    const $mask = $('<div>');
+    $mask.attr('id', 'toc-mask');
+
+    $('body').append($mask);
+
+    function toggleToc() { // eslint-disable-line no-inner-declarations
+      $toc.toggleClass('is-active');
+      $mask.toggleClass('is-active');
+    }
+
+    $toc.on('click', toggleToc);
+    $mask.on('click', toggleToc);
+    $('.navbar-main .catalogue').on('click', toggleToc);
+  }
+})(jQuery);
