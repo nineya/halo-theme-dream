@@ -453,6 +453,30 @@ sidebar:
           label: 右侧
         - value: none
           label: 关闭
+page:
+  label: 页面设置
+  items:
+    links_thumbnail:
+      name: links_thumbnail
+      label: 友链界面缩略图
+      type: attachment
+      placeholder: '友链界面缩略图'
+    links_default_avatar:
+      name: links_default_avatar
+      label: 友链界面默认头像
+      type: attachment
+      placeholder: '未设置头像用户的默认头像'
+    links_blogger_avatar:
+      name: links_blogger_avatar
+      label: 友链界面博主头像链接
+      type: attachment
+      placeholder: '博主头像链接'
+    links_info:
+      name: links_info
+      label: 友链界面补充信息
+      type: textarea
+      placeholder: '友链界面补充信息'
+      default: "添加友链后按以上格式在本帖留言即可，留言后看到会立即添加友链，一般和同样的博客类网站交换。"
 custom_links:
   label: 自定义链接
   items:
