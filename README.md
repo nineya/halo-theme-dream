@@ -1,5 +1,12 @@
 <h1><a href="https://github.com/nineya/halo-theme-dream" target="_blank">halo-theme-dream</a></h1>
 
+<p align="center">
+<a href="https://github.com/nineya/halo-theme-dream/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/nineya/halo-theme-dream.svg?style=flat-square"/></a>
+<a href="https://github.com/nineya/halo-theme-dream/releases"><img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/nineya/halo-theme-dream/total.svg?style=flat-square"></a>
+<a href="https://github.com/nineya/halo-theme-dream/commits"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/nineya/halo-theme-dream.svg?style=flat-square"></a>
+<a href="https://github.com/nineya/halo-theme-dream/actions"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/nineya/halo-theme-dream/Halo%20CI?style=flat-square"/></a>
+</p>
+
 ## 说明
 
 梦之城，童话梦境，动漫类型博客主题。
