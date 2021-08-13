@@ -553,9 +553,6 @@ figure.highlight .section {
 .gist .file {
   all: initial;
 }
-/**
-* 大佬加的
-*/
 @media screen and (min-width: 1700px) {
   .container {
     max-width: 1600px;
@@ -707,19 +704,12 @@ a {
   justify-content: center;
   -webkit-justify-content: center;
 }
-/**
-* 大佬结束
-*/
-/**
-* 我的添加开始
-*/
 #head_img {
   transition: all 2s;
 }
 #head_img:hover {
   transform: rotate(-360deg);
 }
-/* 防止页面中某些字母、链接超出div */ 
 .card-content{
 	word-wrap:break-word;
 	word-break:break-all;
@@ -895,9 +885,12 @@ a {
 	background-color:#eef3fc;
 	color:#3273dc;
 }
-/**
-* 我的添加结束
-*/
+.menu-list>li>a.is-active+ .menu-list{
+    display:block
+}
+.menu-list>li>a+.menu-list{
+    display:none
+}
 /* ---------------------------------
 *            night mode
 * --------------------------------- */
@@ -1212,9 +1205,6 @@ body.night {
   -webkit-text-fill-color: #c0c0c0 !important;
   box-shadow: 0 0 0px 1000px #373d48 inset;
 }
-/**
-* 我的添加开始
-*/
 .night .links ul li:hover {
   color: #27323a;
   border: 1px solid #aaa
@@ -1229,6 +1219,3 @@ body.night {
 body.night .menu-list a.is-active {
     background-color: #434a56;
 }
-/**
-* 我的添加结束 *
-*/

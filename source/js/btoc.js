@@ -27,6 +27,7 @@ function Btoc(tocList, contentElement, tocElement){
                 childs.push(elem);
             }
             childs.concat(getChild(elem, tocList));
+            childs.push.apply(childs, getChild(elem, tocList));
         }
         return childs;
     }
@@ -35,7 +36,7 @@ function Btoc(tocList, contentElement, tocElement){
      * 生成目录
      */
     this.build = function(){
-        if(this.elementList == null || this.elementList.length == 0){
+        if(this.elementList == null || this.elementList.length === 0){
             return;
         }
         // 解析获取到的标签元素为目录
@@ -89,7 +90,7 @@ Btoc.init = function(params){
     var tocList = params['tocList'];
     var contentElement = params['contentElement'];
     var tocElement = params['tocElement'];
-    if(tocList == null || tocList.length == 0 || contentElement == null || tocElement == null){
+    if(tocList == null || tocList.length === 0 || contentElement == null || tocElement == null){
         return false;
     }
     for(var i=0;i<tocList.length;i++){

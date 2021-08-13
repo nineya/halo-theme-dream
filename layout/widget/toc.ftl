@@ -11,14 +11,12 @@ Btoc.init({
 	contentElement: $('.content')[0],
 	tocElement: $('#toc .menu')[0]
 });
- if($('#toc .menu ul').length==0){
+ if($('#toc .menu ul').length===0){
  	$('#toc').remove();
     $('.navbar-main .catalogue').remove();
  }else{
- 	$('.notice').remove();
 	$('#toc .menu ul').addClass("menu-list");
 	$('#toc .menu a').addClass("is-flex").prepend(`<i class="fas fa-paperclip"></i><span class="has-mr-6"></span>`);
  }
 </script>
-<style>.menu-list>li>a.is-active+ .menu-list{display:block}.menu-list>li>a+.menu-list{display:none}</style>
 </div>
