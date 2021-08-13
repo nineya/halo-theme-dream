@@ -19,10 +19,15 @@
                             </a>
                         </#if>
                         <div class="media-content">
-                            <div class="content">
-                                <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="${post.createTime!}">${post.createTime?string('yyyy-MM-dd')}</time>
-                                <a href="${post.fullPath!}" class="title has-link-black-ter is-size-6 has-text-weight-normal">${post.title!}</a>
-                            </div>
+                            <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="${post.createTime!}">${post.createTime?string('yyyy-MM-dd')}</time>
+                            <a href="${post.fullPath!}" class="title has-link-black-ter is-size-6 has-text-weight-normal">${post.title!}</a>
+                            <#if post.categories?? && post.categories?size gt 0>
+                                <p class="categories">
+                                    <#list post.categories as category>
+                                        <a class="has-link-grey" href="${category.fullPath!}">${category.name!}</a>&nbsp;
+                                    </#list>
+                                </p>
+                            </#if>
                         </div>
                     </article>
                 </#list>

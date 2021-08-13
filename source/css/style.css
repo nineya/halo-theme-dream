@@ -308,7 +308,7 @@ img.thumbnail {
 .is-borderless {
   border: none;
 }
-.is-size-7 {
+article.media .categories,.is-size-7 {
   font-size: 0.85rem !important;
 }
 .is-7by1 {
