@@ -14,31 +14,35 @@
                 <@linkTag method="listTeams">
                 <#assign defaultAvatar= (settings.links_default_avatar?? && settings.links_default_avatar!='')?string(settings.links_default_avatar!, static + "/source/images/thumbnail.svg") />
                 <#list teams as item>
-                    <div class="friend column">
-                        <#if item.team?? && item.team!=''>
-                            <h2 class="friend-class" id="toc${item_index}">${item.team}</h2>
-                        <#else>
-                            <h2 class="friend-class" id="toc${item_index}">小伙伴们</h2>
-                        </#if>
+                <div class="links">
+                    <#if item.team?? && item.team!=''>
+                        <h2 class="link-title" id="toc${item_index}"><span class="fake-title">${item.team}</span></h2>
+                    <#else>
+                        <h2 class="link-title" id="toc${item_index}"><span class="fake-title">小伙伴们</span></h2>
+                    </#if>
+                    <ul class="link-items">
                         <#list item.links as link>
-                            <a class="column is-12-mobile is-6-tablet is-4-desktop is-4-widescreen is-4-fullhd" href="${link.url!}" target="_blank">
-                                <#if link.logo?? && link.logo!=''>
-                                    <img src="${link.logo!}">
-                                <#else>
-                                    <img src="${defaultAvatar!}">
-                                </#if>
-                                <p class="title">${link.name!}</p>
-                                <#if link.description?? && link.description!=''>
-                                    <p class="describe">${link.description!}</p>
-                                <#else>
-                                    <p class="describe">他还没有自我介绍呢</p>
-                                </#if>
+                            <a href="${link.url!}" target="_blank" title="${link.description!}">
+                                <li class="link-item">
+                                    <#if link.logo?? && link.logo!=''>
+                                        <img title="${link.name!}" src="${defaultAvatar!}" onload="if(!this.error)this.src='${link.logo!}'" onerror="this.onerror='';this.error=true;src='${defaultAvatar!}'">
+                                    <#else>
+                                        <img title="${link.name!}" src="${defaultAvatar!}">
+                                    </#if>
+
+                                    <span class="sitename">${link.name!}</span>
+                                    <#if link.description?? && link.description!=''>
+                                        <div class="linkdes">${link.description!}</div>
+                                    <#else>
+                                        <div class="linkdes">他还没有自我介绍呢</div>
+                                    </#if>
+                                </li>
                             </a>
                         </#list>
-                        <div style="clear:both"></div>
-                    </div>
+                    </ul>
+                </div>
                 </#list>
-                </@linkTag><br>
+                </@linkTag>
                 申请友链的方法：
                 <#assign bloggerAvatar= (settings.links_blogger_avatar?? && settings.links_blogger_avatar!='')?string(settings.links_blogger_avatar!, user.avatar!) />
                 <ul>
