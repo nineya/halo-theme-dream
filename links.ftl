@@ -25,7 +25,7 @@
                             <a href="${link.url!}" target="_blank" title="${link.description!}">
                                 <li class="link-item">
                                     <#if link.logo?? && link.logo!=''>
-                                        <img title="${link.name!}" src="${defaultAvatar!}" onload="if(!this.error)this.src='${link.logo!}'" onerror="this.onerror='';this.error=true;src='${defaultAvatar!}'">
+                                        <img title="${link.name!}" src="${defaultAvatar!}" onload="if(!this.finish){this.finish=true;this.src='${link.logo!}'}" onerror="this.onerror='';this.finish=true;this.src='${defaultAvatar!}'">
                                     <#else>
                                         <img title="${link.name!}" src="${defaultAvatar!}">
                                     </#if>
