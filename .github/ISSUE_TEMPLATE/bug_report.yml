@@ -1,14 +1,6 @@
----
-name: BUG提交
-about: 提交发现的BUG
-title: ''
-labels: ''
-assignees: ''
-
----
-
-name: Bug 反馈
+name: BUG 提交
 description: 提交 Bug 反馈
+title: 'bug:'
 labels: [bug]
 body:
   - type: markdown
@@ -25,14 +17,14 @@ body:
     validations:
       required: false
     attributes:
-      label: "是什么 `Halo` 版本出现了此问题？"
+      label: "是什么 Halo 版本出现了此问题？"
       description: "可以在管理后台的关于页面中找到。"
   - type: input
     id: dream-version
     validations:
       required: false
     attributes:
-      label: "使用的 `Dream` 版本是多少？"
+      label: "使用的 Dream 版本是多少？"
       description: "可以在主题 `theme.yaml` 文件中找到。"
   - type: input
     id: site-url
@@ -49,15 +41,15 @@ body:
   - type: textarea
     id: what-happened
     attributes:
-      label: "BUG内容"
-      description: "较详细的描述BUG导致了什么问题。"
+      label: "BUG 内容"
+      description: "较详细的描述 BUG 导致了什么问题。"
     validations:
       required: true
   - type: textarea
     id: logs
     attributes:
-      label: "相关 `Console` 日志输出"
-      description: "请复制并粘贴任何相关的日志输出。 这将自动格式化为代码，因此无需反引号。"
+      label: "相关 Console 日志输出"
+      description: "浏览器界面按 `F12` 进入开发者工具，请复制并粘贴任何相关的控制台日志输出。 这将自动格式化为代码，因此无需反引号。"
       render: shell
   - type: textarea
     id: additional-information
