@@ -1,14 +1,6 @@
----
-name: 新特性建议
-about: 为这个主题提出一个想法
-title: ''
-labels: ''
-assignees: ''
-
----
-
 name: 新特性建议
 description: 提交新特性建议
+title: 'feat:'
 body:
   - type: markdown
     id: preface
@@ -18,8 +10,6 @@ body:
     id: environment
     attributes:
       value: "## 环境信息"
-
-
   - type: input
     id: halo-version
     validations:
