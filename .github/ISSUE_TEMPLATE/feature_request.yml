@@ -15,14 +15,14 @@ body:
     validations:
       required: false
     attributes:
-      label: "你当前使用的 `Halo` 版本"
+      label: "你当前使用的 Halo 版本"
       description: "可以在管理后台的关于页面中找到。"
   - type: input
     id: dream-version
     validations:
       required: false
     attributes:
-      label: "你当前使用的 `Dream` 版本"
+      label: "你当前使用的 Dream 版本"
       description: "可以在主题 `theme.yaml` 文件中找到。"
   - type: markdown
     id: details
