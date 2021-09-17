@@ -1,0 +1,58 @@
+name: BUG 提交
+description: 提交 Bug 反馈
+title: 'bug:'
+labels: [bug]
+body:
+  - type: markdown
+    id: preface
+    attributes:
+      value: |
+        感谢你花时间填写此错误报告！在开始之前，我们非常推荐阅读一遍[《开源最佳实践》](https://github.com/LinuxSuRen/open-source-best-practice)，这会在很大程度上提高我们彼此的效率。
+  - type: markdown
+    id: environment
+    attributes:
+      value: "## 环境信息"
+  - type: input
+    id: halo-version
+    validations:
+      required: false
+    attributes:
+      label: "是什么 Halo 版本出现了此问题？"
+      description: "可以在管理后台的关于页面中找到。"
+  - type: input
+    id: dream-version
+    validations:
+      required: false
+    attributes:
+      label: "使用的 Dream 版本是多少？"
+      description: "可以在主题 `theme.yaml` 文件中找到。"
+  - type: input
+    id: site-url
+    attributes:
+      label: "在线博客地址"
+      description: "如果可以的话，请提供你的博客地址。这可能会帮助我们更好的定位问题。"
+      placeholder: "ex. https://blog.nineya.com"
+    validations:
+      required: false
+  - type: markdown
+    id: details
+    attributes:
+      value: "## 详细信息"
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: "BUG 内容"
+      description: "较详细的描述 BUG 导致了什么问题。"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: "相关 Console 日志输出"
+      description: "浏览器界面按 `F12` 进入开发者工具，请复制并粘贴任何相关的控制台日志输出。 这将自动格式化为代码，因此无需反引号。"
+      render: shell
+  - type: textarea
+    id: additional-information
+    attributes:
+      label: "附加信息"
+      description: "如果你还有其他需要提供的信息，可以在这里填写（可以提供截图、视频等）。"
