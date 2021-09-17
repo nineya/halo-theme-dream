@@ -30,6 +30,14 @@
         body>.footer, body>.navbar, body>.section {
             opacity: 0
         }
+        body:before {
+            background: url("${settings.background_pc!}") center 0 no-repeat;
+        }
+        @media screen and (max-width: 768px) {
+            body:before {
+                background-image: url("${settings.background_mobile!}");
+            }
+        }
     </style>
 	
     <#if is_post?? || is_sheet?? || is_photos?? >
