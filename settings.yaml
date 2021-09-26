@@ -18,6 +18,13 @@ basic:
       type: attachment
       placeholder: '移动端博客背景图'
       default: 'https://api.btstu.cn/sjbz/?lx=dongman&format=images&method=mobile'
+    link_comment_id:
+      name: link_comment_id
+      label: 友链界面评论区ID
+      type: text
+      default: 2
+      placeholder: '友链界面评论区ID'
+      description: '友链界面没有ID，需要指定一个自定义页面的ID用于评论，被指定的文章评论区将作为友链的评论区。不存在的ID将导致评论功能无法使用，不建议随便修改。'
     record_number:
       name: record_number
       label: 备案号
