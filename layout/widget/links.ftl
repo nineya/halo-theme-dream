@@ -11,7 +11,7 @@
                         <#list 0..size as i>
                             <#assign link= links[i] />
                             <li>
-                                <a class="level is-mobile" href="${link.url!}" target="_blank">
+                                <a class="level is-mobile" rel="noopener" href="${link.url!}" target="_blank">
                                 <span class="level-left">
                                     <span class="level-item">${link.name}</span>
                                 </span>

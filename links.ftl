@@ -22,7 +22,7 @@
                     </#if>
                     <ul class="link-items">
                         <#list item.links as link>
-                            <a href="${link.url!}" target="_blank" title="${link.description!}">
+                            <a href="${link.url!}" rel="noopener" target="_blank" title="${link.description!}">
                                 <li class="link-item">
                                     <#if link.logo?? && link.logo!=''>
                                         <img title="${link.name!}" src="${defaultAvatar!}" onload="if(!this.finish){this.finish=true;this.src='${link.logo!}'}" onerror="this.onerror='';this.finish=true;this.src='${defaultAvatar!}'">

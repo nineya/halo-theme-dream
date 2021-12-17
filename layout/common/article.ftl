@@ -64,7 +64,7 @@
 
 		<#if !index>
 		<#if settings.article_end?? && settings.article_end!=''>
-			<div style="text-align:center;color: #ccc;font-size:14px;font-family: '幼圆'">---------本文结束<i class="fa fa-paw"></i>${settings.article_end}---------</div>
+			<div class="article-end">---------本文结束<i class="fa fa-paw"></i>${settings.article_end}---------</div>
 		</#if>
 		<#if settings.copyright!true>
 			<!-- 版权界面 -->
