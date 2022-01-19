@@ -27,7 +27,7 @@
                         num = closeNum;
                     }
                     $(this).attr('class', clazz.substring(0, num));
-                    $(this).attr('data-title', clazz.substring(num + 1));
+                    $(this).attr('data-title', num === clazz.length - 1 ? clazz.substring(9, num) : clazz.substring(num + 1));
                 } else {
                     $(this).attr('data-title', clazz.substring(9));
                 }
