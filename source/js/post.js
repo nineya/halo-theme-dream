@@ -11,20 +11,25 @@
      */
     let setCodeTitle = (codeSelector) => {
         $(codeSelector).each(function () {
-            let classs = $(this).attr("class");
-            if (classs != null) {
+            let clazz = $(this).attr("class");
+            if (clazz != null) {
                 /**
                  * 这段代码只能获取代码格式，这样修改后可以通过“|”给代码块命名
                  * let languages = classs.split(' ').filter((value) => value && value.trim() && value.startsWith("language"));
                  * let language = languages.length && languages[0].substring(9) || '';
                  * language = language && `${language[0].toUpperCase()}${language.slice(1)}`;
                  */
-                let num = classs.indexOf('|');
-                if (num != -1) {
-                    $(this).attr('class', classs.substring(0, num));
-                    $(this).attr('data-title', classs.substring(num + 1));
+                let num = clazz.indexOf('|');
+                let closeNum = clazz.indexOf('<');
+                if (num !== -1 || closeNum !== -1) {
+                    if (num === -1 || (closeNum !== -1 && closeNum < num)) {
+                        $(this).attr('data-close', true);
+                        num = closeNum;
+                    }
+                    $(this).attr('class', clazz.substring(0, num));
+                    $(this).attr('data-title', clazz.substring(num + 1));
                 } else {
-                    $(this).attr('data-title', classs.substring(9));
+                    $(this).attr('data-title', clazz.substring(9));
                 }
             }
             $(this).addClass("uncode");
@@ -46,21 +51,27 @@
         });
     };
     /**
-     * 剪切板功能
+     * 剪切板功能，初始化代码块折叠按钮
      */
     let clipBoardSupport = () => {
         $("pre").each(function (index) {
             // 在code中加入id
-            var id = `codeBlock${index}`;
-            $(this).children("code").attr("id", `codeBlock${index}`);
+            let id = `codeBlock${index}`;
+            let codeDiv = $(this).children("code");
+            codeDiv.attr("id", id);
             // 复制按钮
-            let clipButton = $(`<a class='btn-clipboard' title="复制代码" data-clipboard-target='#codeBlock${index}'>
+            let clipButton = $(`<a class='btn-clipboard' title="复制代码" data-clipboard-target='#${id}'>
                     <i class="fas fa-copy"></i>
                 </a>`
             );
+            let arrows = "down";
+            if (codeDiv.attr("data-close") === "true") {
+                arrows = "right";
+                codeDiv.hide();
+            }
             // 添加复制按钮到页面上
             $(this).siblings("div.code-head").append(clipButton);
-            $(this).siblings("div.code-head").prepend($(`<span data-code='#codeBlock${index}'><i class="fas fa-angle-down"></i></span>`))
+            $(this).siblings("div.code-head").prepend($(`<span data-code='#${id}'><i class="fas fa-angle-${arrows}"></i></span>`))
         });
 
         let clipboard = new ClipboardJS('.btn-clipboard');
@@ -88,7 +99,7 @@
     // 初始化代码块高亮工具
     hljs.initHighlightingOnLoad();
     // 1、代码前面加入行号
-    addLineNumber("pre code");
+    addLineNumber("pre > code");
     // 4、在代码的右上角显示代码的格式
     displayCodeFormat("pre > code");
     // 5、代码可复制
