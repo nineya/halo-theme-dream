@@ -15,6 +15,18 @@
 
 > 本主题由 Hexo 主题 Icarus 移植改造而来，官方主题请移步 [ppoffice/hexo-theme-icarus](https://github.com/ppoffice/hexo-theme-icarus)。
 
+**代码块功能：**
+
+- “<” 表示默认代码块为折叠；
+- “|” 表示默认代码块为展开。
+
+```
+{% codeblock lang<可选代码块标题 %}
+```
+
+> 需要注意，halo 本身 markdown 具有一些限制，如代码块名称不能包含空格。
+
+
 ## 安装方法
 
 ### 方法一
