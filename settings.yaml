@@ -578,6 +578,17 @@ other:
           label: 开启
         - value: false
           label: 关闭
+    toutiao_push:
+      name: toutiao_push
+      label: 头条搜索自动推送
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     seo360_push:
       name: seo360_push
       label: 360自动收录推送
