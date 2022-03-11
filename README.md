@@ -1,6 +1,6 @@
 <p align="center">
 <img src="https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream/screenshot.png" alt="halo-theme-dream" width="180">
-<h1>halo-theme-dream</h1>
+<h1 align="center">halo-theme-dream</h1>
 </p>
 [![releases](https://img.shields.io/github/release/nineya/halo-theme-dream.svg?style=flat-square)](https://github.com/nineya/halo-theme-dream/releases)
 [![license](https://img.shields.io/github/license/nineya/halo-theme-dream?style=flat-square)](https://github.com/nineya/halo-theme-dream/blob/master/LICENSE)
@@ -9,6 +9,9 @@
 [![commits](https://img.shields.io/github/last-commit/nineya/halo-theme-dream.svg?style=flat-square)](https://github.com/nineya/halo-theme-dream/commits)
 [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/nineya/halo-theme-dream#donate)
 
+
+
+[![npm](https://img.shields.io/npm/v/aplayer.svg?style=flat-square)](https://www.npmjs.com/package/aplayer)
 
 ## 说明
 
