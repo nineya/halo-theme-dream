@@ -1,6 +1,9 @@
 <p align="center">
 <img src="https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream/screenshot.png" alt="halo-theme-dream" width="180">
 <h1 align="center">halo-theme-dream</h1>
+</p>
+
+<p align="center">
 
 [![releases](https://img.shields.io/github/release/nineya/halo-theme-dream.svg?style=flat-square)](https://github.com/nineya/halo-theme-dream/releases)
 [![license](https://img.shields.io/github/license/nineya/halo-theme-dream?style=flat-square)](https://github.com/nineya/halo-theme-dream/blob/master/LICENSE)
