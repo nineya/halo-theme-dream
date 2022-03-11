@@ -1,17 +1,14 @@
 <p align="center">
 <img src="https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream/screenshot.png" alt="halo-theme-dream" width="180">
+  
 <h1 align="center">halo-theme-dream</h1>
-</p>
 
-<p align="center">
-
-[![releases](https://img.shields.io/github/release/nineya/halo-theme-dream.svg?style=flat-square)](https://github.com/nineya/halo-theme-dream/releases)
-[![license](https://img.shields.io/github/license/nineya/halo-theme-dream?style=flat-square)](https://github.com/nineya/halo-theme-dream/blob/master/LICENSE)
-[![downloads](https://img.shields.io/github/downloads/nineya/halo-theme-dream/total.svg?style=flat-square)](https://github.com/nineya/halo-theme-dream/releases)
-[![size](https://img.shields.io/github/languages/code-size/nineya/halo-theme-dream?style=flat-square)](https://github.com/nineya/halo-theme-dream/releases)
-[![commits](https://img.shields.io/github/last-commit/nineya/halo-theme-dream.svg?style=flat-square)](https://github.com/nineya/halo-theme-dream/commits)
-[![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/nineya/halo-theme-dream#donate)
-
+<a href="https://github.com/nineya/halo-theme-dream/releases"><img alt="releases" src="https://img.shields.io/github/release/nineya/halo-theme-dream.svg?style=flat-square"/></a>
+<a href="https://github.com/nineya/halo-theme-dream/blob/master/LICENSE"><img alt="license" src="https://img.shields.io/github/license/nineya/halo-theme-dream?style=flat-square"/></a>
+<a href="https://github.com/nineya/halo-theme-dream/releases"><img alt="downloads" src="https://img.shields.io/github/downloads/nineya/halo-theme-dream/total.svg?style=flat-square"/></a>
+<a href="https://github.com/nineya/halo-theme-dream/releases"><img alt="size" src="https://img.shields.io/github/languages/code-size/nineya/halo-theme-dream?style=flat-square"/></a>
+<a href="https://github.com/nineya/halo-theme-dream/commits"><img alt="commits" src="https://img.shields.io/github/last-commit/nineya/halo-theme-dream.svg?style=flat-square"/></a>
+<a href="https://github.com/nineya/halo-theme-dream#donate"><img alt="donate" src="https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square"/></a>
 </p>
 
 ## 说明
