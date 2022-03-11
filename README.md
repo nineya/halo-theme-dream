@@ -1,8 +1,9 @@
 <p align="center">
 <img src="https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream/screenshot.png" alt="halo-theme-dream" width="180">
-  
+</p>
 <h1 align="center">halo-theme-dream</h1>
 
+<p align="center">
 <a href="https://github.com/nineya/halo-theme-dream/releases"><img alt="releases" src="https://img.shields.io/github/release/nineya/halo-theme-dream.svg?style=flat-square"/></a>
 <a href="https://github.com/nineya/halo-theme-dream/blob/master/LICENSE"><img alt="license" src="https://img.shields.io/github/license/nineya/halo-theme-dream?style=flat-square"/></a>
 <a href="https://github.com/nineya/halo-theme-dream/releases"><img alt="downloads" src="https://img.shields.io/github/downloads/nineya/halo-theme-dream/total.svg?style=flat-square"/></a>
