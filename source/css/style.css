@@ -63,7 +63,6 @@ textarea {
     align-self: flex-start;
     position: -webkit-sticky;
     position: sticky;
-    top: 0.75rem;
   }
 
   .column-right-shadow.is-sticky {
@@ -130,6 +129,11 @@ img.thumbnail {
 
 .navbar-main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-top {
+  position: sticky;
+  top: 0;
 }
 
 .navbar-main .navbar-menu,
@@ -747,15 +751,6 @@ body:before {
 .card.card-transparent .level-end,
 .card.card-transparent .card.card-transparent .level-start {
   overflow: hidden;
-}
-
-@media screen and (min-width: 769px) {
-  .column-left.is-sticky,
-  .column-main.is-sticky,
-  .column-right-shadow.is-sticky,
-  .column-right.is-sticky {
-    top: 10px;
-  }
 }
 
 .article .content {

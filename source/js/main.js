@@ -13,6 +13,17 @@
     if (!urlstatus) {
         $(".navbar-start a").eq(0).addClass('is-active');
     }
+    // 多行显示时，滚动折叠网站logo
+    $(document).scroll(function() {
+        if($(window).width() < 1024) {
+            var afterScrollTop = $(document).scrollTop()
+            if(afterScrollTop<=0){
+                $(".navbar-top>.container .navbar-brand").stop().fadeIn(500);
+            }else{
+                $(".navbar-top>.container .navbar-brand").stop().fadeOut(500);
+            }
+        }
+    });
     // 用链接和标题包装图像
     $('.article img:not(".not-gallery-item")').each(function () {
         if ($(this).parent('a').length === 0) {

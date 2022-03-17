@@ -1,5 +1,5 @@
 <#macro navbar>
-<nav class="navbar navbar-main">
+<nav class="navbar navbar-main${(settings.navbar_top??&&settings.navbar_top)?string(' navbar-top"','')}">
     <div class="container">
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="${context!}">

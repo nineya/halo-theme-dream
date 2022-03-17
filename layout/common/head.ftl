@@ -38,6 +38,14 @@
                 background-image: url("${settings.background_mobile!}");
             }
         }
+        @media screen and (min-width: 769px) {
+            .column-left.is-sticky,
+            .column-main.is-sticky,
+            .column-right-shadow.is-sticky,
+            .column-right.is-sticky {
+                top: ${(settings.navbar_top??&&settings.navbar_top)?string('70','10')}px;
+            }
+        }
     </style>
 	
     <#if is_post?? || is_sheet?? || is_photos?? >
