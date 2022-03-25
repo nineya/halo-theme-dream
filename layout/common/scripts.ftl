@@ -4,7 +4,6 @@
 <#include "../plugin/mathjax.ftl">
 <#include "../plugin/back-to-top.ftl">
 <#include "../plugin/sakura.ftl">
-<#include "../plugin/snow.ftl">
 <#include "../plugin/live2d.ftl">
 <#include "../plugin/baidu-push.ftl">
 <#include "../plugin/toutiao-push.ftl">
