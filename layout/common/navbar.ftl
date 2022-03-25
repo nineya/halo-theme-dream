@@ -1,5 +1,5 @@
 <#macro navbar>
-<nav class="navbar navbar-main${(settings.navbar_top??&&settings.navbar_top)?string(' navbar-top"','')}">
+<nav class="navbar navbar-main${(settings.navbar_show??&&settings.navbar_show!='normal')?string(' navbar-fixed' + (settings.navbar_show??&&settings.navbar_show=='dynamic')?string(' navbar-dynamic',''),'')}">
     <div class="container">
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="${context!}">

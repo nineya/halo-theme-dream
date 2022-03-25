@@ -13,17 +13,34 @@
     if (!urlstatus) {
         $(".navbar-start a").eq(0).addClass('is-active');
     }
+    let initTop = 0
+    // true：上划，false：下滑
+    function scrollDirection (currentTop) {
+        const result = currentTop > initTop
+        initTop = currentTop
+        return result
+    }
+    var flag = false;
     // 多行显示时，滚动折叠网站logo
     $(document).scroll(function() {
-        if($(window).width() < 1024) {
-            var afterScrollTop = $(document).scrollTop()
-            if(afterScrollTop<=0){
-                $(".navbar-top>.container .navbar-brand").stop().fadeIn(500);
-            }else{
-                $(".navbar-top>.container .navbar-brand").stop().fadeOut(500);
+        var scrollTop = $(document).scrollTop()
+        const direction = scrollDirection(scrollTop);
+        if($(window).width() < 1024 && !flag) {
+            if(scrollTop<=100){
+                flag = true;
+                $(".navbar-fixed>.container .navbar-brand").slideDown(200, function(){flag = false});
+            }else if(scrollTop>150){
+                flag = true;
+                $(".navbar-fixed>.container .navbar-brand").slideUp(200, function(){flag = false});
             }
         }
+        if (direction && scrollTop>150) {
+            $(".navbar-dynamic").addClass("move-up");
+        } else {
+            $(".navbar-dynamic").removeClass("move-up");
+        }
     });
+
     // 用链接和标题包装图像
     $('.article img:not(".not-gallery-item")').each(function () {
         if ($(this).parent('a').length === 0) {

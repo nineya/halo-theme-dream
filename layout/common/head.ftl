@@ -43,7 +43,7 @@
             .column-main.is-sticky,
             .column-right-shadow.is-sticky,
             .column-right.is-sticky {
-                top: ${(settings.navbar_top??&&settings.navbar_top)?string('70','10')}px;
+                top: ${(settings.navbar_show??&&settings.navbar_show == 'fixed')?string('70','10')}px;
             }
         }
     </style>
