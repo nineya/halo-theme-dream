@@ -30,6 +30,12 @@ basic:
       type: attachment
       placeholder: '移动端博客背景图'
       default: 'https://api.btstu.cn/sjbz/?lx=dongman&format=images&method=mobile'
+    page_number:
+      name: page_number
+      label: 分页页码数量
+      type: text
+      placeholder: '分页页码数量'
+      default: '5'
     link_comment_id:
       name: link_comment_id
       label: 友链界面评论区ID

@@ -44,7 +44,7 @@
     <#if journals.getTotalPages() gt 1>
         <div class="card card-transparent">
             <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-				<@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="3">
+				<@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="${settings.page_number!5}">
                 <div class="pagination-previous<#if pagination.hasPrev><#else > is-invisible is-hidden-mobile</#if>">
                     <a class="is-flex-grow has-text-black-ter" href="${pagination.prevPageFullPath!}">上一页</a>
                 </div>
