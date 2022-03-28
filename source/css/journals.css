@@ -33,6 +33,7 @@
 .journal .journal-operation {
 	padding: 0 1rem!important;
 	margin-top: 1.2rem!important;
+	user-select: none;
 }
 .journal .journal-operation a {
 	color: #6c757d !important;
@@ -42,6 +43,9 @@
 }
 .journal .journal-operation a i {
 	margin-right: .5rem!important;
+}
+.journal .journal-comment {
+	display: none;
 }
 .night .journal .journal-content {
 	border-bottom: 1px solid #4a4a4a!important;

@@ -21,21 +21,21 @@
 				</div>
 			</div>
 			<#--日志项内容-->
-			<div class="journal-content text-muted pb-3 border-bottom px-2">${journal.content}</div>
+			<div class="journal-content content text-muted pb-3 border-bottom px-2">${journal.content}</div>
 			<#--日志项操作-->
 			<div class="journal-operation text-muted py-2 px-3 mt-3 d-md-block d-flex justify-content-between">
 				<#--日志项的操作 Todo 功能暂不可用-->
 				<span class="mr-4" title="喜欢功能暂不可用">
 					<a href="javascript:void(0)"><i class="far fa-heart"></i>喜欢</a>
 				</span>
-				<span class="mr-4">
+				<span class="mr-4 comment" title="展开评论区">
 					<a><i class="far fa-comment"></i><#if journal.commentCount==0>评论<#else>${journal.commentCount}</#if></a>
 				</span>
 				<span title="分享功能暂不可用">
 					<a href="javascript:void(0)"><i class="fas fa-share"></i>分享</a>
 				</span>
 			</div>
-			<div class="journal-operation text-muted py-2 px-3 mt-3 d-md-block d-flex justify-content-between">
+			<div class="journal-operation journal-comment text-muted py-2 px-3 mt-3 d-md-block d-flex justify-content-between">
 				<halo-comment id="${journal.id?c}" type="journal"/>
 			</div>
         </div>

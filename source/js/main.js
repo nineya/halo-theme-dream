@@ -89,6 +89,10 @@
         }
     }
     rightSetBottom(), $(window).resize(rightSetBottom);
+    // 日志界面的评论区展示和折叠
+    $(".journal-operation .comment").click(function () {
+        $(this).parent().parent().children(".journal-comment").stop().slideToggle(200)
+    })
 })(jQuery);
 /**
  * 博客搭建时间倒计时功能
