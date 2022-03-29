@@ -714,8 +714,8 @@ figure.highlight .section {
 
 @media screen and (min-width: 2200px) {
   .container {
-    max-width: 1900px;
-    width: 1900px;
+    max-width: 1800px;
+    width: 1800px;
   }
 
   .container .column.is-3-widescreen {
