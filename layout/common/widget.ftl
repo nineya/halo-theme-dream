@@ -9,7 +9,10 @@
     <#if settings.sidebar_notice?? && settings.sidebar_notice == position>
         <#include "../widget/notice.ftl">
     </#if>
-    <#if settings.ad_piece?? && settings.ad_piece == position>
+    <#if settings.sidebar_music?? && settings.sidebar_music == position>
+        <#include "../widget/music.ftl">
+    </#if>
+    <#if settings.sidebar_ad_piece?? && settings.sidebar_ad_piece == position>
         <#include "../widget/ad_piece.ftl">
     </#if>
     <#if settings.sidebar_recentpost?? && settings.sidebar_recentpost == position>

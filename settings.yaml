@@ -365,6 +365,16 @@ sidebar:
       label: CSDN
       type: text
       placeholder: 'CSDN 主页'
+    music_config:
+      name: music_config
+      label: 音乐参数配置
+      type: textarea
+      placeholder: '音乐参数配置，(id,server,type为必须值)'
+      default: 'list-folded="true"
+                server="netease"
+                type="playlist"
+                id="7355014621"'
+      description: '详细配置方式见官方文档：<a href="https://github.com/metowolf/MetingJS/" target="_blank">MetingJS 2.0</a>'
     ad_content:
       name: ad_content
       label: 侧边栏广告代码
@@ -406,8 +416,20 @@ sidebar:
           label: 右侧
         - value: none
           label: 关闭
-    ad_piece:
-      name: ad_piece
+    sidebar_music:
+      name: sidebar_music
+      label: 侧边栏音乐
+      type: radio
+      default: none
+      options:
+        - value: left
+          label: 左侧
+        - value: right
+          label: 右侧
+        - value: none
+          label: 关闭
+    sidebar_ad_piece:
+      name: sidebar_ad_piece
       label: 侧边栏广告
       type: radio
       default: none

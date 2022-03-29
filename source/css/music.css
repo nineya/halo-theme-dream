@@ -1,0 +1,30 @@
+.aplayer {
+    background: #00000000;
+    box-shadow: none;
+    margin-top: -1rem;
+    padding-bottom: 0.5rem;
+}
+
+.aplayer .aplayer-list ol li.aplayer-list-light {
+    background: rgba(200, 200, 200, 0.2);
+}
+
+.aplayer.aplayer-withlist .aplayer-info {
+    border-bottom: none;
+}
+
+.aplayer .aplayer-list ol li:hover {
+    background: rgba(200, 200, 200, 0.2);
+}
+
+.aplayer .aplayer-list ol li {
+    border-top: 1px solid rgba(180, 180, 180, 0.2) !important;
+}
+
+.aplayer .aplayer-lrc:before {
+    background: linear-gradient(180deg, #c5c5c52b 0, hsla(0, 0%, 100%, 0)) !important;
+}
+
+.aplayer .aplayer-lrc:after {
+    background: linear-gradient(180deg, hsl(0deg 0% 100% / 0%) 0, hsl(0deg 0% 100% / 23%)) !important;
+}
