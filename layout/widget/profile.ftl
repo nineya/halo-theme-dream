@@ -4,7 +4,7 @@
             <div class="level-item has-text-centered" style="flex-shrink: 1">
                 <div>
                     <figure class="image is-128x128 has-mb-6">
-                        <img id="head_img" class="${((settings.profile_avatar_type!'avatar_square')=='avatar_rounded')?string('is-rounded','')}" src="${user.avatar!}" alt="${user.nickname!}">
+                        <img id="head_img" class="is-rounded" src="${user.avatar!}" alt="${user.nickname!}">
                     </figure>
                     <p class="is-size-4 is-block">
                         ${user.nickname!}

@@ -300,16 +300,6 @@ sidebar:
       label: 博客公告
       type: textarea
       placeholder: 请输入公告内容（html格式）
-    profile_avatar_type:
-      name: profile_avatar_type
-      label: 头像形状
-      type: select
-      default: 'avatar_rounded'
-      options:
-        - value: avatar_rounded
-          label: '圆形'
-        - value: avatar_square
-          label: '方形'
     color_character:
       name: color_character
       label: 彩字内容
