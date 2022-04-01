@@ -7,6 +7,16 @@ html {
 
 body {
   background-color: #f7f7f7;
+  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+}
+
+section{
+  flex: 1;
 }
 
 body,
