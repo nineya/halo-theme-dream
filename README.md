@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream/screenshot.png" alt="halo-theme-dream" width="180">
+<img src="https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream@1.0/screenshot.png" alt="halo-theme-dream" width="180">
 </p>
 <h1 align="center">halo-theme-dream</h1>
 
@@ -26,7 +26,7 @@
 
 **预览：**
 
-![玖涯博客](https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream/preview.png)
+![玖涯博客](https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream@1.0/preview.png)
 
 > 本主题由 Hexo 主题 Icarus 移植改造而来，官方主题请移步 [ppoffice/hexo-theme-icarus](https://github.com/ppoffice/hexo-theme-icarus)。
 
