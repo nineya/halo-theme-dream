@@ -1,9 +1,9 @@
-<#include "layout/layout.ftl">
-<#include "layout/common/article.ftl">
+<#include "template/layout.ftl">
+<#include "template/common/article.ftl">
 <@layout title="分类 - ${blog_title!}" canonical="${categories_url!}">
 <@categoryTag method="list">
 <#if categories?? && categories?size gt 0>
-    <#include "layout/categories.ftl">
+    <#include "template/categories.ftl">
 <#else>
 <div class="card widget none">
 	<div class="card-content">

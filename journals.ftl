@@ -1,7 +1,7 @@
-<#include "layout/layout.ftl">
-<#include "layout/common/article.ftl">
+<#include "template/layout.ftl">
+<#include "template/common/article.ftl">
 <@layout title="日志 - ${blog_title!}" canonical="${journals_url!}">
-<link rel="stylesheet" href="${theme_base!}/source/css/journals.css">
+<link rel="stylesheet" href="${theme_base!}/src/css/journals.css">
 <script src="//cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
 <script src="${options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js'}"></script>
 <#if (journals.content)?? && journals.content?size gt 0>

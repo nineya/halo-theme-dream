@@ -4,7 +4,7 @@
         <div class="menu">
         </div>
     </div>
-<script src="${theme_base!}/source/js/btoc.js"></script>
+<script src="${theme_base!}/src/js/btoc.js"></script>
 <script>
 Btoc.init({
     tocList: ['h1','h2','h3','h4','h5'],

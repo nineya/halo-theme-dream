@@ -3,7 +3,7 @@
 <#macro errorpage etitle,desc,status,content,message>
 <@layout title="${status!}错误 - ${blog_title!}" canonical="${blog_url!}/${status!}">
 <link rel="stylesheet" type="text/css" href="${theme_base!}/source/plugins/highlightjs/styles/${settings.code_pretty!'atom-one-light'}.min.css">
-<link rel="stylesheet" type="text/css" href="${theme_base!}/source/css/post.css" />
+<link rel="stylesheet" type="text/css" href="${theme_base!}/src/css/post.css" />
 <div class="card">
   	<div class="card-content">
       	<h2 class="title is-size-4 is-size-5-mobile has-text-weight-normal">${status!}错误 - ${etitle!}</h2>
@@ -21,7 +21,7 @@
 	</div>
 	<script src="${theme_base!}/source/plugins/highlightjs/highlight.min.js"></script>
 	<script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
-	<script type="text/javascript" src="${theme_base!}/source/js/post.js"></script>
+	<script type="text/javascript" src="${theme_base!}/src/js/post.js"></script>
 </div>
 <@postTag method="latest" top="6">
 <#if posts?? && posts?size gt 0>

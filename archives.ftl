@@ -1,5 +1,5 @@
-<#include "layout/layout.ftl">
-<#include "layout/common/article.ftl">
+<#include "template/layout.ftl">
+<#include "template/common/article.ftl">
 <@layout title="归档 - ${blog_title!}" canonical="${archives_url!}">
 <#if (archives)?? && archives?size gt 0>
 <#list archives as archive>

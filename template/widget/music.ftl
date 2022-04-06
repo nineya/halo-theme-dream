@@ -8,7 +8,7 @@
             </meting-js>
         </div>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-        <link rel="stylesheet" href="${theme_base!}/source/css/music.css">
+        <link rel="stylesheet" href="${theme_base!}/src/css/music.css">
         <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
     </div>

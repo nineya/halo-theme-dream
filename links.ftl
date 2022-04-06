@@ -1,4 +1,4 @@
-<#include "layout/layout.ftl">
+<#include "template/layout.ftl">
 <@layout title="友链 - ${blog_title!}" canonical="${links_url!}">
     <div class="card">
         <#if settings.links_thumbnail?? && settings.links_thumbnail!=''>

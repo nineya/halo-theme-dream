@@ -1,6 +1,6 @@
-<#include "layout/layout.ftl">
+<#include "template/layout.ftl">
 <@layout title="相册 - ${blog_title!}" canonical="${photos_url!}">
-<link rel="stylesheet" href="${theme_base!}/source/css/photos.css">
+<link rel="stylesheet" href="${theme_base!}/src/css/photos.css">
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     if (typeof ($.fn.lightGallery) === 'function') {

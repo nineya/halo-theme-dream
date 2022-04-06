@@ -1,0 +1,26 @@
+{
+  "name": "halo-theme-dream",
+  "version": "2.0.0",
+  "description": "梦之城，童话梦境，动漫类型博客主题。",
+  "main": "index.js",
+  "author": "nineya",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nineya/halo-theme-dream.git"
+  },
+  "keywords": [
+    "halo",
+    "dream",
+    "nineya",
+    "halo-theme",
+    "halo-theme-dream"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nineya/halo-theme-dream/issues"
+  },
+  "homepage": "https://github.com/nineya/halo-theme-dream#readme"
+}

@@ -1,8 +1,8 @@
-<#include "layout/layout.ftl">
-<#include "layout/common/article.ftl">
+<#include "template/layout.ftl">
+<#include "template/common/article.ftl">
 <@layout title="分类：${category.name!} - ${blog_title!}" canonical="${category.fullPath!}">
 <#if (posts.content)?? && posts.content?size gt 0>
-    <#include "layout/category.ftl">
+    <#include "template/category.ftl">
 <#else>
 <div class="card widget none">
 	<div class="card-content">

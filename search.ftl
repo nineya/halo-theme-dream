@@ -1,5 +1,5 @@
-<#include "layout/layout.ftl">
-<#include "layout/common/article.ftl">
+<#include "template/layout.ftl">
+<#include "template/common/article.ftl">
 <@layout title="搜索：${keyword} - ${blog_title!}" canonical="${blog_url!}/search?keyword=${keyword}">
 <#if (posts.content)?? && posts.content?size gt 0>
     <#list posts.content as post>

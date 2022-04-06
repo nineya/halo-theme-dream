@@ -1,8 +1,8 @@
-<#include "layout/layout.ftl">
-<#include "layout/common/article.ftl">
+<#include "template/layout.ftl">
+<#include "template/common/article.ftl">
 <@layout title="标签：${tag.name!} - ${blog_title!}" canonical="${tag.fullPath!}">
 <#if (posts.content)?? && posts.content?size gt 0>
-    <#include "layout/tag.ftl">
+    <#include "template/tag.ftl">
 <#else>
 <div class="card widget none">
 	<div class="card-content">
