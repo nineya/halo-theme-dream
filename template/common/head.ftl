@@ -22,46 +22,7 @@
 
     <@global.head />
 
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bulma@0.7.5/css/bulma.min.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.4.1/css/all.min.css">
-    <link rel="stylesheet" href="//fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro">
-
-    <style>
-        body>.footer, body>.navbar, body>.section {
-            opacity: 0
-        }
-        body:before {
-            background: url("${settings.background_pc!}") center 0 no-repeat;
-        }
-        @media screen and (max-width: 768px) {
-            body:before {
-                background-image: url("${settings.background_mobile!}");
-            }
-        }
-        @media screen and (min-width: 769px) {
-            .column-left.is-sticky,
-            .column-main.is-sticky,
-            .column-right-shadow.is-sticky,
-            .column-right.is-sticky {
-                top: ${(settings.navbar_show??&&settings.navbar_show == 'fixed')?string('70','10')}px;
-            }
-        }
-    </style>
-	
-    <#if is_post?? || is_sheet?? || is_photos?? >
-        <link rel="stylesheet" href="${theme_base!}/source/plugins/lightGallery/css/lightgallery.css">
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-    </#if>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
-
-    <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-    <link rel="stylesheet" href="${theme_base!}/src/css/progressbar.css">
-
-    <link rel="stylesheet" href="${theme_base!}/src/css/style.css">
-    <link rel="stylesheet" href="${theme_base!}/src/css/back-to-top.css">
-    <link rel="stylesheet" href="${theme_base!}/src/css/search.css">
-	<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <#if post??>
-        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/${settings.code_pretty!'atom-one-light'}.min.css">
-        <link rel="stylesheet" type="text/css" href="${theme_base!}/src/css/post.css" />
-    </#if>
+    <link rel="stylesheet" href="${theme_base!}/source/css/theme.min.css">
+    <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/style.min.css">
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>

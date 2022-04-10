@@ -1,19 +1,19 @@
 <#macro layout title,canonical>
-<#include "common/navbar.ftl">
 <#include "common/widget.ftl">
+<#import "common/navbar.ftl" as nav>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
     <#include "common/head.ftl">
 </head>
-<body class="is-3-column">
+<body>
+    <@nav.navbar/>
 
     <!-- night mode -->
     <script type="text/javascript" src="${theme_base!}/src/js/night.js"></script>
     <canvas id="universe"></canvas>
     <script type="text/javascript" src="${theme_base!}/src/js/universe.js"></script>
     <!-- night mode -->
-    <@navbar/>
     <section class="section">
         <div class="container">
             <div class="columns">
@@ -26,9 +26,9 @@
         </div>
     </section>
     <#include "common/footer.ftl">
-    <#include "common/scripts.ftl">
 
     <#include "search/local.ftl">
+    <#include "common/scripts.ftl">
 </body>
 </html>
 </#macro>
