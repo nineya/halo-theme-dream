@@ -1,6 +1,6 @@
-$(document).pjax("a[target!=_blank]", "body", {
+$(document).pjax("a[target!=_blank]", ".section", {
 	scrollTo: $("body").offsetTop - 60,
-	fragment: "body",
+	fragment: ".section",
 	timeout: 5000,
 });
 
@@ -13,7 +13,7 @@ $(document).pjax("a[target!=_blank]", "body", {
 // pjax开始
 $(document).on("pjax:send", function () {
 	// NProgress.start();
-	if ($("#js-toc").length) tocbot.destroy();
+	// if ($("#js-toc").length) tocbot.destroy();
 	$("html, body").animate(
 		{
 			scrollTop: $("body").position().top - 60,
