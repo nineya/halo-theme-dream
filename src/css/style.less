@@ -327,7 +327,7 @@ table td, table th {
     .navbar-item {
       display: flex;
       align-items: center;
-      padding: 1.25rem 0.75rem;
+      padding: 0 .75rem;
       flex-grow: 0;
       flex-shrink: 0;
       color: #4a4a4a;
@@ -552,7 +552,16 @@ table td, table th {
 
   .navbar-search {
     padding-right: 0.75rem;
+
+    .submit {
+      width: 50px;
+    }
+
+    &-mobile .submit {
+      width: 80px;
+    }
   }
+
 
   .navbar-search,
   .navbar-search-mobile {
@@ -600,7 +609,6 @@ table td, table th {
     .submit {
       position: relative;
       z-index: 1;
-      width: 50px;
       height: 34px;
       color: #fff;
       border: none;
@@ -1222,6 +1230,63 @@ table td, table th {
   }
 }
 
+.pagination {
+  font-size: 1rem;
+  margin: -.25rem;
+
+  &, &-list {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  &-link.is-current {
+    background-color: #5d93db;
+    border-color: #4382d6;
+    color: #fff;
+  }
+
+  .pagination.is-centered .pagination-list {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  &-link:not(.is-current), .pagination-previous, .pagination-next {
+    background: #fff;
+    border: none;
+  }
+
+  &-link, &-next, &-previous {
+    color: #363636;
+    min-width: 2.25em;
+    font-size: 1em;
+    justify-content: center;
+    margin: .25rem;
+    padding-left: .5em;
+    padding-right: .5em;
+    text-align: center;
+    padding-bottom: calc(.375em - 1px);
+    padding-top: calc(.375em - 1px);
+    position: relative;
+    vertical-align: top;
+    align-items: center;
+    border-radius: 4px;
+    line-height: 1.5;
+    height: 2.25em;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 5%);
+    display: inline-flex;
+    a {
+      color: #363636;
+    }
+  }
+}
+
 .joe_header {
 
   .full {
@@ -1696,7 +1761,7 @@ table td, table th {
   .navbar {
 
     .navbar-search .input {
-      width: 80px;
+      width: 100px;
     }
   }
 
@@ -1776,10 +1841,24 @@ table td, table th {
     .columns {
       display: flex;
     }
+
     .column-main.is-sticky, .column-left.is-sticky, .column-right.is-sticky, .column-right-shadow.is-sticky {
       align-self: flex-start;
       position: -webkit-sticky;
       position: sticky;
+      top: 10px;
+    }
+    .pagination.is-centered .pagination-previous {
+      order: 1;
+    }
+    .pagination.is-centered .pagination-list {
+      flex-grow: 1;
+      flex-shrink: 1;
+      justify-content: center;
+      order: 2;
+    }
+    .pagination.is-centered .pagination-next {
+      order: 3;
     }
   }
 }

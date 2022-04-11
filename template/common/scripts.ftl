@@ -13,3 +13,5 @@
     <script src="${theme_base!}/src/js/toc.js"></script>
 </#if>
 <script src="${theme_base!}/source/js/common.min.js"></script>
+<script src="//cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.0/jquery.pjax.min.js"></script>
+<script src="${theme_base!}/source/js/pjax.min.js"></script>
