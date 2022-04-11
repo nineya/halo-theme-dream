@@ -1,5 +1,5 @@
 <#macro widget position>
-<aside class="column column-side <#if position=='right'>is-hidden-touch is-hidden-desktop-only</#if> <#if position == 'left'>has-order-1<#else>has-order-3</#if> column-${position} <#if position == 'left'><#if settings.left_sidebar_sticky?? && settings.left_sidebar_sticky == 'top'>is-sticky</#if><#if settings.left_sidebar_sticky?? && settings.left_sidebar_sticky == 'bottom'>is-sticky left-bottom</#if><#else><#if settings.right_sidebar_sticky?? && settings.right_sidebar_sticky == 'top'>is-sticky</#if><#if settings.right_sidebar_sticky?? && settings.right_sidebar_sticky == 'bottom'>is-sticky right-bottom</#if></#if>">
+<aside class="column column-side column-${position} <#if position == 'left'><#if settings.left_sidebar_sticky?? && settings.left_sidebar_sticky == 'top'>is-sticky</#if><#if settings.left_sidebar_sticky?? && settings.left_sidebar_sticky == 'bottom'>is-sticky left-bottom</#if><#else><#if settings.right_sidebar_sticky?? && settings.right_sidebar_sticky == 'top'>is-sticky</#if><#if settings.right_sidebar_sticky?? && settings.right_sidebar_sticky == 'bottom'>is-sticky right-bottom</#if></#if>">
     <#if settings.sidebar_profile?? && settings.sidebar_profile == position>
         <#include "../widget/profile.ftl">
     </#if>

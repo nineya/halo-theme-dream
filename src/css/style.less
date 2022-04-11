@@ -1191,7 +1191,7 @@ table td, table th {
     background: #00000000;
     box-shadow: none;
     padding: 0.5rem 0;
-    margin: 0;
+    margin: 0 0 0 5px;
 
     .aplayer-list ol li {
       border-top: 1px solid rgba(180, 180, 180, 0.2) !important;
@@ -1700,7 +1700,7 @@ table td, table th {
     }
   }
 
-  .is-hidden-touch {
+  .column-right {
     display: none !important;
   }
 }
@@ -1731,6 +1731,7 @@ table td, table th {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    top: 10px;
 
     .navbar-slideicon {
       display: block;
@@ -1774,6 +1775,11 @@ table td, table th {
 
     .columns {
       display: flex;
+    }
+    .column-main.is-sticky, .column-left.is-sticky, .column-right.is-sticky, .column-right-shadow.is-sticky {
+      align-self: flex-start;
+      position: -webkit-sticky;
+      position: sticky;
     }
   }
 }
