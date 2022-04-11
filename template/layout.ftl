@@ -17,7 +17,7 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+                <div class="column column-main">
                     <#nested />
                 </div>
                 <@widget 'left' />
@@ -26,8 +26,6 @@
         </div>
     </section>
     <#include "common/footer.ftl">
-
-    <#include "search/local.ftl">
     <#include "common/scripts.ftl">
 </body>
 </html>
