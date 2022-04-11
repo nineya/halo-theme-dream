@@ -249,6 +249,54 @@ table td, table th {
   width: auto;
 }
 
+/** bulma 开始 */
+.tag:not(body) {
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  color: #4a4a4a;
+  display: inline-flex;
+  font-size: .75rem;
+  height: 2em;
+  justify-content: center;
+  line-height: 1.5;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  white-space: nowrap;
+}
+
+.level {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.level-item {
+  align-items: center;
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+}
+
+.menu-list {
+  line-height: 1.25;
+
+  a {
+    border-radius: 2px;
+    color: #4a4a4a;
+    display: block;
+    padding: 0.5em 0.75em;
+
+    &:hover {
+      background-color: #f5f5f5;
+      color: #363636;
+    }
+  }
+}
+
+/** bulma 结束 */
+
 .is-invisible {
   visibility: hidden !important;
 }
@@ -264,7 +312,7 @@ table td, table th {
     will-change: opacity, transform;
     background-color: rgba(255, 255, 255, 0.9);
     transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
     min-height: 3.25rem;
 
     .logo-img-dark {
@@ -499,6 +547,11 @@ table td, table th {
       box-shadow: unset;
       border-bottom: 1px solid var(--sib-hover);
     }
+  }
+
+
+  .navbar-search {
+    padding-right: 0.75rem;
   }
 
   .navbar-search,
@@ -1025,10 +1078,9 @@ table td, table th {
 }
 
 .section {
-  padding: 6rem 1.5rem 3rem 1.5rem;
+  padding: 6rem 0.75rem 3rem 0.75rem;
 
   .card {
-    border-radius: 4px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
     transition: background-color 0.5s ease;
     background-color: rgba(255, 255, 255, 0.95);
@@ -1067,13 +1119,13 @@ table td, table th {
 
       .card-title-label {
         margin-right: 5px;
-        font-size: 1.45rem;
+        font-size: 1.3rem;
         color: var(--theme);
       }
     }
 
     &-content {
-      padding: 15px;
+      padding: 0.6em 1em 1em 1em;
     }
   }
 
@@ -1109,6 +1161,8 @@ table td, table th {
   }
 
   .menu-list {
+    line-height: 1.25;
+
     li ul {
       margin-right: 0;
     }
@@ -1608,7 +1662,7 @@ table td, table th {
 
 @media (max-width: (@laptop-min-width - 1)) {
   .navbar .container {
-    padding: 0 15px;
+    padding: 0 1.5rem;
 
     .navbar-searchicon {
       display: block;
