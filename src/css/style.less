@@ -1123,9 +1123,11 @@ table td, table th {
         font-size: 1.3rem;
         color: var(--theme);
       }
-      span{
+
+      span {
         flex: 1;
       }
+
       .card-more {
         font-size: 0.8rem;
         font-weight: 400;
@@ -1183,6 +1185,40 @@ table td, table th {
 
   .has-text-centered figure.image {
     margin: auto;
+  }
+
+  .aplayer {
+    background: #00000000;
+    box-shadow: none;
+    padding: 0.5rem 0;
+    margin: 0;
+
+    .aplayer-list ol li {
+      border-top: 1px solid rgba(180, 180, 180, 0.2) !important;
+
+      &.aplayer-list-light {
+        background: rgba(200, 200, 200, 0.2);
+      }
+
+      &:hover {
+        background: rgba(200, 200, 200, 0.2);
+      }
+
+    }
+
+    &.aplayer-withlist .aplayer-info {
+      border-bottom: none;
+    }
+
+    .aplayer-lrc {
+      &:before {
+        background: linear-gradient(180deg, #c5c5c52b 0, hsla(0, 0%, 100%, 0)) !important;
+      }
+
+      &:after {
+        background: linear-gradient(180deg, hsl(0deg 0% 100% / 0%) 0, hsl(0deg 0% 100% / 23%)) !important;
+      }
+    }
   }
 }
 
