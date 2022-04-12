@@ -8,12 +8,6 @@
 </head>
 <body>
     <@nav.navbar/>
-
-    <!-- night mode -->
-    <script type="text/javascript" src="${theme_base!}/src/js/night.js"></script>
-    <canvas id="universe"></canvas>
-    <script type="text/javascript" src="${theme_base!}/src/js/universe.js"></script>
-    <!-- night mode -->
     <section class="section">
         <div class="container">
             <div class="columns">
@@ -25,6 +19,7 @@
             </div>
         </div>
     </section>
+    <canvas id="universe"></canvas>
     <#include "common/footer.ftl">
     <#include "common/actions.ftl">
     <#include "common/scripts.ftl">

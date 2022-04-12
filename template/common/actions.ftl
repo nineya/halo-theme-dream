@@ -1,5 +1,5 @@
 <div class="actions">
-    <div class="by_rightside_config_hide">
+    <div id="toggle-mode">
         <i class="fa fa-adjust"></i>
 <#--        <button class="darkmode" type="button" title="浅色和深色模式转换"></button>-->
     </div>

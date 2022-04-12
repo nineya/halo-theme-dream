@@ -1,11 +1,27 @@
 const commonContext = {
-
+    /* 初始化主题模式（仅用户模式） */
+    initMode() {
+        let isNight = localStorage.getItem('night');
+        const applyNight = (value) => {
+            if (value !== null && value.toString() === 'true') {
+                document.documentElement.classList.add('night');
+            } else {
+                document.documentElement.classList.remove('night');
+            }
+        }
+        applyNight(isNight);
+        $("#toggle-mode").on('click', function () {
+            isNight = isNight ? isNight.toString() !== 'true' : true;
+            applyNight(isNight);
+            localStorage.setItem('night', isNight);
+        });
+    },
     /* 导航条高亮 */
     initNavbar() {
         const $nav_menus = $(".navbar-nav a");
         const $nav_side_menus = $(".panel-side-menu .link");
         let activeIndex = 0;
-        const { href, pathname } = location;
+        const {href, pathname} = location;
 
         if (pathname && pathname !== "/") {
             $nav_menus.each((index, item) => {
@@ -153,14 +169,16 @@ const commonContext = {
         });
     },
     /* 处理滚动 */
-    initScroll(){
+    initScroll() {
         let initTop = 0
+
         // true：上划，false：下滑
-        function scrollDirection (currentTop) {
+        function scrollDirection(currentTop) {
             const result = currentTop > initTop
             initTop = currentTop
             return result
         }
+
         const handleScroll = () => {
             var scrollTop = $(document).scrollTop()
             const direction = scrollDirection(scrollTop);
@@ -182,14 +200,13 @@ const commonContext = {
     /* 激活全局返回顶部功能 */
     back2Top() {
         $('#back-to-top').on('click', function () {
-            $('body, html').animate({ scrollTop: 0 }, 400);
+            $('body, html').animate({scrollTop: 0}, 400);
         });
     },
 }
 
 !(function () {
-    const omits = [
-    ];
+    const omits = [];
 
     // 当前html加载完执行
     document.addEventListener("DOMContentLoaded", function () {
