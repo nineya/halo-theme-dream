@@ -12,7 +12,7 @@ try {
                     live2d_settings['waifuFontSize'] = "16px",
                     live2d_settings['waifuToolFont'] = "16px",
                     live2d_settings['waifuToolLine'] = "26px",
-                    live2d_settings['waifuEdgeSide'] = "right:10",
+                    live2d_settings['waifuEdgeSide'] = "right:50",
                     live2d_settings['homePageUrl'] = "/",
                     live2d_settings['aboutPageUrl'] = "/about/",
                     /* 在 initModel 前添加 */

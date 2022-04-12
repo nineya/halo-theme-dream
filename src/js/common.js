@@ -165,13 +165,25 @@ const commonContext = {
             var scrollTop = $(document).scrollTop()
             const direction = scrollDirection(scrollTop);
             const $body = $("body");
+            const $actions = $(".actions");
             if (direction) {
                 $body.addClass("move-up");
             } else {
                 $body.removeClass("move-up");
             }
+            if (scrollTop > 100) {
+                $actions.addClass("show");
+            } else {
+                $actions.removeClass("show");
+            }
         }
         document.addEventListener("scroll", handleScroll);
+    },
+    /* 激活全局返回顶部功能 */
+    back2Top() {
+        $('#back-to-top').on('click', function () {
+            $('body, html').animate({ scrollTop: 0 }, 400);
+        });
     },
 }
 
