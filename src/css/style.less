@@ -1432,6 +1432,65 @@ table td, table th {
       }
     }
   }
+
+  .recent-post {
+
+    .list {
+      padding-top: 1px;
+
+      .item {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        line-height: 20px;
+
+        i.fa {
+          color: var(--main);
+          transition: transform 0.3s;
+        }
+
+        &:hover {
+          .link {
+            color: var(--theme);
+
+            &:after {
+              width: 100%;
+            }
+          }
+
+          i.fa {
+            transform: rotate(+135deg);
+            color: var(--theme);
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .link {
+          position: relative;
+          color: var(--main);
+          max-width: 85%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--theme);
+            transition: all 0.35s;
+          }
+        }
+      }
+    }
+  }
 }
 
 .pagination {
