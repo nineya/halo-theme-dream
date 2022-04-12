@@ -116,12 +116,6 @@ task("js", () => {
 	})
 		.pipe(uglify())
 		.pipe(dest(jsPath))
-		.pipe(
-			gzip({
-				threshold: "10kb",
-			})
-		)
-		.pipe(dest(jsPath));
 });
 
 task("zip", () => {

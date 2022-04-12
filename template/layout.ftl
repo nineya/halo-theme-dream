@@ -8,6 +8,7 @@
 </head>
 <body>
     <@nav.navbar/>
+    <canvas id="universe"></canvas>
     <section class="section">
         <div class="container">
             <div class="columns">
@@ -19,7 +20,6 @@
             </div>
         </div>
     </section>
-    <canvas id="universe"></canvas>
     <#include "common/footer.ftl">
     <#include "common/actions.ftl">
     <#include "common/scripts.ftl">

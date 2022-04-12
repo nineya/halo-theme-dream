@@ -2,6 +2,7 @@
 html {
   --theme: #50bfff;
   --main: #606266;
+  --background: rgba(255, 255, 255, 0.93);
   --light-a: #fff;
   --light-b: #f2f6fc;
   --light-c: #ebeef5;
@@ -14,6 +15,21 @@ html {
   &.night {
     --theme: #ebeef5;
     --main: #999;
+    --background: rgba(40,44,52,.5);
 
+    #universe {
+      background: radial-gradient(1600px at 70% 120%, #212750 10%, #020409 100%);
+      display: block;
+      position: fixed;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
   }
 }

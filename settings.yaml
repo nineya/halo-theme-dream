@@ -6,18 +6,6 @@ basic:
       label: 网站副标题
       type: text
       placeholder: '网站副标题'
-    navbar_show:
-      name: navbar_show
-      label: 顶部导航栏展示
-      type: select
-      default: 'normal'
-      options:
-        - value: normal
-          label: '默认模式'
-        - value: dynamic
-          label: '动态展示'
-        - value: fixed
-          label: '固定顶部'
     background_pc:
       name: background_pc
       label: PC端博客背景图
