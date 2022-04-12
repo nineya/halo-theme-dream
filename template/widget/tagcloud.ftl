@@ -1,12 +1,14 @@
 <@tagTag method="list">
     <#if tags?? && tags?size gt 0>
         <div class="card widget">
+            <div class="card-title">
+                <i class="fa fa-cloud card-title-label"></i><span>标签云</span>
+            </div>
             <div class="card-content">
-                <h3 class="menu-label">
-                    标签云
-                </h3>
                 <#list tags as tag>
-                    <a href="${tag.fullPath!}" style="font-size:${tag.postCount+tag.name?length+tag.slug?length}px">${tag.name!}</a>
+                    <#assign size= tag.name?length + tag.slug?length + tag.postCount />
+                    <a href="${tag.fullPath!}"
+                       style="font-size:${(size < 14)?string('14',(size > 32)?string('32',size?string))}px">${tag.name!}</a>
                 </#list>
             </div>
         </div>
