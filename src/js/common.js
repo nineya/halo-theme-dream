@@ -1,9 +1,9 @@
 const commonContext = {
     /* 初始化主题模式（仅用户模式） */
     initMode() {
-        let isNight = localStorage.getItem('night');
+        let isNight = localStorage.getItem('night') || false;
         const applyNight = (value) => {
-            if (value !== null && value.toString() === 'true') {
+            if (value.toString() === 'true') {
                 document.documentElement.classList.add('night');
             } else {
                 document.documentElement.classList.remove('night');

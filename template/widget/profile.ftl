@@ -46,46 +46,46 @@
         </div>
         <div class="level">
             <#if settings.social_github?? && settings.social_github!=''>
-                <a class="level-item button is-white" target="_blank" title="Github主页" href="https://github.com/${settings.social_github}">
+                <a class="level-item button is-transparent" target="_blank" title="Github主页" href="https://github.com/${settings.social_github}">
                     <i class="fa fa-github"></i>
                 </a>
             </#if>
             <#if settings.social_qq?? && settings.social_qq!=''>
-                <a class="level-item button is-white" target="_blank" title="QQ聊天" href="tencent://message/?uin=${settings.social_qq}&Site=&Menu=yes">
+                <a class="level-item button is-transparent" target="_blank" title="QQ聊天" href="tencent://message/?uin=${settings.social_qq}&Site=&Menu=yes">
                     <i class="fa fa-qq"></i>
                 </a>
             </#if>
             <#if settings.social_weibo?? && settings.social_weibo!=''>
-                <a class="level-item button is-white" target="_blank" title="Weibo" href="https://weibo.com/${settings.social_weibo}">
+                <a class="level-item button is-transparent" target="_blank" title="Weibo" href="https://weibo.com/${settings.social_weibo}">
                     <i class="fa fa-weibo"></i>
                 </a>
             </#if>
             <#if settings.social_twitter?? && settings.social_twitter!=''>
-                <a class="level-item button is-white" target="_blank" title="Twitter" href="https://twitter.com/${settings.social_twitter}">
+                <a class="level-item button is-transparent" target="_blank" title="Twitter" href="https://twitter.com/${settings.social_twitter}">
                     <i class="fa fa-twitter"></i>
                 </a>
             </#if>
             <#if settings.social_facebook?? && settings.social_facebook!=''>
-                <a class="level-item button is-white" target="_blank" title="Facebook" href="https://www.facebook.com/${settings.social_facebook}">
+                <a class="level-item button is-transparent" target="_blank" title="Facebook" href="https://www.facebook.com/${settings.social_facebook}">
                     <i class="fa fa-facebook"></i>
                 </a>
             </#if>
             <#if settings.social_email?? && settings.social_email!=''>
-                <a class="level-item button is-white" target="_blank" title="给我发邮件" href="mailto:${settings.social_email}">
+                <a class="level-item button is-transparent" target="_blank" title="给我发邮件" href="mailto:${settings.social_email}">
                     <i class="fa fa-envelope"></i>
                 </a>
             </#if>
             <#if settings.social_telegram?? && settings.social_telegram!=''>
-                <a class="level-item button is-white" target="_blank" title="Telegram" href="https://t.me/${settings.social_telegram}">
+                <a class="level-item button is-transparent" target="_blank" title="Telegram" href="https://t.me/${settings.social_telegram}">
                     <i class="fa fa-telegram"></i>
                 </a>
             </#if>
             <#if settings.social_csdn?? && settings.social_csdn!=''>
-                <a class="level-item button is-white" target="_blank" title="CSDN主页" href="${settings.social_csdn}">
+                <a class="level-item button is-transparent" target="_blank" title="CSDN主页" href="${settings.social_csdn}">
                     <i class="fa fa-copyright"></i>
                 </a>
             </#if>
-            <a class="level-item button is-white" target="_blank" title="RSS订阅" href="${rss_url!}">
+            <a class="level-item button is-transparent" target="_blank" title="RSS订阅" href="${rss_url!}">
                 <i class="fa fa-rss"></i>
             </a>
         </div>

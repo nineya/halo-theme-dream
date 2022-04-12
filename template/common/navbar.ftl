@@ -3,7 +3,7 @@
     <div class="navbar-above">
         <div class="container">
             <i class="fa fa-bars navbar-slideicon"></i>
-            <a class="navbar-item navbar-logo" href="${context!}">
+            <a class="navbar-item" href="${context!}">
                 <#if blog_logo?? && blog_logo!=''>
                     <img class="logo-img" src="${blog_logo!}" alt="${blog_title!}" height="28">
                     <img class="logo-img-dark" src="<#if settings.night_logo?? && settings.night_logo!=''>${settings.night_logo!}<#else>${blog_logo!}</#if>" alt="${blog_title!}" height="28">
