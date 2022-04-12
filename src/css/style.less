@@ -176,6 +176,7 @@ a {
   color: #3273dc;
   cursor: pointer;
   text-decoration: none;
+
   &:hover {
     color: #363636;
   }
@@ -375,12 +376,9 @@ table td, table th {
     top: 0;
     z-index: 100;
     width: 100%;
-    transform: translate3d(0, 0, 0);
-    will-change: opacity, transform;
     background-color: rgba(255, 255, 255, 0.9);
-    transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s;
+    transition: all 0.5s;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
-    min-height: 3.25rem;
 
     .logo-img-dark {
       display: none;
@@ -413,8 +411,8 @@ table td, table th {
         -ms-flex-align: center;
         align-items: center;
         position: relative;
-        height: 60px;
-        line-height: 60px;
+        height: 4rem;
+        line-height: 4rem;
         font-size: 15px;
         padding: 0 8px;
         margin-right: 10px;
@@ -1565,6 +1563,36 @@ table td, table th {
   }
 }
 
+
+.actions {
+  position: fixed;
+  right: -48px;
+  bottom: 40px;
+  z-index: 200;
+  transition: all 0.5s;
+
+  & > div {
+    display: block;
+    margin-bottom: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: var(--theme);
+    color: var(--light-a);
+    text-align: center;
+    font-size: 16px;
+    line-height: 35px;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+body.move-up {
+  .navbar-above {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
 .joe_header {
 
   .full {
@@ -2121,6 +2149,7 @@ table td, table th {
     }
 
     .column-main.is-sticky, .column-left.is-sticky, .column-right.is-sticky, .column-right-shadow.is-sticky {
+      transition: all 0.5s;
       align-self: flex-start;
       position: -webkit-sticky;
       position: sticky;
@@ -2140,6 +2169,14 @@ table td, table th {
 
     .pagination.is-centered .pagination-next {
       order: 3;
+    }
+  }
+
+  body.move-up {
+    .container {
+      .column-main.is-sticky, .column-left.is-sticky, .column-right.is-sticky, .column-right-shadow.is-sticky {
+        top: 1rem;
+      }
     }
   }
 }

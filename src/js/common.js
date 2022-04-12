@@ -152,18 +152,41 @@ const commonContext = {
             $this.toggleClass("in").siblings(".panel-body").stop().toggle("fast");
         });
     },
+    /* 处理滚动 */
+    initScroll(){
+        let initTop = 0
+        // true：上划，false：下滑
+        function scrollDirection (currentTop) {
+            const result = currentTop > initTop
+            initTop = currentTop
+            return result
+        }
+        const handleScroll = () => {
+            var scrollTop = $(document).scrollTop()
+            const direction = scrollDirection(scrollTop);
+            const $body = $("body");
+            if (direction) {
+                $body.addClass("move-up");
+            } else {
+                $body.removeClass("move-up");
+            }
+        }
+        document.addEventListener("scroll", handleScroll);
+    },
 }
 
 !(function () {
     const omits = [
     ];
 
+    // 当前html加载完执行
     document.addEventListener("DOMContentLoaded", function () {
         Object.keys(commonContext).forEach(
             (c) => !omits.includes(c) && commonContext[c]()
         );
     });
 
+    // 所有内容加载完执行
     window.addEventListener("load", function () {
         if (omits.length === 1) {
             commonContext[omits[0]]();
