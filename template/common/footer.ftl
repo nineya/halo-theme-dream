@@ -2,7 +2,7 @@
     <div class="container">
         <div class="level">
             <div>
-                <a class="footer-logo is-block has-mb-6" href="${context!}">
+                <a class="footer-logo" href="${context!}">
                     <#if blog_logo?? && blog_logo!=''>
                         <img class="logo-img" src="${blog_logo!}" alt="${blog_title!}" height="28">
                         <img class="logo-img-dark" src="<#if settings.night_logo?? && settings.night_logo!=''>${settings.night_logo!}<#else>${blog_logo!}</#if>" alt="${blog_title!}" height="28">
@@ -10,7 +10,7 @@
                         ${blog_title!}
                     </#if>
                 </a>
-                <p class="is-size-7">
+                <p>
                     &copy; ${.now?string('yyyy')} ${user.nickname!}&nbsp;
                     Powered by <a href="https://halo.run/" target="_blank">Halo</a> & <a
                             href="https://github.com/nineya/halo-theme-dream" target="_blank">Dream</a>
@@ -45,9 +45,7 @@
                 <@global.footer />
             </div>
             <div>
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                    ${settings.links_footer!}
-                </div>
+                ${settings.links_footer!}
             </div>
         </div>
     </div>

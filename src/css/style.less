@@ -313,6 +313,10 @@ table td, table th {
       background-color: var(--bg-c);
     }
   }
+
+  &.is-large {
+    font-size: 1.5rem;
+  }
 }
 
 .level {
@@ -1606,7 +1610,7 @@ table td, table th {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--background);
   }
 
   &-logo img {
@@ -1615,7 +1619,6 @@ table td, table th {
 
   a:not(.button) {
     color: inherit;
-
     &:hover {
       text-decoration: underline;
     }
@@ -1625,8 +1628,9 @@ table td, table th {
     font-size: 0.85rem !important;
   }
 
-  .field .button {
-    background: 0 0 /* 1 */;
+  .level > div {
+    text-align: center;
+    color: var(--dark-c);
   }
 }
 
@@ -1729,7 +1733,7 @@ body.move-up {
       }
     }
 
-    .columns {
+    .columns,.level {
       display: flex;
     }
 
@@ -1769,10 +1773,6 @@ body.move-up {
 @media (min-width: @laptop-min-width) {
   .container {
     max-width: 960px;
-  }
-
-  .level {
-    display: flex;
   }
 }
 
