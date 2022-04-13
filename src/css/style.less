@@ -1217,9 +1217,17 @@ table td, table th {
         font-weight: 400;
         color: var(--dark-b);
 
-        i.fa {
+        i {
           margin-left: 3px;
           font-size: 1.1rem;
+        }
+
+        &:hover {
+          color: var(--theme);
+
+          i {
+            color: var(--theme);
+          }
         }
       }
     }
@@ -1506,6 +1514,31 @@ table td, table th {
             transition: all 0.35s;
           }
         }
+      }
+    }
+  }
+
+  .tags {
+
+    a {
+      width: unset;
+      margin: 4px;
+      line-height: 1.2;
+      overflow: unset;
+      text-overflow: unset;
+      white-space: unset;
+      text-align: left;
+      display: inline-block;
+      padding: 5px;
+      font-size: 13px;
+      color: var(--dark-b);
+      text-decoration: none;
+      background: var(--bg-d);
+      border: 1px solid var(--dark-d);
+      border-radius: 3px;
+
+      &:hover {
+        color: var(--theme);
       }
     }
   }
