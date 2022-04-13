@@ -112,10 +112,6 @@ li, ol, ul {
   list-style: none
 }
 
-a {
-  text-decoration: none
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
   font-weight: 400;
@@ -173,7 +169,7 @@ section {
 }
 
 a {
-  color: #3273dc;
+  color: var(--theme);
   cursor: pointer;
   text-decoration: none;
 
@@ -1652,6 +1648,7 @@ table td, table th {
 
   a:not(.button) {
     color: inherit;
+
     &:hover {
       text-decoration: underline;
     }
@@ -1766,7 +1763,7 @@ body.move-up {
       }
     }
 
-    .columns,.level {
+    .columns, .level {
       display: flex;
     }
 

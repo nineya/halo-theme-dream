@@ -1,4 +1,16 @@
 const commonContext = {
+    /* 初始化widget */
+    initWidget(){
+        const $columnRight = $('.columns .column-right');
+        const $columnRightShadow = $('.columns .column-right-shadow');
+        // 实现将右边widget拷贝的左边
+        if ($columnRight.length && $columnRightShadow.length && !$columnRightShadow[0].children.length) {
+            for (const child of $columnRight[0].children) {
+                $columnRightShadow[0].append(child.cloneNode(true));
+            }
+        }
+
+    },
     /* 初始化主题模式（仅用户模式） */
     initMode() {
         let isNight = localStorage.getItem('night') || false;
