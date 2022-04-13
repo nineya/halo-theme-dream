@@ -2,9 +2,7 @@
 <#include "template/common/article_list.ftl">
 <@layout title="${blog_title!}" canonical="${blog_url!}">
 <#if posts.content?? && posts.content?size gt 0>
-    <#list posts.content as post>
-        <@article_list post,"null",true />
-    </#list>
+    <@article_list posts/>
     <#if posts.getTotalPages() gt 1>
         <div class="card card-transparent">
             <nav class="pagination is-centered" role="navigation" aria-label="pagination">

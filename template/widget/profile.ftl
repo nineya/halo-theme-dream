@@ -25,19 +25,19 @@
             <div class="level-item">
                 <div>
                     <p class="heading">文章</p>
-                    <p class="title"><@postTag method="count">${count}</@postTag></p>
+                    <p class="value"><@postTag method="count">${count}</@postTag></p>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">分类</p>
-                    <p class="title has-text-weight-normal"><@categoryTag method="count">${count}</@categoryTag></p>
+                    <p class="value"><@categoryTag method="count">${count}</@categoryTag></p>
                 </div>
             </div>
-            <div class="level-item has-text-centered is-marginless">
+            <div class="level-item">
                 <div>
                     <p class="heading">标签</p>
-                    <p class="title has-text-weight-normal"><@tagTag method="count">${count}</@tagTag></p>
+                    <p class="value"><@tagTag method="count">${count}</@tagTag></p>
                 </div>
             </div>
         </nav>

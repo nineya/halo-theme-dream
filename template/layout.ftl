@@ -20,8 +20,8 @@
             </div>
         </div>
     </section>
-    <#include "common/footer.ftl">
     <#include "common/actions.ftl">
+    <#include "common/footer.ftl">
     <#include "common/scripts.ftl">
 </body>
 </html>

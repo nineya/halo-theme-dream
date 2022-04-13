@@ -179,7 +179,7 @@
                 </form>
                 <@tagTag method="list">
                     <#if tags?size gt 0>
-                        <div class="title">
+                        <div class="tag-search">
                             <i class="fa fa-bullseye"></i>标签搜索
                         </div>
                         <ul class="cloud">
