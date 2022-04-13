@@ -5,10 +5,10 @@
 
 <#include "../plugin/animejs.ftl">
 <#include "../plugin/gallery.ftl">
-<#include "../plugin/outdated-browser.ftl">
+<#include "template/plugin/outdated_browser.ftl">
 <#include "../plugin/mathjax.ftl">
 <#include "../plugin/sakura.ftl">
 <#include "../plugin/live2d.ftl">
-<#include "../plugin/baidu-push.ftl">
-<#include "../plugin/toutiao-push.ftl">
-<#include "../plugin/seo360-push.ftl">
+<#include "template/plugin/baidu_push.ftl">
+<#include "template/plugin/toutiao_push.ftl">
+<#include "template/plugin/seo360_push.ftl">

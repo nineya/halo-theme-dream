@@ -1,5 +1,5 @@
-<#include "../layout.ftl">
-<#include "article.ftl">
+<#include "template/layout.ftl">
+<#include "template/common/article_list.ftl">
 <#macro errorpage etitle,desc,status,content,message>
 <@layout title="${status!}错误 - ${blog_title!}" canonical="${blog_url!}/${status!}">
 <link rel="stylesheet" type="text/css" href="${theme_base!}/source/plugins/highlightjs/styles/${settings.code_pretty!'atom-one-light'}.min.css">

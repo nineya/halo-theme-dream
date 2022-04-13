@@ -1,9 +1,9 @@
 <#include "template/layout.ftl">
-<#include "template/common/article.ftl">
+<#include "template/common/article_list.ftl">
 <@layout title="${blog_title!}" canonical="${blog_url!}">
 <#if posts.content?? && posts.content?size gt 0>
     <#list posts.content as post>
-        <@article post,"null",true />
+        <@article_list post,"null",true />
     </#list>
     <#if posts.getTotalPages() gt 1>
         <div class="card card-transparent">

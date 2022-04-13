@@ -1,5 +1,5 @@
 <#macro article post,commentType,index>
-<#include "../comment/comment.ftl">
+<#include "template/comment/comment.ftl">
 <div class="card">
     <#if post.thumbnail?? && post.thumbnail!=''>
         <div class="card-image">
