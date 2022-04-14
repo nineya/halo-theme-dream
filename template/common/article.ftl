@@ -7,8 +7,8 @@
                 </div>
             </div>
         </#if>
-        <div class="card-content main main-content">
-            <h2 class="title">${post.title!}</h2>
+        <div class="card-content main article">
+            <h1 class="title">${post.title!}</h1>
             <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
                 <div class="level-left">
                     <#if index && post.topPriority==1>
@@ -27,7 +27,7 @@
                     <div class="level-item has-text-grey">${(words/150)?int} 分钟 读完 (大约 ${words?c} 个字)</div>
                 </div>
             </div>
-            <div class="content">${post.formatContent!}</div>
+            <div class="main-content">${post.formatContent!}</div>
 
             <#if settings.copyright!true>
                 <!-- 版权界面 -->
