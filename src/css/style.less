@@ -277,10 +277,7 @@ table td, table th {
   height: 2.25em;
   justify-content: flex-start;
   line-height: 1.5;
-  padding-bottom: calc(.375em - 1px);
-  padding-left: calc(.625em - 1px);
-  padding-right: calc(.625em - 1px);
-  padding-top: calc(.375em - 1px);
+  padding: calc(.375em - 1px) calc(.625em - 1px);
   position: relative;
   vertical-align: top;
 
@@ -358,6 +355,26 @@ table td, table th {
 .image {
   display: block;
   position: relative;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+
+  li {
+
+    i {
+      margin-right: 3px;
+    }
+
+    &:not(:last-child)::after {
+      content: "/";
+      color: var(--light-d);
+      padding: 0 5px;
+    }
+  }
 }
 
 /** bulma 结束 */
@@ -1154,7 +1171,7 @@ table td, table th {
 
     & + .card,
     & + .column-right-shadow {
-      margin-top: 1.5rem;
+      margin-top: 1.4rem;
     }
 
     &[style="height: 0px;"] {
@@ -1215,6 +1232,10 @@ table td, table th {
 
     &-content {
       padding: 0.6em 1em 1em 1em;
+
+      &.main-title {
+        padding: 0.6em 1.2em;
+      }
     }
 
     .thumbnail {
@@ -1238,28 +1259,9 @@ table td, table th {
         font-size: .8rem;
         margin-bottom: 8px;
 
-        .items {
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          flex-shrink: 0;
-
-          li {
-
-            i {
-              margin-right: 3px;
-            }
-
-            &:not(:last-child)::after {
-              content: "/";
-              color: var(--light-b);
-              padding: 0 5px;
-            }
-          }
-        }
-
         .level-item a {
           color: inherit;
+
           &:hover {
             color: var(--theme);
           }
@@ -1583,7 +1585,7 @@ table td, table th {
       color: var(--dark-b);
       text-decoration: none;
       background: var(--bg-d);
-      border: 1px solid var(--dark-d);
+      border: 1px solid var(--light-c);
       border-radius: 3px;
 
       &:hover {

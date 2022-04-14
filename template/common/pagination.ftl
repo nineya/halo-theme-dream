@@ -1,8 +1,8 @@
-<#macro pagination method,datas,keyword="",display="5">
+<#macro pagination method,datas,slug="",keyword="",display="5">
     <#if datas.getTotalPages() gt 1>
         <div class="card card-transparent">
             <nav class="pagination" role="navigation" aria-label="pagination">
-                <@paginationTag method="${method}" page="${datas.number}" keyword="${keyword!}" total="${datas.totalPages}" display="${display}">
+                <@paginationTag method="${method}" page="${datas.number}" slug="${slug!}" keyword="${keyword!}" total="${datas.totalPages}" display="${display}">
                     <div class="pagination-previous<#if !pagination.hasPrev> is-invisible is-hidden-mobile</#if>">
                         <a href="${pagination.prevPageFullPath!}">上一页</a>
                     </div>

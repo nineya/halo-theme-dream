@@ -18,7 +18,7 @@
                     <a class="title has-link-black-ter" href="${post.fullPath!}">${post.title!}</a>
                 </h2>
                 <div class="meta">
-                    <ul class="items">
+                    <ul class="breadcrumb">
                         <li><@global.timeline datetime=post.createTime/></li>
                         <li><i class="fa fa-eye"></i>${post.visits?c}</li>
                         <li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li>
