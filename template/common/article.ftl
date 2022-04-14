@@ -1,5 +1,5 @@
 <#macro article post,commentType,index>
-<#include "../common/comment.ftl">
+<#include "comment.ftl">
 <div class="card">
     <#if post.thumbnail?? && post.thumbnail!=''>
         <div class="card-image">
@@ -68,7 +68,7 @@
 		</#if>
 		<#if settings.copyright!true>
 			<!-- 版权界面 -->
-            <#include "../common/copyright.ftl">
+            <#include "template/common/copyright.ftl">
         </#if>
         <#if tags?? && (tags?size gt 0)>
             <div class="level is-size-7 is-uppercase">
@@ -105,10 +105,10 @@
                 <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
                 <div class="buttons is-centered">
                     <#if settings.donate_alipay?? && settings.donate_alipay!=''>
-                        <#include "../donate/alipay.ftl">
+                        <#include "template/donate/alipay.ftl">
                     </#if>
                     <#if settings.donate_wechat?? && settings.donate_wechat!=''>
-                        <#include "../donate/wechat.ftl">
+                        <#include "template/donate/wechat.ftl">
                     </#if>
                 </div>
             </div>
