@@ -11,11 +11,11 @@
                 </div>
             </#if>
             <div class="card-content main">
-                <h2 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+                <h2 class="title">
                     <#if post.topPriority==1>
                         <span class="level-item">置顶</span>
                     </#if>
-                    <a class="title has-link-black-ter" href="${post.fullPath!}">${post.title!}</a>
+                    <a href="${post.fullPath!}">${post.title!}</a>
                 </h2>
                 <div class="meta">
                     <ul class="breadcrumb">
