@@ -5,7 +5,7 @@
             <div class="card-content main-title">
                 <ul class="breadcrumb">
                     <li><a href="${tags_url!}"><i class="fa fa-tags"></i>标签</a></li>
-                    <li class="is-active">${tag.name}</li>
+                    <li>${tag.name}</li>
                 </ul>
             </div>
         </div>
