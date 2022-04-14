@@ -5,7 +5,6 @@
 
 <#include "../plugin/animejs.ftl">
 <#include "../plugin/gallery.ftl">
-<#include "../plugin/outdated_browser.ftl">
 <#include "../plugin/mathjax.ftl">
 <#include "../plugin/sakura.ftl">
 <#include "../plugin/live2d.ftl">

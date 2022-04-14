@@ -35,6 +35,7 @@
                         </div>
                     </#if>
                 </div>
+                <hr/>
                 <div class="content">${post.summary!}</div>
             </div>
         </div>
