@@ -1610,7 +1610,7 @@ table td, table th {
     color: #fff;
   }
 
-  .pagination.is-centered .pagination-list {
+  .pagination .pagination-list {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -1632,11 +1632,8 @@ table td, table th {
     font-size: 1em;
     justify-content: center;
     margin: .25rem;
-    padding-left: .5em;
-    padding-right: .5em;
     text-align: center;
-    padding-bottom: calc(.375em - 1px);
-    padding-top: calc(.375em - 1px);
+    padding: calc(.375em - 1px) .5em;
     position: relative;
     vertical-align: top;
     align-items: center;
@@ -1842,18 +1839,18 @@ body.move-up {
       top: 5rem;
     }
 
-    .pagination.is-centered .pagination-previous {
+    .pagination .pagination-previous {
       order: 1;
     }
 
-    .pagination.is-centered .pagination-list {
+    .pagination .pagination-list {
       flex-grow: 1;
       flex-shrink: 1;
       justify-content: center;
       order: 2;
     }
 
-    .pagination.is-centered .pagination-next {
+    .pagination .pagination-next {
       order: 3;
     }
   }
