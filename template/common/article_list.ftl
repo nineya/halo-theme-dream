@@ -10,7 +10,7 @@
                     </a>
                 </div>
             </#if>
-            <div class="card-content article">
+            <div class="card-content main">
                 <h2 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
                     <#if post.topPriority==1>
                         <span class="level-item">置顶</span>
@@ -27,26 +27,15 @@
                         <#assign heatColor= '#'+(heat < 37)?string('ffa87e',(heat < 120)?string('fb734a','e0081c')) />
                         <li style="color: ${heatColor}">${heat}℃</li>
                     </ul>
-                    <div class="level-left">
-                        <time class="level-item has-text-grey" datetime="${post.createTime!}"></time>
-                        <#if post.categories?? && post.categories?size gt 0>
-                            <div class="level-item">
-                                <#list post.categories as category>
-                                    <a class="has-link-grey" href="${category.fullPath!}">${category.name!}</a>&nbsp;
-                                </#list>
-                            </div>
-                        </#if>
-                    </div>
-                </div>
-                <div class="content">
-                    ${post.formatContent!}
-                    ---------
-                    <#if post.summary?? && post.summary!=''>
-                        ${post.summary!}
-                    <#else>
-                        ${post.formatContent!}
+                    <#if post.categories?? && post.categories?size gt 0>
+                        <div class="level-item">
+                            <#list post.categories as category>
+                                <a href="${category.fullPath!}">${category.name!}</a>&nbsp;
+                            </#list>
+                        </div>
                     </#if>
                 </div>
+                <div class="content">${post.summary!}</div>
             </div>
         </div>
     </#list>

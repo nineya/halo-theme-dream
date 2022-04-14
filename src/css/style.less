@@ -21,7 +21,7 @@
 
 html {
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: var(--bg-f);
   font-size: 14px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -38,7 +38,6 @@ html.disable-scroll, html.disable-scroll body {
 }
 
 body {
-  background-color: #f7f7f7;
   justify-content: space-between;
   -webkit-box-orient: vertical;
   -ms-flex-direction: column;
@@ -53,15 +52,19 @@ body {
 }
 
 ::-webkit-scrollbar {
-  height: 8px
+  height: 8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 4px
+  background: var(--theme);
+  background-image: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 0.4) 25%, transparent 0, transparent 50%, hsla(0, 0%, 100%, 0.4) 0, hsla(0, 0%, 100%, 0.4) 75%, transparent 0, transparent);
+  border-radius: 2em;
 }
 
 ::-webkit-scrollbar-track {
-  background: 0 0
+  background-color: 0 0;
+  border-radius: 2em;
 }
 
 ::-moz-selection {
@@ -1222,7 +1225,7 @@ table td, table th {
       background-size: cover;
     }
 
-    .article {
+    .main {
       .title a {
         color: inherit;
       }
@@ -1231,9 +1234,9 @@ table td, table th {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-top: auto;
         color: var(--dark-b);
         font-size: 13px;
+        margin-bottom: 8px;
 
         .items {
           display: flex;
@@ -1254,6 +1257,18 @@ table td, table th {
             }
           }
         }
+
+        .level-item a {
+          color: inherit;
+          &:hover {
+            color: var(--theme);
+          }
+        }
+      }
+
+      .content {
+        line-height: 1.6rem;
+        font-size: 1.1rem;
       }
     }
   }
@@ -1552,6 +1567,7 @@ table td, table th {
 
   .tags {
     font-size: 0;
+
     a {
       width: unset;
       margin: 4px;
@@ -1880,6 +1896,10 @@ body.move-up {
         width: 50%;
       }
     }
+  }
+
+  .is-hidden-widescreen {
+    display: none !important;
   }
 }
 
