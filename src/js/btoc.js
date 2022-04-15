@@ -102,7 +102,7 @@ const btoc = Btoc.init = function (params) {
 !(function (window, document) {
     Btoc.init({
         tocList: ['h1', 'h2', 'h3', 'h4', 'h5'],
-        contentElement: $('.content')[0],
+        contentElement: $('.main-content')[0],
         tocElement: $('#toc .menu')[0]
     });
     if ($('#toc .menu ul').length === 0) {

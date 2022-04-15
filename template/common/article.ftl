@@ -96,5 +96,5 @@
     </#if>
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js"></script>
     <script src="//cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
-    <script type="text/javascript" src="${theme_base!}/src/js/post.js"></script>
+    <script type="text/javascript" src="${theme_base!}/source/js/post.min.js"></script>
 </#macro>

@@ -26,4 +26,27 @@
 <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="${theme_base!}/source/css/style.min.css">
 <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/${settings.code_pretty!'atom-one-light'}.min.css"/>
+<link rel="stylesheet" type="text/css" href="${theme_base!}/source/css/post.min.css"/>
 <#include "../config.ftl">
+
+<style>
+    body:before {
+        background: url("${settings.background_pc!}") center 0 no-repeat;
+        content: '';
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 1;
+        transition: opacity 1s;
+    }
+    @media screen and (max-width: 768px) {
+        body:before {
+            background-image: url("${settings.background_mobile!}");
+        }
+    }
+</style>
