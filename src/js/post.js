@@ -45,9 +45,9 @@
             if (lineDigit === 1) lineDigit = 2;
             var lis = '';
             for (var i = 0; i < nums; i++) {
-                lis += `<li class="line-number">${String(i + 1).padStart(lineDigit, 0)}</li>`
+                lis += `<li>${String(i + 1).padStart(lineDigit, 0)}</li>`
             }
-            $(this).parent().append(`<ul class="pre-numbering">${lis}</ul>`);
+            $(this).parent().prepend(`<ul>${lis}</ul>`);
         });
     };
     /**
@@ -59,19 +59,15 @@
             let id = `codeBlock${index}`;
             let codeDiv = $(this).children("code");
             codeDiv.attr("id", id);
-            // 复制按钮
-            let clipButton = $(`<a class='btn-clipboard' title="复制代码" data-clipboard-target='#${id}'>
-                    <i class="fa fa-clipboard"></i>
-                </a>`
-            );
-            let arrows = "down";
+            let close = "";
             if (codeDiv.attr("data-close") === "true") {
-                arrows = "right";
+                close = ` close`;
                 codeDiv.hide();
             }
+            // 按钮
+            let clipButton = $(`<div><i class="fa fa-angle-down${close}" data-code='#${id}'></i><i class="fa fa-clipboard btn-clipboard" title="复制代码" data-clipboard-target='#${id}'></i></div>`);
             // 添加复制按钮到页面上
-            $(this).siblings("div.code-head").append(clipButton);
-            $(this).siblings("div.code-head").prepend($(`<span data-code='#${id}'><i class="fa fa-angle-${arrows}"></i></span>`))
+            $(this).siblings("figcaption").append(clipButton);
         });
 
         let clipboard = new ClipboardJS('.btn-clipboard');
@@ -85,12 +81,12 @@
      */
     let displayCodeFormat = (codeSelector) => {
         $(codeSelector).each(function () {
-            $(this).parent().wrap(`<div class='code-format hljs'></div>`);
+            $(this).parent().wrap(`<figure></figure>`);
             let title = $(this).attr("data-title");
             if (title != null) {
-                $(this).parent().parent().prepend(`<div class='code-head'>${title}</div>`);
+                $(this).parent().parent().prepend(`<figcaption>${title}</figcaption>`);
             } else {
-                $(this).parent().parent().prepend(`<div class='code-head'></div>`);
+                $(this).parent().parent().prepend(`<figcaption></figcaption>`);
             }
         });
     };
@@ -105,16 +101,13 @@
     // 5、代码可复制
     clipBoardSupport();
     // 代码块展开和关闭点击事件
-    $(".content .code-format>.code-head>span").on("click", function () {
-        var i = $(this).find('i');
-        if (i.is('.fa-angle-down')) {
-            $($(this).attr('data-code')).hide();
-            i.removeClass('fa-angle-down');
-            i.addClass('fa-angle-right');
+    $(".main-content figure>figcaption .fa-angle-down").on("click", function () {
+        if ($(this).is('.close')) {
+            $($(this).attr('data-code')).parent().slideDown(200);
+            $(this).removeClass('close');
         } else {
-            $($(this).attr('data-code')).show();
-            i.removeClass('fa-angle-right');
-            i.addClass('fa-angle-down');
+            $($(this).attr('data-code')).parent().slideUp(200);
+            $(this).addClass('close');
         }
     });
 })(jQuery);

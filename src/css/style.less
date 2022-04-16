@@ -48,7 +48,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding-bottom: env(safe-area-inset-bottom);
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--theme);
+    background-image: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 0.4) 25%, transparent 0, transparent 50%, hsla(0, 0%, 100%, 0.4) 0, hsla(0, 0%, 100%, 0.4) 75%, transparent 0, transparent);
+  }
 }
 
 ::-webkit-scrollbar {
@@ -57,8 +62,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--theme);
-  background-image: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 0.4) 25%, transparent 0, transparent 50%, hsla(0, 0%, 100%, 0.4) 0, hsla(0, 0%, 100%, 0.4) 75%, transparent 0, transparent);
+  background: rgba(160, 160, 160, .2);
   border-radius: 2em;
 }
 
@@ -218,7 +222,7 @@ fieldset {
 pre {
   -webkit-overflow-scrolling: touch;
   background-color: #f5f5f5;
-  color: #4a4a4a;
+  color: var(--main);
   font-size: .875em;
   overflow-x: auto;
   white-space: pre;
@@ -1168,6 +1172,10 @@ table td, table th {
     word-break: break-all;
     border-radius: var(--radius-wrap);
 
+    &:hover {
+      background-color: var(--background-hover);
+    }
+
     & + .card,
     & + .column-right-shadow {
       margin-top: 1.4rem;
@@ -1230,10 +1238,10 @@ table td, table th {
     }
 
     &-content {
-      padding: 0.6em 1em 1em 1em;
+      padding: 0.6rem 1rem 1rem 1rem;
 
       &.main-title {
-        padding: 0.6em 1.2em;
+        padding: 0.6rem 1.2rem;
       }
     }
 
@@ -1275,7 +1283,7 @@ table td, table th {
     }
 
     .article {
-      padding-top: 1.5em;
+      padding-top: 1.5rem;
     }
   }
 
