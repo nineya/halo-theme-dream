@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* CSS Document */
+.links {
+  margin-bottom: 20px;
+
+  .link-title {
+    font-weight: 400;
+    color: var(--dark-c);
+    padding-left: 0;
+    border-left: none;
+    margin: 50px 0 20px;
+
+    .fake-title {
+      padding-left: 10px;
+      border-left: 3px solid var(--theme);
+    }
+  }
+
+  ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    display: inline-block;
+
+    li {
+      width: 32%;
+      float: left;
+      border: 1px solid var(--light-b);
+      padding: 10px 30px;
+      margin: 4px;
+      position: relative;
+      overflow: hidden;
+      transition: all .3s;
+      border-radius: 10px;
+      height: 100px;
+      box-sizing: border-box;
+      background: var(--bg-d);
+
+      &:hover {
+        border: 1px solid var(--theme);
+
+        &:before {
+          width: 180%;
+        }
+
+        img {
+          transform: rotate(360deg);
+        }
+
+        .link-desc {
+          opacity: 0.6;
+        }
+      }
+
+      &:before {
+        content: "";
+        background-color: var(--theme);
+        transform: skew(45deg, 0);
+        width: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -60px;
+        transition: all .5s;
+        opacity: 0.2;
+      }
+
+      img {
+        float: right;
+        box-shadow: inset 0 0 10px var(--theme);
+        opacity: 1;
+        transform: rotate(0deg);
+        transition: all ease 1s;
+        margin-top: 5px;
+        width: 65px;
+        height: 65px;
+        padding: 2px;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .link-name {
+    color: var(--theme);
+    padding-bottom: 10px;
+    display: block;
+    transition: all .3s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+  }
+
+  .link-desc {
+    color: #949494;
+    font-size: 13px;
+    border-top: 1px dashed var(--light-d);
+    line-height: 25px;
+    transition: all .5s;
+    text-indent: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@media (max-width: 630px) {
+  .links ul li {
+    width: 100% !important
+  }
+}
+
+@media (max-width: 768px) {
+  .links ul li:before {
+    display: none
+  }
+}
+
+@media (max-width: 1600px) {
+  .links ul li {
+    width: 48%
+  }
+}
