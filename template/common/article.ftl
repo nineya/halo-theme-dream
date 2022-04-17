@@ -1,32 +1,52 @@
 <#macro article post,commentType,index>
     <#include "comment.ftl">
-    <div class="card">
-        <#if post.thumbnail?? && post.thumbnail!=''>
-            <div class="card-image">
-                <div class="thumbnail" style="background-image: url(${post.thumbnail!})">
+    <#if post.thumbnail?? && post.thumbnail!=''>
+        <div class="card">
+            <div class="card-image cover" style="background-image: url(${post.thumbnail!})">
+                <#if categories?? && categories?size gt 0>
+                    <div class="category">
+                        <#list categories as category>
+                            <a href="${category.fullPath!}">${category.name!}</a>
+                        </#list>
+                    </div>
+                </#if>
+                <div class="details">
+                    <h1 class="title">${post.title!}</h1>
+                    <ul class="breadcrumb">
+                        <li><@global.timeline datetime=post.createTime/></li>
+                        <li><i class="fa fa-eye"></i>${post.visits?c}</li>
+                        <li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li>
+                        <li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li>
+                        <#assign words= post.formatContent?replace('</?[a-z][^>]*>','','ri')?matches('[\\u00ff-\\uffff]|[a-zA-Z]+')?size />
+                        <li><i class="fa fa-pencil"></i>${words?c}</li>
+                    </ul>
                 </div>
             </div>
-        </#if>
-        <div class="card-content main article">
-            <h1 class="title">${post.title!}</h1>
-            <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-                <div class="level-left">
-                    <#if index && post.topPriority==1>
-                        <span class="level-item">置顶</span>
-                    </#if>
-                    <time class="level-item has-text-grey"
-                          datetime="${post.createTime!}"><@global.timeline datetime=post.createTime/></time>
-                    <#if categories?? && categories?size gt 0>
+        </div>
+    </#if>
+    <div class="card">
+        <div class="card-content main">
+            <#if !post.thumbnail?? || post.thumbnail==''>
+                <h1 class="title">${post.title!}</h1>
+                <div class="meta">
+                    <ul class="breadcrumb">
+                        <li><@global.timeline datetime=post.createTime/></li>
+                        <li><i class="fa fa-eye"></i>${post.visits?c}</li>
+                        <li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li>
+                        <li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li>
+                        <#assign words= post.formatContent?replace('</?[a-z][^>]*>','','ri')?matches('[\\u00ff-\\uffff]|[a-zA-Z]+')?size />
+                        <li><i class="fa fa-pencil"></i>${words?c}</li>
+                    </ul>
+                    <#if post.categories?? && post.categories?size gt 0>
                         <div class="level-item">
-                            <#list categories as category>
-                                <a class="has-link-grey" href="${category.fullPath!}">${category.name!}</a>&nbsp;
+                            <#list post.categories as category>
+                                <a href="${category.fullPath!}">${category.name!}</a>&nbsp;
                             </#list>
                         </div>
                     </#if>
-                    <#assign words= post.formatContent?replace('</?[a-z][^>]*>','','ri')?matches('[\\u00ff-\\uffff]|[a-zA-Z]+')?size />
-                    <div class="level-item has-text-grey">${(words/150)?int} 分钟 读完 (大约 ${words?c} 个字)</div>
                 </div>
-            </div>
+                <hr/>
+            </#if>
             <div class="main-content">${post.formatContent!}</div>
 
             <#if settings.copyright!true>
@@ -69,22 +89,18 @@
 
     <#if nextPost?? || prevPost??>
         <div class="card">
-            <div class="level post-navigation is-flex-wrap is-mobile card-content">
+            <div class="level post-navigation card-content">
                 <#if prevPost??>
-                    <div class="level-start">
-                        <a class="level level-item has-link-grey article-nav-prev" href="${prevPost.fullPath!}">
-                            <i class="level-item fas fa-chevron-left"></i>
-                            <span class="level-item">${prevPost.title!}</span>
-                        </a>
-                    </div>
+                    <a class="level-item" href="${prevPost.fullPath!}">
+                        <i class="fa fa-angle-left"></i>
+                        <span>${prevPost.title!}</span>
+                    </a>
                 </#if>
                 <#if nextPost??>
-                    <div class="level-end">
-                        <a class="level level-item has-link-grey article-nav-next" href="${nextPost.fullPath!}">
-                            <span class="level-item">${nextPost.title!}</span>
-                            <i class="level-item fas fa-chevron-right"></i>
-                        </a>
-                    </div>
+                    <a class="level-item" href="${nextPost.fullPath!}">
+                        <span>${nextPost.title!}</span>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 </#if>
             </div>
         </div>

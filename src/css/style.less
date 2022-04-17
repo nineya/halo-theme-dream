@@ -1192,8 +1192,8 @@ table td, table th {
 
     .card-image {
       overflow: hidden;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
+      border-top-left-radius: var(--radius-inner);
+      border-top-right-radius: var(--radius-inner);
     }
 
     &-title {
@@ -1253,7 +1253,72 @@ table td, table th {
       background-size: cover;
     }
 
+    .cover {
+      min-height: 360px;
+      position: relative;
+      display: block;
+      background-position: 50% 50%;
+      background-size: cover;
+      border-radius: var(--radius-inner);
+
+      .category {
+        position: absolute;
+        right: 0.7em;
+        top: 10px;
+
+        a {
+          color: #fff;
+          background: rgba(0, 0, 0, 0.3);
+          padding: 4px 10px;
+          border-radius: var(--radius-inner);
+
+          &:hover {
+            color: var(--theme);
+          }
+        }
+      }
+
+      .details {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        top: auto;
+        color: #fff;
+        border-radius: 0 0 var(--radius-inner) var(--radius-inner);
+        background-image: linear-gradient(0deg, rgba(29, 41, 49, .5), rgba(255, 255, 255, 0));
+        padding: 2em 15px 15px;
+      }
+
+      .title {
+        color: inherit;
+        position: relative;
+        padding-bottom: 8px;
+        display: inline-block;
+
+        &:hover:before {
+          width: 60px;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          width: 40px;
+          height: 3px;
+          top: auto;
+          left: 0;
+          bottom: 3px;
+          transition: 0.4s;
+          border-radius: 5px;
+          background: var(--theme);
+          box-shadow: 1px 1px 3px -1px var(--theme);
+        }
+
+      }
+    }
+
     .main {
+      padding-top: 1.5rem;
+
       .title a {
         color: inherit;
       }
@@ -1282,8 +1347,24 @@ table td, table th {
       }
     }
 
-    .article {
-      padding-top: 1.5rem;
+    .post-navigation {
+      padding-top: 1rem;
+      justify-content: space-around;
+
+      a {
+        flex-shrink: 1;
+        color: var(--main);
+
+        &:hover {
+          color: var(--theme)
+        }
+
+        i {
+          font-weight: 600;
+          font-size: 1.3em;
+          margin: 0 0.5rem;
+        }
+      }
     }
   }
 
@@ -1747,8 +1828,14 @@ body.move-up {
 }
 
 @media (max-width: (@laptop-min-width - 1)) {
-  .section .card .thumbnail {
-    min-height: 20vw;
+  .section .card {
+    .cover {
+      min-height: 24vw;
+    }
+
+    .thumbnail {
+      min-height: 20vw;
+    }
   }
 
   .navbar .container {
@@ -1817,9 +1904,16 @@ body.move-up {
       padding: 0.5rem;
     }
 
-    .card .thumbnail {
-      height: 32vw;
-      min-height: 95px;
+    .card {
+      .cover {
+        height: 36vw;
+        min-height: 110px;
+      }
+
+      .thumbnail {
+        height: 32vw;
+        min-height: 95px;
+      }
     }
   }
 }
@@ -1878,8 +1972,14 @@ body.move-up {
 }
 
 @media (min-width: @laptop-min-width) {
-  .section .card .thumbnail {
-    min-height: 195px;
+  .section .card {
+    .cover {
+      min-height: 250px;
+    }
+
+    .thumbnail {
+      min-height: 195px;
+    }
   }
 
   .container {
@@ -1888,8 +1988,14 @@ body.move-up {
 }
 
 @media (min-width: @desktop-min-width) {
-  .section .card .thumbnail {
-    min-height: 185px;
+  .section .card {
+    .cover {
+      min-height: 240px;
+    }
+
+    .thumbnail {
+      min-height: 185px;
+    }
   }
 
   .container {
@@ -1915,8 +2021,15 @@ body.move-up {
 }
 
 @media (min-width: 1408px) {
-  .section .card .thumbnail {
-    min-height: 210px;
+  .section .card {
+
+    .cover {
+      min-height: 260px;
+    }
+
+    .thumbnail {
+      min-height: 210px;
+    }
   }
 
   .container {
@@ -1925,8 +2038,14 @@ body.move-up {
 }
 
 @media (min-width: @display-min-width) {
-  .section .card .thumbnail {
-    min-height: 240px;
+  .section .card {
+    .cover {
+      min-height: 320px;
+    }
+
+    .thumbnail {
+      min-height: 240px;
+    }
   }
 
   .container {
