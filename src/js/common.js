@@ -209,6 +209,18 @@ const commonContext = {
         }
         document.addEventListener("scroll", handleScroll);
     },
+    /* 激活图片预览功能 */
+    initGallery() {
+        // 用链接和标题包装图像
+        $('.main img:not(".not-gallery")').each(function () {
+            if ($(this).parent('a').length === 0) {
+                $(this).wrap($(`<span class="gallery-item" data-fancybox="gallery" data-caption="${$(this).attr('alt')}" href="${$(this).attr('src')}"></span>`));
+                if (this.alt) {
+                    $(this).after(`<p>${this.alt}</p>`);
+                }
+            }
+        });
+    },
     /* 激活全局返回顶部功能 */
     back2Top() {
         $('#back-to-top').on('click', function () {

@@ -38,6 +38,7 @@ html.disable-scroll, html.disable-scroll body {
 }
 
 body {
+  margin: 0 !important;
   justify-content: space-between;
   -webkit-box-orient: vertical;
   -ms-flex-direction: column;
@@ -1242,6 +1243,25 @@ table td, table th {
 
       &.main-title {
         padding: 0.6rem 1.2rem;
+      }
+
+      img {
+        width: 100%;
+        transition: all 0.35s;
+        margin: 5px 0;
+        border-radius: var(--radius-img);
+        cursor: zoom-in;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 34px 20px -24px rgb(136 161 206 / 30%);
+        }
+      }
+
+      .gallery-item > p {
+        text-align: center;
+        color: var(--dark-d);
+        line-height: 1rem;
       }
     }
 
