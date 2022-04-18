@@ -4,11 +4,9 @@
     <@layout title="${status!}错误 - ${blog_title!}" canonical="${blog_url!}/${status!}">
         <link rel="stylesheet" type="text/css"
               href="${theme_base!}/source/plugins/highlightjs/styles/${settings.code_pretty!'atom-one-light'}.min.css">
-        <link rel="stylesheet" type="text/css" href="${theme_base!}/src/css/post.css"/>
+        <link rel="stylesheet" type="text/css" href="${theme_base!}/src/css/post.min.css"/>
         <div class="card">
-            <div class="card-content">
-                <h2 class="title is-size-4 is-size-5-mobile has-text-weight-normal">${status!}错误 - ${etitle!}</h2>
-            </div>
+            <div class="title card-content main-title">${status!}错误 - ${etitle!}</div>
         </div>
         <div class="card">
             <div class="card-content">
@@ -27,9 +25,7 @@
         <@postTag method="latest" top="6">
             <#if posts?? && posts?size gt 0>
                 <div class="card">
-                    <div class="card-content">
-                        <h2 class="title">最新文章推荐</h2>
-                    </div>
+                    <div class="title card-content main-title">最新文章推荐</div>
                 </div>
                 <@article_list posts />
             </#if>
