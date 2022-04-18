@@ -6,6 +6,11 @@ basic:
       label: 网站副标题
       type: text
       placeholder: '网站副标题'
+    night_logo:
+      name: night_logo
+      label: 黑夜模式的logo(放空默认为网站logo)
+      type: attachment
+      placeholder: '黑夜模式的logo'
     enable_image_bg:
       name: enable_image_bg
       label: 开启全局背景图片
@@ -97,11 +102,6 @@ basic:
           label: 开启
         - value: false
           label: 关闭
-    night_logo:
-      name: night_logo
-      label: 黑夜模式的logo(放空默认为网站logo)
-      type: attachment
-      placeholder: '黑夜模式的logo'
 post:
   label: 文章设置
   items:

@@ -42,7 +42,7 @@
 					</#if>
                     <br />
                 </p>
-                <@global.footer />
+                <@global.footer_info />
             </div>
             <div>
                 ${settings.links_footer!}

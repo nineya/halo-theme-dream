@@ -1,5 +1,5 @@
 <#if (is_post?? || is_sheet??) && settings.mathjax_enable!false>
-    <script src="//cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+    <script defer src="//cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
         MathJax.Hub.Config({

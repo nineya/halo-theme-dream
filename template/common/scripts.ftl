@@ -1,10 +1,12 @@
 <script src="${theme_base!}/source/js/common.min.js"></script>
-<script type="text/javascript" src="${theme_base!}/source/js/universe.min.js"></script>
+<script async type="text/javascript" src="${theme_base!}/source/js/universe.min.js"></script>
 <script src="//cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.0/jquery.pjax.min.js"></script>
 <script src="${theme_base!}/source/js/pjax.min.js"></script>
 
-<#include "../plugin/animejs.ftl">
-<#include "../plugin/gallery.ftl">
+<#if is_post?? || is_sheet?? || is_photos?? >
+    <script async src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+</#if>
+
 <#include "../plugin/mathjax.ftl">
 <#include "../plugin/sakura.ftl">
 <#include "../plugin/live2d.ftl">
@@ -18,3 +20,4 @@ ${settings.external_js_body!}
         ${settings.inline_js_body!}
     </script>
 </#if>
+<@global.statistics />
