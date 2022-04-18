@@ -603,6 +603,24 @@ categories:
           label: 桌面设备隐藏
         - value: ''
           label: 不隐藏
+    categories_more:
+      name: categories_more
+      label: 显示”更多“按钮
+      type: radio
+      data-type: bool
+      default: true
+      description: "超出展示的分类数量后是否显示”更多“按钮。"
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 不显示
+    categories_num:
+      name: categories_num
+      label: 展示分类数量
+      type: text
+      placeholder: 输入展示的分类数量
+      default: 10
 tags:
   label: 标签模块
   items:
@@ -632,6 +650,24 @@ tags:
           label: 桌面设备隐藏
         - value: ''
           label: 不隐藏
+    tags_more:
+      name: tags_more
+      label: 显示”更多“按钮
+      type: radio
+      data-type: bool
+      default: true
+      description: "超出展示的标签数量后是否显示”更多“按钮。"
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 不显示
+    tags_num:
+      name: tags_num
+      label: 展示标签数量
+      type: text
+      placeholder: 输入展示的标签数量
+      default: 18
 tagcloud:
   label: 标签云模块
   items:
