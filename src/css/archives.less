@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+.timeline {
+  margin-left: 1rem;
+  padding-left: 1.5rem;
+  padding-top: 1rem;
+  border-left: 1px solid var(--light-b);
+
+  &-title {
+    background: var(--bg-e);
+    color: var(--light-a);
+    display: inline-flex;
+    font-size: 0.75rem;
+    height: 2em;
+    padding: 0 0.75em;
+    align-items: center;
+    white-space: nowrap;
+    border-radius: var(--radius-inner);
+    margin-bottom: 0;
+  }
+
+  .media {
+    position: relative;
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+
+    & + .media {
+      padding-top: 1rem;
+    }
+
+    &-content {
+      time {
+        font-size: 0.85rem;
+        display: block;
+        color: var(--dark-b);
+      }
+
+      .title {
+        color: var(--dark-c);
+        font-size: 1rem !important;
+      }
+
+      p a {
+        font-size: 0.85rem;
+        color: var(--dark-e);
+      }
+    }
+
+    &-left {
+      margin-right: 1rem;
+
+      img {
+        height: 64px;
+        width: 64px;
+        object-fit: cover;
+      }
+    }
+
+    &:before {
+      width: 9px;
+      height: 9px;
+      top: 1.3rem;
+      background: var(--light-d);
+      border-radius: 50%;
+    }
+
+    &:before,
+    &:last-child:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: calc(-5px - 1.5rem);
+    }
+
+    &:first-child:before {
+      top: 0.3rem;
+    }
+
+    &:first-child:last-child:after {
+      top: calc(0.3rem + 9px);
+    }
+
+    &:last-child:after {
+      top: calc(1.3rem + 9px);
+      width: 9px;
+      bottom: 0;
+      background: var(--bg-b);
+    }
+
+  }
+}

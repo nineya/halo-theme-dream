@@ -30,6 +30,7 @@
       href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/${settings.code_pretty!'atom-one-light'}.min.css"/>
 <link rel="stylesheet" type="text/css" href="${theme_base!}/source/css/post.min.css"/>
 <link rel="stylesheet" type="text/css" href="${theme_base!}/source/css/links.min.css"/>
+<link rel="stylesheet" type="text/css" href="${theme_base!}/source/css/archives.min.css"/>
 <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css" rel="stylesheet">
 <script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 <#include "../config.ftl">
