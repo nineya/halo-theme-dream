@@ -9,12 +9,8 @@
                     <#list categories as category>
                         <li>
                             <a class="level is-marginless" href="${category.fullPath!}">
-                                <span class="level-start">
-                                    <span class="level-item">${category.name}</span>
-                                </span>
-                                <span class="level-end">
-                                    <span class="level-item tag">${category.postCount}</span>
-                                </span>
+                                <span class="level-item">${category.name}</span>
+                                <span class="level-item tag">${category.postCount}</span>
                             </a>
                         </li>
                     </#list>
