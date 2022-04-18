@@ -58,7 +58,7 @@
                 <div>${settings.links_info!}</div>
             </div>
             <#if settings.share_type?? && settings.share_type!=''>
-                <#include "layout/share/${settings.share_type}.ftl">
+                <#include "template/share/${settings.share_type}.ftl">
             </#if>
         </div>
     </div>
