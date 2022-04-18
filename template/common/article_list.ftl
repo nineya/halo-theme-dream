@@ -1,6 +1,6 @@
+<#include "comment.ftl">
 <#macro article_list posts>
-    <#include "comment.ftl">
-    <#list posts.content as post>
+    <#list posts as post>
         <div class="card">
             <#if post.thumbnail?? && post.thumbnail!=''>
                 <div class="card-image">

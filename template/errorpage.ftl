@@ -12,9 +12,9 @@
         </div>
         <div class="card">
             <div class="card-content">
-                <div class="content">
+                <div class="main-content">
                     <div style="margin: 20px 0; text-align: center; ">
-                        <i class="fa-7x">${status!}</i>
+                        <i style="font-size: 7rem">${status!}</i>
                         <p style="font-size: 1.4em;text-indent: 2em;">${desc!}</p>
                     </div>
                     <pre><code class="|异常信息">${content!}: ${message!}</code></pre>
@@ -28,12 +28,10 @@
             <#if posts?? && posts?size gt 0>
                 <div class="card">
                     <div class="card-content">
-                        <h2 class="title is-size-4 is-size-5-mobile has-text-weight-normal">最新文章推荐</h2>
+                        <h2 class="title">最新文章推荐</h2>
                     </div>
                 </div>
-                <#list posts as post>
-                    <@article post,'null',true />
-                </#list>
+                <@article_list posts />
             </#if>
         </@postTag>
     </@layout>

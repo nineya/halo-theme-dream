@@ -10,7 +10,7 @@
             </div>
         </div>
         <#include "template/common/article_list.ftl">
-        <@article_list posts/>
+        <@article_list posts.content/>
         <#include "template/common/pagination.ftl">
         <@pagination method="tagPosts" datas=posts slug="${tag.slug!}" display="${settings.page_number!5}" />
     <#else>

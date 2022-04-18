@@ -1193,8 +1193,7 @@ table td, table th {
 
     .card-image {
       overflow: hidden;
-      border-top-left-radius: var(--radius-inner);
-      border-top-right-radius: var(--radius-inner);
+      border-radius: var(--radius-wrap) var(--radius-wrap) 0 0;
     }
 
     &-title {
@@ -1279,7 +1278,7 @@ table td, table th {
       display: block;
       background-position: 50% 50%;
       background-size: cover;
-      border-radius: var(--radius-inner);
+      border-radius: var(--radius-wrap);
 
       .category {
         position: absolute;
@@ -1304,7 +1303,7 @@ table td, table th {
         bottom: 0;
         top: auto;
         color: #fff;
-        border-radius: 0 0 var(--radius-inner) var(--radius-inner);
+        border-radius: 0 0 var(--radius-wrap) var(--radius-wrap);
         background-image: linear-gradient(0deg, rgba(29, 41, 49, .5), rgba(255, 255, 255, 0));
         padding: 2em 15px 15px;
       }
@@ -1313,7 +1312,6 @@ table td, table th {
         color: inherit;
         position: relative;
         padding-bottom: 8px;
-        display: inline-block;
 
         &:hover:before {
           width: 60px;
@@ -1643,7 +1641,8 @@ table td, table th {
             color: var(--theme);
 
             &:after {
-              width: 100%;
+              opacity: 1;
+              transform: scaleX(1);
             }
           }
 
@@ -1658,6 +1657,7 @@ table td, table th {
         }
 
         .link {
+          display: inline-block;
           position: relative;
           color: var(--main);
           max-width: 85%;
@@ -1668,11 +1668,13 @@ table td, table th {
           &:after {
             content: "";
             position: absolute;
-            bottom: 0;
+            bottom: 2px;
             left: 0;
-            width: 0;
+            width: 100%;
             height: 1px;
             background: var(--theme);
+            opacity: 0;
+            transform: scaleX(0.25);
             transition: all 0.35s;
           }
         }
@@ -1926,8 +1928,8 @@ body.move-up {
 
     .card {
       .cover {
-        height: 36vw;
-        min-height: 110px;
+        height: 40vw;
+        min-height: 130px;
       }
 
       .thumbnail {
