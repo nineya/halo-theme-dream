@@ -18,7 +18,7 @@
                     <pre><code class="|异常信息">${content!}: ${message!}</code></pre>
                 </div>
             </div>
-            <script src="${theme_base!}/source/plugins/highlightjs/highlight.min.js"></script>
+            <script src="${theme_base!}/source/lib/highlightjs/highlight.min.js"></script>
             <script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
             <script type="text/javascript" src="${theme_base!}/src/js/post.js"></script>
         </div>

@@ -12,7 +12,7 @@
             <h1 class="title">友情链接 - ${user.nickname!}的小伙伴们</h1>
             <div class="main-content">
                 <@linkTag method="listTeams">
-                    <#assign defaultAvatar= (settings.links_default_avatar?? && settings.links_default_avatar!='')?string(settings.links_default_avatar!, static + "/source/images/thumbnail.svg") />
+                    <#assign defaultAvatar= (settings.links_default_avatar?? && settings.links_default_avatar!='')?string(settings.links_default_avatar!, static + "/source/img/avatar.svg") />
                     <#list teams as item>
                         <div class="links">
                             <#if item.team?? && item.team!=''>
