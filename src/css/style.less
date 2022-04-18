@@ -384,7 +384,7 @@ table td, table th {
 .has-link-grey {
   line-height: 1.85rem;
   color: var(--theme);
-  background-image: linear-gradient(transparent calc(100% - 1px),var(--theme) 1px);
+  background-image: linear-gradient(transparent calc(100% - 1px), var(--theme) 1px);
   background-repeat: no-repeat;
   background-size: 0 100%;
   transition: all .35s ease-in-out;
@@ -1862,6 +1862,15 @@ body.move-up {
   .column-right {
     display: none !important;
   }
+
+  .is-hidden-not-desktop {
+    display: none !important;
+
+    & + .card,
+    & + .column-right-shadow {
+      margin-top: 0 !important;
+    }
+  }
 }
 
 @media (max-width: (@laptop-min-width - 1)) {
@@ -1927,6 +1936,11 @@ body.move-up {
 
   .is-hidden-mobile {
     display: none !important;
+
+    & + .card,
+    & + .column-right-shadow {
+      margin-top: 0 !important;
+    }
   }
 
   .pagination-next, .pagination-previous {
@@ -2052,8 +2066,13 @@ body.move-up {
     }
   }
 
-  .is-hidden-widescreen {
+  .is-hidden-desktop {
     display: none !important;
+
+    & + .card,
+    & + .column-right-shadow {
+      margin-top: 0 !important;
+    }
   }
 }
 

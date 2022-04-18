@@ -1,4 +1,4 @@
-<div class="card widget">
+<div class="card widget${settings.hide_recent_posts!}">
     <div class="card-title">
         <i class="fa fa-clock-o card-title-label"></i><span>最新文章</span>
     </div>

@@ -6,9 +6,7 @@
 	<div class="card widget">
 		<div class="card-content">
 			<div class="menu">
-				<h3 class="menu-label">
-					分类
-				</h3>
+				<h3 class="menu-label">分类</h3>
 				<ul class="menu-list">
 					<#list categories as category>
 						<li>

@@ -15,17 +15,17 @@
     <#if settings.sidebar_ad_piece?? && settings.sidebar_ad_piece == position>
         <#include "../widget/ad_piece.ftl">
     </#if>
-    <#if settings.sidebar_recentpost?? && settings.sidebar_recentpost == position>
+    <#if settings.sidebar_recent_posts?? && settings.sidebar_recent_posts == position>
         <#include "../widget/recent_posts.ftl">
     </#if>
-    <#if settings.sidebar_recentcomment?? && settings.sidebar_recentcomment == position>
+    <#if settings.sidebar_recent_comments?? && settings.sidebar_recent_comments == position>
         <#include "../widget/recent_comments.ftl">
     </#if>
     <#if settings.sidebar_categories?? && settings.sidebar_categories == position>
-        <#include "../widget/category.ftl">
+        <#include "../widget/categories.ftl">
     </#if>
     <#if settings.sidebar_tags?? && settings.sidebar_tags == position>
-        <#include "../widget/tag.ftl">
+        <#include "../widget/tags.ftl">
     </#if>
     <#if settings.sidebar_tagcloud?? && settings.sidebar_tagcloud == position>
         <#include "../widget/tagcloud.ftl">
@@ -33,9 +33,8 @@
     <#if settings.sidebar_links?? && settings.sidebar_links == position>
         <#include "../widget/links.ftl">
     </#if>
-    <#--        <#include "../widget/archive.ftl">-->
     <#if position == 'left'>
-        <div class="column-right-shadow is-hidden-widescreen">
+        <div class="column-right-shadow is-hidden-desktop">
         </div>
     </#if>
 </aside>

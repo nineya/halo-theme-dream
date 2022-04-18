@@ -1,6 +1,6 @@
 <@tagTag method="list">
     <#if tags?? && tags?size gt 0>
-        <div class="card widget">
+        <div class="card widget${settings.hide_tagcloud!}">
             <div class="card-title">
                 <i class="fa fa-cloud card-title-label"></i><span>标签云</span>
             </div>

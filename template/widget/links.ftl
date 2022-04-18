@@ -1,6 +1,6 @@
 <@linkTag method="listByRandom">
     <#if links?? && links?size gt 0>
-        <div class="card widget" id="links">
+        <div class="card widget${settings.hide_links!}" id="links">
             <div class="card-title">
                 <i class="fa fa-link card-title-label"></i><span>友链</span>
                 <#if links?size gt 9>

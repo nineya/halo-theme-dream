@@ -1,4 +1,4 @@
-<div class="card widget" id="profile">
+<div class="card widget${settings.hide_profile!}" id="profile">
     <div class="card-content">
         <nav class="level">
             <div class="level-item has-text-centered" style="flex-shrink: 1">

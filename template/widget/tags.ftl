@@ -1,4 +1,4 @@
-<div class="card widget">
+<div class="card widget${settings.hide_tags!}">
     <div class="card-title">
         <i class="fa fa-tags card-title-label"></i><span>标签</span>
     </div>
