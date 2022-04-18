@@ -6,6 +6,17 @@ basic:
       label: 网站副标题
       type: text
       placeholder: '网站副标题'
+    enable_image_bg:
+      name: enable_image_bg
+      label: 开启全局背景图片
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     background_pc:
       name: background_pc
       label: PC端博客背景图
