@@ -18,6 +18,18 @@ basic:
       type: attachment
       placeholder: '移动端博客背景图'
       default: 'https://api.btstu.cn/sjbz/?lx=dongman&format=images&method=mobile'
+    theme_color:
+      name: theme_color
+      label: 主题色
+      type: color
+      default: '#50bfff'
+      placeholder: '普通模式下的主题颜色'
+    night_theme_color:
+      name: night_theme_color
+      label: 黑夜主题色
+      type: color
+      default: '#5d93db'
+      placeholder: '黑夜模式下的主题颜色'
     page_number:
       name: page_number
       label: 分页页码数量
