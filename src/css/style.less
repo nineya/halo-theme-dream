@@ -1205,11 +1205,6 @@ table td, table th {
       background: 0 0 /* 1 */;
     }
 
-    .card-image {
-      overflow: hidden;
-      border-radius: var(--radius-wrap) var(--radius-wrap) 0 0;
-    }
-
     &-title {
       font-size: 1.1rem;
       text-transform: uppercase;
@@ -1285,6 +1280,7 @@ table td, table th {
       display: block;
       background-position: 50% 50%;
       background-size: cover;
+      border-radius: var(--radius-wrap) var(--radius-wrap) 0 0;
     }
 
     .cover {
@@ -1294,6 +1290,10 @@ table td, table th {
       background-position: 50% 50%;
       background-size: cover;
       border-radius: var(--radius-wrap);
+
+      &.card-image {
+        border-radius: var(--radius-wrap) var(--radius-wrap) 0 0;
+      }
 
       .category {
         position: absolute;

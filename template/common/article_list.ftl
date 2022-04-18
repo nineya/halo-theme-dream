@@ -3,12 +3,10 @@
     <#list posts as post>
         <div class="card">
             <#if post.thumbnail?? && post.thumbnail!=''>
-                <div class="card-image">
-                    <a href="${post.fullPath!}">
-                        <div class="thumbnail" style="background-image: url(${post.thumbnail!})">
-                        </div>
-                    </a>
-                </div>
+                <a href="${post.fullPath!}">
+                    <div class="thumbnail" style="background-image: url(${post.thumbnail!})">
+                    </div>
+                </a>
             </#if>
             <div class="card-content main">
                 <h2 class="title">

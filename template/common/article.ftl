@@ -2,7 +2,7 @@
     <#include "comment.ftl">
     <#if post.thumbnail?? && post.thumbnail!=''>
         <div class="card">
-            <div class="card-image cover" style="background-image: url(${post.thumbnail!})">
+            <div class="cover" style="background-image: url(${post.thumbnail!})">
                 <#if categories?? && categories?size gt 0>
                     <div class="category">
                         <#list categories as category>

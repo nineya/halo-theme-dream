@@ -2,10 +2,7 @@
 <@layout title="友链 - ${blog_title!}" canonical="${links_url!}">
     <div class="card">
         <#if settings.links_thumbnail?? && settings.links_thumbnail!=''>
-            <div class="card-image">
-            <span class="image is-7by1">
-                <img class="thumbnail" src="${settings.links_thumbnail!}" alt="友情链接 - ${user.nickname!}的小伙伴们">
-            </span>
+            <div class="card-image cover" style="background-image: url(${settings.links_thumbnail!})">
             </div>
         </#if>
         <div class="card-content main">
