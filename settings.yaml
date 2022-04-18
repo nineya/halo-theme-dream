@@ -47,13 +47,6 @@ basic:
       type: text
       placeholder: '分页页码数量'
       default: '5'
-    link_comment_id:
-      name: link_comment_id
-      label: 友链界面评论区ID
-      type: text
-      default: 2
-      placeholder: '友链界面评论区ID'
-      description: '友链界面没有ID，需要指定一个自定义页面的ID用于评论，被指定的文章评论区将作为友链的评论区。不存在的ID将导致评论功能无法使用，不建议随便修改。'
     record_number:
       name: record_number
       label: 备案号
@@ -513,8 +506,8 @@ sidebar:
           label: 右侧
         - value: none
           label: 关闭
-page:
-  label: 页面设置
+link_page:
+  label: 友链页面
   items:
     links_thumbnail:
       name: links_thumbnail
@@ -537,6 +530,12 @@ page:
       type: textarea
       placeholder: '友链界面补充信息'
       default: "添加友链后按以上格式在本帖留言即可，留言后看到会立即添加友链，一般和同样的博客类网站交换。"
+    link_comment_id:
+      name: link_comment_id
+      label: 友链界面评论区ID
+      type: text
+      placeholder: '友链界面评论区ID'
+      description: '友链界面没有ID，需要指定一个自定义页面的ID用于评论，被指定的文章评论区将作为友链的评论区，放空则不显示评论区。'
 custom_links:
   label: 自定义链接
   items:

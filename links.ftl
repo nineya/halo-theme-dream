@@ -62,12 +62,14 @@
             </#if>
         </div>
     </div>
-    <div class="card" id="comment-wrapper">
-        <div class="card-content">
-            <h3 class="title is-5 has-text-weight-normal">评论</h3>
-            <script src="//cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
-            <script src="${options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js'}"></script>
-            <halo-comment id="${settings.link_comment_id!}" type="sheet"/>
+    <#if settings.link_comment_id?? && settings.link_comment_id!=''>
+        <div class="card" id="comment-wrapper">
+            <div class="card-content">
+                <h3 class="title is-5 has-text-weight-normal">评论</h3>
+                <script src="//cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+                <script src="${options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js'}"></script>
+                <halo-comment id="${settings.link_comment_id!}" type="sheet"/>
+            </div>
         </div>
-    </div>
+    </#if>
 </@layout>
