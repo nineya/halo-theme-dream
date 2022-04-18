@@ -37,3 +37,16 @@
         document.documentElement.classList.add('night');
     }
 </script>
+
+<#if settings.external_css?? && settings.external_css!=''>
+    <link rel="stylesheet" href="${settings.external_css!}">
+</#if>
+<#if settings.inline_css?? && settings.inline_css!=''>
+    <style type="text/css">${settings.inline_css!}</style>
+</#if>
+${settings.external_js_head!}
+<#if settings.inline_js_head?? && settings.inline_js_head!=''>
+    <script type="text/javascript">
+        ${settings.inline_js_head!}
+    </script>
+</#if>

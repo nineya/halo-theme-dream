@@ -11,3 +11,10 @@
 <#include "../plugin/baidu_push.ftl">
 <#include "../plugin/toutiao_push.ftl">
 <#include "../plugin/seo360_push.ftl">
+
+${settings.external_js_body!}
+<#if settings.inline_js_body?? && settings.inline_js_body!=''>
+    <script type="text/javascript">
+        ${settings.inline_js_body!}
+    </script>
+</#if>
