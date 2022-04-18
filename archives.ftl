@@ -10,7 +10,7 @@
                         <#list archive.posts as post>
                             <article class="media">
                                 <#if post.thumbnail?? && post.thumbnail!=''>
-                                    <a href="${post.thumbnail}" class="media-left">
+                                    <a href="${post.fullPath}" class="media-left">
                                         <img class="not-gallery" src="${post.thumbnail!}" alt="${post.title!}">
                                     </a>
                                 </#if>
