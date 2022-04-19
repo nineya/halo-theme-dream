@@ -3,7 +3,7 @@
         <i class="fa fa-clock-o card-title-label"></i><span>最新文章</span>
     </div>
     <div class="card-content recent-post">
-        <@postTag method="latest" top="5">
+        <@postTag method="latest" top="${settings.recent_posts_num!5}">
             <#if posts?size gt 0>
                 <ul class="list">
                     <#list posts as post>

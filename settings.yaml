@@ -557,6 +557,12 @@ recent_posts:
           label: 桌面设备隐藏
         - value: ''
           label: 不隐藏
+    recent_posts_num:
+      name: recent_posts_num
+      label: 展示文章数量
+      type: text
+      placeholder: 输入展示的文章数量
+      default: 5
 recent_comments:
   label: 最近评论模块
   items:
@@ -586,6 +592,12 @@ recent_comments:
           label: 桌面设备隐藏
         - value: ''
           label: 不隐藏
+    recent_comments_num:
+      name: recent_comments_num
+      label: 展示评论数量
+      type: text
+      placeholder: 输入展示的评论数量
+      default: 5
 categories:
   label: 分类模块
   items:
@@ -709,6 +721,24 @@ tagcloud:
           label: 桌面设备隐藏
         - value: ''
           label: 不隐藏
+    tagcloud_more:
+      name: tagcloud_more
+      label: 显示”更多“按钮
+      type: radio
+      data-type: bool
+      default: true
+      description: "超出展示的标签数量后是否显示”更多“按钮。"
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 不显示
+    tagcloud_num:
+      name: tagcloud_num
+      label: 展示标签数量
+      type: text
+      placeholder: 输入展示的标签数量
+      default: 32
 links:
   label: 友链模块
   items:
@@ -738,6 +768,24 @@ links:
           label: 桌面设备隐藏
         - value: ''
           label: 不隐藏
+    links_more:
+      name: links_more
+      label: 显示”更多“按钮
+      type: radio
+      data-type: bool
+      default: true
+      description: "超出展示的友链数量后是否显示”更多“按钮。"
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 不显示
+    links_num:
+      name: links_num
+      label: 展示友链数量
+      type: text
+      placeholder: 输入展示的友链数量
+      default: 10
 link_page:
   label: 友链页面
   items:

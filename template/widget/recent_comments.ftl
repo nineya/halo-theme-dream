@@ -3,7 +3,7 @@
         <i class="fa fa-commenting-o card-title-label"></i><span>最新评论</span>
     </div>
     <div class="card-content">
-        <@commentTag method="latest" top="5">
+        <@commentTag method="latest" top="${settings.recent_comments_num!5}">
             <#if comments.content?size gt 0>
                 <ul class="widget-comment">
                     <#list comments.content as comment>
