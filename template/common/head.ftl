@@ -38,12 +38,17 @@
 <#if is_archives??>
     <link rel="preload stylesheet" type="text/css" href="${theme_base!}/source/css/archives.min.css"/>
 </#if>
+
+<#if is_tags??>
+    <link rel="preload stylesheet" type="text/css" href="${theme_base!}/source/css/tags.min.css"/>
+</#if>
+
 <#if is_post?? || is_sheet?? || is_photos?? >
     <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css">
 </#if>
 
 <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-<#include "../config.ftl">
+<#include "config.ftl">
 
 <#if settings.external_css?? && settings.external_css!=''>
 <link rel="stylesheet" href="${settings.external_css!}">

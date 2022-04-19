@@ -5,19 +5,17 @@
 <#if categories?? && categories?size gt 0>
 	<div class="card widget">
 		<div class="card-content">
-			<div class="menu">
-				<h3 class="menu-label">分类</h3>
-				<ul class="menu-list">
-					<#list categories as category>
-						<li>
-							<a class="level" href="${category.fullPath!}">
-                                <span class="level-item">${category.name}</span>
-                                <span class="level-item tag">${category.postCount}</span>
-							</a>
-						</li>
-					</#list>
-				</ul>
-			</div>
+			<h3 class="menu-label">分类</h3>
+			<ul class="menu-list">
+				<#list categories as category>
+					<li>
+						<a class="level" href="${category.fullPath!}">
+							<span class="level-item">${category.name}</span>
+							<span class="level-item tag">${category.postCount}</span>
+						</a>
+					</li>
+				</#list>
+			</ul>
 		</div>
 	</div>
 <#else>

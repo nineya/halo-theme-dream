@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+.tags-field {
+  display: flex;
+  flex-wrap: wrap;
+
+  .tags {
+    display: flex;
+
+    &:not(:last-child) {
+      margin: 0 0.75rem 0.75rem 0;
+    }
+
+    .tag {
+      &:not(.is-grey) {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      &.is-grey {
+        background: var(--bg-e);
+        color: rgb(255 255 255 / 80%);
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+  }
+}
