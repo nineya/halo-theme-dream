@@ -1,7 +1,7 @@
 <#macro navbar>
 <header class="navbar">
     <div class="navbar-above">
-        <div class="container">
+        <div class="container<#if settings.sidebar_column?? && settings.sidebar_column!='all'> two-column</#if>">
             <i class="fa fa-bars navbar-slideicon"></i>
             <a class="navbar-item" href="${context!}">
                 <#if blog_logo?? && blog_logo!=''>

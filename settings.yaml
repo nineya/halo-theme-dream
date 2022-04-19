@@ -46,10 +46,22 @@ basic:
       type: color
       default: '#5d93db'
       placeholder: '黑夜模式下的主题颜色'
+    sidebar_column:
+      name: sidebar_column
+      label: 侧边栏布局方式
+      type: select
+      default: 'all'
+      options:
+        - value: 'all'
+          label: 三列布局
+        - value: 'only-left'
+          label: 仅显示左侧
+        - value: 'only-right'
+          label: 仅显示右侧
     left_sidebar_sticky:
       name: left_sidebar_sticky
       label: 左侧边栏悬浮
-      type: select
+      type: radio
       default: bottom
       options:
         - value: top
@@ -61,7 +73,7 @@ basic:
     right_sidebar_sticky:
       name: right_sidebar_sticky
       label: 右侧边栏悬浮
-      type: select
+      type: radio
       default: top
       options:
         - value: top
