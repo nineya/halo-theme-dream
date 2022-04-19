@@ -103,14 +103,14 @@ const btoc = Btoc.init = function (params) {
     Btoc.init({
         tocList: ['h1', 'h2', 'h3', 'h4', 'h5'],
         contentElement: $('.main-content')[0],
-        tocElement: $('#toc .menu')[0]
+        tocElement: $('#toc .card-content')[0]
     });
-    if ($('#toc .menu ul').length === 0) {
+    if ($('#toc .card-content ul').length === 0) {
         $('#toc').remove();
         $('.navbar-main .catalogue').remove();
     } else {
-        $('#toc .menu ul').addClass("menu-list");
-        $('#toc .menu a').addClass("is-flex").prepend(`<i class="fa fa-paperclip"></i><span class="has-mr-6"></span>`);
+        $('#toc .card-content ul').addClass("menu-list");
+        $('#toc .card-content a').prepend(`<i class="fa fa-paperclip"></i>`);
     }
     function register($toc) {
         // toc滚动时间和偏移量

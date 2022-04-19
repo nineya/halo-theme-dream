@@ -1435,12 +1435,27 @@ table td, table th {
 
   .menu-list {
 
+    i {
+      margin-right: 0.5em;
+    }
+
     li ul {
-      margin-right: 0;
+      margin: 0.75em;
+      padding-left: 0.75em;
+      border-left: 1px solid var(--light-c);
     }
 
     a.level {
       display: flex;
+    }
+
+    a.is-active {
+      background-color: var(--bg-e);
+      color: var(--light-a);
+    }
+
+    & > li > a:not(.is-active) + .menu-list {
+      display: none;
     }
   }
 
