@@ -1370,10 +1370,15 @@ table td, table th {
     .post-navigation {
       padding-top: 1rem;
       justify-content: space-around;
+      flex-wrap: wrap;
 
       a {
         flex-shrink: 1;
         color: var(--main);
+
+        &:last-child {
+          text-align: right;
+        }
 
         &:hover {
           color: var(--theme)
