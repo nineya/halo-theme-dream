@@ -21,24 +21,24 @@
 
 <@global.head />
 
-<link rel="preload stylesheet" href="${theme_base!}/source/css/theme.min.css">
-<link rel="preload stylesheet" href="${theme_base!}/source/css/style.min.css">
-<link rel="preload stylesheet" href="//cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/theme.min.css">
+<link rel="preload stylesheet" as="style" href="//cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/style.min.css">
 
 <#if post?? || is_journals??>
-    <link rel="preload stylesheet"
+    <link rel="preload stylesheet" as="style"
           href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/${settings.code_pretty!'atom-one-light'}.min.css"/>
-    <link rel="preload stylesheet" href="${theme_base!}/source/css/post.min.css"/>
+    <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/post.min.css"/>
 </#if>
 
 <#if is_links??>
-    <link rel="preload stylesheet" href="${theme_base!}/source/css/links.min.css"/>
+    <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/links.min.css"/>
 <#elseif is_archives??>
-    <link rel="preload stylesheet" href="${theme_base!}/source/css/archives.min.css"/>
+    <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/archives.min.css"/>
 <#elseif is_journals??>
-    <link rel="preload stylesheet" href="${theme_base!}/source/css/journals.min.css">
+    <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/journals.min.css">
 <#elseif is_tags??>
-    <link rel="preload stylesheet" href="${theme_base!}/source/css/tags.min.css"/>
+    <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/tags.min.css"/>
 </#if>
 
 <#if is_post?? || is_sheet?? || is_photos?? || is_journals??>

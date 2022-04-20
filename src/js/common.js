@@ -1,6 +1,6 @@
 const commonContext = {
     /* 初始化widget */
-    initWidget(){
+    initWidget() {
         const $columnRight = $('.columns .column-right');
         const $columnRightShadow = $('.columns .column-right-shadow');
         // 实现将右边widget拷贝的左边
@@ -9,7 +9,32 @@ const commonContext = {
                 $columnRightShadow[0].append(child.cloneNode(true));
             }
         }
+    },
+    /* widget固定底部 */
+    widgetFixedBottom() {
+        const columnLeft = $(".left-bottom")[0];
+        const columnRight = $(".right-bottom")[0];
 
+        function leftSetBottom() {
+            if ($(window).width() < 769) {
+                columnLeft.style.top = null
+            } else {
+                columnLeft.style.top = $(window).height() - columnLeft.scrollHeight - 10 + "px";
+            }
+        }
+
+        function rightSetBottom() {
+            if ($(window).width() >= 1216) {
+                columnRight.style.top = $(window).height() - columnRight.scrollHeight - 10 + "px";
+            }
+        }
+
+        if (columnLeft) {
+            leftSetBottom(), $(window).resize(leftSetBottom), document.addEventListener("scroll", leftSetBottom);
+        }
+        if (columnRight) {
+            rightSetBottom(), $(window).resize(rightSetBottom), document.addEventListener("scroll", rightSetBottom);
+        }
     },
     /* 初始化主题模式（仅用户模式） */
     initMode() {
