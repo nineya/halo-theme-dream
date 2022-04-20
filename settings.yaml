@@ -268,6 +268,13 @@ post:
           label: Xcode
         - value: xt256
           label: Xt 256
+    code_fold_line:
+      name: code_fold_line
+      label: 代码块折叠
+      type: text
+      default: 50
+      placeholder: '触发折叠的代码行数'
+      description: '代码行数超出指定行数后默认进行折叠，指定的行数需大于等于20。'
     enable_copyright:
       name: enable_copyright
       label: 文章底部版权声明

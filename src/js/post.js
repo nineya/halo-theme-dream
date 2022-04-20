@@ -45,15 +45,14 @@
         let titleButton = `<div><i class="fa fa-angle-down${close}" data-code='#${id}'></i><i class="fa fa-clipboard btn-clipboard" title="复制代码" data-clipboard-target='#${id}'></i></div>`;
 
         // 组装代码块
-        if (nums > 20) {
-            $pre.wrap(`<figure class="fold"></figure>`).parent().append(`<div class="expand-done"><i class="fa fa-angle-double-down"></i></div>`)
+        $(this).attr("id", id);
+        $pre.prepend(`<ul>${lis}</ul>`);
+        if (nums > DreamConfig.code_fold_line) {
+            $pre.wrap(`<figure class="fold"></figure>`).append(`<div class="expand-done"><i class="fa fa-angle-double-up"></i></div>`)
         } else {
             $pre.wrap(`<figure></figure>`);
         }
         $pre.parent().prepend(`<figcaption>${title}${titleButton}</figcaption>`);
-
-        $(this).attr("id", id);
-        $pre.prepend(`<ul>${lis}</ul>`);
     })
 
     // 初始化代码块高亮工具
@@ -74,4 +73,18 @@
             $(this).addClass('close');
         }
     });
+    // 内容块展开和折叠点击事件
+    $(".main-content .expand-done").on("click", function () {
+        const $figure = $(this).parent().parent();
+        const $scrollElement = $("body,html");
+        const oldHeight = $figure.height();
+        if ($figure.is(".fold")) {
+            $figure.removeClass('fold');
+        } else {
+            const oldScrollTop = $scrollElement.scrollTop();
+            $figure.addClass('fold');
+            // 跳转位置，保证折叠后没有过大的位置偏移
+            $scrollElement.scrollTop(oldScrollTop - oldHeight + $figure.height());
+        }
+    })
 })(jQuery);

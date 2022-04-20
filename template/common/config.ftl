@@ -3,11 +3,13 @@
     html {
         --theme: ${settings.theme_color};
     }
+
     </#if>
     <#if settings.night_theme_color?? && settings.night_theme_color!=''>
     html.night {
         --theme: ${settings.night_theme_color};
     }
+
     </#if>
     <#if settings.enable_image_bg?? && settings.enable_image_bg==true>
     body:before {
@@ -28,12 +30,23 @@
             background-image: url("${settings.background_mobile!}");
         }
     }
+
     </#if>
 </style>
 <script type="text/javascript">
+    // 主题配置
+    const DreamConfig = {};
+    <#if settings.code_fold_line?? && settings.code_fold_line?number gte 20>
+    DreamConfig["code_fold_line"] =${settings.code_fold_line};
+    </#if>
+
     // 配置主题模式
     let isNight = localStorage.getItem('night') || false;
     if (isNight.toString() === 'true') {
         document.documentElement.classList.add('night');
     }
 </script>
+
+<#if settings.enable_image_bg?? && settings.enable_image_bg==true>
+    DreamConfig["code_fold_line"] = ${settings.code_fold_line}
+</#if>

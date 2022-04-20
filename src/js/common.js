@@ -217,7 +217,7 @@ const commonContext = {
         }
 
         const handleScroll = () => {
-            var scrollTop = $(document).scrollTop()
+            const scrollTop = $(document).scrollTop();
             const direction = scrollDirection(scrollTop);
             const $body = $("body");
             const $actions = $(".actions");
