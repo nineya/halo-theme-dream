@@ -3,7 +3,7 @@
 <script src="//cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.0/jquery.pjax.min.js"></script>
 <script src="${theme_base!}/source/js/pjax.min.js"></script>
 
-<#if is_post?? || is_sheet?? || is_photos?? >
+<#if is_post?? || is_sheet?? || is_photos?? || is_journals?? >
     <script async src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 </#if>
 

@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+.journal {
+
+  em {
+    font-style: normal;
+  }
+
+  &-date {
+    line-height: 34px;
+    color: var(--dark-c);
+    i {
+      margin-right: 8px;
+    }
+  }
+
+  &-content {
+    padding: 10px 12px;
+    overflow: hidden;
+    border-radius: 0 6px 6px 6px;
+    background-color: var(--bg-c);
+  }
+
+  &-operation {
+    padding: 12px 0 2px 0;
+
+    &-item {
+      margin-left: 10px;
+      transition: all 0.2s;
+      user-select: none;
+      color: var(--main);
+
+      a {
+        color: var(--main);
+        &:hover {
+          transform: scale(1.1);
+          color: var(--theme);
+        }
+      }
+    }
+  }
+
+  &-comment {
+    padding: 12px 0 2px 0;
+    display: none;
+  }
+}

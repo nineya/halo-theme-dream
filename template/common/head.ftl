@@ -22,28 +22,26 @@
 <@global.head />
 
 <link rel="preload stylesheet" href="${theme_base!}/source/css/theme.min.css">
-<link rel="preload stylesheet" href="//cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preload stylesheet" href="${theme_base!}/source/css/style.min.css">
+<link rel="preload stylesheet" href="//cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<#if post??>
-    <link rel="preload stylesheet" type="text/css"
+<#if post?? || is_journals??>
+    <link rel="preload stylesheet"
           href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/${settings.code_pretty!'atom-one-light'}.min.css"/>
-    <link rel="preload stylesheet" type="text/css" href="${theme_base!}/source/css/post.min.css"/>
+    <link rel="preload stylesheet" href="${theme_base!}/source/css/post.min.css"/>
 </#if>
 
 <#if is_links??>
-    <link rel="preload stylesheet" type="text/css" href="${theme_base!}/source/css/links.min.css"/>
+    <link rel="preload stylesheet" href="${theme_base!}/source/css/links.min.css"/>
+<#elseif is_archives??>
+    <link rel="preload stylesheet" href="${theme_base!}/source/css/archives.min.css"/>
+<#elseif is_journals??>
+    <link rel="preload stylesheet" href="${theme_base!}/source/css/journals.min.css">
+<#elseif is_tags??>
+    <link rel="preload stylesheet" href="${theme_base!}/source/css/tags.min.css"/>
 </#if>
 
-<#if is_archives??>
-    <link rel="preload stylesheet" type="text/css" href="${theme_base!}/source/css/archives.min.css"/>
-</#if>
-
-<#if is_tags??>
-    <link rel="preload stylesheet" type="text/css" href="${theme_base!}/source/css/tags.min.css"/>
-</#if>
-
-<#if is_post?? || is_sheet?? || is_photos?? >
+<#if is_post?? || is_sheet?? || is_photos?? || is_journals??>
     <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css">
 </#if>
 
@@ -51,14 +49,14 @@
 <#include "config.ftl">
 
 <#if settings.external_css?? && settings.external_css!=''>
-<link rel="stylesheet" href="${settings.external_css!}">
+    <link rel="stylesheet" href="${settings.external_css!}">
 </#if>
 <#if settings.inline_css?? && settings.inline_css!=''>
-<style type="text/css">${settings.inline_css!}</style>
+    <style type="text/css">${settings.inline_css!}</style>
 </#if>
 ${settings.external_js_head!}
 <#if settings.inline_js_head?? && settings.inline_js_head!=''>
-<script type="text/javascript">
-    ${settings.inline_js_head!}
-</script>
+    <script type="text/javascript">
+        ${settings.inline_js_head!}
+    </script>
 </#if>

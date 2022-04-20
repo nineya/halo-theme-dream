@@ -1,6 +1,6 @@
 <div class="card widget${settings.hide_recent_posts!}">
     <div class="card-title">
-        <i class="fa fa-clock-o card-title-label"></i><span>最新文章</span>
+        <i class="fa fa-history card-title-label"></i><span>最新文章</span>
     </div>
     <div class="card-content recent-post">
         <@postTag method="latest" top="${settings.recent_posts_num!5}">
