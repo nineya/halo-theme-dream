@@ -49,6 +49,8 @@
             </#if>
             <div class="main-content">${post.formatContent!}</div>
 
+            <#include "admire.ftl">
+
             <#if settings.copyright!true>
                 <!-- 版权界面 -->
                 <#include "copyright.ftl">
@@ -70,22 +72,6 @@
             </#if>
         </div>
     </div>
-
-    <#if (settings.donate_alipay?? && settings.donate_alipay!='') || (settings.donate_wechat?? && settings.donate_wechat!='')>
-        <div class="card">
-            <div class="card-content">
-                <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
-                <div class="buttons is-centered">
-                    <#if settings.donate_alipay?? && settings.donate_alipay!=''>
-                        <#include "../donate/alipay.ftl">
-                    </#if>
-                    <#if settings.donate_wechat?? && settings.donate_wechat!=''>
-                        <#include "../donate/wechat.ftl">
-                    </#if>
-                </div>
-            </div>
-        </div>
-    </#if>
 
     <#if nextPost?? || prevPost??>
         <div class="card">

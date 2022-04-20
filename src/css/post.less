@@ -261,7 +261,6 @@
   }
 }
 
-
 .copyright {
   position: relative;
   background: var(--bg-h);
@@ -313,9 +312,275 @@
         margin: 0;
       }
 
-      p,a {
+      p, a {
         color: var(--dark-e);
       }
     }
+  }
+}
+
+.admire {
+  margin: 60px 0 18px 0;
+  text-align: center;
+
+  &-content {
+    user-select: none;
+    margin-bottom: 15px;
+
+    button {
+      border-radius: 50px;
+      padding: 8px 18px;
+      border: none;
+      box-shadow: 0 2px 10px rgb(0 0 0 / 10%);
+
+      i {
+        margin-right: 5px;
+      }
+    }
+
+    .donate {
+      background: #c0a46b;
+      color: var(--light-a);
+      transition: all 0.2s ease-in-out;
+      position: relative;
+      margin-right: 10px;
+
+      &-list {
+        position: absolute;
+        bottom: 40px;
+        right: 50%;
+        border-radius: 5px;
+        background: var(--background);
+        box-shadow: var(--box-shadow);
+        padding: 12px;
+        transition: all 0.5s;
+        z-index: -10;
+        opacity: 0;
+
+        ol {
+          border-radius: 5px;
+          overflow: hidden;
+          display: flex;
+        }
+
+        img {
+          max-width: 200px;
+          max-height: 260px;
+          object-fit: cover;
+        }
+      }
+
+      &:hover {
+        i {
+          animation: dong ease 0.5s 0.2s infinite alternate;
+        }
+
+        .donate-list {
+          transform: translateX(50%);
+          z-index: unset;
+          opacity: 1;
+        }
+      }
+    }
+
+    .agree {
+      background: var(--background);
+      color: var(--dark-e);
+
+      i {
+        font-size: 1.2em;
+      }
+
+      span > span {
+        margin-left: 3px;
+      }
+
+      &:hover {
+        i {
+          animation: shake-little ease-in-out 4s infinite;
+        }
+      }
+    }
+  }
+
+  & > span {
+    color: var(--dark-d);
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .admire .donate-list ol {
+    flex-wrap: wrap;
+
+    img {
+      width: 200px;
+    }
+  }
+}
+
+@keyframes dong {
+  0% {
+    transform: translateY(3px) scaleY(0.95);
+  }
+
+  100% {
+    transform: translateY(-3px) scaleY(1);
+  }
+}
+
+@keyframes shake-little {
+  0% {
+    transform: translate(0, 0)
+  }
+  2% {
+    transform: translate(-1px, 1px)
+  }
+  4% {
+    transform: translate(-1px, -1px)
+  }
+  6% {
+    transform: translate(0, 0)
+  }
+  8% {
+    transform: translate(1px, 1px)
+  }
+  10% {
+    transform: translate(1px, -1px)
+  }
+  12% {
+    transform: translate(0, 0)
+  }
+  14% {
+    transform: translate(-1px, 1px)
+  }
+  16% {
+    transform: translate(-1px, -1px)
+  }
+  18% {
+    transform: translate(0, 0)
+  }
+  20% {
+    transform: translate(1px, 1px)
+  }
+  22% {
+    transform: translate(1px, -1px)
+  }
+  24% {
+    transform: translate(0, 0)
+  }
+  26% {
+    transform: translate(-1px, 1px)
+  }
+  28% {
+    transform: translate(-1px, -1px)
+  }
+  30% {
+    transform: translate(0, 0)
+  }
+  32% {
+    transform: translate(1px, 1px)
+  }
+  34% {
+    transform: translate(1px, -1px)
+  }
+  36% {
+    transform: translate(0, 0)
+  }
+  38% {
+    transform: translate(-1px, 1px)
+  }
+  40% {
+    transform: translate(-1px, -1px)
+  }
+  42% {
+    transform: translate(0, 0)
+  }
+  44% {
+    transform: translate(1px, 1px)
+  }
+  46% {
+    transform: translate(1px, -1px)
+  }
+  48% {
+    transform: translate(0, 0)
+  }
+  50% {
+    transform: translate(-1px, 1px)
+  }
+  52% {
+    transform: translate(-1px, -1px)
+  }
+  54% {
+    transform: translate(0, 0)
+  }
+  56% {
+    transform: translate(1px, 1px)
+  }
+  58% {
+    transform: translate(1px, -1px)
+  }
+  60% {
+    transform: translate(0, 0)
+  }
+  62% {
+    transform: translate(-1px, 1px)
+  }
+  64% {
+    transform: translate(-1px, -1px)
+  }
+  66% {
+    transform: translate(0, 0)
+  }
+  68% {
+    transform: translate(1px, 1px)
+  }
+  70% {
+    transform: translate(1px, -1px)
+  }
+  72% {
+    transform: translate(0, 0)
+  }
+  74% {
+    transform: translate(-1px, 1px)
+  }
+  76% {
+    transform: translate(-1px, -1px)
+  }
+  78% {
+    transform: translate(0, 0)
+  }
+  80% {
+    transform: translate(1px, 1px)
+  }
+  82% {
+    transform: translate(1px, -1px)
+  }
+  84% {
+    transform: translate(0, 0)
+  }
+  86% {
+    transform: translate(-1px, 1px)
+  }
+  88% {
+    transform: translate(-1px, -1px)
+  }
+  90% {
+    transform: translate(0, 0)
+  }
+  92% {
+    transform: translate(1px, 1px)
+  }
+  94% {
+    transform: translate(1px, -1px)
+  }
+  96% {
+    transform: translate(0, 0)
+  }
+  98% {
+    transform: translate(-1px, 1px)
+  }
+  100% {
+    transform: translate(-1px, -1px)
   }
 }
