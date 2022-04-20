@@ -4,6 +4,10 @@
   color: var(--main);
   font-size: 1rem;
 
+  &.article {
+    padding-bottom: 30px;
+  }
+
   code:not([class]) {
     display: inline-block;
     font-size: 0.9em;
@@ -261,66 +265,8 @@
   }
 }
 
-.copyright {
-  position: relative;
-  background: var(--bg-h);
-  overflow: hidden;
-  border-radius: 6px;
-  display: block;
-  padding: 1.25rem;
-
-  &:after {
-    position: absolute;
-    right: -50px;
-    top: -30px;
-    content: '\f25e';
-    font-size: 200px;
-    font-family: 'FontAwesome';
-    color: var(--bg-i);
-    opacity: 0.1;
-  }
-
-  .copyright-title {
-    line-height: 1.2;
-    margin-bottom: 1rem;
-
-    *:not(:last-child) {
-      margin-bottom: 0.25rem;
-    }
-
-    a {
-      font-size: 0.85rem;
-      color: var(--dark-d);
-    }
-  }
-
-  .copyright-meta {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-
-    .icon {
-      width: 1.2em;
-      height: 1.2em;
-    }
-
-    .level-item {
-      margin-right: 1.5rem !important;
-      display: block;
-
-      h6 {
-        margin: 0;
-      }
-
-      p, a {
-        color: var(--dark-e);
-      }
-    }
-  }
-}
-
 .admire {
-  margin: 60px 0 18px 0;
+  margin: 30px 0 18px 0;
   text-align: center;
 
   &-content {
@@ -406,6 +352,114 @@
   & > span {
     color: var(--dark-d);
     font-size: 0.9rem;
+  }
+}
+
+.article-operation {
+  margin: 18px 0;
+
+  a {
+    color: var(--dark-b);
+    font-size: 0.9em;
+    background: var(--bg-b);
+    border: 1px solid var(--bg-b);
+    position: relative;
+    padding: 0 8px 0 29px;
+    height: 26px;
+    line-height: 24px;
+    border-radius: 13px;
+    max-width: 125px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--background);
+      border-radius: 50%;
+    }
+
+    &:after {
+      content: '\f097';
+      position: absolute;
+      font-family: 'FontAwesome';
+      top: 50%;
+      left: 12px;
+      font-size: 1.2em;
+      color: var(--theme);
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+      color: var(--main);
+      border: 1px solid var(--light-b);
+    }
+  }
+}
+
+.copyright {
+  margin: 18px 0;
+
+  position: relative;
+  background: var(--bg-h);
+  overflow: hidden;
+  border-radius: 6px;
+  display: block;
+  padding: 1.25rem;
+
+  &:after {
+    position: absolute;
+    right: -50px;
+    top: -30px;
+    content: '\f25e';
+    font-size: 200px;
+    font-family: 'FontAwesome';
+    color: var(--bg-i);
+    opacity: 0.1;
+  }
+
+  .copyright-title {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+
+    *:not(:last-child) {
+      margin-bottom: 0.25rem;
+    }
+
+    a {
+      font-size: 0.85rem;
+      color: var(--dark-d);
+    }
+  }
+
+  .copyright-meta {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    .icon {
+      width: 1.2em;
+      height: 1.2em;
+    }
+
+    .level-item {
+      margin-right: 1.5rem !important;
+      display: block;
+
+      h6 {
+        margin: 0;
+      }
+
+      p, a {
+        color: var(--dark-e);
+      }
+    }
   }
 }
 

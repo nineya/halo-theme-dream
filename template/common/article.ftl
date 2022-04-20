@@ -47,28 +47,28 @@
                 </div>
                 <hr/>
             </#if>
-            <div class="main-content">${post.formatContent!}</div>
+            <div class="main-content article">${post.formatContent!}</div>
 
             <#include "admire.ftl">
 
-            <#if settings.copyright!true>
-                <!-- 版权界面 -->
-                <#include "copyright.ftl">
-            </#if>
             <#if tags?? && (tags?size gt 0)>
-                <div class="level is-size-7 is-uppercase">
-                    <div class="level-start">
-                        <div class="level-item">
-                            <span class="is-size-6 has-text-grey has-mr-7 fa fa-tag"></span>
-                            <#list tags as tag>
-                                <a class="has-link-grey -link" href="${tag.fullPath!}">${tag.name!}</a>&nbsp;
-                            </#list>
-                        </div>
+                <div class="level article-operation">
+                    <div class="level-item">
+                        <#list tags as tag>
+                            <a href="${tag.fullPath!}">${tag.name!}</a>&nbsp;
+                        </#list>
                     </div>
                 </div>
             </#if>
-            <#if settings.share_type?? && settings.share_type!=''>
-                <#include "../share/${settings.share_type}.ftl">
+
+            <#if settings.copyright!true?? || settings.share_type?? && settings.share_type!=''>
+                <hr/>
+                <#if settings.copyright!true>
+                    <#include "copyright.ftl">
+                </#if>
+                <#if settings.share_type?? && settings.share_type!=''>
+                    <#include "../share/${settings.share_type}.ftl">
+                </#if>
             </#if>
         </div>
     </div>
