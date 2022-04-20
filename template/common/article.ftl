@@ -61,9 +61,9 @@
                 </div>
             </#if>
 
-            <#if settings.copyright!true?? || settings.share_type?? && settings.share_type!=''>
+            <#if settings.enable_copyright?? || (settings.share_type?? && settings.share_type!='')>
                 <hr/>
-                <#if settings.copyright!true>
+                <#if settings.enable_copyright!>
                     <#include "copyright.ftl">
                 </#if>
                 <#if settings.share_type?? && settings.share_type!=''>

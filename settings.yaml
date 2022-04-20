@@ -268,13 +268,8 @@ post:
           label: Xcode
         - value: xt256
           label: Xt 256
-    article_end:
-      name: article_end
-      label: 阅读结束文字
-      type: text
-      placeholder: '阅读结束的提示文字'
-    copyright:
-      name: copyright
+    enable_copyright:
+      name: enable_copyright
       label: 文章底部版权声明
       type: radio
       data-type: bool
