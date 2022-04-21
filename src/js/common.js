@@ -1,3 +1,6 @@
+window.encryption = (str) => window.btoa(unescape(encodeURIComponent(str)));
+window.decrypt = (str) => decodeURIComponent(escape(window.atob(str)));
+
 const commonContext = {
     /* 初始化widget */
     initWidget() {

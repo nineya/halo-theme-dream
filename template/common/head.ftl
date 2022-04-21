@@ -44,9 +44,11 @@
 <#if is_post?? || is_sheet?? || is_photos?? || is_journals??>
     <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css">
 </#if>
+<link rel="stylesheet" href="${theme_base!}/source/lib/qmsg/qmsg.min.css">
+
+<#include "config.ftl">
 
 <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-<#include "config.ftl">
 
 <#if settings.external_css?? && settings.external_css!=''>
     <link rel="stylesheet" href="${settings.external_css!}">
