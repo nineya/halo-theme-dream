@@ -105,11 +105,11 @@ const btoc = Btoc.init = function (params) {
         contentElement: $('.main-content')[0],
         tocElement: $('#toc .card-content')[0]
     });
-    if ($('#toc .card-content ul').length === 0) {
+    const $tocContent = $('#toc .card-content ul')
+    if ($tocContent.length === 0) {
         $('#toc').remove();
-        $('.navbar-main .catalogue').remove();
     } else {
-        $('#toc .card-content ul').addClass("menu-list");
+        $tocContent.addClass("menu-list");
         $('#toc .card-content a').prepend(`<i class="fa fa-paperclip"></i>`);
     }
     function register($toc) {
@@ -203,21 +203,3 @@ const btoc = Btoc.init = function (params) {
 
     document.querySelectorAll('#toc').forEach(register);
 })(window, document);
-(function ($) {
-    const $toc = $('#toc');
-    if ($toc.length > 0) {
-        const $mask = $('<div>');
-        $mask.attr('id', 'toc-mask');
-
-        $('body').append($mask);
-
-        function toggleToc() { // eslint-disable-line no-inner-declarations
-            $toc.toggleClass('is-active');
-            $mask.toggleClass('is-active');
-        }
-
-        $toc.on('click', toggleToc);
-        $mask.on('click', toggleToc);
-        $('.navbar-main .catalogue').on('click', toggleToc);
-    }
-})(jQuery);
