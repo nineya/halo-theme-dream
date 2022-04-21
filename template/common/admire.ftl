@@ -16,7 +16,7 @@
                 </div>
             </button>
         </#if>
-        <button class="agree">
+        <button class="agree like" data-id="${post.id!0}" data-likes="${post.likes!0}">
             <i class="fa fa-thumbs-o-up"></i>
             <span>赞<span>${post.likes!0}</span></span>
         </button>
