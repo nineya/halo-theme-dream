@@ -13,12 +13,10 @@
 		<div class="journal-content main-content">${journal.content}</div>
 		<div class="journal-operation">
 			<span class="journal-operation-item">
-					<a href="javascript:void(0)"><i class="fa fa-heart-o"></i></a>
-					<em>喜欢</em>
+					<a href="javascript:void(0)"><i class="fa fa-heart-o"></i></a><em>喜欢</em>
 				</span>
 			<span class="journal-operation-item">
-					<a class="comment"><i class="fa fa-commenting-o"></i></a>
-					<em><#if journal.commentCount==0>评论<#else>${journal.commentCount}</#if></em>
+					<a class="comment"><i class="fa fa-commenting-o"></i><em><#if journal.commentCount==0>评论<#else>${journal.commentCount}</#if></em></a>
 				</span>
 		</div>
 		<div class="journal-comment">

@@ -46,7 +46,3 @@
         document.documentElement.classList.add('night');
     }
 </script>
-
-<#if settings.enable_image_bg?? && settings.enable_image_bg==true>
-    DreamConfig["code_fold_line"] = ${settings.code_fold_line}
-</#if>
