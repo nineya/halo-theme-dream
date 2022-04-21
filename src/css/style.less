@@ -2112,8 +2112,34 @@ body.move-up {
   .container {
     max-width: 1344px;
 
+    .column {
+
+      &-side {
+        flex: none;
+        width: 22%;
+      }
+
+      &-main {
+        flex: none;
+        width: 56%;
+      }
+    }
+
     &.two-column {
       max-width: 1150px;
+
+      .column {
+
+        &-side {
+          flex: none;
+          width: 26%;
+        }
+
+        &-main {
+          flex: none;
+          width: 74%;
+        }
+      }
     }
   }
 }
@@ -2152,12 +2178,12 @@ body.move-up {
 
         &-side {
           flex: none;
-          width: 26%;
+          width: 24%;
         }
 
         &-main {
           flex: none;
-          width: 74%;
+          width: 76%;
         }
       }
     }
