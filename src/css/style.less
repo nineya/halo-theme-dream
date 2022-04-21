@@ -1191,7 +1191,7 @@ table td, table th {
       background-color: var(--background-hover);
     }
 
-    & + .card,
+    //& + .card,
     & + .column-right-shadow {
       margin-top: 1.4rem;
     }
@@ -1872,10 +1872,10 @@ body.move-up {
 
   .is-hidden-not-desktop {
     display: none !important;
+  }
 
-    & + .card {
-      margin-top: 0 !important;
-    }
+  .card:not(.is-hidden-not-desktop) ~ .card {
+    margin-top: 1.4rem !important;
   }
 }
 
@@ -1942,10 +1942,10 @@ body.move-up {
 
   .is-hidden-mobile {
     display: none !important;
+  }
 
-    & + .card {
-      margin-top: 0 !important;
-    }
+  .card:not(.is-hidden-mobile) ~ .card {
+    margin-top: 1.4rem !important;
   }
 
   .pagination-next, .pagination-previous {
@@ -2090,10 +2090,10 @@ body.move-up {
 
   .is-hidden-desktop {
     display: none !important;
+  }
 
-    & + .card {
-      margin-top: 0 !important;
-    }
+  .card:not(.is-hidden-desktop) ~ .card {
+    margin-top: 1.4rem !important;
   }
 }
 
