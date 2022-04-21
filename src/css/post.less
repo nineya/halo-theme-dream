@@ -286,8 +286,13 @@
     }
   }
 
+  span[data-fancybox] {
+    display: block;
+    text-align: center;
+  }
+
   img {
-    width: 100%;
+    max-width: 100%;
     transition: all 0.35s;
     margin: 5px 0;
     border-radius: var(--radius-img);
@@ -399,6 +404,7 @@
 
 .article-operation {
   margin: 18px 0;
+  display: flex;
 
   a {
     color: var(--dark-b);
