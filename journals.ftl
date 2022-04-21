@@ -12,13 +12,14 @@
                 </p>
                 <div class="journal-content main-content">${journal.content}</div>
                 <div class="journal-operation">
-			<span class="journal-operation-item">
-					<a class="like" data-cid="${journal.id}" data-likes="${journal.likes}"><i class="fa fa-heart-o"></i></a><em>${(journal.likes != 0)?string(journal.likes?c,'喜欢')}</em>
-				</span>
                     <span class="journal-operation-item">
-					<a class="comment"><i
-                                class="fa fa-commenting-o"></i><em><#if journal.commentCount==0>评论<#else>${journal.commentCount}</#if></em></a>
-				</span>
+                        <a class="like" data-id="${journal.id}" data-likes="${journal.likes!0}"><i
+                                    class="fa fa-heart-o"></i></a><em>${(journal.likes != 0)?string(journal.likes?c,'喜欢')}</em>
+                    </span>
+                    <span class="journal-operation-item">
+                        <a class="comment"><i
+                                    class="fa fa-commenting-o"></i><em><#if journal.commentCount==0>评论<#else>${journal.commentCount}</#if></em></a>
+                    </span>
                 </div>
                 <div class="journal-comment">
                     <halo-comment id="${journal.id?c}" type="journal"/>

@@ -8,40 +8,7 @@ const journalContext = {
     /* 点赞 */
     initLike() {
         $(".journal .like").each(function () {
-            const $this = $(this);
-            const cid = $this.attr("data-cid");
-            console.log(`init ${cid}`)
-            let agrees = localStorage.getItem(encryption("agree-journal"));
-            agrees = agrees? JSON.parse(decrypt(agrees)) : [];
-            // 已经喜欢过了
-            if (agrees.includes(cid)) {
-                $this.removeClass("like");
-                return;
-            }
-            console.log(`bind ${cid}`)
-            $this.on("click", function (e) {
-                e.stopPropagation();
-                let agrees = localStorage.getItem(encryption("agree-journal"));
-                agrees = agrees? JSON.parse(decrypt(agrees)) : [];
-
-                Utils.request({
-                    url: "/api/content/journals/" + cid + "/likes",
-                    method: "POST",
-                })
-                    .then((_res) => {
-                        let likes = +($this.attr("data-likes") || 0) + 1;
-                        agrees.push(cid);
-                        $this.removeClass("like");
-                        const name = encryption("agree-journal");
-                        const val = encryption(JSON.stringify(agrees));
-                        localStorage.setItem(name, val);
-                        $this.off('click').next().html(likes);
-                        Qmsg.success('点赞成功');
-                    })
-                    .catch((err) => {
-                        console.log(err)
-                    });
-            });
+            Utils.like($(this), $(this).next(), 'journals')
         });
     },
 }
