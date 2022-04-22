@@ -13,9 +13,24 @@ const commonContext = {
             }
         }
     },
-    /* 初始化目录 */
-    initToc() {
-        window.tocPjax && window.tocPjax();
+    /* 初始化目录和公告模块 */
+    initTocAndNotice() {
+        const {pathname} = location;
+        console.log(pathname)
+        window.tocPjax && window.tocPjax()
+        let hideToc = $('.widget.toc .card-content ul').length === 0;
+        let hideNotice = (DreamConfig.notice_hide_mode === 'toc' && !hideToc)
+            || (DreamConfig.notice_hide_mode === 'index' && pathname !== '/')
+        if (hideToc) {
+            $('.widget.toc').addClass("is-hidden-all");
+        } else {
+            $('.widget.toc').removeClass("is-hidden-all");
+        }
+        if (hideNotice) {
+            $('.widget.notice').addClass("is-hidden-all");
+        } else {
+            $('.widget.notice').removeClass("is-hidden-all");
+        }
     },
     /* widget固定底部 */
     widgetFixedBottom() {

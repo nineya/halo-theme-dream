@@ -43,6 +43,7 @@
     <#if settings.website_time?? && settings.website_time!=''>
     DreamConfig["website_time"] = '${settings.website_time}';
     </#if>
+    DreamConfig["notice_hide_mode"] = '${settings.notice_hide_mode!'index'}';
 
     // 配置主题模式
     let isNight = localStorage.getItem('night') || false;

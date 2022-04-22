@@ -63,8 +63,8 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
     console.log("pjax success");
     /* 重新激活图片预览功能 */
     commonContext.initGallery()
-    /* 重新加载目录 */
-    commonContext.initToc()
+    /* 重新加载目录和公告 */
+    commonContext.initTocAndNotice()
 
     const $currentTarget = $($.parseHTML(data, document, true));
     const $document = $(document);
@@ -130,8 +130,8 @@ $(document).on("pjax:end", function (event, xhr, options) {
     console.log("pjax:end")
     // 浏览器前进后退
     if (xhr == null) {
-        /* 重新加载目录 */
-        commonContext.initToc()
+        /* 重新加载目录和公告 */
+        commonContext.initTocAndNotice()
     }
 });
 

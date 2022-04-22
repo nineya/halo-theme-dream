@@ -457,6 +457,19 @@ notice:
       label: 博客公告
       type: textarea
       placeholder: 请输入公告内容（html格式）
+    notice_hide_mode:
+      name: notice_hide_mode
+      label: 显示模式
+      type: radio
+      default: index
+      placeholder: 当满足某些条件时公告模块才显示
+      options:
+        - value: none
+          label: 无条件
+        - value: toc
+          label: 目录模块不显示时
+        - value: index
+          label: 仅首页
 music:
   label: 音乐模块
   items:

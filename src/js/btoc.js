@@ -192,18 +192,8 @@ window.tocPjax = function () {
         contentElement: $('.main-content')[0],
         tocElement: '.widget.toc .card-content'
     });
-    console.log($('.widget.toc .card-content ul').length)
-    if ($('.widget.toc .card-content ul').length === 0) {
-        console.log($('.widget.toc .card-content ul').length)
-        $('.widget.toc').addClass("is-hidden-all");
-    } else {
-        $('.widget.toc').removeClass("is-hidden-all");
-    }
     if (typeof window.IntersectionObserver === 'undefined') {
         return;
     }
     document.querySelectorAll('.widget.toc').forEach(register);
 }
-!(function () {
-    tocPjax();
-})();
