@@ -1,4 +1,3 @@
-<#include "comment.ftl">
 <#macro article_list posts>
     <#list posts as post>
         <div class="card">

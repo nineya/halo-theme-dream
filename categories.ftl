@@ -1,5 +1,4 @@
 <#include "template/layout.ftl">
-<#include "template/common/article.ftl">
 <@layout title="分类 - ${blog_title!}" canonical="${categories_url!}">
 <@categoryTag method="list">
 <#if categories?? && categories?size gt 0>

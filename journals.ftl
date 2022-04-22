@@ -1,8 +1,5 @@
 <#include "template/layout.ftl">
-<#include "template/common/article.ftl">
 <@layout title="动态 - ${blog_title!}" canonical="${journals_url!}">
-    <script src="//cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
-    <script src="${options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js'}"></script>
     <#if (journals.content)?? && journals.content?size gt 0>
         <#list journals.content as journal>
             <div class="card card-content journal">
