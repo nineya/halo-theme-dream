@@ -13,6 +13,10 @@ const commonContext = {
             }
         }
     },
+    /* 初始化目录 */
+    initToc() {
+        window.tocPjax && window.tocPjax();
+    },
     /* widget固定底部 */
     widgetFixedBottom() {
         const columnLeft = $(".left-bottom")[0];

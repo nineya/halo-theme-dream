@@ -64,7 +64,7 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
     /* 重新激活图片预览功能 */
     commonContext.initGallery()
     /* 重新加载目录 */
-    window.tocPjax && window.tocPjax();
+    commonContext.initToc()
 
     const $currentTarget = $($.parseHTML(data, document, true));
     const $document = $(document);
@@ -131,7 +131,7 @@ $(document).on("pjax:end", function (event, xhr, options) {
     // 浏览器前进后退
     if (xhr == null) {
         /* 重新加载目录 */
-        window.tocPjax && window.tocPjax();
+        commonContext.initToc()
     }
 });
 
