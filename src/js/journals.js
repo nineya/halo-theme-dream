@@ -12,6 +12,11 @@ const journalContext = {
         });
     },
 }
+window.journalPjax = function () {
+    Object.keys(journalContext).forEach(
+        (c) => journalContext[c]()
+    );
+}
 !(function () {
     const omits = [];
     document.addEventListener("DOMContentLoaded", function () {

@@ -90,6 +90,12 @@ const postContext = {
         });
     },
 }
+window.postPjax = function () {
+    console.log("初始化 post")
+    Object.keys(postContext).forEach(
+        (c) => postContext[c]()
+    );
+}
 !(function () {
     document.addEventListener("DOMContentLoaded", function () {
         Object.keys(postContext).forEach((c) => postContext[c]());

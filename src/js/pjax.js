@@ -59,4 +59,8 @@ $(document).on("pjax:complete", function () {
     commonContext.initNavbar();
     /* 重新激活图片预览功能 */
     commonContext.initGallery()
+    /* 初始化日志界面 */
+    window.journalPjax && window.journalPjax();
+    /* 初始化文章界面 */
+    window.postPjax && window.postPjax();
 });

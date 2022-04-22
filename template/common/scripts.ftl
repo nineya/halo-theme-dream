@@ -5,6 +5,12 @@
     <script data-pjax src="${theme_base!}/source/js/journals.min.js"></script>
 </#if>
 
+<#if post?? || is_journals??>
+    <script data-pjax src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js"></script>
+    <script data-pjax src="//cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
+    <script data-pjax type="text/javascript" src="${theme_base!}/source/js/post.min.js"></script>
+</#if>
+
 <script src="//cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.0/jquery.pjax.min.js"></script>
 <#--<script src="${theme_base!}/source/lib/jquery.pjax.js"></script>-->
 <script src="${theme_base!}/source/js/pjax.min.js"></script>
