@@ -39,7 +39,10 @@
     <#if settings.code_fold_line?? && settings.code_fold_line?number gte 20>
     DreamConfig["code_fold_line"] =${settings.code_fold_line};
     </#if>
-    DreamConfig["spark_input_content"] = ['${user.description!}'<#if settings.color_character?? && settings.color_character!=''>,${settings.color_character!}</#if>]
+    DreamConfig["spark_input_content"] = ['${user.description!}'<#if settings.color_character?? && settings.color_character!=''>, ${settings.color_character!}</#if>];
+    <#if settings.website_time?? && settings.website_time!=''>
+    DreamConfig["website_time"] = '${settings.website_time}';
+    </#if>
 
     // 配置主题模式
     let isNight = localStorage.getItem('night') || false;

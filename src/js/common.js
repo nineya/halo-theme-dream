@@ -43,6 +43,18 @@ const commonContext = {
             rightSetBottom(), $(window).resize(rightSetBottom), document.addEventListener("scroll", rightSetBottom);
         }
     },
+    /* 激活图片预览功能 */
+    initGallery() {
+        // 用链接和标题包装图像
+        $('.main-content img:not(".not-gallery")').each(function () {
+            if ($(this).parents('[data-fancybox]').length === 0) {
+                $(this).wrap($(`<span class="gallery-item" data-fancybox="gallery" data-caption="${$(this).attr('alt')}" href="${$(this).attr('src')}"></span>`));
+                if (this.alt) {
+                    $(this).after(`<p>${this.alt}</p>`);
+                }
+            }
+        });
+    },
     /* 初始化主题模式（仅用户模式） */
     initMode() {
         let isNight = localStorage.getItem('night') || false;
@@ -248,24 +260,45 @@ const commonContext = {
             $this.toggleClass("in").siblings(".panel-body").stop().toggle("fast");
         });
     },
-    /* 激活图片预览功能 */
-    initGallery() {
-        // 用链接和标题包装图像
-        $('.main-content img:not(".not-gallery")').each(function () {
-            if ($(this).parents('[data-fancybox]').length === 0) {
-                $(this).wrap($(`<span class="gallery-item" data-fancybox="gallery" data-caption="${$(this).attr('alt')}" href="${$(this).attr('src')}"></span>`));
-                if (this.alt) {
-                    $(this).after(`<p>${this.alt}</p>`);
-                }
-            }
-        });
-    },
     /* 激活全局返回顶部功能 */
     back2Top() {
         $('#back-to-top').on('click', function () {
             $('body, html').animate({scrollTop: 0}, 400);
         });
     },
+    /* 激活建站倒计时功能 */
+    websiteTime() {
+        if (!DreamConfig.website_time) {
+            return;
+        }
+        var now = new Date();
+        var grt = new Date(DreamConfig.website_time);
+        var websiteDay = document.getElementById("websiteDay");
+        var websiteTime = document.getElementById("websiteTime");
+        setInterval(function () {
+            now.setTime(now.getTime() + 1000);
+            difference = parseInt((now - grt) / 1000);
+            seconds = difference % 60;
+            if (String(seconds).length === 1) {
+                seconds = "0" + seconds;
+            }
+            difference = parseInt(difference / 60);
+
+            minutes = difference % 60;
+            if (String(minutes).length === 1) {
+                minutes = "0" + minutes;
+            }
+            difference = parseInt(difference / 60);
+
+            hours = difference % 24;
+            if (String(hours).length === 1) {
+                hours = "0" + hours;
+            }
+            days = parseInt(difference / 24);
+            websiteDay.innerHTML = "建站 " + days + " 天 ";
+            websiteTime.innerHTML = hours + " 小时 " + minutes + " 分 " + seconds + " 秒";
+        }, 1000);
+    }
 }
 
 !(function () {

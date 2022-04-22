@@ -24,12 +24,7 @@
 					</#if>
                     <br />
                     <#if settings.website_time?? && settings.website_time!=''>
-                        <span id="websiteDay">载入天数...</span><span id="websiteTime">载入时分秒...</span>
-                        <script>
-                        $(document).ready(function(){
-                            websiteTime("${settings.website_time!}", "websiteDay", "websiteTime")
-                        });
-                        </script>
+                        <span id="websiteDay"></span><span id="websiteTime"></span>
                     </#if>
 					<#if settings.busuanzi!true>
 					<span id="busuanzi_container_site_uv">
