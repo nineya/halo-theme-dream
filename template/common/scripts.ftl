@@ -15,6 +15,7 @@
     <script data-pjax defer src="${options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js'}"></script>
 </#if>
 
+<script src="${theme_base!}/source/js/spark-input.min.js"></script>
 <script src="//cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.0/jquery.pjax.min.js"></script>
 <#--<script src="${theme_base!}/source/lib/jquery.pjax.js"></script>-->
 <script src="${theme_base!}/source/js/pjax.min.js"></script>

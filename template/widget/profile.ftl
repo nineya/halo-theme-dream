@@ -8,10 +8,6 @@
                     </figure>
                     <p class="nickname">${user.nickname!}</p>
                     <p class="motto" id="spark-input"></p>
-                    <script type="text/javascript" src="${theme_base!}/source/js/spark-input.min.js"></script>
-					<script>
-                        window.sparkInput("spark-input", ['${user.description!}'<#if settings.color_character?? && settings.color_character!=''>,${settings.color_character!}</#if>]);
-					</script>
                     <#if settings.profile_location?? && settings.profile_location!=''>
                     <p class="address">
                         <i class="fa fa-map-marker"></i>

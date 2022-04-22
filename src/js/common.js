@@ -85,6 +85,42 @@ const commonContext = {
         // 高亮移动端
         $nav_side_menus.eq(activeIndex).addClass("current");
     },
+    /* 处理滚动 */
+    initScroll() {
+        let initTop = 0
+
+        // true：上划，false：下滑
+        function scrollDirection(currentTop) {
+            const result = currentTop > initTop
+            initTop = currentTop
+            return result
+        }
+
+        const handleScroll = () => {
+            const scrollTop = $(document).scrollTop();
+            const direction = scrollDirection(scrollTop);
+            const $body = $("body");
+            const $actions = $(".actions");
+            if (direction) {
+                $body.addClass("move-up");
+            } else {
+                $body.removeClass("move-up");
+            }
+            if (scrollTop > 100) {
+                $actions.addClass("show");
+            } else {
+                $actions.removeClass("show");
+            }
+        }
+        document.addEventListener("scroll", handleScroll);
+    },
+    /* 个人信息界面打印彩字 */
+    sparkInput() {
+        const sparkInputContent = DreamConfig.spark_input_content && DreamConfig.spark_input_content.filter(s => s.length > 0);
+        if (sparkInputContent && sparkInputContent.length > 0) {
+            window.sparkInput("spark-input", sparkInputContent);
+        }
+    },
     /* 激活全局下拉框功能 */
     initDropMenu() {
         $(".item-dropdown").each(function (index, item) {
@@ -207,35 +243,6 @@ const commonContext = {
             /* 激活当前的内容 */
             $this.toggleClass("in").siblings(".panel-body").stop().toggle("fast");
         });
-    },
-    /* 处理滚动 */
-    initScroll() {
-        let initTop = 0
-
-        // true：上划，false：下滑
-        function scrollDirection(currentTop) {
-            const result = currentTop > initTop
-            initTop = currentTop
-            return result
-        }
-
-        const handleScroll = () => {
-            const scrollTop = $(document).scrollTop();
-            const direction = scrollDirection(scrollTop);
-            const $body = $("body");
-            const $actions = $(".actions");
-            if (direction) {
-                $body.addClass("move-up");
-            } else {
-                $body.removeClass("move-up");
-            }
-            if (scrollTop > 100) {
-                $actions.addClass("show");
-            } else {
-                $actions.removeClass("show");
-            }
-        }
-        document.addEventListener("scroll", handleScroll);
     },
     /* 激活图片预览功能 */
     initGallery() {
