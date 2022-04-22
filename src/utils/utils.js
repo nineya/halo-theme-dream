@@ -156,69 +156,6 @@ var Utils = {
     sleep(ms = 250) {
         return new Promise((resolve) => setTimeout(resolve, ms));
     },
-
-    /**
-     * 异步加载 JS
-     * @param {*} url 需要加载 JS 地址
-     * @param {*} callback 加载完成回调
-     */
-    loadJS(url, callback) {
-        Utils._loadRes("script", url, callback);
-    },
-
-    /**
-     * 异步加载 CSS
-     * @param {*} url 需要加载的 CSS 地址
-     * @param {*} callback 加载完成回调
-     */
-    loadCSS(url, callback) {
-        Utils._loadRes("link", url, callback);
-    },
-
-    /**
-     * 异步加载资源 *私有方法（不建议直接调用）*
-     * @param {*} type 当前需要加载的资源类型
-     * @param {*} url 资源 链接地址
-     * @param {*} callback 加载完成回调函数
-     */
-    _loadRes(type, url, callback) {
-        var dom,
-            fn = callback || function () {
-            };
-        switch (type) {
-            case "script":
-                dom = document.createElement(type);
-                dom.type = "text/javascript";
-                dom.src = url;
-                break;
-            case "link":
-                dom = document.createElement(type);
-                dom.type = "text/css";
-                dom.type = "stylesheet";
-                dom.href = url;
-                break;
-            default:
-                console.warn("暂不支持：" + type + " 类型");
-                return;
-        }
-        //IE
-        if (dom.readyState) {
-            dom.onreadystatechange = function () {
-                if (dom.readyState == "loaded" || dom.readyState == "complete") {
-                    dom.onreadystatechange = null;
-                    fn();
-                }
-            };
-        } else {
-            //其他浏览器
-            dom.onload = function () {
-                fn();
-            };
-        }
-
-        var head = document.getElementsByTagName("head")[0];
-        head.appendChild(dom);
-    },
     /**
      * 删除元素的 class，可根据前缀来删除
      * @param {*} el 需要删除的 dom 元素

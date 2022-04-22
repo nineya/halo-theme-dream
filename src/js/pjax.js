@@ -43,14 +43,22 @@ $(document).on("pjax:clicked", function () {
     console.log("pjax:clicked")
 });
 
+/**
+ * pjax加载和浏览器前进后退都会触发的事件
+ */
 $(document).on("pjax:beforeReplace", function () {
     console.log("pjax:beforeReplace")
     /* 重新初始化导航条高亮 */
     $(".navbar-nav .current,.panel-side-menu .current").removeClass("current");
     commonContext.initNavbar();
+    /* 移动端关闭抽屉弹窗 */
+    $('html.disable-scroll').length > 0 && $('.navbar-mask').trigger("click");
 });
 
-// pjax 替换内容成功之后
+/**
+ * pjax 替换内容成功之后
+ * 浏览器前进后退时不会执行
+ */
 $(document).on("pjax:success", async function (enve, data, status, xhr, options) {
     console.log("pjax success");
 
