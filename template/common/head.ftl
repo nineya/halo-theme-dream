@@ -26,23 +26,23 @@
 <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/style.min.css">
 
 <#if post?? || is_journals??>
-    <link rel="preload stylesheet" as="style"
+    <link data-pjax rel="preload stylesheet" as="style"
           href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/${settings.code_pretty!'atom-one-light'}.min.css"/>
-    <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/post.min.css"/>
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/post.min.css"/>
 </#if>
 
 <#if is_links??>
-    <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/links.min.css"/>
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/links.min.css"/>
 <#elseif is_archives??>
-    <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/archives.min.css"/>
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/archives.min.css"/>
 <#elseif is_journals??>
-    <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/journals.min.css">
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/journals.min.css">
 <#elseif is_tags??>
-    <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/tags.min.css"/>
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/tags.min.css"/>
 </#if>
 
 <#if is_post?? || is_sheet?? || is_photos?? || is_journals??>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css">
+    <link data-pjax rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css">
 </#if>
 <link rel="stylesheet" href="${theme_base!}/source/lib/qmsg/qmsg.min.css">
 
