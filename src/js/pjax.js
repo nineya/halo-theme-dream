@@ -8,6 +8,14 @@ $(document).pjax("a[target!=_blank]", ".column-main", {
     timeout: 8000,
 });
 
+$(document).on('submit', 'form[data-pjax]', function(event) {
+    $.pjax.submit(event, ".column-main", {
+        scrollTo: $("body").offsetTop - 60,
+        fragment: ".column-main",
+        timeout: 8000,
+    })
+})
+
 $(document).on("pjax:click", function () {
     console.log("------------------------")
     console.log("pjax:click")

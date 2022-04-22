@@ -38,7 +38,6 @@
 					<span id="busuanzi_container_site_pv">
 						<span id="busuanzi_value_site_pv">0</span>次访问
 					</span>
-                    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 					</#if>
                     <br />
                 </p>

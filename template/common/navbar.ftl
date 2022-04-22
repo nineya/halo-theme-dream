@@ -62,7 +62,7 @@
                     </#list>
                 </@menuTag>
             </nav>
-            <form class="navbar-search" method="get" action="/search">
+            <form data-pjax class="navbar-search" method="get" action="/search">
                 <input maxlength="16" autocomplete="off" placeholder="请输入关键字..." name="keyword" value class="input" type="text">
                 <button type="submit" class="submit" aria-label="搜索按钮"><i class="fa fa-search"></i></button>
                 <span class="icon"></span>
@@ -173,7 +173,7 @@
     <div class="navbar-searchout">
         <div class="search-container">
             <div class="navbar-searchout-inner">
-                <form class="navbar-search-mobile" method="get" action="/search">
+                <form data-pjax class="navbar-search-mobile" method="get" action="/search">
                     <input maxlength="16" autocomplete="off" placeholder="请输入关键字..." name="keyword" value class="input" type="text"/>
                     <button type="submit" class="submit">搜索</button>
                 </form>

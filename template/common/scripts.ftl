@@ -32,6 +32,9 @@
     <script defer src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
 </#if>
+<#if settings.busuanzi!true>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</#if>
 
 <#include "../plugin/mathjax.ftl">
 <#include "../plugin/sakura.ftl">
