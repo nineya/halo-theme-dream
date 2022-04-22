@@ -9,7 +9,7 @@
                     <#list comments.content as comment>
                         <li class="item">
                             <div class="user">
-                                <img width="35" height="35" class="avatar lazyload" src="${comment.avatar!}"  alt="${comment.author!}">
+                                <img width="35" height="35" class="avatar" src="${comment.avatar!}"  alt="${comment.author!}">
                                 <div class="info">
                                     <div class="author">${comment.author!}</div>
                                     <span class="date">${comment.createTime?string("yyyy-MM-dd")}</span>

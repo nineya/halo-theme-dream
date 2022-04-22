@@ -8,7 +8,7 @@
 <#if post?? || is_journals??>
     <script data-pjax src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js"></script>
     <script data-pjax src="//cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
-    <script data-pjax type="text/javascript" src="${theme_base!}/source/js/post.min.js"></script>
+    <script data-pjax src="${theme_base!}/source/js/post.min.js"></script>
 </#if>
 <#if (post?? && !post.disallowComment!false) || is_journals?? || (is_links?? && settings.link_comment_id?? && settings.link_comment_id!='')>
     <script data-pjax defer src="//cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
