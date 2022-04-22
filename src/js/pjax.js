@@ -59,8 +59,12 @@ $(document).on("pjax:beforeReplace", function () {
  * pjax 替换内容成功之后
  * 浏览器前进后退时不会执行
  */
-$(document).on("pjax:success", async function (enve, data, status, xhr, options) {
+$(document).on("pjax:success", async function (event, data, status, xhr, options) {
     console.log("pjax success");
+    /* 重新激活图片预览功能 */
+    commonContext.initGallery()
+    /* 重新加载目录 */
+    window.tocPjax && window.tocPjax();
 
     const $currentTarget = $($.parseHTML(data, document, true));
     const $document = $(document);
@@ -71,8 +75,6 @@ $(document).on("pjax:success", async function (enve, data, status, xhr, options)
             console.log('加载css ' + $(this).attr('href'))
         }
     })
-    /* 重新激活图片预览功能 */
-    commonContext.initGallery()
     let $scripts = $currentTarget.filter('script[data-pjax]');
     for (let script of $scripts) {
         let src = script.src;
@@ -100,26 +102,6 @@ $(document).on("pjax:success", async function (enve, data, status, xhr, options)
             }
         }
     }
-    // $currentTarget.filter('script[data-pjax]').each(async function () {
-    //     let $this = $(this)
-    //     console.log('同步加载js ' + $(this).attr('src'))
-    //     let head = document.getElementsByTagName('head')[0];
-    //     let script = document.createElement('script');
-    //     script.type = 'text/javascript';
-    //     script.src = $this.attr('src');
-    //     head.appendChild(script);
-    //
-    //     await new Promise(function (resolve) {
-    //         script.onload = script.onreadystatechange = function () {
-    //             if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") {
-    //                 console.log('加载js完成 ' + $this.attr('src'))
-    //                 script.onload = script.onreadystatechange = null;
-    //                 resolve()
-    //             }
-    //         };
-    //     });
-    //     console.log('同步加载js完成 ' + $this.attr('src'))
-    // })
     console.log('全部处理完成')
     /* 初始化日志界面 */
     window.journalPjax && window.journalPjax();
@@ -137,11 +119,20 @@ $(document).on("pjax:error", function () {
 
 // pjax结束
 $(document).on("pjax:complete", function () {
-    console.log("pjax end")
+    console.log("pjax:complete")
 });
 
-$(document).on("pjax:end", function () {
+/**
+ * 	pjax结束，无论是pjax加载还是浏览器前进后退都会被调用
+ * 	浏览器前进后退时，唯一一个在渲染后被调用的方法
+ */
+$(document).on("pjax:end", function (event, xhr, options) {
     console.log("pjax:end")
+    // 浏览器前进后退
+    if (xhr == null) {
+        /* 重新加载目录 */
+        window.tocPjax && window.tocPjax();
+    }
 });
 
 $(document).on("pjax:popstate", function () {

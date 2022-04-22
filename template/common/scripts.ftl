@@ -1,3 +1,6 @@
+<#if settings.sidebar_toc?? && settings.sidebar_toc != 'none'>
+    <script src="${theme_base!}/source/js/btoc.min.js"></script>
+</#if>
 <script src="${theme_base!}/source/js/common.min.js"></script>
 <script src="${theme_base!}/source/js/utils.min.js"></script>
 

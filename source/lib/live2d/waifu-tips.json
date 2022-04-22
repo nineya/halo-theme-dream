@@ -48,7 +48,7 @@
         { "selector": ".fui-info-circle", "text": ["这里有关于我的信息呢"] },
         { "selector": ".fui-cross", "text": ["你不喜欢我了吗..."] },
         { "selector": ".has-link-black-ter", "text": ["要看看 <span style=\"color:#0099cc;\">{text}</span> 么？"] },
-        { "selector": "#toc", "text": ["翻页比较麻烦吗，点击可以显示这篇文章的目录呢"] },
+        { "selector": ".widget.toc", "text": ["翻页比较麻烦吗，点击可以显示这篇文章的目录呢"] },
         { "selector": "#night-nav", "text": ["深夜时要爱护眼睛呀"] },
         { "selector": "#comment-wrapper", "text": ["要吐槽些什么呢"] },
         { "selector": "#comment", "text": ["想要去评论些什么吗？"] },

@@ -253,7 +253,7 @@ table td, table th {
   width: auto;
 }
 
-/** bulma 开始 */
+/** 通用样式 开始 */
 .tag:not(body) {
   align-items: center;
   background-color: var(--bg-c);
@@ -395,7 +395,15 @@ table td, table th {
   }
 }
 
-/** bulma 结束 */
+.is-hidden-all {
+  display: none !important;
+}
+
+.card:not(.is-hidden-all) ~ .card{
+  margin-top: 1.4rem !important;
+}
+
+/** 通用样式 结束 */
 
 .logo-img-dark {
   display: none;
@@ -1874,7 +1882,7 @@ body.move-up {
     display: none !important;
   }
 
-  .card:not(.is-hidden-not-desktop) ~ .card {
+  .card:not(.is-hidden-not-desktop):not(.is-hidden-all) ~ .card {
     margin-top: 1.4rem !important;
   }
 }
@@ -1944,7 +1952,7 @@ body.move-up {
     display: none !important;
   }
 
-  .card:not(.is-hidden-mobile) ~ .card {
+  .card:not(.is-hidden-mobile):not(.is-hidden-all) ~ .card {
     margin-top: 1.4rem !important;
   }
 
@@ -2092,7 +2100,7 @@ body.move-up {
     display: none !important;
   }
 
-  .card:not(.is-hidden-desktop) ~ .card {
+  .card:not(.is-hidden-desktop):not(.is-hidden-all) ~ .card {
     margin-top: 1.4rem !important;
   }
 }
