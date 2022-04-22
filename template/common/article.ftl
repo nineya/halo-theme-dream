@@ -1,4 +1,4 @@
-<#macro article post,commentType,index>
+<#macro article post,commentType>
     <#include "comment.ftl">
     <#if post.thumbnail?? && post.thumbnail!=''>
         <div class="card">
@@ -91,9 +91,5 @@
             </div>
         </div>
     </#if>
-    <#if commentType == 'post'>
-        <@comment post,"post" />
-    <#else>
-        <@comment post,"sheet" />
-    </#if>
+    <@comment post, commentType />
 </#macro>

@@ -1,6 +1,5 @@
 <#include "template/layout.ftl">
 <@layout title="相册 - ${blog_title!}" canonical="${photos_url!}">
-    <link rel="stylesheet" href="${theme_base!}/source/css/photos.min.css">
     <@photoTag method="count">
         <#if count!=0>
             <div class="main-content photos">

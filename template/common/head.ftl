@@ -39,10 +39,12 @@
     <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/journals.min.css">
 <#elseif is_tags??>
     <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/tags.min.css"/>
+<#elseif is_photos??>
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/photos.min.css">
 </#if>
 
 <#if is_post?? || is_sheet?? || is_photos?? || is_journals??>
-    <link data-pjax rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css">
+    <link data-pjax rel="stylesheet" href="//cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css">
 </#if>
 <link rel="stylesheet" href="${theme_base!}/source/lib/qmsg/qmsg.min.css">
 
