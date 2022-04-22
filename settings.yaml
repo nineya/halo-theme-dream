@@ -290,9 +290,9 @@ post:
       name: share_type
       label: 文章分享组件
       type: select
-      default: ' '
+      default: ''
       options:
-        - value: ' '
+        - value: ''
           label: '无'
         - value: addtoany
           label: addtoany
@@ -329,15 +329,15 @@ profile:
       name: hide_profile
       label: 隐藏方式
       type: select
-      default: ' '
+      default: 'is-not-hidden'
       options:
-        - value: ' is-hidden-mobile'
+        - value: 'is-hidden-mobile'
           label: 移动设备隐藏
-        - value: ' is-hidden-not-desktop'
+        - value: 'is-hidden-not-desktop'
           label: 非桌面设备隐藏
-        - value: ' is-hidden-desktop'
+        - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
-        - value: ' '
+        - value: 'is-not-hidden'
           label: 不隐藏
     color_character:
       name: color_character
@@ -413,15 +413,15 @@ toc:
       name: hide_toc
       label: 隐藏方式
       type: select
-      default: ' is-hidden-not-desktop'
+      default: 'is-hidden-not-desktop'
       options:
-        - value: ' is-hidden-mobile'
+        - value: 'is-hidden-mobile'
           label: 移动设备隐藏
-        - value: ' is-hidden-not-desktop'
+        - value: 'is-hidden-not-desktop'
           label: 非桌面设备隐藏
-        - value: ' is-hidden-desktop'
+        - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
-        - value: ' '
+        - value: 'is-not-hidden'
           label: 不隐藏
 notice:
   label: 公告模块
@@ -442,15 +442,15 @@ notice:
       name: hide_notice
       label: 隐藏方式
       type: select
-      default: ' '
+      default: 'is-not-hidden'
       options:
-        - value: ' is-hidden-mobile'
+        - value: 'is-hidden-mobile'
           label: 移动设备隐藏
-        - value: ' is-hidden-not-desktop'
+        - value: 'is-hidden-not-desktop'
           label: 非桌面设备隐藏
-        - value: ' is-hidden-desktop'
+        - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
-        - value: ' '
+        - value: 'is-not-hidden'
           label: 不隐藏
     notice_content:
       name: notice_content
@@ -476,15 +476,15 @@ music:
       name: hide_music
       label: 隐藏方式
       type: select
-      default: ' is-hidden-mobile'
+      default: 'is-hidden-mobile'
       options:
-        - value: ' is-hidden-mobile'
+        - value: 'is-hidden-mobile'
           label: 移动设备隐藏
-        - value: ' is-hidden-not-desktop'
+        - value: 'is-hidden-not-desktop'
           label: 非桌面设备隐藏
-        - value: ' is-hidden-desktop'
+        - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
-        - value: ' '
+        - value: 'is-not-hidden'
           label: 不隐藏
     music_config:
       name: music_config
@@ -515,15 +515,15 @@ ad_piece:
       name: hide_ad_piece
       label: 隐藏方式
       type: select
-      default: ' '
+      default: 'is-not-hidden'
       options:
-        - value: ' is-hidden-mobile'
+        - value: 'is-hidden-mobile'
           label: 移动设备隐藏
-        - value: ' is-hidden-not-desktop'
+        - value: 'is-hidden-not-desktop'
           label: 非桌面设备隐藏
-        - value: ' is-hidden-desktop'
+        - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
-        - value: ' '
+        - value: 'is-not-hidden'
           label: 不隐藏
     ad_content:
       name: ad_content
@@ -549,15 +549,15 @@ recent_posts:
       name: hide_recent_posts
       label: 隐藏方式
       type: select
-      default: ' '
+      default: 'is-not-hidden'
       options:
-        - value: ' is-hidden-mobile'
+        - value: 'is-hidden-mobile'
           label: 移动设备隐藏
-        - value: ' is-hidden-not-desktop'
+        - value: 'is-hidden-not-desktop'
           label: 非桌面设备隐藏
-        - value: ' is-hidden-desktop'
+        - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
-        - value: ' '
+        - value: 'is-not-hidden'
           label: 不隐藏
     recent_posts_num:
       name: recent_posts_num
@@ -584,15 +584,15 @@ recent_comments:
       name: hide_recent_comments
       label: 隐藏方式
       type: select
-      default: ' '
+      default: 'is-not-hidden'
       options:
-        - value: ' is-hidden-mobile'
+        - value: 'is-hidden-mobile'
           label: 移动设备隐藏
-        - value: ' is-hidden-not-desktop'
+        - value: 'is-hidden-not-desktop'
           label: 非桌面设备隐藏
-        - value: ' is-hidden-desktop'
+        - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
-        - value: ' '
+        - value: 'is-not-hidden'
           label: 不隐藏
     recent_comments_num:
       name: recent_comments_num
@@ -619,15 +619,15 @@ categories:
       name: hide_categories
       label: 隐藏方式
       type: select
-      default: ' '
+      default: 'is-not-hidden'
       options:
-        - value: ' is-hidden-mobile'
+        - value: 'is-hidden-mobile'
           label: 移动设备隐藏
-        - value: ' is-hidden-not-desktop'
+        - value: 'is-hidden-not-desktop'
           label: 非桌面设备隐藏
-        - value: ' is-hidden-desktop'
+        - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
-        - value: ' '
+        - value: 'is-not-hidden'
           label: 不隐藏
     categories_more:
       name: categories_more
@@ -666,15 +666,15 @@ tags:
       name: hide_tags
       label: 隐藏方式
       type: select
-      default: ' '
+      default: 'is-not-hidden'
       options:
-        - value: ' is-hidden-mobile'
+        - value: 'is-hidden-mobile'
           label: 移动设备隐藏
-        - value: ' is-hidden-not-desktop'
+        - value: 'is-hidden-not-desktop'
           label: 非桌面设备隐藏
-        - value: ' is-hidden-desktop'
+        - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
-        - value: ' '
+        - value: 'is-not-hidden'
           label: 不隐藏
     tags_more:
       name: tags_more
@@ -713,15 +713,15 @@ tagcloud:
       name: hide_tagcloud
       label: 隐藏方式
       type: select
-      default: ' is-hidden-not-desktop'
+      default: 'is-hidden-not-desktop'
       options:
-        - value: ' is-hidden-mobile'
+        - value: 'is-hidden-mobile'
           label: 移动设备隐藏
-        - value: ' is-hidden-not-desktop'
+        - value: 'is-hidden-not-desktop'
           label: 非桌面设备隐藏
-        - value: ' is-hidden-desktop'
+        - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
-        - value: ' '
+        - value: 'is-not-hidden'
           label: 不隐藏
     tagcloud_more:
       name: tagcloud_more
@@ -760,15 +760,15 @@ links:
       name: hide_links
       label: 隐藏方式
       type: select
-      default: ' is-hidden-not-desktop'
+      default: 'is-hidden-not-desktop'
       options:
-        - value: ' is-hidden-mobile'
+        - value: 'is-hidden-mobile'
           label: 移动设备隐藏
-        - value: ' is-hidden-not-desktop'
+        - value: 'is-hidden-not-desktop'
           label: 非桌面设备隐藏
-        - value: ' is-hidden-desktop'
+        - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
-        - value: ' '
+        - value: 'is-not-hidden'
           label: 不隐藏
     links_more:
       name: links_more

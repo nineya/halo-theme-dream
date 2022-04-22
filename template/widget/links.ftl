@@ -1,7 +1,7 @@
 <#assign num= settings.links_num!10 />
 <@linkTag method="listByRandom">
     <#if links?? && links?size gt 0>
-        <div class="card widget${settings.hide_links!}" id="links">
+        <div class="card widget ${settings.hide_links!}" id="links">
             <div class="card-title">
                 <i class="fa fa-link card-title-label"></i><span>友链</span>
                 <#if settings.links_more?? && settings.links_more== true && tags?size gt num?number>

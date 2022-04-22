@@ -1,5 +1,5 @@
 <#if settings.music_config?? && settings.music_config!=''>
-    <div class="card widget${settings.hide_music!}">
+    <div class="card widget ${settings.hide_music!}">
         <div class="card-title">
             <i class="fa fa-music card-title-label"></i><span>音乐</span>
         </div>

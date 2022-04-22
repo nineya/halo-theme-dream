@@ -1,7 +1,7 @@
 <#assign num= settings.tagcloud_num!32 />
 <@tagTag method="list">
     <#if tags?? && tags?size gt 0>
-        <div class="card widget${settings.hide_tagcloud!}">
+        <div class="card widget ${settings.hide_tagcloud!}">
             <div class="card-title">
                 <i class="fa fa-cloud card-title-label"></i><span>标签云</span>
                 <#if settings.tagcloud_more?? && settings.tagcloud_more== true && tags?size gt num?number>

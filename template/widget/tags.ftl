@@ -1,5 +1,5 @@
 <#assign num= settings.tags_num!18 />
-<div class="card widget${settings.hide_tags!}">
+<div class="card widget ${settings.hide_tags!}">
     <@tagTag method="list">
         <div class="card-title">
             <i class="fa fa-tags card-title-label"></i><span>标签</span>

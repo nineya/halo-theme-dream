@@ -1,4 +1,4 @@
-<div class="card widget${settings.hide_recent_posts!}">
+<div class="card widget ${settings.hide_recent_posts!}">
     <div class="card-title">
         <i class="fa fa-history card-title-label"></i><span>最新文章</span>
     </div>

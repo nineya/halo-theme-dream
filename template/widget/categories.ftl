@@ -1,5 +1,5 @@
 <#assign num= settings.categories_num!10 />
-<div class="card widget${settings.hide_categories!}">
+<div class="card widget ${settings.hide_categories!}">
     <@categoryTag method="list">
         <div class="card-title">
             <i class="fa fa-th-large card-title-label"></i><span>分类</span>
