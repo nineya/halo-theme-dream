@@ -2,7 +2,7 @@
 <@layout title="归档 - ${blog_title!}" canonical="${archives_url!}">
     <#if (archives)?? && archives?size gt 0>
         <#list archives as archive>
-            <div class="card widget">
+            <div class="card">
                 <div class="card-content">
                     <h3 class="timeline-title">${archive.year?c}</h3>
                     <div class="timeline">

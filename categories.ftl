@@ -2,7 +2,7 @@
 <@layout title="分类 - ${blog_title!}" canonical="${categories_url!}">
 <@categoryTag method="list">
 <#if categories?? && categories?size gt 0>
-	<div class="card widget">
+	<div class="card">
 		<div class="card-content">
 			<h3 class="menu-label">分类</h3>
 			<ul class="menu-list">

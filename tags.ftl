@@ -1,6 +1,6 @@
 <#include "template/layout.ftl">
 <@layout title="标签 - ${blog_title!}" canonical="${tags_url!}">
-    <div class="card widget">
+    <div class="card">
         <div class="card-content">
             <@tagTag method="list">
                 <#if tags?? && tags?size gt 0>

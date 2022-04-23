@@ -416,6 +416,32 @@ table td, table th {
   margin-top: 1.4rem !important;
 }
 
+.menu-list {
+
+  i {
+    margin-right: 0.5em;
+  }
+
+  li ul {
+    margin: 0.75em;
+    padding-left: 0.75em;
+    border-left: 1px solid var(--light-c);
+  }
+
+  a.level {
+    display: flex;
+  }
+
+  a.is-active {
+    background-color: var(--bg-e);
+    color: var(--light-a);
+  }
+
+  & > li > a:not(.is-active) + .menu-list {
+    display: none;
+  }
+}
+
 /** 通用样式 结束 */
 
 .logo-img-dark {
@@ -1298,7 +1324,6 @@ table td, table th {
       display: block;
       background-position: 50% 50%;
       background-size: cover;
-      border-radius: var(--radius-wrap) var(--radius-wrap) 0 0;
     }
 
     .cover {
@@ -1448,39 +1473,7 @@ table td, table th {
 }
 
 .widget {
-  .media {
-    border: none;
-
-    & + .media {
-      margin-top: 0;
-    }
-  }
-
-  .menu-list {
-
-    i {
-      margin-right: 0.5em;
-    }
-
-    li ul {
-      margin: 0.75em;
-      padding-left: 0.75em;
-      border-left: 1px solid var(--light-c);
-    }
-
-    a.level {
-      display: flex;
-    }
-
-    a.is-active {
-      background-color: var(--bg-e);
-      color: var(--light-a);
-    }
-
-    & > li > a:not(.is-active) + .menu-list {
-      display: none;
-    }
-  }
+  overflow: hidden !important;
 
   &#profile {
     figure {
