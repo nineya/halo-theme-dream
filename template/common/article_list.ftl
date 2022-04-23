@@ -9,10 +9,7 @@
             </#if>
             <div class="card-content main">
                 <h2 class="title">
-                    <#if post.topPriority==1>
-                        <span class="level-item">置顶</span>
-                    </#if>
-                    <a href="${post.fullPath!}">${post.title!}</a>
+                    <#if post.topPriority==1><span class="top">置顶</span></#if><a href="${post.fullPath!}">${post.title!}</a>
                 </h2>
                 <div class="meta">
                     <ul class="breadcrumb">
