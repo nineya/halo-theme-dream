@@ -13,11 +13,14 @@ const resolve = (name) => path.resolve(__dirname, name);
 const cssPath = "./source/css";
 const jsPath = "./source/js";
 const distPath = "./dist";
-const {EOL} = require("os");
-const {version} = require("./package.json");
 const devModel = process.env.npm_config_dev;
+let releaseVersion = process.env.npm_config_release;
 
-devModel && console.log('> 开发模式')
+if(devModel) {
+	releaseVersion = null
+	console.log('> 开发模式')
+}
+releaseVersion && console.log(`> 发布新版本：${releaseVersion}`)
 
 task("clean", () => {
 	return src([cssPath, jsPath, distPath], {
@@ -55,19 +58,19 @@ task("css", () => {
 });
 
 task("version", (done) => {
-	const filePath = "theme.yaml";
-	const source = fs.readFileSync(filePath, "utf8");
-	const data = source.split(/\r?\n/gm);
-	let pos_index = 0;
-	for (let i = 0; i < data.length; i++) {
-		if (data[i].includes("version:")) {
-			pos_index = i;
-			break;
-		}
+	if (releaseVersion == null) {
+		done();
+		return;
 	}
-	data.splice(pos_index, 1);
-	data.splice(pos_index, null, `version: ${version}`);
-	fs.writeFileSync(filePath, data.join(EOL));
+	const themePath = "theme.yaml";
+	const packagePath = "package.json"
+	const themeData = fs.readFileSync(themePath, "utf8")
+		.replace(/^(([\s\S]*[\n\r]+)version:\s+)[^\s]+([\s\S]*)$/, "$1"+releaseVersion+"$3")
+	console.log("version: asd".replace(/^(([\s\S]*[\n\r]+)*version:\s+)[^\s]+([\s\S]*)$/g, "$1"+releaseVersion+"$3"))
+	fs.writeFileSync(themePath, themeData);
+	let packageData = fs.readFileSync(packagePath, "utf8")
+		.replace(/\"version\":\s*\"[^\"]+\"/, `"version": "${releaseVersion}"`)
+    fs.writeFileSync(packagePath, packageData);
 	done()
 });
 
