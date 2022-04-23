@@ -335,6 +335,7 @@ const commonContext = {
                 (c) => commonContext[c] && commonContext[c]()
             );
         }
+        $("html").addClass("ready");
     });
 })();
 

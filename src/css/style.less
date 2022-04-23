@@ -55,6 +55,30 @@ body {
     background: var(--theme);
     background-image: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 0.4) 25%, transparent 0, transparent 50%, hsla(0, 0%, 100%, 0.4) 0, hsla(0, 0%, 100%, 0.4) 75%, transparent 0, transparent);
   }
+
+  &:before {
+    content: '';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.01;
+    transition: opacity 1s;
+    background-size: cover !important;
+  }
+
+  &:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10;
+    pointer-events: none
+  }
 }
 
 ::-webkit-scrollbar {
@@ -80,17 +104,6 @@ body {
 ::selection {
   color: #fff;
   background: var(--theme)
-}
-
-body:after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -10;
-  pointer-events: none
 }
 
 input[type=text] {
@@ -399,7 +412,7 @@ table td, table th {
   display: none !important;
 }
 
-.card:not(.is-hidden-all) ~ .card{
+.card:not(.is-hidden-all) ~ .card {
   margin-top: 1.4rem !important;
 }
 
@@ -2257,4 +2270,8 @@ body.move-up {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
+}
+
+html.ready body:before {
+  opacity: 1;
 }
