@@ -13,7 +13,9 @@
     </#if>
     <#if settings.enable_image_bg?? && settings.enable_image_bg==true>
     body:before {
+        <#if settings.background_pc?? && settings.background_pc!=''>
         background: url("${settings.background_pc!}") center 0 no-repeat;
+        </#if>
         content: '';
         position: fixed;
         z-index: -1;
@@ -25,11 +27,13 @@
         transition: opacity 1s;
     }
 
+    <#if settings.background_mobile?? && settings.background_mobile!=''>
     @media screen and (max-width: 768px) {
         body:before {
             background-image: url("${settings.background_mobile!}");
         }
     }
+    </#if>
 
     </#if>
 </style>
