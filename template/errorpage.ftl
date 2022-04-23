@@ -1,6 +1,6 @@
 <#include "layout.ftl">
 <#include "common/article_list.ftl">
-<#global post = true>
+<#global is_error = true>
 <#macro errorpage etitle,desc,status,content,message>
     <@layout title="${status!}错误 - ${blog_title!}" canonical="${blog_url!}/${status!}">
         <div class="card">
