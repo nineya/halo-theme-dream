@@ -1,10 +1,9 @@
-const { src, dest, task, series, parallel } = require("gulp");
+const {src, dest, task, series, parallel} = require("gulp");
 const webpack = require("webpack-stream");
 const less = require("gulp-less");
 const autoprefix = require("gulp-autoprefixer");
 const uglify = require("gulp-uglify");
 const minifyCSS = require("gulp-csso");
-const gzip = require("gulp-gzip");
 const zip = require('gulp-zip');
 const rename = require("gulp-rename");
 const clean = require("gulp-clean");
@@ -14,8 +13,11 @@ const resolve = (name) => path.resolve(__dirname, name);
 const cssPath = "./source/css";
 const jsPath = "./source/js";
 const distPath = "./dist";
-const { EOL } = require("os");
-const { version } = require("./package.json");
+const {EOL} = require("os");
+const {version} = require("./package.json");
+const devModel = process.env.npm_config_dev;
+
+devModel && console.log('> 开发模式')
 
 task("clean", () => {
 	return src([cssPath, jsPath, distPath], {
@@ -31,7 +33,7 @@ task("clean", () => {
 task("css", () => {
 	const ignoreFiles = [].map((file) => `./src/css/${file}.less`);
 
-	return src("./src/css/*.less", {
+	let gw = src("./src/css/*.less", {
 		ignore: ignoreFiles,
 	})
 		.pipe(less())
@@ -40,14 +42,16 @@ task("css", () => {
 				overrideBrowserslist: ["> 2%", "last 2 versions", "not ie 6-9"],
 				cascade: false,
 			})
-		)
-		.pipe(minifyCSS())
-		.pipe(
-			rename({
-				suffix: ".min",
-			})
-		)
-		.pipe(dest(cssPath));
+		);
+	if(!devModel) {
+		gw = gw.pipe(minifyCSS());
+	}
+
+	return gw.pipe(
+	    rename({
+            suffix: ".min",
+        })
+    ).pipe(dest(cssPath));
 });
 
 task("version", (done) => {
@@ -93,7 +97,7 @@ task("js", () => {
 	};
 
 	return webpack({
-		mode: "production",
+        mode: devModel ? "development" : "production",
 		entry: getEntryData(),
 		module: {
 			rules: [
