@@ -340,7 +340,7 @@
         box-shadow: var(--box-shadow);
         padding: 12px;
         transition: all 0.5s;
-        z-index: -10;
+        pointer-events: none;
         opacity: 0;
 
         ol {
@@ -363,7 +363,7 @@
 
         .donate-list {
           transform: translateX(50%);
-          z-index: unset;
+          pointer-events: unset;
           opacity: 1;
         }
       }
