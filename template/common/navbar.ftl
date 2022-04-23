@@ -63,7 +63,7 @@
                 </@menuTag>
             </nav>
             <form data-pjax class="navbar-search" method="get" action="/search">
-                <input maxlength="16" autocomplete="off" placeholder="搜索内容" name="keyword" value class="input" type="text">
+                <input maxlength="16" autocomplete="off" placeholder="搜索内容..." name="keyword" value class="input" type="text">
                 <button type="submit" class="submit" aria-label="搜索按钮"><i class="fa fa-search"></i></button>
                 <span class="icon"></span>
                 <@postTag method="latest" top="5">

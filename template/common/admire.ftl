@@ -1,5 +1,5 @@
 <#assign donate = (settings.donate_alipay?? && settings.donate_alipay!='') || (settings.donate_wechat?? && settings.donate_wechat!='') />
-<#if donate?? || !is_sheet??>
+<#if donate || !is_sheet??>
     <div class="admire">
         <div class="admire-content">
             <#if donate??>
