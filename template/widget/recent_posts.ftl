@@ -2,9 +2,9 @@
     <div class="card-title">
         <i class="fa fa-history card-title-label"></i><span>最新文章</span>
     </div>
-    <div class="card-content recent-post">
-        <@postTag method="latest" top="${settings.recent_posts_num!5}">
-            <#if posts?size gt 0>
+    <@postTag method="latest" top="${settings.recent_posts_num!5}">
+        <#if posts?size gt 0>
+            <div class="card-content recent-post">
                 <ul class="list">
                     <#list posts as post>
                         <li class="item">
@@ -13,9 +13,9 @@
                         </li>
                     </#list>
                 </ul>
-            <#else>
-                <div><p>&emsp;&emsp;欢迎来访${blog_title!}，最近${user.nickname!}没有更新过文章呢。</p></div>
-            </#if>
-        </@postTag>
-    </div>
+            </div>
+        <#else>
+            <div class="card-empty">暂无文章</div>
+        </#if>
+    </@postTag>
 </div>

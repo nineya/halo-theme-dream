@@ -7,12 +7,16 @@
                 <a class="card-more" href="${tags_url!}">更多<i class="fa fa-angle-double-right"></i></a>
             </#if>
         </div>
-        <div class="card-content tags">
-            <#assign size= (tags?size > num?number)?string(num, tags?size)?number - 1 />
-            <#list 0..size as i>
-                <#assign tag= tags[i] />
-                <a href="${tag.fullPath!}">${tag.name!}</a>
-            </#list>
-        </div>
+        <#if tags?? && tags?size gt 0>
+            <div class="card-content tags">
+                <#assign size= (tags?size > num?number)?string(num, tags?size)?number - 1 />
+                <#list 0..size as i>
+                    <#assign tag= tags[i] />
+                    <a href="${tag.fullPath!}">${tag.name!}</a>
+                </#list>
+            </div>
+        <#else>
+            <div class="card-empty">暂无标签</div>
+        </#if>
     </@tagTag>
 </div>
