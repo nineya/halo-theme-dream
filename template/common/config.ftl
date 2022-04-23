@@ -11,31 +11,27 @@
     }
 
     </#if>
-    <#if settings.enable_image_bg?? && settings.enable_image_bg==true>
-    body.ready:before {
-        opacity: 1;
-    }
 
+    <#if settings.enable_image_bg?? && settings.enable_image_bg==true>
     <#if settings.background_pc?? && settings.background_pc!=''>
     body:before {
         background: url("${settings.background_pc!}") center 0 no-repeat;
     }
-
-    </#if>
-
-    <#if settings.background_mobile?? && settings.background_mobile!=settings.background_pc!>
+    <#if !settings.background_mobile?? || settings.background_mobile==''>
     @media screen and (max-width: 768px) {
         body:before {
-            <#if settings.background_pc?? && settings.background_pc==''>
             background-image: none;
-            <#else>
-            background-image: url("${settings.background_mobile!}");
-            </#if>
         }
     }
-
     </#if>
-
+    </#if>
+    <#if settings.background_mobile?? && settings.background_mobile!='' && settings.background_mobile!=settings.background_pc! >
+    @media screen and (max-width: 768px) {
+        body:before {
+            background-image: url("${settings.background_mobile!}");
+        }
+    }
+    </#if>
     </#if>
 </style>
 <script type="text/javascript">
