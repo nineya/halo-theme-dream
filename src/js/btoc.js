@@ -84,20 +84,7 @@ function Btoc(tocList, contentElement) {
         return tocStr + "</ul>";
     }
 }
-Btoc.init = function (params) {
-    const tocList = params['tocList'];
-    const contentElement = params['contentElement'];
-    const tocSelect = params['tocElement'];
-    if (tocList == null || tocList.length === 0 || contentElement == null || tocSelect == null) {
-        $(tocSelect).children().remove()
-        return false;
-    }
-    for (var i = 0; i < tocList.length; i++) {
-        tocList[i] = tocList[i].toUpperCase();
-    }
-    let tocContent = new Btoc(tocList, contentElement).build();
-    $(tocSelect).html(tocContent);
-}
+const observers = [];
 function register($toc) {
     // toc滚动时间和偏移量
     const time = 20
@@ -181,6 +168,25 @@ function register($toc) {
             $heading.style.scrollMargin = '1em';
         }
     }
+    observers.push(observer)
+}
+Btoc.init = function (params) {
+    observers.forEach(observer => {
+        observer.disconnect()
+    })
+    observers.splice(0)
+    const tocList = params['tocList'];
+    const contentElement = params['contentElement'];
+    const tocSelect = params['tocElement'];
+    if (tocList == null || tocList.length === 0 || contentElement == null || tocSelect == null) {
+        $(tocSelect).children().remove()
+        return false;
+    }
+    for (var i = 0; i < tocList.length; i++) {
+        tocList[i] = tocList[i].toUpperCase();
+    }
+    let tocContent = new Btoc(tocList, contentElement).build();
+    $(tocSelect).html(tocContent);
 }
 
 window.tocPjax = function () {
