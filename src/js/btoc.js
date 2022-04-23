@@ -96,10 +96,7 @@ Btoc.init = function (params) {
         tocList[i] = tocList[i].toUpperCase();
     }
     let tocContent = new Btoc(tocList, contentElement).build();
-    console.log(tocContent)
-    console.log($(tocSelect))
     $(tocSelect).html(tocContent);
-    console.log($(tocSelect))
 }
 function register($toc) {
     // toc滚动时间和偏移量
