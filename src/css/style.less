@@ -1310,12 +1310,14 @@ table td, table th {
 
     &-empty {
       text-align: center;
-      padding: 24px 0;
+      font-size: 1.2em;
+      padding: 60px 0;
       color: var(--dark-d);
-      background-color: var(--bg-a);
-      border-radius: 0 0 var(--radius-wrap) var(--radius-wrap);
-      font-style: italic;
-      user-select: none;
+
+      i {
+        display: block;
+        font-size: 7em;
+      }
     }
 
     .thumbnail {
@@ -1474,6 +1476,15 @@ table td, table th {
 
 .widget {
   overflow: hidden !important;
+
+
+  &.card .card-empty {
+    font-size: 1em;
+    font-style: italic;
+    user-select: none;
+    padding: 24px 0;
+    background-color: var(--bg-a);
+  }
 
   &#profile {
     figure {
