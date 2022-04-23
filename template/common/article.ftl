@@ -60,10 +60,10 @@
                     </div>
                 </div>
             </#if>
-
-            <#if settings.enable_copyright?? || (settings.share_type?? && settings.share_type!='')>
+            <#assign enable_copyright = (metas?? && metas.enable_copyright?? && metas.enable_copyright?trim!='')?then(metas.enable_copyright?trim, settings.enable_copyright!'true')>
+            <#if enable_copyright == 'true' || (settings.share_type?? && settings.share_type!='')>
                 <hr/>
-                <#if settings.enable_copyright!>
+                <#if enable_copyright == 'true'>
                     <#include "copyright.ftl">
                 </#if>
                 <#if settings.share_type?? && settings.share_type!=''>

@@ -19,3 +19,9 @@ repo: https://github.com/nineya/halo-theme-dream
 version: 2.0.0-alpha.1
 # 最低支持的 Halo 版本
 require: 1.3.0
+# 文章页 meta 变量
+postMetaField:
+  - enable_copyright
+# 自定义页 meta 变量
+sheetMetaField:
+  - enable_copyright

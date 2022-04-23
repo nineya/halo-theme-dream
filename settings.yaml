@@ -277,13 +277,13 @@ post:
       name: enable_copyright
       label: 文章底部版权声明
       type: radio
-      data-type: bool
-      default: true
+      default: 'true'
+      description: '如果文章或页面配置了元数据，则当前配置将被覆盖。'
       options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
+        - value: 'true'
+          label: 默认开启
+        - value: 'false'
+          label: 默认关闭
     share_type:
       name: share_type
       label: 文章分享组件

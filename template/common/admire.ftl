@@ -2,7 +2,7 @@
 <#if donate || !is_sheet??>
     <div class="admire">
         <div class="admire-content">
-            <#if donate??>
+            <#if donate>
                 <button class="donate">
                     <i class="fa fa-credit-card"></i>
                     <span>打赏</span>
