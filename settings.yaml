@@ -460,7 +460,7 @@ notice:
       label: 显示模式
       type: radio
       default: index
-      placeholder: 当满足某些条件时公告模块才显示
+      description: 当满足指定的条件时公告模块才会显示
       options:
         - value: none
           label: 无条件
