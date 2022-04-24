@@ -156,6 +156,22 @@ var Utils = {
     sleep(ms = 250) {
         return new Promise((resolve) => setTimeout(resolve, ms));
     },
+    /* 折叠块 */
+    foldBlock($container) {
+        if (!DreamConfig.journals_fold_height) {
+            return;
+        }
+        const $scrollElement = $("body,html");
+        const oldHeight = $container.height();
+        if ($container.is(".fold")) {
+            $container.removeClass('fold');
+        } else {
+            const oldScrollTop = $scrollElement.scrollTop();
+            $container.addClass('fold');
+            // 跳转位置，保证折叠后没有过大的位置偏移
+            $scrollElement.scrollTop(oldScrollTop - oldHeight + $container.height());
+        }
+    },
     /**
      * 删除元素的 class，可根据前缀来删除
      * @param {*} el 需要删除的 dom 元素

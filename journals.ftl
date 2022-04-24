@@ -1,13 +1,14 @@
 <#include "template/layout.ftl">
 <@layout title="动态 - ${blog_title!}" canonical="${journals_url!}">
-    <#if (journals.content)?? && journals.content?size gt 0>
+    <#if journals.content?? && journals.content?size gt 0>
+        <#assign fold=(settings.journals_fold_height?? && settings.journals_fold_height?number gte 260)?then(" fold", "")>
         <#list journals.content as journal>
             <div class="card card-content journal">
                 <p class="journal-date">
                     <i class="fa fa-paper-plane-o"></i>
                     <em>${journal.createTime?string('yyyy年MM月dd日 HH:mm:ss')}</em>
                 </p>
-                <div class="journal-content main-content">${journal.content}</div>
+                <div class="journal-content${fold}"><div class="main-content">${journal.content}</div></div>
                 <div class="journal-operation">
                     <span class="journal-operation-item">
                         <a class="like" data-id="${journal.id}" data-likes="${journal.likes!0}"><i

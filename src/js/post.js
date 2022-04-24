@@ -69,17 +69,7 @@ const postContext = {
         });
         // 内容块展开和折叠点击事件
         $(".main-content .expand-done").on("click", function () {
-            const $figure = $(this).parent().parent();
-            const $scrollElement = $("body,html");
-            const oldHeight = $figure.height();
-            if ($figure.is(".fold")) {
-                $figure.removeClass('fold');
-            } else {
-                const oldScrollTop = $scrollElement.scrollTop();
-                $figure.addClass('fold');
-                // 跳转位置，保证折叠后没有过大的位置偏移
-                $scrollElement.scrollTop(oldScrollTop - oldHeight + $figure.height());
-            }
+            Utils.foldBlock($(this).parent().parent());
         })
     },
     /* 初始化喜欢功能 */

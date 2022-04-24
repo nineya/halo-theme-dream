@@ -829,6 +829,16 @@ link_page:
       type: text
       placeholder: '友链界面评论区ID'
       description: '友链界面没有ID，需要指定一个自定义页面的ID用于评论，被指定的文章评论区将作为友链的评论区，放空则不显示评论区。'
+other_page:
+  label: 其他页面
+  items:
+    journals_fold_height:
+      name: journals_fold_height
+      label: 动态内容折叠
+      type: text
+      default: 500
+      placeholder: '触发折叠的动态内容高度（px）'
+      description: '动态内容高度超出指定高度后默认进行折叠，指定的高度需大于等于260px。'
 enhance:
   label: 增强功能
   items:

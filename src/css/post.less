@@ -173,18 +173,6 @@
     overflow: hidden;
     position: relative;
 
-    &.fold {
-      max-height: 320px;
-
-      .expand-done {
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.0), rgb(77 77 77 / 40%));
-
-        i {
-          transform: rotatex(180deg);
-        }
-      }
-    }
-
     & > figcaption {
       display: flex;
       background: var(--bg-l);
@@ -264,24 +252,6 @@
         &:not(:last-child) {
           margin-bottom: 1.8rem;
         }
-      }
-    }
-
-    .expand-done {
-      background: var(--bg-k);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      text-align: center;
-      height: 1.8rem;
-      cursor: pointer;
-
-      i {
-        color: var(--dark-e);
-        font-size: 1.6rem;
-        animation: code-expand 1.2s infinite;
-        transition: all 0.3s;
       }
     }
   }
@@ -528,18 +498,6 @@
 
   100% {
     transform: translateY(-3px) scaleY(1);
-  }
-}
-
-@keyframes code-expand {
-  0% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 0.6;
   }
 }
 

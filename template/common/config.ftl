@@ -45,6 +45,9 @@
     DreamConfig["website_time"] = '${settings.website_time}';
     </#if>
     DreamConfig["notice_hide_mode"] = '${settings.notice_hide_mode!'index'}';
+    <#if settings.journals_fold_height?? && settings.journals_fold_height?number gte 260>
+    DreamConfig["journals_fold_height"] =${settings.journals_fold_height};
+    </#if>
 
     // 配置主题模式
     let isNight = localStorage.getItem('night') || false;

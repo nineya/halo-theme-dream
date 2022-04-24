@@ -363,21 +363,6 @@ table td, table th {
   }
 }
 
-.menu-list {
-  line-height: 1.25;
-
-  a {
-    border-radius: 2px;
-    color: var(--main);
-    display: block;
-    padding: 0.5em 0.75em;
-
-    &:hover {
-      background-color: var(--bg-c);
-    }
-  }
-}
-
 .is-invisible {
   visibility: hidden !important;
 }
@@ -430,6 +415,27 @@ table td, table th {
 }
 
 .menu-list {
+  line-height: 1.25;
+
+  a {
+    border-radius: 2px;
+    color: var(--main);
+    display: block;
+    padding: 0.5em 0.75em;
+
+    &:hover {
+      background-color: var(--bg-c);
+    }
+
+    &.level {
+      display: flex;
+    }
+
+    &.is-active {
+      background-color: var(--bg-e);
+      color: var(--light-a);
+    }
+  }
 
   i {
     margin-right: 0.5em;
@@ -441,17 +447,38 @@ table td, table th {
     border-left: 1px solid var(--light-c);
   }
 
-  a.level {
-    display: flex;
-  }
-
-  a.is-active {
-    background-color: var(--bg-e);
-    color: var(--light-a);
-  }
-
   & > li > a:not(.is-active) + .menu-list {
     display: none;
+  }
+}
+
+.expand-done {
+  background: var(--bg-k);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 1.8rem;
+  cursor: pointer;
+
+  i {
+    color: var(--dark-e);
+    font-size: 1.6rem;
+    animation: code-expand 1.2s infinite;
+    transition: all 0.3s;
+  }
+}
+
+.fold {
+  max-height: 320px;
+
+  .expand-done {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0), rgb(77 77 77 / 40%));
+
+    i {
+      transform: rotatex(180deg);
+    }
   }
 }
 
@@ -2300,6 +2327,18 @@ body.move-up {
         width: 64%;
       }
     }
+  }
+}
+
+@keyframes code-expand {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.6;
   }
 }
 
