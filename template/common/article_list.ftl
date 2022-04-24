@@ -2,7 +2,7 @@
     <#list posts as post>
         <#assign thumbnail_model = (post.metas?? && post.metas.thumbnail_model?? && post.metas.thumbnail_model?trim!='' && post.thumbnail?? && post.thumbnail!='')?then(post.metas.thumbnail_model?trim, 'default')>
         <#if thumbnail_model == "back">
-            <div class="card">
+            <div class="card widget">
                 <div class="cover" style="background-image: url(${post.thumbnail!})">
                     <#if post.categories?? && post.categories?size gt 0>
                         <div class="category">
@@ -30,7 +30,7 @@
         <#elseif thumbnail_model == "smail">
 
         <#else>
-            <div class="card">
+            <div class="card widget">
                 <#if post.thumbnail?? && post.thumbnail!=''>
                     <a href="${post.fullPath!}">
                         <div class="thumbnail" style="background-image: url(${post.thumbnail!})">
