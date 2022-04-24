@@ -16,7 +16,7 @@
                         <div class="photo">
                             <#list item.photos as photo>
                                 <div class="column">
-                                    <div class="card">
+                                    <div class="card widget">
                                         <div class="picture-details" href="${photo.url}" data-fancybox="gallery" data-caption="${photo.description!}">
                                             <img src="${photo.thumbnail}"
                                                  alt="${photo.description!}">

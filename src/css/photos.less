@@ -6,6 +6,10 @@
     margin-top: 0;
   }
 
+  .column {
+    width: 25%;
+  }
+
   .photo {
     margin: -0.75rem;
 
@@ -34,13 +38,13 @@
       width: 100%;
       height: 100%;
       transition: transform 1.2s;
+      position: absolute;
       object-fit: cover;
+      margin: 0;
       bottom: 0;
       left: 0;
-      position: absolute;
       right: 0;
       top: 0;
-      border-radius: var(--radius-wrap) var(--radius-wrap) 0 0;
     }
 
     .picture-description {
@@ -82,5 +86,18 @@
         font-size: 80%;
       }
     }
+  }
+}
+
+@media (max-width: 1407px) {
+  .photos .column {
+    width: 33%;
+  }
+}
+
+@media (max-width: 768px) {
+  .photos .column {
+    width: 50%;
+    padding: 0.75rem !important;
   }
 }
