@@ -192,7 +192,7 @@ Btoc.init = function (params) {
 window.tocPjax = function () {
     Btoc.init({
         tocList: ['h1', 'h2', 'h3', 'h4', 'h5'],
-        contentElement: $('.main-content')[0],
+        contentElement: $('.main-content:not(.not-toc)')[0],
         tocElement: '.widget.toc .card-content'
     });
     if (typeof window.IntersectionObserver === 'undefined') {
