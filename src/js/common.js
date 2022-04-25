@@ -281,6 +281,18 @@ const commonContext = {
             $('body, html').animate({scrollTop: 0}, 400);
         });
     },
+    /* 初始化事件 */
+    initEvent() {
+        $(".click-close").on("click", function (e) {
+            e.stopPropagation();
+            const closeSelect = $(this).attr('data-close').trim();
+            if (closeSelect && closeSelect !== '') {
+                $(this).closest(closeSelect).remove();
+            } else {
+                $(this).closest().remove();
+            }
+        });
+    },
     /* 激活建站倒计时功能 */
     websiteTime() {
         if (!DreamConfig.website_time) {

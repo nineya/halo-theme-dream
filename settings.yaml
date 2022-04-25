@@ -536,11 +536,56 @@ ad_piece:
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
           label: 不隐藏
-    ad_content:
-      name: ad_content
-      label: 侧边栏广告代码
+    show_ad_tag:
+      name: show_ad_tag
+      label: 显示“广告”标签
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 不显示
+    ad_tag_close:
+      name: ad_tag_close
+      label: “广告”标签可点击关闭广告
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 是
+        - value: false
+          label: 否
+    ad_model:
+      name: ad_model
+      label: 广告展示方法
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 图片+链接
+        - value: false
+          label: 自定义广告代码
+    ad_target_url:
+      name: ad_target_url
+      label: 广告目标地址
+      type: text
+      placeholder: '填写广告跳转的目标路径'
+    ad_image:
+      name: ad_image
+      label: 广告图片链接
+      type: attachment
+      description: '“图片+链接”模式时不能为空。'
+      placeholder: '填写图片路径'
+    ad_custom_code:
+      name: ad_custom_code
+      label: 自定义广告代码
       type: textarea
       placeholder: '在这里黏贴广告联盟提供的广告代码'
+      description: '“自定义广告代码”模式时不能为空。'
 recent_posts:
   label: 最近文章模块
   items:
@@ -834,7 +879,7 @@ other_page:
   items:
     journals_fold_height:
       name: journals_fold_height
-      label: 动态内容折叠
+      label: 动态页面-动态内容折叠
       type: text
       default: 500
       placeholder: '触发折叠的动态内容高度（px）'
