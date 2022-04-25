@@ -44,7 +44,7 @@
     <#if settings.website_time?? && settings.website_time!=''>
     DreamConfig["website_time"] = '${settings.website_time}';
     </#if>
-    DreamConfig["notice_hide_mode"] = '${settings.notice_hide_mode!'index'}';
+    DreamConfig["notice_show_mode"] = '${settings.notice_show_mode!'index'}';
     <#if settings.journals_fold_height?? && settings.journals_fold_height?number gte 260>
     DreamConfig["journals_fold_height"] =${settings.journals_fold_height};
     </#if>

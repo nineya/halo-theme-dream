@@ -476,8 +476,8 @@ notice:
       label: 博客公告
       type: textarea
       placeholder: 请输入公告内容（html格式）
-    notice_hide_mode:
-      name: notice_hide_mode
+    notice_show_mode:
+      name: notice_show_mode
       label: 显示模式
       type: radio
       default: index
@@ -525,9 +525,24 @@ music:
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
           label: 不隐藏
+    music_mode:
+      name: music_mode
+      label: 音乐播放器配置方法
+      type: radio
+      default: 'playlist'
+      options:
+        - value: 'playlist'
+          label: 网易云歌单ID
+        - value: 'config'
+          label: 参数进阶配置
+    netease_playlist_id:
+      name: netease_playlist_id
+      label: 网易云歌单ID
+      type: text
+      placeholder: '填写网易云歌单的ID'
     music_config:
       name: music_config
-      label: 音乐参数配置
+      label: 参数进阶配置
       type: textarea
       placeholder: '音乐参数配置，(id,server,type为必须值)'
       default: 'list-folded="true"
@@ -593,8 +608,8 @@ ad_piece:
           label: 是
         - value: false
           label: 否
-    ad_model:
-      name: ad_model
+    ad_mode:
+      name: ad_mode
       label: 广告展示方法
       type: radio
       data-type: bool

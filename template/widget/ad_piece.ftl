@@ -1,7 +1,7 @@
-<#assign ad_show=(settings.ad_model!true)?then(settings.ad_image?? && settings.ad_image != '', settings.ad_custom_code?? && settings.ad_custom_code!='')>
+<#assign ad_show=(settings.ad_mode!true)?then(settings.ad_image?? && settings.ad_image != '', settings.ad_custom_code?? && settings.ad_custom_code!='')>
 <#if ad_show>
     <div class="card widget ${settings.hide_ad_piece!}">
-        <#if settings.ad_model!true>
+        <#if settings.ad_mode!true>
             <a target="_blank" href="${settings.ad_target_url!}">
                 <img width="100%" src="${settings.ad_image}" alt="广告"/>
             </a>
