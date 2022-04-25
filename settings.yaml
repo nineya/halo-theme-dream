@@ -323,6 +323,13 @@ profile:
           label: 右侧展示
         - value: none
           label: 不显示
+    sidebar_priority_profile:
+      name: sidebar_priority_profile
+      label: 侧边栏优先级
+      type: text
+      default: 9900
+      placeholder: '填写数字优先级'
+      description: '优先级越高，模块排序越靠前。'
     hide_profile:
       name: hide_profile
       label: 隐藏方式
@@ -407,6 +414,13 @@ toc:
           label: 右侧
         - value: none
           label: 关闭
+    sidebar_priority_toc:
+      name: sidebar_priority_toc
+      label: 侧边栏优先级
+      type: text
+      default: 9800
+      placeholder: '填写数字优先级'
+      description: '优先级越高，模块排序越靠前。'
     hide_toc:
       name: hide_toc
       label: 隐藏方式
@@ -436,6 +450,13 @@ notice:
           label: 右侧
         - value: none
           label: 关闭
+    sidebar_priority_notice:
+      name: sidebar_priority_notice
+      label: 侧边栏优先级
+      type: text
+      default: 9700
+      placeholder: '填写数字优先级'
+      description: '优先级越高，模块排序越靠前。'
     hide_notice:
       name: hide_notice
       label: 隐藏方式
@@ -483,6 +504,13 @@ music:
           label: 右侧
         - value: none
           label: 关闭
+    sidebar_priority_music:
+      name: sidebar_priority_music
+      label: 侧边栏优先级
+      type: text
+      default: 9600
+      placeholder: '填写数字优先级'
+      description: '优先级越高，模块排序越靠前。'
     hide_music:
       name: hide_music
       label: 隐藏方式
@@ -522,6 +550,13 @@ ad_piece:
           label: 右侧
         - value: none
           label: 关闭
+    sidebar_priority_ad_piece:
+      name: sidebar_priority_ad_piece
+      label: 侧边栏优先级
+      type: text
+      default: 9500
+      placeholder: '填写数字优先级'
+      description: '优先级越高，模块排序越靠前。'
     hide_ad_piece:
       name: hide_ad_piece
       label: 隐藏方式
@@ -601,6 +636,13 @@ recent_posts:
           label: 右侧
         - value: none
           label: 关闭
+    sidebar_priority_recent_posts:
+      name: sidebar_priority_recent_posts
+      label: 侧边栏优先级
+      type: text
+      default: 9400
+      placeholder: '填写数字优先级'
+      description: '优先级越高，模块排序越靠前。'
     hide_recent_posts:
       name: hide_recent_posts
       label: 隐藏方式
@@ -636,6 +678,13 @@ recent_comments:
           label: 右侧
         - value: none
           label: 关闭
+    sidebar_priority_recent_comments:
+      name: sidebar_priority_recent_comments
+      label: 侧边栏优先级
+      type: text
+      default: 9300
+      placeholder: '填写数字优先级'
+      description: '优先级越高，模块排序越靠前。'
     hide_recent_comments:
       name: hide_recent_comments
       label: 隐藏方式
@@ -671,6 +720,13 @@ categories:
           label: 右侧
         - value: none
           label: 关闭
+    sidebar_priority_categories:
+      name: sidebar_priority_categories
+      label: 侧边栏优先级
+      type: text
+      default: 9200
+      placeholder: '填写数字优先级'
+      description: '优先级越高，模块排序越靠前。'
     hide_categories:
       name: hide_categories
       label: 隐藏方式
@@ -718,6 +774,13 @@ tags:
           label: 右侧
         - value: none
           label: 关闭
+    sidebar_priority_tags:
+      name: sidebar_priority_tags
+      label: 侧边栏优先级
+      type: text
+      default: 9100
+      placeholder: '填写数字优先级'
+      description: '优先级越高，模块排序越靠前。'
     hide_tags:
       name: hide_tags
       label: 隐藏方式
@@ -765,6 +828,13 @@ tagcloud:
           label: 右侧
         - value: none
           label: 关闭
+    sidebar_priority_tagcloud:
+      name: sidebar_priority_tagcloud
+      label: 侧边栏优先级
+      type: text
+      default: 9000
+      placeholder: '填写数字优先级'
+      description: '优先级越高，模块排序越靠前。'
     hide_tagcloud:
       name: hide_tagcloud
       label: 隐藏方式
@@ -812,6 +882,13 @@ links:
           label: 右侧
         - value: none
           label: 关闭
+    sidebar_priority_links:
+      name: sidebar_priority_links
+      label: 侧边栏优先级
+      type: text
+      default: 8900
+      placeholder: '填写数字优先级'
+      description: '优先级越高，模块排序越靠前。'
     hide_links:
       name: hide_links
       label: 隐藏方式
