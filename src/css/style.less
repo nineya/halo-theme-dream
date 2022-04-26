@@ -30,11 +30,25 @@ html {
   overflow-y: overlay;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
-}
 
-html.disable-scroll, html.disable-scroll body {
-  height: 100vh;
-  overflow: hidden
+  &.ready body:before {
+    opacity: 1;
+  }
+
+  &.disable-scroll {
+    overflow: hidden
+  }
+
+  &:not(.disable-scroll) {
+
+    body.move-up .navbar-above {
+      transform: translate3d(0, -100%, 0);
+    }
+
+    .actions.show {
+      right: 16px;
+    }
+  }
 }
 
 body {
@@ -1116,7 +1130,7 @@ table td, table th {
   }
 
   &-searchout {
-    position: absolute;
+    position: fixed;
     top: 4rem;
     left: 0;
     right: 0;
@@ -1946,10 +1960,6 @@ table td, table th {
   transition: all 0.5s;
   opacity: 0.9;
 
-  &.show {
-    right: 16px;
-  }
-
   & > div {
     display: block;
     margin-bottom: 5px;
@@ -2000,12 +2010,6 @@ table td, table th {
   .level > div {
     text-align: center;
     color: var(--dark-c);
-  }
-}
-
-body.move-up {
-  .navbar-above {
-    transform: translate3d(0, -100%, 0);
   }
 }
 
@@ -2402,10 +2406,6 @@ body.move-up {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-}
-
-html.ready body:before {
-  opacity: 1;
 }
 
 .pace {

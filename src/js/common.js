@@ -201,8 +201,6 @@ const commonContext = {
                 $mask.removeClass("active slideout");
                 $slide_out.removeClass("active");
             } else {
-                // 保存滚动位置
-                window.sessionStorage.setItem("lastScroll", $html.scrollTop());
                 $html.addClass("disable-scroll");
                 $mask.addClass("active slideout");
                 $slide_out.addClass("active");
@@ -226,8 +224,6 @@ const commonContext = {
                 $search_out.removeClass("active");
                 $above.removeClass("solid");
             } else {
-                // 保存滚动位置
-                window.sessionStorage.setItem("lastScroll", $html.scrollTop());
                 $html.addClass("disable-scroll");
                 $mask.addClass("active");
                 $above.addClass("solid");
@@ -246,10 +242,6 @@ const commonContext = {
                 $(".navbar-searchout").removeClass("active");
                 $(".navbar-slideout").removeClass("active");
                 $(".navbar-above").removeClass("solid");
-                // 还原滚动位置
-                const lastScroll = window.sessionStorage.getItem("lastScroll");
-                lastScroll && $html.scrollTop(lastScroll);
-                window.sessionStorage.removeItem("lastScroll");
             })
             .on("touchmove", (e) => e.preventDefault);
     },
