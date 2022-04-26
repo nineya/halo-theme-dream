@@ -25,6 +25,8 @@
 <link rel="preload stylesheet" as="style" href="//cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/style.min.css">
 
+<script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
 <#if post?? || is_journals?? || is_error??>
     <link data-pjax rel="preload stylesheet" as="style"
           href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/${settings.code_pretty!'atom-one-light'}.min.css"/>
