@@ -435,6 +435,18 @@ toc:
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
           label: 不隐藏
+    drawer_toc:
+      name: drawer_toc
+      label: 侧边抽屉式目录
+      type: radio
+      data-type: bool
+      default: true
+      description: '在非桌面设备上，显示展开侧边抽屉式目录的悬浮按钮。'
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 不显示
 notice:
   label: 公告模块
   items:

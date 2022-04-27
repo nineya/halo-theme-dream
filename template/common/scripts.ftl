@@ -1,4 +1,4 @@
-<#if settings.sidebar_toc?? && settings.sidebar_toc != 'none'>
+<#if (settings.sidebar_toc?? && settings.sidebar_toc != 'none') || settings.drawer_toc!true>
     <script src="${theme_base!}/source/js/btoc.min.js"></script>
 </#if>
 <script src="${theme_base!}/source/js/common.min.js"></script>

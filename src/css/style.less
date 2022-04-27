@@ -1039,12 +1039,24 @@ table td, table th {
       }
     }
 
-    &-count {
-      margin-bottom: 15px;
-      padding: 10px 15px;
+    &-menu {
       background: var(--light-a);
+      padding: 10px 15px;
       border-radius: var(--radius-wrap);
+      overflow: hidden;
       box-shadow: var(--box-shadow);
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      &.is-toc {
+        display: none;
+      }
+
+      .menu-list > li > a:not(.is-active) + .menu-list {
+        display: block;
+      }
 
       .item {
         display: flex;
@@ -1062,14 +1074,6 @@ table td, table th {
           color: var(--theme);
         }
       }
-    }
-
-    &-menu {
-      background: var(--light-a);
-      padding: 10px 15px;
-      border-radius: var(--radius-wrap);
-      overflow: hidden;
-      box-shadow: var(--box-shadow);
 
       .link {
         display: flex;
@@ -1125,6 +1129,16 @@ table td, table th {
           font-weight: 500;
           font-size: 15px;
         }
+      }
+    }
+
+    &.slideout-toc {
+      .not-toc {
+        display: none;
+      }
+
+      .is-toc {
+        display: block;
       }
     }
   }

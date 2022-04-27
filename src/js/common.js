@@ -217,11 +217,11 @@ const commonContext = {
             if ($slide_out.hasClass("active")) {
                 $html.removeClass("disable-scroll");
                 $mask.removeClass("active slideout");
-                $slide_out.removeClass("active");
+                $slide_out.removeClass("active slideout-toc");
             } else {
                 $html.addClass("disable-scroll");
                 $mask.addClass("active slideout");
-                $slide_out.addClass("active");
+                $slide_out.addClass("active slideout-toc");
             }
         });
     },
@@ -258,11 +258,19 @@ const commonContext = {
                 $html.removeClass("disable-scroll");
                 $(".navbar-mask").removeClass("active slideout");
                 $(".navbar-searchout").removeClass("active");
-                $(".navbar-slideout").removeClass("active");
+                $(".navbar-slideout").removeClass("active slideout-toc");
                 $(".navbar-above").removeClass("solid");
             })
             .on("touchmove", (e) => e.preventDefault);
+        $(".navbar .toc-content")
+            .on("click", function (e) {
+                e.stopPropagation();
+                $("html").removeClass("disable-scroll");
+                $(".navbar-mask").removeClass("active slideout");
+                $(".navbar-slideout").removeClass("active slideout-toc");
+            })
     },
+
     /* 移动端侧边栏菜单手风琴 */
     sideMenuMobile() {
         $(".navbar-slideout-menu .current")

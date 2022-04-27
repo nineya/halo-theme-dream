@@ -91,7 +91,7 @@
                     <p class="motto">${user.description!'一句话介绍自己吧！'}</p>
                 </div>
             </div>
-            <ul class="navbar-slideout-count">
+            <ul class="navbar-slideout-menu">
                 <li class="item">
                     <i class="fa fa-pencil-square-o"></i>
                     <@postTag method="count"><span>累计撰写 <strong>${count!"0"}</strong> 篇文章</span></@postTag>
@@ -105,13 +105,13 @@
                     <@commentTag method="count"><span>累计收到 <strong>${count!"0"}</strong> 条评论</span></@commentTag>
                 </li>
             </ul>
-            <ul class="navbar-slideout-menu panel-box">
+            <ul class="navbar-slideout-menu not-toc">
                 <li>
                     <a class="link panel" href="#" rel="nofollow">
                         <span>导航</span>
                         <i class="fa fa-angle-right"></i>
                     </a>
-                    <ul class="slides panel-body panel-box panel-side-menu">
+                    <ul class="slides panel-body panel-side-menu">
                         <@menuTag method="tree">
                             <#list menus?sort_by('priority') as menu>
                                 <#if menu.children?? && menu.children?size gt 0>
@@ -166,6 +166,13 @@
                     </ul>
                 </li>
             </ul>
+            <#if settings.drawer_toc!true>
+                <ul class="navbar-slideout-menu is-toc">
+                    <a class="link in" href="#" rel="nofollow"><span>目录</span></a>
+                    <div class="toc-content">
+                    </div>
+                </ul>
+            </#if>
         </div>
     </div>
 

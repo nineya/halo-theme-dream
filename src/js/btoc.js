@@ -178,7 +178,7 @@ Btoc.init = function (params) {
     const tocList = params['tocList'];
     const contentElement = params['contentElement'];
     const tocSelect = params['tocElement'];
-    if (tocList == null || tocList.length === 0 || contentElement == null || tocSelect == null) {
+    if (tocList == null || tocList.length === 0 || contentElement == null) {
         $(tocSelect).children().remove()
         return false;
     }
@@ -193,10 +193,10 @@ window.tocPjax = function () {
     Btoc.init({
         tocList: ['h1', 'h2', 'h3', 'h4', 'h5'],
         contentElement: $('.main-content:not(.not-toc)')[0],
-        tocElement: '.widget.toc .card-content'
+        tocElement: '.toc-content'
     });
     if (typeof window.IntersectionObserver === 'undefined') {
         return;
     }
-    document.querySelectorAll('.widget.toc').forEach(register);
+    document.querySelectorAll('.toc-content').forEach(register);
 }
