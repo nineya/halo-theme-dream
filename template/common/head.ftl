@@ -29,7 +29,7 @@
 
 <#if post?? || is_journals?? || is_error??>
     <link data-pjax rel="preload stylesheet" as="style"
-          href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/${settings.code_pretty!'atom-one-light'}.min.css"/>
+          href="${theme_base!}/source/lib/highlightjs@11.5.1/styles/${settings.code_pretty!'atom-one-light'}.min.css"/>
     <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/post.min.css"/>
 </#if>
 
