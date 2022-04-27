@@ -6,7 +6,7 @@
 
 <#if post?? || is_journals?? || is_error??>
     <script data-pjax src="${theme_base!}/source/lib/highlightjs@11.5.1/highlight.min.js"></script>
-    <script data-pjax src="//cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
+    <script data-pjax src="${theme_base!}/source/lib/clipboard@2.0.10/clipboard.min.js"></script>
     <script data-pjax src="${theme_base!}/source/js/post.min.js"></script>
 </#if>
 
