@@ -20,7 +20,7 @@
                         <ul class="breadcrumb">
                             <li><@global.timeline datetime=post.createTime/></li>
                             <li><i class="fa fa-eye"></i>${post.visits?c}</li>
-                            <li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li>
+                            <#if !post.disallowComment!false><li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li></#if>
                             <li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li>
                             <#assign heat= (24+post.visits*0.1+post.likes*2+post.commentCount*3) />
                             <#assign heatColor= '#'+(heat < 37)?string('ffa87e',(heat < 120)?string('fb734a','e0081c')) />
@@ -43,14 +43,14 @@
                             <ul class="breadcrumb">
                                 <li><@global.timeline datetime=post.createTime/></li>
                                 <li><i class="fa fa-eye"></i>${post.visits?c}</li>
-                                <li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li>
+                                <#if !post.disallowComment!false><li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li></#if>
                                 <li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li>
                                 <#assign heat= (24+post.visits*0.1+post.likes*2+post.commentCount*3) />
                                 <#assign heatColor= '#'+(heat < 37)?string('ffa87e',(heat < 120)?string('fb734a','e0081c')) />
                                 <li style="color: ${heatColor}">${heat}℃</li>
                             </ul>
                             <#if post.categories?? && post.categories?size gt 0>
-                                <div class="level-item">
+                                <div class="level-item is-hidden-mobile">
                                     <#list post.categories as category>
                                         <a href="${category.fullPath!}">${category.name!}</a>&nbsp;
                                     </#list>
@@ -75,8 +75,8 @@
                         <ul class="breadcrumb">
                             <li><@global.timeline datetime=post.createTime/></li>
                             <li><i class="fa fa-eye"></i>${post.visits?c}</li>
-                            <li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li>
-                            <li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li>
+                            <#if !post.disallowComment!false><li class="is-hidden-mobile"><i class="fa fa-comments-o"></i>${post.commentCount?c}</li></#if>
+                            <li class="is-hidden-mobile"><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li>
                             <#assign heat= (24+post.visits*0.1+post.likes*2+post.commentCount*3) />
                             <#assign heatColor= '#'+(heat < 37)?string('ffa87e',(heat < 120)?string('fb734a','e0081c')) />
                             <li style="color: ${heatColor}">${heat}℃</li>
