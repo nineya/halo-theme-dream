@@ -25,7 +25,7 @@
 <link rel="preload stylesheet" as="style" href="//cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/style.min.css">
 
-<script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+<script src="${theme_base!}/source/lib/pace-js@1.2.4/pace.min.js"></script>
 
 <#if post?? || is_journals?? || is_error??>
     <link data-pjax rel="preload stylesheet" as="style"
@@ -46,13 +46,13 @@
 </#if>
 
 <#if is_post?? || is_sheet?? || is_photos?? || is_journals??>
-    <link data-pjax rel="stylesheet" href="//cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css">
+    <link data-pjax rel="stylesheet" href="${theme_base!}/source/lib/fancybox@5.3.7/jquery.fancybox.min.css">
 </#if>
 <link rel="stylesheet" href="${theme_base!}/source/lib/qmsg/qmsg.min.css">
 
 <#include "config.ftl">
 
-<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="${theme_base!}/source/lib/jquery@3.5.1/jquery.min.js"></script>
 
 <#if settings.external_css?? && settings.external_css!=''>
     <link rel="stylesheet" href="${settings.external_css!}">

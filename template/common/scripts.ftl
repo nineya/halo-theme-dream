@@ -14,27 +14,26 @@
     <script data-pjax src="${theme_base!}/source/js/journals.min.js"></script>
 </#if>
 <#if (post?? && !post.disallowComment!false) || is_journals?? || (is_links?? && settings.link_comment_id?? && settings.link_comment_id!='')>
-    <script data-pjax defer src="//cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+    <script data-pjax defer src="${theme_base!}/source/lib/vue@2.6.10/vue.min.js"></script>
     <script data-pjax defer src="${options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js'}"></script>
 </#if>
 
 <script src="${theme_base!}/source/js/spark-input.min.js"></script>
-<script src="//cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.0/jquery.pjax.min.js"></script>
-<#--<script src="${theme_base!}/source/lib/jquery.pjax.js"></script>-->
+<script src="${theme_base!}/source/lib/jquery-pjax@2.0.0/jquery.pjax.min.js"></script>
 <script src="${theme_base!}/source/js/pjax.min.js"></script>
 
 <script async src="${theme_base!}/source/lib/qmsg/qmsg.min.js"></script>
 
 <#if is_post?? || is_sheet?? || is_photos?? || is_journals?? >
-    <script data-pjax async src="//cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script data-pjax async src="${theme_base!}/source/lib/fancybox@5.3.7/jquery.fancybox.min.js"></script>
 </#if>
 
 <script async src="${theme_base!}/source/js/universe.min.js"></script>
 
 <#if settings.sidebar_music?? && settings.sidebar_music != 'none'>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-    <script defer src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-    <script defer src="//cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+    <link rel="stylesheet" href="${theme_base!}/source/lib/aplayer@1.10.1/APlayer.min.css">
+    <script defer src="${theme_base!}/source/lib/aplayer@1.10.1/APlayer.min.js"></script>
+    <script defer src="${theme_base!}/source/lib/meting@2.0.1/Meting.min.js"></script>
 </#if>
 <#if settings.busuanzi!true>
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
