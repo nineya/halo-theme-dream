@@ -206,6 +206,24 @@ const commonContext = {
                 $slide_out.addClass("active");
             }
         });
+        $(".action-toc").on("click", function (e) {
+            e.stopPropagation();
+            /* 关闭搜索框 */
+            $(".navbar-searchout").removeClass("active");
+            /* 处理开启关闭状态 */
+            const $html = $("html");
+            const $mask = $(".navbar-mask");
+            const $slide_out = $(".navbar-slideout");
+            if ($slide_out.hasClass("active")) {
+                $html.removeClass("disable-scroll");
+                $mask.removeClass("active slideout");
+                $slide_out.removeClass("active");
+            } else {
+                $html.addClass("disable-scroll");
+                $mask.addClass("active slideout");
+                $slide_out.addClass("active");
+            }
+        });
     },
     /* 小屏幕搜索框 */
     searchMobile() {

@@ -5,6 +5,7 @@
 $(document).pjax("a[target!=_blank]", ".column-main", {
     scrollTo: $("body").offsetTop - 60,
     fragment: ".column-main",
+    version: new Date().getTime(),
     timeout: 8000,
 });
 
@@ -12,6 +13,7 @@ $(document).on('submit', 'form[data-pjax]', function(event) {
     $.pjax.submit(event, ".column-main", {
         scrollTo: $("body").offsetTop - 60,
         fragment: ".column-main",
+        version: new Date().getTime(),
         timeout: 8000,
     })
 })
@@ -128,6 +130,7 @@ $(document).on("pjax:complete", function () {
  */
 $(document).on("pjax:end", function (event, xhr, options) {
     console.log("pjax:end")
+    console.log(options.version)
     // 浏览器前进后退
     if (xhr == null) {
         /* 重新加载目录和公告 */
