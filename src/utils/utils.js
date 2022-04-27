@@ -146,9 +146,6 @@ var Utils = {
                     likeButton.off('click');
                     likeNum.html(likes);
                     Qmsg.success('点赞成功');
-                })
-                .catch((err) => {
-                    console.log(err)
                 });
         });
     },

@@ -51,12 +51,6 @@ const postContext = {
         })
         // 初始化代码块高亮工具
         hljs.initHighlightingOnLoad();
-        // 初始化代码块复制插件
-        let clipboard = new ClipboardJS('.btn-clipboard');
-        clipboard.on('error', function (e) {
-            e.clearSelection();
-            alert("您的浏览器不支持复制");
-        });
         // 代码块展开和关闭点击事件
         $(".main-content figure>figcaption .fa-angle-down").on("click", function () {
             if ($(this).is('.close')) {
@@ -81,7 +75,6 @@ const postContext = {
     },
 }
 window.postPjax = function () {
-    console.log("初始化 post")
     Object.keys(postContext).forEach(
         (c) => postContext[c]()
     );
@@ -89,5 +82,14 @@ window.postPjax = function () {
 !(function () {
     document.addEventListener("DOMContentLoaded", function () {
         Object.keys(postContext).forEach((c) => postContext[c]());
+        // 初始化代码块复制插件，一个界面仅需初始化一次
+        let clipboard = new ClipboardJS('.btn-clipboard');
+        clipboard.on('error', function (e) {
+            e.clearSelection();
+            Qmsg.error("您的浏览器不支持复制");
+        });
+        clipboard.on('success', function () {
+            Qmsg.success("复制成功");
+        })
     });
 })();
