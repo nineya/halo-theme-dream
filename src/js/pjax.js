@@ -77,7 +77,7 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
     })
     let $scripts = $currentTarget.filter('script[data-pjax]');
     for (let script of $scripts) {
-        let src = script.src;
+        let src = $(script).attr('src');
         if ($document.find(`script[src='${src}']`).length === 0) {
             // 异步加载
             if (script.defer || script.async) {
