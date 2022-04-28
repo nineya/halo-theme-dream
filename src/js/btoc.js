@@ -171,10 +171,6 @@ function register($toc) {
     observers.push(observer)
 }
 Btoc.init = function (params) {
-    observers.forEach(observer => {
-        observer.disconnect()
-    })
-    observers.splice(0)
     const tocList = params['tocList'];
     const contentElement = params['contentElement'];
     const tocSelect = params['tocElement'];
@@ -190,6 +186,10 @@ Btoc.init = function (params) {
 }
 
 window.tocPjax = function () {
+    observers.forEach(observer => {
+        observer.disconnect()
+    })
+    observers.splice(0)
     Btoc.init({
         tocList: ['h1', 'h2', 'h3', 'h4', 'h5'],
         contentElement: $('.main-content:not(.not-toc)')[0],

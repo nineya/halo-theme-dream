@@ -49,8 +49,6 @@ const postContext = {
             }
             $pre.parent().prepend(`<figcaption>${title}${titleButton}</figcaption>`);
         })
-        // 初始化代码块高亮工具
-        hljs.initHighlightingOnLoad();
         // 代码块展开和关闭点击事件
         $(".main-content figure>figcaption .fa-angle-down").on("click", function () {
             if ($(this).is('.close')) {
@@ -73,6 +71,11 @@ const postContext = {
             Utils.like($(this), $(this).find('span').find('span'), 'posts')
         });
     },
+    /* 代码块高亮 */
+    initHighlighting() {
+        // 初始化代码块高亮工具
+        hljs.initHighlightingOnLoad();
+    },
 }
 window.postPjax = function () {
     Object.keys(postContext).forEach(
@@ -80,8 +83,11 @@ window.postPjax = function () {
     );
 }
 !(function () {
+    postContext.initLike();
+    postContext.initCodeBlock();
+
     document.addEventListener("DOMContentLoaded", function () {
-        Object.keys(postContext).forEach((c) => postContext[c]());
+        postContext.initHighlighting();
         // 初始化代码块复制插件，一个界面仅需初始化一次
         let clipboard = new ClipboardJS('.btn-clipboard');
         clipboard.on('error', function (e) {

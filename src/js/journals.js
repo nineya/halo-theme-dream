@@ -1,4 +1,16 @@
 const journalContext = {
+    /* 点赞 */
+    initLike() {
+        $(".journal .like").each(function () {
+            Utils.like($(this), $(this).next(), 'journals')
+        });
+    },
+    /* 评论及折叠 */
+    initComment() {
+        $(".journal .comment").on("click", function () {
+            $(this).parent().parent().siblings(".journal-comment").stop().slideToggle(200);
+        });
+    },
     /* 折叠日志区域 */
     foldJournals() {
         const $journals = $(".journal .journal-content");
@@ -12,18 +24,6 @@ const journalContext = {
             Utils.foldBlock($(this).parent());
         })
     },
-    /* 点赞 */
-    initLike() {
-        $(".journal .like").each(function () {
-            Utils.like($(this), $(this).next(), 'journals')
-        });
-    },
-    /* 评论及折叠 */
-    initComment() {
-        $(".journal .comment").on("click", function () {
-            $(this).parent().parent().siblings(".journal-comment").stop().slideToggle(200);
-        });
-    },
 }
 window.journalPjax = function () {
     Object.keys(journalContext).forEach(
@@ -31,10 +31,10 @@ window.journalPjax = function () {
     );
 }
 !(function () {
-    const omits = [];
+    journalContext.initLike();
+    journalContext.initComment();
+
     document.addEventListener("DOMContentLoaded", function () {
-        Object.keys(journalContext).forEach(
-            (c) => !omits.includes(c) && journalContext[c]()
-        );
+        journalContext.foldJournals();
     });
 })();

@@ -115,6 +115,29 @@ const commonContext = {
         // 高亮移动端
         $nav_side_menus.eq(activeIndex).addClass("current");
     },
+    /* 激活导航栏全局下拉框功能 */
+    initDropMenu() {
+        $(".item-dropdown").each(function (index, item) {
+            const menu = $(this).find(".item-dropdown-menu");
+            const trigger = $(item).attr("trigger") || "click";
+            const placement = $(item).attr("placement") || $(this).height() || 0;
+            menu.css("top", placement);
+            if (trigger === "hover") {
+                $(this).hover(
+                    () => $(this).addClass("active"),
+                    () => $(this).removeClass("active")
+                );
+            } else {
+                $(this).on("click", function (e) {
+                    e.stopPropagation();
+                    $(this).toggleClass("active");
+                    $(document).one("click", () => $(this).removeClass("active"));
+                    e.stopPropagation();
+                });
+                menu.on("click", (e) => e.stopPropagation());
+            }
+        });
+    },
     /* 处理滚动 */
     initScroll() {
         let initTop = 0
@@ -151,29 +174,6 @@ const commonContext = {
             window.sparkInput("spark-input", sparkInputContent);
         }
     },
-    /* 激活全局下拉框功能 */
-    initDropMenu() {
-        $(".item-dropdown").each(function (index, item) {
-            const menu = $(this).find(".item-dropdown-menu");
-            const trigger = $(item).attr("trigger") || "click";
-            const placement = $(item).attr("placement") || $(this).height() || 0;
-            menu.css("top", placement);
-            if (trigger === "hover") {
-                $(this).hover(
-                    () => $(this).addClass("active"),
-                    () => $(this).removeClass("active")
-                );
-            } else {
-                $(this).on("click", function (e) {
-                    e.stopPropagation();
-                    $(this).toggleClass("active");
-                    $(document).one("click", () => $(this).removeClass("active"));
-                    e.stopPropagation();
-                });
-                menu.on("click", (e) => e.stopPropagation());
-            }
-        });
-    },
     /* 搜索框弹窗 */
     searchDialog() {
         const $result = $(".navbar-search .result");
@@ -185,7 +185,7 @@ const commonContext = {
             $result.removeClass("active");
         });
     },
-    /* 小屏幕伸缩侧边栏 */
+    /* 小屏幕伸缩侧边栏，包含导航或者目录 */
     drawerMobile() {
         $(".navbar-slideicon").on("click", function (e) {
             e.stopPropagation();
@@ -253,8 +253,7 @@ const commonContext = {
         $(".navbar-mask")
             .on("click", function (e) {
                 e.stopPropagation();
-                const $html = $("html");
-                $html.removeClass("disable-scroll");
+                $("html").removeClass("disable-scroll");
                 $(".navbar-mask").removeClass("active slideout");
                 $(".navbar-searchout").removeClass("active");
                 $(".navbar-slideout").removeClass("active slideout-toc");
@@ -269,7 +268,6 @@ const commonContext = {
                 $(".navbar-slideout").removeClass("active slideout-toc");
             })
     },
-
     /* 移动端侧边栏菜单手风琴 */
     sideMenuMobile() {
         $(".navbar-slideout-menu .current")
@@ -346,24 +344,21 @@ const commonContext = {
 }
 
 !(function () {
+    const loads = ["sparkInput", "websiteTime"];
     const omits = [];
+
+    Object.keys(commonContext).forEach(
+        (c) => !loads.includes(c) && !omits.includes(c) && commonContext[c]()
+    );
 
     // 当前html加载完执行
     document.addEventListener("DOMContentLoaded", function () {
-        Object.keys(commonContext).forEach(
-            (c) => !omits.includes(c) && commonContext[c]()
-        );
+        loads.forEach((c) => commonContext[c] && commonContext[c]());
     });
 
     // 所有内容加载完执行
     window.addEventListener("load", function () {
-        if (omits.length === 1) {
-            commonContext[omits[0]]();
-        } else {
-            omits.forEach(
-                (c) => commonContext[c] && commonContext[c]()
-            );
-        }
+        omits.forEach((c) => commonContext[c] && commonContext[c]());
         $("html").addClass("ready");
     });
 })();
