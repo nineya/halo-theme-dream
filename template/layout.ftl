@@ -1,32 +1,14 @@
 <#macro layout title,canonical>
-<#include "common/widget.ftl">
-<#import "common/navbar.ftl" as nav>
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <#include "common/head.ftl">
-</head>
-<body>
-    <@nav.navbar/>
-    <canvas id="universe"></canvas>
-    <section class="section">
-        <div class="container<#if settings.sidebar_column?? && settings.sidebar_column!='all'> two-column</#if>">
-            <div class="columns">
-                <div class="column column-main">
-                    <#nested />
-                </div>
-                <#if !settings.sidebar_column?? || settings.sidebar_column!='only-right'>
-                    <@widget 'left' />
-                </#if>
-                <#if !settings.sidebar_column?? || settings.sidebar_column!='only-left'>
-                    <@widget 'right' />
-                </#if>
-            </div>
-        </div>
-    </section>
-    <#include "common/actions.ftl">
-    <#include "common/footer.ftl">
-    <#include "common/scripts.ftl">
-</body>
-</html>
+    <#if RequestParameters?? && RequestParameters._pjax?? >
+        <#global is_pjax=RequestParameters._pjax>
+        <#include "layout_pjax.ftl">
+        <@layout_pjax title,canonical>
+            <#nested />
+        </@layout_pjax>
+    <#else>
+        <#include "layout_default.ftl">
+        <@layout_default title,canonical>
+            <#nested />
+        </@layout_default>
+    </#if>
 </#macro>
