@@ -1,55 +1,65 @@
+const createSerialNumber = () => {
+    const serialNumber = new Date().getTime();
+    window.pjaxSerialNumber = serialNumber;
+    console.log(`sn = ${serialNumber}`)
+    return serialNumber;
+}
+
 /**
  * 第二个参数是容器，即将被替换的内容
  * fragment:是加载的文本中被选中的目标内容
  */
-$(document).pjax("a[target!=_blank]", ".column-main", {
-    scrollTo: $("body").offsetTop - 60,
-    fragment: ".column-main",
-    version: new Date().getTime(),
-    timeout: 8000,
-});
-
-$(document).on('submit', 'form[data-pjax]', function(event) {
-    $.pjax.submit(event, ".column-main", {
-        scrollTo: $("body").offsetTop - 60,
+$(document).on('click', 'a[target!=_blank][href]:not(data-not-pjax)', (event) => {
+    $.pjax.click(event, ".column-main", {
+        scrollTo: 0,
         fragment: ".column-main",
-        version: new Date().getTime(),
+        serialNumber: createSerialNumber(),
         timeout: 8000,
     })
 })
 
-$(document).on("pjax:click", function () {
+
+$(document).on('submit', 'form[data-pjax]', function (event) {
+    $.pjax.submit(event, ".column-main", {
+        scrollTo: 0,
+        fragment: ".column-main",
+        serialNumber: createSerialNumber(),
+        timeout: 8000,
+    })
+})
+
+$(document).on("pjax:click", function (event, options) {
     console.log("------------------------")
-    console.log("pjax:click")
+    console.log(`pjax:click sn = ${options.serialNumber}`)
 });
 
-$(document).on("pjax:beforeSend", function () {
-    console.log("pjax:beforeSend")
+$(document).on("pjax:beforeSend", function (event, xhr, options) {
+    console.log(`pjax:beforeSend sn = ${options.serialNumber}`)
 });
 
-$(document).on("pjax:start", function () {
-    console.log("pjax:start")
+$(document).on("pjax:start", function (event, xhr, options) {
+    console.log(`pjax:start sn = ${options.serialNumber}`)
 });
 
-$(document).on("pjax:send", function () {
-    console.log("pjax:send")
-    $("html, body").animate(
-        {
-            scrollTop: $("body").position().top - 60,
-        },
-        500
-    );
+$(document).on("pjax:send", function (event, xhr, options) {
+    console.log(`pjax:send sn = ${options.serialNumber}`)
+    // $("html, body").animate(
+    //     {
+    //         scrollTop: $("body").position().top - 60,
+    //     },
+    //     500
+    // );
 });
 
-$(document).on("pjax:clicked", function () {
-    console.log("pjax:clicked")
+$(document).on("pjax:clicked", function (event, options) {
+    console.log(`pjax:clicked sn = ${options.serialNumber}`)
 });
 
 /**
  * pjax加载和浏览器前进后退都会触发的事件
  */
-$(document).on("pjax:beforeReplace", function () {
-    console.log("pjax:beforeReplace")
+$(document).on("pjax:beforeReplace", function (event, contents, options) {
+    console.log(`pjax:beforeReplace sn = ${options.serialNumber}`)
     /* 重新初始化导航条高亮 */
     $(".navbar-nav .current,.panel-side-menu .current").removeClass("current");
     commonContext.initNavbar();
@@ -62,7 +72,7 @@ $(document).on("pjax:beforeReplace", function () {
  * 浏览器前进后退时不会执行
  */
 $(document).on("pjax:success", async function (event, data, status, xhr, options) {
-    console.log("pjax success");
+    console.log(`pjax:success sn = ${options.serialNumber}`)
     /* 重新激活图片预览功能 */
     commonContext.initGallery()
     /* 重新加载目录和公告 */
@@ -111,26 +121,25 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
     window.postPjax && window.postPjax();
 });
 
-$(document).on("pjax:timeout", function () {
-    console.log("pjax:timeout")
+$(document).on("pjax:timeout", function (event, xhr, options) {
+    console.log(`pjax:timeout sn = ${options.serialNumber}`)
 });
 
-$(document).on("pjax:error", function () {
-    console.log("pjax:error")
+$(document).on("pjax:error", function (event, xhr, textStatus, error, options) {
+    console.log(`pjax:error sn = ${options.serialNumber} error ${error}`)
 });
 
 // pjax结束
-$(document).on("pjax:complete", function () {
-    console.log("pjax:complete")
+$(document).on("pjax:complete", function (event, xhr, textStatus, options) {
+    console.log(`pjax:complete sn = ${options.serialNumber}`)
 });
 
 /**
- * 	pjax结束，无论是pjax加载还是浏览器前进后退都会被调用
- * 	浏览器前进后退时，唯一一个在渲染后被调用的方法
+ *    pjax结束，无论是pjax加载还是浏览器前进后退都会被调用
+ *    浏览器前进后退时，唯一一个在渲染后被调用的方法
  */
 $(document).on("pjax:end", function (event, xhr, options) {
-    console.log("pjax:end")
-    console.log(options.version)
+    console.log(`pjax:end sn = ${options.serialNumber}`)
     // 浏览器前进后退
     if (xhr == null) {
         /* 重新加载目录和公告 */
