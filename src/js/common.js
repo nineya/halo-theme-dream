@@ -16,7 +16,6 @@ const commonContext = {
     /* 初始化目录和公告模块 */
     initTocAndNotice() {
         const {pathname} = location;
-        console.log(pathname)
         window.tocPjax && window.tocPjax()
         let hideToc = $('.widget.toc .card-content ul').length === 0;
         let hideNotice = (DreamConfig.notice_show_mode === 'toc' && !hideToc)

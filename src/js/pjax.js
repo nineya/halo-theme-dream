@@ -1,8 +1,23 @@
+const cssLoadCompletes = new Set($('link[href*=".css"]').map((i, item) => $(item).attr('href')).get())
+const jsLoadCompletes = new Set($('script[src*=".js"]').map((i, item) => $(item).attr('src')).get())
+
+// 为pjax请求创建一个序列号
 const createSerialNumber = () => {
     const serialNumber = new Date().getTime();
     window.pjaxSerialNumber = serialNumber;
     console.log(`sn = ${serialNumber}`)
     return serialNumber;
+}
+
+// 有缓存的方式加载js
+cachedScript = (url, callback) => {
+    return jQuery.ajax(jQuery.extend({
+        url: url,
+        type: 'get',
+        dataType: 'script',
+        cache: true,
+        success: callback
+    }, jQuery.isPlainObject(url) && url));
 }
 
 /**
@@ -57,6 +72,7 @@ $(document).on("pjax:clicked", function (event, options) {
 
 /**
  * pjax加载和浏览器前进后退都会触发的事件
+ * 在此处需要进行一些未进行pjax也需要执行的程序
  */
 $(document).on("pjax:beforeReplace", function (event, contents, options) {
     console.log(`pjax:beforeReplace sn = ${options.serialNumber}`)
@@ -79,41 +95,53 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
     commonContext.initTocAndNotice()
 
     const $currentTarget = $($.parseHTML(data, document, true));
-    const $document = $(document);
     const $head = $("head");
     $currentTarget.filter('link[data-pjax]').each(function () {
-        if ($document.find(`link[href='${$(this).attr('href')}']`).length === 0) {
+        let href = $(this).attr('href')
+        if (!cssLoadCompletes.has(href)) {
             $head.append($(this))
             console.log('加载css ' + $(this).attr('href'))
+            this.onload = function () {
+                cssLoadCompletes.add(href)
+                console.log('加载css完成 ' + $(this).attr('href'))
+            }
         }
     })
     let $scripts = $currentTarget.filter('script[data-pjax]');
-    for (let script of $scripts) {
-        let src = $(script).attr('src');
-        if ($document.find(`script[src='${src}']`).length === 0) {
-            // 异步加载
-            if (script.defer || script.async) {
-                $head.append($(script))
+    let scriptSize = $scripts.length;
+    await new Promise((resolve) => {
+        $scripts.each(function () {
+            let src = $(this).attr('src');
+            if (jsLoadCompletes.has(src)) {
+                if (--scriptSize === 0) resolve()
+                return;
+            }
+            if (this.defer || this.async) {
                 console.log('异步加载js ' + src)
+                cachedScript(src)
+                    .done(function () {
+                        console.log('异步加载js完成 ' + src)
+                        jsLoadCompletes.add(src);
+                    })
+                    .fail(function () {
+                        console.log('异步加载js失败 ' + src)
+                    })
+                if (--scriptSize === 0) resolve()
             } else {
                 console.log('同步加载js ' + src)
-                let scriptElement = document.createElement('script');
-                let head = document.getElementsByTagName('head')[0];
-                scriptElement.type = 'text/javascript';
-                scriptElement.src = src;
-                head.appendChild(scriptElement);
-                await new Promise(function (resolve) {
-                    scriptElement.onload = scriptElement.onreadystatechange = function () {
-                        if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") {
-                            scriptElement.onload = scriptElement.onreadystatechange = null;
-                            console.log('加载js完成 ' + src)
-                            resolve()
-                        }
-                    };
-                })
+                cachedScript(src)
+                    .done(function () {
+                        console.log('同步加载js完成 ' + src)
+                        jsLoadCompletes.add(src);
+                        if (--scriptSize === 0) resolve()
+                    })
+                    .fail(function () {
+                        console.log('同步加载js失败 ' + src)
+                        if (--scriptSize === 0) resolve()
+                    })
             }
-        }
-    }
+        })
+    })
     console.log('全部处理完成')
     /* 初始化日志界面 */
     window.journalPjax && window.journalPjax();
