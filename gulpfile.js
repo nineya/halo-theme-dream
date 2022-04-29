@@ -36,7 +36,7 @@ task("clean", () => {
 task("css", () => {
     const ignoreFiles = [].map((file) => `./src/css/${file}.less`);
 
-    let gw = src("./src/css/*.less", {
+    let gw = src("./src/css/**/*.less", {
         ignore: ignoreFiles,
     })
         .pipe(less())

@@ -1,0 +1,20 @@
+@default: url(../../cursor/breeze/Arrow.cur), auto;
+@pointer: url(../../cursor/breeze/Hand.cur), auto;
+@text: url(../../cursor/breeze/IBeam.cur), auto;
+@zoom-in: url(../../cursor/breeze/Arrow.cur), auto;
+
+body {
+  cursor: @default;
+}
+
+a, button, .expand-done, .navbar-above .navbar-nav .item, .navbar-slideicon, .navbar-searchicon, .widget .ad-tag .click-close, .actions > div, .main-content figure > figcaption div, .photos .picture-details {
+  cursor: @pointer;
+}
+
+.main-content img {
+  cursor: @zoom-in;
+}
+
+p, input[type=text], blockquote, th, td, code, h1, h2, h3, h4, h5, h6, hr, li, textarea {
+  cursor: @text;
+}

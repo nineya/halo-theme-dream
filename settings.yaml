@@ -991,6 +991,16 @@ other_page:
 enhance:
   label: 增强功能
   items:
+    cursor_style:
+      name: cursor_style
+      label: 鼠标风格
+      type: select
+      default: none
+      options:
+        - value: none
+          label: 关闭
+        - value: breeze
+          label: 清风（深色）
     cursor_move:
       name: cursor_move
       label: 鼠标移动特效

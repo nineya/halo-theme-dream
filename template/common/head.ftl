@@ -54,6 +54,10 @@
 
 <script src="${theme_base!}/source/lib/jquery@3.5.1/jquery.min.js"></script>
 
+<#if settings.cursor_style?? && settings.cursor_style!='none'>
+    <link rel="stylesheet" href="${theme_base!}/source/css/cursor/${settings.cursor_style}.min.css">
+</#if>
+
 <#if settings.external_css?? && settings.external_css!=''>
     <link rel="stylesheet" href="${settings.external_css!}">
 </#if>
