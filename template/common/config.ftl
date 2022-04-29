@@ -44,7 +44,7 @@
     <#if settings.code_fold_line?? && settings.code_fold_line?number gte 20>
     DreamConfig["code_fold_line"] =${settings.code_fold_line};
     </#if>
-    DreamConfig["spark_input_content"] = ['${user.description!}'<#if settings.color_character?? && settings.color_character!=''>, ${settings.color_character!}</#if>];
+    DreamConfig["spark_input_content"] = ['${user.description?trim?replace('\n', '')}'<#if settings.color_character?? && settings.color_character?trim!=''>, ${settings.color_character?trim?replace('\n', '')}</#if>];
     <#if settings.website_time?? && settings.website_time!=''>
     DreamConfig["website_time"] = '${settings.website_time}';
     </#if>
