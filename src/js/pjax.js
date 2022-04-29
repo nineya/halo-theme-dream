@@ -9,17 +9,6 @@ const createSerialNumber = () => {
     return serialNumber;
 }
 
-// 有缓存的方式加载js
-cachedScript = (url, callback) => {
-    return jQuery.ajax(jQuery.extend({
-        url: url,
-        type: 'get',
-        dataType: 'script',
-        cache: true,
-        success: callback
-    }, jQuery.isPlainObject(url) && url));
-}
-
 /**
  * 第二个参数是容器，即将被替换的内容
  * fragment:是加载的文本中被选中的目标内容
@@ -120,7 +109,7 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
             }
             if (this.defer || this.async) {
                 console.log('异步加载js ' + src)
-                cachedScript(src)
+                Utils.cachedScript(src)
                     .done(function () {
                         console.log('异步加载js完成 ' + src)
                         jsLoadCompletes.add(src);
@@ -131,7 +120,7 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
                 if (--scriptSize === 0) resolve()
             } else {
                 console.log('同步加载js ' + src)
-                cachedScript(src)
+                Utils.cachedScript(src)
                     .done(function () {
                         console.log('同步加载js完成 ' + src)
                         jsLoadCompletes.add(src);

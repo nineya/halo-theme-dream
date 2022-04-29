@@ -151,7 +151,5 @@ class CursorSpecialEffects {
         this.renderContext.drawImage(this.computerCanvas, 0, 0, this.globalWidth, this.globalHeight)
     }
 }
-window.onload = function () {
-    const cursorSpecialEffects = new CursorSpecialEffects()
-    cursorSpecialEffects.init()
-}
+const cursorSpecialEffects = new CursorSpecialEffects()
+cursorSpecialEffects.init()

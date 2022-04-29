@@ -48,6 +48,12 @@
     <#if settings.journals_fold_height?? && settings.journals_fold_height?number gte 260>
     DreamConfig["journals_fold_height"] =${settings.journals_fold_height};
     </#if>
+    <#if settings.cursor_move?? && settings.cursor_move!='none'>
+    DreamConfig["cursor_move"] = '${theme_base!}/source/js/cursor/move/${settings.cursor_move}.min.js';
+    </#if>
+    <#if settings.cursor_click?? && settings.cursor_click!='none'>
+    DreamConfig["cursor_click"] = '${theme_base!}/source/js/cursor/click/${settings.cursor_click}.min.js';
+    </#if>
 
     // 配置主题模式
     let isNight = localStorage.getItem('night') || false;

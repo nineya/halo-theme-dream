@@ -21,9 +21,9 @@ const commonContext = {
         let hideNotice = (DreamConfig.notice_show_mode === 'toc' && !hideToc)
             || (DreamConfig.notice_show_mode === 'index' && pathname !== '/')
         if (hideToc) {
-            $('.widget.toc').addClass("is-hidden-all");
+            $('.widget.toc,.action-toc').addClass("is-hidden-all");
         } else {
-            $('.widget.toc').removeClass("is-hidden-all");
+            $('.widget.toc,.action-toc').removeClass("is-hidden-all");
         }
         if (hideNotice) {
             $('.widget.notice').addClass("is-hidden-all");
@@ -165,13 +165,6 @@ const commonContext = {
         }
         document.addEventListener("scroll", handleScroll);
     },
-    /* 个人信息界面打印彩字 */
-    sparkInput() {
-        const sparkInputContent = DreamConfig.spark_input_content && DreamConfig.spark_input_content.filter(s => s.length > 0);
-        if (sparkInputContent && sparkInputContent.length > 0) {
-            window.sparkInput("spark-input", sparkInputContent);
-        }
-    },
     /* 搜索框弹窗 */
     searchDialog() {
         const $result = $(".navbar-search .result");
@@ -306,6 +299,13 @@ const commonContext = {
             }
         });
     },
+    /* 个人信息界面打印彩字 */
+    sparkInput() {
+        const sparkInputContent = DreamConfig.spark_input_content && DreamConfig.spark_input_content.filter(s => s.length > 0);
+        if (sparkInputContent && sparkInputContent.length > 0) {
+            window.sparkInput("spark-input", sparkInputContent);
+        }
+    },
     /* 激活建站倒计时功能 */
     websiteTime() {
         if (!DreamConfig.website_time) {
@@ -338,12 +338,18 @@ const commonContext = {
             websiteDay.innerHTML = "建站 " + days + " 天 ";
             websiteTime.innerHTML = hours + " 小时 " + minutes + " 分 " + seconds + " 秒";
         }, 1000);
+    },
+    /* 鼠标特效 */
+    initCursorEffects() {
+        if (Utils.isMobile()) return;
+        DreamConfig.cursor_move && Utils.cachedScript(DreamConfig.cursor_move)
+        DreamConfig.cursor_click && Utils.cachedScript(DreamConfig.cursor_click)
     }
 }
 
 !(function () {
     const loads = ["sparkInput", "websiteTime"];
-    const omits = [];
+    const omits = ["initCursorEffects"];
 
     Object.keys(commonContext).forEach(
         (c) => !loads.includes(c) && !omits.includes(c) && commonContext[c]()

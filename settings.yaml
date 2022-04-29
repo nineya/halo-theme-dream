@@ -991,6 +991,40 @@ other_page:
 enhance:
   label: 增强功能
   items:
+    cursor_move:
+      name: cursor_move
+      label: 鼠标移动特效
+      type: select
+      default: none
+      options:
+        - value: none
+          label: 关闭
+        - value: bubbleCursor
+          label: 气泡跟随
+        - value: emojiCursor
+          label: 表情包跟随
+        - value: springyEmojiCursor
+          label: 弹性表情包跟随
+        - value: fairyDustCursor
+          label: 雪花跟随1
+        - value: snowflakeCursor
+          label: 雪花跟随2
+        - value: followingDotCursor
+          label: 圆点跟随
+        - value: ghostCursor
+          label: 移动残影1
+        - value: trailingCursor
+          label: 移动残影2
+    cursor_click:
+      name: cursor_click
+      label: 鼠标点击特效
+      type: select
+      default: none
+      options:
+        - value: none
+          label: 关闭
+        - value: firework
+          label: 烟花特效
     sakura_fall:
       name: sakura_fall
       label: 樱花飘落

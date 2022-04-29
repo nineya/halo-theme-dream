@@ -27,8 +27,6 @@
 
 <script src="${theme_base!}/source/lib/pace-js@1.2.4/pace.min.js"></script>
 
-<script src="${theme_base!}/source/cursor-effects.js"></script>
-
 <#if post?? || is_journals?? || is_error??>
     <link data-pjax rel="preload stylesheet" as="style"
           href="${theme_base!}/source/lib/highlightjs@11.5.1/styles/${settings.code_pretty!'atom-one-light'}.min.css"/>

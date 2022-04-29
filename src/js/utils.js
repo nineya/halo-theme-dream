@@ -1,5 +1,33 @@
 var Utils = {
     /**
+     * 是否移动设备
+     */
+    isMobile() {
+        if (
+            navigator.userAgent.match(/Android/i) ||
+            navigator.userAgent.match(/webOS/i) ||
+            navigator.userAgent.match(/iPhone/i) ||
+            navigator.userAgent.match(/iPad/i) ||
+            navigator.userAgent.match(/iPod/i) ||
+            navigator.userAgent.match(/BlackBerry/i) ||
+            navigator.userAgent.match(/Windows Phone/i)
+        )
+            return true;
+        return false;
+    },
+    /**
+     * 有缓存的方式加载js
+     */
+    cachedScript(url, callback) {
+        return $.ajax(jQuery.extend({
+            url: url,
+            type: 'get',
+            dataType: 'script',
+            cache: true,
+            success: callback
+        }, $.isPlainObject(url) && url));
+    },
+    /**
      * 时间格式化
      * @param {*} time
      */
