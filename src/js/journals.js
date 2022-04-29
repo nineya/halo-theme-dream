@@ -31,10 +31,10 @@ window.journalPjax = function (serialNumber) {
     );
 }
 !(function () {
-    journalContext.initLike();
-    journalContext.initComment();
+    !window.pjaxSerialNumber && journalContext.initLike();
+    !window.pjaxSerialNumber && journalContext.initComment();
 
     document.addEventListener("DOMContentLoaded", function () {
-        journalContext.foldJournals();
+        !window.pjaxSerialNumber && journalContext.foldJournals();
     });
 })();

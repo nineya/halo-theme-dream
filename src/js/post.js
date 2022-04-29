@@ -85,11 +85,11 @@ window.postPjax = function (serialNumber) {
     );
 }
 !(function () {
-    postContext.initLike();
-    postContext.initCodeBlock();
+    !window.pjaxSerialNumber && postContext.initLike();
+    !window.pjaxSerialNumber && postContext.initCodeBlock();
 
     document.addEventListener("DOMContentLoaded", function () {
-        postContext.initHighlighting();
+        !window.pjaxSerialNumber && postContext.initHighlighting();
         // 初始化代码块复制插件，一个界面仅需初始化一次
         let clipboard = new ClipboardJS('.btn-clipboard');
         clipboard.on('error', function (e) {
