@@ -17,12 +17,14 @@
     body:before {
         background: url("${settings.background_pc!}") center 0 no-repeat;
     }
+
     <#if !settings.background_mobile?? || settings.background_mobile==''>
     @media screen and (max-width: 768px) {
         body:before {
             background-image: none;
         }
     }
+
     </#if>
     </#if>
     <#if settings.background_mobile?? && settings.background_mobile!='' && settings.background_mobile!=settings.background_pc! >
@@ -31,12 +33,14 @@
             background-image: url("${settings.background_mobile!}");
         }
     }
+
     </#if>
     </#if>
 </style>
 <script type="text/javascript">
     // 主题配置
     const DreamConfig = {};
+    DreamConfig["theme_base"] = '${theme_base!}';
     <#if settings.code_fold_line?? && settings.code_fold_line?number gte 20>
     DreamConfig["code_fold_line"] =${settings.code_fold_line};
     </#if>
@@ -44,15 +48,23 @@
     <#if settings.website_time?? && settings.website_time!=''>
     DreamConfig["website_time"] = '${settings.website_time}';
     </#if>
+    <#if settings.sidebar_notice?? && settings.sidebar_notice!='none'>
     DreamConfig["notice_show_mode"] = '${settings.notice_show_mode!'index'}';
+    </#if>
     <#if settings.journals_fold_height?? && settings.journals_fold_height?number gte 260>
     DreamConfig["journals_fold_height"] =${settings.journals_fold_height};
     </#if>
     <#if settings.cursor_move?? && settings.cursor_move!='none'>
-    DreamConfig["cursor_move"] = '${theme_base!}/source/js/cursor/move/${settings.cursor_move}.min.js';
+    DreamConfig["cursor_move"] = '${settings.cursor_move}';
     </#if>
     <#if settings.cursor_click?? && settings.cursor_click!='none'>
-    DreamConfig["cursor_click"] = '${theme_base!}/source/js/cursor/click/${settings.cursor_click}.min.js';
+    DreamConfig["cursor_click"] = '${settings.cursor_click}';
+    </#if>
+    <#if settings.enable_sakura_fall!true>
+    DreamConfig["sakura_fall_url"] = '/source/lib/sakura/sakura.js';
+    </#if>
+    <#if settings.enable_live2d!true>
+    DreamConfig["live2d_url"] = '/source/lib/live2d/autoload.js';
     </#if>
 
     // 配置主题模式

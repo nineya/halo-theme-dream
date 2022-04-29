@@ -339,17 +339,19 @@ const commonContext = {
             websiteTime.innerHTML = hours + " 小时 " + minutes + " 分 " + seconds + " 秒";
         }, 1000);
     },
-    /* 鼠标特效 */
-    initCursorEffects() {
+    /* 初始化特效，只需要初始化一次，非移动端设备不初始化 */
+    initEffects() {
         if (Utils.isMobile()) return;
-        DreamConfig.cursor_move && Utils.cachedScript(DreamConfig.cursor_move)
-        DreamConfig.cursor_click && Utils.cachedScript(DreamConfig.cursor_click)
+        DreamConfig.cursor_move && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/cursor/move/${DreamConfig.cursor_move}.min.js`)
+        DreamConfig.cursor_click && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/cursor/click/${DreamConfig.cursor_click}.min.js`)
+        DreamConfig.live2d_url && Utils.cachedScript(`${DreamConfig.theme_base}${DreamConfig.live2d_url}`)
+        DreamConfig.sakura_fall_url && Utils.cachedScript(`${DreamConfig.theme_base}${DreamConfig.sakura_fall_url}`)
     }
 }
 
 !(function () {
     const loads = ["sparkInput", "websiteTime"];
-    const omits = ["initCursorEffects"];
+    const omits = ["initEffects"];
 
     Object.keys(commonContext).forEach(
         (c) => !loads.includes(c) && !omits.includes(c) && commonContext[c]()

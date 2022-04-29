@@ -1037,10 +1037,10 @@ enhance:
           label: 烟花特效
         - value: granule
           label: 粒子爆炸
-    sakura_fall:
-      name: sakura_fall
-      label: 樱花飘落
-      type: radio
+    enable_sakura_fall:
+      name: enable_sakura_fall
+      label: 启用樱花飘落
+      type: switch
       data-type: bool
       default: true
       options:
@@ -1048,10 +1048,10 @@ enhance:
           label: 开启
         - value: false
           label: 关闭
-    live2d:
-      name: live2d
-      label: 看板娘
-      type: radio
+    enable_live2d:
+      name: enable_live2d
+      label: 启用看板娘
+      type: switch
       data-type: bool
       default: true
       options:

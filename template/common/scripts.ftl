@@ -40,8 +40,6 @@
 </#if>
 
 <#include "../plugin/mathjax.ftl">
-<#include "../plugin/sakura.ftl">
-<#include "../plugin/live2d.ftl">
 <#include "../plugin/baidu_push.ftl">
 <#include "../plugin/toutiao_push.ftl">
 <#include "../plugin/seo360_push.ftl">
