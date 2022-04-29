@@ -88,7 +88,9 @@ $(document).on("pjax:beforeReplace", function (event, contents, options) {
  * 浏览器前进后退时不会执行
  */
 $(document).on("pjax:success", async function (event, data, status, xhr, options) {
-    console.log(`pjax:success sn = ${options.serialNumber}`)
+    const serialNumber = options.serialNumber;
+    console.log(`pjax:success sn = ${serialNumber}`)
+    if (pjaxSerialNumber !== serialNumber) return;
     /* 重新激活图片预览功能 */
     commonContext.initGallery()
     /* 重新加载目录和公告 */
@@ -143,10 +145,11 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
         })
     })
     console.log('全部处理完成')
+    if (pjaxSerialNumber !== serialNumber) return;
     /* 初始化日志界面 */
-    window.journalPjax && window.journalPjax();
+    window.journalPjax && window.journalPjax(serialNumber);
     /* 初始化文章界面 */
-    window.postPjax && window.postPjax();
+    window.postPjax && window.postPjax(serialNumber);
 });
 
 $(document).on("pjax:timeout", function (event, xhr, options) {
@@ -168,6 +171,7 @@ $(document).on("pjax:complete", function (event, xhr, textStatus, options) {
  */
 $(document).on("pjax:end", function (event, xhr, options) {
     console.log(`pjax:end sn = ${options.serialNumber}`)
+    if (pjaxSerialNumber !== options.serialNumber) return;
     // 浏览器前进后退
     if (xhr == null) {
         /* 重新加载目录和公告 */

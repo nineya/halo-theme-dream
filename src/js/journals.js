@@ -25,9 +25,9 @@ const journalContext = {
         })
     },
 }
-window.journalPjax = function () {
+window.journalPjax = function (serialNumber) {
     Object.keys(journalContext).forEach(
-        (c) => journalContext[c]()
+        (c) => window.pjaxSerialNumber === serialNumber && journalContext[c]()
     );
 }
 !(function () {

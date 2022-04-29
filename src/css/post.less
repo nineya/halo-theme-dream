@@ -8,7 +8,7 @@
     padding-bottom: 30px;
   }
 
-  code:not([class]) {
+  *:not(pre) > code {
     font-size: 0.9em;
     color: var(--color-a);
     margin: 2px 3px;
@@ -352,6 +352,7 @@
       &.like {
         background: var(--background);
         color: var(--dark-e);
+
         &:hover {
           i {
             animation: shake-little ease-in-out 4s infinite;

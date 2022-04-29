@@ -1,7 +1,9 @@
 const postContext = {
     /* 初始化代码块 */
     initCodeBlock() {
-        $("pre > code").each(function (index) {
+        const $code = $("*:not(figure) > pre > code");
+        if ($code.length === 0) return;
+        $code.each(function (index) {
             const $pre = $(this).parent();
             let clazz = $(this).attr("class");
             // 通过class初始化代码块标题和是否默认关闭
@@ -77,9 +79,9 @@ const postContext = {
         hljs.initHighlightingOnLoad();
     },
 }
-window.postPjax = function () {
+window.postPjax = function (serialNumber) {
     Object.keys(postContext).forEach(
-        (c) => postContext[c]()
+        (c) => window.pjaxSerialNumber === serialNumber && postContext[c]()
     );
 }
 !(function () {
