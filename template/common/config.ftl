@@ -66,6 +66,12 @@
     <#if settings.enable_live2d!true>
     DreamConfig["live2d_url"] = '/source/lib/live2d/autoload.js';
     </#if>
+    <#if settings.enable_baidu_push!false>
+    DreamConfig["enable_baidu_push"] = true;
+    </#if>
+    <#if settings.enable_toutiao_push!false>
+    DreamConfig["enable_toutiao_push"] = true;
+    </#if>
 
     // 配置主题模式
     let isNight = localStorage.getItem('night') || false;

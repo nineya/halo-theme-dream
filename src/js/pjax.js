@@ -100,45 +100,49 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
     })
     let $scripts = $currentTarget.filter('script[data-pjax]');
     let scriptSize = $scripts.length;
-    await new Promise((resolve) => {
-        $scripts.each(function () {
-            let src = $(this).attr('src');
-            if (jsLoadCompletes.has(src)) {
-                if (--scriptSize === 0) resolve()
-                return;
-            }
-            if (this.defer || this.async) {
-                console.log('异步加载js ' + src)
-                Utils.cachedScript(src)
-                    .done(function () {
-                        console.log('异步加载js完成 ' + src)
-                        jsLoadCompletes.add(src);
-                    })
-                    .fail(function () {
-                        console.log('异步加载js失败 ' + src)
-                    })
-                if (--scriptSize === 0) resolve()
-            } else {
-                console.log('同步加载js ' + src)
-                Utils.cachedScript(src)
-                    .done(function () {
-                        console.log('同步加载js完成 ' + src)
-                        jsLoadCompletes.add(src);
-                        if (--scriptSize === 0) resolve()
-                    })
-                    .fail(function () {
-                        console.log('同步加载js失败 ' + src)
-                        if (--scriptSize === 0) resolve()
-                    })
-            }
+    if (scriptSize > 0) {
+        await new Promise((resolve) => {
+            $scripts.each(function () {
+                let src = $(this).attr('src');
+                if (jsLoadCompletes.has(src)) {
+                    if (--scriptSize === 0) resolve()
+                    return;
+                }
+                if (this.defer || this.async) {
+                    console.log('异步加载js ' + src)
+                    Utils.cachedScript(src)
+                        .done(function () {
+                            console.log('异步加载js完成 ' + src)
+                            jsLoadCompletes.add(src);
+                        })
+                        .fail(function () {
+                            console.log('异步加载js失败 ' + src)
+                        })
+                    if (--scriptSize === 0) resolve()
+                } else {
+                    console.log('同步加载js ' + src)
+                    Utils.cachedScript(src)
+                        .done(function () {
+                            console.log('同步加载js完成 ' + src)
+                            jsLoadCompletes.add(src);
+                            if (--scriptSize === 0) resolve()
+                        })
+                        .fail(function () {
+                            console.log('同步加载js失败 ' + src)
+                            if (--scriptSize === 0) resolve()
+                        })
+                }
+            })
         })
-    })
+    }
     console.log('全部处理完成')
     if (pjaxSerialNumber !== serialNumber) return;
     /* 初始化日志界面 */
     window.journalPjax && window.journalPjax(serialNumber);
     /* 初始化文章界面 */
     window.postPjax && window.postPjax(serialNumber);
+    /* 加载主动推送或统计脚本 */
+    commonContext.loadMaintain();
 });
 
 $(document).on("pjax:timeout", function (event, xhr, options) {

@@ -35,14 +35,11 @@
     <script defer src="${theme_base!}/source/lib/aplayer@1.10.1/APlayer.min.js"></script>
     <script defer src="${theme_base!}/source/lib/meting@2.0.1/Meting.min.js"></script>
 </#if>
-<#if settings.busuanzi!true>
+<#if settings.enable_busuanzi!true>
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </#if>
 
 <#include "../plugin/mathjax.ftl">
-<#include "../plugin/baidu_push.ftl">
-<#include "../plugin/toutiao_push.ftl">
-<#include "../plugin/seo360_push.ftl">
 
 ${settings.external_js_body!}
 <#if settings.inline_js_body?? && settings.inline_js_body!=''>

@@ -177,11 +177,33 @@ var Utils = {
                 });
         });
     },
+    /* 百度自动推送 */
+    baiduPush() {
+        let bp = document.createElement('script');
+        let curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        $(`script[src="${bp.src}"]`).remove()
+        let s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    },
+    toutiaoPush() {
+        let el = document.createElement("script");
+        el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?0fbcfbb1ed642c21419d5be02d56ade7d6ee5372ca221d12ba35df110760b2a830632485602430134f60bc55ca391050b680e2741bf7233a8f1da9902314a3fa";
+        el.id = "ttzz";
+        $(`script[src="${el.src}"]`).remove()
+        let s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(el, s);
+    },
     /* sleep */
     sleep(ms = 250) {
         return new Promise((resolve) => setTimeout(resolve, ms));
     },
-    /* 折叠块 */
+    /* 折叠代码块或者日志块 */
     foldBlock($container) {
         if (!DreamConfig.journals_fold_height) {
             return;

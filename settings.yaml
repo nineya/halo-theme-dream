@@ -14,7 +14,7 @@ basic:
     enable_image_bg:
       name: enable_image_bg
       label: 开启博客背景图
-      type: radio
+      type: switch
       data-type: bool
       default: false
       options:
@@ -101,10 +101,10 @@ basic:
       label: 建站时间
       type: text
       placeholder: 'YYYY/MM/dd HH:mm:ss'
-    busuanzi:
-      name: busuanzi
-      label: busuanzi访客统计
-      type: radio
+    enable_busuanzi:
+      name: enable_busuanzi
+      label: 开启busuanzi访客统计
+      type: switch
       data-type: bool
       default: true
       options:
@@ -1059,10 +1059,10 @@ enhance:
           label: 开启
         - value: false
           label: 关闭
-    baidu_push:
-      name: baidu_push
-      label: 百度URL自动推送
-      type: radio
+    enable_baidu_push:
+      name: enable_baidu_push
+      label: 启用百度URL自动推送
+      type: switch
       data-type: bool
       default: false
       options:
@@ -1070,21 +1070,10 @@ enhance:
           label: 开启
         - value: false
           label: 关闭
-    toutiao_push:
-      name: toutiao_push
-      label: 头条搜索自动推送
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    seo360_push:
-      name: seo360_push
-      label: 360自动收录推送
-      type: radio
+    enable_toutiao_push:
+      name: enable_toutiao_push
+      label: 启用头条搜索自动推送
+      type: switch
       data-type: bool
       default: false
       options:

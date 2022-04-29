@@ -346,12 +346,19 @@ const commonContext = {
         DreamConfig.cursor_click && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/cursor/click/${DreamConfig.cursor_click}.min.js`)
         DreamConfig.live2d_url && Utils.cachedScript(`${DreamConfig.theme_base}${DreamConfig.live2d_url}`)
         DreamConfig.sakura_fall_url && Utils.cachedScript(`${DreamConfig.theme_base}${DreamConfig.sakura_fall_url}`)
+    },
+    /* 加载主动推送、统计脚本等参数 */
+    loadMaintain() {
+        DreamConfig.enable_baidu_push && Utils.baiduPush();
+        DreamConfig.enable_toutiao_push && Utils.toutiaoPush();
     }
 }
 
+window.commonContext = commonContext;
+
 !(function () {
     const loads = ["sparkInput", "websiteTime"];
-    const omits = ["initEffects"];
+    const omits = ["initEffects", "loadMaintain"];
 
     Object.keys(commonContext).forEach(
         (c) => !loads.includes(c) && !omits.includes(c) && commonContext[c]()
@@ -368,5 +375,3 @@ const commonContext = {
         $("html").addClass("ready");
     });
 })();
-
-window.commonContext = commonContext;
