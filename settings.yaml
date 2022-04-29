@@ -1006,15 +1006,15 @@ enhance:
         - value: springyEmojiCursor
           label: 弹性表情包跟随
         - value: fairyDustCursor
-          label: 雪花跟随1
+          label: 仙女棒效果
         - value: snowflakeCursor
-          label: 雪花跟随2
+          label: 雪花跟随
         - value: followingDotCursor
           label: 圆点跟随
         - value: ghostCursor
-          label: 移动残影1
+          label: 移动残影（疏）
         - value: trailingCursor
-          label: 移动残影2
+          label: 移动残影（密）
     cursor_click:
       name: cursor_click
       label: 鼠标点击特效
@@ -1025,6 +1025,8 @@ enhance:
           label: 关闭
         - value: firework
           label: 烟花特效
+        - value: granule
+          label: 粒子爆炸
     sakura_fall:
       name: sakura_fall
       label: 樱花飘落
