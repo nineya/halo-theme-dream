@@ -39,7 +39,7 @@
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </#if>
 
-<#include "../plugin/mathjax.ftl">
+<#include "mathjax.ftl">
 
 ${settings.external_js_body!}
 <#if settings.inline_js_body?? && settings.inline_js_body!=''>

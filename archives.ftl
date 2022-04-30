@@ -29,7 +29,7 @@
                 </div>
             </div>
         </#list>
-        <#include "template/common/pagination.ftl">
+        <#include "template/main/pagination.ftl">
         <@pagination method="archives" datas=posts display="${settings.page_number!5}" />
     <#else>
         <div class="card card-empty">

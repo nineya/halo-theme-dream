@@ -1,5 +1,5 @@
 <#include "layout.ftl">
-<#include "common/article_list.ftl">
+<#include "main/article_list.ftl">
 <#global is_error = true>
 <#macro errorpage etitle,desc,status,content,message>
     <@layout title="${status!}错误 - ${blog_title!}" canonical="${blog_url!}/${status!}">

@@ -24,7 +24,7 @@
                 </div>
             </div>
         </#list>
-        <#include "template/common/pagination.ftl">
+        <#include "template/main/pagination.ftl">
         <@pagination method="journals" datas=journals display="${settings.page_number!5}" />
     <#else>
         <div class="card card-empty">
