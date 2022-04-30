@@ -1581,7 +1581,7 @@ table td, table th {
     }
 
     &:hover {
-      .thumbnail-image, .cover>.cover-image, .small-image {
+      .thumbnail-image, .cover > .cover-image, .small-image {
         transform: rotate(5deg) scale(1.3);
       }
     }
@@ -2031,20 +2031,20 @@ table td, table th {
     max-height: 2rem;
   }
 
-  a:not(.button) {
-    color: inherit;
+  p {
+    font-size: 0.9rem !important;
+    line-height: 1.5em;
+  }
+
+  a {
+    color: var(--dark-c);
 
     &:hover {
       text-decoration: underline;
     }
   }
 
-  p {
-    font-size: 0.85rem !important;
-  }
-
   .level > div {
-    text-align: center;
     color: var(--dark-c);
   }
 }
@@ -2162,6 +2162,10 @@ table td, table th {
         min-height: 95px;
       }
     }
+  }
+
+  .footer .level > div {
+    text-align: center;
   }
 }
 
