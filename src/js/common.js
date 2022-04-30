@@ -60,10 +60,12 @@ const commonContext = {
     /* 激活图片预览功能 */
     initGallery() {
         // 用链接和标题包装图像
-        $('.main-content *:not([data-fancybox]) img:not(".not-gallery")').each(function () {
-            $(this).wrap($(`<span class="gallery-item" data-fancybox="gallery" data-caption="${$(this).attr('alt')}" href="${$(this).attr('src')}"></span>`));
-            if (this.alt) {
-                $(this).after(`<p>${this.alt}</p>`);
+        $('.main-content img:not(".not-gallery")').each(function () {
+            if ($(this).parents('[data-fancybox]').length === 0) {
+                $(this).wrap($(`<span class="gallery-item" data-fancybox="gallery" ${this.alt ? "data-caption=\"" + this.alt + "\"" : ""} href="${$(this).attr('src')}"></span>`));
+                if (this.alt) {
+                    $(this).after(`<p>${this.alt}</p>`);
+                }
             }
         });
     },

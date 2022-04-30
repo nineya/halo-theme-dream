@@ -26,8 +26,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   min-width: 300px;
-  overflow-x: hidden;
-  overflow-y: overlay;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
 
@@ -64,6 +62,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding-bottom: env(safe-area-inset-bottom);
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: overlay;
 
   &::-webkit-scrollbar-thumb {
     background: var(--theme);
