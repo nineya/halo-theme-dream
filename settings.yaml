@@ -1037,6 +1037,17 @@ enhance:
           label: 烟花特效
         - value: granule
           label: 粒子爆炸
+    enable_freecdn:
+      name: enable_freecdn
+      label: 启用FreeCDN
+      type: switch
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     enable_sakura_fall:
       name: enable_sakura_fall
       label: 启用樱花飘落

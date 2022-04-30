@@ -1,4 +1,7 @@
 <title>${title!}<#if settings.small_title?? && settings.small_title!=''>|${settings.small_title!}</#if></title>
+<#if settings.enable_freecdn!false>
+    <script src="/freecdn-loader.min.js"></script>
+</#if>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="keywords" content="${meta_keywords!}"/>

@@ -6,6 +6,8 @@
   "author": "nineya",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "cdn": "gulp freecdn",
+    "release": "gulp release",
     "build": "gulp"
   },
   "repository": {
@@ -42,7 +44,9 @@
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.1.0",
     "webpack": "^5.68.0",
-    "webpack-stream": "^7.0.0"
+    "webpack-stream": "^7.0.0",
+    "freecdn": "^0.1.6"
   },
-  "dependencies": {}
+  "dependencies": {
+  }
 }

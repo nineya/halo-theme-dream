@@ -15,7 +15,7 @@
 </#if>
 <#if (post?? && !post.disallowComment!false) || is_journals?? || (is_links?? && settings.link_comment_id?? && settings.link_comment_id!='')>
     <script data-pjax defer src="${theme_base!}/source/lib/vue@2.6.10/vue.min.js"></script>
-    <script data-pjax defer src="${options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js'}"></script>
+    <script data-pjax defer src="${options.comment_internal_plugin_js!'https://cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js'}"></script>
 </#if>
 
 <script src="${theme_base!}/source/js/spark-input.min.js"></script>
@@ -36,7 +36,7 @@
     <script defer src="${theme_base!}/source/lib/meting@2.0.1/Meting.min.js"></script>
 </#if>
 <#if settings.enable_busuanzi!true>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </#if>
 
 <#include "mathjax.ftl">
