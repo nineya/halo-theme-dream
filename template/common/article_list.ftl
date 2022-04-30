@@ -3,8 +3,8 @@
         <#assign thumbnail_model = (post.metas?? && post.metas.thumbnail_model?? && post.metas.thumbnail_model?trim!='' && post.thumbnail?? && post.thumbnail!='')?then(post.metas.thumbnail_model?trim, 'default')>
         <div class="card widget">
             <#if thumbnail_model == "back">
-                <div class="cover" style="background-image: url(${post.thumbnail!})">
-                    <a href="${post.fullPath!}"></a>
+                <div class="cover">
+                    <a class="cover-image" href="${post.fullPath!}" style="background-image: url(${post.thumbnail!})"></a>
                     <#if post.categories?? && post.categories?size gt 0>
                         <div class="category">
                             <#list post.categories as category>
@@ -30,8 +30,7 @@
                 </div>
             <#elseif thumbnail_model == "small">
                 <div class="card-small">
-                    <a class="small-image" href="${post.fullPath!}" style="background-image: url(${post.thumbnail!})">
-                    </a>
+                    <a href="${post.fullPath!}"><div class="small-image" style="background-image: url(${post.thumbnail!})"></div></a>
                     <div class="card-content main">
                         <h2 class="title">
                             <#if post.topPriority==1><span class="top">置顶</span></#if><a
@@ -61,8 +60,8 @@
                 </div>
             <#else>
                 <#if post.thumbnail?? && post.thumbnail!=''>
-                    <a href="${post.fullPath!}">
-                        <div class="thumbnail" style="background-image: url(${post.thumbnail!})">
+                    <a class="thumbnail" href="${post.fullPath!}">
+                        <div class="thumbnail-image" style="background-image: url(${post.thumbnail!})">
                         </div>
                     </a>
                 </#if>

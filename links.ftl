@@ -2,7 +2,7 @@
 <@layout title="友链 - ${blog_title!}" canonical="${links_url!}">
     <div class="card">
         <#if settings.links_thumbnail?? && settings.links_thumbnail!=''>
-            <div class="card-image cover" style="background-image: url(${settings.links_thumbnail!})">
+            <div class="card-image cover-image" style="background-image: url(${settings.links_thumbnail!})">
             </div>
         </#if>
         <div class="card-content main">
