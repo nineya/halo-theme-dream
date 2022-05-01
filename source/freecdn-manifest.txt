@@ -59,7 +59,7 @@ https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js
 /themes/dream/source/css/style.min.css
 	https://raw.githubusercontent.com/nineya/halo-theme-dream/2.0.1/source/css/style.min.css
 	https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream@2.0.1/source/css/style.min.css
-	hash=f+gvM3bRlR0aYGqa0RL1la/3oemAzjh5Xnv2mHaGdo0=
+	hash=l8Cize1xgCBsXpyQ9sF/KZylz0NwAsC7Dkif93k8ZSI=
 
 /themes/dream/source/css/tags.min.css
 	https://raw.githubusercontent.com/nineya/halo-theme-dream/2.0.1/source/css/tags.min.css
@@ -4361,13 +4361,3 @@ https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js
 	https://raw.githubusercontent.com/nineya/halo-theme-dream/2.0.1/source/lib/vue@2.6.10/vue.min.js
 	https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream@2.0.1/source/lib/vue@2.6.10/vue.min.js
 	hash=MJ+6v/hPxdN7RSYRPuNucayltNZWpfqpuNriPexj5SY=
-
-/themes/dream/source/sw.js
-	https://raw.githubusercontent.com/nineya/halo-theme-dream/2.0.1/source/sw.js
-	https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream@2.0.1/source/sw.js
-	hash=CIvGY+dKqaYPD9WAwPJ1IY1+X937uSI7vN5c+7NrsNc=
-
-/themes/dream/source/sw2.js
-	https://raw.githubusercontent.com/nineya/halo-theme-dream/2.0.1/source/sw2.js
-	https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream@2.0.1/source/sw2.js
-	hash=HjveZtOkgvOyQ+4dCYIhgmWogfryLCtMLxSQpWjSVyw=
