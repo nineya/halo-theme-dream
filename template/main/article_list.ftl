@@ -1,8 +1,8 @@
 <#macro article_list posts>
     <#list posts as post>
-        <#assign thumbnail_model = (post.metas?? && post.metas.thumbnail_model?? && post.metas.thumbnail_model?trim!='' && post.thumbnail?? && post.thumbnail!='')?then(post.metas.thumbnail_model?trim, 'default')>
+        <#assign thumbnail_mode = (post.metas?? && post.metas.thumbnail_mode?? && post.metas.thumbnail_mode?trim!='' && post.thumbnail?? && post.thumbnail!='')?then(post.metas.thumbnail_mode?trim, 'default')>
         <div class="card widget">
-            <#if thumbnail_model == "back">
+            <#if thumbnail_mode == "back">
                 <div class="cover">
                     <a class="cover-image" href="${post.fullPath!}" style="background-image: url(${post.thumbnail!})"></a>
                     <#if post.categories?? && post.categories?size gt 0>
@@ -28,7 +28,7 @@
                         </ul>
                     </div>
                 </div>
-            <#elseif thumbnail_model == "small">
+            <#elseif thumbnail_mode == "small">
                 <div class="card-small">
                     <a href="${post.fullPath!}"><div class="small-image" style="background-image: url(${post.thumbnail!})"></div></a>
                     <div class="card-content main">

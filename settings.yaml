@@ -1043,6 +1043,7 @@ enhance:
       type: switch
       data-type: bool
       default: false
+      description: '需要在nginx中添加代理配置方可启用，配置方法见 <a href="https://blog.nineya.com/archives/94.html" target="_blank">Dream 主题使用手册 - 基础篇</a>'
       options:
         - value: true
           label: 开启
