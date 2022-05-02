@@ -164,11 +164,12 @@ $(document).on("pjax:complete", function (event, xhr, textStatus, options) {
  */
 $(document).on("pjax:end", function (event, xhr, options) {
     console.log(`pjax:end sn = ${options.serialNumber}`)
-    if (pjaxSerialNumber !== options.serialNumber) return;
     // 浏览器前进后退
     if (xhr == null) {
         /* 重新加载目录和公告 */
         commonContext.initTocAndNotice()
+    } else if (pjaxSerialNumber !== options.serialNumber) {
+        return;
     }
 });
 
