@@ -209,7 +209,7 @@ https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js
 /themes/dream/source/js/pjax.min.js
 	https://raw.githubusercontent.com/nineya/halo-theme-dream/2.0.1/source/js/pjax.min.js
 	https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream@2.0.1/source/js/pjax.min.js
-	hash=+JOB51V1Vn7u2kpwJ9gA7ZTWfoaDJxYgrqX1sXGpV1M=
+	hash=E9H/5gf+y/quQzNSiZCiGDKaXlQnrx0VWeRg7zTgF8U=
 
 /themes/dream/source/js/post.min.js
 	https://raw.githubusercontent.com/nineya/halo-theme-dream/2.0.1/source/js/post.min.js
