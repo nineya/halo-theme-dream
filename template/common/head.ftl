@@ -48,18 +48,19 @@
     <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/photos.min.css">
 </#if>
 
+<link rel="stylesheet" href="${theme_base!}/source/css/mew-custom.min.css">
 <#if is_post?? || is_sheet?? || is_photos?? || is_journals??>
     <link data-pjax rel="stylesheet" href="${theme_base!}/source/lib/fancybox@5.3.7/jquery.fancybox.min.css">
 </#if>
 <link rel="stylesheet" href="${theme_base!}/source/lib/qmsg/qmsg.min.css">
 
-<#include "config.ftl">
-
-<script src="${theme_base!}/source/lib/jquery@3.5.1/jquery.min.js"></script>
-
 <#if settings.cursor_style?? && settings.cursor_style!='none'>
     <link rel="stylesheet" href="${theme_base!}/source/css/cursor/${settings.cursor_style}.min.css">
 </#if>
+
+<#include "config.ftl">
+
+<script src="${theme_base!}/source/lib/jquery@3.5.1/jquery.min.js"></script>
 
 <#if settings.external_css?? && settings.external_css!=''>
     <link rel="stylesheet" href="${settings.external_css!}">

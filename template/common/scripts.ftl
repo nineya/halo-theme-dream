@@ -13,6 +13,7 @@
 <#if is_journals??>
     <script data-pjax src="${theme_base!}/source/js/journals.min.js"></script>
 </#if>
+<script src="${theme_base!}/source/js/mew-custom.min.js"></script>
 <#if (post?? && !post.disallowComment!false) || is_journals?? || (is_links?? && settings.link_comment_id?? && settings.link_comment_id!='')>
     <script data-pjax defer src="${theme_base!}/source/lib/vue@2.6.10/vue.min.js"></script>
     <script data-pjax defer src="${options.comment_internal_plugin_js!'https://cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js'}"></script>

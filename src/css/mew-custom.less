@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+mew-subtitle {
+  display: flex;
+  justify-content: center;
+
+  & > span {
+    position: relative;
+    color: var(--main);
+    padding: 0 47px;
+
+    &:hover {
+      &::before {
+        left: 12px;
+      }
+      &::after {
+        right: 12px;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 20px;
+      height: 1px;
+      background: var(--theme);
+      transition: all .35s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 20px;
+      height: 1px;
+      background: var(--theme);
+      transition: all .35s;
+    }
+  }
+}
