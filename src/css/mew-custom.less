@@ -41,3 +41,37 @@ mew-subtitle {
     }
   }
 }
+
+mew-music {
+  display: block;
+  background-color: var(--bg-d) !important;
+  max-width: 620px;
+  margin: auto !important;
+
+  .aplayer-list ol li {
+    border-top: 1px solid rgba(180, 180, 180, 0.2) !important;
+
+    &.aplayer-list-light {
+      background: rgba(200, 200, 200, 0.2);
+    }
+
+    &:hover {
+      background: rgba(200, 200, 200, 0.2);
+    }
+
+  }
+
+  &.aplayer-withlist .aplayer-info {
+    border-bottom: none;
+  }
+
+  .aplayer-lrc {
+    &:before {
+      background: linear-gradient(180deg, #c5c5c52b 0, hsla(0, 0%, 100%, 0)) !important;
+    }
+
+    &:after {
+      background: linear-gradient(180deg, hsl(0deg 0% 100% / 0%) 0, hsl(0deg 0% 100% / 23%)) !important;
+    }
+  }
+}
