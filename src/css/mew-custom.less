@@ -13,6 +13,7 @@ mew-subtitle {
       &::before {
         left: 12px;
       }
+
       &::after {
         right: 12px;
       }
@@ -48,15 +49,29 @@ mew-music {
   max-width: 620px;
   margin: auto !important;
 
+  &:not(.aplayer) {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: 1px solid var(--light-b);
+    border-radius: 5px;
+
+    &:before {
+      content: "\f001";
+      font-family: 'FontAwesome';
+      color: var(--theme);
+      margin-right: 10px;
+    }
+  }
+
   .aplayer-list ol li {
     border-top: 1px solid rgba(180, 180, 180, 0.2) !important;
 
     &.aplayer-list-light {
-      background: rgba(200, 200, 200, 0.2);
+      background: rgba(200, 200, 200, 0.2) !important;
     }
 
     &:hover {
-      background: rgba(200, 200, 200, 0.2);
+      background: rgba(200, 200, 200, 0.2) !important;
     }
 
   }
