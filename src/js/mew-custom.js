@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             constructor() {
                 super();
+                this.innerHTML = "音乐播放器加载中..."
                 this.options = {
                     container: this,
                     theme: this.getAttribute("theme") || "var(--theme)",
@@ -41,6 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     } else {
                         MewMusic.prototype.await.push(() => this.render());
                     }
+                } else {
+                    this.render();
                 }
             }
 
