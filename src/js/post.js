@@ -52,7 +52,7 @@ const postContext = {
             $pre.parent().prepend(`<figcaption>${title}${titleButton}</figcaption>`);
         })
         // 代码块展开和关闭点击事件
-        $(".main-content figure>figcaption .fa-angle-down").on("click", function () {
+        $(".main-content").on("click", "figure>figcaption .fa-angle-down", function () {
             if ($(this).is('.close')) {
                 $($(this).attr('data-code')).parent().slideDown(200);
                 $(this).removeClass('close');

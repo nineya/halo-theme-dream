@@ -91,13 +91,49 @@ document.addEventListener("DOMContentLoaded", () => {
                 super();
                 this.options = {
                     bvid: this.getAttribute("bvid"),
-                    page: +(this.getAttribute("page") || "1"),
                     width: this.getAttribute("width") || "100%",
                     height: this.getAttribute("height") || "500px",
                 };
                 if (this.options.bvid)
-                    this.innerHTML = `<iframe allowfullscreen="true" src="//player.bilibili.com/player.html?bvid=${this.options.bvid}&page=${this.options.page}" style="width:${this.options.width};height:${this.options.height}"></iframe>`;
+                    this.innerHTML = `<iframe allowfullscreen="true" src="//player.bilibili.com/player.html?bvid=${this.options.bvid}&page=1" style="width:${this.options.width};height:${this.options.height}"></iframe>`;
                 else this.innerHTML = "bvid未填写！";
+            }
+        }
+    );
+
+    customElements.define(
+        "mew-tabs",
+        class MewTabs extends HTMLElement {
+            constructor() {
+                super();
+                const $tabPage = $(this).children("mew-tab-page");
+                if ($tabPage.length === 0) {
+                    this.innerHTML = "没有标签页！"
+                    return;
+                }
+                let navs = "";
+                let contents = "";
+                let active = false;
+                $tabPage.each((index, elem) => {
+                    let title = elem.getAttribute("title") || '默认标签';
+                    let id = `${index}-${new Date().getTime()}`
+                    if (!active && elem.hasAttribute("active")) {
+                        active = true
+                        navs += `<div class="active" data-id="#${id}">${title}</div>`
+                        contents += `<div class="active" id="${id}">${elem.innerHTML}</div>`
+                    } else {
+                        navs += `<div data-id="#${id}">${title}</div>`
+                        contents += `<div id="${id}">${elem.innerHTML}</div>`
+                    }
+                })
+                this.innerHTML = `<div class="tabs-head">${navs}</div><div class="tabs-body">${contents}</div>`;
+                !active && $(this).find("div>div:first-child").addClass("active")
+                $(this).find(".tabs-head").on("click", "div:not(.active)", function() {
+                    const $container = $(this).parent().parent();
+                    $container.find(".active").removeClass("active")
+                    $(this).addClass("active")
+                    $container.find($(this).attr("data-id")).addClass("active")
+                })
             }
         }
     );
