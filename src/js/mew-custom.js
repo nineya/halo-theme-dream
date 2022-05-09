@@ -83,4 +83,22 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     );
+
+    customElements.define(
+        "mew-bilibili",
+        class MewBilibili extends HTMLElement {
+            constructor() {
+                super();
+                this.options = {
+                    bvid: this.getAttribute("bvid"),
+                    page: +(this.getAttribute("page") || "1"),
+                    width: this.getAttribute("width") || "100%",
+                    height: this.getAttribute("height") || "500px",
+                };
+                if (this.options.bvid)
+                    this.innerHTML = `<iframe allowfullscreen="true" src="//player.bilibili.com/player.html?bvid=${this.options.bvid}&page=${this.options.page}" style="width:${this.options.width};height:${this.options.height}"></iframe>`;
+                else this.innerHTML = "bvid未填写！";
+            }
+        }
+    );
 });
