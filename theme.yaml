@@ -24,6 +24,10 @@ postMetaField:
   - enable_copyright
   # back：图片作为背景，small：小图
   - thumbnail_mode
+  # 文章顶部的提示信息
+  - tips
 # 自定义页 meta 变量
 sheetMetaField:
   - enable_copyright
+  # 文章顶部的提示信息
+  - tips

@@ -24,6 +24,9 @@
             </div>
         </div>
     </#if>
+    <#if (metas?? && metas.tips?? && metas.tips!='')>
+        <div class="tips"><i class="fa fa-times click-close" data-close=".tips"></i>${metas.tips}</div>
+    </#if>
     <div class="card">
         <div class="card-content main">
             <#if !post.thumbnail?? || post.thumbnail==''>
