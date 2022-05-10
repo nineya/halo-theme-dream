@@ -128,12 +128,46 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 this.innerHTML = `<div class="tabs-head">${navs}</div><div class="tabs-body">${contents}</div>`;
                 !active && $(this).find("div>div:first-child").addClass("active")
-                $(this).find(".tabs-head").on("click", "div:not(.active)", function() {
+                $(this).find(".tabs-head").on("click", "div:not(.active)", function () {
                     const $container = $(this).parent().parent();
                     $container.find(".active").removeClass("active")
                     $(this).addClass("active")
                     $container.find($(this).attr("data-id")).addClass("active")
                 })
+            }
+        }
+    );
+
+    customElements.define(
+        "mew-cloud",
+        class MewCloud extends HTMLElement {
+            constructor() {
+                super();
+                this.options = {
+                    type: this.getAttribute("type") || "default",
+                    title: this.innerText || "资源文件分享",
+                    url: this.getAttribute("url"),
+                    password: this.getAttribute("password"),
+                };
+                const type = {
+                    default: "网络来源",
+                    360: "360云盘",
+                    bd: "百度网盘",
+                    wy: "微云",
+                    ali: "阿里云盘",
+                    github: "Github仓库",
+                    gitee: "Gitee仓库",
+                };
+                this.innerHTML = `
+					<div class="mew-cloud-logo type-${type[this.options.type] ? this.options.type : "default"}"></div>
+					<div class="mew-cloud-desc">
+						<div class="mew-cloud-desc-title">${this.options.title}</div>
+						<div class="mew-cloud-desc-type">来源：${type[this.options.type] || "网络来源"}${this.options.password ? " | 提取码：" + this.options.password : ""}</div>
+					</div>
+					<a class="mew-cloud-link" href="${this.options.url}" target="_blank" rel="noopener noreferrer nofollow">
+						<i class="fa fa-download"></i>
+					</a>
+				`;
             }
         }
     );
