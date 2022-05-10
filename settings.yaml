@@ -958,20 +958,30 @@ link_page:
       placeholder: '友链界面缩略图'
     links_default_avatar:
       name: links_default_avatar
-      label: 友链界面默认头像
+      label: 友链默认头像
       type: attachment
       placeholder: '未设置头像用户的默认头像'
+    show_exchange_info:
+      name: show_exchange_info
+      label: 显示友链交换信息
+      type: switch
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 关闭
     links_blogger_avatar:
       name: links_blogger_avatar
-      label: 友链界面博主头像链接
+      label: 交换信息-博主头像链接
       type: attachment
-      placeholder: '博主头像链接'
+      placeholder: '用于交换友链的博主头像链接'
     links_info:
       name: links_info
       label: 友链界面补充信息
       type: textarea
       placeholder: '友链界面补充信息'
-      default: "添加友链后按以上格式在本帖留言即可，留言后看到会立即添加友链，一般和同样的博客类网站交换。"
     link_comment_id:
       name: link_comment_id
       label: 友链界面评论区ID

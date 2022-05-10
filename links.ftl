@@ -44,14 +44,17 @@
                         </div>
                     </#list>
                 </@linkTag>
-                申请友链的方法：
-                <#assign bloggerAvatar= (settings.links_blogger_avatar?? && settings.links_blogger_avatar!='')?string(settings.links_blogger_avatar!, user.avatar!) />
-                <ul>
-                    <li>名称：${blog_title!}</li>
-                    <li>地址：<a href="${blog_url!}">${blog_url!}</a></li>
-                    <li>图标：<a href="${bloggerAvatar!}">${bloggerAvatar!}</a></li>
-                    <li>描述：${user.description!}</li>
-                </ul>
+                <hr/>
+                <#if settings.show_exchange_info!true>
+                    申请友链的方法：
+                    <#assign bloggerAvatar= (settings.links_blogger_avatar?? && settings.links_blogger_avatar!='')?string(settings.links_blogger_avatar!, user.avatar!) />
+                    <ul>
+                        <li>名称：${blog_title!}</li>
+                        <li>地址：<a href="${blog_url!}">${blog_url!}</a></li>
+                        <li>图标：<a href="${bloggerAvatar!}">${bloggerAvatar!}</a></li>
+                        <li>描述：${user.description!}</li>
+                    </ul>
+                </#if>
                 <div>${settings.links_info!}</div>
             </div>
             <#if settings.share_type?? && settings.share_type!=''>
