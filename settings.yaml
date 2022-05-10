@@ -509,6 +509,7 @@ music:
       label: 侧边栏音乐
       type: radio
       default: none
+      description: '三列布局时不能在右侧显示音乐模块。'
       options:
         - value: left
           label: 左侧
