@@ -1,11 +1,22 @@
+class MewElement extends HTMLElement {
+    constructor() {
+        super();
+        if (this.hasAttribute("draw")) return;
+        this.init();
+    }
+    drawComplete() {
+        this.setAttribute('draw',true);
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
     customElements.define(
         "mew-subtitle",
-        class MewSubtitle extends HTMLElement {
-            constructor() {
-                super();
+        class MewSubtitle extends MewElement {
+            init() {
                 this.innerHTML = `<span>${this.innerText || "默认标题"}</span>`;
+                this.drawComplete();
             }
         }
     );
@@ -77,18 +88,21 @@ document.addEventListener("DOMContentLoaded", () => {
                         this.innerHTML = "未指定播放的音乐！"
                         return resolve();
                     }
-                    new APlayer(this.options);
+                    this.aplayer = new APlayer(this.options);
                     resolve()
                 })
+            }
+
+            disconnectedCallback() {
+                this.aplayer && this.aplayer.destroy();
             }
         }
     );
 
     customElements.define(
         "mew-bilibili",
-        class MewBilibili extends HTMLElement {
-            constructor() {
-                super();
+        class MewBilibili extends MewElement {
+            init() {
                 this.options = {
                     bvid: this.getAttribute("bvid"),
                     width: this.getAttribute("width") || "100%",
@@ -97,18 +111,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (this.options.bvid)
                     this.innerHTML = `<iframe allowfullscreen="true" src="//player.bilibili.com/player.html?bvid=${this.options.bvid}&page=1" style="width:${this.options.width};height:${this.options.height}"></iframe>`;
                 else this.innerHTML = "bvid未填写！";
+                this.drawComplete()
             }
         }
     );
 
     customElements.define(
         "mew-tabs",
-        class MewTabs extends HTMLElement {
-            constructor() {
-                super();
+        class MewTabs extends MewElement {
+            init() {
                 const $tabPage = $(this).children("mew-tab-page");
                 if ($tabPage.length === 0) {
                     this.innerHTML = "没有标签页！"
+                    this.drawComplete()
                     return;
                 }
                 let navs = "";
@@ -128,6 +143,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 this.innerHTML = `<div class="tabs-head">${navs}</div><div class="tabs-body">${contents}</div>`;
                 !active && $(this).find("div>div:first-child").addClass("active")
+                this.drawComplete()
+            }
+            connectedCallback() {
                 $(this).find(".tabs-head").on("click", "div:not(.active)", function () {
                     const $container = $(this).parent().parent();
                     $container.find(".active").removeClass("active")
@@ -140,9 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     customElements.define(
         "mew-cloud",
-        class MewCloud extends HTMLElement {
-            constructor() {
-                super();
+        class MewCloud extends MewElement {
+            init() {
                 this.options = {
                     type: this.getAttribute("type") || "default",
                     title: this.innerText || "资源文件分享",
@@ -168,6 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
 						<i class="fa fa-download"></i>
 					</a>
 				`;
+                this.drawComplete();
             }
         }
     );
