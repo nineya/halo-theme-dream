@@ -40,6 +40,7 @@
       transition: transform 1.2s;
       position: absolute;
       object-fit: cover;
+      border-radius: 0;
       margin: 0;
       bottom: 0;
       left: 0;
@@ -54,13 +55,11 @@
       top: 0;
       left: 0;
       opacity: 0;
-      color: #ffffff;
+      color: #fff;
       font-weight: lighter;
-      padding: .5rem;
+      padding: 7px;
       background: rgba(0, 0, 0, .5);
       transition: opacity .8s;
-      border-top-left-radius: .25rem !important;
-      border-top-right-radius: .25rem !important;
       overflow: hidden;
       display: -webkit-box;
       text-overflow: ellipsis;
@@ -69,7 +68,7 @@
   }
 
   .picture-bottom {
-    padding: 1rem !important;
+    padding: 14px;
 
     b {
       overflow: hidden;
@@ -80,10 +79,11 @@
     }
 
     .picture-info {
-      margin-top: .5rem !important;
+      margin-top: 7px;
+      font-size: 0.9em;
 
-      .location {
-        font-size: 80%;
+      .location i {
+        margin-right: 5px;
       }
     }
   }

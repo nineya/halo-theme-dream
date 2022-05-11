@@ -36,7 +36,7 @@
                             <#if post.topPriority==1><span class="top">置顶</span></#if><a
                                     href="${post.fullPath!}">${post.title!}</a>
                         </h2>
-                        <div class="content">${post.summary!}</div>
+                        <div class="main-content">${post.summary!}</div>
                         <hr/>
                         <div class="meta">
                             <ul class="breadcrumb">
@@ -89,7 +89,7 @@
                         </#if>
                     </div>
                     <hr/>
-                    <div class="content">${post.summary!}</div>
+                    <div class="main-content">${post.summary!}</div>
                 </div>
             </#if>
         </div>

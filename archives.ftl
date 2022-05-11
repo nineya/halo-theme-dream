@@ -3,7 +3,7 @@
     <#if (archives)?? && archives?size gt 0>
         <#list archives as archive>
             <div class="card card-content">
-                <h3 class="timeline-title">${archive.year?c}</h3>
+                <div class="timeline-title">${archive.year?c}</div>
                 <div class="timeline">
                     <#list archive.posts as post>
                         <article class="media">

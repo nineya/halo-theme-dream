@@ -1,18 +1,18 @@
 @charset "utf-8";
 /* CSS Document */
 .timeline {
-  margin-left: 1rem;
-  padding-left: 1.5rem;
-  padding-top: 1rem;
+  margin-left: 16px;
+  padding-left: 24px;
+  padding-top: 16px;
   border-left: 1px solid var(--light-b);
 
   &-title {
     background: var(--bg-e);
     color: var(--light-a);
     display: inline-flex;
-    font-size: 0.75rem;
+    font-size: 0.75em;
     height: 2em;
-    padding: 0 0.75em;
+    padding: 0 8px;
     align-items: center;
     white-space: nowrap;
     border-radius: var(--radius-inner);
@@ -25,34 +25,34 @@
     border: none;
 
     &:not(:last-child) {
-      margin-bottom: 1.5rem;
+      margin-bottom: 21px;
     }
 
     & + .media {
-      padding-top: 1rem;
+      padding-top: 14px;
       margin-top: 0;
     }
 
     &-content {
       time {
-        font-size: 0.85rem;
+        font-size: 0.85em;
         display: block;
         color: var(--dark-b);
       }
 
       .title {
         color: var(--dark-c);
-        font-size: 1rem !important;
+        font-size: 1.1em !important;
       }
 
       p a {
-        font-size: 0.85rem;
+        font-size: 0.9em;
         color: var(--dark-e);
       }
     }
 
     &-left {
-      margin-right: 1rem;
+      margin-right: 14px;
 
       img {
         height: 64px;
@@ -64,7 +64,7 @@
     &:before {
       width: 9px;
       height: 9px;
-      top: 1.3rem;
+      top: 18px;
       background: var(--light-d);
       border-radius: 50%;
     }
@@ -74,19 +74,19 @@
       content: '';
       display: block;
       position: absolute;
-      left: calc(-5px - 1.5rem);
+      left: -29px;
     }
 
     &:first-child:before {
-      top: 0.3rem;
+      top: 4px;
     }
 
     &:first-child:last-child:after {
-      top: calc(0.3rem + 9px);
+      top: 11px;
     }
 
     &:last-child:after {
-      top: calc(1.3rem + 9px);
+      top: 27px;
       width: 9px;
       bottom: 0;
       background: var(--bg-b);
