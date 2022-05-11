@@ -225,7 +225,7 @@ hr {
   border: none;
   display: block;
   height: 1px;
-  margin: 0.8rem 0;
+  margin: 11.2px 0;
 }
 
 input[type=checkbox], input[type=radio] {
@@ -431,6 +431,10 @@ table td, table th {
   margin-top: 1.4rem !important;
 }
 
+.indent {
+  text-indent: 2em;
+}
+
 .menu-list {
   line-height: 1.25;
 
@@ -543,8 +547,8 @@ table td, table th {
         -ms-flex-align: center;
         align-items: center;
         position: relative;
-        height: 4rem;
-        line-height: 4rem;
+        height: 3.5rem;
+        line-height: 3.5rem;
         font-size: 15px;
         padding: 0 8px;
         margin-right: 10px;
@@ -1324,7 +1328,7 @@ table td, table th {
     }
 
     &-title {
-      font-size: 1.1rem;
+      font-size: 15.4px;
       text-transform: uppercase;
       font-weight: 500;
       border-bottom: 1px solid var(--light-b);
@@ -1336,7 +1340,7 @@ table td, table th {
 
       .card-title-label {
         margin-right: 5px;
-        font-size: 1.3rem;
+        font-size: 1.2em;
         color: var(--theme);
       }
 
@@ -1345,13 +1349,13 @@ table td, table th {
       }
 
       .card-more {
-        font-size: 0.9rem;
+        font-size: 0.9em;
         font-weight: 400;
         color: var(--dark-b);
 
         i {
           margin-left: 3px;
-          font-size: 1.1rem;
+          font-size: 1.1em;
         }
 
         &:hover {
@@ -1539,7 +1543,6 @@ table td, table th {
         justify-content: space-between;
         color: var(--dark-b);
         font-size: .8rem;
-        margin-bottom: 8px;
         overflow-x: auto;
 
         &::-webkit-scrollbar {
@@ -1939,7 +1942,7 @@ table td, table th {
 
 .main-content {
   color: var(--main);
-  font-size: 16px;
+  font-size: 1.1rem;
   font-weight: 300;
 
   &.article {
@@ -1966,21 +1969,21 @@ table td, table th {
 
   h1 {
     margin: 30px 0 20px 0;
-    font-size: 1.6em;
+    font-size: 1.45em;
   }
 
   h2 {
     margin: 30px 0 20px 0;
-    font-size: 1.4em;
+    font-size: 1.25em;
   }
 
   h3 {
     margin: 25px 0 18px 0;
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
 
   h4 {
-    font-size: 1.18em;
+    font-size: 1.15em;
   }
 
   h5, h6 {
@@ -2668,6 +2671,10 @@ table td, table th {
 }
 
 @media (min-width: @widescreen-min-width) {
+  html {
+    font-size: 15px;
+  }
+
   .container:not(.two-column) {
     max-width: 1800px;
 
