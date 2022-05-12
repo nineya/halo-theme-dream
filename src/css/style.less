@@ -1333,8 +1333,8 @@ table td, table th {
       font-weight: 500;
       border-bottom: 1px solid var(--light-b);
       align-items: center;
-      height: 40px;
-      line-height: 40px;
+      height: 45px;
+      line-height: 45px;
       padding: 0 15px;
       display: flex;
 
@@ -2026,13 +2026,12 @@ table td, table th {
   ol,
   ul {
     margin-bottom: 18px;
-    padding-left: 36px;
+    padding-left: 16px;
 
     li {
       line-height: 1.8em;
 
       &.task-list-item {
-        margin-left: -16px;
         list-style: none;
 
         input {
@@ -2043,12 +2042,54 @@ table td, table th {
     }
   }
 
-  ol li {
-    list-style: decimal;
+  ol:not([class]):not([style]) {
+    counter-reset: li;
+
+    li:not([class]):not([style]) {
+      list-style: none;
+
+      &:before {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        content: counter(li);
+        counter-increment: li;
+        text-align: center;
+        font-weight: 400;
+        font-size: 0.6em;
+        line-height: 2em;
+        background: rgba(255, 255, 255, .1);
+        color: var(--theme);
+        transition: all .5s;
+        display: inline-block;
+      }
+
+      &:hover:before {
+        transform: rotate(360deg);
+        color: #e67700;
+      }
+    }
   }
 
-  ul li {
-    list-style: disc;
+  ul:not([class]):not([style]) li:not([class]):not([style]) {
+    list-style: none;
+
+    &:before {
+      content: "";
+      width: 0.5em;
+      height: 0.5em;
+      margin-right: 12px;
+      display: inline-block;
+      border: 1px solid var(--theme);
+      background: 0 0;
+      transition: all .5s;
+      transform: rotateZ(45deg);
+    }
+
+    &:hover:before {
+      transform: rotate(360deg);
+      border-color: #e67700;
+    }
   }
 
   table {
@@ -2167,8 +2208,7 @@ table td, table th {
       border: none;
       background: transparent !important;
 
-      > ul {
-        font-family: Ubuntu, Roboto, "Open Sans", "Microsoft YaHei", sans-serif;
+      & > ul {
         margin: 0;
         padding: 0 8px;
         user-select: none;
@@ -2177,6 +2217,10 @@ table td, table th {
         li {
           list-style: none;
           line-height: 1.5em;
+
+          &:before {
+            content: none !important;
+          }
         }
       }
 
