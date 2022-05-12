@@ -7,7 +7,7 @@
                         <img class="avatar" src="${user.avatar!}" alt="${user.nickname!}">
                     </figure>
                     <p class="nickname">${user.nickname!}</p>
-                    <p class="motto" id="spark-input"></p>
+                    <p class="motto" id="spark-input">${user.description!}</p>
                     <#if settings.profile_location?? && settings.profile_location!=''>
                     <p class="address">
                         <i class="fa fa-map-marker"></i>

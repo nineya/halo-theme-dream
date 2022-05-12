@@ -305,7 +305,9 @@ const commonContext = {
     sparkInput() {
         const sparkInputContent = DreamConfig.spark_input_content && DreamConfig.spark_input_content.filter(s => s.length > 0);
         if (sparkInputContent && sparkInputContent.length > 0) {
-            window.sparkInput("spark-input", sparkInputContent);
+            Utils.cachedScript(`${DreamConfig.theme_base}/source/js/spark-input.min.js`, function () {
+                sparkInput("spark-input", sparkInputContent);
+            })
         }
     },
     /* 激活建站倒计时功能 */
