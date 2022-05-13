@@ -29,7 +29,7 @@
     <#else>
         <div class="card card-empty">
             <i class="fa fa-inbox"></i>
-            还没有发表过动态，回<a href="${blog_url!}">主页</a>看看吧
+            还没有发表过动态，回<a href="${context!}">主页</a>看看吧
         </div>
     </#if>
 </@layout>

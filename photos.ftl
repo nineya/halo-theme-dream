@@ -46,7 +46,7 @@
         <#else>
             <div class="card card-empty">
                 <i class="fa fa-inbox"></i>
-                还没有上传过相册，回<a href="${blog_url!}">主页</a>看看吧
+                还没有上传过相册，回<a href="${context!}">主页</a>看看吧
             </div>
         </#if>
     </@photoTag>

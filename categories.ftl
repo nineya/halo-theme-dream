@@ -32,7 +32,7 @@
         <#else>
             <div class="card card-empty">
                 <i class="fa fa-inbox"></i>
-                还没有创建过分类，回<a href="${blog_url!}">主页</a>看看吧
+                还没有创建过分类，回<a href="${context!}">主页</a>看看吧
             </div>
         </#if>
     </@categoryTag>
