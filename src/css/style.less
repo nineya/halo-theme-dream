@@ -1961,8 +1961,7 @@ table td, table th {
     font-size: 0.9em;
     color: var(--color-a);
     margin: 0 3px;
-    padding: 0.4em 0.5em;
-    line-height: 2em;
+    padding: 4px 8px;
     white-space: normal;
     vertical-align: baseline;
     word-break: break-word;
@@ -2053,35 +2052,32 @@ table td, table th {
   ol:not([class]):not([style]) {
     counter-reset: li;
 
-    &>li:not([class]):not([style]) {
+    & > li:not([class]):not([style]) {
       list-style: none;
       position: relative;
       padding-left: 1.2em;
 
       &:before {
-        width: 2em;
-        height: 2em;
-        border-radius: 50%;
-        content: counter(li);
+        position: absolute;
+        width: fit-content;
+        right: calc(100% - 1em);
+        content: counter(li) '.';
         counter-increment: li;
         text-align: center;
         font-weight: 400;
-        font-size: 0.6em;
-        line-height: 2em;
-        background: rgba(255, 255, 255, .1);
         color: var(--theme);
         transition: all .5s;
-        display: inline-block;
       }
 
       &:hover:before {
         transform: rotate(360deg);
         color: #e67700;
+        font-size: 1.1em;
       }
     }
   }
 
-  ul:not([class]):not([style])>li:not([class]):not([style]) {
+  ul:not([class]):not([style]) > li:not([class]):not([style]) {
     list-style: none;
     position: relative;
     padding-left: 1.2em;
@@ -2091,7 +2087,7 @@ table td, table th {
       width: 0.5em;
       height: 0.5em;
       left: 0;
-      top: 0.65em;
+      top: 0.6em;
       position: absolute;
       border: 1px solid var(--theme);
       background: 0 0;
@@ -2178,12 +2174,12 @@ table td, table th {
       &:before {
         content: '';
         display: inline-block;
-        margin: auto 48px auto 8px;
+        margin: auto 44px auto 8px;
         border-radius: 50%;
         background: #ff0800 no-repeat 10px 10px;
         width: 12px;
         height: 12px;
-        box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+        box-shadow: 18px 0 #fdbc40, 36px 0 #35cd4b;
       }
 
       div {
@@ -2230,6 +2226,7 @@ table td, table th {
         li {
           list-style: none;
           line-height: 1.5em;
+          padding: 0 !important;
 
           &:before {
             content: none !important;
