@@ -35,7 +35,7 @@ function Btoc(tocList, contentElement) {
      */
     this.build = function () {
         if (this.elementList == null || this.elementList.length === 0) {
-            return;
+            return '';
         }
         // 解析获取到的标签元素为目录
         // 设置当前元素的最小度为-1表示当前元素为最外层目录元素，防止后续出现比当前元素序号更小的标签
