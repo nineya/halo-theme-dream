@@ -4,8 +4,9 @@ class MewElement extends HTMLElement {
         if (this.hasAttribute("draw")) return;
         this.init();
     }
+
     drawComplete() {
-        this.setAttribute('draw',true);
+        this.setAttribute('draw', true);
     }
 }
 
@@ -145,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 !active && $(this).find("div>div:first-child").addClass("active")
                 this.drawComplete()
             }
+
             connectedCallback() {
                 $(this).find(".tabs-head").on("click", "div:not(.active)", function () {
                     const $container = $(this).parent().parent();
@@ -189,4 +191,22 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     );
+
+    customElements.define(
+        "mew-progress",
+        class MewProgress extends MewElement {
+            init() {
+                this.options = {
+                    value: /^\d{1,3}%$/.test(this.getAttribute("value"))
+                        ? this.getAttribute("value")
+                        : "50%",
+                    color: this.getAttribute("color") || "var(--theme)",
+                };
+                this.innerHTML = `<div class="mew-progress-bar">
+									<div class="mew-progress-bar-inner" style="width: ${this.options.value}; background: ${this.options.color};"></div>
+								</div>
+								<div class="mew-progress-value">${this.options.value}</div>`
+                this.drawComplete()
+            }
+        })
 });
