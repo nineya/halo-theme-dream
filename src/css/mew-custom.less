@@ -276,6 +276,29 @@ mew-progress {
   }
 }
 
+mew-bilibili, mew-cloud, mew-tabs {
+  &:not([draw]) {
+    display: block;
+    position: relative;
+    height: 2.4em;
+    border: 1px solid var(--light-b);
+    border-radius: var(--radius-inner);
+    box-shadow: 1px 1px 5px 0 var(--bg-b);
+
+    &:before {
+      content: '加载中...';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      line-height: 2.4em;
+      padding-left: 12px;
+      background: var(--light-a);
+    }
+  }
+}
+
 @keyframes progress {
   0% {
     background-position: 0 0
