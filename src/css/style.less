@@ -2053,8 +2053,10 @@ table td, table th {
   ol:not([class]):not([style]) {
     counter-reset: li;
 
-    li:not([class]):not([style]) {
+    &>li:not([class]):not([style]) {
       list-style: none;
+      position: relative;
+      padding-left: 1.2em;
 
       &:before {
         width: 2em;
@@ -2079,15 +2081,18 @@ table td, table th {
     }
   }
 
-  ul:not([class]):not([style]) li:not([class]):not([style]) {
+  ul:not([class]):not([style])>li:not([class]):not([style]) {
     list-style: none;
+    position: relative;
+    padding-left: 1.2em;
 
     &:before {
       content: "";
       width: 0.5em;
       height: 0.5em;
-      margin-right: 12px;
-      display: inline-block;
+      left: 0;
+      top: 0.65em;
+      position: absolute;
       border: 1px solid var(--theme);
       background: 0 0;
       transition: all .5s;
