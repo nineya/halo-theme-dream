@@ -1,18 +1,32 @@
 <#include "template/layout.ftl">
+<#macro categoriesTree categories>
+    <#list categories as category>
+        <li>
+            <a class="level is-marginless" href="${category.fullPath!}">
+                <span class="level-item">${category.name}</span>
+                <span class="level-item tag">${postCounts[category.id?c]!}</span>
+            </a>
+            <#if category.children?? && category.children?size gt 0>
+                <ul>
+                    <@categoriesTree category.children/>
+                </ul>
+            </#if>
+        </li>
+    </#list>
+</#macro>
 <@layout title="分类 - ${blog_title!}" canonical="${categories_url!}">
+    <#assign postCounts = {}>
     <@categoryTag method="list">
+        <#list categories as category>
+            <#assign postCounts += {category.id: category.postCount}>
+        </#list>
+    </@categoryTag>
+    <@categoryTag method="tree">
         <#if categories?? && categories?size gt 0>
             <div class="card widget card-content">
                 <h3 class="menu-label">分类</h3>
                 <ul class="menu-list">
-                    <#list categories as category>
-                        <li>
-                            <a class="level" href="${category.fullPath!}">
-                                <span class="level-item">${category.name}</span>
-                                <span class="level-item tag">${category.postCount}</span>
-                            </a>
-                        </li>
-                    </#list>
+                    <@categoriesTree categories/>
                 </ul>
             </div>
         <#else>
