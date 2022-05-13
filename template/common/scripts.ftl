@@ -19,7 +19,6 @@
     <script data-pjax defer src="${options.comment_internal_plugin_js!'https://cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js'}"></script>
 </#if>
 
-<script src="${theme_base!}/source/js/spark-input.min.js"></script>
 <script src="${theme_base!}/source/lib/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
 <script src="${theme_base!}/source/js/pjax.min.js"></script>
 

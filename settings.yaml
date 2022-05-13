@@ -344,11 +344,22 @@ profile:
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
           label: 不隐藏
+    enable_color_character:
+      name: enable_color_character
+      label: 开启彩字切换
+      type: switch
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     color_character:
       name: color_character
       label: 彩字内容
       type: textarea
-      placeholder: 彩字内容（'XXX','XXX',...）
+      placeholder: 彩字内容（一行一条彩字消息）
     profile_location:
       name: profile_location
       label: 地理位置

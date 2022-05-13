@@ -401,7 +401,7 @@ table td, table th {
       margin-right: 3px;
     }
 
-    &:not(:last-child)::after {
+    &:not(:first-child)::before {
       content: "/";
       color: var(--light-d);
       padding: 0 5px;
@@ -762,13 +762,14 @@ table td, table th {
     .result {
       position: absolute;
       z-index: 2;
-      top: 60px;
+      top: 55px;
       left: 0;
       right: 0;
       user-select: none;
       visibility: hidden;
+      overflow: hidden;
       opacity: 0;
-      background: var(--background);
+      background: var(--bg-d);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
       border-radius: var(--radius-inner);
       transition: visibility 0.35s, opacity 0.35s, transform 0.35s;
@@ -1152,7 +1153,7 @@ table td, table th {
 
   &-searchout {
     position: fixed;
-    top: 4rem;
+    top: 3.5rem;
     left: 0;
     right: 0;
     z-index: 5;
@@ -1650,24 +1651,23 @@ table td, table th {
     }
 
     .nickname {
-      font-size: 1.5rem !important;
-      display: block !important;
+      font-size: 1.5rem;
+      margin-bottom: 5px;
     }
 
     .motto {
-      font-size: 1rem !important;
-      display: block !important;
+      font-size: 1rem;
     }
 
     .address {
-      color: #7a7a7a !important;
-      display: flex !important;
-      justify-content: center !important;
-      font-size: 1rem !important;
+      color: #7a7a7a;
+      display: flex;
+      justify-content: center;
+      font-size: 1rem;
       align-items: center;
 
       i {
-        margin-right: 0.25em !important;
+        margin-right: 0.25em;
       }
     }
 
@@ -2454,10 +2454,6 @@ table td, table th {
     .navbar-searchicon {
       margin-left: 0;
     }
-  }
-
-  .navbar-searchout {
-    top: 3.5rem;
   }
 
   .is-hidden-mobile {
