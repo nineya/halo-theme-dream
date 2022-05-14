@@ -12,7 +12,7 @@
                 <#assign size= (tags?size > num?number)?string(num, tags?size)?number - 1 />
                 <#list 0..size as i>
                     <#assign tag= tags[i] />
-                    <a href="${tag.fullPath!}">${tag.name!}</a>
+                    <a href="${tag.fullPath!}"<#if settings.enable_tag_color!false > style="color: ${tag.color}; border-color: ${tag.color}; background: ${tag.color!}20" </#if>>${tag.name!}</a>
                 </#list>
             </div>
         <#else>
