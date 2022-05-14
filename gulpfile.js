@@ -166,6 +166,7 @@ task("freecdn", (done) => {
     console.log(`[FreeCDN] Process 'freecdn-manifest.txt' file...`)
     const manifestData = fs.readFileSync(manifestPath, "utf8")
         .replace(/^\//mg, "/themes/dream/source/")
+    console.log(`[FreeCDN] Complete!`)
     fs.writeFileSync(manifestPath, manifestData);
     done();
 });
