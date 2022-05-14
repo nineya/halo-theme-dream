@@ -1033,6 +1033,17 @@ other_page:
       default: 500
       placeholder: '触发折叠的动态内容高度（px）'
       description: '动态内容高度超出指定高度后默认进行折叠，指定的高度需大于等于260px。'
+    enable_tags_tag_color:
+      name: enable_tags_tag_color
+      label: 标签页面-开启标签颜色
+      type: switch
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
 enhance:
   label: 增强功能
   items:

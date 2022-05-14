@@ -9,8 +9,12 @@
                 <div class="tags-field">
                     <#list tags as tag>
                         <a class="tags" href="${tag.fullPath!}">
-                            <span class="tag">${tag.name}</span>
-                            <span class="tag is-grey">${tag.postCount!}</span>
+                            <#if settings.enable_tags_tag_color!false>
+                                <span class="tag" style="color: ${tag.color}; background: ${tag.color!}20">${tag.name}</span>
+                                <span class="tag is-grey" style="background: ${tag.color!}CC">${tag.postCount!}</span>
+                            <#else>
+                                <span class="tag">${tag.name}</span><span class="tag is-grey">${tag.postCount!}</span>
+                            </#if>
                         </a>
                     </#list>
                 </div>
