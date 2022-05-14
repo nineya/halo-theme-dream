@@ -37,8 +37,6 @@
 </#if>
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<#include "mathjax.ftl">
-
 ${settings.external_js_body!}
 <#if settings.inline_js_body?? && settings.inline_js_body!=''>
     <script type="text/javascript">

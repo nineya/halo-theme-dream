@@ -22,12 +22,11 @@ require: 1.3.0
 # 文章页 meta 变量
 postMetaField:
   - enable_copyright
-  # back：图片作为背景，small：小图
   - thumbnail_mode
-  # 文章顶部的提示信息
   - tips
+  - enable_katex
 # 自定义页 meta 变量
 sheetMetaField:
   - enable_copyright
-  # 文章顶部的提示信息
   - tips
+  - enable_katex

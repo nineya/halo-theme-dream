@@ -115,12 +115,13 @@ basic:
 post:
   label: 文章设置
   items:
-    mathjax_enable:
-      name: mathjax_enable
-      label: MathJax
-      type: radio
+    enable_katex:
+      name: enable_katex
+      label: 开启 KaTeX
+      type: switch
       data-type: bool
       default: false
+      description: '博客通过 KaTeX 做数学公式渲染，如果文章或页面配置了元数据，则当前配置将被覆盖。'
       options:
         - value: true
           label: 开启
@@ -128,7 +129,7 @@ post:
           label: 关闭
     code_pretty:
       name: code_pretty
-      label: 文章代码高亮主题
+      label: 代码块高亮主题
       type: select
       default: atom-one-light
       options:
