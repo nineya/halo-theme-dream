@@ -8,13 +8,13 @@
             </#if>
         </div>
         <#if tags?? && tags?size gt 0>
-            <div class="card-content">
+            <div class="card-content tagcloud">
                 <#assign size= (tags?size > num?number)?string(num, tags?size)?number - 1 />
                 <#list 0..size as i>
                     <#assign tag= tags[i] />
                     <#assign size= tag.name?length + tag.slug?length + tag.postCount />
                     <a href="${tag.fullPath!}"
-                       style="font-size:${(size < 14)?string('14',(size > 32)?string('32',size?string))}px">${tag.name!}</a>
+                       style="font-size:${(size < 14)?string('14',(size > 32)?string('32',size?string))}px;<#if settings.enable_tagcloud_color!false >color: ${tag.color}</#if>">${tag.name!}</a>
                 </#list>
             </div>
         <#else>

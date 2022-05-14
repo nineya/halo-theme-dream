@@ -853,7 +853,7 @@ tags:
       type: text
       placeholder: 输入展示的标签数量
       default: 18
-    enable_tag_color:
+    enable_tags_color:
       name: enable_tag_color
       label: 开启标签颜色
       type: switch
@@ -918,6 +918,17 @@ tagcloud:
       type: text
       placeholder: 输入展示的标签数量
       default: 32
+    enable_tagcloud_color:
+      name: enable_tagcloud_color
+      label: 开启标签颜色
+      type: switch
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
 links:
   label: 友链模块
   items:
