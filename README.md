@@ -66,6 +66,6 @@
 
 2. npm 命令
     - `npm run build` 执行主题打包操作，主题将被打包为压缩包文件存放在 `dist/` 目录下，同时 `source` 目录下的文件也将被更新。
-    - `npm run build --dev` 开发模式进行主题打包，`js` 和 `css` 不会被做压缩和混淆处理，方便排查问题。
+    - `npm run build --devel` 开发模式进行主题打包，`js` 和 `css` 不会被做压缩和混淆处理，方便排查问题。
     - `npm run cdn --tag=$version`  创建 `FreeCDN` 清单文件，必须指定 `tag` 参数，值为本地代码将发布到 `GitHub` 仓库的版本标签。
     - `npm run release --tag=$version` 发布模式执行主题打包操作，将自动更新主题中的版本号，并使用这个版本标签重新创建  `FreeCDN` 清单文件。

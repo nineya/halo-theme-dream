@@ -15,7 +15,7 @@ const resolve = (name) => path.resolve(__dirname, name);
 const cssPath = "./source/css";
 const jsPath = "./source/js";
 const distPath = "./dist";
-const devModel = process.env.npm_config_dev;
+const devModel = process.env.npm_config_devel;
 const version = process.env.npm_config_tag;
 
 if (devModel) {
