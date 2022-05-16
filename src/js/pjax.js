@@ -9,6 +9,29 @@ const createSerialNumber = () => {
     return serialNumber;
 }
 
+const syncLoadScripts = ($scripts, i, resolve) => {
+    if (i >= $scripts.length) {
+        resolve && resolve();
+        return;
+    }
+    let src = $($scripts[i]).attr('src');
+    if (jsLoadCompletes.has(src)) {
+        syncLoadScripts($scripts, i + 1, resolve)
+        return;
+    }
+    console.log((resolve ? '同步' : '异步') + '顺序加载js ' + src)
+    Utils.cachedScript(src)
+        .done(function () {
+            console.log((resolve ? '同步' : '异步') + '顺序加载js完成 ' + src)
+            jsLoadCompletes.add(src);
+            syncLoadScripts($scripts, i + 1, resolve)
+        })
+        .fail(function () {
+            console.log((resolve ? '同步' : '异步') + '顺序加载js失败 ' + src)
+            syncLoadScripts($scripts, i + 1, resolve)
+        })
+}
+
 /**
  * 第二个参数是容器，即将被替换的内容
  * fragment:是加载的文本中被选中的目标内容
@@ -99,41 +122,29 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
         }
     })
     let $scripts = $currentTarget.filter('script[data-pjax]');
-    let scriptSize = $scripts.length;
-    if (scriptSize > 0) {
-        await new Promise((resolve) => {
-            $scripts.each(function () {
-                let src = $(this).attr('src');
-                if (jsLoadCompletes.has(src)) {
-                    if (--scriptSize === 0) resolve()
-                    return;
-                }
-                if (this.defer || this.async) {
-                    console.log('异步加载js ' + src)
-                    Utils.cachedScript(src)
-                        .done(function () {
-                            console.log('异步加载js完成 ' + src)
-                            jsLoadCompletes.add(src);
-                        })
-                        .fail(function () {
-                            console.log('异步加载js失败 ' + src)
-                        })
-                    if (--scriptSize === 0) resolve()
-                } else {
-                    console.log('同步加载js ' + src)
-                    Utils.cachedScript(src)
-                        .done(function () {
-                            console.log('同步加载js完成 ' + src)
-                            jsLoadCompletes.add(src);
-                            if (--scriptSize === 0) resolve()
-                        })
-                        .fail(function () {
-                            console.log('同步加载js失败 ' + src)
-                            if (--scriptSize === 0) resolve()
-                        })
-                }
-            })
+    if ($scripts.length > 0) {
+        $scripts.filter('[async]').each(function () {
+            let src = $(this).attr('src');
+            if (jsLoadCompletes.has(src)) {
+                return;
+            }
+            console.log('异步无序加载js ' + src)
+            Utils.cachedScript(src)
+                .done(function () {
+                    console.log('异步无序js完成 ' + src)
+                    jsLoadCompletes.add(src);
+                })
+                .fail(function () {
+                    console.log('异步无序js失败 ' + src)
+                })
         })
+        new Promise(() => {
+            syncLoadScripts($scripts.filter('[defer]'), 0)
+        })
+        let $syncScripts = $scripts.filter(':not([async],[defer])');
+        $syncScripts.length > 0 && await new Promise((resolve) => {
+            syncLoadScripts($syncScripts, 0, resolve)
+        });
     }
     console.log('全部处理完成')
     if (pjaxSerialNumber !== serialNumber) return;
