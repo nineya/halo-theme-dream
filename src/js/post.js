@@ -78,6 +78,21 @@ const postContext = {
         // 初始化代码块高亮工具
         hljs.initHighlightingOnLoad();
     },
+    /* 代码块复制 */
+    initClipboard() {
+        if (window.clipboard) {
+            return;
+        }
+        // 初始化代码块复制插件，一个界面仅需初始化一次
+        window.clipboard = new ClipboardJS('.btn-clipboard');
+        clipboard.on('error', function (e) {
+            e.clearSelection();
+            Qmsg.error("您的浏览器不支持复制");
+        });
+        clipboard.on('success', function () {
+            Qmsg.success("复制成功");
+        })
+    }
 }
 window.postPjax = function (serialNumber) {
     Object.keys(postContext).forEach(
@@ -90,14 +105,6 @@ window.postPjax = function (serialNumber) {
 
     document.addEventListener("DOMContentLoaded", function () {
         !window.pjaxSerialNumber && postContext.initHighlighting();
-        // 初始化代码块复制插件，一个界面仅需初始化一次
-        let clipboard = new ClipboardJS('.btn-clipboard');
-        clipboard.on('error', function (e) {
-            e.clearSelection();
-            Qmsg.error("您的浏览器不支持复制");
-        });
-        clipboard.on('success', function () {
-            Qmsg.success("复制成功");
-        })
+        !window.pjaxSerialNumber && postContext.initClipboard();
     });
 })();
