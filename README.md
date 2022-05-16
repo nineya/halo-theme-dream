@@ -28,6 +28,9 @@
 
 关于主题使用上的一些问题可以参见 [主题使用手册-基础篇](https://blog.nineya.com/archives/94.html)
 
+如果还有疑问，欢迎加入 <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=X7p7Bs21cgtkQ0dRfzmBsuWqNNQc10hn&jump_from=webapi">Dream 主题交流群：638168592</a>
+
+欢迎参与主题开发的一些<a href="https://github.com/nineya/halo-theme-dream/discussions">问题探讨</a>
 
 
 ## 安装 & 更新

@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
-  - name: 联系作者
-    url: http://wpa.qq.com/msgrd?v=3&uin=361654768&site=qq&menu=yes
-    about: 如果问题描述起来较于复杂，欢迎直接联系开发者进行提问。
+  - name: 加入主题交流群
+    url: https://qm.qq.com/cgi-bin/qm/qr?k=X7p7Bs21cgtkQ0dRfzmBsuWqNNQc10hn&jump_from=webapi
+    about: 如果问题描述起来较于复杂，欢迎加入 Dream 主题交流群进行提问。
