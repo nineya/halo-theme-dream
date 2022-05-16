@@ -276,6 +276,24 @@ mew-progress {
   }
 }
 
+mew-panel {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-inner);
+
+  .mew-panel-title {
+    color: #FFF;
+    padding: 6px 12px;
+    font-weight: 400;
+  }
+
+  .mew-panel-body {
+    background: rgb(255 255 255 / 82%);
+    padding: 6px 8px;
+    position: relative;
+  }
+}
+
 mew-bilibili, mew-cloud, mew-tabs {
   &:not([draw]) {
     display: block;
@@ -296,6 +314,12 @@ mew-bilibili, mew-cloud, mew-tabs {
       padding-left: 12px;
       background: var(--light-a);
     }
+  }
+}
+
+html.night {
+  .mew-cloud-logo, .mew-cloud-link, mew-panel {
+    filter: brightness(.8);
   }
 }
 

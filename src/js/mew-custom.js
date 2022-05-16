@@ -209,4 +209,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.drawComplete()
             }
         })
+
+    customElements.define(
+        "mew-panel",
+        class MewPanel extends MewElement {
+            init() {
+                this.options = {
+                    title: this.getAttribute("title") || "",
+                    color: this.getAttribute("color") || "var(--theme)",
+                };
+                this.innerHTML = `
+                <div class="mew-panel-title">${this.options.title}</div>
+                <div class="mew-panel-body">${this.innerHTML}</div>`
+                this.style.background = this.options.color;
+                this.drawComplete()
+            }
+        })
 });
