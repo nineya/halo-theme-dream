@@ -243,4 +243,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.drawComplete()
             }
         })
+
+    customElements.define(
+        "mew-hr",
+        class MewHr extends MewElement {
+            init() {
+                this.startColor = this.getAttribute("startColor") || "#01d0ff";
+                this.endColor = this.getAttribute("endColor") || "#fc3e85";
+                this.style.backgroundImage = `repeating-linear-gradient(-45deg, ${this.startColor} 0,${this.startColor} 20%, transparent 0,transparent 35%, ${this.endColor} 0,${this.endColor} 65%, transparent 0,transparent 80%, ${this.startColor} 0,${this.startColor} 100%)`
+                this.drawComplete()
+            }
+        })
 });

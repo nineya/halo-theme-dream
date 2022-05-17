@@ -341,6 +341,12 @@ mew-message {
   }
 }
 
+mew-hr {
+  display: block;
+  height: 4px;
+  background-size: 50px 4px;
+}
+
 mew-bilibili, mew-cloud, mew-tabs {
   &:not([draw]) {
     display: block;
@@ -365,7 +371,7 @@ mew-bilibili, mew-cloud, mew-tabs {
 }
 
 html.night {
-  .mew-cloud-logo, .mew-cloud-link, mew-panel, mew-message {
+  .mew-cloud-logo, .mew-cloud-link, .mew-progress-bar-inner, mew-panel, mew-message, mew-hr {
     filter: brightness(.8);
   }
 }
