@@ -1627,12 +1627,22 @@ table td, table th {
 .widget {
   overflow: hidden !important;
 
-  &.card .card-empty {
-    font-size: 1em;
-    font-style: italic;
-    user-select: none;
-    padding: 24px 0;
-    background-color: var(--bg-a);
+  &.card {
+    .card-empty {
+      font-size: 1em;
+      font-style: italic;
+      user-select: none;
+      padding: 24px 0;
+      background-color: var(--bg-a);
+    }
+
+    .main .main-content {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-indent: 1.5em;
+    }
   }
 
   .menu-list li ul {
@@ -2012,7 +2022,7 @@ table td, table th {
     border-radius: 2px;
     transition: all .3s;
     background: var(--main);
-    font-family: Ubuntu,sans-serif;
+    font-family: Ubuntu, sans-serif;
 
     &:hover {
       color: #FFF;
