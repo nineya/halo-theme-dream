@@ -2286,6 +2286,23 @@ table td, table th {
       box-shadow: 0 34px 20px -24px rgb(136 161 206 / 30%);
     }
   }
+
+  .mermaid {
+    text-align: center;
+    margin-bottom: 12px;
+
+    & > svg {
+      border-radius: var(--radius-inner);
+      background: #FFF;
+      transition: all .35s;
+      border: 1px solid var(--light-b);
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 34px 20px -24px rgb(136 161 206 / 30%);
+      }
+    }
+  }
 }
 
 .pagination {
