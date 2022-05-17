@@ -294,6 +294,53 @@ mew-panel {
   }
 }
 
+mew-message {
+  display: block;
+  padding: 10px;
+  border-radius: var(--radius-inner);
+
+  &::before {
+    font: normal normal normal 1.1em/1 FontAwesome;
+    margin-right: 8px;
+  }
+
+  &[type=error] {
+    color: #f46c6b;
+    background-color: rgb(255 228 226 / 90%);
+
+    &::before {
+      content: '\f057';
+    }
+  }
+
+  &[type=warning] {
+    color: #FEC008;
+    background-color: rgb(255 243 215 / 90%);
+
+    &::before {
+      content: '\f06a';
+    }
+  }
+
+  &[type=info] {
+    color: #1B72F3;
+    background-color: rgb(232 240 255 / 90%);
+
+    &::before {
+      content: '\f05a';
+    }
+  }
+
+  &[type=success] {
+    color: #2bde3f;
+    background-color: rgb(225 255 228 / 90%);
+
+    &::before {
+      content: '\f058';
+    }
+  }
+}
+
 mew-bilibili, mew-cloud, mew-tabs {
   &:not([draw]) {
     display: block;
@@ -318,7 +365,7 @@ mew-bilibili, mew-cloud, mew-tabs {
 }
 
 html.night {
-  .mew-cloud-logo, .mew-cloud-link, mew-panel {
+  .mew-cloud-logo, .mew-cloud-link, mew-panel, mew-message {
     filter: brightness(.8);
   }
 }

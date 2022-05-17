@@ -225,4 +225,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.drawComplete()
             }
         })
+
+    customElements.define(
+        "mew-message",
+        class MewMessage extends MewElement {
+            init() {
+                this.options = {
+                    type: /^(success|info|warning|error)$/.test(
+                        this.getAttribute("type")
+                    )
+                        ? this.getAttribute("type")
+                        : "info",
+                    content: this.innerHTML || "消息内容",
+                };
+                this.innerHTML = this.options.content;
+                this.setAttribute('type', this.options.type);
+                this.drawComplete()
+            }
+        })
 });
