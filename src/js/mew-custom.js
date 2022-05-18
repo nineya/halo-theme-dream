@@ -222,6 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="mew-panel-title">${this.options.title}</div>
                 <div class="mew-panel-body">${this.innerHTML}</div>`
                 this.style.background = this.options.color;
+                this.style.color = this.options.color;
                 this.drawComplete()
             }
         })
