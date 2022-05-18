@@ -18,23 +18,21 @@
         background: url("${settings.background_pc!}") center 0 no-repeat;
     }
 
-    <#if !settings.background_mobile?? || settings.background_mobile==''>
+    </#if>
+    html.night body:before {
+        background: ${(settings.night_background_pc?? && settings.night_background_pc!='')?then('url("${settings.night_background_pc!}") center 0 no-repeat','none')};
+    }
+
     @media screen and (max-width: 768px) {
         body:before {
-            background-image: none;
+            background: ${(settings.background_mobile?? && settings.background_mobile!='')?then('url("${settings.background_mobile!}") center 0 no-repeat','none')};
+        }
+
+        html.night body:before {
+            background: ${(settings.night_background_mobile?? && settings.night_background_mobile!='')?then('url("${settings.night_background_mobile!}") center 0 no-repeat','none')};
         }
     }
 
-    </#if>
-    </#if>
-    <#if settings.background_mobile?? && settings.background_mobile!='' && settings.background_mobile!=settings.background_pc! >
-    @media screen and (max-width: 768px) {
-        body:before {
-            background-image: url("${settings.background_mobile!}");
-        }
-    }
-
-    </#if>
     </#if>
 </style>
 <script type="text/javascript">

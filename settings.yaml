@@ -17,6 +17,7 @@ basic:
       type: switch
       data-type: bool
       default: false
+      description: '如果某个选项的背景图链接未指定，则不开启背景图。'
       options:
         - value: true
           label: 开启
@@ -24,14 +25,24 @@ basic:
           label: 关闭
     background_pc:
       name: background_pc
-      label: PC端博客背景图
+      label: 白天PC端背景图
       type: attachment
-      placeholder: 'PC端博客背景图'
+      placeholder: '图片url链接'
     background_mobile:
       name: background_mobile
-      label: 移动端博客背景图
+      label: 白天移动端背景图
       type: attachment
-      placeholder: '移动端博客背景图'
+      placeholder: '图片url链接'
+    night_background_pc:
+      name: night_background_pc
+      label: 黑夜PC端背景图
+      type: attachment
+      placeholder: '图片url链接'
+    night_background_mobile:
+      name: night_background_mobile
+      label: 黑夜移动端背景图
+      type: attachment
+      placeholder: '图片url链接'
     theme_color:
       name: theme_color
       label: 主题色

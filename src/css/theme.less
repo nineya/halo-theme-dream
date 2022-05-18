@@ -54,7 +54,7 @@ html {
     --bg-c: #373d48;
     --bg-d: rgba(40, 44, 52, .8);
     --bg-e: #434a56;
-    --bg-f: #191e3c;
+    --bg-f: #080c28;
     --bg-g: rgba(210, 210, 210, 0.2);
     --bg-h: rgb(65 68 74 / 60%);;
     --bg-i: #276b92;
@@ -62,6 +62,10 @@ html {
     --bg-k: rgb(30 33 41 / 80%);
     --bg-l: rgb(63 65 75 / 80%);
     --box-shadow: 1px 1px 3px 1px #1b1b1b;
+
+    body::before {
+      filter: brightness(.3);
+    }
 
     .logo-img {
       display: none;
