@@ -1122,6 +1122,8 @@ enhance:
       type: radio
       default: day
       options:
+        - value: none
+          label: 关闭
         - value: day
           label: 白天
         - value: night
@@ -1134,6 +1136,8 @@ enhance:
       type: radio
       default: night
       options:
+        - value: none
+          label: 关闭
         - value: day
           label: 白天
         - value: night
