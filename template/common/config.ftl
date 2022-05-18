@@ -62,8 +62,8 @@
     <#if settings.cursor_click?? && settings.cursor_click!='none'>
     DreamConfig["cursor_click"] = '${settings.cursor_click}';
     </#if>
-    <#if settings.enable_sakura_fall!true>
-    DreamConfig["sakura_fall_url"] = '/source/lib/sakura/sakura.js';
+    <#if settings.foreground_effects?? && settings.foreground_effects!='none'>
+    DreamConfig["foreground_effects"] = '${settings.foreground_effects}';
     </#if>
     <#if settings.enable_live2d!true>
     DreamConfig["live2d_url"] = '/source/lib/live2d/autoload.js';

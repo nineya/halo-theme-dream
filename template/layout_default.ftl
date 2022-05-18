@@ -26,6 +26,9 @@
     </section>
     <#include "common/actions.ftl">
     <#include "common/footer.ftl">
+    <#if settings.foreground_effects?? && settings.foreground_effects!='none'>
+        <canvas id="foreground_effects" class="${settings.foreground_effects_mode!}"></canvas>
+    </#if>
     <#include "common/scripts.ftl">
     </body>
     </html>

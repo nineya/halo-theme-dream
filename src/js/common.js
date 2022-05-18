@@ -349,7 +349,7 @@ const commonContext = {
         DreamConfig.cursor_move && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/cursor/move/${DreamConfig.cursor_move}.min.js`)
         DreamConfig.cursor_click && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/cursor/click/${DreamConfig.cursor_click}.min.js`)
         DreamConfig.live2d_url && Utils.cachedScript(`${DreamConfig.theme_base}${DreamConfig.live2d_url}`)
-        DreamConfig.sakura_fall_url && Utils.cachedScript(`${DreamConfig.theme_base}${DreamConfig.sakura_fall_url}`)
+        DreamConfig.foreground_effects && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/effects/${DreamConfig.foreground_effects}.min.js`)
     },
     /* 加载主动推送、统计脚本等参数 */
     loadMaintain() {

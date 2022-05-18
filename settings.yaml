@@ -1105,17 +1105,28 @@ enhance:
           label: 开启
         - value: false
           label: 关闭
-    enable_sakura_fall:
-      name: enable_sakura_fall
-      label: 启用樱花飘落
-      type: switch
-      data-type: bool
-      default: true
+    foreground_effects:
+      name: foreground_effects
+      label: 前景特效
+      type: select
+      default: none
       options:
-        - value: true
-          label: 开启
-        - value: false
+        - value: none
           label: 关闭
+        - value: sakura
+          label: 樱花飘落
+    foreground_effects_mode:
+      name: foreground_effects_mode
+      label: 前景特效显示模式
+      type: radio
+      default: day
+      options:
+        - value: day
+          label: 白天
+        - value: night
+          label: 黑夜
+        - value: all
+          label: 全模式
     enable_live2d:
       name: enable_live2d
       label: 启用看板娘
