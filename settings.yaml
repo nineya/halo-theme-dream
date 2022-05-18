@@ -1127,6 +1127,28 @@ enhance:
           label: 黑夜
         - value: all
           label: 全模式
+    background_effects:
+      name: background_effects
+      label: 背景特效
+      type: select
+      default: universe
+      options:
+        - value: none
+          label: 关闭
+        - value: universe
+          label: 宇宙
+    background_effects_mode:
+      name: background_effects_mode
+      label: 背景特效显示模式
+      type: radio
+      default: night
+      options:
+        - value: day
+          label: 白天
+        - value: night
+          label: 黑夜
+        - value: all
+          label: 全模式
     enable_live2d:
       name: enable_live2d
       label: 启用看板娘

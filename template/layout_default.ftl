@@ -7,8 +7,10 @@
         <#include "common/head.ftl">
     </head>
     <body>
+    <#if settings.background_effects?? && settings.background_effects!='none'>
+        <canvas id="background_effects" class="${settings.background_effects_mode} ${settings.background_effects}"></canvas>
+    </#if>
     <@nav.navbar/>
-    <canvas id="universe"></canvas>
     <section class="section">
         <div class="container<#if settings.sidebar_column?? && settings.sidebar_column!='all'> two-column</#if>">
             <div class="columns">
@@ -27,7 +29,7 @@
     <#include "common/actions.ftl">
     <#include "common/footer.ftl">
     <#if settings.foreground_effects?? && settings.foreground_effects!='none'>
-        <canvas id="foreground_effects" class="${settings.foreground_effects_mode!}"></canvas>
+        <canvas id="foreground_effects" class="${settings.foreground_effects_mode} ${settings.foreground_effects}"></canvas>
     </#if>
     <#include "common/scripts.ftl">
     </body>

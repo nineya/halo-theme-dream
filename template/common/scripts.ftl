@@ -28,8 +28,6 @@
     <script data-pjax async src="${theme_base!}/source/lib/fancybox@5.3.7/jquery.fancybox.min.js"></script>
 </#if>
 
-<script async src="${theme_base!}/source/js/universe.min.js"></script>
-
 <#if settings.sidebar_music?? && settings.sidebar_music != 'none'>
     <link rel="stylesheet" href="${theme_base!}/source/lib/aplayer@1.10.1/APlayer.min.css">
     <script defer src="${theme_base!}/source/lib/aplayer@1.10.1/APlayer.min.js"></script>

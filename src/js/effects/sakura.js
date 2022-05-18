@@ -103,7 +103,6 @@ function startSakura() {
     staticx = true;
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
-    canvas.setAttribute('style', 'position: fixed;left: 0;top: 0;pointer-events: none;');
     const cxt = canvas.getContext('2d');
     const sakuraList = new SakuraList();
     for (var i = 0; i < 50; i++) {

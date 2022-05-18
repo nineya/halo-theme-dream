@@ -65,6 +65,9 @@
     <#if settings.foreground_effects?? && settings.foreground_effects!='none'>
     DreamConfig["foreground_effects"] = '${settings.foreground_effects}';
     </#if>
+    <#if settings.background_effects?? && settings.background_effects!='none'>
+    DreamConfig["background_effects"] = '${settings.background_effects}';
+    </#if>
     <#if settings.enable_live2d!true>
     DreamConfig["live2d_url"] = '/source/lib/live2d/autoload.js';
     </#if>

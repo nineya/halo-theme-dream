@@ -6,23 +6,23 @@
     window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
         window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     // const
-    var starDensity = 0.216;
-    var speedCoeff = 0.05;
-    var canva = document.getElementById('universe');
+    const starDensity = 0.216;
+    const speedCoeff = 0.05;
+    const canva = document.getElementById('background_effects');
 
     // let
-    var width;
-    var height;
-    var starCount;
+    let width;
+    let height;
+    let starCount;
     /* no-unused-vars */
     // let circleRadius;
     // let circleCenter;
-    var first = true;
-    var giantColor = '180,184,240';
-    var starColor = '226,225,142';
-    var cometColor = '226,225,224';
-    var stars = [];
-    var universe;
+    let first = true;
+    const giantColor = '180,184,240';
+    const starColor = '226,225,142';
+    const cometColor = '226,225,224';
+    const stars = [];
+    let universe;
 
     windowResizeHandler();
     window.addEventListener('resize', windowResizeHandler, false);
@@ -140,8 +140,9 @@
         return (Math.random() * (max - min) + min);
     }
 
-    (function drawIfNeeded () {
-        if (document.documentElement.classList.contains('night')) {
+    (function drawIfNeeded() {
+        const isNight = document.documentElement.classList.contains('night');
+        if (canva.classList.contains('all') || (canva.classList.contains('day') && !isNight) || (canva.classList.contains('night') && isNight)) {
             draw();
         }
         window.requestAnimationFrame(drawIfNeeded);

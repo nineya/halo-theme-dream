@@ -271,15 +271,32 @@ table td, table th {
   vertical-align: top;
 }
 
-#universe {
-  display: none;
-}
-
 .container {
   flex-grow: 1;
   margin: 0 auto;
   position: relative;
   width: auto;
+}
+
+#background_effects, #foreground_effects {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  &.universe {
+    background: radial-gradient(1600px at 70% 120%, #212750 10%, #020409 100%);
+  }
+
+  &.night {
+    display: none;
+  }
 }
 
 /** 通用样式 开始 */
