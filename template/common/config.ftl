@@ -60,11 +60,11 @@
     <#if settings.cursor_click?? && settings.cursor_click!='none'>
     DreamConfig["cursor_click"] = '${settings.cursor_click}';
     </#if>
-    <#if settings.foreground_effects?? && settings.foreground_effects!='none'>
-    DreamConfig["foreground_effects"] = '${settings.foreground_effects}';
+    <#if settings.effects_sakura_mode?? && settings.effects_sakura_mode!='none'>
+    DreamConfig["effects_sakura_mode"] = '${settings.effects_sakura_mode}';
     </#if>
-    <#if settings.background_effects?? && settings.background_effects!='none'>
-    DreamConfig["background_effects"] = '${settings.background_effects}';
+    <#if settings.effects_universe_mode?? && settings.effects_universe_mode!='none'>
+    DreamConfig["effects_universe_mode"] = '${settings.effects_universe_mode}';
     </#if>
     <#if settings.enable_live2d!true>
     DreamConfig["live2d_url"] = '/source/lib/live2d/autoload.js';

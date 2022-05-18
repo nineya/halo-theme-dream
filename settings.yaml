@@ -1116,19 +1116,9 @@ enhance:
           label: 开启
         - value: false
           label: 关闭
-    foreground_effects:
-      name: foreground_effects
-      label: 前景特效
-      type: select
-      default: none
-      options:
-        - value: none
-          label: 关闭
-        - value: sakura
-          label: 樱花飘落
-    foreground_effects_mode:
-      name: foreground_effects_mode
-      label: 前景特效显示模式
+    effects_sakura_mode:
+      name: effects_sakura_mode
+      label: 樱花飘落特效显示模式
       type: radio
       default: day
       options:
@@ -1138,19 +1128,9 @@ enhance:
           label: 黑夜
         - value: all
           label: 全模式
-    background_effects:
-      name: background_effects
-      label: 背景特效
-      type: select
-      default: universe
-      options:
-        - value: none
-          label: 关闭
-        - value: universe
-          label: 宇宙
-    background_effects_mode:
-      name: background_effects_mode
-      label: 背景特效显示模式
+    effects_universe_mode:
+      name: effects_universe_mode
+      label: 宇宙星空特效显示模式
       type: radio
       default: night
       options:

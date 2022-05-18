@@ -8,7 +8,8 @@
     // const
     const starDensity = 0.216;
     const speedCoeff = 0.05;
-    const canva = document.getElementById('background_effects');
+    const mode = DreamConfig.effects_universe_mode;
+    const canvas = document.createElement('canvas');
 
     // let
     let width;
@@ -36,14 +37,16 @@
         //   x: width / 2,
         //   y: height / 2
         // };
-        canva.setAttribute('width', width);
-        canva.setAttribute('height', height);
+        canvas.setAttribute('width', width);
+        canvas.setAttribute('height', height);
+        canvas.setAttribute('class', `canvas_effects ${mode}`);
+        document.body.insertBefore(canvas, document.body.firstChild);
     }
 
     createUniverse();
 
     function createUniverse() {
-        universe = canva.getContext('2d');
+        universe = canvas.getContext('2d');
         for (var i = 0; i < starCount; i++) {
             stars[i] = new Star();
             stars[i].reset();
@@ -142,7 +145,7 @@
 
     (function drawIfNeeded() {
         const isNight = document.documentElement.classList.contains('night');
-        if (canva.classList.contains('all') || (canva.classList.contains('day') && !isNight) || (canva.classList.contains('night') && isNight)) {
+        if (canvas.classList.contains('all') || (canvas.classList.contains('day') && !isNight) || (canvas.classList.contains('night') && isNight)) {
             draw();
         }
         window.requestAnimationFrame(drawIfNeeded);
