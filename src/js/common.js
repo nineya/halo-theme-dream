@@ -83,6 +83,10 @@ const commonContext = {
         $("#toggle-mode").on('click', function () {
             isNight = isNight ? isNight.toString() !== 'true' : true;
             applyNight(isNight);
+            $("halo-comment").each(function () {
+                const shadowDom = this.shadowRoot.getElementById("halo-comment");
+                $(shadowDom)[`${isNight ? "add" : "remove"}Class`]("night");
+            })
             localStorage.setItem('night', isNight);
         });
     },
