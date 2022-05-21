@@ -20,7 +20,8 @@
                     </span>
                 </div>
                 <div class="journal-comment">
-                    <halo-comment id="${journal.id?c}" type="journal"/>
+                    <#include "template/main/comment.ftl">
+                    <@comment journal.id?c, "journal" />
                 </div>
             </div>
         </#list>

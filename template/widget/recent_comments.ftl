@@ -9,7 +9,7 @@
                     <#list comments.content as comment>
                         <li class="item">
                             <div class="user">
-                                <img width="35" height="35" class="avatar" src="${comment.avatar!}"
+                                <img width="35" height="35" class="avatar" src="${(settings.priority_qq_avatar!false)?then(comment.avatar?replace('^.*(\\w{32}\\?)', 'https://cravatar.cn/avatar/$1', 'r'),comment.avatar!)}"
                                      alt="${comment.author!}">
                                 <div class="info">
                                     <div class="author">${comment.author!}</div>

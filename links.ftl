@@ -63,11 +63,10 @@
         </div>
     </div>
     <#if settings.link_comment_id?? && settings.link_comment_id!=''>
-        <div class="card" id="comment-wrapper">
-            <div class="card-content">
-                <h3 class="title is-5 has-text-weight-normal">评论</h3>
-                <halo-comment id="${settings.link_comment_id!}" type="sheet"/>
-            </div>
+        <div class="card card-content" id="comment-wrapper">
+            <h3 class="title">评论</h3>
+            <#include "template/main/comment.ftl">
+            <@comment settings.link_comment_id, "sheet" />
         </div>
     </#if>
 </@layout>

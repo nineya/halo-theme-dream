@@ -128,11 +128,11 @@ post:
   items:
     enable_katex:
       name: enable_katex
-      label: 开启 KaTeX
+      label: 全局开启 KaTeX
       type: switch
       data-type: bool
       default: false
-      description: '博客通过 KaTeX 做数学公式渲染，如果文章或页面配置了元数据，则当前配置将被覆盖。'
+      description: '博客通过 KaTeX 做数学公式渲染，可在文章或页面配置元数据，覆盖当前配置。'
       options:
         - value: true
           label: 开启
@@ -320,6 +320,80 @@ post:
       label: 微信捐赠二维码
       type: attachment
       placeholder: '二维码地址'
+comment:
+  label: 评论区
+  items:
+    enable_theme_comment:
+      name: enable_theme_comment
+      label: 使用主题定制评论区
+      type: switch
+      data-type: bool
+      default: true
+      description: '开启后将使用主题内置的评论区模块，如果使用其他评论区模块以下评论区相关的配置可能不生效。'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    autoload_comment:
+      name: autoload_comment
+      label: 自动加载评论
+      type: switch
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    show_comment_ua:
+      name: show_comment_ua
+      label: 显示评论的UA信息
+      type: switch
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    comment_loading_style:
+      name: comment_loading_style
+      label: 评论加载样式
+      type: radio
+      data-type: text
+      default: default
+      options:
+        - value: default
+          label: 默认
+        - value: circle
+          label: 圆圈
+        - value: balls
+          label: 小球
+    priority_qq_avatar:
+      name: priority_qq_avatar
+      label: 优先显示QQ头像
+      type: switch
+      data-type: bool
+      default: false
+      description: '如果是QQ邮箱，则优先使用QQ头像。'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    enable_qq_info:
+      name: enable_qq_info
+      label: 获取QQ昵称和头像
+      type: switch
+      data-type: bool
+      default: false
+      description: '评论时，自动通过QQ号自动获取QQ昵称和邮箱。'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
 profile:
   label: 信息模块
   items:

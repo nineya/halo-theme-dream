@@ -1,5 +1,4 @@
 <#macro article post,commentType>
-    <#include "comment.ftl">
     <#if post.thumbnail?? && post.thumbnail!=''>
         <div class="card widget">
             <div class="cover-image" style="background-image: url(${post.thumbnail!})">
@@ -93,5 +92,11 @@
             </div>
         </div>
     </#if>
-    <@comment post, commentType />
+    <#if !post.disallowComment!false>
+        <div class="card card-content" id="comment-wrapper">
+            <h3 class="title">评论</h3>
+            <#include "comment.ftl">
+            <@comment post.id?c, commentType />
+        </div>
+    </#if>
 </#macro>
