@@ -337,7 +337,7 @@ comment:
           label: 关闭
     autoload_comment:
       name: autoload_comment
-      label: 自动加载评论
+      label: 自动加载评论列表
       type: switch
       data-type: bool
       default: true
@@ -389,6 +389,18 @@ comment:
       data-type: bool
       default: false
       description: '评论时，自动通过QQ号自动获取QQ昵称和邮箱。'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    enable_comment_html:
+      name: enable_comment_html
+      label: 开启评论html内容
+      type: switch
+      data-type: bool
+      default: false
+      description: '允许评论输入html内容，开启后有用户注入恶意代码的风险（XSS），建议同时开启评论审核。'
       options:
         - value: true
           label: 开启
