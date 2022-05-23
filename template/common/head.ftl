@@ -46,7 +46,7 @@
     <link data-pjax rel="preload stylesheet" as="style"
           href="${theme_base!}/source/lib/highlightjs@11.5.1/styles/${settings.code_pretty!'atom-one-light'}.min.css"/>
     <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/post.min.css"/>
-    <#assign enable_katex = (metas?? && metas.enable_katex?? && metas.enable_katex?trim!='')?then(metas.enable_katex?trim, (settings.enable_katex!'false')?c)>
+    <#assign enable_katex = (metas?? && metas.enable_katex?? && metas.enable_katex?trim!='')?then(metas.enable_katex?trim, (settings.enable_katex!false)?c)>
     <#if enable_katex=='true'>
         <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/lib/katex@0.12.0/katex.min.css"/>
     </#if>

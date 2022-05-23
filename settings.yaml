@@ -126,18 +126,6 @@ basic:
 post:
   label: 文章设置
   items:
-    enable_katex:
-      name: enable_katex
-      label: 全局开启 KaTeX
-      type: switch
-      data-type: bool
-      default: false
-      description: '博客通过 KaTeX 做数学公式渲染，可在文章或页面配置元数据，覆盖当前配置。'
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
     code_pretty:
       name: code_pretty
       label: 代码块高亮主题
@@ -285,31 +273,42 @@ post:
       default: 50
       placeholder: '触发折叠的代码行数'
       description: '代码行数超出指定行数后默认进行折叠，指定的行数需大于等于20。'
+    enable_katex:
+      name: enable_katex
+      label: KaTeX 公式支持
+      type: radio
+      data-type: bool
+      default: false
+      description: '博客通过 KaTeX 做数学公式渲染，如果文章或页面配置了元数据，则当前配置将被覆盖。'
+      options:
+        - value: true
+          label: 默认开启
+        - value: false
+          label: 默认关闭
     enable_copyright:
       name: enable_copyright
       label: 文章底部版权声明
       type: radio
-      default: 'true'
+      data-type: bool
+      default: true
       description: '如果文章或页面配置了元数据，则当前配置将被覆盖。'
       options:
-        - value: 'true'
+        - value: true
           label: 默认开启
-        - value: 'false'
+        - value: false
           label: 默认关闭
-    share_type:
-      name: share_type
-      label: 文章分享组件
-      type: select
-      default: ''
+    enable_post_share:
+      name: enable_post_share
+      label: 开启文章分享
+      type: radio
+      data-type: bool
+      default: true
+      description: '如果文章或页面配置了元数据，则当前配置将被覆盖。'
       options:
-        - value: ''
-          label: '无'
-        - value: addtoany
-          label: addtoany
-        - value: bdshare
-          label: bdshare
-        - value: sharejs
-          label: sharejs
+        - value: true
+          label: 默认开启
+        - value: false
+          label: 默认关闭
     donate_alipay:
       name: donate_alipay
       label: 支付宝捐赠二维码

@@ -61,14 +61,15 @@
                     </div>
                 </div>
             </#if>
-            <#assign enable_copyright = (metas?? && metas.enable_copyright?? && metas.enable_copyright?trim!='')?then(metas.enable_copyright?trim, settings.enable_copyright!'true')>
-            <#if enable_copyright == 'true' || (settings.share_type?? && settings.share_type!='')>
+            <#assign enable_copyright = (metas?? && metas.enable_copyright?? && metas.enable_copyright?trim!='')?then(metas.enable_copyright?trim, (settings.enable_copyright!true)?c)>
+            <#assign enable_share = (metas?? && metas.enable_share?? && metas.enable_share?trim!='')?then(metas.enable_share?trim, (settings.enable_post_share!true)?c)>
+            <#if enable_copyright == 'true' || enable_share == 'true'>
                 <hr/>
                 <#if enable_copyright == 'true'>
                     <#include "copyright.ftl">
                 </#if>
-                <#if settings.share_type?? && settings.share_type!=''>
-                    <#include "../share/${settings.share_type}.ftl">
+                <#if enable_share == 'true'>
+                    <#include "share.ftl">
                 </#if>
             </#if>
         </div>
