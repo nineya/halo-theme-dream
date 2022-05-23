@@ -126,6 +126,19 @@ basic:
 post:
   label: 文章设置
   items:
+    thumbnail_mode:
+      name: thumbnail_mode
+      label: 文章列表缩略图模式
+      type: select
+      default: default
+      description: '文章列表缩略图模式，如果文章元数据配置了“thumbnail_mode”项，则当前配置将被覆盖。'
+      options:
+        - value: default
+          label: 默认模式
+        - value: back
+          label: 背景图模式
+        - value: small
+          label: 小图模式
     code_pretty:
       name: code_pretty
       label: 代码块高亮主题
@@ -279,7 +292,7 @@ post:
       type: radio
       data-type: bool
       default: false
-      description: '博客通过 KaTeX 做数学公式渲染，如果文章或页面配置了元数据，则当前配置将被覆盖。'
+      description: '博客通过 KaTeX 做数学公式渲染，如果文章或页面元数据配置了“enable_katex”项，则当前配置将被覆盖。'
       options:
         - value: true
           label: 默认开启
@@ -291,7 +304,7 @@ post:
       type: radio
       data-type: bool
       default: true
-      description: '如果文章或页面配置了元数据，则当前配置将被覆盖。'
+      description: '如果文章或页面元数据配置了“enable_copyright”项，则当前配置将被覆盖。'
       options:
         - value: true
           label: 默认开启
@@ -303,7 +316,7 @@ post:
       type: radio
       data-type: bool
       default: true
-      description: '如果文章或页面配置了元数据，则当前配置将被覆盖。'
+      description: '如果文章或页面元数据配置了“enable_share”项，则当前配置将被覆盖。'
       options:
         - value: true
           label: 默认开启
