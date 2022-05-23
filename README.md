@@ -17,8 +17,8 @@
 
 ![玖涯博客](https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream@master/preview.png)
 
-预览地址：[https://blog.nineya.com](https://blog.nineya.com)
-
+预览：[主题预览](https://github.com/nineya/halo-theme-dream/discussions/72)
+> 如果你有计划长期使用 `Dream` 主题，也来[这里](https://github.com/nineya/halo-theme-dream/discussions/72)留下你的博客链接吧。
 
 
 
