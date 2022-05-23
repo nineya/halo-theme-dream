@@ -30,7 +30,7 @@
                         <br/>
                         <span id="websiteDay"></span><span id="websiteTime"></span>
                     </#if>
-                    <#if settings.busuanzi!true>
+                    <#if settings.enable_busuanzi!true>
                         <br/><span id="busuanzi_container_site_uv">
                         <i class="fa fa-user" aria-hidden="true"></i>
 						<span id="busuanzi_value_site_uv">0</span>个访客
