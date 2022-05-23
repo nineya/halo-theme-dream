@@ -106,11 +106,14 @@ document.addEventListener("DOMContentLoaded", () => {
             init() {
                 this.options = {
                     bvid: this.getAttribute("bvid"),
-                    width: this.getAttribute("width") || "100%",
-                    height: this.getAttribute("height") || "500px",
+                    width: /^\d{1,3}%$/.test(this.getAttribute("width"))
+                        ? this.getAttribute("width")
+                        : "100%",
                 };
-                if (this.options.bvid)
-                    this.innerHTML = `<iframe allowfullscreen="true" src="//player.bilibili.com/player.html?bvid=${this.options.bvid}&page=1" style="width:${this.options.width};height:${this.options.height}"></iframe>`;
+                if (this.options.bvid) {
+                    this.style.padding = `calc(${this.options.width} * 0.3) 0`
+                    this.innerHTML = `<iframe allowfullscreen="true" src="//player.bilibili.com/player.html?bvid=${this.options.bvid}&page=1" style="width: ${this.options.width};"></iframe>`;
+                }
                 else this.innerHTML = "bvid未填写！";
                 this.drawComplete()
             }
