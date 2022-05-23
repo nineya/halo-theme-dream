@@ -177,7 +177,7 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 
@@ -1819,7 +1819,7 @@ table td, table th {
         min-height: 40px;
         margin-right: 8px;
         border-radius: 50%;
-        border: 1px solid var(--dark-b);
+        border: 1px solid var(--light-d);
         padding: 3px;
       }
 
@@ -2004,6 +2004,11 @@ table td, table th {
   h1, h2, h3, h4, h5, h6 {
     color: var(--dark-c);
     margin-bottom: 18px;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      margin-left: 0.3rem;
+    }
   }
 
   h1 {
@@ -2034,7 +2039,7 @@ table td, table th {
     margin-bottom: 18px;
   }
 
-  .elude {
+  .pwd {
     color: var(--main);
     border-radius: 2px;
     transition: all .3s;
@@ -2055,8 +2060,8 @@ table td, table th {
     border-left: 5px solid var(--bg-i);
     border-radius: var(--radius-inner);
 
-    p {
-      margin: 0;
+    * {
+      margin: 0 !important;
     }
   }
 
@@ -2562,6 +2567,10 @@ table td, table th {
 
   .footer .level > div {
     text-align: center;
+  }
+
+  html:not(.disable-scroll) .actions.show {
+    right: 8px;
   }
 }
 
