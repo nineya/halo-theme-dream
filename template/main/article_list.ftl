@@ -28,7 +28,7 @@
                         </ul>
                     </div>
                 </div>
-            <#elseif thumbnail_mode == "small">
+            <#elseif thumbnail_mode == "small" || (thumbnail_mode == "small-alter" && post_index%2 == 0)>
                 <div class="card-small">
                     <a href="${post.fullPath!}"><div class="small-image" style="background-image: url(${post.thumbnail!})"></div></a>
                     <div class="card-content main">
@@ -57,6 +57,36 @@
                             </#if>
                         </div>
                     </div>
+                </div>
+            <#elseif thumbnail_mode == "small-right" || (thumbnail_mode == "small-alter" && post_index%2 == 1)>
+                <div class="card-small">
+                    <div class="card-content main">
+                        <h2 class="title">
+                            <#if post.topPriority==1><span class="top">置顶</span></#if><a
+                                    href="${post.fullPath!}">${post.title!}</a>
+                        </h2>
+                        <div class="main-content">${post.summary!}</div>
+                        <hr/>
+                        <div class="meta">
+                            <ul class="breadcrumb">
+                                <li><@global.timeline datetime=post.createTime/></li>
+                                <li><i class="fa fa-eye"></i>${post.visits?c}</li>
+                                <#if !post.disallowComment!false><li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li></#if>
+                                <li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li>
+                                <#assign heat= (24+post.visits*0.1+post.likes*2+post.commentCount*3) />
+                                <#assign heatColor= '#'+(heat < 37)?string('ffa87e',(heat < 120)?string('fb734a','e0081c')) />
+                                <li style="color: ${heatColor}">${heat}℃</li>
+                            </ul>
+                            <#if post.categories?? && post.categories?size gt 0>
+                                <div class="level-item is-hidden-mobile">
+                                    <#list post.categories as category>
+                                        <a href="${category.fullPath!}">${category.name!}</a>&nbsp;
+                                    </#list>
+                                </div>
+                            </#if>
+                        </div>
+                    </div>
+                    <a href="${post.fullPath!}"><div class="small-image" style="background-image: url(${post.thumbnail!})"></div></a>
                 </div>
             <#else>
                 <#if post.thumbnail?? && post.thumbnail!=''>

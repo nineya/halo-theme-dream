@@ -138,7 +138,11 @@ post:
         - value: back
           label: 背景图模式
         - value: small
-          label: 小图模式
+          label: 小图模式（左侧）
+        - value: small-right
+          label: 小图模式（右侧）
+        - value: small-alter
+          label: 小图模式（交替）
     code_pretty:
       name: code_pretty
       label: 代码块高亮主题
