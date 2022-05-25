@@ -44,7 +44,9 @@
                         </div>
                     </#list>
                 </@linkTag>
-                <hr/>
+                <#if (settings.show_exchange_info!true) || (settings.links_info?? && settings.links_info != '')>
+                    <hr/>
+                </#if>
                 <#if settings.show_exchange_info!true>
                     申请友链的方法：
                     <#assign bloggerAvatar= (settings.links_blogger_avatar?? && settings.links_blogger_avatar!='')?string(settings.links_blogger_avatar!, user.avatar!) />
