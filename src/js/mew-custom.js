@@ -113,8 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (this.options.bvid) {
                     this.style.padding = `calc(${this.options.width} * 0.3) 0`
                     this.innerHTML = `<iframe allowfullscreen="true" src="//player.bilibili.com/player.html?bvid=${this.options.bvid}&page=1" style="width: ${this.options.width};"></iframe>`;
-                }
-                else this.innerHTML = "bvid未填写！";
+                } else this.innerHTML = "bvid未填写！";
                 this.drawComplete()
             }
         }
@@ -255,6 +254,45 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.startColor = this.getAttribute("startColor") || "#01d0ff";
                 this.endColor = this.getAttribute("endColor") || "#fc3e85";
                 this.style.backgroundImage = `repeating-linear-gradient(-45deg, ${this.startColor} 0,${this.startColor} 20%, transparent 0,transparent 35%, ${this.endColor} 0,${this.endColor} 65%, transparent 0,transparent 80%, ${this.startColor} 0,${this.startColor} 100%)`
+                this.drawComplete()
+            }
+        })
+
+    customElements.define(
+        "mew-timeline",
+        class MewTimeline extends MewElement {
+            init() {
+                let content = ""
+                let child = this.firstChild;
+                while (child) {
+                    console.log(child)
+                    if (child.tagName === 'MEW-TIMELINE-TITLE') {
+                        content += `<div class="mew-timeline-title">${child.innerHTML}</div>`
+                    } else if (child.tagName === 'MEW-TIMELINE-ITEM') {
+                        const title = child.getAttribute("title") ? `<p class="mew-timeline-item-title">${child.getAttribute("title")}</p>` : ''
+                        content += `<div class="mew-timeline-item">${title}<span class="mew-timeline-item-content">${child.innerHTML}</span></div>`
+                    }
+                    child = child.nextElementSibling;
+                }
+                this.innerHTML = content;
+                this.drawComplete()
+            }
+        }
+    );
+
+    customElements.define(
+        "mew-btn",
+        class MewBtn extends MewElement {
+            init() {
+                this.options = {
+                    color: this.getAttribute("color") || "var(--theme)",
+                    href: this.getAttribute("href"),
+                    target: this.getAttribute("target") || '_blank',
+                    icon: this.getAttribute("icon"),
+                };
+                this.innerHTML = `<a class="mew-btn">${this.options.icon ? `<i class="fa ${this.options.icon}"></i>` : ''}${this.innerHTML}</a>`
+                const btn = this.querySelector('a.mew-btn');
+                this.options.href && (btn.href = this.options.href, btn.target = this.options.target)
                 this.drawComplete()
             }
         })

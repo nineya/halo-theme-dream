@@ -95,7 +95,7 @@ mew-bilibili {
   display: block;
   position: relative;
 
-  &> iframe {
+  & > iframe {
     position: absolute;
     height: 100%;
     top: 0;
@@ -357,6 +357,72 @@ mew-hr {
   display: block;
   height: 4px;
   background-size: 50px 4px;
+}
+
+mew-timeline {
+  display: block;
+
+  & > div {
+    position: relative;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-color: #EBF0F2;
+    padding-left: 1.2em;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: var(--theme);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px var(--light-d);
+      top: 0;
+      left: -0.33em;
+      height: 0.65em;
+      width: 0.65em;
+    }
+  }
+
+  .mew-timeline-title {
+    color: var(--dark-c);
+    font-weight: 500;
+  }
+
+  .mew-timeline-item {
+    font-size: 0.95em;
+
+    &-content {
+      color: var(--dark-b);
+    }
+  }
+}
+
+mew-btn {
+  display: inline-block;
+  color: #fff;
+  background: var(--theme);
+  border-radius: var(--radius-inner);
+
+  & > .mew-btn {
+    color: #fff;
+    padding: 0 12px;
+    line-height: 2.2em;
+    font-weight: 400;
+
+    &:hover {
+      color: #fff;
+    }
+
+    & > i {
+      margin-right: 6px;
+      font-size: 0.9em;
+    }
+  }
+}
+
+mew-btn {
+  &:not([draw]) {
+    display: none;
+  }
 }
 
 mew-bilibili, mew-cloud, mew-tabs {
