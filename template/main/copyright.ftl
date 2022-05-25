@@ -1,7 +1,7 @@
 <div class="copyright">
     <div class="copyright-title">
         <p>${post.title!}</p>
-        <a href="${post.fullPath!}">${post.fullPath!}</a>
+        <a href="${post.fullPath!}">${(context == '/')?then(blog_url + post.fullPath, post.fullPath)}</a>
     </div>
     <div class="copyright-meta level">
         <div class="level-item">
