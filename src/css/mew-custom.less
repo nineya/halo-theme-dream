@@ -361,37 +361,161 @@ mew-hr {
 
 mew-timeline {
   display: block;
+  border-left: 1px solid var(--light-b);
 
   & > div {
     position: relative;
-    border-left-width: 1px;
-    border-left-style: solid;
-    border-color: #EBF0F2;
     padding-left: 1.2em;
 
     &::before {
       content: '';
       position: absolute;
-      background-color: var(--theme);
       border-radius: 50%;
-      box-shadow: 0 0 0 2px var(--light-d);
       top: 0;
-      left: -0.33em;
-      height: 0.65em;
-      width: 0.65em;
+    }
+
+    & + .mew-timeline-title {
+      margin-top: 16px;
     }
   }
 
   .mew-timeline-title {
     color: var(--dark-c);
     font-weight: 500;
+    padding-bottom: 5px;
+
+    &::before {
+      background-color: #50bfff;
+      box-shadow: 0 0 0 0.2em rgb(80 191 255 / 25%);
+      left: -0.32em;
+      height: 0.6em;
+      width: 0.6em;
+    }
+
+    &-elem {
+      position: relative;
+      top: -0.4em;
+    }
   }
 
   .mew-timeline-item {
     font-size: 0.95em;
 
+    &::before {
+      background-color: var(--light-a);
+      border: 2px solid #50bfff;
+      left: -5px;
+      height: 5px;
+      width: 5px;
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 16px;
+    }
+
+    &-title {
+      display: block;
+      line-height: 1em;
+      margin-bottom: 2px;
+      font-weight: 400;
+      position: relative;
+      top: -0.1em;
+    }
+
     &-content {
-      color: var(--dark-b);
+      padding: 4px 8px;
+      overflow: hidden;
+      border-radius: 0 6px 6px 6px;
+      background-color: var(--bg-a);
+      position: relative;
+
+      * {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  .info {
+
+    &.mew-timeline-title {
+      color: #1b72f3;
+
+      &::before {
+        background-color: #73a3eb;
+        box-shadow: 0 0 0 0.2em rgb(115 163 235 / 25%);
+      }
+    }
+
+    &.mew-timeline-item::before {
+      border-color: #73a3eb;
+    }
+
+    .mew-timeline-item-content {
+      color: #1b72f3;
+      background-color: #ecf3ff;
+    }
+  }
+
+  .warning {
+
+    &.mew-timeline-title {
+      color: #fec008;
+
+      &::before {
+        background-color: #ffd350;
+        box-shadow: 0 0 0 0.2em rgb(255 211 80 / 25%);
+      }
+    }
+
+    &.mew-timeline-item::before {
+      border-color: #ffd350;
+    }
+
+    .mew-timeline-item-content {
+      color: #fec008;
+      background-color: #fdf6e6;
+    }
+  }
+
+  .success {
+
+    &.mew-timeline-title {
+      color: #2bde3f;
+
+      &::before {
+        background-color: #6de37a;
+        box-shadow: 0 0 0 0.2em rgb(109 227 122 / 25%);
+      }
+    }
+
+    &.mew-timeline-item::before {
+      border-color: #6de37a;
+    }
+
+    .mew-timeline-item-content {
+      color: #2bde3f;
+      background-color: #e9fbeb;
+    }
+  }
+
+  .error {
+
+    &.mew-timeline-title {
+      color: #f46c6b;
+
+      &::before {
+        background-color: #ff7776;
+        box-shadow: 0 0 0 0.2em rgb(255 119 118 / 25%);
+      }
+    }
+
+    &.mew-timeline-item::before {
+      border-color: #ff7776;
+    }
+
+    .mew-timeline-item-content {
+      color: #f46c6b;
+      background-color: #ffeeed;
     }
   }
 }
@@ -402,19 +526,17 @@ mew-btn {
   background: var(--theme);
   border-radius: var(--radius-inner);
 
-  &:hover {
-    filter: opacity(.8);
-    box-shadow: 0 4px 15px -4px rgb(41 45 52 / 30%);
-  }
-
   & > .mew-btn {
     color: #fff;
-    padding: 0 12px;
-    line-height: 2.2em;
+    line-height: 1em;
+    padding: 0.5em 12px;
     font-weight: 400;
+    display: inline-block;
 
     &:hover {
       color: #fff;
+      filter: opacity(.8);
+      box-shadow: 0 4px 15px -4px rgb(41 45 52 / 30%);
     }
 
     & > i {
@@ -424,7 +546,7 @@ mew-btn {
   }
 }
 
-mew-btn {
+mew-btn, mew-timeline {
   &:not([draw]) {
     display: none;
   }
@@ -454,7 +576,7 @@ mew-bilibili, mew-cloud, mew-tabs {
 }
 
 html.night {
-  .mew-cloud-logo, .mew-cloud-link, .mew-progress-bar-inner, mew-panel, mew-message, mew-hr {
+  .mew-cloud-logo, .mew-cloud-link, .mew-progress-bar-inner, mew-panel, mew-message, mew-hr, mew-timeline, mew-btn {
     filter: brightness(.8);
   }
 }

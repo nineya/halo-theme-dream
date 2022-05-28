@@ -265,12 +265,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 let content = ""
                 let child = this.firstChild;
                 while (child) {
-                    console.log(child)
                     if (child.tagName === 'MEW-TIMELINE-TITLE') {
-                        content += `<div class="mew-timeline-title">${child.innerHTML}</div>`
+                        content += `<div class="mew-timeline-title ${child.getAttribute("type") || ''}"><span class="mew-timeline-title-elem">${child.innerHTML}</span></div>`
                     } else if (child.tagName === 'MEW-TIMELINE-ITEM') {
-                        const title = child.getAttribute("title") ? `<p class="mew-timeline-item-title">${child.getAttribute("title")}</p>` : ''
-                        content += `<div class="mew-timeline-item">${title}<span class="mew-timeline-item-content">${child.innerHTML}</span></div>`
+                        const type = child.getAttribute("type") || ''
+                        const title = child.getAttribute("title") ? `<span class="mew-timeline-item-title">${child.getAttribute("title")}</span>` : ''
+                        content += `<div class="mew-timeline-item ${child.getAttribute("type") || ''}">${title}<div class="mew-timeline-item-content">${child.innerHTML}</div></div>`
                     }
                     child = child.nextElementSibling;
                 }
