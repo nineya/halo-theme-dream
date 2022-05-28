@@ -7,7 +7,7 @@ const minifyCSS = require("gulp-csso");
 const zip = require('gulp-zip');
 const rename = require("gulp-rename");
 const clean = require("gulp-clean");
-const crypto=require('crypto');
+const crypto = require('crypto');
 const path = require("path");
 const execSync = require('child_process').execSync;
 const fs = require("fs");
@@ -143,7 +143,7 @@ task("freecdn", (done) => {
             if (states.isDirectory()) {
                 readFile(filePath, ignoreFiles)
             } else {
-                let hash = crypto.createHash('SHA256').update(fs. readFileSync(filePath)).digest('base64')
+                let hash = crypto.createHash('SHA256').update(fs.readFileSync(filePath)).digest('base64')
                 fs.appendFileSync(tempFileName, `${hash} https://raw.githubusercontent.com/nineya/halo-theme-dream/${version}/${filePath}\n`)
                 fs.appendFileSync(tempFileName, `${hash} https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream@${version}/${filePath}\n`)
                 fs.appendFileSync(tempFileName, `${hash} https://unpkg.com/halo-theme-dream@${version}/${filePath}\n`)
@@ -179,8 +179,17 @@ task("zip", () => {
         .pipe(dest(distPath));
 });
 
+task("publish", () => {
+    // 需要将tag标签内容置空，否则将抛出异常
+    process.env.npm_config_tag = undefined
+    console.log(execSync(`npm publish`).toString());
+})
+
 // 默认模式
 task("default", series("clean", parallel("css", "js"), "zip"));
 
+// tag模式，需要使用--tag参数指定版本号
+task("tag", series("clean", "version", parallel("css", "js"), "freecdn", "zip"));
+
 // release模式，需要使用--tag参数指定版本号
-task("release", series("clean", "version", parallel("css", "js"), "freecdn", "zip"));
+task("release", series("clean", "version", parallel("css", "js"), "freecdn", "zip", "publish"));
