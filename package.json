@@ -7,8 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cdn": "gulp freecdn",
-    "tag": "gulp tag",
     "release": "gulp release",
+    "push": "gulp push",
     "build": "gulp"
   },
   "repository": {

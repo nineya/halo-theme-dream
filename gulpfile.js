@@ -188,8 +188,8 @@ task("publish", () => {
 // 默认模式
 task("default", series("clean", parallel("css", "js"), "zip"));
 
-// tag模式，需要使用--tag参数指定版本号
-task("tag", series("clean", "version", parallel("css", "js"), "freecdn", "zip"));
-
 // release模式，需要使用--tag参数指定版本号
-task("release", series("clean", "version", parallel("css", "js"), "freecdn", "zip", "publish"));
+task("release", series("clean", "version", parallel("css", "js"), "freecdn", "zip"));
+
+// push模式，需要使用--tag参数指定版本号
+task("push", series("clean", "version", parallel("css", "js"), "freecdn", "zip", "publish"));
