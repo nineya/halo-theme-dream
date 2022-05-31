@@ -296,4 +296,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.drawComplete()
             }
         })
+
+    customElements.define(
+        "mew-quote",
+        class MewQuote extends MewElement {
+            init() {
+                this.options = {
+                    avatar: this.getAttribute("avatar"),
+                    href: this.getAttribute("href"),
+                    name: this.getAttribute("name"),
+                };
+                const avatarElem = this.options.avatar ? `<a class="mew-quote-avatar" target="_blank" ${this.options.href ? `href="${this.options.href}"` : ""}><svg viewBox="0 0 84 84"><g><image width="100%" height="100%" xlink:href="${this.options.avatar}"/></g></svg></a>`: "";
+                const nameElem = this.options.name ? `<a target="_blank" ${this.options.href ? `href="${this.options.href}"` : ""}>${this.options.name}</a>`: "";
+                this.innerHTML = `${avatarElem}<div class="mew-quote-info">${this.innerHTML}${nameElem}</div>`;
+                this.drawComplete()
+            }
+        })
 });
