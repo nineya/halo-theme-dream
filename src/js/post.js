@@ -39,7 +39,7 @@ const postContext = {
                 $(this).hide();
             }
             // 生成标题栏的按钮
-            let titleButton = `<div><i class="fa fa-angle-down${close}" data-code='#${id}'></i><i class="fa fa-clipboard btn-clipboard" title="复制代码" data-clipboard-target='#${id}'></i></div>`;
+            let titleButton = `<div><i class="fa fa-angle-down${close}" data-code='#${id}'></i><i class="fa fa-clone btn-clipboard" title="复制代码" data-clipboard-target='#${id}'></i></div>`;
 
             // 组装代码块
             $(this).attr("id", id);

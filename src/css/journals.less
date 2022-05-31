@@ -16,14 +16,21 @@
   }
 
   &-content {
-    padding: 10px 12px;
+    padding: 10px 12px 40px 12px;
     overflow: hidden;
     border-radius: 0 6px 6px 6px;
     background-color: var(--bg-c);
     position: relative;
 
+    .main-content {
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
+
     &.fold {
       max-height: 240px;
+      padding: 10px 12px;
     }
   }
 
