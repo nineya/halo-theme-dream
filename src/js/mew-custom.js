@@ -312,4 +312,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.drawComplete()
             }
         })
+
+    customElements.define(
+        "mew-link",
+        class MewLink extends MewElement {
+            init() {
+                this.options = {
+                    img: this.getAttribute("img"),
+                    href: this.getAttribute("href") || '',
+                    title: this.getAttribute("title") || '我分享了一个网站'
+                };
+                const imageElem = this.options.img ? `<span class="mew-link-image"><img class="link-image" src="${this.options.img}"/></span>` : '';
+                const descElem = this.innerHTML ? `<span class="info-desc">${this.innerHTML}</span>` : `<span class="mew-link-href info-desc">${this.options.href}</span>`
+                this.innerHTML = `<a class="mew-link" target="_blank" href="${this.options.href}"><span class="mew-link-info"><p class="info-title">${this.options.title}</p>${descElem}</span>${imageElem}</a>`;
+                this.drawComplete()
+            }
+        })
 });

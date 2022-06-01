@@ -606,16 +606,17 @@ mew-quote {
   }
 
   .mew-quote-name {
-    color: var(--dark-a);
+    color: var(--dark-c);
     align-self: self-end;
     font-size: 0.9em;
     font-style: italic;
+    font-weight: 400;
 
     &:before {
       content: '';
       width: 2.8em;
       height: 1px;
-      background: #333;
+      background: var(--dark-c);
       margin-right: 4px;
       display: inline-block;
       margin-bottom: 0.3em;
@@ -623,10 +624,79 @@ mew-quote {
   }
 
   .quote-avatar-hexagon {
-    max-height: 5em;
-    max-width: 5em;
+    height: 5em;
+    width: 5em;
+    object-fit: cover;
   }
 
+}
+
+mew-link {
+
+  .mew-link {
+    display: flex;
+    margin: auto;
+    max-width: 420px;
+    background: var(--bg-l);
+    padding: 12px 12px 9px 12px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .mew-link-info {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .info-title {
+    margin-bottom: 6px;
+    color: var(--dark-c);
+    line-height: 1.3em;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .info-desc {
+    font-size: 0.9em;
+    line-height: 1.3em;
+    height: 1.3em;
+    color: var(--dark-d);
+    word-break: break-all;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+
+    &:before {
+      content: '\f0c1';
+      font-family: 'FontAwesome';
+      margin-right: 4px;
+    }
+  }
+
+  .mew-link-image {
+    background-color: var(--bg-l);
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin-left: 16px;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink:0;
+  }
+
+  .link-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 mew-btn, mew-timeline {
