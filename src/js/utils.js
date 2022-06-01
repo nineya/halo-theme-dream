@@ -211,10 +211,10 @@ var Utils = {
         const $scrollElement = $("body,html");
         const oldHeight = $container.height();
         if ($container.is(".fold")) {
-            $container.removeClass('fold');
+            $container.removeClass('fold').addClass('unfold');
         } else {
             const oldScrollTop = $scrollElement.scrollTop();
-            $container.addClass('fold');
+            $container.addClass('fold').removeClass('unfold');
             // 跳转位置，保证折叠后没有过大的位置偏移
             $scrollElement.scrollTop(oldScrollTop - oldHeight + $container.height());
         }
