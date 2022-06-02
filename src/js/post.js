@@ -45,9 +45,9 @@ const postContext = {
             $(this).attr("id", id);
             $pre.prepend(`<ul>${lis}</ul>`);
             if (nums > DreamConfig.code_fold_line) {
-                $pre.wrap(`<figure class="fold"></figure>`).append(`<div class="expand-done"><i class="fa fa-angle-double-up"></i></div>`)
+                $pre.wrap(`<figure class="fold hljs"></figure>`).append(`<div class="expand-done"><i class="fa fa-angle-double-up"></i></div>`)
             } else {
-                $pre.wrap(`<figure></figure>`);
+                $pre.wrap(`<figure class="hljs"></figure>`);
             }
             $pre.parent().prepend(`<figcaption>${title}${titleButton}</figcaption>`);
         })

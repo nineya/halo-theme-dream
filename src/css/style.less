@@ -2217,7 +2217,7 @@ table td, table th {
 
     & > figcaption {
       display: flex;
-      background: var(--bg-l);
+      background: rgb(153 153 153 / 8%);
       padding: 0;
       height: 2.2em;
       line-height: 2.2em;
@@ -2242,7 +2242,6 @@ table td, table th {
         text-align: center;
 
         i {
-          color: var(--dark-d);
           transition: all 0.25s;
           margin-right: 12px;
 
@@ -2251,7 +2250,7 @@ table td, table th {
           }
 
           &:hover {
-            color: var(--dark-c);
+            opacity: 0.5;
           }
 
           &.close {
@@ -2268,13 +2267,14 @@ table td, table th {
       overflow-x: auto;
       padding: 0;
       border: none;
+      color: inherit !important;
       background: transparent !important;
 
       & > ul {
         margin: 0;
         padding: 0 8px;
         user-select: none;
-        background: var(--bg-l);
+        background: rgb(153 153 153 / 8%);
 
         li {
           list-style: none;
@@ -2296,13 +2296,20 @@ table td, table th {
         padding: 0 0 7px 5px;
         line-height: 1.5em;
         overflow-y: hidden;
-        background: var(--bg-k);
         width: 100%;
 
         &:not(:last-child) {
           margin-bottom: 1.8em;
         }
       }
+    }
+
+    .expand-done i {
+      color: inherit !important;
+    }
+
+    &:not(.fold) .expand-done {
+      background: rgb(153 153 153 / 8%);
     }
   }
 
