@@ -548,12 +548,11 @@ mew-btn {
 
 mew-quote {
   display: flex;
-  margin: 18px;
+  margin: 0 18px;
 
   .mew-quote {
     display: flex;
     margin: 0 auto;
-    justify-content: center;
     padding: 10px;
 
     &:before {
@@ -578,7 +577,12 @@ mew-quote {
     }
   }
 
-  .mew-quote-avatar {
+  .quote-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .mew-quote-href {
     padding: 4px;
     display: inline-block;
     background: var(--bg-a);
@@ -740,5 +744,34 @@ html.night {
   }
   to {
     background-position: 30px 0
+  }
+}
+
+@media (max-width: 1023px) {
+
+  mew-quote .quote-avatar-hexagon {
+    height: 3.6em;
+    width: 3.6em;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 511px) {
+
+  mew-quote {
+    margin: 0;
+
+    .quote-container {
+      flex-direction: column;
+    }
+
+    .mew-quote-avatar {
+      text-align: center;
+    }
+
+    .quote-avatar-hexagon {
+      height: 3.2em;
+      width: 3.2em;
+    }
   }
 }
