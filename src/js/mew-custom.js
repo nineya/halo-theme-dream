@@ -296,4 +296,36 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.drawComplete()
             }
         })
+
+    customElements.define(
+        "mew-quote",
+        class MewQuote extends MewElement {
+            init() {
+                this.options = {
+                    avatar: this.getAttribute("avatar"),
+                    href: this.getAttribute("href"),
+                    name: this.getAttribute("name"),
+                };
+                const avatarElem = this.options.avatar ? `<div><a class="mew-quote-avatar" target="_blank" ${this.options.href ? `href="${this.options.href}"` : ""}><img class="quote-avatar-hexagon" src="${this.options.avatar}"/></a></div>`: "";
+                const nameElem = this.options.name ? `<a class="mew-quote-name" target="_blank" ${this.options.href ? `href="${this.options.href}"` : ""}>${this.options.name}</a>`: "";
+                this.innerHTML = `<div class="mew-quote">${avatarElem}<div class="mew-quote-info"><p class="mew-quote-content">${this.innerHTML}</p>${nameElem}</div></div>`;
+                this.drawComplete()
+            }
+        })
+
+    customElements.define(
+        "mew-link",
+        class MewLink extends MewElement {
+            init() {
+                this.options = {
+                    img: this.getAttribute("img"),
+                    href: this.getAttribute("href") || '',
+                    title: this.getAttribute("title") || '我分享了一个网站'
+                };
+                const imageElem = this.options.img ? `<span class="mew-link-image"><img class="link-image" src="${this.options.img}"/></span>` : '';
+                const descElem = this.innerHTML ? `<span class="info-desc">${this.innerHTML}</span>` : `<span class="mew-link-href info-desc">${this.options.href}</span>`
+                this.innerHTML = `<a class="mew-link" target="_blank" href="${this.options.href}"><span class="mew-link-info"><p class="info-title">${this.options.title}</p>${descElem}</span>${imageElem}</a>`;
+                this.drawComplete()
+            }
+        })
 });

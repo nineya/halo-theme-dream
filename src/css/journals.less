@@ -22,8 +22,18 @@
     background-color: var(--bg-c);
     position: relative;
 
+    .main-content {
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
+
     &.fold {
       max-height: 240px;
+    }
+
+    &.unfold {
+      padding: 10px 12px 40px 12px;
     }
   }
 

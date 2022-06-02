@@ -423,7 +423,7 @@ mew-timeline {
     }
 
     &-content {
-      padding: 4px 8px;
+      padding: 8px 12px;
       overflow: hidden;
       border-radius: 0 6px 6px 6px;
       background-color: var(--bg-a);
@@ -543,6 +543,159 @@ mew-btn {
       margin-right: 6px;
       font-size: 0.9em;
     }
+  }
+}
+
+mew-quote {
+  display: flex;
+  margin: 18px;
+
+  .mew-quote {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 10px;
+
+    &:before {
+      content: '“';
+      color: var(--theme);
+      font-size: 2.8em;
+      font-family: fantasy;
+      line-height: 1;
+      margin-right: 14px;
+      margin-top: -10px;
+    }
+
+    &:after {
+      content: '”';
+      color: var(--theme);
+      font-size: 2.8em;
+      font-family: fantasy;
+      line-height: 1;
+      align-self: flex-end;
+      margin-left: 14px;
+      margin-bottom: calc(-0.5em - 10px);
+    }
+  }
+
+  .mew-quote-avatar {
+    padding: 4px;
+    display: inline-block;
+    background: var(--bg-a);
+    transition: all 2s;
+    margin-right: 8px;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+
+    &, .quote-avatar-hexagon {
+      clip-path: polygon(40% 7.67949%, 43.1596% 6.20615%, 46.52704% 5.30384%, 50% 5%, 53.47296% 5.30384%, 56.8404% 6.20615%, 60% 7.67949%, 81.65064% 20.17949%, 84.50639% 22.17911%, 86.97152% 24.64425%, 88.97114% 27.5%, 90.44449% 30.6596%, 91.34679% 34.02704%, 91.65064% 37.5%, 91.65064% 62.5%, 91.34679% 65.97296%, 90.44449% 69.3404%, 88.97114% 72.5%, 86.97152% 75.35575%, 84.50639% 77.82089%, 81.65064% 79.82051%, 60% 92.32051%, 56.8404% 93.79385%, 53.47296% 94.69616%, 50% 95%, 46.52704% 94.69616%, 43.1596% 93.79385%, 40% 92.32051%, 18.34936% 79.82051%, 15.49361% 77.82089%, 13.02848% 75.35575%, 11.02886% 72.5%, 9.55551% 69.3404%, 8.65321% 65.97296%, 8.34936% 62.5%, 8.34936% 37.5%, 8.65321% 34.02704%, 9.55551% 30.6596%, 11.02886% 27.5%, 13.02848% 24.64425%, 15.49361% 22.17911%, 18.34936% 20.17949%);
+    }
+  }
+
+  .mew-quote-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .mew-quote-content {
+    margin-bottom: 8px;
+    line-height: 1.5em;
+  }
+
+  .mew-quote-name {
+    color: var(--dark-c);
+    align-self: self-end;
+    font-size: 0.9em;
+    font-style: italic;
+    font-weight: 400;
+
+    &:before {
+      content: '';
+      width: 2.8em;
+      height: 1px;
+      background: var(--dark-c);
+      margin-right: 4px;
+      display: inline-block;
+      margin-bottom: 0.3em;
+    }
+  }
+
+  .quote-avatar-hexagon {
+    height: 5em;
+    width: 5em;
+    object-fit: cover;
+  }
+
+}
+
+mew-link {
+
+  .mew-link {
+    display: flex;
+    margin: auto;
+    max-width: 420px;
+    background: var(--bg-l);
+    padding: 12px 12px 9px 12px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .mew-link-info {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .info-title {
+    margin-bottom: 6px;
+    color: var(--dark-c);
+    line-height: 1.3em;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .info-desc {
+    font-size: 0.9em;
+    line-height: 1.3em;
+    height: 1.3em;
+    color: var(--dark-d);
+    word-break: break-all;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+
+    &:before {
+      content: '\f0c1';
+      font-family: 'FontAwesome';
+      margin-right: 4px;
+    }
+  }
+
+  .mew-link-image {
+    background-color: var(--bg-l);
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin-left: 16px;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink:0;
+  }
+
+  .link-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 

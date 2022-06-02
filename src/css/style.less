@@ -206,6 +206,7 @@ a {
   color: var(--theme);
   cursor: pointer;
   text-decoration: none;
+  word-break: break-all;
 
   &:hover {
     color: var(--dark-c);
@@ -481,7 +482,7 @@ table td, table th {
 
   li ul {
     margin: 0.5em 0.5em 0.75em 0.75em;
-    padding-left: 0.75em;
+    padding-left: 0.5em;
     border-left: 1px solid var(--light-c);
   }
 
@@ -501,7 +502,7 @@ table td, table th {
   cursor: pointer;
 
   i {
-    color: var(--dark-e);
+    color: var(--dark-b);
     font-size: 1.6rem;
     animation: code-expand 1.2s infinite;
     transition: all 0.3s;
@@ -1541,12 +1542,7 @@ table td, table th {
       }
 
       .main-content {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        word-break: break-word;
+        -webkit-line-clamp: 3 !important;
         min-height: 4em;
         max-height: 4.8em;
       }
@@ -1578,10 +1574,6 @@ table td, table th {
             color: var(--theme);
           }
         }
-      }
-
-      .main-content {
-        line-height: 1.6em;
       }
     }
 
@@ -1658,7 +1650,9 @@ table td, table th {
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      text-overflow: ellipsis;
       text-indent: 1.5em;
+      line-height: 1.5em;
     }
   }
 
@@ -1984,6 +1978,7 @@ table td, table th {
 }
 
 .main-content {
+  word-break: break-word;
   color: var(--main);
   font-size: 1.1rem;
   font-weight: 300;
@@ -2040,8 +2035,8 @@ table td, table th {
   }
 
   p {
-    line-height: 1.8em;
-    margin-bottom: 18px;
+    line-height: 1.7em;
+    margin-bottom: 14px;
   }
 
   .pwd {
@@ -2057,21 +2052,25 @@ table td, table th {
   }
 
   blockquote {
-    line-height: 1.8em;
-    margin-bottom: 18px;
+    line-height: 1.7em;
+    margin-bottom: 14px;
     padding: 8px 15px;
     color: var(--dark-b);
     background: var(--bg-h);
     border-left: 5px solid var(--bg-i);
     border-radius: var(--radius-inner);
 
-    * {
+    :not(:last-child) {
+      margin-bottom: 4px !important;
+    }
+
+    :last-child {
       margin: 0 !important;
     }
   }
 
   a:not([class]) {
-    line-height: 1.8em;
+    line-height: 1.7em;
     color: var(--theme);
     background-image: linear-gradient(transparent calc(100% - 1px), var(--theme) 1px);
     background-repeat: no-repeat;
@@ -2086,11 +2085,12 @@ table td, table th {
 
   ol,
   ul {
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     padding-left: 16px;
 
     li {
-      line-height: 1.8em;
+      line-height: 1.6em;
+      margin-bottom: 4px;
 
       &.task-list-item {
         list-style: none;
@@ -2160,9 +2160,8 @@ table td, table th {
     max-width: 100%;
     table-layout: fixed;
     border-collapse: unset;
-    color: var(--main);
     background: var(--bg-d);
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     overflow: hidden;
     font-size: 0.95em;
     border: 1px solid var(--light-b);
@@ -2210,7 +2209,7 @@ table td, table th {
   }
 
   figure {
-    margin: 20px 0;
+    margin: 18px 0;
     padding: 0;
     border-radius: var(--radius-inner);
     overflow: hidden;
@@ -2218,7 +2217,7 @@ table td, table th {
 
     & > figcaption {
       display: flex;
-      background: var(--bg-l);
+      background: rgb(153 153 153 / 8%);
       padding: 0;
       height: 2.2em;
       line-height: 2.2em;
@@ -2243,7 +2242,6 @@ table td, table th {
         text-align: center;
 
         i {
-          color: var(--dark-d);
           transition: all 0.25s;
           margin-right: 12px;
 
@@ -2252,7 +2250,7 @@ table td, table th {
           }
 
           &:hover {
-            color: var(--dark-c);
+            opacity: 0.5;
           }
 
           &.close {
@@ -2269,18 +2267,20 @@ table td, table th {
       overflow-x: auto;
       padding: 0;
       border: none;
+      color: inherit !important;
       background: transparent !important;
 
       & > ul {
         margin: 0;
         padding: 0 8px;
         user-select: none;
-        background: var(--bg-l);
+        background: rgb(153 153 153 / 8%);
 
         li {
           list-style: none;
           line-height: 1.5em;
           padding: 0 !important;
+          margin: 0 !important;
 
           &:before {
             content: none !important;
@@ -2296,13 +2296,20 @@ table td, table th {
         padding: 0 0 7px 5px;
         line-height: 1.5em;
         overflow-y: hidden;
-        background: var(--bg-k);
         width: 100%;
 
         &:not(:last-child) {
           margin-bottom: 1.8em;
         }
       }
+    }
+
+    .expand-done i {
+      color: inherit !important;
+    }
+
+    &:not(.fold) .expand-done {
+      background: rgb(153 153 153 / 8%);
     }
   }
 

@@ -39,15 +39,15 @@ const postContext = {
                 $(this).hide();
             }
             // 生成标题栏的按钮
-            let titleButton = `<div><i class="fa fa-angle-down${close}" data-code='#${id}'></i><i class="fa fa-clipboard btn-clipboard" title="复制代码" data-clipboard-target='#${id}'></i></div>`;
+            let titleButton = `<div><i class="fa fa-angle-down${close}" data-code='#${id}'></i><i class="fa fa-clone btn-clipboard" title="复制代码" data-clipboard-target='#${id}'></i></div>`;
 
             // 组装代码块
             $(this).attr("id", id);
             $pre.prepend(`<ul>${lis}</ul>`);
             if (nums > DreamConfig.code_fold_line) {
-                $pre.wrap(`<figure class="fold"></figure>`).append(`<div class="expand-done"><i class="fa fa-angle-double-up"></i></div>`)
+                $pre.wrap(`<figure class="fold hljs"></figure>`).append(`<div class="expand-done"><i class="fa fa-angle-double-up"></i></div>`)
             } else {
-                $pre.wrap(`<figure></figure>`);
+                $pre.wrap(`<figure class="hljs"></figure>`);
             }
             $pre.parent().prepend(`<figcaption>${title}${titleButton}</figcaption>`);
         })

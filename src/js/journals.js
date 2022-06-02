@@ -16,8 +16,10 @@ const journalContext = {
         const $journals = $(".journal .journal-content");
         $journals.each(function () {
             const $this = $(this);
-            if ($this[0].scrollHeight >= DreamConfig.journals_fold_height) {
+            if (this.scrollHeight >= DreamConfig.journals_fold_height) {
                 $this.append(`<div class="expand-done"><i class="fa fa-angle-double-up"></i></div>`);
+            } else {
+                $this.removeClass('fold');
             }
         })
         $(".journal-content>.expand-done").on("click", function () {

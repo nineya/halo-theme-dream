@@ -16,7 +16,7 @@ html {
   --dark-d: #9a9a9a;
   --dark-e: #7a7a7a;
   --color-a: #409eff;
-  --bg-a: rgb(242 246 252 / 80%);;
+  --bg-a: rgb(242 246 252 / 80%);
   --bg-b: #f2f6fc;
   --bg-c: #f5f5f5;
   --bg-d: rgba(255, 255, 255, 0.8);
@@ -89,8 +89,17 @@ html {
       }
     }
 
-    .main-content figure pre code {
-      color: var(--color-a);
+    .main-content {
+
+      figure {
+        color: var(--main);
+        background: var(--bg-k);
+
+        pre code {
+          color: var(--color-a);
+          background: 0 0;
+        }
+      }
     }
   }
 }
