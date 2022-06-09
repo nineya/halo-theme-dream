@@ -22,7 +22,6 @@
 
 <script src="${theme_base!}/source/lib/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
 <script src="${theme_base!}/source/js/pjax.min.js?v=${theme.version!}"></script>
-vv
 <script async src="${theme_base!}/source/lib/qmsg/qmsg.min.js"></script>
 
 <#if is_post?? || is_sheet?? || is_photos?? || is_journals?? >
