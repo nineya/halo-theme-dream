@@ -31,13 +31,13 @@
 <script src="${theme_base!}/source/lib/pace-js@1.2.4/pace.min.js"></script>
 
 <#if is_links??>
-    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/links.min.cssv=${theme.version!}"/>
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/links.min.css?v=${theme.version!}"/>
 <#elseif is_archives??>
-    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/archives.min.cssv=${theme.version!}"/>
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/archives.min.css?v=${theme.version!}"/>
 <#elseif is_journals??>
-    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/journals.min.cssv=${theme.version!}">
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/journals.min.css?v=${theme.version!}">
 <#elseif is_tags??>
-    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/tags.min.cssv=${theme.version!}"/>
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/tags.min.css?v=${theme.version!}"/>
 <#elseif is_photos??>
     <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/photos.min.css?v=${theme.version!}">
 </#if>
