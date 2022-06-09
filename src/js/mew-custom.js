@@ -306,9 +306,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     href: this.getAttribute("href"),
                     name: this.getAttribute("name"),
                 };
-                const avatarElem = this.options.avatar ? `<div><a class="mew-quote-avatar" target="_blank" ${this.options.href ? `href="${this.options.href}"` : ""}><img class="quote-avatar-hexagon" src="${this.options.avatar}"/></a></div>`: "";
+                const avatarElem = this.options.avatar ? `<div class="mew-quote-avatar"><a class="mew-quote-href" target="_blank" ${this.options.href ? `href="${this.options.href}"` : ""}><img class="quote-avatar-hexagon" src="${this.options.avatar}"/></a></div>`: "";
                 const nameElem = this.options.name ? `<a class="mew-quote-name" target="_blank" ${this.options.href ? `href="${this.options.href}"` : ""}>${this.options.name}</a>`: "";
-                this.innerHTML = `<div class="mew-quote">${avatarElem}<div class="mew-quote-info"><p class="mew-quote-content">${this.innerHTML}</p>${nameElem}</div></div>`;
+                this.innerHTML = `<div class="mew-quote"><div class="quote-container">${avatarElem}<div class="mew-quote-info"><p class="mew-quote-content">${this.innerHTML}</p>${nameElem}</div></div></div>`;
                 this.drawComplete()
             }
         })

@@ -24,42 +24,42 @@
 
 <@global.head />
 
-<link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/theme.min.css">
+<link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/theme.min.css?v=${theme.version!}">
 <link rel="preload stylesheet" as="style" href="${theme_base!}/source/lib/font-awesome@4.7.0/css/font-awesome.min.css">
-<link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/style.min.css">
+<link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/style.min.css?v=${theme.version!}">
 
 <script src="${theme_base!}/source/lib/pace-js@1.2.4/pace.min.js"></script>
 
 <#if is_links??>
-    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/links.min.css"/>
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/links.min.css?v=${theme.version!}"/>
 <#elseif is_archives??>
-    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/archives.min.css"/>
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/archives.min.css?v=${theme.version!}"/>
 <#elseif is_journals??>
-    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/journals.min.css">
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/journals.min.css?v=${theme.version!}">
 <#elseif is_tags??>
-    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/tags.min.css"/>
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/tags.min.css?v=${theme.version!}"/>
 <#elseif is_photos??>
-    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/photos.min.css">
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/photos.min.css?v=${theme.version!}">
 </#if>
 
 <#if post?? || is_journals?? || is_error??>
     <link data-pjax rel="preload stylesheet" as="style"
           href="${theme_base!}/source/lib/highlightjs@11.5.1/styles/${settings.code_pretty!'atom-one-light'}.min.css"/>
-    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/post.min.css"/>
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/post.min.css?v=${theme.version!}"/>
     <#assign enable_katex = (metas?? && metas.enable_katex?? && metas.enable_katex?trim!='')?then(metas.enable_katex?trim, (settings.enable_katex!false)?c)>
     <#if enable_katex=='true'>
         <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/lib/katex@0.12.0/katex.min.css"/>
     </#if>
 </#if>
 
-<link rel="stylesheet" href="${theme_base!}/source/css/mew-custom.min.css">
+<link rel="stylesheet" href="${theme_base!}/source/css/mew-custom.min.css?v=${theme.version!}">
 <#if is_post?? || is_sheet?? || is_photos?? || is_journals??>
     <link data-pjax rel="stylesheet" href="${theme_base!}/source/lib/fancybox@5.3.7/jquery.fancybox.min.css">
 </#if>
 <link rel="stylesheet" href="${theme_base!}/source/lib/qmsg/qmsg.min.css">
 
 <#if settings.cursor_style?? && settings.cursor_style!='none'>
-    <link rel="stylesheet" href="${theme_base!}/source/css/cursor/${settings.cursor_style}.min.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/cursor/${settings.cursor_style}.min.css?v=${theme.version!}">
 </#if>
 
 <#include "config.ftl">
