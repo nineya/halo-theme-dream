@@ -2104,29 +2104,50 @@ table td, table th {
   }
 
   ol:not([class]):not([style]) {
-    counter-reset: li;
 
-    & > li:not([class]):not([style]) {
-      list-style: none;
-      position: relative;
-      padding-left: 1.2em;
+    &[start] {
+      padding-left: 34px;
 
-      &:before {
-        position: absolute;
-        width: fit-content;
-        right: calc(100% - 1em);
-        content: counter(li) '.';
-        counter-increment: li;
-        text-align: center;
-        font-weight: 400;
-        color: var(--theme);
-        transition: all .5s;
+      & > li:not([class]):not([style]) {
+        list-style: decimal;
+
+        &::marker {
+          font-weight: 400;
+          color: var(--theme);
+          transition: all .5s;
+        }
+
+        &:hover::marker {
+          color: #e67700;
+        }
       }
+    }
 
-      &:hover:before {
-        transform: rotate(360deg);
-        color: #e67700;
-        font-size: 1.1em;
+    &:not([start]) {
+      counter-reset: li;
+
+      & > li:not([class]):not([style]) {
+        list-style: none;
+        position: relative;
+        padding-left: 1.2em;
+
+        &:before {
+          position: absolute;
+          width: fit-content;
+          right: calc(100% - 1em);
+          content: counter(li) '.';
+          counter-increment: li;
+          text-align: center;
+          font-weight: 400;
+          color: var(--theme);
+          transition: all .5s;
+        }
+
+        &:hover:before {
+          transform: rotate(360deg);
+          color: #e67700;
+          font-size: 1.1em;
+        }
       }
     }
   }
