@@ -13,10 +13,9 @@
                     <#list teams as item>
                         <div class="links">
                             <#if item.team?? && item.team!=''>
-                                <h2 class="link-title" id="toc${item_index}"><span
-                                            class="fake-title">${item.team}</span></h2>
+                                <h3 class="link-title" id="toc${item_index}">${item.team}</h3>
                             <#else>
-                                <h2 class="link-title" id="toc${item_index}"><span class="fake-title">小伙伴们</span></h2>
+                                <h3 class="link-title" id="toc${item_index}">小伙伴们</h3>
                             </#if>
                             <ul class="link-items">
                                 <#list item.links as link>

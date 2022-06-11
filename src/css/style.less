@@ -2003,35 +2003,98 @@ table td, table th {
     color: var(--dark-c);
     margin-bottom: 18px;
     transition: all 0.2s ease-out;
+  }
 
-    &:hover {
-      padding-left: 0.3rem;
+  h1, h2 {
+    display: inline;
+    background: linear-gradient(to bottom, transparent 60%, var(--bg-g) 0);
+
+    &:before, &:after {
+      content: '';
+      display: block;
+    }
+
+    &:before {
+      margin-top: 30px;
+    }
+
+    &:after {
+      margin-bottom: 20px;
     }
   }
 
   h1 {
-    margin: 30px 0 20px 0;
     font-size: 1.45em;
     font-weight: 700;
   }
 
   h2 {
-    margin: 30px 0 20px 0;
     font-size: 1.25em;
     font-weight: 600;
+  }
+
+  h3, h4, h5 {
+    position: relative;
+    padding-left: 12px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      bottom: 10%;
+      left: 0;
+      width: 4px;
+      border-radius: 2px;
+      background: var(--theme);
+    }
+
+    &:hover {
+      padding-left: 16px;
+    }
   }
 
   h3 {
     margin: 25px 0 18px 0;
     font-size: 1.2em;
+    font-weight: 600;
   }
 
   h4 {
-    font-size: 1.15em;
+    font-size: 1.1em;
   }
 
   h5, h6 {
     font-size: 1em;
+  }
+
+  h6 {
+
+    &:before, &:after {
+      color: var(--theme);
+      font-weight: 600;
+      transition: all 0.2s ease-out;
+    }
+
+    &:before {
+      content: '「';
+      margin-right: 5px;
+    }
+
+    &:after {
+      content: '」';
+      margin-left: 5px;
+    }
+
+    &:hover {
+      &:before {
+        margin-left: -3px;
+        margin-right: 8px;
+      }
+
+      &:after {
+        margin-left: 8px;
+      }
+    }
   }
 
   p {
