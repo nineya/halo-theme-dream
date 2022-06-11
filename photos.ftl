@@ -7,10 +7,10 @@
                     <#list teams as item>
                         <div class="card">
                             <#if item.team?? && item.team!=''>
-                                <h2 class="title card-content main-title"
-                                    id="toc${item_index}">${item.team}</h2>
+                                <h3 class="title card-content main-title"
+                                    id="toc${item_index}">${item.team}</h3>
                             <#else>
-                                <h2 class="title card-content main-title" id="toc${item_index}">图库</h2>
+                                <h3 class="title card-content main-title" id="toc${item_index}">图库</h3>
                             </#if>
                         </div>
                         <div class="photo">
