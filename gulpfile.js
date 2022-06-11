@@ -144,9 +144,9 @@ task("freecdn", (done) => {
                 readFile(filePath, ignoreFiles)
             } else {
                 let hash = crypto.createHash('SHA256').update(fs.readFileSync(filePath)).digest('base64')
-                fs.appendFileSync(tempFileName, `${hash} https://raw.githubusercontent.com/nineya/halo-theme-dream/${version}/${filePath}\n`)
-                fs.appendFileSync(tempFileName, `${hash} https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream@${version}/${filePath}\n`)
                 fs.appendFileSync(tempFileName, `${hash} https://unpkg.com/halo-theme-dream@${version}/${filePath}\n`)
+                fs.appendFileSync(tempFileName, `${hash} https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream@${version}/${filePath}\n`)
+                fs.appendFileSync(tempFileName, `${hash} https://raw.githubusercontent.com/nineya/halo-theme-dream/${version}/${filePath}\n`)
             }
         })
     }
