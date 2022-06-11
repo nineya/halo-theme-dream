@@ -20,14 +20,15 @@
                             <ul class="link-items">
                                 <#list item.links as link>
                                     <li>
-                                        <a class="links-item" href="${link.url!}" rel="noopener" target="_blank"
+                                        <a class="links-item" href="${link.url!}" rel="noopener noreferrer" target="_blank"
                                            title="${link.description!}">
                                             <#if link.logo?? && link.logo!=''>
                                                 <img class="not-gallery" title="${link.name!}" src="${defaultAvatar!}"
                                                      onload="if(!this.finish){this.finish=true;this.src='${link.logo!}'}"
-                                                     onerror="this.onerror='';this.finish=true;this.src='${defaultAvatar!}'">
+                                                     onerror="this.onerror='';this.finish=true;this.src='${defaultAvatar!}'"
+                                                     alt="${link.name!}">
                                             <#else>
-                                                <img class="not-gallery" title="${link.name!}" src="${defaultAvatar!}">
+                                                <img class="not-gallery" title="${link.name!}" src="${defaultAvatar!}" alt="${link.name!}">
                                             </#if>
 
                                             <span class="link-name">${link.name!}</span>
