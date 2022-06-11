@@ -13,22 +13,22 @@
                     <#list teams as item>
                         <div class="links">
                             <#if item.team?? && item.team!=''>
-                                <h2 class="link-title" id="toc${item_index}"><span
-                                            class="fake-title">${item.team}</span></h2>
+                                <h3 class="link-title" id="toc${item_index}">${item.team}</h3>
                             <#else>
-                                <h2 class="link-title" id="toc${item_index}"><span class="fake-title">小伙伴们</span></h2>
+                                <h3 class="link-title" id="toc${item_index}">小伙伴们</h3>
                             </#if>
                             <ul class="link-items">
                                 <#list item.links as link>
                                     <li>
-                                        <a class="links-item" href="${link.url!}" rel="noopener" target="_blank"
+                                        <a class="links-item" href="${link.url!}" rel="noopener noreferrer" target="_blank"
                                            title="${link.description!}">
                                             <#if link.logo?? && link.logo!=''>
                                                 <img class="not-gallery" title="${link.name!}" src="${defaultAvatar!}"
                                                      onload="if(!this.finish){this.finish=true;this.src='${link.logo!}'}"
-                                                     onerror="this.onerror='';this.finish=true;this.src='${defaultAvatar!}'">
+                                                     onerror="this.onerror='';this.finish=true;this.src='${defaultAvatar!}'"
+                                                     alt="${link.name!}">
                                             <#else>
-                                                <img class="not-gallery" title="${link.name!}" src="${defaultAvatar!}">
+                                                <img class="not-gallery" title="${link.name!}" src="${defaultAvatar!}" alt="${link.name!}">
                                             </#if>
 
                                             <span class="link-name">${link.name!}</span>
@@ -66,7 +66,7 @@
     </div>
     <#if settings.link_comment_id?? && settings.link_comment_id!=''>
         <div class="card card-content" id="comment-wrapper">
-            <h3 class="title">评论</h3>
+            <h3 class="comment-title">评论</h3>
             <#include "template/main/comment.ftl">
             <@comment settings.link_comment_id, "sheet" />
         </div>

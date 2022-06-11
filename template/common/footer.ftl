@@ -19,12 +19,12 @@
                     <#if settings.record_number?? && settings.record_number!=''>
                         <br/>
                         <a href="http://beian.miit.gov.cn/publish/query/indexFirst.action"
-                           target="_blank">${settings.record_number!}</a>
+                           target="_blank" rel="noopener noreferrer nofollow">${settings.record_number!}</a>
                     </#if>
                     <#if settings.record_number_ps?? && settings.record_number_ps!=''>
                         <br/>
                         <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${settings.record_number_ps!}"
-                           target="_blank">公安备案：${settings.record_number_ps!}</a>
+                           target="_blank" rel="noopener noreferrer nofollow">公安备案：${settings.record_number_ps!}</a>
                     </#if>
                     <#if settings.website_time?? && settings.website_time!=''>
                         <br/>

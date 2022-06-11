@@ -95,7 +95,7 @@
     </#if>
     <#if !post.disallowComment!false>
         <div class="card card-content" id="comment-wrapper">
-            <h3 class="title">评论</h3>
+            <h3 class="comment-title">评论</h3>
             <#include "comment.ftl">
             <@comment post.id?c, commentType />
         </div>
