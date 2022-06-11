@@ -179,10 +179,11 @@ task("zip", () => {
         .pipe(dest(distPath));
 });
 
-task("publish", () => {
+task("publish", (done) => {
     // 需要将tag标签内容置空，否则将抛出异常
     process.env.npm_config_tag = undefined
     console.log(execSync(`npm publish`).toString());
+    done();
 })
 
 // 默认模式
