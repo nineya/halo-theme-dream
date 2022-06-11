@@ -208,15 +208,14 @@ var Utils = {
         if (!DreamConfig.journals_fold_height) {
             return;
         }
-        const $scrollElement = $("body,html");
         const oldHeight = $container.height();
         if ($container.is(".fold")) {
             $container.removeClass('fold').addClass('unfold');
         } else {
-            const oldScrollTop = $scrollElement.scrollTop();
+            const oldScrollTop = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
             $container.addClass('fold').removeClass('unfold');
             // 跳转位置，保证折叠后没有过大的位置偏移
-            $scrollElement.scrollTop(oldScrollTop - oldHeight + $container.height());
+            $("body,html").scrollTop(oldScrollTop - oldHeight + $container.height());
         }
     },
     /**
