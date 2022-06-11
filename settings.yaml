@@ -362,6 +362,12 @@ comment:
           label: 开启
         - value: false
           label: 关闭
+    unfold_reply_num:
+      name: unfold_reply_num
+      label: 默认展开的二级回复数量
+      type: text
+      default: 6
+      placeholder: '默认展开的二级回复数量'
     show_comment_ua:
       name: show_comment_ua
       label: 显示评论的UA信息

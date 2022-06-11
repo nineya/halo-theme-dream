@@ -16,8 +16,8 @@
 <script src="${theme_base!}/source/js/mew-custom.min.js?v=${theme.version!}"></script>
 <#if (post?? && !post.disallowComment!false) || is_journals?? || (is_links?? && settings.link_comment_id?? && settings.link_comment_id!='')>
     <script data-pjax defer src="${theme_base!}/source/lib/vue@2.6.10/vue.min.js"></script>
-    <script data-pjax defer src="${(settings.enable_theme_comment!true)?then(theme_base + '/source/lib/halo-comment@1.0.3/halo-comment.min.js',
-    options.comment_internal_plugin_js!'https://cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js')}"></script>
+    <script data-pjax defer src="${(settings.enable_theme_comment!true)?then(theme_base + '/source/lib/halo-comment@1.0.4/halo-comment.min.js',
+    options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js')}"></script>
 </#if>
 
 <script src="${theme_base!}/source/lib/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
