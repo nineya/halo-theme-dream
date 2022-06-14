@@ -1,7 +1,7 @@
 //可以进行版本修改，删除缓存
 const version = "1.0.0";
 const cacheName = `Dream-${version}`;
-let offLine = false
+const offLine = new URLSearchParams(location.href.split("?")[1]).get("offLine")
 
 // 需要走cdn和缓存的请求（cdn优先于缓存）
 const cdnAndCacheList = [
@@ -70,7 +70,6 @@ self.addEventListener('install', function (event) {
 // 激活
 self.addEventListener('activate', function (event) {
     const mainCache = [cacheName];
-    offLine = new URLSearchParams(location.href.split("?")[1]).get("offLine")
     event.waitUntil(
         caches.keys().then(function (cacheNames) {
             return Promise.all(
@@ -172,16 +171,17 @@ self.addEventListener('fetch', function (event) {
             return false
         }
         // return false;
-        event.respondWith(
-            fetch(event.request)
-                .then((response) => {
-                    const responseClone = response.clone()
-                    caches.open(cacheName).then(cache => cache.put(event.request, responseClone))
-                    return response
-                })
-                .catch(()=>{
-                    return caches.match(event.request)
-                })
+        event.respondWith(caches.open(cacheName)
+            .then(cache=>{
+                return fetch(event.request)
+                    .then((response) => {
+                        cache.put(event.request, response.clone())
+                        return response
+                    })
+                    .catch(()=>{
+                        return cache.match(event.request)
+                    })
+            })
         );
         return true;
     }
