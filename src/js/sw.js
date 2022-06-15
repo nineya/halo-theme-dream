@@ -201,11 +201,8 @@
                     .then(cache => {
                         return fetch(event.request)
                             .then((response) => {
-                                if (response.status === 200) {
-                                    cache.put(event.request, response.clone());
-                                    return response
-                                }
-                                return cache.match(event.request)
+                                if (response.status === 200) cache.put(event.request, response.clone());
+                                return response
                             })
                             .catch(() => cache.match(event.request))
                     })
