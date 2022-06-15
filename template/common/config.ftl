@@ -81,11 +81,4 @@
     if (isNight.toString() === 'true') {
         document.documentElement.classList.add('night');
     }
-    <#if !settings.enable_freecdn!false>
-    navigator.serviceWorker.getRegistrations().then(function (registrations) {
-        for (let registration of registrations) {
-            registration.active && registration.active.scriptURL && registration.active.scriptURL.endsWith("/freecdn-loader.min.js") && registration.unregister()
-        }
-    })
-    </#if>
 </script>

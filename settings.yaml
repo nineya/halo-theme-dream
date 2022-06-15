@@ -1212,18 +1212,20 @@ enhance:
           label: 烟花特效
         - value: granule
           label: 粒子爆炸
-    enable_freecdn:
-      name: enable_freecdn
-      label: 启用FreeCDN
-      type: switch
-      data-type: bool
-      default: false
-      description: '需要在nginx中添加代理配置方可启用，配置方法见 <a href="https://blog.nineya.com/archives/94.html" target="_blank">Dream 主题使用手册 - 基础篇</a>'
+    enable_sw:
+      name: enable_sw
+      label: "启用Service Worker优化"
+      type: radio
+      data-type: text
+      default: "&"
+      description: '需要在nginx中添加代理配置方可启用，配置方法见 <a href="https://blog.nineya.com/archives/104.html" target="_blank">Dream 2.0.5起移除FreeCDN，以及SW配置方法</a>'
       options:
-        - value: true
-          label: 开启
-        - value: false
+        - value: "&"
           label: 关闭
+        - value: "&install=true"
+          label: 开启CDN并发请求
+        - value: "&install=true&offLine=true"
+          label: 开启全站离线
     effects_sakura_mode:
       name: effects_sakura_mode
       label: 樱花飘落特效显示模式
