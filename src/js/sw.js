@@ -30,16 +30,16 @@
         // 需要走cdn和缓存的请求（cdn优先于缓存）
         const cdnAndCacheList = [
             new RegExp(`${location.origin}/themes`, "i"), //主题目录
-            /\/\/(unpkg\.com|npm\.elemecdn\.com|cdn\.jsdelivr\.net)\/.*/i, //公共cdn网站
+            /\/\/(unpkg\.com|npm\.elemecdn\.com|cdn\.jsdelivr\.net\/npm)\//i, //npm公共cdn网站
         ]
 
         //对这里面的请求只走缓存
         const onlyCacheList = [
             new RegExp(`${location.origin}/upload`, "i"), //图片等附件目录
-            /\/\/cdn.jsdelivr.net\/gh.*/i,  //gh目前没有可用cdn源
+            /\/\/cdn.jsdelivr.net\//i,  //gh目前没有可用cdn源
         ];
 
-        // 不缓存，不走cdn
+        // 不缓存，不走cdn（优先级别最高）
         const notCacheList = [
             new RegExp(`${location.origin}/(admin|api)`, "i"), //管理后台
         ]
@@ -53,8 +53,7 @@
                     const version = new URLSearchParams(url.split('?')[1]).get("mew") || 'latest';
                     return [
                         url,
-                        `https://unpkg.com/halo-theme-dream@${version}${path}`,
-                        `https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream@${version}${path}`,
+                        ...cdn.npm.urlTemplates.map(value => `${value}/halo-theme-dream@${version}${path}`)
                     ]
                 },
             },
@@ -166,33 +165,14 @@
             return true;
         }
 
-        /**
-         * 从缓存列表取得当前请求的缓存
-         *
-         * @param cache_response_list
-         * @param request_url
-         * @returns {null|any}
-         */
-        function getMatchRequestResponse(cache_response_list, request_url) {
-            if (cache_response_list) {
-                for (const cache_response of cache_response_list) {
-                    if ((cache_response.url || cache_response.headers.get('service-worker-origin')) === request_url) {
-                        return cache_response;
-                    }
-                }
-            }
-            return null;
-        }
-
         // 拦截请求使用缓存的内容
         self.addEventListener('fetch', function (event) {
             if (event.request.method !== "GET") {
                 return false;
             }
-            const isOnlyCache = isExitInCacheList(onlyCacheList, event.request.url);
             const isCdnAndCache = isExitInCacheList(cdnAndCacheList, event.request.url);
             // 不符合缓存要求的
-            if (!(isOnlyCache || isCdnAndCache) || isExitInCacheList(notCacheList, event.request.url)) {
+            if (!(isCdnAndCache || isExitInCacheList(onlyCacheList, event.request.url)) || isExitInCacheList(notCacheList, event.request.url)) {
                 if (!offLine) { // 不需要离线
                     return false
                 }
@@ -213,34 +193,41 @@
             event.respondWith(
                 caches.open(cacheName).then(function (cache) {
                     // ignoreSearch 忽略请求参数进行查找，用于匹配不同版本
-                    return cache.matchAll(event.request, {"ignoreSearch": true}).then(function (cache_response_list) {
-                        const cache_response = getMatchRequestResponse(cache_response_list, event.request.url);
+                    return cache.match(event.request).then(function (cacheResponse) {
                         // 直接返回缓存
-                        if (cache_response) return cache_response;
+                        if (cacheResponse) return cacheResponse;
 
                         return handleRequest(event.request, isCdnAndCache)
                             .then((response) => {
-                                // 删除旧版本的缓存文件
-                                if (cache_response_list) {
-                                    for (const cache_response of cache_response_list) {
-                                        if (isSameRequest(cache_response.url, event.request.url)) {
-                                            cache.delete(cache_response.url)
+                                const responseClone = response.clone();
+                                cache.matchAll(event.request, {"ignoreSearch": true})
+                                    .then(function (cache_response_list) {
+                                        // 删除旧版本的缓存文件
+                                        if (cache_response_list) {
+                                            for (const cache_response of cache_response_list) {
+                                                const responseUrl = cache_response.url || cache_response.headers.get('service-worker-origin')
+                                                if (isSameRequest(responseUrl, event.request.url)) {
+                                                    cache.delete(responseUrl)
+                                                }
+                                            }
                                         }
-                                    }
-                                }
-                                cache.put(event.request, response.clone());
+                                        cache.put(event.request, responseClone);
+                                    })
                                 return response;
                             })
                             .catch(error => {
                                 console.error(error)
-                                // 从缓存中取得历史版本的文件
-                                if (cache_response_list) {
-                                    for (const cache_response of cache_response_list) {
-                                        if (isSameRequest(cache_response.url, event.request.url)) {
-                                            return cache_response
+                                return cache.matchAll(event.request, {"ignoreSearch": true})
+                                    .then(function (cache_response_list) {
+                                        // 从缓存中取得历史版本的文件
+                                        if (cache_response_list) {
+                                            for (const cache_response of cache_response_list) {
+                                                if (isSameRequest(cache_response.url || cache_response.headers.get('service-worker-origin'), event.request.url)) {
+                                                    return cache_response
+                                                }
+                                            }
                                         }
-                                    }
-                                }
+                                    })
                             });
                     })
                 })
