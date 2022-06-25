@@ -158,7 +158,7 @@ const commonContext = {
             const direction = scrollDirection(scrollTop);
             const $body = $("body");
             const $actions = $(".actions");
-            if (direction) {
+            if (scrollTop > 50 && direction) {
                 $body.addClass("move-up");
             } else {
                 $body.removeClass("move-up");
