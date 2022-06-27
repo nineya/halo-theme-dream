@@ -1220,12 +1220,14 @@ enhance:
       default: "&"
       description: '需要在nginx中添加代理配置方可启用，配置方法见 <a href="https://blog.nineya.com/archives/104.html" target="_blank">Dream 2.0.5起移除FreeCDN，以及SW配置方法</a>'
       options:
-        - value: "&"
+        - value: "false"
           label: 关闭
         - value: "&install=true"
           label: 开启CDN并发请求
         - value: "&install=true&offLine=true"
           label: 开启全站离线
+        - value: "uninstall"
+          label: 卸载
     effects_sakura_mode:
       name: effects_sakura_mode
       label: 樱花飘落特效显示模式

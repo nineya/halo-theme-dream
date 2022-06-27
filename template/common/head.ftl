@@ -1,5 +1,7 @@
 <title>${title!}<#if settings.small_title?? && settings.small_title!=''>|${settings.small_title!}</#if></title>
-<script src="/sw.min.js?mew=1.0.5${settings.enable_sw!}"></script>
+<#if settings.enable_sw?? && settings.enable_sw != "false">
+    <script src="${(settings.enable_sw == "uninstall")?then('${theme_base!}/source/js/sw.min.js?mew=1.0.5','/sw.min.js?mew=1.0.5${settings.enable_sw!}')}"></script>
+</#if>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="keywords" content="${meta_keywords!}"/>
