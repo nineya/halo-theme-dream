@@ -3,12 +3,8 @@
         <div class="card card-transparent">
             <nav class="pagination" role="navigation" aria-label="pagination">
                 <@paginationTag method="${method}" page="${datas.number}" slug="${slug!}" keyword="${keyword!}" total="${datas.totalPages}" display="${display}">
-                    <div class="pagination-previous<#if !pagination.hasPrev> is-invisible is-hidden-mobile</#if>">
-                        <a href="${pagination.prevPageFullPath!}">上一页</a>
-                    </div>
-                    <div class="pagination-next<#if !pagination.hasNext> is-invisible is-hidden-mobile</#if>">
-                        <a href="${pagination.nextPageFullPath!}">下一页</a>
-                    </div>
+                    <a href="${pagination.prevPageFullPath!}" class="pagination-previous<#if !pagination.hasPrev> is-invisible is-hidden-mobile</#if>">上一页</a>
+                    <a href="${pagination.nextPageFullPath!}" class="pagination-next<#if !pagination.hasNext> is-invisible is-hidden-mobile</#if>">下一页</a>
                     <ul class="pagination-list is-hidden-mobile">
                         <#list pagination.rainbowPages as number>
                             <#if number.isCurrent>
