@@ -15,7 +15,7 @@
                         <li><@global.timeline datetime=post.createTime/></li>
                         <li><i class="fa fa-eye"></i>${post.visits?c}</li>
                         <#if !post.disallowComment!false><li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li></#if>
-                        <li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li>
+                        <#if !is_sheet??><li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li></#if>
                         <li><i class="fa fa-pencil"></i>${post.wordCount?c}</li>
                     </ul>
                 </div>
@@ -34,9 +34,8 @@
                         <li><@global.timeline datetime=post.createTime/></li>
                         <li><i class="fa fa-eye"></i>${post.visits?c}</li>
                         <#if !post.disallowComment!false><li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li></#if>
-                        <li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li>
-                        <#assign words= post.formatContent?replace('</?[a-z][^>]*>','','ri')?matches('[\\u00ff-\\uffff]|[a-zA-Z]+')?size />
-                        <li><i class="fa fa-pencil"></i>${words?c}</li>
+                        <#if !is_sheet??><li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li></#if>
+                        <li><i class="fa fa-pencil"></i>${post.wordCount?c}</li>
                     </ul>
                     <#if post.categories?? && post.categories?size gt 0>
                         <div class="level-item">
