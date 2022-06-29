@@ -2,7 +2,7 @@
     <div class="container">
         <div class="level">
             <div>
-                <a class="footer-logo" href="${context!}">
+                <a class="logo-title" href="${context!}">
                     <#if blog_logo?? && blog_logo!=''>
                         <img class="logo-img" src="${blog_logo!}" alt="${blog_title!}" height="28">
                         <img class="logo-img-dark"
