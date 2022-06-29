@@ -13,10 +13,7 @@
                         </div>
                     </#if>
                     <div class="details">
-                        <h2 class="title">
-                            <#if post.topPriority==1><span class="top">置顶</span></#if><a
-                                    href="${post.fullPath!}">${post.title!}</a>
-                        </h2>
+                        <h2 class="title"><#if post.topPriority==1><span class="top">置顶</span></#if>${post.title!}</h2>
                         <ul class="breadcrumb">
                             <li><@global.timeline datetime=post.createTime/></li>
                             <li><i class="fa fa-eye"></i>${post.visits?c}</li>

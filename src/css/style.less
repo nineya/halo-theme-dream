@@ -1482,6 +1482,11 @@ table td, table th {
           border-radius: 0 0 var(--radius-wrap) var(--radius-wrap);
           background-image: linear-gradient(0deg, rgba(29, 41, 49, .5), rgba(255, 255, 255, 0));
           padding: 2em 15px 15px;
+          pointer-events: none;
+
+          .breadcrumb > li {
+            pointer-events: initial;
+          }
         }
 
         .title {
