@@ -328,4 +328,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.drawComplete()
             }
         })
+
+    customElements.define(
+        "mew-video",
+        class MewVideo extends MewElement {
+            init() {
+                this.options = {
+                    src: this.getAttribute("src"),
+                    type: this.getAttribute("type"),
+                    autoplay: !!this.getAttribute("autoplay"),
+                    controls: !!this.getAttribute("controls"),
+                    loop: !!this.getAttribute("loop"),
+                    muted: !!this.getAttribute("muted"),
+                    preload: !!this.getAttribute("preload"),
+                    poster: this.getAttribute("poster"),
+                    width: /^\d{1,3}%$/.test(this.getAttribute("width"))
+                        ? this.getAttribute("width")
+                        : "100%",
+                };
+                this.innerHTML = `<video ${this.options.poster ? `poster="${this.options.poster}"` : ""}${this.options.autoplay?' autoplay':''}${this.options.controls?' controls':''}${this.options.loop?' loop':''}${this.options.muted?' muted':''}${this.options.preload?' preload':''}><source src="${this.options.src}" ${this.options.type ? `type="${this.options.type}"` : ""}>不支持视频播放器！</video>`;
+                this.drawComplete()
+            }
+        })
 });
