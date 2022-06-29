@@ -24,6 +24,7 @@ const syncLoadScripts = ($scripts, i, resolve) => {
         .done(function () {
             console.log((resolve ? '同步' : '异步') + '顺序加载js完成 ' + src)
             jsLoadCompletes.add(src);
+            window.DProgress && DProgress.inc()
             syncLoadScripts($scripts, i + 1, resolve)
         })
         .fail(function () {
@@ -37,6 +38,7 @@ const syncLoadScripts = ($scripts, i, resolve) => {
  * fragment:是加载的文本中被选中的目标内容
  */
 $(document).on('click', 'a[target!=_blank][href]:not(data-not-pjax)', (event) => {
+    window.DProgress && DProgress.start()
     $.pjax.click(event, ".column-main", {
         scrollTo: 0,
         fragment: ".column-main",
@@ -47,6 +49,7 @@ $(document).on('click', 'a[target!=_blank][href]:not(data-not-pjax)', (event) =>
 
 
 $(document).on('submit', 'form[data-pjax]', function (event) {
+    window.DProgress && DProgress.start()
     $.pjax.submit(event, ".column-main", {
         scrollTo: 0,
         fragment: ".column-main",
@@ -117,6 +120,7 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
             console.log('加载css ' + $(this).attr('href'))
             this.onload = function () {
                 cssLoadCompletes.add(href)
+                window.DProgress && DProgress.inc()
                 console.log('加载css完成 ' + $(this).attr('href'))
             }
         }
@@ -132,6 +136,7 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
             Utils.cachedScript(src)
                 .done(function () {
                     console.log('异步无序js完成 ' + src)
+                    window.DProgress && DProgress.inc()
                     jsLoadCompletes.add(src);
                 })
                 .fail(function () {
@@ -141,7 +146,7 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
         new Promise(() => {
             syncLoadScripts($scripts.filter('[defer]'), 0)
         })
-        let $syncScripts = $scripts.filter(':not([async],[defer])');
+        let $syncScripts = $scripts.filter(':not([async]):not([defer])');
         $syncScripts.length > 0 && await new Promise((resolve) => {
             syncLoadScripts($syncScripts, 0, resolve)
         });
@@ -154,6 +159,7 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
     window.postPjax && window.postPjax(serialNumber);
     /* 加载主动推送或统计脚本 */
     commonContext.loadMaintain();
+    window.DProgress && DProgress.done()
 });
 
 $(document).on("pjax:timeout", function (event, xhr, options) {
@@ -179,8 +185,7 @@ $(document).on("pjax:end", function (event, xhr, options) {
     if (xhr == null) {
         /* 重新加载目录和公告 */
         commonContext.initTocAndNotice()
-    } else if (pjaxSerialNumber !== options.serialNumber) {
-        return;
+        window.DProgress && DProgress.done()
     }
 });
 

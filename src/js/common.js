@@ -347,7 +347,7 @@ const commonContext = {
             websiteTime.innerHTML = hours + " 小时 " + minutes + " 分 " + seconds + " 秒";
         }, 1000);
     },
-    /* 初始化特效，只需要初始化一次，非移动端设备不初始化 */
+    /* 初始化特效，只需要初始化一次，移动端设备不初始化 */
     initEffects() {
         if (Utils.isMobile()) return;
         DreamConfig.cursor_move && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/cursor/move/${DreamConfig.cursor_move}.min.js`)

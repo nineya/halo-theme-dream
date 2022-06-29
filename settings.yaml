@@ -11,6 +11,18 @@ basic:
       label: 黑夜模式的logo(放空默认为网站logo)
       type: attachment
       placeholder: '黑夜模式的logo'
+    load_progress:
+      name: load_progress
+      label: 加载进度条
+      type: radio
+      default: center
+      options:
+        - value: none
+          label: 不显示
+        - value: left
+          label: 左侧展开
+        - value: center
+          label: 居中展开
     enable_image_bg:
       name: enable_image_bg
       label: 开启博客背景图

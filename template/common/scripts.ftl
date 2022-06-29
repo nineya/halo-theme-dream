@@ -4,6 +4,7 @@
 <script src="${theme_base!}/source/js/common.min.js?mew=${theme_version!}"></script>
 <script src="${theme_base!}/source/js/utils.min.js?mew=${theme_version!}"></script>
 
+
 <#if post?? || is_journals?? || is_error??>
     <script data-pjax src="${theme_base!}/source/lib/highlightjs@11.5.1/highlight.min.js"></script>
     <script data-pjax src="${theme_base!}/source/lib/clipboard@2.0.10/clipboard.min.js"></script>
@@ -21,6 +22,9 @@
 </#if>
 
 <script src="${theme_base!}/source/lib/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+<#if settings.load_progress?? && settings.load_progress != 'none'>
+    <script src="${theme_base!}/source/js/dprogress.min.js?mew=${theme_version!}"></script>
+</#if>
 <script src="${theme_base!}/source/js/pjax.min.js?mew=${theme_version!}"></script>
 <script async src="${theme_base!}/source/lib/qmsg/qmsg.min.js"></script>
 

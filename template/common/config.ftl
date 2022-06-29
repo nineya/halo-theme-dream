@@ -66,21 +66,24 @@
     <#if settings.effects_universe_mode?? && settings.effects_universe_mode!='none'>
     DreamConfig["effects_universe_mode"] = '${settings.effects_universe_mode}';
     </#if>
-    <#if settings.enable_live2d!true>
-    DreamConfig["live2d_url"] = '/source/lib/live2d/autoload.js';
-    </#if>
     <#if settings.enable_baidu_push!false>
     DreamConfig["enable_baidu_push"] = true;
     </#if>
     <#if settings.enable_toutiao_push!false>
     DreamConfig["enable_toutiao_push"] = true;
     </#if>
-    // 看板娘相关配置
-    <#if settings.live2d_about_page?? && settings.live2d_about_page!=''>
-    DreamConfig["live2dAboutPage"] = '${settings.live2d_about_page}';
+    <#if settings.load_progress?? && settings.load_progress != 'none'>
+    DreamConfig["load_progress"] = '${settings.load_progress}';
     </#if>
-    DreamConfig["live2dEdgeSide"] = '${settings.live2d_edge_side!'right:50'}';
-    DreamConfig["live2dWaifuSize"] = '${settings.live2d_waifu_size!'280x260'}';
+    // 看板娘相关配置
+    <#if settings.enable_live2d!true>
+    DreamConfig["live2d_url"] = '/source/lib/live2d/autoload.js';
+    <#if settings.live2d_about_page?? && settings.live2d_about_page!=''>
+    DreamConfig["live2d_about_page"] = '${settings.live2d_about_page}';
+    </#if>
+    DreamConfig["live2d_edge_side"] = '${settings.live2d_edge_side!'right:50'}';
+    DreamConfig["live2d_waifu_size"] = '${settings.live2d_waifu_size!'280x260'}';
+    </#if>
 
     // 配置主题模式
     let isNight = localStorage.getItem('night') || false;
