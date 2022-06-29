@@ -1169,6 +1169,39 @@ other_page:
           label: 开启
         - value: false
           label: 关闭
+live2d:
+  label: 看板娘
+  items:
+    enable_live2d:
+      name: enable_live2d
+      label: 启用看板娘
+      type: switch
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    live2d_about_page:
+      name: live2d_about_page
+      label: “关于”按钮的url地址
+      type: text
+      placeholder: 'url地址'
+      description: '放空则不显示“关于”按钮。'
+    live2d_waifu_size:
+      name: live2d_waifu_size
+      label: 看板娘大小
+      type: text
+      default: '280x260'
+      placeholder: '宽度(px)x高度(px)'
+      description: '看板娘的（宽度x高度），单位为px。'
+    live2d_edge_side:
+      name: live2d_edge_side
+      label: 看板娘贴边方向与距离
+      type: text
+      default: 'right:50'
+      placeholder: '位置:距离(px)'
 enhance:
   label: 增强功能
   items:
@@ -1262,17 +1295,6 @@ enhance:
           label: 黑夜
         - value: all
           label: 全模式
-    enable_live2d:
-      name: enable_live2d
-      label: 启用看板娘
-      type: switch
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
     enable_baidu_push:
       name: enable_baidu_push
       label: 启用百度URL自动推送

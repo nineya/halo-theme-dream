@@ -7,14 +7,18 @@ try {
                     live2d_settings['hitokotoAPI'] = "hitokoto.cn";  // 一言 API
                     live2d_settings['modelId'] = 1;                  // 默认模型 ID
                     live2d_settings['modelTexturesId'] = 83;          // 默认材质 ID
-                    live2d_settings['waifuSize'] = "280x260",
+                    live2d_settings['waifuSize'] = DreamConfig["live2dWaifuSize"],
                     live2d_settings['waifuTipsSize'] = "230x75",
                     live2d_settings['waifuFontSize'] = "16px",
                     live2d_settings['waifuToolFont'] = "16px",
                     live2d_settings['waifuToolLine'] = "26px",
-                    live2d_settings['waifuEdgeSide'] = "right:50",
-                    live2d_settings['homePageUrl'] = "/",
-                    live2d_settings['aboutPageUrl'] = "/about/",
+                    live2d_settings['waifuEdgeSide'] = DreamConfig["live2dEdgeSide"],
+                    live2d_settings['homePageUrl'] = "/";
+                    if (DreamConfig["live2dAboutPage"]) {
+                        live2d_settings['aboutPageUrl'] = DreamConfig["live2dAboutPage"];
+                    } else {
+                        live2d_settings['canTurnToAboutPage']   = false;
+                    }
                     /* 在 initModel 前添加 */
                     initModel("/themes/dream/source/lib/live2d/waifu-tips.json");
                 }})

@@ -75,6 +75,12 @@
     <#if settings.enable_toutiao_push!false>
     DreamConfig["enable_toutiao_push"] = true;
     </#if>
+    // 看板娘相关配置
+    <#if settings.live2d_about_page?? && settings.live2d_about_page!=''>
+    DreamConfig["live2dAboutPage"] = '${settings.live2d_about_page}';
+    </#if>
+    DreamConfig["live2dEdgeSide"] = '${settings.live2d_edge_side!'right:50'}';
+    DreamConfig["live2dWaifuSize"] = '${settings.live2d_waifu_size!'280x260'}';
 
     // 配置主题模式
     let isNight = localStorage.getItem('night') || false;
