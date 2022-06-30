@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     container: this,
                     theme: this.getAttribute("theme") || "var(--theme)",
                     loop: this.getAttribute("loop") || 'all',
-                    autoplay: !!this.getAttribute("autoplay"),
+                    autoplay: this.hasAttribute("autoplay") && this.getAttribute("autoplay") !== 'false',
                     lrcType: 3,
                 };
                 if (!("APlayer" in window)) {
@@ -336,17 +336,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.options = {
                     src: this.getAttribute("src"),
                     type: this.getAttribute("type"),
-                    autoplay: !!this.getAttribute("autoplay"),
-                    controls: !!this.getAttribute("controls"),
-                    loop: !!this.getAttribute("loop"),
-                    muted: !!this.getAttribute("muted"),
-                    preload: !!this.getAttribute("preload"),
-                    poster: this.getAttribute("poster"),
+                    autoplay: this.hasAttribute("autoplay") && this.getAttribute("autoplay") !== 'false',
+                    controls: this.getAttribute("controls") !== 'false',
+                    loop: this.hasAttribute("loop") && this.getAttribute("loop") !== 'false',
+                    muted: this.hasAttribute("muted") && this.getAttribute("muted") !== 'false',        // 静音播放
+                    preload: this.hasAttribute("preload") && this.getAttribute("preload") !== 'false',
+                    poster: this.getAttribute("poster"),        // 加载图片
                     width: /^\d{1,3}%$/.test(this.getAttribute("width"))
                         ? this.getAttribute("width")
                         : "100%",
                 };
-                this.innerHTML = `<video ${this.options.poster ? `poster="${this.options.poster}"` : ""}${this.options.autoplay?' autoplay':''}${this.options.controls?' controls':''}${this.options.loop?' loop':''}${this.options.muted?' muted':''}${this.options.preload?' preload':''}><source src="${this.options.src}" ${this.options.type ? `type="${this.options.type}"` : ""}>不支持视频播放器！</video>`;
+                this.innerHTML = `<video width="${this.options.width}" ${this.options.poster ? `poster="${this.options.poster}"` : ""}${this.options.autoplay?' autoplay':''}${this.options.controls?' controls':''}${this.options.loop?' loop':''}${this.options.muted?' muted':''}${this.options.preload?' preload':''}><source src="${this.options.src}" ${this.options.type ? `type="${this.options.type}"` : ""}>不支持视频播放器！</video>`;
                 this.drawComplete()
             }
         })
