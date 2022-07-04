@@ -138,6 +138,23 @@ basic:
 post:
   label: 文章设置
   items:
+    top_thumbnail_mode:
+      name: top_thumbnail_mode
+      label: 置顶文章列表缩略图模式
+      type: select
+      default: back
+      description: '置顶的文章在列表的缩略图模式，如果文章元数据配置了“thumbnail_mode”项，则当前配置将被覆盖。'
+      options:
+        - value: default
+          label: 默认模式
+        - value: back
+          label: 背景图模式
+        - value: small
+          label: 小图模式（左侧）
+        - value: small-right
+          label: 小图模式（右侧）
+        - value: small-alter
+          label: 小图模式（交替）
     thumbnail_mode:
       name: thumbnail_mode
       label: 文章列表缩略图模式
