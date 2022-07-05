@@ -4,7 +4,22 @@
         <div class="card widget">
             <#if thumbnail_mode == "back">
                 <div class="cover">
-                    <a class="cover-image" href="${post.fullPath!}" style="background-image: url(${post.thumbnail!})"></a>
+                    <a href="${post.fullPath!}">
+                        <div class="cover-image" style="background-image: url(${post.thumbnail!})">
+                        </div>
+                        <div class="details">
+                            <h2 class="title"><#if post.topPriority==1><span class="top">置顶</span></#if>${post.title!}</h2>
+                            <ul class="breadcrumb">
+                                <li><@global.timeline datetime=post.createTime/></li>
+                                <li><i class="fa fa-eye"></i>${post.visits?c}</li>
+                                <#if !post.disallowComment!false><li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li></#if>
+                                <li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li>
+                                <#assign heat= (24+post.visits*0.1+post.likes*2+post.commentCount*3) />
+                                <#assign heatColor= '#'+(heat < 37)?string('ffa87e',(heat < 120)?string('fb734a','e0081c')) />
+                                <li style="color: ${heatColor}">${heat}℃</li>
+                            </ul>
+                        </div>
+                    </a>
                     <#if post.categories?? && post.categories?size gt 0>
                         <div class="category">
                             <#list post.categories as category>
@@ -12,18 +27,6 @@
                             </#list>
                         </div>
                     </#if>
-                    <div class="details">
-                        <h2 class="title"><#if post.topPriority==1><span class="top">置顶</span></#if>${post.title!}</h2>
-                        <ul class="breadcrumb">
-                            <li><@global.timeline datetime=post.createTime/></li>
-                            <li><i class="fa fa-eye"></i>${post.visits?c}</li>
-                            <#if !post.disallowComment!false><li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li></#if>
-                            <li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li>
-                            <#assign heat= (24+post.visits*0.1+post.likes*2+post.commentCount*3) />
-                            <#assign heatColor= '#'+(heat < 37)?string('ffa87e',(heat < 120)?string('fb734a','e0081c')) />
-                            <li style="color: ${heatColor}">${heat}℃</li>
-                        </ul>
-                    </div>
                 </div>
             <#elseif thumbnail_mode == "small" || (thumbnail_mode == "small-alter" && post_index%2 == 0)>
                 <div class="card-small">
