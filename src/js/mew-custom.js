@@ -41,10 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         MewMusic.prototype.load = true;
                         MewMusic.prototype.await = [];
                         new Promise((resolve) => {
-                            const jsSrc = "https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"
                             const $head = $("head")
                             $head.append(`<link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">`)
-                            Utils.cachedScript(jsSrc)
+                            Utils.cachedScript('https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js')
                                 .done(() => resolve())
                                 .fail(() => resolve())
                         }).then(() => {
@@ -306,8 +305,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     href: this.getAttribute("href"),
                     name: this.getAttribute("name"),
                 };
-                const avatarElem = this.options.avatar ? `<div class="mew-quote-avatar"><a class="mew-quote-href" target="_blank" ${this.options.href ? `href="${this.options.href}"` : ""}><img class="quote-avatar-hexagon" src="${this.options.avatar}"/></a></div>`: "";
-                const nameElem = this.options.name ? `<a class="mew-quote-name" target="_blank" ${this.options.href ? `href="${this.options.href}"` : ""}>${this.options.name}</a>`: "";
+                const avatarElem = this.options.avatar ? `<div class="mew-quote-avatar"><a class="mew-quote-href" target="_blank" ${this.options.href ? `href="${this.options.href}"` : ""}><img class="quote-avatar-hexagon" src="${this.options.avatar}"/></a></div>` : "";
+                const nameElem = this.options.name ? `<a class="mew-quote-name" target="_blank" ${this.options.href ? `href="${this.options.href}"` : ""}>${this.options.name}</a>` : "";
                 this.innerHTML = `<div class="mew-quote"><div class="quote-container">${avatarElem}<div class="mew-quote-info"><p class="mew-quote-content">${this.innerHTML}</p>${nameElem}</div></div></div>`;
                 this.drawComplete()
             }
@@ -346,7 +345,39 @@ document.addEventListener("DOMContentLoaded", () => {
                         ? this.getAttribute("width")
                         : "100%",
                 };
-                this.innerHTML = `<video width="${this.options.width}" ${this.options.poster ? `poster="${this.options.poster}"` : ""}${this.options.autoplay?' autoplay':''}${this.options.controls?' controls':''}${this.options.loop?' loop':''}${this.options.muted?' muted':''}${this.options.preload?' preload':''}><source src="${this.options.src}" ${this.options.type ? `type="${this.options.type}"` : ""}>不支持视频播放器！</video>`;
+                this.innerHTML = `<video width="${this.options.width}" ${this.options.poster ? `poster="${this.options.poster}"` : ""}${this.options.autoplay ? ' autoplay' : ''}${this.options.controls ? ' controls' : ''}${this.options.loop ? ' loop' : ''}${this.options.muted ? ' muted' : ''}${this.options.preload ? ' preload' : ''}><source src="${this.options.src}" ${this.options.type ? `type="${this.options.type}"` : ""}>不支持视频播放器！</video>`;
+                this.drawComplete()
+            }
+        })
+
+    customElements.define(
+        "mew-photos",
+        class MewPhotos extends MewElement {
+            init() {
+                if (!($.fn.justifiedGallery)) {
+                    if (!MewPhotos.prototype.load) {
+                        MewPhotos.prototype.load = true;
+                        MewPhotos.prototype.await = [];
+                        new Promise((resolve) => {
+                            Utils.cachedScript('https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js')
+                                .done(() => resolve())
+                                .fail(() => resolve())
+                        }).then(() => {
+                            this.render();
+                            MewPhotos.prototype.await && MewPhotos.prototype.await.forEach(n => n());
+                        })
+                    } else {
+                        MewPhotos.prototype.await.push(() => this.render());
+                    }
+                } else {
+                    this.render();
+                }
+            }
+            render() {
+                $(this).find('img').each((i, elem) => {
+                    $(elem).wrap(`<div class="gallery-item" data-fancybox="gallery" ${elem.alt ? "data-caption=\"" + elem.alt + "\"" : ""} href="${elem.src}"></div>`);
+                })
+                $(this).justifiedGallery()
                 this.drawComplete()
             }
         })

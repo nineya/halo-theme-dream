@@ -713,6 +713,113 @@ mew-video {
   }
 }
 
+mew-photos {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  & > a,
+  & > div,
+  & > figure {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    /* background: #888888; To have gray placeholders while the gallery is loading with waitThumbnailsLoad = false */
+    filter: "alpha(opacity=10)";
+    opacity: 0.1;
+    margin: 0;
+    padding: 0;
+  }
+  & > a > img,
+  & > div > img,
+  & > figure > img,
+  & > a > a > img,
+  & > div > a > img,
+  & > figure > a > img,
+  & > a > svg,
+  & > div > svg,
+  & > figure > svg,
+  & > a > a > svg,
+  & > div > a > svg,
+  & > figure > a > svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    filter: "alpha(opacity=0)";
+    opacity: 0;
+  }
+  & > a > .jg-caption,
+  & > div > .jg-caption,
+  & > figure > .jg-caption {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    padding: 5px;
+    background-color: #000000;
+    left: 0;
+    right: 0;
+    margin: 0;
+    color: white;
+    font-size: 12px;
+    font-weight: 300;
+    font-family: sans-serif;
+  }
+  & > a > .jg-caption.jg-caption-visible,
+  & > div > .jg-caption.jg-caption-visible,
+  & > figure > .jg-caption.jg-caption-visible {
+    display: initial;
+    filter: "alpha(opacity=70)";
+    opacity: 0.7;
+    -webkit-transition: opacity 500ms ease-in;
+    -moz-transition: opacity 500ms ease-in;
+    -o-transition: opacity 500ms ease-in;
+    transition: opacity 500ms ease-in;
+  }
+  & > .jg-entry-visible {
+    filter: "alpha(opacity=100)";
+    opacity: 1;
+    background: none;
+  }
+  & > .jg-entry-visible > img,
+  & > .jg-entry-visible > a > img,
+  & > .jg-entry-visible > svg,
+  & > .jg-entry-visible > a > svg {
+    filter: "alpha(opacity=100)";
+    opacity: 1;
+    -webkit-transition: opacity 500ms ease-in;
+    -moz-transition: opacity 500ms ease-in;
+    -o-transition: opacity 500ms ease-in;
+    transition: opacity 500ms ease-in;
+  }
+  & > .jg-filtered {
+    display: none;
+  }
+  & > .jg-spinner {
+    position: absolute;
+    bottom: 0;
+    margin-left: -24px;
+    padding: 10px 0 10px 0;
+    left: 50%;
+    filter: "alpha(opacity=100)";
+    opacity: 1;
+    overflow: initial;
+  }
+  & > .jg-spinner > span {
+    display: inline-block;
+    filter: "alpha(opacity=0)";
+    opacity: 0;
+    width: 8px;
+    height: 8px;
+    margin: 0 4px 0 4px;
+    background-color: #000;
+    border-radius: 6px;
+  }
+}
+
 mew-btn, mew-timeline, mew-quote, mew-link {
   &:not([draw]) {
     display: none;
