@@ -1285,7 +1285,7 @@ enhance:
       label: "启用Service Worker优化"
       type: radio
       data-type: text
-      default: "&"
+      default: "false"
       description: '需要在nginx中添加代理配置方可启用，配置方法见 <a href="https://blog.nineya.com/archives/104.html" target="_blank">Dream 2.0.5起移除FreeCDN，以及SW配置方法</a>'
       options:
         - value: "false"
@@ -1324,6 +1324,18 @@ enhance:
           label: 黑夜
         - value: all
           label: 全模式
+    enable_gray_mode:
+      name: enable_gray_mode
+      label: 灰色模式
+      type: switch
+      data-type: bool
+      default: false
+      description: '向英雄致敬，愿精神长存！'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     enable_baidu_push:
       name: enable_baidu_push
       label: 启用百度URL自动推送

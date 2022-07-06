@@ -1,4 +1,10 @@
 <style>
+    <#if settings.enable_gray_mode!false>
+    html, body {
+        filter: grayscale(1) !important;
+    }
+
+    </#if>
     <#if settings.theme_color?? && settings.theme_color!=''>
     html {
         --theme: ${settings.theme_color};
