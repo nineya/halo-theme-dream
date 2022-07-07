@@ -390,8 +390,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "mew-raw",
         class MewRaw extends MewElement {
             init() {
+                let html = this.innerHTML
+                this.innerHTML = ''
                 const shadowRoot = this.attachShadow({ mode: "closed" });
-                shadowRoot.innerHTML = this.innerHTML;
+                shadowRoot.innerHTML = html;
                 this.drawComplete()
             }
         }
