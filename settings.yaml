@@ -1407,10 +1407,10 @@ custom:
       type: textarea
       placeholder: JS代码内容
       description: "填入JS代码，无需script标签，将插入body标签尾部。"
-    links_footer:
-      name: links_footer
-      label: 博客底部链接
-      type: textarea
-      default: '<a class="button is-transparent is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
-                    <i class="fa fa-creative-commons"></i>
-                </a>'
+#    links_footer:
+#      name: links_footer
+#      label: 博客底部链接
+#      type: textarea
+#      default: '<a class="button is-transparent is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+#                    <i class="fa fa-creative-commons"></i>
+#                </a>'
