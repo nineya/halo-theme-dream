@@ -385,4 +385,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.drawComplete()
             }
         })
+
+    customElements.define(
+        "mew-raw",
+        class MewRaw extends MewElement {
+            init() {
+                const shadowRoot = this.attachShadow({ mode: "closed" });
+                shadowRoot.innerHTML = this.innerHTML;
+                this.drawComplete()
+            }
+        }
+    );
 });
