@@ -48,6 +48,12 @@
     <#if settings.code_fold_line?? && settings.code_fold_line?number gte 20>
     DreamConfig["code_fold_line"] =${settings.code_fold_line};
     </#if>
+    <#if settings.document_hidden_title?? && settings.document_hidden_title!=''>
+    DreamConfig["document_hidden_title"] = '${settings.document_hidden_title}';
+    </#if>
+    <#if settings.document_visible_title?? && settings.document_visible_title!=''>
+    DreamConfig["document_visible_title"] = '${settings.document_visible_title}';
+    </#if>
     <#if settings.enable_color_character!false>
     DreamConfig["spark_input_content"] = ['${user.description?trim?replace('\n', '')}'<#if settings.color_character?? && settings.color_character?trim!=''>, '${settings.color_character?trim?replace('\n', "','")}'</#if>];
     </#if>

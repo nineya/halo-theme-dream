@@ -6,6 +6,16 @@ basic:
       label: 网站副标题
       type: text
       placeholder: '网站副标题'
+    document_hidden_title:
+      name: document_hidden_title
+      label: 离屏文案（离开）
+      type: text
+      placeholder: '浏览器切换到其它标签或后台时页面标题展示的文字'
+    document_visible_title:
+      name: document_visible_title
+      label: 离屏文案（回来）
+      type: text
+      placeholder: '浏览器返回到当前标签时页面标题展示的文字'
     night_logo:
       name: night_logo
       label: 黑夜模式的logo(放空默认为网站logo)

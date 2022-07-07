@@ -221,6 +221,12 @@ const commonContext = {
             }
         });
     },
+    /* 激活全局返回顶部功能 */
+    back2Top() {
+        $('#back-to-top').on('click', function () {
+            $('body, html').animate({scrollTop: 0}, 400);
+        });
+    },
     /* 小屏幕搜索框 */
     searchMobile() {
         $(".navbar-searchicon").on("click", function (e) {
@@ -287,12 +293,6 @@ const commonContext = {
             $this.toggleClass("in").siblings(".panel-body").stop().toggle("fast");
         });
     },
-    /* 激活全局返回顶部功能 */
-    back2Top() {
-        $('#back-to-top').on('click', function () {
-            $('body, html').animate({scrollTop: 0}, 400);
-        });
-    },
     /* 初始化事件 */
     initEvent() {
         $("body").on("click", ".click-close", function (e) {
@@ -302,6 +302,23 @@ const commonContext = {
                 $(this).closest(closeSelect).remove();
             } else {
                 $(this).closest().remove();
+            }
+        });
+    },
+    /* 离屏提示 */
+    offscreenTip() {
+        if (Utils.isMobile() || (!DreamConfig.document_hidden_title && !DreamConfig.document_visible_title)) return;
+        const originTitle = document.title;
+        let timer = null;
+        document.addEventListener("visibilitychange", function () {
+            if (document.hidden) {
+                DreamConfig.document_hidden_title && (document.title = DreamConfig.document_hidden_title)
+                clearTimeout(timer);
+            } else {
+                document.title = DreamConfig.document_visible_title || originTitle;
+                DreamConfig.document_visible_title && (timer = setTimeout(function () {
+                    document.title = originTitle;
+                }, 2000));
             }
         });
     },
