@@ -45,6 +45,7 @@
     // 主题配置
     const DreamConfig = {};
     DreamConfig["theme_base"] = '${theme_base!}';
+    DreamConfig["access_key"] = '${settings.access_key!'dream'}';
     <#if settings.code_fold_line?? && settings.code_fold_line?number gte 20>
     DreamConfig["code_fold_line"] =${settings.code_fold_line};
     </#if>

@@ -1,6 +1,13 @@
 basic:
   label: 基础设置
   items:
+    access_key:
+      name: access_key
+      label: AccessKey <必填>
+      type: text
+      default: dream
+      placeholder: '博客API设置中的Access Key'
+      description: 'Access Key 用于主题中 Content API 校验，填写有误将导致接口报错，需在博客高级设置中开启 API 服务，并使此处的 Access Key 与 API 设置中的保持一致。'
     small_title:
       name: small_title
       label: 网站副标题
