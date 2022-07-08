@@ -98,12 +98,13 @@ const commonContext = {
         const {href, pathname} = location;
 
         if (pathname && pathname !== "/") {
-            $nav_menus.each((index, item) => {
-                const cur_href = item.getAttribute("href");
+            for (let i = 0; i < $nav_menus.length; i++) {
+                const cur_href = $nav_menus[i].getAttribute("href");
                 if (pathname.includes(cur_href) || href.includes(cur_href)) {
-                    activeIndex = index;
+                    activeIndex = i;
+                    if (pathname === cur_href || href === cur_href) break;
                 }
-            });
+            }
         }
 
         // 高亮PC端
