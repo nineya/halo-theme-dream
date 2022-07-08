@@ -315,15 +315,34 @@ document.addEventListener("DOMContentLoaded", () => {
     customElements.define(
         "mew-link",
         class MewLink extends MewElement {
-            init() {
+            async init() {
                 this.options = {
                     img: this.getAttribute("img"),
                     href: this.getAttribute("href") || '',
-                    title: this.getAttribute("title") || '我分享了一个网站'
+                    title: this.getAttribute("title"),
+                    slug: this.getAttribute("slug"),
+                    id: this.getAttribute("id"),
+                    type: this.getAttribute("type") || 'post',
+                    desc: this.innerHTML
                 };
+                if (this.options.id || this.options.slug) {
+                    await Utils.request({
+                        url: this.options.id? `/api/content/${this.options.type}s/${this.options.id}` : `/api/content/${this.options.type}s/slug?slug=${this.options.slug}`,
+                        method: "GET",
+                    })
+                        .then(res=>{
+                            this.options.img = this.options.img || res.thumbnail
+                            this.options.href = this.options.title || res.fullPath
+                            this.options.title = this.options.title || res.title
+                            this.options.desc = this.options.desc || res.summary
+                        })
+                        .catch(error => {
+                            this.options.desc = `Error: ${error}`
+                        })
+                }
                 const imageElem = this.options.img ? `<span class="mew-link-image"><img class="link-image" src="${this.options.img}"/></span>` : '';
-                const descElem = this.innerHTML ? `<span class="info-desc">${this.innerHTML}</span>` : `<span class="mew-link-href info-desc">${this.options.href}</span>`
-                this.innerHTML = `<a class="mew-link" target="_blank" href="${this.options.href}"><span class="mew-link-info"><p class="info-title">${this.options.title}</p>${descElem}</span>${imageElem}</a>`;
+                const descElem = this.options.desc ? `<span class="info-desc">${this.options.desc}</span>` : `<span class="mew-link-href info-desc">${this.options.href}</span>`
+                this.innerHTML = `<a class="mew-link" target="_blank" href="${this.options.href}"><span class="mew-link-info"><p class="info-title">${this.options.title || '我分享了一个网站'}</p>${descElem}</span>${imageElem}</a>`;
                 this.drawComplete()
             }
         })
