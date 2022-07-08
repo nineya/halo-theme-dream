@@ -1,6 +1,6 @@
 <style>
     <#if settings.enable_gray_mode!false>
-    html, body {
+    html {
         filter: grayscale(1) !important;
     }
 
