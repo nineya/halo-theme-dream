@@ -177,6 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     ali: "阿里云盘",
                     github: "Github仓库",
                     gitee: "Gitee仓库",
+                    lz: "蓝奏云网盘",
                 };
                 this.innerHTML = `
 					<div class="mew-cloud-logo type-${type[this.options.type] ? this.options.type : "default"}"></div>
