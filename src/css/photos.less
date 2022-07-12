@@ -1,6 +1,66 @@
 @charset "utf-8";
 /* CSS Document */
 .photos {
+  padding-top: 60px !important;
+
+  &-title {
+    position: absolute;
+    top: 15px;
+    left: -10px;
+    background: var(--theme);
+    color: #fff;
+    padding: 0 12px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 2px 2px 2px 0;
+    box-shadow: 2px 5px 10px rgb(49 58 70 / 15%);
+    user-select: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: -10px;
+      border-style: solid;
+      border-width: 10px;
+      border-color: var(--theme) transparent transparent;
+      transform: rotate(90deg);
+    }
+  }
+
+  &-teams {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    border-top: 1px solid var(--light-b);
+    padding-top: 15px;
+
+    .item {
+      user-select: none;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      background: var(--bg-b);
+      height: 28px;
+      line-height: 28px;
+      border-radius: 14px;
+      cursor: pointer;
+      color: var(--main);
+      font-size: 12px;
+      padding: 0 15px;
+      text-align: center;
+      transition: color 0.35s, background 0.35s, box-shadow 0.35s, transform 0.35s;
+
+      &.active {
+        transform: translateY(-2px);
+        color: #fff;
+        background: var(--theme);
+        box-shadow: 0 5px 5px rgb(0 0 0 / 10%);
+      }
+    }
+  }
 
   h3 {
     margin-top: 0;

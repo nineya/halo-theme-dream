@@ -1,13 +1,13 @@
 <#include "template/layout.ftl">
 <@layout title="相册 - ${blog_title!}" canonical="${photos_url!}">
     <#if (photos.content)?? && photos.content?size gt 0>
-        <div class="card card-content">
-            <div>相册</div>
-            <ul>
-                <li class="active">全部</li>
+        <div class="card card-content photos">
+            <div class="photos-title">我的相册</div>
+            <ul class="photos-teams">
+                <li class="item active">全部</li>
                 <@photoTag method="listTeams">
                     <#list teams as item>
-                        <li data-filter="${item.team?trim}">${((item.team)?length>0)?then(item.team?trim,'默认')}</li>
+                        <li class="item">${((item.team)?length>0)?then(item.team?trim,'默认')}</li>
                     </#list>
                 </@photoTag>
             </ul>
