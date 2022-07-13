@@ -71,7 +71,12 @@ const commonContext = {
     },
     /* 初始化主题模式（仅用户模式） */
     initMode() {
-        let isNight = localStorage.getItem('night') || false;
+        let isNight;
+        if(DreamConfig.night_mode_follow){//如果管理员在后台设置中开启了暗亮跟随，则在网页打开时预先读取当前系统的暗亮设置
+            isNight = matchMedia('(prefers-color-scheme: dark)').matches;
+        }else{//如果管理员在后台设置中关闭了暗亮跟随，则在网页打开时预先读取用户上次的暗亮设置
+            isNight = localStorage.getItem('night') || false;
+        }
         const applyNight = (value) => {
             if (value.toString() === 'true') {
                 document.documentElement.classList.add('night');

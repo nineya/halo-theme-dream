@@ -98,9 +98,35 @@
     DreamConfig["live2d_waifu_size"] = '${settings.live2d_waifu_size!'280x260'}';
     </#if>
 
-    // 配置主题模式
-    let isNight = localStorage.getItem('night') || false;
-    if (isNight.toString() === 'true') {
+    // 黑暗模式跟随系统相关设置
+    <#if settings.night_mode_follow==true>
+        DreamConfig["night_mode_follow"] = true;
+    </#if>
+    <#if settings.night_mode_follow==false>
+        DreamConfig["night_mode_follow"] = false;
+    </#if>
+    // 定义黑暗模式切换监听器
+    function darkmodeListener (mediaQueryListEvent) {
+    if (mediaQueryListEvent.matches) {
+        // 用户切换到了暗色(dark)主题
+        console.log('切换主题：', mediaQueryListDark.matches ? 'dark' : 'light');
         document.documentElement.classList.add('night');
+    } else {
+        // 用户切换到了亮色(light)主题
+        console.log('切换主题：', mediaQueryListDark.matches ? 'dark' : 'light');
+        document.documentElement.classList.remove('night');
+    }
+    }
+    const mediaQueryListDark = window.matchMedia('(prefers-color-scheme: dark)');
+    console.log('当前主题为：', mediaQueryListDark.matches ? 'dark' : 'light');
+    // 如果设置了黑暗模式跟随，则添加主题变动监控事件监听
+    if (DreamConfig.night_mode_follow) {
+        mediaQueryListDark.addListener(darkmodeListener);
+    } else {
+        // 否则将执行原主题配置模式
+        let isNight = localStorage.getItem('night') || false;
+        if (isNight.toString() === 'true') {
+            document.documentElement.classList.add('night');
+        }
     }
 </script>

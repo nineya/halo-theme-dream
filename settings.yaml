@@ -72,6 +72,18 @@ basic:
       label: 黑夜移动端背景图
       type: attachment
       placeholder: '图片url链接'
+    night_mode_follow:
+      name: night_mode_follow
+      label: 暗亮主题跟随系统设置
+      type: switch
+      data-type: bool
+      default: true
+      description: '博客暗亮主题是否跟随用户系统设置。'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     theme_color:
       name: theme_color
       label: 主题色
