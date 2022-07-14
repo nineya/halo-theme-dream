@@ -20,6 +20,20 @@ const photoContext = {
                 }</p></div></div>`;
             }, '');
             $photosGallery.append(photosHtml);
+
+            $photosGallery
+                .justifiedGallery({
+                    rowHeight: 200,
+                    maxRowHeight: false,
+                    maxRowsCount: 0,
+                    sizeRangeSuffixes: {},
+                    lastRow: "nojustify",
+                    captions: false,
+                    waitThumbnailsLoad: true, //等待图片加载完，这样就可以根据图片比例展示，如果为false，则都是统一比例
+                    margins: 10,
+                    extension: /\.(jpe?g|png|gif|bmp|webp)$/,
+                    cssAnimation: false,
+                })
         }
 
         /* 获取相册数据 */

@@ -7,7 +7,7 @@
                 <li class="item active">全部</li>
                 <@photoTag method="listTeams">
                     <#list teams as item>
-                        <li class="item" data-team="${item.team}">${((item.team)?length>0)?then(item.team?trim,'默认')}</li>
+                        <li class="item" data-team="${item.team}">${((item.team)?length>0)?then(item.team?trim,'默认图库')}</li>
                     </#list>
                 </@photoTag>
             </ul>
@@ -16,7 +16,7 @@
 
         </div>
 
-        <div class="main-content photos">
+        <!-- <div class="main-content photos">
             <@photoTag method="listTeams">
                 <#list teams as item>
                     <div class="card">
@@ -56,7 +56,7 @@
                     <div style="clear:both"></div>
                 </#list>
             </@photoTag>
-        </div>
+        </div> -->
     <#else>
         <div class="card card-empty">
             <i class="fa fa-inbox"></i>

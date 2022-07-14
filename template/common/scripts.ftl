@@ -15,6 +15,7 @@
 </#if>
 
 <#if is_photos??>
+    <script data-pjax src="${theme_base!}/source/lib/justifiedGallery@3.8.1/jquery.justifiedGallery.min.js"></script>
     <script data-pjax src="${theme_base!}/source/js/photos.min.js?mew=${theme_version!}"></script>
 </#if>
 
