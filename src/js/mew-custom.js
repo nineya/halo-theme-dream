@@ -399,7 +399,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     margins: this.getAttribute("margins") || '4'
                 };
                 $(this).find('img').each((i, elem) => {
-                    $(elem).wrap(`<div class="gallery-item" data-fancybox="gallery" ${elem.alt ? "data-caption=\"" + elem.alt + "\"" : ""} href="${elem.src}"></div>`);
+                    $(elem).wrap(`<div data-fancybox="gallery" ${elem.alt ? "data-caption=\"" + elem.alt + "\"" : ""} href="${elem.src}"></div>`);
                 })
                 $(this).justifiedGallery({captions: this.options.captions, margins: this.options.margins})
                 this.drawComplete()
