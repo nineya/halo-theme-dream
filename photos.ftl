@@ -7,11 +7,15 @@
                 <li class="item active">全部</li>
                 <@photoTag method="listTeams">
                     <#list teams as item>
-                        <li class="item">${((item.team)?length>0)?then(item.team?trim,'默认')}</li>
+                        <li class="item" data-team="${item.team}">${((item.team)?length>0)?then(item.team?trim,'默认')}</li>
                     </#list>
                 </@photoTag>
             </ul>
         </div>
+        <div class="photos-gallery">
+
+        </div>
+
         <div class="main-content photos">
             <@photoTag method="listTeams">
                 <#list teams as item>

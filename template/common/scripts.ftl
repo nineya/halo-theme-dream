@@ -4,21 +4,26 @@
 <script src="${theme_base!}/source/js/utils.min.js?mew=${theme_version!}"></script>
 <script src="${theme_base!}/source/js/common.min.js?mew=${theme_version!}"></script>
 
-
 <#if post?? || is_journals?? || is_error??>
     <script data-pjax src="${theme_base!}/source/lib/highlightjs@11.5.1/highlight.min.js"></script>
     <script data-pjax src="${theme_base!}/source/lib/clipboard@2.0.10/clipboard.min.js"></script>
-    <script data-pjax src="${theme_base!}/source/js/post.min.js?mew=${theme_version!}"></script>
+    <#if post??>
+        <script data-pjax src="${theme_base!}/source/js/post.min.js?mew=${theme_version!}"></script>
+    <#elseif is_journals??>
+        <script data-pjax src="${theme_base!}/source/js/journals.min.js?mew=${theme_version!}"></script>
+    </#if>
 </#if>
 
-<#if is_journals??>
-    <script data-pjax src="${theme_base!}/source/js/journals.min.js?mew=${theme_version!}"></script>
+<#if is_photos??>
+    <script data-pjax src="${theme_base!}/source/js/photos.min.js?mew=${theme_version!}"></script>
 </#if>
+
 <script src="${theme_base!}/source/js/mew-custom.min.js?mew=${theme_version!}"></script>
 <#if (post?? && !post.disallowComment!false) || is_journals?? || (is_links?? && settings.link_comment_id?? && settings.link_comment_id!='')>
     <script data-pjax defer src="${theme_base!}/source/lib/vue@2.6.10/vue.min.js"></script>
-    <script data-pjax defer src="${(settings.enable_theme_comment!true)?then(theme_base + '/source/lib/halo-comment@1.0.5/halo-comment.min.js',
-    options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js')}"></script>
+    <script data-pjax defer
+            src="${(settings.enable_theme_comment!true)?then(theme_base + '/source/lib/halo-comment@1.0.5/halo-comment.min.js',
+            options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js')}"></script>
 </#if>
 
 <script src="${theme_base!}/source/lib/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
