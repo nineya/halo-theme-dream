@@ -4,6 +4,11 @@ const photoContext = {
         const $photosGallery = $('.photos-gallery')
         let isLoading = false;
         let isEnd = false;
+        const queryParams = {
+            page: 0,
+            size: 15,
+            sort: "createTime,desc",
+        };
 
 
         const renderPhotos = (data) => {
@@ -40,9 +45,11 @@ const photoContext = {
         const getData = (param) => {
             isLoading = true;
             $photosGallery.addClass('loading');
+            const params = { ...queryParams, ...(param || {}) };
             return Utils.request({
                 url: "/api/content/photos",
                 method: "GET",
+                data: params,
             })
                 .then((res) => {
                     const photoContents = res.content || [];
@@ -69,11 +76,10 @@ const photoContext = {
             function () {
                 if (
                     $(window).scrollTop() + $(window).height() >=
-                    $(".page-photos").height()
+                    $photosGallery.height()
                 ) {
                     if (isLoading || isEnd) return;
-                    // console.log("需要加载了");
-                    queryData.page++;
+                    queryParams.page++;
                     getData({
                         team: $(".photos-teams li.active").attr("data-team"),
                         size: 10
@@ -82,13 +88,22 @@ const photoContext = {
             }
         );
 
+        // 重置列表
+        const reset = (param) => {
+            $photosGallery.empty();
+            isEnd = false;
+            isLoading = false;
+            queryParams.page = 0;
+            getData(param);
+        };
+
         // 分组过滤
-        $(".joe_photos__filter li").on("click", function (e) {
+        $(".photos-teams .item").on("click", function (e) {
             e.stopPropagation();
             const $this = $(this);
             if ($this.hasClass("active")) return;
             $this.addClass("active").siblings("li").removeClass("active");
-            reset({team: $this.attr("data-filter")});
+            reset({team: $this.attr("data-team")});
         });
     },
 }
