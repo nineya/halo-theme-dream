@@ -41,15 +41,23 @@ const photoContext = {
                 })
         }
 
+        let dataPromise;
+
         /* 获取相册数据 */
         const getData = (param) => {
             isLoading = true;
             $photosGallery.addClass('loading');
             const params = { ...queryParams, ...(param || {}) };
-            return Utils.request({
-                url: "/api/content/photos",
-                method: "GET",
-                data: params,
+            let abort;
+            dataPromise = new Promise((resolve, reject) => {
+                abort = reject
+                Utils.request({
+                    url: "/api/content/photos",
+                    method: "GET",
+                    data: params,
+                })
+                    .then((res) => resolve(res))
+                    .catch((err) => reject(err));
             })
                 .then((res) => {
                     const photoContents = res.content || [];
@@ -60,12 +68,14 @@ const photoContext = {
                         isEnd = true;
                     }
                 })
-                .catch((err) => {
-                })
+                .catch((err) => console.log(err))
                 .finally(() => {
+                    console.log(`finally`)
                     $photosGallery.removeClass('loading');
+                    dataPromise = undefined
                     isLoading = false;
                 });
+            dataPromise.abort = abort
         };
 
         getData()
@@ -89,7 +99,11 @@ const photoContext = {
         );
 
         // 重置列表
-        const reset = (param) => {
+        const reset = async (param) => {
+            if (dataPromise) {
+                dataPromise.abort && dataPromise.abort('abort')
+                await dataPromise
+            }
             $photosGallery.empty();
             isEnd = false;
             isLoading = false;
