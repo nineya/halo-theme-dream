@@ -4,6 +4,11 @@ const photoContext = {
         const $photosGallery = $('.photos-gallery')
         let isLoading = false;
         let isEnd = false;
+        const queryParams = {
+            page: 0,
+            size: 15,
+            sort: "createTime,desc",
+        };
 
 
         const renderPhotos = (data) => {
@@ -36,13 +41,23 @@ const photoContext = {
                 })
         }
 
+        let dataPromise;
+
         /* 获取相册数据 */
         const getData = (param) => {
             isLoading = true;
             $photosGallery.addClass('loading');
-            return Utils.request({
-                url: "/api/content/photos",
-                method: "GET",
+            const params = { ...queryParams, ...(param || {}) };
+            let abort;
+            dataPromise = new Promise((resolve, reject) => {
+                abort = reject
+                Utils.request({
+                    url: "/api/content/photos",
+                    method: "GET",
+                    data: params,
+                })
+                    .then((res) => resolve(res))
+                    .catch((err) => reject(err));
             })
                 .then((res) => {
                     const photoContents = res.content || [];
@@ -53,12 +68,14 @@ const photoContext = {
                         isEnd = true;
                     }
                 })
-                .catch((err) => {
-                })
+                .catch((err) => console.log(err))
                 .finally(() => {
+                    console.log(`finally`)
                     $photosGallery.removeClass('loading');
+                    dataPromise = undefined
                     isLoading = false;
                 });
+            dataPromise.abort = abort
         };
 
         getData()
@@ -69,11 +86,10 @@ const photoContext = {
             function () {
                 if (
                     $(window).scrollTop() + $(window).height() >=
-                    $(".page-photos").height()
+                    $photosGallery.height()
                 ) {
                     if (isLoading || isEnd) return;
-                    // console.log("需要加载了");
-                    queryData.page++;
+                    queryParams.page++;
                     getData({
                         team: $(".photos-teams li.active").attr("data-team"),
                         size: 10
@@ -82,13 +98,26 @@ const photoContext = {
             }
         );
 
+        // 重置列表
+        const reset = async (param) => {
+            if (dataPromise) {
+                dataPromise.abort && dataPromise.abort('abort')
+                await dataPromise
+            }
+            $photosGallery.empty();
+            isEnd = false;
+            isLoading = false;
+            queryParams.page = 0;
+            getData(param);
+        };
+
         // 分组过滤
-        $(".joe_photos__filter li").on("click", function (e) {
+        $(".photos-teams .item").on("click", function (e) {
             e.stopPropagation();
             const $this = $(this);
             if ($this.hasClass("active")) return;
             $this.addClass("active").siblings("li").removeClass("active");
-            reset({team: $this.attr("data-filter")});
+            reset({team: $this.attr("data-team")});
         });
     },
 }
