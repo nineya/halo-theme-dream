@@ -60,7 +60,7 @@ const commonContext = {
     /* 激活图片预览功能 */
     initGallery() {
         // 用链接和标题包装图像
-        $('.main-content img:not(".not-gallery")').each(function () {
+        $('.main-content img:not(.not-gallery)').each(function () {
             if ($(this).parents('[data-fancybox],mew-photos').length === 0) {
                 $(this).wrap($(`<span class="gallery-item" data-fancybox="gallery" ${this.alt ? "data-caption=\"" + this.alt + "\"" : ""} href="${$(this).attr('src')}"></span>`));
                 if (this.alt) {
