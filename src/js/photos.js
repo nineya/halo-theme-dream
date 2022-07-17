@@ -15,7 +15,7 @@ const photoContext = {
             const photosHtml = data.reduce((result, item, index) => {
                 return `${result}<div href="${item.url}" data-fancybox="gallery" data-caption="${item.description || item.name || ""
                 }"><img width="100%" height="100%" src="${item.thumbnail}" alt="${item.name || ""
-                }"/><span class="team">${item.team}</span><p class="tit">${item.name
+                }"/><p class="gallery-title">${item.name
                 }</p><div class="info"><p class="animated fadeInRightBig"><i class="joe-font joe-icon-paizhao"></i><span>${item.name
                 }</span></p>${
                     item.location
