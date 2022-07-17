@@ -81,7 +81,7 @@
 
       & > img {
         position: absolute;
-        transition: opacity 500ms ease-in;
+        transition: transform 1s ease;
         top: 50%;
         left: 50%;
         margin: 0;
@@ -109,6 +109,51 @@
           opacity: 0.7;
         }
       }
+
+      &::after {
+        content: '';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        backdrop-filter: blur(1px);
+        background: rgba(0, 0, 0, .5);
+        transition: opacity 0.35s;
+      }
+
+      .info {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        color: #fff;
+        padding: 20px;
+        z-index: 1;
+        transform: translateY(100%);
+        transition: transform 0.5s ease-in;
+
+        & > p:not(:first-child) {
+          margin-top: 5px;
+        }
+      }
+
+      &:hover {
+
+        &::after {
+          opacity: 1;
+        }
+
+        img {
+          transform: scale(1.2);
+        }
+
+        .info {
+          transform: translateY(0);
+        }
+      }
     }
 
     & > .jg-entry-visible {
@@ -126,7 +171,7 @@
       width: 100%;
       padding: 6px 10px;
       position: absolute;
-      background: linear-gradient(0deg,#151515,transparent 80%);
+      background: linear-gradient(0deg, #151515, transparent 80%);
       color: #fff;
       overflow: hidden;
       white-space: nowrap;

@@ -16,13 +16,10 @@ const photoContext = {
                 return `${result}<div href="${item.url}" data-fancybox="gallery" data-caption="${item.description || item.name || ""
                 }"><img width="100%" height="100%" src="${item.thumbnail}" alt="${item.name || ""
                 }"/><p class="gallery-title">${item.name
-                }</p><div class="info"><p class="animated fadeInRightBig"><i class="joe-font joe-icon-paizhao"></i><span>${item.name
-                }</span></p>${
-                    item.location
-                        ? `<p class="animated fadeInRightBig"><i class="joe-font joe-icon-dingwei"></i><span>${item.location}</span></p>`
-                        : ""
-                }<p class="animated fadeInRightBig"><i class="joe-font joe-icon-shijian"></i>${Utils.formatDate(item.takeTime)
-                }</p></div></div>`;
+                }</p><div class="info"><p><i class="fa fa-picture-o"></i><span>${item.name}</span></p>${
+                    item.location ? `<p><i class="fa fa-map-marker"></i><span>${item.location}</span></p>` : ''
+                }<p><i class="fa fa-clock-o"></i>${Utils.formatDate(item.takeTime)
+                }</p>${item.description ? `<p>${item.description}</p>` : ''}</div></div>`;
             }, '');
             $photosGallery.append(photosHtml);
 
@@ -47,7 +44,7 @@ const photoContext = {
         const getData = (param) => {
             isLoading = true;
             $photosGallery.addClass('loading');
-            const params = { ...queryParams, ...(param || {}) };
+            const params = {...queryParams, ...(param || {})};
             let abort;
             dataPromise = new Promise((resolve, reject) => {
                 abort = reject
