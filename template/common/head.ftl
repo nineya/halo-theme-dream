@@ -30,8 +30,6 @@
 
 <#if is_tags??>
     <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/tags.min.css?mew=${theme_version!}"/>
-<#elseif is_photos??>
-    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/photos.min.css?mew=${theme_version!}">
 </#if>
 
 <#if post?? || is_journals?? || is_error??>

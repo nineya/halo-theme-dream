@@ -28,6 +28,7 @@ const journalContext = {
     },
 }
 window.journalPjax = function (serialNumber) {
+    if ($('.card.journal').length === 0) return
     Object.keys(journalContext).forEach(
         (c) => window.pjaxSerialNumber === serialNumber && journalContext[c]()
     );

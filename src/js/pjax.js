@@ -157,6 +157,8 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
     window.journalPjax && window.journalPjax(serialNumber);
     /* 初始化文章界面 */
     window.postPjax && window.postPjax(serialNumber);
+    /* 初始化相册界面 */
+    window.photoPjax && window.photoPjax(serialNumber);
     /* 加载主动推送或统计脚本 */
     commonContext.loadMaintain();
     window.DProgress && DProgress.done()

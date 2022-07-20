@@ -3312,3 +3312,194 @@ table td, table th {
     width: 48%
   }
 }
+
+/* 相册界面 */
+.photos {
+  padding-top: 60px !important;
+
+  &-title {
+    position: absolute;
+    top: 15px;
+    left: -10px;
+    background: var(--theme);
+    color: #fff;
+    padding: 0 12px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 2px 2px 2px 0;
+    box-shadow: 2px 5px 10px rgb(49 58 70 / 15%);
+    user-select: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: -10px;
+      border-style: solid;
+      border-width: 10px;
+      border-color: var(--theme) transparent transparent;
+      transform: rotate(90deg);
+    }
+  }
+
+  &-teams {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    border-top: 1px solid var(--light-b);
+    padding-top: 15px;
+
+    .item {
+      user-select: none;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      background: var(--bg-b);
+      height: 28px;
+      line-height: 28px;
+      border-radius: 14px;
+      cursor: pointer;
+      color: var(--main);
+      font-size: 12px;
+      padding: 0 15px;
+      text-align: center;
+      transition: color 0.35s, background 0.35s, box-shadow 0.35s, transform 0.35s;
+
+      &.active {
+        transform: translateY(-2px);
+        color: #fff;
+        background: var(--theme);
+        box-shadow: 0 5px 5px rgb(0 0 0 / 5%);
+      }
+    }
+  }
+
+  &-gallery {
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-top: 12px;
+
+    & > div {
+      position: absolute;
+      display: inline-block;
+      overflow: hidden;
+      opacity: 0.1;
+      margin: 0;
+      padding: 0;
+      border-radius: 8px;
+      cursor: pointer;
+
+      & > img {
+        position: absolute;
+        transition: transform 1s ease;
+        top: 50%;
+        left: 50%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        opacity: 0;
+      }
+
+      & > .jg-caption {
+        opacity: 0;
+        position: absolute;
+        bottom: 0;
+        padding: 5px;
+        background-color: #000000;
+        left: 0;
+        right: 0;
+        margin: 0;
+        color: white;
+        font-size: 0.85em;
+        font-weight: 300;
+        font-family: sans-serif;
+        transition: opacity 300ms ease-in;
+
+        &.jg-caption-visible {
+          opacity: 0.7;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        backdrop-filter: blur(1px);
+        background: rgba(0, 0, 0, .5);
+        transition: opacity 0.35s;
+      }
+
+      .info {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        color: #fff;
+        padding: 20px;
+        z-index: 1;
+        transform: translateY(100%);
+        transition: transform 0.35s ease-in;
+
+        svg {
+          width: 1.3em;
+          height: 1.3em;
+          fill: #fff;
+          vertical-align: text-bottom;
+          stroke-width: 40;
+          stroke: #fff;
+          margin-right: 6px;
+        }
+
+        & > p:not(:first-child) {
+          margin-top: 5px;
+        }
+      }
+
+      &:hover {
+
+        &::after {
+          opacity: 1;
+        }
+
+        img {
+          transform: scale(1.2);
+        }
+
+        .info {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    & > .jg-entry-visible {
+      opacity: 1;
+      background: none;
+
+      & > img {
+        opacity: 1;
+      }
+    }
+
+    .gallery-title {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 6px 10px;
+      position: absolute;
+      background: linear-gradient(0deg, #151515, transparent 80%);
+      color: #fff;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
