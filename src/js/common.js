@@ -328,7 +328,8 @@ const commonContext = {
         const sparkInputContent = DreamConfig.spark_input_content && DreamConfig.spark_input_content.filter(s => s.length > 0);
         if (sparkInputContent && sparkInputContent.length > 0) {
             Utils.cachedScript(`${DreamConfig.theme_base}/source/js/spark-input.min.js`, function () {
-                sparkInput("spark-input", sparkInputContent);
+                document.getElementsByClassName('main-content')
+                $('.spark-input').each((index, domEle) => sparkInput(domEle, sparkInputContent));
             })
         }
     },
