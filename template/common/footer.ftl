@@ -4,7 +4,7 @@
             <div>
                 <a class="logo-title" href="${context!}">
                     <#if blog_logo?? && blog_logo!=''>
-                        <img class="logo-img" src="${blog_logo!}" alt="${blog_title!}" height="28">
+                        <img src="${blog_logo!}" alt="${blog_title!}" height="28">
                         <img class="logo-img-dark"
                              src="<#if settings.night_logo?? && settings.night_logo!=''>${settings.night_logo!}<#else>${blog_logo!}</#if>"
                              alt="${blog_title!}" height="28">
@@ -13,9 +13,9 @@
                     </#if>
                 </a>
                 <p>
-                    &copy; ${.now?string('yyyy')} ${user.nickname!}  Powered by <a href="https://halo.run/"
+                    &copy; ${.now?string('yyyy')} ${user.nickname!}  Powered by <a class="powered" href="https://halo.run/"
                                                                                          target="_blank">Halo</a> & <a
-                            href="https://github.com/nineya/halo-theme-dream" target="_blank">Dream</a>
+                            class="powered" href="https://github.com/nineya/halo-theme-dream" target="_blank">Dream</a>
                     <#if settings.record_number?? && settings.record_number!=''>
                         <br/>
                         <a href="http://beian.miit.gov.cn/publish/query/indexFirst.action"

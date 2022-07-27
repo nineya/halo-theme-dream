@@ -556,6 +556,10 @@ table td, table th {
 .logo-title {
   font-size: 1.5em;
   color: var(--theme) !important;
+
+  img {
+    max-height: 2rem;
+  }
 }
 
 .logo-img-dark {
@@ -2579,16 +2583,17 @@ table td, table th {
     background-color: var(--background);
   }
 
-  logo-title img {
-    max-height: 2rem;
-  }
-
   p {
     margin-top: 10px;
     line-height: 1.5em;
   }
 
-  a:not(.button) {
+  .powered  {
+    color: var(--theme);
+    font-weight: 600;
+  }
+
+  a:not(class) {
     color: var(--dark-c);
 
     &:hover {
