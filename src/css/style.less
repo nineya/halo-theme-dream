@@ -2583,26 +2583,30 @@ table td, table th {
     background-color: var(--background);
   }
 
-  p {
-    margin-top: 10px;
-    line-height: 1.5em;
-  }
-
-  .powered  {
-    color: var(--theme);
-    font-weight: 600;
-  }
-
-  a:not(class) {
-    color: var(--dark-c);
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
   .level > div {
-    color: var(--dark-c);
+    color: var(--main);
+  }
+
+  &-info {
+    line-height: 1.5em;
+
+    .logo-title {
+      margin-bottom: 10px;
+    }
+
+    .powered  {
+      color: var(--theme);
+      font-weight: 600;
+    }
+
+    a:not([class]) {
+      display: block;
+      color: var(--main);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
