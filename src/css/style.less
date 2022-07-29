@@ -2587,6 +2587,11 @@ table td, table th {
     color: var(--main);
   }
 
+  .stand {
+    color: var(--theme);
+    margin: 0 4px;
+  }
+
   &-info {
     line-height: 1.5em;
 
@@ -2594,17 +2599,25 @@ table td, table th {
       margin-bottom: 10px;
     }
 
-    .powered  {
+    .powered {
       color: var(--theme);
       font-weight: 600;
     }
 
     a:not([class]) {
-      display: block;
       color: var(--main);
 
       &:hover {
         text-decoration: underline;
+      }
+    }
+
+    .cloud-driven {
+      margin: 0 3px;
+
+      img {
+        height: 18px;
+        vertical-align: text-bottom;
       }
     }
   }
