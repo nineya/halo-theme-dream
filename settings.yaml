@@ -152,6 +152,16 @@ basic:
           label: 开启
         - value: false
           label: 关闭
+    cloud_by_logo:
+      name: cloud_by_logo
+      label: 云服务提供商Logo
+      type: attachment
+      placeholder: 'Logo图片url链接'
+    cloud_by_url:
+      name: cloud_by_url
+      label: 云服务提供商URL
+      type: text
+      placeholder: 'url地址'
 post:
   label: 文章设置
   items:

@@ -328,7 +328,8 @@ const commonContext = {
         const sparkInputContent = DreamConfig.spark_input_content && DreamConfig.spark_input_content.filter(s => s.length > 0);
         if (sparkInputContent && sparkInputContent.length > 0) {
             Utils.cachedScript(`${DreamConfig.theme_base}/source/js/spark-input.min.js`, function () {
-                sparkInput("spark-input", sparkInputContent);
+                document.getElementsByClassName('main-content')
+                $('.spark-input').each((index, domEle) => sparkInput(domEle, sparkInputContent));
             })
         }
     },
@@ -337,32 +338,34 @@ const commonContext = {
         if (!DreamConfig.website_time) {
             return;
         }
-        var now = new Date();
-        var grt = new Date(DreamConfig.website_time);
-        var websiteDay = document.getElementById("websiteDay");
-        var websiteTime = document.getElementById("websiteTime");
+        const websiteDate = document.getElementById("websiteDate");
+        if (!/^\d{4}\/\d{2}\/\d{2} \d{2}:\d{2}:\d{2}$/.test(DreamConfig.website_time)) {
+            websiteDate.innerText = `建站 ${DreamConfig.website_time}`
+            return;
+        }
+        const now = new Date();
+        const grt = new Date(DreamConfig.website_time);
         setInterval(function () {
             now.setTime(now.getTime() + 1000);
-            difference = parseInt((now - grt) / 1000);
-            seconds = difference % 60;
+            let difference = parseInt((now - grt) / 1000);
+            let seconds = difference % 60;
             if (String(seconds).length === 1) {
                 seconds = "0" + seconds;
             }
             difference = parseInt(difference / 60);
 
-            minutes = difference % 60;
+            let minutes = difference % 60;
             if (String(minutes).length === 1) {
                 minutes = "0" + minutes;
             }
             difference = parseInt(difference / 60);
 
-            hours = difference % 24;
+            let hours = difference % 24;
             if (String(hours).length === 1) {
                 hours = "0" + hours;
             }
-            days = parseInt(difference / 24);
-            websiteDay.innerHTML = "建站 " + days + " 天 ";
-            websiteTime.innerHTML = hours + " 小时 " + minutes + " 分 " + seconds + " 秒";
+            let days = parseInt(difference / 24);
+            websiteDate.innerHTML = `建站<span class="stand">${days}</span>天<span class="stand">${hours}</span>小时<span class="stand">${minutes}</span>分<span class="stand">${seconds}</span>秒`
         }, 1000);
     },
     /* 初始化特效，只需要初始化一次，移动端设备不初始化 */

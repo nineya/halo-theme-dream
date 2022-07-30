@@ -1,4 +1,4 @@
-const sparkInput = function(id, list) {
+const sparkInput = function(element, list) {
     function randomColor() {
         return colors[Math.floor(Math.random() * colors.length)]
     }
@@ -50,7 +50,6 @@ const sparkInput = function(id, list) {
             setTimeout(start, sleep)
     }
     var message = "",
-        element=document.getElementById(id),
         messages = list.map(function (s) {
             return s + ""
         }),
