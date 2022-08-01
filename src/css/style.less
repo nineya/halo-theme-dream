@@ -2169,11 +2169,11 @@ table td, table th {
     border-left: 5px solid var(--bg-i);
     border-radius: var(--radius-inner);
 
-    :not(:last-child) {
+    & > :not(:last-child) {
       margin-bottom: 4px !important;
     }
 
-    :last-child {
+    & > :last-child {
       margin: 0 !important;
     }
   }
@@ -2373,7 +2373,7 @@ table td, table th {
 
         i {
           transition: all 0.25s;
-          margin-right: 12px;
+          margin-right: 12px !important;
 
           &.fa-angle-down {
             font-size: 1.2em;
