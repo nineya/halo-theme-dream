@@ -4,7 +4,7 @@
             <div class="footer-info">
                 <a class="logo-title" href="${context!}">
                     <#if blog_logo?? && blog_logo!=''>
-                        <img src="${blog_logo!}" alt="${blog_title!}" height="28">
+                        <img class="logo-img" src="${blog_logo!}" alt="${blog_title!}" height="28">
                         <img class="logo-img-dark"
                              src="<#if settings.night_logo?? && settings.night_logo!=''>${settings.night_logo!}<#else>${blog_logo!}</#if>"
                              alt="${blog_title!}" height="28">
