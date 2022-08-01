@@ -7,7 +7,6 @@ const minifyCSS = require("gulp-csso");
 const zip = require('gulp-zip');
 const rename = require("gulp-rename");
 const clean = require("gulp-clean");
-const crypto = require('crypto');
 const path = require("path");
 const execSync = require('child_process').execSync;
 const fs = require("fs");
@@ -41,12 +40,15 @@ task("version", (done) => {
         return;
     }
     const themePath = "theme.yaml";
+    const layoutPath = "template/layout.ftl";
     const packagePath = "package.json"
     const themeData = fs.readFileSync(themePath, "utf8")
         .replace(/^version:\s+[^\s]+$/m, "version: " + version)
     fs.writeFileSync(themePath, themeData);
+    fs.writeFileSync(layoutPath, fs.readFileSync(layoutPath, "utf8")
+        .replace(/#global\s+theme_version\s*="[^\s]+"/, `#global theme_version="${version}"`))
     let packageData = fs.readFileSync(packagePath, "utf8")
-        .replace(/\"version\":\s*\"[^\"]+\"/, `"version": "${version}"`)
+        .replace(/"version":\s*"[^"]+"/, `"version": "${version}"`)
     fs.writeFileSync(packagePath, packageData);
     done()
 });
@@ -131,8 +133,8 @@ task("zip", () => {
 });
 
 task("publish", (done) => {
-    // 需要将tag标签内容置空，否则将抛出异常
-    process.env.npm_config_tag = undefined
+    // 需要将tag标签内容置为 latest
+    process.env.npm_config_tag = 'latest'
     console.log(execSync(`npm publish`).toString());
     done();
 })

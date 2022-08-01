@@ -53,7 +53,7 @@
 1. 进入主题 `Release` 界面：https://github.com/nineya/halo-theme-dream/releases 下载主题压缩包 `halo-theme-dream.zip` 压缩包文件；
 2. 进入博客后台管理 `外观->主题->安装->本地上传`，选择下载的 `halo-theme-dream.zip` 安装包进行上传；
 3. 等待安装完成；
-4. 更新主题时同样前往主题  `Release` 界面下载主题安装包，然后通过 ``外观->主题->Dream->更多->从主题包更新` 方法上传安装包进行更新。
+4. 更新主题时同样前往主题  `Release` 界面下载主题安装包，然后通过 `外观->主题->Dream->更多->从主题包更新` 方法上传安装包进行更新。
 
 
 
