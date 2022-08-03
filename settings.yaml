@@ -521,7 +521,7 @@ profile:
         - value: 'is-hidden-mobile'
           label: 移动设备隐藏
         - value: 'is-hidden-not-desktop'
-          label: 非桌面设备隐藏
+          label: 移动、平板设备隐藏
         - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
@@ -623,7 +623,7 @@ toc:
         - value: 'is-hidden-mobile'
           label: 移动设备隐藏
         - value: 'is-hidden-not-desktop'
-          label: 非桌面设备隐藏
+          label: 移动、平板设备隐藏
         - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
@@ -671,7 +671,7 @@ notice:
         - value: 'is-hidden-mobile'
           label: 移动设备隐藏
         - value: 'is-hidden-not-desktop'
-          label: 非桌面设备隐藏
+          label: 移动、平板设备隐藏
         - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
@@ -726,7 +726,7 @@ music:
         - value: 'is-hidden-mobile'
           label: 移动设备隐藏
         - value: 'is-hidden-not-desktop'
-          label: 非桌面设备隐藏
+          label: 移动、平板设备隐藏
         - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
@@ -787,7 +787,7 @@ ad_piece:
         - value: 'is-hidden-mobile'
           label: 移动设备隐藏
         - value: 'is-hidden-not-desktop'
-          label: 非桌面设备隐藏
+          label: 移动、平板设备隐藏
         - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
@@ -873,7 +873,7 @@ recent_posts:
         - value: 'is-hidden-mobile'
           label: 移动设备隐藏
         - value: 'is-hidden-not-desktop'
-          label: 非桌面设备隐藏
+          label: 移动、平板设备隐藏
         - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
@@ -915,7 +915,7 @@ recent_comments:
         - value: 'is-hidden-mobile'
           label: 移动设备隐藏
         - value: 'is-hidden-not-desktop'
-          label: 非桌面设备隐藏
+          label: 移动、平板设备隐藏
         - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
@@ -957,7 +957,7 @@ categories:
         - value: 'is-hidden-mobile'
           label: 移动设备隐藏
         - value: 'is-hidden-not-desktop'
-          label: 非桌面设备隐藏
+          label: 移动、平板设备隐藏
         - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
@@ -1011,7 +1011,7 @@ tags:
         - value: 'is-hidden-mobile'
           label: 移动设备隐藏
         - value: 'is-hidden-not-desktop'
-          label: 非桌面设备隐藏
+          label: 移动、平板设备隐藏
         - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
@@ -1076,7 +1076,7 @@ tagcloud:
         - value: 'is-hidden-mobile'
           label: 移动设备隐藏
         - value: 'is-hidden-not-desktop'
-          label: 非桌面设备隐藏
+          label: 移动、平板设备隐藏
         - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
@@ -1141,7 +1141,7 @@ links:
         - value: 'is-hidden-mobile'
           label: 移动设备隐藏
         - value: 'is-hidden-not-desktop'
-          label: 非桌面设备隐藏
+          label: 移动、平板设备隐藏
         - value: 'is-hidden-desktop'
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
