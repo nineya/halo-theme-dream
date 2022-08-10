@@ -85,3 +85,10 @@
     - `npm run build --devel` 开发模式进行主题打包，`js` 和 `css` 不会被做压缩和混淆处理，方便排查问题。
     - `npm run cdn --tag=$version`  创建 `FreeCDN` 清单文件，必须指定 `tag` 参数，值为本地代码将发布到 `GitHub` 仓库的版本标签。
     - `npm run release --tag=$version` 发布模式执行主题打包操作，将自动更新主题中的版本号，并使用这个版本标签重新创建  `FreeCDN` 清单文件。
+
+
+## 打赏项目
+
+感谢您对本项目的喜爱，您的打赏是对本项目最好的支持！本项目所有打赏收益将全部投入到支付宝公益项目，捐赠记录在[关于我的](https://blog.nineya.com/about)中可见，一起为公益事业加油。
+
+![打赏项目](https://blog.nineya.com/upload/2022/08/funding.png)
