@@ -592,6 +592,17 @@ profile:
       label: CSDN
       type: text
       placeholder: 'CSDN 主页'
+    social_rss:
+      name: social_rss
+      label: 'RSS 订阅'
+      type: select
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
 toc:
   label: 目录模块
   items:

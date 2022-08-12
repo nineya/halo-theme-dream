@@ -40,8 +40,7 @@
         <div class="level">
             <a class="level-item button is-link is-rounded" href="${settings.profile_follow_url!'${context!}'}" target="_blank" rel="nofollow noopener noreferrer">关注我</a>
         </div>
-        <div class="level">
-            <#if settings.social_github?? && settings.social_github!=''>
+        <div class="level"><#if settings.social_github?? && settings.social_github!=''>
                 <a class="level-item button is-transparent" target="_blank" title="Github主页" href="https://github.com/${settings.social_github}" rel="nofollow noopener noreferrer">
                     <i class="fa fa-github"></i>
                 </a>
@@ -81,9 +80,10 @@
                     <i class="fa fa-copyright"></i>
                 </a>
             </#if>
-            <a class="level-item button is-transparent" target="_blank" title="RSS订阅" href="${rss_url!}">
-                <i class="fa fa-rss"></i>
-            </a>
-        </div>
+            <#if settings.social_rss!true >
+                <a class="level-item button is-transparent" target="_blank" title="RSS订阅" href="${rss_url!}">
+                    <i class="fa fa-rss"></i>
+                </a>
+            </#if></div>
     </div>
 </div>
