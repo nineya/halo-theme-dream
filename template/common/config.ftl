@@ -99,8 +99,17 @@
     </#if>
 
     /** 配置主题模式 */
-    let isNight = localStorage.getItem('night') || false;
-    if (isNight.toString() === 'true') {
-        document.documentElement.classList.add('night');
-    }
+    DreamConfig["default_theme"] = '${settings.default_theme!'light'}';
+
+    (function(){
+        let isNight = localStorage.getItem('night');
+        if (isNight) {
+            if (isNight.toString() === 'true') {
+                document.documentElement.classList.add('night');
+            }
+        } else if (DreamConfig.default_theme === 'night') {
+            localStorage.setItem('night', true)
+            document.documentElement.classList.add('night');
+        }
+    })();
 </script>

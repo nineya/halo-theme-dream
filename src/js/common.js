@@ -71,7 +71,7 @@ const commonContext = {
     },
     /* 初始化主题模式（仅用户模式） */
     initMode() {
-        let isNight = localStorage.getItem('night') || false;
+        let isNight = localStorage.getItem('night');
         const applyNight = (value) => {
             if (value.toString() === 'true') {
                 document.documentElement.classList.add('night');
@@ -79,9 +79,8 @@ const commonContext = {
                 document.documentElement.classList.remove('night');
             }
         }
-        applyNight(isNight);
         $("#toggle-mode").on('click', function () {
-            isNight = isNight ? isNight.toString() !== 'true' : true;
+            isNight = isNight.toString() !== 'true';
             applyNight(isNight);
             $("halo-comment").each(function () {
                 const shadowDom = this.shadowRoot.getElementById("halo-comment");

@@ -106,6 +106,17 @@ basic_style:
       label: 黑夜移动端背景图
       type: attachment
       placeholder: '图片url链接'
+    default_theme:
+      name: default_theme
+      label: 默认主题模式
+      type: select
+      default: 'light'
+      placeholder: '浏览器首次打开博客时默认的主题模式。'
+      options:
+        - value: 'light'
+          label: 明亮主题
+        - value: 'night'
+          label: 黑暗主题
     theme_color:
       name: theme_color
       label: 主题色
