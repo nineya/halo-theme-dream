@@ -1,9 +1,9 @@
-basic:
-  label: 基础设置
+basic_info:
+  label: 基础信息
   items:
     access_key:
       name: access_key
-      label: AccessKey <必填>
+      label: <必填> AccessKey
       type: text
       default: dream
       placeholder: '博客API设置中的Access Key'
@@ -28,6 +28,40 @@ basic:
       label: 黑夜模式的logo(放空默认为网站logo)
       type: attachment
       placeholder: '黑夜模式的logo'
+    page_number:
+      name: page_number
+      label: 分页页码数量
+      type: text
+      placeholder: '分页页码数量'
+      default: '5'
+    record_number:
+      name: record_number
+      label: 备案号
+      type: text
+      placeholder: '工信部备案号'
+    record_number_ps:
+      name: record_number_ps
+      label: 公安部备案
+      type: text
+      placeholder: '公安部备案号'
+    website_time:
+      name: website_time
+      label: 建站时间
+      type: text
+      placeholder: 'YYYY/MM/dd HH:mm:ss'
+    cloud_by_logo:
+      name: cloud_by_logo
+      label: 云服务提供商Logo
+      type: attachment
+      placeholder: 'Logo图片url链接'
+    cloud_by_url:
+      name: cloud_by_url
+      label: 云服务提供商URL
+      type: text
+      placeholder: 'url地址'
+basic_style:
+  label: 基础样式
+  items:
     load_progress:
       name: load_progress
       label: 加载进度条
@@ -120,48 +154,6 @@ basic:
           label: 固定底部
         - value: none
           label: 不悬浮
-    page_number:
-      name: page_number
-      label: 分页页码数量
-      type: text
-      placeholder: '分页页码数量'
-      default: '5'
-    record_number:
-      name: record_number
-      label: 备案号
-      type: text
-      placeholder: '工信部备案号'
-    record_number_ps:
-      name: record_number_ps
-      label: 公安部备案
-      type: text
-      placeholder: '公安部备案号'
-    website_time:
-      name: website_time
-      label: 建站时间
-      type: text
-      placeholder: 'YYYY/MM/dd HH:mm:ss'
-    enable_busuanzi:
-      name: enable_busuanzi
-      label: 开启busuanzi访客统计
-      type: switch
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    cloud_by_logo:
-      name: cloud_by_logo
-      label: 云服务提供商Logo
-      type: attachment
-      placeholder: 'Logo图片url链接'
-    cloud_by_url:
-      name: cloud_by_url
-      label: 云服务提供商URL
-      type: text
-      placeholder: 'url地址'
 post:
   label: 文章设置
   items:
@@ -1339,7 +1331,7 @@ enhance:
       label: "启用 HTML 压缩"
       type: radio
       data-type: text
-      default: none
+      default: format
       options:
         - value: none
           label: 关闭
@@ -1382,6 +1374,17 @@ enhance:
       data-type: bool
       default: false
       description: '向英雄致敬，愿精神长存！'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    enable_busuanzi:
+      name: enable_busuanzi
+      label: 开启busuanzi访客统计
+      type: switch
+      data-type: bool
+      default: true
       options:
         - value: true
           label: 开启
@@ -1448,10 +1451,3 @@ custom:
       type: textarea
       placeholder: JS代码内容
       description: "填入JS代码，无需script标签，将插入body标签尾部。"
-#    links_footer:
-#      name: links_footer
-#      label: 博客底部链接
-#      type: textarea
-#      default: '<a class="button is-transparent is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
-#                    <i class="fa fa-creative-commons"></i>
-#                </a>'
