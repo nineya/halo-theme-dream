@@ -1334,6 +1334,19 @@ enhance:
           label: 开启全站离线
         - value: "uninstall"
           label: 卸载
+    enable_compress:
+      name: enable_compress
+      label: "启用 HTML 压缩"
+      type: radio
+      data-type: text
+      default: none
+      options:
+        - value: none
+          label: 关闭
+        - value: format
+          label: 压缩空格
+        - value: single
+          label: 完全格式压缩
     effects_sakura_mode:
       name: effects_sakura_mode
       label: 樱花飘落特效显示模式
