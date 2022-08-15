@@ -108,7 +108,7 @@
                 document.documentElement.classList.add('night');
             }
         } else if (DreamConfig.default_theme === 'night') {
-            localStorage.setItem('night', true)
+            localStorage.setItem('night', true);
             document.documentElement.classList.add('night');
         }
     })();
