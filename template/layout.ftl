@@ -11,7 +11,7 @@
     </#if>
 </#macro>
 <#macro layout title,canonical>
-    <#if (settings.enable_compress!'none')=='none'>
+    <#if post?? || is_journals?? || is_error?? || (settings.enable_compress!'none')=='none'>
         <@layout0 title,canonical><#nested /></@layout0>
     <#elseif settings.enable_compress == 'format'>
         <@compress>

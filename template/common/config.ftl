@@ -42,7 +42,7 @@
     </#if>
 </style>
 <script type="text/javascript">
-    // 主题配置
+    /** 主题配置 */
     const DreamConfig = {};
     DreamConfig["theme_base"] = '${theme_base!}';
     DreamConfig["access_key"] = '${settings.access_key!'dream'}';
@@ -88,7 +88,7 @@
     <#if settings.load_progress?? && settings.load_progress != 'none'>
     DreamConfig["load_progress"] = '${settings.load_progress}';
     </#if>
-    // 看板娘相关配置
+    /** 看板娘相关配置 */
     <#if settings.enable_live2d!true>
     DreamConfig["live2d_url"] = '/source/lib/live2d/autoload.js';
     <#if settings.live2d_about_page?? && settings.live2d_about_page!=''>
@@ -98,7 +98,7 @@
     DreamConfig["live2d_waifu_size"] = '${settings.live2d_waifu_size!'280x260'}';
     </#if>
 
-    // 配置主题模式
+    /** 配置主题模式 */
     let isNight = localStorage.getItem('night') || false;
     if (isNight.toString() === 'true') {
         document.documentElement.classList.add('night');
