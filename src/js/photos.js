@@ -89,7 +89,6 @@ const photoContext = {
                     queryParams.page++;
                     getData({
                         team: $(".photos-teams li.active").attr("data-team"),
-                        size: 10
                     });
                 }
             }
