@@ -385,6 +385,17 @@ post:
           label: 默认开启
         - value: false
           label: 默认关闭
+    close_post_comment:
+      name: close_post_comment
+      label: 关闭所有文章和自定义页面评论区
+      type: switch
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     donate_alipay:
       name: donate_alipay
       label: 支付宝捐赠二维码
@@ -1234,6 +1245,17 @@ other_page:
       type: switch
       data-type: bool
       default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    enable_journals_comment:
+      name: enable_journals_comment
+      label: 日志页面-开启评论区
+      type: switch
+      data-type: bool
+      default: true
       options:
         - value: true
           label: 开启

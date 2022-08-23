@@ -92,7 +92,7 @@
             </div>
         </div>
     </#if>
-    <#if !post.disallowComment!false>
+    <#if (!post.disallowComment!false) && (!settings.close_post_comment!false)>
         <div class="card card-content" id="comment-wrapper">
             <h3 class="comment-title">评论</h3>
             <#include "comment.ftl">

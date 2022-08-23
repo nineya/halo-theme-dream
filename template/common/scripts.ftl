@@ -20,7 +20,7 @@
 </#if>
 
 <script src="${theme_base!}/source/js/mew-custom.min.js?mew=${theme_version!}"></script>
-<#if (post?? && !post.disallowComment!false) || is_journals?? || (is_links?? && settings.link_comment_id?? && settings.link_comment_id!='')>
+<#if (post?? && (!post.disallowComment!false) && (!settings.close_post_comment!false)) || (is_journals?? && settings.enable_journals_comment!true) || (is_links?? && (!settings.close_post_comment!false) && settings.link_comment_id?? && settings.link_comment_id!='')>
     <script data-pjax defer src="${theme_base!}/source/lib/vue@2.6.10/vue.min.js"></script>
     <script data-pjax defer
             src="${(settings.enable_theme_comment!true)?then(theme_base + '/source/lib/halo-comment@1.0.6/halo-comment.min.js',

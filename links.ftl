@@ -64,7 +64,7 @@
             </#if>
         </div>
     </div>
-    <#if settings.link_comment_id?? && settings.link_comment_id!=''>
+    <#if settings.link_comment_id?? && settings.link_comment_id!='' && !settings.close_post_comment!false>
         <div class="card card-content" id="comment-wrapper">
             <h3 class="comment-title">评论</h3>
             <#include "template/main/comment.ftl">
