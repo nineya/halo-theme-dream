@@ -23,7 +23,7 @@
                 </#if>
                 <#if settings.record_number_ps?? && settings.record_number_ps!=''>
                     <p><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${settings.record_number_ps!}"
-                          target="_blank" rel="noopener noreferrer nofollow">公安备案：${settings.record_number_ps!}</a></p>
+                          target="_blank" rel="noopener noreferrer nofollow"><img src="https://www.beian.gov.cn/portal/download" alt="公安备案" style="vertical-align: text-top; width: 1.2em"/>公安备案：${settings.record_number_ps!}</a></p>
                 </#if>
                 <#if settings.website_time?? && settings.website_time!=''>
                     <p id="websiteDate"></p>
