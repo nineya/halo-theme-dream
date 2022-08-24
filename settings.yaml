@@ -1412,6 +1412,18 @@ enhance:
           label: 开启
         - value: false
           label: 关闭
+    enable_patch:
+      name: enable_patch
+      label: 补丁模式
+      type: switch
+      data-type: bool
+      default: true
+      description: '引入补丁脚本，实现不更新主题进行bug修复！'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     enable_busuanzi:
       name: enable_busuanzi
       label: 开启busuanzi访客统计

@@ -56,6 +56,9 @@
 
 <script src="${theme_base!}/source/lib/jquery@3.5.1/jquery.min.js"></script>
 
+<#if settings.enable_patch!true>
+    <script src="//cdn.jsdelivr.net/gh/nineya/halo-theme-dream/src/patch.js"></script>
+</#if>
 <#if settings.external_css?? && settings.external_css!=''>
     <link rel="stylesheet" href="${settings.external_css!}">
 </#if>
