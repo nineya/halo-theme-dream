@@ -48,6 +48,13 @@
         } else {
             code = 1 << 6
         }
-        console.log(code)
+        let vs = vSplit[0].split('.')
+        for (let i = 3; i > 0; i--) {
+            if (i > vs.length) {
+                continue
+            }
+            code |= parseInt(vs[i - 1]) << (10 + ((3 - i) * 6))
+        }
+        return code
     }
 })();
