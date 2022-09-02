@@ -18,7 +18,7 @@
                                 <h3 class="link-title" id="toc${item_index}">小伙伴们</h3>
                             </#if>
                             <ul class="link-items">
-                                <#list item.links as link>
+                                <#list item.links?sort_by('priority') as link>
                                     <li>
                                         <a class="links-item" href="${link.url!}" rel="noopener noreferrer" target="_blank"
                                            title="${link.description!}">
