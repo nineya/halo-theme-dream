@@ -3445,30 +3445,17 @@ table td, table th {
         }
       }
 
-      &::after {
-        content: '';
-        position: absolute;
-        opacity: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        backdrop-filter: blur(1px);
-        background: rgba(0, 0, 0, .5);
-        transition: opacity 0.35s;
-      }
-
       .info {
         position: absolute;
-        top: 0;
         right: 0;
         bottom: 0;
         left: 0;
         color: #fff;
         padding: 20px;
-        z-index: 1;
-        transform: translateY(100%);
+        max-height: 100%;
+        transform: translateY(calc(100% - 45px));
         transition: transform 0.35s ease-in;
+        background: linear-gradient(0deg,#151515cc,transparent 100%);
 
         svg {
           width: 1.3em;
@@ -3481,27 +3468,50 @@ table td, table th {
           float: left;
         }
 
-        span {
-          display: flex;
+        & > :not(:first-child) {
+          margin-top: 5px;
         }
 
-        & > p:not(:first-child) {
-          margin-top: 5px;
+        & > div:first-child {
+          margin-left: -16px;
+          transition: all 0.35s ease-in;
+
+          svg {
+            width: 0;
+            transition: all 0.35s ease-in;
+          }
+
+          p {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
         }
       }
 
       &:hover {
-
-        &::after {
-          opacity: 1;
-        }
 
         img {
           transform: scale(1.2);
         }
 
         .info {
+          overflow-y: scroll;
           transform: translateY(0);
+
+          & > div:first-child {
+            margin-left: 0;
+
+            svg {
+              width: 1.3em;
+            }
+
+            p {
+              overflow: inherit;
+              white-space: inherit;
+              text-overflow: inherit;
+            }
+          }
         }
       }
     }
@@ -3513,19 +3523,6 @@ table td, table th {
       & > img {
         opacity: 1;
       }
-    }
-
-    .gallery-title {
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 6px 10px;
-      position: absolute;
-      background: linear-gradient(0deg, #151515, transparent 80%);
-      color: #fff;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
     }
   }
 }
