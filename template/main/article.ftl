@@ -52,7 +52,7 @@
             <#include "admire.ftl">
 
             <#if tags?? && (tags?size gt 0)>
-                <div class="level article-operation">
+                <div class="article-operation">
                     <div class="level-item">
                         <#list tags as tag>
                             <a href="${tag.fullPath!}">${tag.name!}</a>&nbsp;

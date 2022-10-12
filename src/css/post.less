@@ -132,6 +132,16 @@
   margin: 18px 0;
   display: flex;
 
+  .level-item {
+    flex-shrink: 1 !important;
+    justify-content: left !important;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
   a {
     color: var(--dark-b);
     font-size: 0.9em;
@@ -147,6 +157,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     margin-right: 10px;
+    flex-shrink: 0;
 
     &:before {
       content: "";
