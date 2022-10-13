@@ -168,6 +168,12 @@ basic_style:
 post:
   label: 文章设置
   items:
+    default_thumbnail:
+      name: default_thumbnail
+      label: 默认文章缩略图
+      type: attachment
+      placeholder: '图片url地址'
+      description: '如果文章没有指定缩略图，则默认显示当前缩略图'
     top_thumbnail_mode:
       name: top_thumbnail_mode
       label: 置顶文章列表缩略图模式
