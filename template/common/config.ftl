@@ -80,6 +80,9 @@
     <#if settings.effects_universe_mode?? && settings.effects_universe_mode!='none'>
     DreamConfig["effects_universe_mode"] = '${settings.effects_universe_mode}';
     </#if>
+    <#if settings.enable_post_share!false>
+    DreamConfig["enable_post_share"] = true;
+    </#if>
     <#if settings.enable_baidu_push!false>
     DreamConfig["enable_baidu_push"] = true;
     </#if>

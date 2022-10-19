@@ -92,6 +92,10 @@ const postContext = {
         clipboard.on('success', function () {
             Qmsg.success("复制成功");
         })
+    },
+    /* 加载分享模块 */
+    initShare(){
+        DreamConfig.enable_post_share && Utils.cachedScript(`https://unpkg.com/social-share.js@1.0.16/dist/js/social-share.min.js`)
     }
 }
 window.postPjax = function (serialNumber) {
@@ -103,6 +107,7 @@ window.postPjax = function (serialNumber) {
 !(function () {
     !window.pjaxSerialNumber && postContext.initLike();
     !window.pjaxSerialNumber && postContext.initCodeBlock();
+    !window.pjaxSerialNumber && postContext.initShare();
 
     document.addEventListener("DOMContentLoaded", function () {
         !window.pjaxSerialNumber && postContext.initHighlighting();
