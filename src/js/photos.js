@@ -10,7 +10,6 @@ const photoContext = {
             sort: "createTime,desc",
         };
 
-
         const renderPhotos = (data) => {
             const photosHtml = data.reduce((result, item, index) => {
                 return `${result}<div href="${item.url}" data-fancybox="gallery" data-caption="${item.description || item.name || ""
@@ -37,16 +36,16 @@ const photoContext = {
                 })
         }
 
-        let dataPromise;
+        let dataPromise = {};
 
         /* 获取相册数据 */
         const getData = (param) => {
             isLoading = true;
             $photosGallery.addClass('loading');
+            param && param.team && (param.team = param.team.substring(2))
             const params = {...queryParams, ...(param || {})};
-            let abort;
-            dataPromise = new Promise((resolve, reject) => {
-                abort = reject
+            dataPromise.promise = new Promise((resolve, reject) => {
+                dataPromise.abort = reject
                 Utils.request({
                     url: "/api/content/photos",
                     method: "GET",
@@ -66,15 +65,43 @@ const photoContext = {
                 })
                 .catch((err) => console.log(err))
                 .finally(() => {
-                    console.log(`finally`)
                     $photosGallery.removeClass('loading');
-                    dataPromise = undefined
+                    dataPromise = {}
                     isLoading = false;
                 });
-            dataPromise.abort = abort
         };
 
-        getData()
+        // 重置列表
+        const reset = async (param) => {
+            if (dataPromise) {
+                dataPromise.abort && dataPromise.abort('abort')
+                await dataPromise.promise
+            }
+            $photosGallery.empty();
+            isEnd = false;
+            isLoading = false;
+            queryParams.page = 0;
+            location.hash = param.team
+            getData(param);
+        };
+
+        // 分组过滤
+        $(".photos-teams .item").on("click", function (e) {
+            e.stopPropagation();
+            const $this = $(this);
+            if ($this.hasClass("active")) return;
+            $this.addClass("active").siblings("li").removeClass("active");
+            reset({team: $this.attr("data-team")});
+        });
+
+        if (location.hash) {
+            let team = decodeURI(location.hash.substring(1))
+            let teamElem = $('.photos-teams li[data-team=' + team + ']')
+            teamElem.length > 0 ? teamElem.click() : $('.photos-teams li:not([data-team])').addClass("active") && getData();
+        } else {
+            $('.photos-teams li:not([data-team])').addClass("active")
+            getData()
+        }
 
         // 滚动加载
         window.addEventListener(
@@ -92,28 +119,6 @@ const photoContext = {
                 }
             }
         );
-
-        // 重置列表
-        const reset = async (param) => {
-            if (dataPromise) {
-                dataPromise.abort && dataPromise.abort('abort')
-                await dataPromise
-            }
-            $photosGallery.empty();
-            isEnd = false;
-            isLoading = false;
-            queryParams.page = 0;
-            getData(param);
-        };
-
-        // 分组过滤
-        $(".photos-teams .item").on("click", function (e) {
-            e.stopPropagation();
-            const $this = $(this);
-            if ($this.hasClass("active")) return;
-            $this.addClass("active").siblings("li").removeClass("active");
-            reset({team: $this.attr("data-team")});
-        });
     },
 }
 window.photoPjax = function (serialNumber) {
