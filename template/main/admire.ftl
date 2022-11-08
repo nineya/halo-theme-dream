@@ -1,5 +1,3 @@
-<#assign donate = (settings.donate_alipay?? && settings.donate_alipay!='') || (settings.donate_wechat?? && settings.donate_wechat!='') />
-<#if donate || !is_sheet??>
     <div class="admire">
         <div class="admire-content">
             <#if donate>
@@ -19,7 +17,7 @@
                 </button>
             </#if>
             <#if !is_sheet??>
-                <button class="agree like" data-id="${post.id!0}" data-likes="${post.likes!0}">
+                <button class="agree like" data-id="${(post.id!0)?c}" data-likes="${(post.likes!0)?c}">
                     <i class="fa fa-thumbs-o-up"></i>
                     <span>赞<span>${post.likes!0}</span></span>
                 </button>

@@ -12,7 +12,7 @@
                 </div>
                 <div class="journal-operation">
                     <span class="journal-operation-item">
-                        <a class="like" data-id="${journal.id}" data-likes="${journal.likes!0}"><i
+                        <a class="like" data-id="${journal.id?c}" data-likes="${(journal.likes!0)?c}"><i
                                     class="fa fa-heart-o"></i></a><em>${(journal.likes != 0)?string(journal.likes?c,'喜欢')}</em>
                     </span>
 
