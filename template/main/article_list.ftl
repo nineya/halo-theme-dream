@@ -1,6 +1,6 @@
 <#macro article_list posts>
     <#list posts as post>
-        <#assign thumbnail = (post.thumbnail?? && post.thumbnail!='')?then(post.thumbnail!, settings.default_thumbnail!)>
+        <#assign thumbnail = (post.thumbnail?? && post.thumbnail!='')?then(post.thumbnail!, (settings.default_thumbnail?? && settings.default_thumbnail!='')?then(settings.default_thumbnail + settings.default_thumbnail?contains('?')?then("&","?") + "postId=" + post.id?c, ''))>
         <#assign thumbnail_mode = (thumbnail?? && thumbnail!='')?then((post.metas?? && post.metas.thumbnail_mode?? && post.metas.thumbnail_mode?trim!='')?then(post.metas.thumbnail_mode?trim, (post.topPriority==1)?then(settings.top_thumbnail_mode!'back', settings.thumbnail_mode!'default')), 'default')>
         <div class="card widget">
             <#if thumbnail_mode == "back">
