@@ -762,9 +762,15 @@ music:
           label: 桌面设备隐藏
         - value: 'is-not-hidden'
           label: 不隐藏
+    meting_api:
+      name: meting_api
+      label: 自建API
+      type: text
+      placeholder: '自建API的请求路径'
+      description: '自建API方法见文档：<a href="https://github.com/metowolf/Meting" target="_blank">Meting</a>'
     music_mode:
       name: music_mode
-      label: 音乐播放器配置方法
+      label: 音乐播放器配置方式
       type: radio
       default: 'playlist'
       options:

@@ -89,6 +89,9 @@
     <#if settings.load_progress?? && settings.load_progress != 'none'>
     DreamConfig["load_progress"] = '${settings.load_progress}';
     </#if>
+    <#if settings.meting_api?? && settings.meting_api != ''>
+    var meting_api = '${settings.meting_api}';
+    </#if>
     /** 看板娘相关配置 */
     <#if settings.enable_live2d!true>
     DreamConfig["live2d_url"] = '/source/lib/live2d/autoload.js';
