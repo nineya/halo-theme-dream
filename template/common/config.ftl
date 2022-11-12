@@ -98,6 +98,7 @@
     <#if settings.live2d_about_page?? && settings.live2d_about_page!=''>
     DreamConfig["live2d_about_page"] = '${settings.live2d_about_page}';
     </#if>
+    DreamConfig["live2d_model_url"] = '${settings.live2d_model_url!'https://unpkg.com/live2d-widget-model@1.0.0/'}';
     DreamConfig["live2d_edge_side"] = '${settings.live2d_edge_side!'right:50'}';
     DreamConfig["live2d_waifu_size"] = '${settings.live2d_waifu_size!'280x260'}';
     </#if>
