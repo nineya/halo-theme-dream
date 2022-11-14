@@ -444,6 +444,18 @@ comment:
       type: text
       placeholder: '图床Token'
       description: '评论区支持快捷上传图片到 <a href="https://pic.jitudisk.com/" target="_blank">极兔图床</a>，默认为游客上传，自行前往注册账号并获取 Token。注：配置后Token将被公开，同时主题不保证图床的稳定性！'
+    reply_desc_soft:
+      name: reply_desc_soft
+      label: 回复列表按时间降序
+      type: switch
+      data-type: bool
+      description: '评论中的二级评论按回复时间降序排序（默认为升序）。'
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     unfold_reply_num:
       name: unfold_reply_num
       label: 默认展开的二级回复数量
