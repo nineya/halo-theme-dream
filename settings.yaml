@@ -442,23 +442,18 @@ comment:
           label: 开启
         - value: false
           label: 关闭
-    autoload_comment:
-      name: autoload_comment
-      label: 自动加载评论列表
-      type: switch
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
     image_token:
       name: image_token
       label: 图床Token
       type: text
       placeholder: '图床Token'
       description: '评论区支持快捷上传图片到 <a href="https://pic.jitudisk.com/" target="_blank">极兔图床</a>，默认为游客上传，自行前往注册账号并获取 Token。注：配置后Token将被公开，同时主题不保证图床的稳定性！'
+    unfold_reply_num:
+      name: unfold_reply_num
+      label: 默认展开的二级回复数量
+      type: text
+      default: 6
+      placeholder: '默认展开的二级回复数量'
     reply_desc_soft:
       name: reply_desc_soft
       label: 回复列表按时间降序
@@ -471,12 +466,17 @@ comment:
           label: 开启
         - value: false
           label: 关闭
-    unfold_reply_num:
-      name: unfold_reply_num
-      label: 默认展开的二级回复数量
-      type: text
-      default: 6
-      placeholder: '默认展开的二级回复数量'
+    autoload_comment:
+      name: autoload_comment
+      label: 自动加载评论列表
+      type: switch
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     show_comment_ua:
       name: show_comment_ua
       label: 显示评论的UA信息

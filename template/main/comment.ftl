@@ -9,6 +9,7 @@
     }, "commentHtml": ${(settings.enable_comment_html!false)?c
     }, "loadingStyle": "${settings.comment_loading_style!"default"
     }", "unfoldReplyNum": ${settings.unfold_reply_num!6
+    }, "replyDescSoft": ${(settings.reply_desc_soft!false)?c
     }${imageToken!
     }${avatarLoading!
     }${defaultAvatar!
