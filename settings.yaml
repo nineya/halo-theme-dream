@@ -137,13 +137,15 @@ basic_style:
       options:
         - value: 'default'
           label: 默认字体
-        - value: 'night'
-          label: 微软雅黑
+        - value: 'WenCang.woff2'
+          label: 问藏书房体
+        - value: 'custom'
+          label: 自定义
     custom_font:
       name: custom_font
-      label: 自定义博客字体
+      label: 自定义博客字体链接
       type: attachment
-      description: "自定义博客字体，支持 woff2/woff/ttf/eot/svg 格式的字体文件，建议使用 woff2 格式。"
+      description: "自定义博客字体，在“博客字体”选项为“自定义“时生效。支持 woff2/woff/ttf/eot/svg 格式的字体文件链接，建议使用 woff2 格式。"
     sidebar_column:
       name: sidebar_column
       label: 侧边栏布局方式

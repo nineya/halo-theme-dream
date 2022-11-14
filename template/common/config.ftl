@@ -1,11 +1,25 @@
 <style>
+    <#assign fontSrc=(settings.web_font?? && settings.web_font!='default')?then((settings.web_font=='custom')?then((settings.custom_font?? && settings.custom_font!='')?then(settings.custom_font, ''), '${theme_base!}/source/font/${settings.web_font}'), '')>
+    <#if fontSrc!=''>
+      <#if fontSrc?ends_with(".woff")>
+      <#assign fontFormat="woff">
+      <#elseif fontSrc?ends_with(".woff2")>
+      <#assign fontFormat="woff2">
+      <#elseif fontSrc?ends_with(".ttf")>
+      <#assign fontFormat="truetype">
+      <#elseif fontSrc?ends_with(".eot")>
+      <#assign fontFormat="embedded-opentype">
+      <#elseif fontSrc?ends_with(".svg")>
+      <#assign fontFormat="svg">
+      </#if>
     @font-face {
-      font-family: "Dream Font";
-      font-display: swap;
-      font-weight: 400;
-      src: url("${theme_base!}/source/font/dream_future.woff2") format("woff2");
+        font-family: "Dream Font";
+        font-display: swap;
+        font-weight: 400;
+        src: url("${fontSrc!}")${(fontFormat??)?then(' format("${fontFormat}")', '')};
     }
 
+    </#if>
     <#if settings.enable_gray_mode!false>
     html {
         filter: grayscale(1) !important;
