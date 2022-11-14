@@ -1,4 +1,11 @@
 <style>
+    @font-face {
+      font-family: "Dream Font";
+      font-display: swap;
+      font-weight: 400;
+      src: url("${theme_base!}/source/font/dream_future.woff2") format("woff2");
+    }
+
     <#if settings.enable_gray_mode!false>
     html {
         filter: grayscale(1) !important;

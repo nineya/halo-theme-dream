@@ -129,6 +129,21 @@ basic_style:
       type: color
       default: '#5d93db'
       placeholder: '黑夜模式下的主题颜色'
+    web_font:
+      name: web_font
+      label: 博客字体
+      type: select
+      default: 'default'
+      options:
+        - value: 'default'
+          label: 默认字体
+        - value: 'night'
+          label: 微软雅黑
+    custom_font:
+      name: custom_font
+      label: 自定义博客字体
+      type: attachment
+      description: "自定义博客字体，支持 woff2/woff/ttf/eot/svg 格式的字体文件，建议使用 woff2 格式。"
     sidebar_column:
       name: sidebar_column
       label: 侧边栏布局方式
@@ -498,6 +513,18 @@ comment:
           label: 开启
         - value: false
           label: 关闭
+    avatar_loading:
+      name: avatar_loading
+      label: 头像加载动画
+      type: attachment
+      placeholder: '图片url链接'
+      description: '加载用户头像时的加载动画。'
+    default_avatar:
+      name: default_avatar
+      label: 默认评论头像
+      type: attachment
+      placeholder: '图片url链接'
+      description: '如果用户头像加载失败，则显示默认头像。'
     enable_qq_info:
       name: enable_qq_info
       label: 获取QQ昵称和头像
