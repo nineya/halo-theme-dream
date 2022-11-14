@@ -486,6 +486,18 @@ comment:
           label: 开启
         - value: false
           label: 关闭
+    avatar_loading:
+      name: avatar_loading
+      label: 头像加载动画
+      type: attachment
+      placeholder: '图片url链接'
+      description: '加载用户头像时的加载动画。'
+    default_avatar:
+      name: default_avatar
+      label: 默认评论头像
+      type: attachment
+      placeholder: '图片url链接'
+      description: '如果用户头像加载失败，则显示默认头像。'
     enable_qq_info:
       name: enable_qq_info
       label: 获取QQ昵称和头像
