@@ -129,6 +129,21 @@ basic_style:
       type: color
       default: '#5d93db'
       placeholder: '黑夜模式下的主题颜色'
+    web_font:
+      name: web_font
+      label: 博客字体
+      type: select
+      default: 'default'
+      options:
+        - value: 'default'
+          label: 默认字体
+        - value: 'night'
+          label: 微软雅黑
+    custom_font:
+      name: custom_font
+      label: 自定义博客字体
+      type: attachment
+      description: "自定义博客字体，支持 woff2/woff/ttf/eot/svg 格式的字体文件，建议使用 woff2 格式。"
     sidebar_column:
       name: sidebar_column
       label: 侧边栏布局方式
