@@ -39,6 +39,7 @@ const syncLoadScripts = ($scripts, i, resolve) => {
  */
 $(document).on('click', 'a[target!=_blank][href]:not(data-not-pjax)', (event) => {
     window.DProgress && DProgress.start()
+    $('html').addClass('pjax-loading')
     $.pjax.click(event, ".column-main", {
         scrollTo: 0,
         fragment: ".column-main",
@@ -110,6 +111,8 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
     commonContext.initGallery()
     /* 重新加载目录和公告 */
     commonContext.initTocAndNotice()
+    /* 已经完成页面渲染 */
+    $('html').removeClass('pjax-loading')
 
     const $currentTarget = $($.parseHTML(data, document, true));
     const $head = $("head");

@@ -395,6 +395,7 @@ window.commonContext = commonContext;
 
     // 当前html加载完执行
     document.addEventListener("DOMContentLoaded", function () {
+        $("html").addClass("loaded");
         loads.forEach((c) => commonContext[c] && commonContext[c]());
     });
 
