@@ -7,9 +7,8 @@
 <#if post?? || is_journals?? || is_error??>
     <script data-pjax src="${theme_base!}/source/lib/highlightjs@11.5.1/highlight.min.js"></script>
     <script data-pjax src="${theme_base!}/source/lib/clipboard@2.0.10/clipboard.min.js"></script>
-    <#if post??>
-        <script data-pjax src="${theme_base!}/source/js/post.min.js?mew=${theme_version!}"></script>
-    <#elseif is_journals??>
+    <script data-pjax src="${theme_base!}/source/js/post.min.js?mew=${theme_version!}"></script>
+    <#if is_journals??>
         <script data-pjax src="${theme_base!}/source/js/journals.min.js?mew=${theme_version!}"></script>
     </#if>
 </#if>
