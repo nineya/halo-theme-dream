@@ -381,6 +381,13 @@ post:
       default: 500
       placeholder: '触发折叠的图片高度（px）'
       description: '图片高度超出指定高度后默认进行折叠，指定的高度需大于等于260px。'
+    invalid_tips_day:
+      name: invalid_tips_day
+      label: 文章失效提示
+      type: text
+      default: 99999999
+      placeholder: '填写时间（天）'
+      description: '文章超过指定天数未进行更新，展示文章或图片可能失效的温馨提示。'
     enable_katex:
       name: enable_katex
       label: KaTeX 公式支持
