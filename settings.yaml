@@ -664,11 +664,6 @@ profile:
       label: Telegram
       type: text
       placeholder: 'Telegram 用户名'
-    social_csdn:
-      name: social_csdn
-      label: CSDN
-      type: text
-      placeholder: 'CSDN 主页'
     social_rss:
       name: social_rss
       label: 'RSS 订阅'
@@ -680,6 +675,12 @@ profile:
           label: 开启
         - value: false
           label: 关闭
+    custom_social_options:
+      name: custom_social_options
+      label: 自定义社交选项
+      type: textarea
+      placeholder: "自定义社交选项内容"
+      description: 一行表示一个社交渠道，每个社交渠道需要名称、图标和链接地址三个参数，参数之间使用“|”分隔，主题内置图标采用 FontAwesome 4.7。
 toc:
   label: 目录模块
   items:
