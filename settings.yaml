@@ -117,6 +117,8 @@ basic_style:
           label: 明亮主题
         - value: 'night'
           label: 黑暗主题
+        - value: 'system'
+          label: 跟随系统
     theme_color:
       name: theme_color
       label: 主题色

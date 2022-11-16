@@ -72,22 +72,24 @@ const commonContext = {
     /* 初始化主题模式（仅用户模式） */
     initMode() {
         let isNight = localStorage.getItem('night') || false;
-        const applyNight = (value) => {
-            if (value.toString() === 'true') {
+        const applyNight = (isNightValue) => {
+            if (isNightValue) {
                 document.documentElement.classList.add('night');
             } else {
                 document.documentElement.classList.remove('night');
             }
-        }
-        $("#toggle-mode").on('click', function () {
-            isNight = isNight.toString() !== 'true';
-            applyNight(isNight);
             $("halo-comment").each(function () {
                 const shadowDom = this.shadowRoot.getElementById("halo-comment");
-                $(shadowDom)[`${isNight ? "add" : "remove"}Class`]("night");
+                $(shadowDom)[`${isNightValue ? "add" : "remove"}Class`]("night");
             })
-            localStorage.setItem('night', isNight);
-        });
+            localStorage.setItem('night', isNightValue);
+            isNight = isNightValue
+        }
+        $("#toggle-mode").on('click', () => applyNight(isNight.toString() !== 'true'));
+        if (DreamConfig.default_theme === 'system') {
+            window.matchMedia('(prefers-color-scheme: dark)')
+              .addListener((event) => alert(event.matches) && applyNight(event.matches));
+        }
     },
     /* 导航条高亮 */
     initNavbar() {
