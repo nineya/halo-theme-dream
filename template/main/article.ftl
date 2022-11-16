@@ -23,7 +23,7 @@
         </div>
     </#if>
     <#if (metas?? && metas.tips?? && metas.tips!='')>
-        <div class="tips"><i class="fa fa-times click-close" data-close=".tips"></i>${metas.tips}</div>
+        <div class="card tips"><i class="fa fa-times click-close" data-close=".tips"></i>${metas.tips}</div>
     </#if>
     <div class="card">
         <div class="card-content main">
