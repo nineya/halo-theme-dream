@@ -128,14 +128,12 @@
     DreamConfig["default_theme"] = '${settings.default_theme!'light'}';
 
     (function(){
-        let isNight = localStorage.getItem('night');
-        if (isNight) {
-            if (isNight.toString() === 'true') {
-                document.documentElement.classList.add('night');
-            }
-        } else if (DreamConfig.default_theme === 'night') {
-            localStorage.setItem('night', true);
+        let isNight = DreamConfig.default_theme === 'system'? matchMedia('(prefers-color-scheme: dark)').matches : localStorage.getItem('night') || DreamConfig.default_theme === 'night';
+        if (isNight.toString() === 'true') {
+            localStorage.setItem('night', 'true');
             document.documentElement.classList.add('night');
+        } else {
+          localStorage.setItem('night', 'false');
         }
     })();
 </script>

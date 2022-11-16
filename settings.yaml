@@ -117,6 +117,8 @@ basic_style:
           label: 明亮主题
         - value: 'night'
           label: 黑暗主题
+        - value: 'system'
+          label: 跟随系统
     theme_color:
       name: theme_color
       label: 主题色
@@ -379,6 +381,13 @@ post:
       default: 500
       placeholder: '触发折叠的图片高度（px）'
       description: '图片高度超出指定高度后默认进行折叠，指定的高度需大于等于260px。'
+    invalid_tips_day:
+      name: invalid_tips_day
+      label: 文章失效提示
+      type: text
+      default: 99999999
+      placeholder: '填写时间（天）'
+      description: '文章超过指定天数未进行更新，展示文章或图片可能失效的温馨提示。'
     enable_katex:
       name: enable_katex
       label: KaTeX 公式支持
@@ -655,11 +664,6 @@ profile:
       label: Telegram
       type: text
       placeholder: 'Telegram 用户名'
-    social_csdn:
-      name: social_csdn
-      label: CSDN
-      type: text
-      placeholder: 'CSDN 主页'
     social_rss:
       name: social_rss
       label: 'RSS 订阅'
@@ -671,6 +675,12 @@ profile:
           label: 开启
         - value: false
           label: 关闭
+    custom_social_options:
+      name: custom_social_options
+      label: 自定义社交选项
+      type: textarea
+      placeholder: "自定义社交选项内容"
+      description: 一行表示一个社交渠道，每个社交渠道需要名称、图标和链接地址三个参数，参数之间使用“|”分隔，主题内置图标采用 FontAwesome 4.7。
 toc:
   label: 目录模块
   items:
