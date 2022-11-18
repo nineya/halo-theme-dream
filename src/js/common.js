@@ -299,11 +299,11 @@ const commonContext = {
     initEvent() {
         $("body").on("click", ".click-close", function (e) {
             e.stopPropagation();
-            const closeSelect = $(this).attr('data-close').trim();
-            if (closeSelect && closeSelect !== '') {
-                $(this).closest(closeSelect).remove();
+            const closeSelect = $(this).attr('data-close');
+            if (closeSelect && closeSelect.trim() !== '') {
+                $(this).closest(closeSelect.trim()).remove();
             } else {
-                $(this).closest().remove();
+                $(this).remove();
             }
         });
     },
