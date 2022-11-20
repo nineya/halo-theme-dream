@@ -21,7 +21,7 @@
                                         <#if menu.url!='#'>
                                             <a class="item" href="${menu.url!}" target="${menu.target!}" title="${menu.name!}"><#if menu.icon?? && menu.icon!=''><i class="m-icon ${menu.icon}"></i></#if>${menu.name!}</a>
                                         <#else>
-                                            <a class="item" style="cursor:default;" href="javascript:;" title="${menu.name!}"><#if menu.icon?? && menu.icon!=''><i class="m-icon ${menu.icon}"></i></#if>${menu.name!}</a>
+                                            <a class="item" style="cursor:default;" href="javascript:" title="${menu.name!}"><#if menu.icon?? && menu.icon!=''><i class="m-icon ${menu.icon}"></i></#if>${menu.name!}</a>
                                         </#if>
                                         <i class="fa fa-angle-down item-dropdown-link-icon" style="color:var(--main)"></i>
                                     </div>

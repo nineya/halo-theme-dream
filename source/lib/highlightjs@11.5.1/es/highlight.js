@@ -5801,7 +5801,7 @@ function javascript(hljs) {
         if (m.index === 0) {
           response.ignoreMatch();
           // eslint-disable-next-line no-useless-return
-          return;
+
         }
       }
     }

@@ -38,8 +38,6 @@ const syncLoadScripts = ($scripts, i, resolve) => {
  * fragment:是加载的文本中被选中的目标内容
  */
 $(document).on('click', 'a[target!=_blank][href]:not(data-not-pjax)', (event) => {
-    window.DProgress && DProgress.start()
-    $('html').addClass('pjax-loading')
     $.pjax.click(event, ".column-main", {
         scrollTo: 0,
         fragment: ".column-main",
@@ -50,7 +48,6 @@ $(document).on('click', 'a[target!=_blank][href]:not(data-not-pjax)', (event) =>
 
 
 $(document).on('submit', 'form[data-pjax]', function (event) {
-    window.DProgress && DProgress.start()
     $.pjax.submit(event, ".column-main", {
         scrollTo: 0,
         fragment: ".column-main",
@@ -70,6 +67,8 @@ $(document).on("pjax:beforeSend", function (event, xhr, options) {
 
 $(document).on("pjax:start", function (event, xhr, options) {
     console.log(`pjax:start sn = ${options.serialNumber}`)
+    window.DProgress && DProgress.start()
+    $('html').addClass('pjax-loading')
 });
 
 $(document).on("pjax:send", function (event, xhr, options) {
@@ -186,7 +185,7 @@ $(document).on("pjax:complete", function (event, xhr, textStatus, options) {
  */
 $(document).on("pjax:end", function (event, xhr, options) {
     console.log(`pjax:end sn = ${options.serialNumber}`)
-    // 浏览器前进后退
+    // 如果是浏览器前进后退
     if (xhr == null) {
         /* 重新加载目录和公告 */
         commonContext.initTocAndNotice()

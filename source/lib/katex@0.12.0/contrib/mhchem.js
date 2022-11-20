@@ -326,7 +326,7 @@ var mhchemParser = {
             }
 
             if (!task.toContinue) {
-              break iterateTransitions;
+              break;
             }
           } else {
             return output;

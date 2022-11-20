@@ -80,7 +80,7 @@
         if (!n) {
             return DProgress.start();
         } else if(n >= 1) {
-            return;
+
         } else {
             if (typeof amount !== 'number') {
                 if (n >= 0 && n < 0.2) { amount = 0.1; }
