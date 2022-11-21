@@ -88,7 +88,7 @@ const commonContext = {
         $("#toggle-mode").on('click', () => applyNight(isNight.toString() !== 'true'));
         if (DreamConfig.default_theme === 'system') {
             window.matchMedia('(prefers-color-scheme: dark)')
-              .addListener((event) => alert(event.matches) && applyNight(event.matches));
+                .addListener((event) => alert(event.matches) && applyNight(event.matches));
         }
     },
     /* 导航条高亮 */
@@ -297,15 +297,24 @@ const commonContext = {
     },
     /* 初始化事件 */
     initEvent() {
-        $("body").on("click", ".click-close", function (e) {
+        let $body = $('body')
+
+        function closeSelect(elem) {
+            let $elem = $(elem)
+            const closeSelect = $elem.attr('data-close');
+            return closeSelect && closeSelect.trim() !== '' ? $elem.closest(closeSelect.trim()) : $elem;
+        }
+
+        $body.on("click", ".click-close", function (e) {
             e.stopPropagation();
-            const closeSelect = $(this).attr('data-close');
-            if (closeSelect && closeSelect.trim() !== '') {
-                $(this).closest(closeSelect.trim()).remove();
-            } else {
-                $(this).remove();
-            }
+            closeSelect(this).remove();
         });
+        $body.on('click', '.click-animation-close', function (e) {
+            e.stopPropagation();
+            let selectElem = closeSelect(this);
+            selectElem.addClass('close-animation')
+            setTimeout(()=>selectElem.remove(), 300);
+        })
     },
     /* 离屏提示 */
     offscreenTip() {

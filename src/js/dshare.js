@@ -110,7 +110,7 @@ function createWechatShare(config, element) {
 function triggerPosterShare(config) {
     QRCode.toDataURL(config.url)
         .then(data => {
-                $('body').append(`<div class="dshare-poster click-close pjax-close"><div class="dshare-poster-container"><div class="dshare-poster-crad">${
+                $('body').append(`<div class="dshare-poster click-animation-close pjax-close"><div class="dshare-poster-container"><div class="dshare-poster-crad">${
                     config.image ? `<div class="dshare-poster-cover"><img alt="${config.title}封面" src="${config.image}"/></div>` : ''
                 }${config.title !== '' ? `<div class="dshare-poster-content"><p class="dshare-poster-title">${config.title}</p>` : ''
                 }<p class="dshare-poster-desc">${config.description}</p><div class="dshare-poster-footer"><img class="dshare-poster-qrcode" src="${data}" alt="${config.title
