@@ -47,6 +47,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "html2canvas": "^1.4.1",
     "qrcode": "^1.5.1"
   }
 }

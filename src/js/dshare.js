@@ -1,4 +1,5 @@
 import QRCode from "qrcode"
+import html2canvas from "html2canvas"
 
 const channels = {
     qq: {
@@ -44,22 +45,29 @@ const channels = {
     }
 };
 
-const defaultConfig = {
-    url: location.href,
-    origin: location.origin,
-    source: getMetaContentByName('site') || getMetaContentByName('Site') || document.title,
-    title: getMetaContentByName('title') || getMetaContentByName('Title') || document.title,
-    description: getMetaContentByName('description') || getMetaContentByName('Description') || '',
-    // 图片url
-    image: undefined,
-    // 图片或者图片所在的容器的选择器
-    imageSelector: undefined,
-    weiboKey: '',
-    sites: ['qq', 'qzone', 'wechat', 'weibo', 'douban', 'linkedin', 'facebook', 'twitter', 'google', 'link', 'poster'],
+function defaultConfig() {
+    return {
+        url: location.href,
+        origin: location.origin,
+        source: getMetaContentByName('site') || getMetaContentByName('Site') || document.title,
+        title: getMetaContentByName('title') || getMetaContentByName('Title') || document.title,
+        description: getMetaContentByName('description') || getMetaContentByName('Description') || '',
+        // 图片url
+        image: undefined,
+        // 图片或者图片所在的容器的选择器
+        imageSelector: undefined,
+        weiboKey: '',
+        sites: ['qq', 'qzone', 'wechat', 'weibo', 'douban', 'linkedin', 'facebook', 'twitter', 'google', 'link', 'poster']
+    }
 };
+
+let linkCopy
 
 window.DShare = {
     create(element, options) {
+        const $body = $('body')
+        $body.off('click', '.icon-poster');
+        linkCopy && linkCopy.destroy();
         const config = buildConfig(options)
         element = $(element);
         element.addClass('dshare-container')
@@ -68,15 +76,12 @@ window.DShare = {
             element.append(`<a class="dshare-icon ${clazz}" data-not-pjax${channels[site].template ? ` target="_blank" href=${makeUrl(site, config)}` : ''} title="${channels[site].name}"></a>`)
         }
         config.sites.indexOf('wechat') !== -1 && createWechatShare(config, element)
-        config.sites.indexOf('link') !== -1 && element.find('.icon-link').each((index, item) => {
-            new ClipboardJS(item, {
-                text: () => config.url
-            }).on('error', function (e) {
-                e.clearSelection();
-                Qmsg.error("您的浏览器不支持复制");
-            }).on('success', () => Qmsg.success('链接复制成功'))
-        })
-        config.sites.indexOf('poster') !== -1 && element.find('.icon-poster').click(() => triggerPosterShare(config))
+        if(config.sites.indexOf('link') !== -1){
+            linkCopy = new ClipboardJS('.icon-link', {text: () => config.url})
+              .on('error', () => Qmsg.error("您的浏览器不支持复制"))
+              .on('success', () => Qmsg.success('链接复制成功'))
+        }
+        config.sites.indexOf('poster') !== -1 && $body.on('click', '.icon-poster', () => triggerPosterShare(config))
     },
     /**
      * 海报方式分享
@@ -105,11 +110,29 @@ function createWechatShare(config, element) {
 function triggerPosterShare(config) {
     QRCode.toDataURL(config.url)
         .then(data => {
-                let elem = $('body').append(`<div class="dshare-poster click-close"><div class="dshare-poster-crad">${
+                $('body').append(`<div class="dshare-poster click-close pjax-close"><div class="dshare-poster-container"><div class="dshare-poster-crad">${
                     config.image ? `<div class="dshare-poster-cover"><img alt="${config.title}封面" src="${config.image}"/></div>` : ''
                 }${config.title !== '' ? `<div class="dshare-poster-content"><p class="dshare-poster-title">${config.title}</p>` : ''
-                }<p class="dshare-poster-desc">${config.description}</p><img class="dshare-poster-qrcode" src="${data}" alt="${config.title}分享海报"/></div></div></div>`)
-                console.log(elem)
+                }<p class="dshare-poster-desc">${config.description}</p><img class="dshare-poster-qrcode" src="${data}" alt="${config.title
+                }分享海报"/></div></div><i title="点击下载封面" class="dshare-poster-download fa fa-arrow-down"></i></div></div>`)
+            let $posterCrad = $('.dshare-poster-crad')
+            $posterCrad.click(e => e.stopPropagation())
+            $('.dshare-poster-download').click(e => {
+                    e.stopPropagation();
+                    let divWidth = $posterCrad.outerWidth();
+                    let divHeight =$posterCrad.outerHeight();
+                    html2canvas($posterCrad[0], {height: divHeight, width: divWidth, useCORS: true, scale: 2, onclone(doc){
+                            doc.getElementsByClassName("dshare-poster-crad")[0].style['transform'] = 'none';
+                            doc.getElementsByClassName("dshare-poster-crad")[0].style['border-radius'] = 0;
+                        }})
+                      .then((canvas) => {
+                          let a = document.createElement('a');
+                          a.href= canvas.toDataURL('image/png')
+                          a.download = `share-${new Date().getTime()}.png`
+                          a.click()
+                          $('.dshare-poster').click()
+                      })
+                });
             }
         )
 }
@@ -120,19 +143,14 @@ function triggerPosterShare(config) {
  * @returns {*}
  */
 function buildConfig(options) {
-    const config = Object.assign(defaultConfig, options)
-    console.log(defaultConfig)
-    console.log(options)
-    console.log(Object.assign(defaultConfig, options))
+    const config = Object.assign(defaultConfig(), options)
     if (!config.summary) {
         config.summary = config.description;
     }
-    console.log(config)
     if (!config.image && config.imageSelector) {
         let selector = $(config.imageSelector);
         config.image = selector.filter('img[src]').first().attr('src') || selector.find('img[src]').first().attr('src')
     }
-    console.log(config)
     if (config.image) {
         if (config.image.substring(0, 2) === '//') {
             config.image = location.protocol + config.image
@@ -140,7 +158,6 @@ function buildConfig(options) {
             config.image = location.origin + config.image
         }
     }
-    console.log(config)
     return config;
 }
 

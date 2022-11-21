@@ -187,6 +187,7 @@
       border-radius: 5px;
       background: #fff;
       box-shadow: 0 2px 10px #aaa;
+      user-select: none;
 
       &:after {
         content: '';
@@ -225,21 +226,41 @@
     z-index: 99999;
     background: rgba(0, 0, 0, 0.3);
 
-    &-crad {
-      width: 360px;
-      max-width: 90%;
+    &-container {
       top: 50%;
       left: 50%;
-      overflow: hidden;
+      display: grid;
       position: absolute;
+      width: 360px;
+      max-width: 90%;
       transform: translate(-50%, -50%);
+    }
+
+    &-download {
+      width: 50px;
+      height: 50px;
+      margin-top: 20px;
+      line-height: 50px;
+      font-size: 32px;
+      cursor: pointer;
+      background: var(--theme);
+      border-radius: 50%;
+      color: #fff;
+      text-align: center;
+      justify-self: center;
+    }
+
+    &-crad {
+      overflow: hidden;
       background: #fff;
       border-radius: 6px;
+      user-select: none;
+      font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
     &-cover {
       position: relative;
-      margin-bottom: -60px;
+      margin-bottom: -68px;
 
       &:after {
         content: '';
@@ -266,6 +287,7 @@
     &-title {
       color: #333;
       position: relative;
+      margin-top: 8px;
       padding-bottom: 14px;
       font-size: 18px;
 

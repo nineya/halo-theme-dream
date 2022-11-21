@@ -63,12 +63,13 @@ $(document).on("pjax:click", function (event, options) {
 
 $(document).on("pjax:beforeSend", function (event, xhr, options) {
     console.log(`pjax:beforeSend sn = ${options.serialNumber}`)
+    $('html').addClass('pjax-loading')
 });
 
 $(document).on("pjax:start", function (event, xhr, options) {
     console.log(`pjax:start sn = ${options.serialNumber}`)
     window.DProgress && DProgress.start()
-    $('html').addClass('pjax-loading')
+    $('.pjax-close').remove();
 });
 
 $(document).on("pjax:send", function (event, xhr, options) {
@@ -105,7 +106,7 @@ $(document).on("pjax:beforeReplace", function (event, contents, options) {
 $(document).on("pjax:success", async function (event, data, status, xhr, options) {
     const serialNumber = options.serialNumber;
     console.log(`pjax:success sn = ${serialNumber}`)
-    if (pjaxSerialNumber !== serialNumber) return;
+    if (window.pjaxSerialNumber !== serialNumber) return;
     /* 重新激活图片预览功能 */
     commonContext.initGallery()
     /* 重新加载目录和公告 */
@@ -115,6 +116,8 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
 
     const $currentTarget = $($.parseHTML(data, document, true));
     const $head = $("head");
+    $head.find('meta').remove();
+    $head.append($currentTarget.filter("meta"))
     $currentTarget.filter('link[data-pjax]').each(function () {
         let href = $(this).attr('href')
         if (!cssLoadCompletes.has(href)) {
@@ -154,7 +157,7 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
         });
     }
     console.log('全部处理完成')
-    if (pjaxSerialNumber !== serialNumber) return;
+    if (window.pjaxSerialNumber !== serialNumber) return;
     /* 初始化日志界面 */
     window.journalPjax && window.journalPjax(serialNumber);
     /* 初始化文章界面 */
@@ -189,8 +192,6 @@ $(document).on("pjax:end", function (event, xhr, options) {
     if (xhr == null) {
         /* 重新加载目录和公告 */
         commonContext.initTocAndNotice()
-        /* 已经完成页面渲染 */
-        $('html').removeClass('pjax-loading')
         window.DProgress && DProgress.done()
     }
 });

@@ -41,6 +41,10 @@
     <#if enable_katex=='true'>
         <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/lib/katex@0.12.0/katex.min.css"/>
     </#if>
+    <#assign enable_share = (metas?? && metas.enable_share?? && metas.enable_share?trim!='')?then(metas.enable_share?trim, (settings.enable_post_share!true)?c)>
+    <#if (post?? && enable_share == 'true') || (is_journals?? && settings.enable_journals_share!false)>
+        <link data-pjax rel="preload stylesheet" href="${theme_base!}/source/css/dshare.min.css">
+    </#if>
 </#if>
 
 <link rel="stylesheet" href="${theme_base!}/source/css/mew-custom.min.css?mew=${theme_version!}">

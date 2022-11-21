@@ -78,6 +78,15 @@ const postContext = {
         // 初始化代码块高亮工具
         hljs.initHighlightingOnLoad();
     },
+    /**
+     * 初始化分享
+     */
+    initShare() {
+        if (!window.DShare) return
+        let imageUrl = $('.cover-image').css('background-image');
+        imageUrl && ( imageUrl = imageUrl.substring(5,imageUrl.length -2));
+        DShare.create('.dshare', {image: imageUrl, imageSelector: '.main-content'})
+    },
     /* 代码块复制 */
     initClipboard() {
         if (window.clipboard) {
@@ -106,6 +115,7 @@ window.postPjax = function (serialNumber) {
 
     document.addEventListener("DOMContentLoaded", function () {
         !window.pjaxSerialNumber && postContext.initHighlighting();
+        !window.pjaxSerialNumber && postContext.initShare();
         !window.pjaxSerialNumber && postContext.initClipboard();
     });
 })();

@@ -59,9 +59,6 @@
                 </#if>
                 <div>${settings.links_info!}</div>
             </div>
-            <#if settings.share_type?? && settings.share_type!=''>
-                <#include "template/share/${settings.share_type}.ftl">
-            </#if>
         </div>
     </div>
     <#if settings.link_comment_id?? && settings.link_comment_id!='' && !settings.close_post_comment!false>
