@@ -189,6 +189,8 @@ $(document).on("pjax:end", function (event, xhr, options) {
     if (xhr == null) {
         /* 重新加载目录和公告 */
         commonContext.initTocAndNotice()
+        /* 已经完成页面渲染 */
+        $('html').removeClass('pjax-loading')
         window.DProgress && DProgress.done()
     }
 });
