@@ -193,6 +193,8 @@ $(document).on("pjax:end", function (event, xhr, options) {
         /* 重新加载目录和公告 */
         commonContext.initTocAndNotice()
         window.DProgress && DProgress.done()
+        // 应该是由于浏览器缓存失效，有时候浏览器前后退还是会执行pjax:beforeSend
+        $('html').removeClass('pjax-loading')
     }
 });
 

@@ -145,25 +145,31 @@ var Utils = {
             });
         });
     },
-
     /**
-     * 点赞
-     * @param likeButton 被点击的点赞按钮
-     * @param likeNum 要显示点赞次数的元素
-     * @param type 点赞类型，支持文章和日志
+     * 初始化喜欢按钮
+     * @param buttonSelect 喜欢按钮的选择器
+     * @param type 喜欢的类型
      */
-    like(likeButton, likeNum, type) {
-        const id = likeButton.attr("data-id");
-        const name = encryption("agree-" + type);
+    initLikeButton(buttonSelect, type) {
+        const name = encrypt("agree-" + type);
         let agrees = localStorage.getItem(name);
         agrees = agrees ? JSON.parse(decrypt(agrees)) : [];
-        // 已经喜欢过了
-        if (agrees.includes(id)) {
-            likeButton.removeClass("like");
-            return;
-        }
-        likeButton.on("click", function (e) {
+        $(buttonSelect).each(function () {
+            let $this = $(this)
+            let id = $this.attr("data-id");
+            // 已经喜欢过了
+            agrees.includes(id) && $this.removeClass("like");
+        });
+    },
+    /**
+     * 初始化喜欢按钮点击事件
+     */
+    initLikeEvent(buttonSelect, type, likeNumFunc) {
+        let name = encrypt("agree-" + type);
+        $('body').on('click', buttonSelect, function (e) {
             e.stopPropagation();
+            let $this = $(this)
+            let id = $this.attr("data-id");
             Utils.request({
                 url: "/api/content/" + type + "/" + id + "/likes",
                 method: "POST",
@@ -171,16 +177,16 @@ var Utils = {
                 .then((_res) => {
                     let agrees = localStorage.getItem(name);
                     agrees = agrees ? JSON.parse(decrypt(agrees)) : [];
-                    let likes = +(likeButton.attr("data-likes") || 0) + 1;
+                    let likes = +($this.attr("data-likes") || 0) + 1;
                     agrees.push(id);
-                    likeButton.removeClass("like");
-                    const val = encryption(JSON.stringify(agrees));
+                    $this.removeClass("like");
+                    const val = encrypt(JSON.stringify(agrees));
                     localStorage.setItem(name, val);
-                    likeButton.off('click');
-                    likeNum.html(likes);
+                    // $this.off('click');
+                    likeNumFunc($this).html(likes);
                     Qmsg.success('点赞成功');
                 });
-        });
+        })
     },
     /* 百度自动推送 */
     baiduPush() {

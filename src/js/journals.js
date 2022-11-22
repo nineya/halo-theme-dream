@@ -12,20 +12,13 @@ const journalContext = {
         $body.on("click", ".journal-content>.expand-done", function () {
             Utils.foldBlock($(this).parent());
         })
+        Utils.initLikeEvent(".journal .like", 'journals', ($elem) => $elem.next())
         journalContextInitial = true
     },
     /* 点赞 */
     initLike() {
-        $(".journal .like").each(function () {
-            Utils.like($(this), $(this).next(), 'journals')
-        });
+        Utils.initLikeButton(".journal .like", 'journals')
     },
-    // /* 评论及折叠 */
-    // initComment() {
-    //     $(".journal .comment").on("click", function () {
-    //         $(this).parent().parent().siblings(".journal-comment").stop().slideToggle(200);
-    //     });
-    // },
     /* 折叠日志区域 */
     foldJournals() {
         const $journals = $(".journal .journal-content");

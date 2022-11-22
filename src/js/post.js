@@ -24,6 +24,7 @@ const postContext = {
             e.stopPropagation();
             Utils.foldBlock($(this).parent());
         })
+        Utils.initLikeEvent(".admire .agree.like", 'posts', ($elem) => $elem.find('span').find('span'))
         postContextInitial = true
     },
     /* 初始化代码块 */
@@ -82,9 +83,7 @@ const postContext = {
     /* 初始化喜欢功能 */
     /* 点赞 */
     initLike() {
-        $(".admire .agree.like").each(function () {
-            Utils.like($(this), $(this).find('span').find('span'), 'posts')
-        });
+        Utils.initLikeButton(".admire .agree.like", 'posts')
     },
     /* 代码块高亮 */
     initHighlighting() {
@@ -97,7 +96,7 @@ const postContext = {
     initShare() {
         if (!window.DShare) return
         let imageUrl = $('.cover-image').css('background-image');
-        imageUrl && ( imageUrl = imageUrl.substring(5,imageUrl.length -2));
+        imageUrl && (imageUrl = imageUrl.substring(5, imageUrl.length - 2));
         DShare.create('.dshare', {image: imageUrl, imageSelector: '.main-content'})
     },
     /* 代码块复制 */
@@ -147,14 +146,14 @@ window.postPjax = function (serialNumber) {
     );
 }
 !(function () {
-    const advances  = ["initEvent", "initCodeBlock", "initLike", "foldImage"];
+    const advances = ["initEvent", "initCodeBlock", "initLike", "foldImage"];
     Object.keys(postContext).forEach(
-      (c) => !window.pjaxSerialNumber && advances.includes(c) && postContext[c]()
+        (c) => !window.pjaxSerialNumber && advances.includes(c) && postContext[c]()
     );
 
     document.addEventListener("DOMContentLoaded", function () {
         Object.keys(postContext).forEach(
-          (c) => !window.pjaxSerialNumber && !advances.includes(c) && postContext[c]()
+            (c) => !window.pjaxSerialNumber && !advances.includes(c) && postContext[c]()
         );
     });
 })();
