@@ -3447,8 +3447,21 @@ table td, table th {
     display: block;
     width: 100%;
     position: relative;
-    overflow: hidden;
     margin-top: 12px;
+
+    &.loading {
+      margin-bottom: 80px;
+
+      &:empty {
+        height: 0 !important;
+      }
+
+      &:after {
+        width: 100%;
+        position: absolute;
+        bottom: -80px;
+      }
+    }
 
     & > div {
       position: absolute;
