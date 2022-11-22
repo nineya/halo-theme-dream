@@ -5,7 +5,7 @@ try {
             $.ajax({url: DreamConfig['live2d_model_url'] + "dist/live2d.js", dataType:"script", cache: true, success: function() {
                     live2d_settings['hitokotoAPI'] = "hitokoto.cn";  // 一言 API
                     live2d_settings['modelId'] = 1;                  // 默认模型 ID
-                    live2d_settings['modelTexturesId'] = 83;          // 默认材质 ID
+                    live2d_settings['modelTexturesId'] = 1;          // 默认材质 ID
                     live2d_settings['waifuSize'] = DreamConfig["live2d_waifu_size"],
                     live2d_settings['waifuTipsSize'] = "230x75",
                     live2d_settings['waifuFontSize'] = "16px",
