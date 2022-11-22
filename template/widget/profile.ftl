@@ -37,9 +37,12 @@
                 </div>
             </div>
         </nav>
-        <div class="level">
-            <a class="level-item button is-link is-rounded" href="${settings.profile_follow_url!'${context!}'}" target="_blank" rel="nofollow noopener noreferrer">关注我</a>
-        </div>
+        <#if settings.profile_theme_button?? && settings.profile_theme_button!=''>
+            <#assign profile_theme_button=settings.profile_theme_button?split('|')>
+            <div class="level">
+                <a class="level-item button is-link is-rounded" href="${profile_theme_button[1]!}" target="_blank" rel="nofollow noopener noreferrer">${profile_theme_button[0]!}</a>
+            </div>
+        </#if>
         <div class="level"><#if settings.social_github?? && settings.social_github!=''>
                 <a class="level-item button is-transparent" target="_blank" title="Github主页" href="https://github.com/${settings.social_github}" rel="nofollow noopener noreferrer">
                     <i class="fa fa-github"></i>

@@ -622,11 +622,12 @@ profile:
       label: 地理位置
       type: text
       placeholder: '个人所在地'
-    profile_follow_url:
-      name: profile_follow_url
-      label: (关注我)按钮地址
+    profile_theme_button:
+      name: profile_theme_button
+      label: 主题按钮
       type: text
-      placeholder: '默认为博客地址'
+      placeholder: 链接地址
+      description: '需要“按钮名称”和“按钮地址”两个参数，参数间用“|”分隔，放空则不显示主题按钮。'
     social_github:
       name: social_github
       label: Github
