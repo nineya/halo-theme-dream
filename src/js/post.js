@@ -1,4 +1,31 @@
+let postContextInitial = false
 const postContext = {
+    /* 初始化事件 */
+    initEvent() {
+        if (postContextInitial) return
+        let $body = $("body")
+        // 代码块展开和关闭点击事件
+        $body.on("click", "figure>figcaption .fa-angle-down", function () {
+            let $this = $(this);
+            if ($this.is('.close')) {
+                $($this.attr('data-code')).parent().slideDown(200);
+                $this.removeClass('close');
+            } else {
+                $($this.attr('data-code')).parent().slideUp(200);
+                $this.addClass('close');
+            }
+        });
+        // 代码内容块展开和折叠点击事件
+        $body.on("click", "figure > pre > .expand-done", function () {
+            Utils.foldBlock($(this).parent().parent());
+        })
+        // 图片的展开和折叠事件
+        $body.on("click", ".gallery-item .expand-done", function (e) {
+            e.stopPropagation();
+            Utils.foldBlock($(this).parent());
+        })
+        postContextInitial = true
+    },
     /* 初始化代码块 */
     initCodeBlock() {
         const $code = $("*:not(figure) > pre > code");
@@ -50,20 +77,6 @@ const postContext = {
                 $pre.wrap(`<figure class="hljs"></figure>`);
             }
             $pre.parent().prepend(`<figcaption>${title}${titleButton}</figcaption>`);
-        })
-        // 代码块展开和关闭点击事件
-        $(".main-content").on("click", "figure>figcaption .fa-angle-down", function () {
-            if ($(this).is('.close')) {
-                $($(this).attr('data-code')).parent().slideDown(200);
-                $(this).removeClass('close');
-            } else {
-                $($(this).attr('data-code')).parent().slideUp(200);
-                $(this).addClass('close');
-            }
-        });
-        // 内容块展开和折叠点击事件
-        $(".main-content .expand-done").on("click", function () {
-            Utils.foldBlock($(this).parent().parent());
         })
     },
     /* 初始化喜欢功能 */
@@ -125,10 +138,6 @@ const postContext = {
                 }
             }
         })
-        $("body").on("click", ".gallery-item .expand-done", function (e) {
-            e.stopPropagation();
-            Utils.foldBlock($(this).parent());
-        })
     }
 }
 window.postPjax = function (serialNumber) {
@@ -138,7 +147,7 @@ window.postPjax = function (serialNumber) {
     );
 }
 !(function () {
-    const advances  = ["initLike", "initCodeBlock", "foldImage"];
+    const advances  = ["initEvent", "initCodeBlock", "initLike", "foldImage"];
     Object.keys(postContext).forEach(
       (c) => !window.pjaxSerialNumber && advances.includes(c) && postContext[c]()
     );

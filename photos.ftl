@@ -12,7 +12,7 @@
                 </@photoTag>
             </ul>
         </div>
-        <div class="photos-gallery"></div>
+        <div class="photos-gallery load-block"></div>
     <#else>
         <div class="card card-empty">
             <i class="fa fa-inbox"></i>
