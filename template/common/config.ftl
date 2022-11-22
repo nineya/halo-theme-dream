@@ -86,8 +86,11 @@
     <#if settings.sidebar_notice?? && settings.sidebar_notice!='none'>
     DreamConfig["notice_show_mode"] = '${settings.notice_show_mode!'index'}';
     </#if>
+    <#if settings.img_fold_height?? && settings.img_fold_height?number gte 400>
+    DreamConfig["img_fold_height"] = ${settings.img_fold_height};
+    </#if>
     <#if settings.journals_fold_height?? && settings.journals_fold_height?number gte 260>
-    DreamConfig["journals_fold_height"] =${settings.journals_fold_height};
+    DreamConfig["journals_fold_height"] = ${settings.journals_fold_height};
     </#if>
     <#if settings.cursor_move?? && settings.cursor_move!='none'>
     DreamConfig["cursor_move"] = '${settings.cursor_move}';

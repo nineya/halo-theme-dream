@@ -540,7 +540,8 @@ table td, table th {
   i {
     color: var(--dark-b);
     font-size: 1.6rem;
-    animation: code-expand 1.2s infinite;
+    animation: code-expand 2.4s infinite;
+    text-shadow: 0 -1px 5px var(--light-d);
     transition: all 0.3s;
   }
 }
@@ -1472,13 +1473,6 @@ table td, table th {
         .breadcrumb {
           font-size: 1em;
         }
-      }
-
-      .gallery-item > p {
-        text-align: center;
-        color: var(--dark-d);
-        line-height: 1em;
-        font-size: 0.9em;
       }
     }
 
@@ -2479,13 +2473,24 @@ table td, table th {
     }
   }
 
-  span[data-fancybox] {
-    display: block;
+  .gallery-item {
     text-align: center;
-    pointer-events: none;
 
-    * {
-      pointer-events: initial;
+    & > div {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    & > p {
+      text-align: center;
+      color: var(--dark-d);
+      line-height: 1em;
+      font-size: 0.9em;
+    }
+
+    .fold {
+      border-radius: var(--radius-img);
     }
   }
 
@@ -3033,13 +3038,13 @@ table td, table th {
 
 @keyframes code-expand {
   0% {
-    opacity: 0.6;
+    opacity: 0.8;
   }
   50% {
     opacity: 0.1;
   }
   100% {
-    opacity: 0.6;
+    opacity: 0.8;
   }
 }
 

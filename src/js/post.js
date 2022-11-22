@@ -101,6 +101,34 @@ const postContext = {
         clipboard.on('success', function () {
             Qmsg.success("复制成功");
         })
+    },
+    /* 初始化图片折叠 */
+    foldImage() {
+        if (!DreamConfig.img_fold_height) return
+        const $galleryList = $(".article .gallery-item>[data-fancybox]>img");
+        $galleryList.parent().addClass("fold")
+        $galleryList.each(function () {
+            const $gallery = $(this).parent();
+            if (this.complete) {
+                if (this.scrollHeight >= DreamConfig.img_fold_height) {
+                    $gallery.append(`<div class="expand-done"><i class="fa fa-angle-double-up"></i></div>`);
+                } else {
+                    $gallery.removeClass('fold');
+                }
+            } else {
+                this.onload = function () {
+                    if (this.scrollHeight >= DreamConfig.img_fold_height) {
+                        $gallery.append(`<div class="expand-done"><i class="fa fa-angle-double-up"></i></div>`);
+                    } else {
+                        $gallery.removeClass('fold');
+                    }
+                }
+            }
+        })
+        $("body").on("click", ".gallery-item .expand-done", function (e) {
+            e.stopPropagation();
+            Utils.foldBlock($(this).parent());
+        })
     }
 }
 window.postPjax = function (serialNumber) {
@@ -110,12 +138,14 @@ window.postPjax = function (serialNumber) {
     );
 }
 !(function () {
-    !window.pjaxSerialNumber && postContext.initLike();
-    !window.pjaxSerialNumber && postContext.initCodeBlock();
+    const advances  = ["initLike", "initCodeBlock", "foldImage"];
+    Object.keys(postContext).forEach(
+      (c) => !window.pjaxSerialNumber && advances.includes(c) && postContext[c]()
+    );
 
     document.addEventListener("DOMContentLoaded", function () {
-        !window.pjaxSerialNumber && postContext.initHighlighting();
-        !window.pjaxSerialNumber && postContext.initShare();
-        !window.pjaxSerialNumber && postContext.initClipboard();
+        Object.keys(postContext).forEach(
+          (c) => !window.pjaxSerialNumber && !advances.includes(c) && postContext[c]()
+        );
     });
 })();

@@ -210,9 +210,6 @@ var Utils = {
     },
     /* 折叠代码块或者日志块 */
     foldBlock($container) {
-        if (!DreamConfig.journals_fold_height) {
-            return;
-        }
         const oldHeight = $container.height();
         if ($container.is(".fold")) {
             $container.removeClass('fold').addClass('unfold');

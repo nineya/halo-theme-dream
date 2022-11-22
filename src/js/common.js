@@ -62,10 +62,8 @@ const commonContext = {
         // 用链接和标题包装图像
         $('.main-content img:not(.not-gallery)').each(function () {
             if ($(this).parents('[data-fancybox],mew-photos').length === 0) {
-                $(this).wrap($(`<span class="gallery-item" data-fancybox="gallery" ${this.alt ? "data-caption=\"" + this.alt + "\"" : ""} href="${$(this).attr('src')}"></span>`));
-                if (this.alt) {
-                    $(this).after(`<p>${this.alt}</p>`);
-                }
+                $(this).wrap(`<div class="gallery-item"><div data-fancybox="gallery" ${this.alt ? `data-caption="${this.alt}"` : ""} href="${$(this).attr('src')
+                }"></div>${this.alt ? `<p>"${this.alt}"</p>` : ""}</div>`);
             }
         });
     },
