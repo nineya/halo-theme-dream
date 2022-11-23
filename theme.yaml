@@ -26,9 +26,11 @@ postMetaField:
   - tips
   - enable_katex
   - enable_share
+  - enable_bullet_screen
 # 自定义页 meta 变量
 sheetMetaField:
   - enable_copyright
   - tips
   - enable_katex
   - enable_share
+  - enable_bullet_screen

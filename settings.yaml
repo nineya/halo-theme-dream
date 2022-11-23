@@ -470,6 +470,30 @@ comment:
       type: text
       default: 6
       placeholder: '默认展开的二级回复数量'
+    enable_bullet_screen:
+      name: enable_bullet_screen
+      label: 开启评论弹幕
+      type: radio
+      data-type: bool
+      default: false
+      description: '如果文章或页面元数据配置了“enable_bullet_screen”项，则当前配置将被覆盖。'
+      options:
+        - value: true
+          label: 默认开启
+        - value: false
+          label: 默认关闭
+    enable_image_upload:
+      name: enable_image_upload
+      label: 启用图片上传
+      type: switch
+      data-type: bool
+      description: '启用评论区内置的图片上传功能。'
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     reply_desc_soft:
       name: reply_desc_soft
       label: 回复列表按时间降序
