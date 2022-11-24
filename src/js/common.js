@@ -37,16 +37,16 @@ const commonContext = {
         const columnRight = $(".right-bottom")[0];
 
         function leftSetBottom() {
-            if ($(window).width() < 769) {
+            if (window.innerWidth < 769) {
                 columnLeft.style.top = null
             } else {
-                columnLeft.style.top = $(window).height() - columnLeft.scrollHeight - 10 + "px";
+                columnLeft.style.top = window.innerHeight - columnLeft.scrollHeight - 10 + "px";
             }
         }
 
         function rightSetBottom() {
-            if ($(window).width() >= 1216) {
-                columnRight.style.top = $(window).height() - columnRight.scrollHeight - 10 + "px";
+            if (window.innerWidth >= 1216) {
+                columnRight.style.top = window.innerHeight - columnRight.scrollHeight - 10 + "px";
             }
         }
 
@@ -86,7 +86,7 @@ const commonContext = {
         $("#toggle-mode").on('click', () => applyNight(isNight.toString() !== 'true'));
         if (DreamConfig.default_theme === 'system') {
             window.matchMedia('(prefers-color-scheme: dark)')
-                .addListener((event) => alert(event.matches) && applyNight(event.matches));
+              .addListener((event) => applyNight(event.matches));
         }
     },
     /* 导航条高亮 */
