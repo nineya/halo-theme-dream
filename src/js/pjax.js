@@ -9,6 +9,14 @@ const createSerialNumber = () => {
     return serialNumber;
 }
 
+const computeScrollTop = (target) => {
+    // 当前为横幅大图模式，处理滚动
+    if (target.pathname !== '/' && $('.banner').length !== 0) {
+        return window.innerHeight / 4
+    }
+    return 0
+}
+
 const syncLoadScripts = ($scripts, i, resolve) => {
     if (i >= $scripts.length) {
         resolve && resolve();
@@ -39,7 +47,7 @@ const syncLoadScripts = ($scripts, i, resolve) => {
  */
 $(document).on('click', 'a[target!=_blank][href]:not(data-not-pjax)', (event) => {
     $.pjax.click(event, ".column-main", {
-        scrollTo: 0,
+        scrollTo: computeScrollTop(event.currentTarget),
         fragment: ".column-main",
         serialNumber: createSerialNumber(),
         timeout: 8000,
@@ -74,12 +82,6 @@ $(document).on("pjax:start", function (event, xhr, options) {
 
 $(document).on("pjax:send", function (event, xhr, options) {
     console.log(`pjax:send sn = ${options.serialNumber}`)
-    // $("html, body").animate(
-    //     {
-    //         scrollTop: $("body").position().top - 60,
-    //     },
-    //     500
-    // );
 });
 
 $(document).on("pjax:clicked", function (event, options) {
