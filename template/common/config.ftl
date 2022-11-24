@@ -78,7 +78,7 @@
     DreamConfig["document_visible_title"] = '${settings.document_visible_title}';
     </#if>
     <#if settings.enable_color_character!false>
-    DreamConfig["spark_input_content"] = ['${user.description?trim?replace('\n', '')}'<#if settings.color_character?? && settings.color_character?trim!=''>, '${settings.color_character?trim?replace('\n', "','")}'</#if>];
+    DreamConfig["spark_input_content"] = ['${user.description?trim?replace('\n', '')?js_string}'<#if settings.color_character?? && settings.color_character?trim!=''>, '${settings.color_character?trim?js_string?replace('\\n', "','")}'</#if>];
     </#if>
     <#if settings.website_time?? && settings.website_time!=''>
     DreamConfig["website_time"] = '${settings.website_time}';
