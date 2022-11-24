@@ -31,6 +31,31 @@ const commonContext = {
             $('.widget.notice').removeClass("is-hidden-all");
         }
     },
+    /* 更新横幅大图的文字描述 */
+    initBanner() {
+        const $bannerInfoDesc = $('.banner-info-desc')
+        if ($bannerInfoDesc.length === 0) return
+        const bannerDesc = $bannerInfoDesc.text()
+        $bannerInfoDesc.text('')
+        let currentBannerDesc = ''
+        let isWrite = true
+        let id
+        const updateDesc = function () {
+            let num = currentBannerDesc.length
+            if (isWrite && num < bannerDesc.length) {
+                currentBannerDesc += bannerDesc.charAt(num)
+                $bannerInfoDesc.text(currentBannerDesc)
+            } else if (!isWrite && num > 0) {
+                currentBannerDesc = currentBannerDesc.slice(0, num - 1)
+                $bannerInfoDesc.text(currentBannerDesc)
+            } else {
+                clearInterval(id)
+                isWrite = !isWrite
+                id = setInterval(updateDesc, isWrite? 500 : 80)
+            }
+        }
+        id = setInterval(updateDesc, isWrite? 500 : 80)
+    },
     /* widget固定底部 */
     widgetFixedBottom() {
         const columnLeft = $(".left-bottom")[0];
