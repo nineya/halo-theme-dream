@@ -106,6 +106,27 @@ basic_style:
       label: 黑夜移动端背景图
       type: attachment
       placeholder: '图片url链接'
+    enable_banner:
+      name: enable_banner
+      label: 开启博客横幅大图
+      type: switch
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    banner_image:
+      name: banner_image
+      label: 横幅背景图
+      type: attachment
+      placeholder: '图片url链接'
+    banner_description:
+      name: banner_description
+      label: 横幅文字描述
+      type: text
+      placeholder: '文字内容'
     default_theme:
       name: default_theme
       label: 默认主题模式

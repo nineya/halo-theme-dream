@@ -1339,6 +1339,106 @@ table td, table th {
   }
 }
 
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  to {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.banner {
+  width: 100%;
+  height: 54vh;
+  position: relative;
+  margin-bottom: -4rem;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAKUlEQVQImU3IMREAIAgAwJfNkQCEsH8cijjpMf6vnXlQaIiJFx+omEBfmqIEZLe2jzcAAAAASUVORK5CYII=);
+  }
+
+  .banner-info {
+    position: absolute;
+    line-height: 2;
+    color: #fff;
+    text-align: center;
+
+    &-title {
+      font-size: 2.4rem;
+      font-weight: bold;
+      letter-spacing: 0.6rem;
+      text-shadow: rgb(28 31 33) -3px 2px 6px;
+    }
+
+    &-desc {
+      font-size: 1.4rem;
+
+      &:after {
+        content: '_';
+        margin-left: 0.3rem;
+        animation: flicker 1s steps(2, jump-none) infinite;
+      }
+    }
+  }
+
+  .banner-waves {
+    width: 100%;
+    height: 4rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    fill: var(--background);
+
+    .parallax >use {
+      animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+
+      &:first-child {
+        animation-delay: -2s;
+        animation-duration: 7s;
+        opacity: 0.9;
+      }
+
+      &:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 10s;
+        opacity: 0.8;
+      }
+
+      &:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+        opacity: 0.9;
+      }
+
+      &:nth-child(4) {
+        animation-delay: -5s;
+        animation-duration: 20s;
+      }
+    }
+  }
+}
+
 .item-dropdown {
   position: relative;
 

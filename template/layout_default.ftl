@@ -8,6 +8,7 @@
     </head>
     <body>
     <@nav.navbar/>
+    <#if settings.enable_banner!false ><#include "common/banner.ftl"></#if>
     <section class="section">
         <div class="container<#if settings.sidebar_column?? && settings.sidebar_column!='all'> two-column</#if>">
             <div class="columns">
