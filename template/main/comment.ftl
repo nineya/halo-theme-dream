@@ -11,7 +11,7 @@
     }", "unfoldReplyNum": ${settings.unfold_reply_num!6
     }, "replyDescSoft": ${(settings.reply_desc_soft!false)?c
     }, "enableImageUpload": ${(settings.enable_image_upload!false)?c
-    }, "enableBulletScreen": ${(metas?? && metas.enable_bullet_screen?? && metas.enable_bullet_screen?trim!="")?then(metas.enable_bullet_screen?trim, (settings.enable_bullet_screen!false)?c)
+    }, "enableBulletScreen": ${(is_journals??)?then("false", (metas?? && metas.enable_bullet_screen?? && metas.enable_bullet_screen?trim!="")?then(metas.enable_bullet_screen?trim, (settings.enable_bullet_screen!false)?c))
     }${imageToken!
     }${avatarLoading!
     }${defaultAvatar!
