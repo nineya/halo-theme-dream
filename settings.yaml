@@ -43,7 +43,7 @@ basic_info:
       name: record_number_ps
       label: 公安部备案
       type: text
-      placeholder: '公安部备案号'
+      placeholder: 'X公网安备 XXXXXXXXXXXXXX号'
     website_time:
       name: website_time
       label: 建站时间

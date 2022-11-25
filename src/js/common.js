@@ -398,7 +398,7 @@ const commonContext = {
                 hours = "0" + hours;
             }
             let days = parseInt(difference / 24);
-            websiteDate.innerHTML = `建站<span class="stand">${days}</span>天<span class="stand">${hours}</span>小时<span class="stand">${minutes}</span>分<span class="stand">${seconds}</span>秒`
+            websiteDate.innerHTML = `建站<span class="stand">${days}</span>天<span class="stand">${hours}</span>时<span class="stand">${minutes}</span>分<span class="stand">${seconds}</span>秒`
         }, 1000);
     },
     /* 初始化特效，只需要初始化一次，移动端设备不初始化 */
