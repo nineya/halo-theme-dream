@@ -1339,24 +1339,6 @@ table td, table th {
   }
 }
 
-@keyframes move-forever {
-  0% {
-    transform: translate3d(-90px, 0, 0);
-  }
-  to {
-    transform: translate3d(85px, 0, 0);
-  }
-}
-
-@keyframes flicker {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .banner {
   width: 100%;
   height: 54vh;
@@ -2734,40 +2716,72 @@ table td, table th {
     background-color: var(--background);
   }
 
-  .level > div {
-    color: var(--main);
-  }
-
-  .stand {
-    color: var(--theme);
-    margin: 0 4px;
-  }
-
-  &-info {
-    line-height: 1.5em;
+  &-container {
 
     .logo-title {
-      margin-bottom: 10px;
+      margin: 15px 15px 15px 0;
+      display: block;
     }
+
+    & > li {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 5px;
+      color: var(--dark-b);
+      line-height: 1.6em;
+
+      & > p:not(:first-child) {
+        font-size: 0.9em;
+      }
+
+      &:last-child {
+        float: right;
+      }
+    }
+
+    .icon-spot {
+      &:first-child > *:not(:first-child):before {
+        content: "·";
+        margin: 0 0.3em;
+        display: inline-block;
+      }
+
+      &:not(:first-child)> *:not(:first-child):before {
+        content: "";
+        width: 4px;
+        height: 4px;
+        margin: 0 0.4em;
+        border-radius: 50%;
+        display: inline-block;
+        background: var(--dark-b);
+        opacity: .3;
+        vertical-align: 0.2em;
+      }
+    }
+
+    a:not([class]) {
+      color: var(--dark-b);
+
+      &:hover {
+        color: var(--theme);
+      }
+    }
+
+    .stand {
+      color: var(--theme);
+      margin: 0 4px;
+    };
 
     .powered {
       color: var(--theme);
       font-weight: 600;
     }
 
-    a:not([class]) {
-      color: var(--main);
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
     .cloud-driven {
       margin: 0 3px;
 
       img {
-        height: 18px;
+        height: 16px;
         vertical-align: text-bottom;
       }
     }
@@ -2885,8 +2899,23 @@ table td, table th {
     }
   }
 
-  .footer .level > div {
+  .footer-container {
     text-align: center;
+    & > li {
+      display: block;
+
+      &:last-child {
+        float: none;
+      }
+
+      .footer-truncation {
+        display: block;
+
+        &:before {
+          content: none !important;
+        }
+      }
+    }
   }
 
   html:not(.disable-scroll) .actions.show {
@@ -3143,6 +3172,24 @@ table td, table th {
         width: 64%;
       }
     }
+  }
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  to {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
