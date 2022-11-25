@@ -1348,27 +1348,43 @@ other_page:
   items:
     journals_fold_height:
       name: journals_fold_height
-      label: 动态页面-动态内容折叠
+      label: 日志页面-动态内容折叠
       type: text
       placeholder: '触发折叠的动态内容高度（px）'
       description: '动态内容高度超出指定高度后默认进行折叠，指定的高度需大于等于260px。'
-    enable_tags_tag_color:
-      name: enable_tags_tag_color
-      label: 标签页面-开启标签颜色
-      type: switch
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
     enable_journals_comment:
       name: enable_journals_comment
       label: 日志页面-开启评论区
       type: switch
       data-type: bool
       default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    enable_journals_share:
+      name: enable_journals_share
+      label: 日志页面-开启日志分享
+      type: switch
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    journals_share_image:
+      name: journals_share_image
+      label: 日志页面-日志分享背景图
+      type: attachment
+      placeholder: '图片url'
+    enable_tags_tag_color:
+      name: enable_tags_tag_color
+      label: 标签页面-开启标签颜色
+      type: switch
+      data-type: bool
+      default: false
       options:
         - value: true
           label: 开启

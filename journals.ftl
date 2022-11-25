@@ -13,7 +13,7 @@
                 <div class="journal-operation">
                     <span class="journal-operation-item">
                         <a class="like" data-id="${journal.id?c}" data-likes="${(journal.likes!0)?c}"><i
-                                    class="fa fa-heart-o"></i></a><em>${(journal.likes != 0)?string(journal.likes?c,'喜欢')}</em>
+                                    class="fa fa-heart-o"></i><em>${(journal.likes != 0)?string(journal.likes?c,'喜欢')}</em></a>
                     </span>
 
                     <#if settings.enable_journals_comment!true>
@@ -21,12 +21,19 @@
                         <a class="comment"><i
                                     class="fa fa-commenting-o"></i><em><#if journal.commentCount==0>评论<#else>${journal.commentCount}</#if></em></a>
                     </span>
+                    </#if>
+                    <#if enable_share>
+                    <span class="journal-operation-item">
+                        <a class="share"><i class="fa fa-share"></i><em>分享</em></a>
+                    </span>
+                    </#if>
                 </div>
+                <#if settings.enable_journals_comment!true>
                 <div class="journal-comment">
                     <#include "template/main/comment.ftl">
                     <@comment journal.id?c, "journal" />
-                    </#if>
                 </div>
+                </#if>
             </div>
         </#list>
         <#include "template/main/pagination.ftl">

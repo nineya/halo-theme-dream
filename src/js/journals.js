@@ -12,6 +12,16 @@ const journalContext = {
         $body.on("click", ".journal-content>.expand-done", function () {
             Utils.foldBlock($(this).parent());
         })
+        $body.on("click", ".journal-operation-item>.share", function () {
+            let $journal = $(this).parents('.journal')
+            let title = '动态: ' + $journal.find('.journal-date>em').text()
+            let desc = $journal.children('.journal-content').children('.main-content').text()
+            DShare.sharePoster({
+                image: DreamConfig.journals_share_image,
+                title: title,
+                description: desc.length > 220 ? desc.substring(0, 220) + '...' :desc
+            })
+        })
         Utils.initLikeEvent(".journal .like", 'journals', ($elem) => $elem.next())
         journalContextInitial = true
     },

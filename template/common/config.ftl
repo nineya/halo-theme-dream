@@ -113,6 +113,9 @@
     <#if settings.load_progress?? && settings.load_progress != 'none'>
     DreamConfig["load_progress"] = '${settings.load_progress}';
     </#if>
+    <#if settings.journals_share_image?? && settings.journals_share_image != 'none'>
+    DreamConfig["journals_share_image"] = '${settings.journals_share_image}';
+    </#if>
     <#if settings.meting_api?? && settings.meting_api != ''>
     var meting_api = '${settings.meting_api}';
     </#if>
