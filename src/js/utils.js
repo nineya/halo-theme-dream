@@ -1,4 +1,8 @@
-var Utils = {
+window.logger = console.log;
+
+console.log = function () {}
+
+const Utils = {
     /**
      * 是否移动设备
      */
@@ -194,8 +198,7 @@ var Utils = {
         let curProtocol = window.location.protocol.split(':')[0];
         if (curProtocol === 'https') {
             bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        }
-        else {
+        } else {
             bp.src = 'http://push.zhanzhang.baidu.com/push.js';
         }
         $(`script[src="${bp.src}"]`).remove()

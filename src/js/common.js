@@ -358,6 +358,7 @@ const commonContext = {
     },
     /* 个人信息界面打印彩字 */
     sparkInput() {
+        console.log()
         const sparkInputContent = DreamConfig.spark_input_content && DreamConfig.spark_input_content.filter(s => s.length > 0);
         if (sparkInputContent && sparkInputContent.length > 0) {
             Utils.cachedScript(`${DreamConfig.theme_base}/source/js/spark-input.min.js`, function () {
@@ -414,6 +415,11 @@ const commonContext = {
     loadMaintain() {
         DreamConfig.enable_baidu_push && Utils.baiduPush();
         DreamConfig.enable_toutiao_push && Utils.toutiaoPush();
+    },
+    /* 显示主题版本信息 */
+    showThemeVersion() {
+        window.logger(`%c页面加载耗时：${Math.round(performance.now())}ms | Theme By Dream ${DreamConfig.theme_version}`,
+            "color:#fff; background: linear-gradient(270deg, #986fee, #8695e6, #68b7dd, #18d7d3); padding: 8px 15px; border-radius: 0 15px 0 15px");
     }
 }
 
@@ -421,7 +427,7 @@ window.commonContext = commonContext;
 
 !(function () {
     const loads = ["sparkInput", "websiteTime"];
-    const omits = ["initEffects", "loadMaintain"];
+    const omits = ["initEffects", "loadMaintain", "showThemeVersion"];
 
     Object.keys(commonContext).forEach(
         (c) => !loads.includes(c) && !omits.includes(c) && commonContext[c]()
