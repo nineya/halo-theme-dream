@@ -70,7 +70,7 @@
                 <#if enable_copyright == 'true'>
                     <#include "copyright.ftl">
                 </#if>
-                <#if enable_share == 'true'>
+                <#if enable_share>
                     <div class="dshare"></div>
                 </#if>
             </#if>
