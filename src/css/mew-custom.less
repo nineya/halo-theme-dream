@@ -3,6 +3,7 @@
 mew-subtitle {
   display: flex;
   justify-content: center;
+  margin: 14px 0;
 
   & > span {
     position: relative;
@@ -115,6 +116,7 @@ mew-tabs {
   border: 1px solid var(--light-b);
   border-radius: var(--radius-inner);
   line-height: 26px;
+  margin-bottom: 14px;
 
   .tabs-head {
     width: 100%;
@@ -296,6 +298,7 @@ mew-panel {
   display: block;
   overflow: hidden;
   border-radius: var(--radius-inner);
+  margin-bottom: 14px;
 
   .mew-panel-title {
     color: #FFF;
@@ -314,6 +317,7 @@ mew-message {
   display: block;
   padding: 10px;
   border-radius: var(--radius-inner);
+  margin-bottom: 14px;
 
   &::before {
     font: normal normal normal 1.1em/1 FontAwesome;
@@ -361,11 +365,13 @@ mew-hr {
   display: block;
   height: 4px;
   background-size: 50px 4px;
+  margin: 14px 0;
 }
 
 mew-timeline {
   display: block;
   border-left: 1px solid var(--light-b);
+  margin-bottom: 14px;
 
   & > div {
     position: relative;
@@ -526,9 +532,6 @@ mew-timeline {
 
 mew-btn {
   display: inline-block;
-  color: #fff;
-  background: var(--theme);
-  border-radius: var(--radius-inner);
 
   & > .mew-btn {
     color: #fff;
@@ -536,6 +539,8 @@ mew-btn {
     padding: 0.5em 12px;
     font-weight: 400;
     display: inline-block;
+    background: var(--theme);
+    border-radius: var(--radius-inner);
 
     &:hover {
       color: #fff;
@@ -552,7 +557,7 @@ mew-btn {
 
 mew-quote {
   display: flex;
-  margin: 0 18px;
+  margin: 0 18px 14px 18px;
 
   .mew-quote {
     display: flex;
@@ -722,6 +727,7 @@ mew-photos {
   width: 100%;
   position: relative;
   overflow: hidden;
+  margin-bottom: 14px;
 
   & > div {
     position: absolute;
@@ -773,6 +779,11 @@ mew-photos {
       opacity: 1;
     }
   }
+}
+
+mew-raw {
+  display: block;
+  margin-bottom: 14px;
 }
 
 mew-btn, mew-timeline, mew-quote, mew-link, mew-photos, mew-raw {
