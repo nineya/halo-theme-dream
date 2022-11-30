@@ -43,7 +43,7 @@
     </#if>
     <#assign enable_share = (post?? && (metas?? && metas.enable_share?? && metas.enable_share?trim!='')?then(metas.enable_share?trim, (settings.enable_post_share!true)?c) == 'true') || (is_journals?? && settings.enable_journals_share!true)>
     <#if enable_share>
-        <link data-pjax rel="preload stylesheet" href="${theme_base!}/source/css/dshare.min.css">
+        <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/dshare.min.css">
     </#if>
 </#if>
 
