@@ -65,7 +65,7 @@
                 </div>
             </#if>
             <#assign enable_copyright = (metas?? && metas.enable_copyright?? && metas.enable_copyright?trim!='')?then(metas.enable_copyright?trim, (settings.enable_copyright!true)?c)>
-            <#if enable_copyright == 'true' || enable_share == 'true'>
+            <#if enable_copyright == 'true' || enable_share>
                 <hr/>
                 <#if enable_copyright == 'true'>
                     <#include "copyright.ftl">
