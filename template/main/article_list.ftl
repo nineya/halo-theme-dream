@@ -87,7 +87,7 @@
                             </#if>
                         </div>
                     </div>
-                    <a href="${post.fullPath!}"><div class="small-image" style="background-image: url(${post.thumbnail!})"></div></a>
+                    <a href="${post.fullPath!}"><div class="small-image" style="background-image: url(${thumbnail!})"></div></a>
                 </div>
             <#else>
                 <#if thumbnail?? && thumbnail!=''>
