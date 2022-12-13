@@ -1,20 +1,18 @@
 <div class="card widget ${settings.hide_profile!}" id="profile">
     <div class="card-content">
         <nav class="level">
-            <div class="level-item has-text-centered" style="flex-shrink: 1">
-                <div>
-                    <figure class="image">
-                        <img class="avatar" src="${user.avatar!}" alt="${user.nickname!}">
-                    </figure>
-                    <p class="nickname">${user.nickname!}</p>
-                    <p class="motto spark-input">${user.description!}</p>
-                    <#if settings.profile_location?? && settings.profile_location!=''>
-                    <p class="address">
-                        <i class="fa fa-map-marker"></i>
-                        <span>${settings.profile_location!}</span>
-                    </p>
-                    </#if>
-                </div>
+            <div class="level-item" style="flex-direction: column;">
+              <figure class="image">
+                <img class="avatar" src="${user.avatar!}" alt="${user.nickname!}">
+              </figure>
+              <p class="nickname">${user.nickname!}</p>
+              <p class="motto spark-input">${user.description!}</p>
+                <#if settings.profile_location?? && settings.profile_location!=''>
+                  <p class="address">
+                    <i class="fa fa-map-marker"></i>
+                    <span>${settings.profile_location!}</span>
+                  </p>
+                </#if>
             </div>
         </nav>
         <nav class="level">
