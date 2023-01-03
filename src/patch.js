@@ -1,6 +1,6 @@
 (function () {
-    if (compareVersion('2.0.8', '2.0.8')) {
-        addCss('.main-content ol:not([class]):not([style]):not([start])>li:not([class]):not([style]):before {width: max-content}')
+    if (compareVersion(undefined, '2.0.9')) {
+        addCss('.main-content .katex {line-height: 1.4;display: block;overflow-x: auto;overflow-y: hidden;}')
     }
 
     /**
