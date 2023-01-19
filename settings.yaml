@@ -1536,6 +1536,20 @@ enhance:
           label: 黑夜
         - value: all
           label: 全模式
+    effects_circle_magic_mode:
+      name: effects_circle_magic_mode
+      label: 上升圆点特效显示模式
+      type: radio
+      default: night
+      options:
+        - value: none
+          label: 关闭
+        - value: day
+          label: 白天
+        - value: night
+          label: 黑夜
+        - value: all
+          label: 全模式
     enable_gray_mode:
       name: enable_gray_mode
       label: 灰色模式

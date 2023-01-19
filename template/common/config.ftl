@@ -104,6 +104,9 @@
     <#if settings.effects_universe_mode?? && settings.effects_universe_mode!='none'>
     DreamConfig["effects_universe_mode"] = '${settings.effects_universe_mode}';
     </#if>
+    <#if settings.effects_circle_magic_mode?? && settings.effects_circle_magic_mode!='none'>
+    DreamConfig["effects_circle_magic_mode"] = '${settings.effects_circle_magic_mode}';
+    </#if>
     <#if settings.enable_baidu_push!false>
     DreamConfig["enable_baidu_push"] = true;
     </#if>

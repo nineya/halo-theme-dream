@@ -410,6 +410,7 @@ const commonContext = {
         DreamConfig.live2d_url && Utils.cachedScript(`${DreamConfig.theme_base}${DreamConfig.live2d_url}`)
         DreamConfig.effects_sakura_mode && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/effects/sakura.min.js`)
         DreamConfig.effects_universe_mode && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/effects/universe.min.js`)
+        DreamConfig.effects_circle_magic_mode && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/effects/circleMagic.min.js`)
     },
     /* 加载主动推送、统计脚本等参数 */
     loadMaintain() {
