@@ -1,5 +1,5 @@
 <#macro comment id,type>
-    <#assign imageToken = (settings.image_token?? && settings.image_token!='')?then(', "imageToken": "${settings.image_token!}"', '') >
+    <#assign imageUploadApi = (settings.image_upload_api?? && settings.image_upload_api!='')?then(', "imageUploadApi": "${settings.image_upload_api!}"', '') >
     <#assign avatarLoading = (settings.avatar_loading?? && settings.avatar_loading!='')?then(', "avatarLoading": "${settings.avatar_loading!}"', '') >
     <#assign defaultAvatar = (settings.default_avatar?? && settings.default_avatar!='')?then(', "defaultAvatar": "${settings.default_avatar!}"', '') >
     <#assign configs= '{"autoLoad": ${(settings.autoload_comment!true)?c
@@ -12,7 +12,7 @@
     }, "replyDescSoft": ${(settings.reply_desc_soft!false)?c
     }, "enableImageUpload": ${(settings.enable_image_upload!false)?c
     }, "enableBulletScreen": ${(is_journals??)?then("false", (metas?? && metas.enable_bullet_screen?? && metas.enable_bullet_screen?trim!="")?then(metas.enable_bullet_screen?trim, (settings.enable_bullet_screen!false)?c))
-    }${imageToken!
+    }${imageUploadApi!
     }${avatarLoading!
     }${defaultAvatar!
     }}'>

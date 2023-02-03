@@ -479,12 +479,12 @@ comment:
           label: 开启
         - value: false
           label: 关闭
-    image_token:
-      name: image_token
-      label: 图床Token
+    image_upload_api:
+      name: image_upload_api
+      label: 图片上传API
       type: text
-      placeholder: '图床Token'
-      description: '评论区支持快捷上传图片到 <a href="https://pic.jitudisk.com/" target="_blank">极兔图床</a>，默认为游客上传，自行前往注册账号并获取 Token。注：配置后Token将被公开，同时主题不保证图床的稳定性！'
+      placeholder: '图片上传API地址'
+      description: '评论区支持快捷上传图片到指定的API接口，搭建API规范要求见文档<a href="https://github.com/nineya/halo-comment-dream" target="_blank">halo-comment-dream</a>。'
     unfold_reply_num:
       name: unfold_reply_num
       label: 默认展开的二级回复数量
