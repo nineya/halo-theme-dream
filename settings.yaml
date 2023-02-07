@@ -661,6 +661,18 @@ sidebar_show:
           label: 右侧
         - value: none
           label: 关闭
+    sidebar_love:
+      name: sidebar_love
+      label: 侧边栏恋爱墙
+      type: radio
+      default: right
+      options:
+        - value: left
+          label: 左侧
+        - value: right
+          label: 右侧
+        - value: none
+          label: 关闭
     sidebar_music:
       name: sidebar_music
       label: 侧边栏音乐
@@ -748,7 +760,7 @@ sidebar_show:
           label: 关闭
     sidebar_links:
       name: sidebar_links
-      label: 友链模块
+      label: 侧边栏友链
       type: radio
       default: left
       options:
@@ -779,60 +791,67 @@ sidebar_show:
       default: 9700
       placeholder: '填写数字优先级'
       description: '优先级越高，模块排序越靠前。'
+    sidebar_priority_love:
+      name: sidebar_priority_love
+      label: 侧边栏恋爱墙-优先级
+      type: text
+      default: 9600
+      placeholder: '填写数字优先级'
+      description: '优先级越高，模块排序越靠前。'
     sidebar_priority_music:
       name: sidebar_priority_music
       label: 侧边栏音乐-优先级
       type: text
-      default: 9600
+      default: 9500
       placeholder: '填写数字优先级'
       description: '优先级越高，模块排序越靠前。'
     sidebar_priority_ad_piece:
       name: sidebar_priority_ad_piece
       label: 侧边栏广告-优先级
       type: text
-      default: 9500
+      default: 9400
       placeholder: '填写数字优先级'
       description: '优先级越高，模块排序越靠前。'
     sidebar_priority_recent_posts:
       name: sidebar_priority_recent_posts
       label: 侧边栏最近文章-优先级
       type: text
-      default: 9400
+      default: 9300
       placeholder: '填写数字优先级'
       description: '优先级越高，模块排序越靠前。'
     sidebar_priority_recent_comments:
       name: sidebar_priority_recent_comments
       label: 侧边栏最近评论-优先级
       type: text
-      default: 9300
+      default: 9200
       placeholder: '填写数字优先级'
       description: '优先级越高，模块排序越靠前。'
     sidebar_priority_categories:
       name: sidebar_priority_categories
       label: 侧边栏分类-优先级
       type: text
-      default: 9200
+      default: 9100
       placeholder: '填写数字优先级'
       description: '优先级越高，模块排序越靠前。'
     sidebar_priority_tags:
       name: sidebar_priority_tags
       label: 侧边栏标签-优先级
       type: text
-      default: 9100
+      default: 9000
       placeholder: '填写数字优先级'
       description: '优先级越高，模块排序越靠前。'
     sidebar_priority_tagcloud:
       name: sidebar_priority_tagcloud
       label: 侧边栏标签云-优先级
       type: text
-      default: 9000
+      default: 8900
       placeholder: '填写数字优先级'
       description: '优先级越高，模块排序越靠前。'
     sidebar_priority_links:
       name: sidebar_priority_links
-      label: 友链模块-优先级
+      label: 侧边栏友链-优先级
       type: text
-      default: 8900
+      default: 8800
       placeholder: '填写数字优先级'
       description: '优先级越高，模块排序越靠前。'
     hide_profile:
@@ -866,6 +885,20 @@ sidebar_show:
     hide_notice:
       name: hide_notice
       label: 侧边栏公告-隐藏方式
+      type: select
+      default: 'is-not-hidden'
+      options:
+        - value: 'is-hidden-mobile'
+          label: 移动设备隐藏
+        - value: 'is-hidden-not-desktop'
+          label: 移动、平板设备隐藏
+        - value: 'is-hidden-desktop'
+          label: 桌面设备隐藏
+        - value: 'is-not-hidden'
+          label: 不隐藏
+    hide_love:
+      name: hide_love
+      label: 侧边栏恋爱墙-隐藏方式
       type: select
       default: 'is-not-hidden'
       options:
@@ -977,7 +1010,7 @@ sidebar_show:
           label: 不隐藏
     hide_links:
       name: hide_links
-      label: 友链模块-隐藏方式
+      label: 侧边栏友链-隐藏方式
       type: select
       default: 'is-hidden-not-desktop'
       options:
@@ -1089,6 +1122,31 @@ sidebar_config:
           label: 目录模块不显示时
         - value: index
           label: 仅首页
+    love_oneself_avatar:
+      name: love_oneself_avatar
+      label: 侧边栏恋爱墙-自己的头像
+      type: attachment
+      placeholder: '头像图片URL地址'
+    love_oneself_url:
+      name: love_oneself_url
+      label: 侧边栏恋爱墙-自己的主页
+      type: text
+      placeholder: '自己的个人主页地址'
+    love_opposite_avatar:
+      name: love_opposite_avatar
+      label: 侧边栏恋爱墙-对方的头像
+      type: attachment
+      placeholder: '头像图片URL地址'
+    love_opposite_url:
+      name: love_opposite_url
+      label: 侧边栏恋爱墙-对方的主页
+      type: text
+      placeholder: '对方的个人主页地址'
+    love_time:
+      name: love_time
+      label: 侧边栏恋爱墙-恋爱时间
+      type: text
+      placeholder: 'YYYY/MM/dd HH:mm:ss'
     meting_api:
       name: meting_api
       label: 侧边栏音乐-自建API

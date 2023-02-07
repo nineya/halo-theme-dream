@@ -2146,6 +2146,56 @@ table td, table th {
   .tagcloud a:hover {
     color: var(--dark-c) !important;
   }
+
+  &.love {
+
+    .card-content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .level {
+      flex: auto;
+      display: flex;
+      max-width: 520px;
+      margin: 18px 0 12px 0;
+      flex-direction: row;
+
+      &-item {
+        flex-grow: 1;
+      }
+    }
+
+    .fa-bolt {
+      font-size: 30px;
+    }
+
+    .avatar {
+      width: 84px;
+      height: 84px;
+      padding: 4px;
+      display: block;
+      border-radius: 50%;
+      background: var(--light-b);
+
+      &-image {
+        transition: all 2s;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+
+        &:hover {
+          transform: rotate(-360deg);
+        }
+      }
+    }
+
+    .love-time {
+      font-size: 1.4em;
+      text-align: center;
+    }
+  }
 }
 
 .main-content {
