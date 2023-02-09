@@ -498,6 +498,12 @@ comment:
       type: text
       placeholder: '图片上传API地址'
       description: '评论区支持快捷上传图片到指定的API接口，搭建API规范要求见文档<a href="https://github.com/nineya/halo-comment-dream" target="_blank">halo-comment-dream</a>。'
+    anonymous_user_name:
+      name: anonymous_user_name
+      label: 匿名用户名
+      type: text
+      placeholder: '用户名'
+      description: '填写后将允许用户匿名评论。'
     unfold_reply_num:
       name: unfold_reply_num
       label: 默认展开的二级回复数量

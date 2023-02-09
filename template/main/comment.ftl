@@ -2,6 +2,7 @@
     <#assign imageUploadApi = (settings.image_upload_api?? && settings.image_upload_api!='')?then(', "imageUploadApi": "${settings.image_upload_api!}"', '') >
     <#assign avatarLoading = (settings.avatar_loading?? && settings.avatar_loading!='')?then(', "avatarLoading": "${settings.avatar_loading!}"', '') >
     <#assign defaultAvatar = (settings.default_avatar?? && settings.default_avatar!='')?then(', "defaultAvatar": "${settings.default_avatar!}"', '') >
+    <#assign anonymousUserName = (settings.anonymous_user_name?? && settings.anonymous_user_name!='')?then(', "anonymousUserName": "${settings.anonymous_user_name!}"', '') >
     <#assign configs= '{"autoLoad": ${(settings.autoload_comment!true)?c
     }, "showUserAgent": ${(settings.show_comment_ua!true)?c
     }, "priorityQQAvatar": ${(settings.priority_qq_avatar!false)?c
@@ -15,6 +16,7 @@
     }${imageUploadApi!
     }${avatarLoading!
     }${defaultAvatar!
+    }${anonymousUserName!
     }}'>
   <halo-comment id="${id}" type="${type}" configs='${configs}'/>
 </#macro>
