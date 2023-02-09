@@ -49,6 +49,7 @@ basic_info:
       label: 建站时间
       type: text
       placeholder: 'YYYY/MM/dd HH:mm:ss'
+      description: '输入时间格式进行倒计时，非时间格式则直接显示文本。'
     cloud_by_logo:
       name: cloud_by_logo
       label: 云服务提供商Logo
@@ -1147,6 +1148,7 @@ sidebar_config:
       label: 侧边栏恋爱墙-恋爱时间
       type: text
       placeholder: 'YYYY/MM/dd HH:mm:ss'
+      description: '输入时间格式进行倒计时，非时间格式则直接显示文本。'
     meting_api:
       name: meting_api
       label: 侧边栏音乐-自建API

@@ -2148,27 +2148,72 @@ table td, table th {
   }
 
   &.love {
+    position: relative;
+    color: #fff;
+    background: none !important;
 
-    .card-content {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      transition: all 0.3s ease-out;
+      background-image: linear-gradient(to right, rgb(255 209 218 / 94%), rgb(255 162 178 / 94%));
+    }
+
+    &:after {
+      content: 'LOVE';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      color: #ffe0e5;
+      font-size: 84px;
+      line-height: 84px;
+      text-align: center;
+      font-weight: 600;
+      white-space: nowrap;
+      transform: rotate(90deg) translateY(75%);
+      transition: all 0.3s ease-out;
+    }
+
+    &:hover {
+      &:before {
+        background-image: linear-gradient(to right, #ffd1da, #ffa2b2);
+      }
+
+      &:after {
+        transform: rotate(90deg) translateY(60%);
+      }
+    }
+
+    .card-title {
+      border-bottom: 1px solid rgb(255 209 218 / 94%);
+    }
+
+    .love-content {
       display: flex;
+      margin: 16px 0;
       justify-content: center;
-      flex-direction: column;
     }
 
     .level {
       flex: auto;
       display: flex;
       max-width: 520px;
-      margin: 18px 0 12px 0;
-      flex-direction: row;
 
       &-item {
         flex-grow: 1;
       }
     }
 
-    .fa-bolt {
-      font-size: 30px;
+    svg {
+      width: 36px;
+      filter: none;
     }
 
     .avatar {
@@ -2177,7 +2222,7 @@ table td, table th {
       padding: 4px;
       display: block;
       border-radius: 50%;
-      background: var(--light-b);
+      background: #ffd6de;
 
       &-image {
         transition: all 2s;
@@ -2192,8 +2237,11 @@ table td, table th {
     }
 
     .love-time {
-      font-size: 1.4em;
+      font-size: 1.1em;
       text-align: center;
+      font-weight: 600;
+      height: 1.4em;
+      line-height: 1.4em;
     }
   }
 }

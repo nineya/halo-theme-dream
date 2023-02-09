@@ -358,7 +358,6 @@ const commonContext = {
     },
     /* 个人信息界面打印彩字 */
     sparkInput() {
-        console.log()
         const sparkInputContent = DreamConfig.spark_input_content && DreamConfig.spark_input_content.filter(s => s.length > 0);
         if (sparkInputContent && sparkInputContent.length > 0) {
             Utils.cachedScript(`${DreamConfig.theme_base}/source/js/spark-input.min.js`, function () {
@@ -367,6 +366,51 @@ const commonContext = {
             })
         }
     },
+    /* 恋爱墙倒计时 */
+    loveTime() {
+      let $elem = $('.love .love-time');
+      if ($elem.length === 0) return;
+      let loveTime = $elem.attr('data-time');
+      if (!/^\d{4}\/\d{2}\/\d{2} \d{2}:\d{2}:\d{2}$/.test(loveTime)) {
+        $elem.html(loveTime);
+        return;
+      }
+      const now = new Date();
+      const grt = new Date(loveTime);
+      setInterval(function () {
+          now.setTime(now.getTime() + 1000);
+          let difference = parseInt((now - grt) / 1000);
+          let seconds = difference % 60;
+          difference = parseInt(difference / 60);
+          let minutes = difference % 60;
+          difference = parseInt(difference / 60);
+          let hours = difference % 24;
+          let days = parseInt(difference / 24);
+          let year = 0;
+          let grtYear = grt.getFullYear();
+          let nowYear = now.getFullYear();
+          while (grtYear < nowYear) {
+            if ((grtYear % 4 === 0 && grtYear % 100 !== 0) || grtYear % 400 === 0) {
+              // 闰年366天
+              if (days < 366) break;
+              days -= 366;
+              year += 1;
+              grtYear += 1;
+            } else {
+              // 平年365天
+              if (days < 365) break;
+              days -= 365;
+              year += 1;
+              grtYear += 1;
+            }
+          }
+          if (year !== 0) {
+            $elem.html(`${year} 年 ${days} 天 ${hours} 时 ${minutes} 分 ${seconds} 秒`);
+          } else {
+            $elem.html(`${days} 天 ${hours} 时 ${minutes} 分 ${seconds} 秒`);
+          }
+      }, 1000);
+    },
     /* 激活建站倒计时功能 */
     websiteTime() {
         if (!DreamConfig.website_time) {
@@ -374,7 +418,7 @@ const commonContext = {
         }
         const websiteDate = document.getElementById("websiteDate");
         if (!/^\d{4}\/\d{2}\/\d{2} \d{2}:\d{2}:\d{2}$/.test(DreamConfig.website_time)) {
-            websiteDate.innerText = `建站 ${DreamConfig.website_time}`
+            websiteDate.innerText = DreamConfig.website_time
             return;
         }
         const now = new Date();
