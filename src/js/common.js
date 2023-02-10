@@ -15,9 +15,8 @@ const commonContext = {
     },
     /* 初始化悬浮操作按钮 */
     initActions() {
-      const $haloComment = $('halo-comment');
       const $bulletScreen = $(".actions>.bullet-screen");
-      if ($haloComment.length === 0) {
+      if ($('halo-comment[bullet-screen]').length === 0) {
         $bulletScreen.addClass('is-hidden-all')
         return
       }
@@ -29,7 +28,7 @@ const commonContext = {
         return;
       }
       const applyStopBulletScreen = (stopBulletScreenValue) => {
-        $haloComment.each(function () {
+          $('halo-comment[bullet-screen]').each(function () {
           const shadowDom = this.shadowRoot.getElementById("halo-comment");
           if (stopBulletScreenValue) {
             $(shadowDom).attr('stop-bullet-screen', 'true');

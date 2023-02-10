@@ -87,18 +87,6 @@ basic_style:
           label: 显示
         - value: false
           label: 不显示
-    bullet_screen:
-      name: bullet_screen
-      label: 侧边弹幕开关
-      type: radio
-      data-type: bool
-      default: false
-      description: '在非移动设备上，显示是否开启弹幕的悬浮按钮。'
-      options:
-        - value: true
-          label: 显示
-        - value: false
-          label: 不显示
     enable_image_bg:
       name: enable_image_bg
       label: 开启博客背景图
