@@ -168,6 +168,8 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
     window.photoPjax && window.photoPjax(serialNumber);
     /* 加载主动推送或统计脚本 */
     commonContext.loadMaintain();
+    /* 重新加载悬浮导航按钮 */
+    commonContext.initActions();
     window.DProgress && DProgress.done()
 });
 
