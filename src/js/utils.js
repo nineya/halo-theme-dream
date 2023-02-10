@@ -1,7 +1,3 @@
-window.logger = console.log;
-
-console.log = function () {}
-
 const Utils = {
     /**
      * 是否移动设备

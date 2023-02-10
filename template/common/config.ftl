@@ -63,6 +63,10 @@
     </#if>
 </style>
 <script type="text/javascript">
+    window.logger = console.log;
+    <#if !(settings.enable_debug!false)>
+    console.log = function () {};
+    </#if>
     /** 主题配置 */
     const DreamConfig = {};
     DreamConfig["theme_version"] = '${theme_version!}';

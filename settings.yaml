@@ -1604,7 +1604,7 @@ enhance:
       type: switch
       data-type: bool
       default: true
-      description: '引入补丁脚本，实现不更新主题进行bug修复！'
+      description: '引入补丁脚本，实现对部分异常不更新主题进行bug修复！'
       options:
         - value: true
           label: 开启
@@ -1638,6 +1638,18 @@ enhance:
       type: switch
       data-type: bool
       default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    enable_debug:
+      name: enable_debug
+      label: 开启DEBUG日志
+      type: switch
+      data-type: bool
+      default: false
+      description: '开发和问题排查时开启日志。'
       options:
         - value: true
           label: 开启
