@@ -20,7 +20,7 @@ try {
                         live2d_settings['canTurnToAboutPage']   = false;
                     }
                     /* 在 initModel 前添加 */
-                    initModel("/themes/dream/source/lib/live2d@1.0.1/waifu-tips.json");
+                    initModel(DreamConfig["live2d_tips_url"]);
                 }})
         }}))
 } catch(err) { console.log("[Error] JQuery is not defined.") }

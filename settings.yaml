@@ -1447,6 +1447,11 @@ live2d:
       default: 'https://unpkg.com/live2d-widget-model@1.0.1/'
       placeholder: '模型url地址'
       description: 'live2d模型和api地址，可通过克隆模型仓库实现自建地址。'
+    live2d_tips_url:
+      name: live2d_tips_url
+      label: 自定义提示语文件地址
+      type: attachment
+      placeholder: '提示语json文件'
     live2d_about_page:
       name: live2d_about_page
       label: “关于”按钮的url地址
