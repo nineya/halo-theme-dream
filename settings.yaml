@@ -1456,7 +1456,7 @@ live2d:
       name: live2d_model_url
       label: 模型地址
       type: text
-      default: 'https://unpkg.com/live2d-widget-model@1.0.0/'
+      default: 'https://unpkg.com/live2d-widget-model@1.0.1/'
       placeholder: '模型url地址'
       description: 'live2d模型和api地址，可通过克隆模型仓库实现自建地址。'
     live2d_about_page:

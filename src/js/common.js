@@ -488,7 +488,7 @@ const commonContext = {
     if (Utils.isMobile()) return;
     DreamConfig.cursor_move && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/cursor/move/${DreamConfig.cursor_move}.min.js`)
     DreamConfig.cursor_click && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/cursor/click/${DreamConfig.cursor_click}.min.js`)
-    DreamConfig.live2d_url && Utils.cachedScript(`${DreamConfig.theme_base}${DreamConfig.live2d_url}`)
+    DreamConfig.enable_live2d && Utils.cachedScript(`${DreamConfig.theme_base}/source/lib/live2d@1.0.1/autoload.js`)
     DreamConfig.effects_sakura_mode && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/effects/sakura.min.js`)
     DreamConfig.effects_universe_mode && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/effects/universe.min.js`)
     DreamConfig.effects_circle_magic_mode && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/effects/circleMagic.min.js`)

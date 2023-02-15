@@ -1,5 +1,5 @@
 <#assign num= settings.tagcloud_num!32 />
-<div class="card widget ${settings.hide_tagcloud!}">
+<div class="card widget tagcloud ${settings.hide_tagcloud!}">
     <@tagTag method="list">
         <div class="card-title">
             <i class="fa fa-cloud card-title-label"></i><span>标签云</span>
@@ -8,7 +8,7 @@
             </#if>
         </div>
         <#if tags?? && tags?size gt 0>
-            <div class="card-content tagcloud">
+            <div class="card-content">
                 <#assign size= (tags?size > num?number)?string(num, tags?size)?number - 1 />
                 <#list 0..size as i>
                     <#assign tag= tags[i] />

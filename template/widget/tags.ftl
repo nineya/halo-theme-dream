@@ -1,5 +1,5 @@
 <#assign num= settings.tags_num!18 />
-<div class="card widget ${settings.hide_tags!}">
+<div class="card widget tags ${settings.hide_tags!}">
     <@tagTag method="list">
         <div class="card-title">
             <i class="fa fa-tags card-title-label"></i><span>标签</span>
@@ -8,7 +8,7 @@
             </#if>
         </div>
         <#if tags?? && tags?size gt 0>
-            <div class="card-content tags">
+            <div class="card-content">
                 <#assign size= (tags?size > num?number)?string(num, tags?size)?number - 1 />
                 <#list 0..size as i>
                     <#assign tag= tags[i] />

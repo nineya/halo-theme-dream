@@ -1831,7 +1831,7 @@ table td, table th {
     margin-right: 0;
   }
 
-  &#profile {
+  &.profile {
     figure {
       width: 98px;
       height: 98px;
@@ -1969,7 +1969,7 @@ table td, table th {
     }
   }
 
-  &#comment {
+  &.recent-comments {
     li:not(:last-child) {
       margin-bottom: 10px;
       border-bottom: 1px dashed var(--light-b);
@@ -2053,7 +2053,7 @@ table td, table th {
     }
   }
 
-  .recent-post {
+  &.recent-posts .card-content {
 
     .list {
       padding-top: 1px;
@@ -2116,7 +2116,7 @@ table td, table th {
     }
   }
 
-  .tags {
+  &.tags .card-content {
     font-size: 0;
 
     a {
@@ -2143,7 +2143,7 @@ table td, table th {
     }
   }
 
-  .tagcloud a:hover {
+  &.tagcloud .card-content a:hover {
     color: var(--dark-c) !important;
   }
 
@@ -3541,7 +3541,7 @@ table td, table th {
 }
 
 /* 友链界面 */
-.links {
+.links:not(.widget) {
   margin-bottom: 20px;
 
   .link-title {
@@ -3643,19 +3643,19 @@ table td, table th {
 }
 
 @media (max-width: 630px) {
-  .links ul li {
+  .links:not(.widget) ul li {
     width: 100% !important
   }
 }
 
 @media (max-width: 768px) {
-  .links ul li:before {
+  .links:not(.widget) ul li:before {
     display: none
   }
 }
 
 @media (max-width: 1600px) {
-  .links ul li {
+  .links:not(.widget) ul li {
     width: 48%
   }
 }

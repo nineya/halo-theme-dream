@@ -1,5 +1,5 @@
 <#assign num= settings.links_num!10 />
-<div class="card widget ${settings.hide_links!}" id="links">
+<div class="card widget links ${settings.hide_links!}">
     <@linkTag method="listByRandom">
         <div class="card-title">
             <i class="fa fa-link card-title-label"></i><span>友链</span>

@@ -128,7 +128,7 @@
     </#if>
     /** 看板娘相关配置 */
     <#if settings.enable_live2d!true>
-    DreamConfig["live2d_url"] = '/source/lib/live2d/autoload.js';
+    DreamConfig["enable_live2d"] = true;
     <#if settings.live2d_about_page?? && settings.live2d_about_page!=''>
     DreamConfig["live2d_about_page"] = '${settings.live2d_about_page}';
     </#if>
