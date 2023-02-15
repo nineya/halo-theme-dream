@@ -1458,6 +1458,20 @@ live2d:
       type: text
       placeholder: 'url地址'
       description: '放空则不显示“关于”按钮。'
+    live2d_model_id:
+      name: live2d_model_id
+      label: 默认模型ID
+      type: text
+      default: '0'
+      placeholder: '模型ID'
+      description: '默认模型ID，参见<a href="https://github.com/nineya/live2d-widget-model/blob/master/%E5%8F%AF%E7%94%A8model%E5%88%97%E8%A1%A8.md" target="_blank">可用model列表</a>。'
+    live2d_model_textures_id:
+      name: live2d_model_textures_id
+      label: 默认材质ID
+      type: text
+      default: '0'
+      placeholder: '材质ID'
+      description: '默认材质ID，参见<a href="https://github.com/nineya/live2d-widget-model/blob/master/%E5%8F%AF%E7%94%A8model%E5%88%97%E8%A1%A8.md" target="_blank">可用model列表</a>。'
     live2d_waifu_size:
       name: live2d_waifu_size
       label: 看板娘大小
@@ -1471,6 +1485,94 @@ live2d:
       type: text
       default: 'right:50'
       placeholder: '位置:距离(px)'
+    live2d_show_tool_menu:
+      name: live2d_show_tool_menu
+      label: 显示工具栏
+      type: switch
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 关闭
+    live2d_can_turn_to_home_page:
+      name: live2d_can_turn_to_home_page
+      label: 显示「返回首页」按钮
+      type: switch
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 关闭
+    live2d_can_switch_hitokoto:
+      name: live2d_can_switch_hitokoto
+      label: 显示「一言」按钮
+      type: switch
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 关闭
+    live2d_can_switch_model:
+      name: live2d_can_switch_model
+      label: 显示「切换模型」按钮
+      type: switch
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 关闭
+    live2d_can_switch_textures:
+      name: live2d_can_switch_textures
+      label: 显示「切换材质」按钮
+      type: switch
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 关闭
+    live2d_can_take_screenshot:
+      name: live2d_can_take_screenshot
+      label: 显示「截图」按钮
+      type: switch
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 关闭
+    live2d_can_turn_to_about_page:
+      name: live2d_can_turn_to_about_page
+      label: 显示「关于」按钮
+      type: switch
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 关闭
+    live2d_can_close_live2d:
+      name: live2d_can_close_live2d
+      label: 显示「关闭看板娘」按钮
+      type: switch
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 关闭
 enhance:
   label: 增强功能
   items:
