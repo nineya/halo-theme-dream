@@ -8,7 +8,7 @@
     <script data-pjax src="${theme_base!}/source/lib/highlightjs@11.5.1/highlight.min.js"></script>
     <script data-pjax src="${theme_base!}/source/lib/clipboard@2.0.10/clipboard.min.js"></script>
     <#if enable_share>
-        <script data-pjax src="${theme_base!}/source/js/dshare.min.js"></script>
+        <script data-pjax src="${theme_base!}/source/js/dshare.min.js?mew=${theme_version!}"></script>
     </#if>
     <script data-pjax src="${theme_base!}/source/js/post.min.js?mew=${theme_version!}"></script>
     <#if is_journals??>
@@ -25,7 +25,7 @@
 <#if (post?? && (!post.disallowComment!false) && (!settings.close_post_comment!false)) || (is_journals?? && settings.enable_journals_comment!true) || (is_links?? && (!settings.close_post_comment!false) && settings.link_comment_id?? && settings.link_comment_id!='')>
     <script data-pjax defer src="${theme_base!}/source/lib/vue@2.6.10/vue.min.js"></script>
     <script data-pjax defer
-            src="${(settings.enable_theme_comment!true)?then(theme_base + '/source/lib/halo-comment@1.0.8/halo-comment.min.js',
+            src="${(settings.enable_theme_comment!true)?then(theme_base + '/source/lib/halo-comment@1.0.9/halo-comment.min.js',
             options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment@latest/dist/halo-comment.min.js')}"></script>
 </#if>
 

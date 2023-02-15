@@ -3,6 +3,7 @@
     <#assign avatarLoading = (settings.avatar_loading?? && settings.avatar_loading!='')?then(', "avatarLoading": "${settings.avatar_loading!}"', '') >
     <#assign defaultAvatar = (settings.default_avatar?? && settings.default_avatar!='')?then(', "defaultAvatar": "${settings.default_avatar!}"', '') >
     <#assign anonymousUserName = (settings.anonymous_user_name?? && settings.anonymous_user_name!='')?then(', "anonymousUserName": "${settings.anonymous_user_name!}"', '') >
+    <#assign enableBulletScreen = (is_journals??)?then("false", (metas?? && metas.enable_bullet_screen?? && metas.enable_bullet_screen?trim!="")?then(metas.enable_bullet_screen?trim, (settings.enable_bullet_screen!false)?c))>
     <#assign configs= '{"autoLoad": ${(settings.autoload_comment!true)?c
     }, "showUserAgent": ${(settings.show_comment_ua!true)?c
     }, "priorityQQAvatar": ${(settings.priority_qq_avatar!false)?c
@@ -12,11 +13,11 @@
     }", "unfoldReplyNum": ${settings.unfold_reply_num!6
     }, "replyDescSoft": ${(settings.reply_desc_soft!false)?c
     }, "enableImageUpload": ${(settings.enable_image_upload!false)?c
-    }, "enableBulletScreen": ${(is_journals??)?then("false", (metas?? && metas.enable_bullet_screen?? && metas.enable_bullet_screen?trim!="")?then(metas.enable_bullet_screen?trim, (settings.enable_bullet_screen!false)?c))
+    }, "enableBulletScreen": ${enableBulletScreen
     }${imageUploadApi!
     }${avatarLoading!
     }${defaultAvatar!
     }${anonymousUserName!
     }}'>
-  <halo-comment id="${id}" type="${type}" configs='${configs}'/>
+  <halo-comment ${(enableBulletScreen == 'true')?then('bullet-screen="true"', '')} id="${id}" type="${type}" configs='${configs}'/>
 </#macro>

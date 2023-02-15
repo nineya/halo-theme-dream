@@ -25,7 +25,7 @@
                                             <#if link.logo?? && link.logo!=''>
                                                 <img class="not-gallery" title="${link.name!}" src="${defaultAvatar!}"
                                                      onload="if(!this.finish){this.finish=true;this.src='${link.logo!}'}"
-                                                     onerror="this.onerror='';this.finish=true;this.src='${defaultAvatar!}'"
+                                                     onerror="this.onerror='';if (this.finish) {this.src='${defaultAvatar!}'} else {this.finish=true;this.src='${link.logo!}'}"
                                                      alt="${link.name!}">
                                             <#else>
                                                 <img class="not-gallery" title="${link.name!}" src="${defaultAvatar!}" alt="${link.name!}">

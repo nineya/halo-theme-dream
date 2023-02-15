@@ -1,9 +1,7 @@
 <div class="actions">
-    <#if settings.bullet_screen!true>
-        <div class="bullet-screen is-hidden-mobile is-hidden-all">
-            <span>弹</span>
-        </div>
-    </#if>
+    <div class="bullet-screen is-hidden-mobile is-hidden-all">
+        <span>弹</span>
+    </div>
     <div id="toggle-mode">
         <i class="fa fa-adjust"></i>
     </div>

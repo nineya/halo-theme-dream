@@ -35,7 +35,7 @@ task("clean", () => {
 
 task("version", (done) => {
     if (version == null) {
-        console.log(`[Version] No '--version' parameters are specified`)
+        console.log(`[Version] No '--tag' parameters are specified`)
         done();
         return;
     }
