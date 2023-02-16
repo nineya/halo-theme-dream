@@ -146,6 +146,8 @@
     DreamConfig["live2d_can_take_screenshot"] = ${(settings.live2d_can_take_screenshot!true)?c};
     DreamConfig["live2d_can_turn_to_about_page"] = ${(settings.live2d_can_turn_to_about_page!true)?c};
     DreamConfig["live2d_can_close_live2d"] = ${(settings.live2d_can_close_live2d!true)?c};
+    DreamConfig["live2d_model_rand_mode"] = '${settings.live2d_model_rand_mode!'switch'}';
+    DreamConfig["live2d_model_textures_rand_mode"] = '${settings.live2d_model_textures_rand_mode!'rand'}';
     </#if>
 
     /** 配置主题模式 */

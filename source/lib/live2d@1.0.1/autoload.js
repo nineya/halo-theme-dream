@@ -27,6 +27,8 @@ try {
                         live2d_settings['canTurnToAboutPage']   = false;
                     }
                     live2d_settings['canCloseLive2d']   = DreamConfig['live2d_can_close_live2d'];
+                    live2d_settings['modelRandMode']   = DreamConfig['live2d_model_rand_mode'];
+                    live2d_settings['modelTexturesRandMode']   = DreamConfig['live2d_model_textures_rand_mode'];
                     /* 在 initModel 前添加 */
                     initModel(DreamConfig["live2d_tips_url"]);
                 }})

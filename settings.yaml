@@ -1485,6 +1485,26 @@ live2d:
       type: text
       default: 'right:50'
       placeholder: '位置:距离(px)'
+    live2d_model_rand_mode:
+      name: live2d_model_rand_mode
+      label: 模型切换方式
+      type: radio
+      default: switch
+      options:
+        - value: switch
+          label: 顺序
+        - value: rand
+          label: 随机
+    live2d_model_textures_rand_mode:
+      name: live2d_model_textures_rand_mode
+      label: 材质切换方式
+      type: radio
+      default: rand
+      options:
+        - value: switch
+          label: 顺序
+        - value: rand
+          label: 随机
     live2d_show_tool_menu:
       name: live2d_show_tool_menu
       label: 显示工具栏
