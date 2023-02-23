@@ -76,7 +76,7 @@
       for (let logItem of console.logStorage) {
         logItem();
       }
-    }
+    };
     </#if>
     /** 主题配置 */
     const DreamConfig = {};
