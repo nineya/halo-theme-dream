@@ -2383,6 +2383,13 @@ table td, table th {
     }
   }
 
+  .note {
+    text-indent: 2em;
+    background: url(../img/wordline.webp);
+    background-size: auto 2.5rem;
+    line-height: 2.5rem;
+  }
+
   blockquote {
     line-height: 1.7em;
     margin-bottom: 14px;
@@ -2622,7 +2629,7 @@ table td, table th {
       border: none;
       color: inherit !important;
       background: transparent !important;
-      font-size: 1rem;
+      font-size: 1em;
 
       & > ul {
         margin: 0;
@@ -2726,6 +2733,15 @@ table td, table th {
     display: block;
     overflow-x: auto;
     overflow-y: hidden;
+  }
+
+  &.literature-content {
+    font-size: 1.3em;
+
+    .note {
+      line-height: 40px;
+      background-size: auto;
+    }
   }
 }
 

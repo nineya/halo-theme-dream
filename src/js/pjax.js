@@ -109,6 +109,8 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
     const serialNumber = options.serialNumber;
     console.log(`pjax:success sn = ${serialNumber}`)
     if (window.pjaxSerialNumber !== serialNumber) return;
+    /* 重新加载悬浮导航按钮 */
+    commonContext.initActions();
     /* 重新激活图片预览功能 */
     commonContext.initGallery()
     /* 重新加载目录和公告 */
@@ -168,8 +170,6 @@ $(document).on("pjax:success", async function (event, data, status, xhr, options
     window.photoPjax && window.photoPjax(serialNumber);
     /* 加载主动推送或统计脚本 */
     commonContext.loadMaintain();
-    /* 重新加载悬浮导航按钮 */
-    commonContext.initActions();
     window.DProgress && DProgress.done()
 });
 
