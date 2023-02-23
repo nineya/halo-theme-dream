@@ -65,7 +65,18 @@
 <script type="text/javascript">
     window.logger = console.log;
     <#if !(settings.enable_debug!false)>
-    console.log = function () {};
+    console.logStorage = [];
+    console.log = function (message, ...optionalParams) {
+      console.logStorage.push(()=>window.logger(message, optionalParams));
+      if (console.logStorage.length > 100) {
+        console.logStorage.shift()
+      }
+    };
+    console.logPrint = function () {
+      for (let logItem of console.logStorage) {
+        logItem();
+      }
+    }
     </#if>
     /** 主题配置 */
     const DreamConfig = {};
