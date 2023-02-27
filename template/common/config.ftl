@@ -39,7 +39,7 @@
 
     </#if>
 
-    <#if settings.enable_image_bg?? && settings.enable_image_bg==true>
+    <#if (settings.enable_image_bg!false)==true && (settings.theme_style!'default')!='clean'>
     <#if settings.background_pc?? && settings.background_pc!=''>
     body:before {
         background: url("${settings.background_pc!}") center 0 no-repeat;
