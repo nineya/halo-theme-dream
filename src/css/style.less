@@ -42,7 +42,6 @@ body > .footer, body > .navbar, body > .section {
 
 html {
   box-sizing: border-box;
-  background-color: var(--bg-f);
   font-size: 14px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -83,6 +82,31 @@ html {
 
     .actions.show {
       right: 16px;
+    }
+  }
+
+  &.default {
+    background-color: var(--bg-f);
+
+    .card {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
+      background-color: var(--background);
+
+      &:hover {
+        background-color: var(--background-hover);
+      }
+    }
+  }
+
+  &.clean {
+    background-color: var(--style-a);
+
+    .card {
+      border: 1px solid var(--light-b);
+    }
+
+    .footer:before {
+      content: none;
     }
   }
 }
@@ -1478,19 +1502,13 @@ table td, table th {
   padding: 6rem 0.75rem 3rem 0.75rem;
 
   .card {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
     transition: background-color 0.5s ease, opacity 0.3s ease-out, transform 0.3s ease-out;
-    background-color: var(--background);
     color: var(--dark-c);
     max-width: 100%;
     position: relative;
     word-wrap: break-word;
     word-break: break-all;
     border-radius: var(--radius-wrap);
-
-    &:hover {
-      background-color: var(--background-hover);
-    }
 
     //& + .card,
     & + .column-right-shadow {
@@ -1502,8 +1520,9 @@ table td, table th {
     }
 
     &.card-transparent {
-      box-shadow: none;
-      background: 0 0 /* 1 */;
+      box-shadow: none !important;
+      background: 0 0 !important;
+      border: none !important;
     }
 
     &-image {

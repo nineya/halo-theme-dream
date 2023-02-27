@@ -140,6 +140,17 @@ basic_style:
       label: 横幅文字描述
       type: text
       placeholder: '文字内容'
+    theme_style:
+      name: theme_style
+      label: 主题风格
+      type: select
+      default: 'default'
+      placeholder: '主题整体的风格效果。'
+      options:
+        - value: 'default'
+          label: 默认
+        - value: 'clean'
+          label: 清爽
     default_theme:
       name: default_theme
       label: 默认主题模式

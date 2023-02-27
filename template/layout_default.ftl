@@ -2,7 +2,7 @@
     <#include "common/widget.ftl">
     <#import "common/navbar.ftl" as nav>
     <!DOCTYPE html>
-    <html lang="zh">
+    <html lang="zh" class="${settings.theme_style!'default'}">
     <head>
         <#include "common/head.ftl">
     </head>
