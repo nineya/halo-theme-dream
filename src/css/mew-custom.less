@@ -452,7 +452,7 @@ mew-timeline {
 
       &::before {
         background-color: #73a3eb;
-        box-shadow: 0 0 0 0.2em rgb(115 163 235 / 25%);
+        box-shadow: 0 0 0 0.4em rgb(115 163 235 / 25%);
       }
     }
 
@@ -473,7 +473,7 @@ mew-timeline {
 
       &::before {
         background-color: #ffd350;
-        box-shadow: 0 0 0 0.2em rgb(255 211 80 / 25%);
+        box-shadow: 0 0 0 0.4em rgb(255 211 80 / 25%);
       }
     }
 
@@ -494,7 +494,7 @@ mew-timeline {
 
       &::before {
         background-color: #6de37a;
-        box-shadow: 0 0 0 0.2em rgb(109 227 122 / 25%);
+        box-shadow: 0 0 0 0.4em rgb(109 227 122 / 25%);
       }
     }
 
@@ -515,7 +515,7 @@ mew-timeline {
 
       &::before {
         background-color: #ff7776;
-        box-shadow: 0 0 0 0.2em rgb(255 119 118 / 25%);
+        box-shadow: 0 0 0 0.4em rgb(255 119 118 / 25%);
       }
     }
 
@@ -588,7 +588,7 @@ mew-quote {
 
   .quote-container {
     display: flex;
-    justify-content: center;
+    align-items: flex-start;
   }
 
   .mew-quote-href {
@@ -597,6 +597,7 @@ mew-quote {
     background: var(--bg-a);
     transition: all 2s;
     margin-right: 8px;
+    flex-shrink: 0;
 
     &:hover {
       transform: rotate(360deg);
@@ -847,6 +848,7 @@ html.night {
 
     .quote-container {
       flex-direction: column;
+      align-items: center;
     }
 
     .mew-quote-avatar {
