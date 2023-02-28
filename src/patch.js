@@ -1,4 +1,7 @@
 (function () {
+    if (compareVersion('2.1.0', '2.1.1')) {
+        addCss('.widget.profile .level-item {flex-shrink: 1;}')
+    }
     if (compareVersion(undefined, '2.0.9')) {
         addCss('.main-content .katex {line-height: 1.4;display: block;overflow-x: auto;overflow-y: hidden;}')
     }
