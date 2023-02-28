@@ -43,6 +43,7 @@ body > .footer, body > .navbar, body > .section {
 html {
   box-sizing: border-box;
   font-size: 14px;
+  background-color: var(--bg-f);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   min-width: 300px;
@@ -85,28 +86,30 @@ html {
     }
   }
 
-  &.default {
-    background-color: var(--bg-f);
-
-    .card {
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
-      background-color: var(--background);
-
-      &:hover {
-        background-color: var(--background-hover);
-      }
-    }
-  }
-
   &.clean {
     background-color: var(--style-a);
 
     .card {
+      box-shadow: none;
       border: 1px solid var(--light-b);
+      background: none !important;
+
+      &:hover {
+        backdrop-filter: blur(4px);
+      }
     }
 
-    .footer:before {
-      content: none;
+    .footer {
+      backdrop-filter: none;
+
+      &:before {
+        content: none;
+      }
+    }
+
+    .pagination-link:not(.is-current), .pagination-previous, .pagination-next {
+      box-shadow: none;
+      border: 1px solid var(--light-b);
     }
   }
 }
@@ -1502,13 +1505,19 @@ table td, table th {
   padding: 6rem 0.75rem 3rem 0.75rem;
 
   .card {
-    transition: background-color 0.5s ease, opacity 0.3s ease-out, transform 0.3s ease-out;
+    transition: background-color 0.5s ease, opacity 0.3s ease-out, transform 0.3s ease-out, backdrop-filter 0.3s ease-out;
     color: var(--dark-c);
     max-width: 100%;
     position: relative;
     word-wrap: break-word;
     word-break: break-all;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
+    background-color: var(--background);
     border-radius: var(--radius-wrap);
+
+    &:hover {
+      background-color: var(--background-hover);
+    }
 
     //& + .card,
     & + .column-right-shadow {
@@ -1522,6 +1531,7 @@ table td, table th {
     &.card-transparent {
       box-shadow: none !important;
       background: 0 0 !important;
+      backdrop-filter: none !important;
       border: none !important;
     }
 
