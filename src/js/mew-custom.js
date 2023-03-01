@@ -11,6 +11,32 @@ class MewElement extends HTMLElement {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    customElements.define(
+      "mew-hide",
+      class MewHide extends MewElement {
+          init() {
+              let $this = $(this);
+              const $mainContent = $this.closest(".main-content");
+              this.options = {
+                  target: $mainContent.attr("data-target"),
+                  id: $mainContent.attr("data-id")
+              };
+              console.log(this.innerHTML)
+              if (this.options.target && this.options.id) {
+                  let commentIds = localStorage.getItem(encrypt("mew-hide-" + this.options.target));
+                  commentIds = commentIds ? JSON.parse(decrypt(commentIds)) : [];
+                  if (commentIds.includes(this.options.id)) {
+                      $this.before(this.innerHTML)
+                      $this.remove()
+                  } else {
+                      this.setAttribute('hide', encrypt(this.innerHTML));
+                      this.innerHTML = ''
+                  }
+              }
+              this.drawComplete()
+          }
+      }
+    );
 
     customElements.define(
         "mew-subtitle",

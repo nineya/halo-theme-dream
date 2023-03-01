@@ -25,6 +25,22 @@ const postContext = {
             Utils.foldBlock($(this).parent());
         })
         Utils.initLikeEvent(".admire .agree.like", 'posts', ($elem) => $elem.find('span').find('span'))
+        window.onCommentSuccessEvent = (comment, target) => {
+            let name = encrypt("mew-hide-" + target);
+            let commentIds = localStorage.getItem(name);
+            commentIds = commentIds ? JSON.parse(decrypt(commentIds)) : [];
+            let id = String(comment.postId);
+            if (commentIds.includes(id)) {
+                return
+            }
+            commentIds.push(id);
+            $(`.main-content[data-target='${target}'][data-id='${id}'] mew-hide[hide]`)
+              .each(function () {
+                $(this).before(decrypt(this.getAttribute("hide")))
+                $(this).remove()
+              });
+            localStorage.setItem(name, encrypt(JSON.stringify(commentIds)));
+        }
         postContextInitial = true
     },
     /* 初始化代码块 */

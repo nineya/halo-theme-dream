@@ -51,7 +51,7 @@
                 </div>
                 <hr/>
             </#if>
-            <div class="main-content literature-content article">${post.formatContent!}</div>
+            <div data-id="${post.id?c}" data-target="${commentType}s" class="main-content literature-content article">${post.formatContent!}</div>
 
             <#include "admire.ftl">
 

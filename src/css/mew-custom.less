@@ -1,5 +1,26 @@
 @charset "utf-8";
 /* CSS Document */
+mew-hide {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  height: 4em;
+  border-radius: var(--radius-wrap);
+
+  &:before {
+    content: '隐藏内容，评论后可见';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 4em;
+    text-align: center;
+    padding: 0 12px;
+    background: repeating-linear-gradient(135deg, var(--light-b), var(--light-b) 1rem, var(--background) 0, var(--background) 2rem);
+  }
+}
+
 mew-subtitle {
   display: flex;
   justify-content: center;
@@ -787,7 +808,7 @@ mew-raw {
   margin-bottom: 14px;
 }
 
-mew-btn, mew-timeline, mew-quote, mew-link, mew-photos, mew-raw {
+mew-hide, mew-btn, mew-timeline, mew-quote, mew-link, mew-photos, mew-raw {
   &:not([draw]) {
     display: none;
   }
@@ -796,6 +817,7 @@ mew-btn, mew-timeline, mew-quote, mew-link, mew-photos, mew-raw {
 mew-bilibili, mew-cloud, mew-tabs, mew-panel, mew-video {
   &:not([draw]) {
     display: block;
+    overflow: hidden;
     position: relative;
     height: 2.4em;
     border: 1px solid var(--light-b);

@@ -8,7 +8,7 @@
                     <em>${journal.createTime?string('yyyy年MM月dd日 HH:mm:ss')}</em>
                 </p>
                 <div class="journal-content fold">
-                    <div class="main-content not-toc">${journal.content}</div>
+                    <div data-id="${journal.id?c}" data-target="journals" class="main-content not-toc">${journal.content}</div>
                 </div>
                 <div class="journal-operation">
                     <span class="journal-operation-item">
