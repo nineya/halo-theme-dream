@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
                   target: $mainContent.attr("data-target"),
                   id: $mainContent.attr("data-id")
               };
-              console.log(this.innerHTML)
               if (this.options.target && this.options.id) {
                   let commentIds = localStorage.getItem(encrypt("mew-hide-" + this.options.target));
                   commentIds = commentIds ? JSON.parse(decrypt(commentIds)) : [];
@@ -31,6 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
                   } else {
                       this.setAttribute('hide', encrypt(this.innerHTML));
                       this.innerHTML = ''
+                      this.onclick = function () {
+                          let $haloComment = $(`halo-comment[id='${this.options.id}'][type='${this.options.target.substring(0, this.options.target.length - 1)}']`);
+                          if ($haloComment.length === 0 || $haloComment.is(':hidden')) {
+                              return
+                          }
+                          Utils.animateScroll($haloComment[0], 20, (window.innerHeight || document.documentElement.clientHeight) / 4)
+                      }
                   }
               }
               this.drawComplete()
