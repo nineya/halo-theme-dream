@@ -24,7 +24,9 @@ const postContext = {
             e.stopPropagation();
             Utils.foldBlock($(this).parent());
         })
+        // 喜欢
         Utils.initLikeEvent(".admire .agree.like", 'posts', ($elem) => $elem.find('span').find('span'))
+        // 隐藏内容
         window.onCommentSuccessEvent = (comment, target) => {
             let name = encrypt("mew-hide-" + target);
             let commentIds = localStorage.getItem(name);
@@ -36,8 +38,12 @@ const postContext = {
             commentIds.push(id);
             $(`.main-content[data-target='${target}'][data-id='${id}'] mew-hide[hide]`)
               .each(function () {
-                $(this).before(decrypt(this.getAttribute("hide")))
+                $(this).before(decrypt(this.getAttribute("hide")));
                 $(this).remove()
+                commonContext.initGallery();
+                postContext.initCodeBlock();
+                postContext.initLiterature();
+                postContext.initHighlighting();
               });
             localStorage.setItem(name, encrypt(JSON.stringify(commentIds)));
         }
@@ -75,8 +81,8 @@ const postContext = {
             for (var i = 0; i < nums; i++) {
                 lis += `<li>${String(i + 1).padStart(lineDigit, 0)}</li>`
             }
-            // 代码块复制的id
-            let id = `codeBlock${index}`;
+            // 代码块的id，用于代码块复制和折叠
+            let id = `codeBlock${index}-${new Date().getTime()}`;
             let close = "";
             if (isClose) {
                 close = ` close`;
@@ -98,7 +104,7 @@ const postContext = {
     },
     /* 初始化文艺模式 */
     initLiterature() {
-        $(".literature-content>p:not([class])").each(function () {
+        $(".literature-content>p:not([class]),.literature-content>mew-hide>p:not([class])").each(function () {
             if ($(this).children(":not(code,a,strong,em,ins,b,s,br,span.pwd)").length === 0) {
                 $(this).addClass("note")
             }
@@ -170,7 +176,7 @@ window.postPjax = function (serialNumber) {
     );
 }
 !(function () {
-    const advances = ["initEvent", "initCodeBlock", "initLike", "foldImage"];
+    const advances = ["initEvent", "initCodeBlock", "initLiterature", "initLike", "foldImage"];
     Object.keys(postContext).forEach(
         (c) => !window.pjaxSerialNumber && advances.includes(c) && postContext[c]()
     );
