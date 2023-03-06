@@ -15,9 +15,10 @@
     }, "enableImageUpload": ${(settings.enable_image_upload!false)?c
     }, "enableBulletScreen": ${enableBulletScreen
     }${imageUploadApi!
+    }${anonymousUserName!
+    }, "enableBloggerOperation": ${(settings.enable_blogger_operation!true)?c
     }${avatarLoading!
     }${defaultAvatar!
-    }${anonymousUserName!
     }}'>
   <halo-comment ${(enableBulletScreen == 'true')?then('bullet-screen="true"', '')} id="${id}" type="${type}" configs='${configs}'/>
 </#macro>

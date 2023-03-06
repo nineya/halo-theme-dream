@@ -503,36 +503,48 @@ comment:
           label: 开启
         - value: false
           label: 关闭
-    image_upload_api:
-      name: image_upload_api
-      label: 图片上传API
-      type: text
-      placeholder: '图片上传API地址'
-      description: '评论区支持快捷上传图片到指定的API接口，搭建API规范要求见文档<a href="https://github.com/nineya/halo-comment-dream" target="_blank">halo-comment-dream</a>。'
     anonymous_user_name:
       name: anonymous_user_name
       label: 匿名用户名
       type: text
       placeholder: '用户名'
-      description: '填写后将允许用户匿名评论。'
-    unfold_reply_num:
-      name: unfold_reply_num
-      label: 默认展开的二级回复数量
-      type: text
-      default: 6
-      placeholder: '默认展开的二级回复数量'
-    enable_bullet_screen:
-      name: enable_bullet_screen
-      label: 开启评论弹幕
-      type: radio
+      description: '填写后将允许用户匿名评论，并使用此名称做用户名。'
+    avatar_loading:
+      name: avatar_loading
+      label: 头像加载动画
+      type: attachment
+      placeholder: '图片url链接'
+      description: '加载用户头像时的加载动画。'
+    default_avatar:
+      name: default_avatar
+      label: 默认评论头像
+      type: attachment
+      placeholder: '图片url链接'
+      description: '如果用户头像加载失败，则显示默认头像。'
+    enable_qq_info:
+      name: enable_qq_info
+      label: 获取QQ昵称和邮箱
+      type: switch
       data-type: bool
       default: false
-      description: '如果文章或页面元数据配置了“enable_bullet_screen”项，则当前配置将被覆盖。'
+      description: '评论时，自动通过QQ号自动获取QQ昵称和邮箱。'
       options:
         - value: true
-          label: 默认开启
+          label: 开启
         - value: false
-          label: 默认关闭
+          label: 关闭
+    priority_qq_avatar:
+      name: priority_qq_avatar
+      label: 优先显示QQ头像
+      type: switch
+      data-type: bool
+      default: false
+      description: '如果是QQ邮箱，则优先使用QQ头像。'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     enable_image_upload:
       name: enable_image_upload
       label: 启用图片上传
@@ -545,13 +557,19 @@ comment:
           label: 开启
         - value: false
           label: 关闭
-    reply_desc_soft:
-      name: reply_desc_soft
-      label: 回复列表按时间降序
+    image_upload_api:
+      name: image_upload_api
+      label: 图片上传API
+      type: text
+      placeholder: '图片上传API地址'
+      description: '评论区支持快捷上传图片到指定的API接口，搭建API规范要求见文档<a href="https://github.com/nineya/halo-comment-dream" target="_blank">halo-comment-dream</a>。'
+    enable_blogger_operation:
+      name: enable_blogger_operation
+      label: 启用博主操作
       type: switch
+      description: '如果博主已登录，允许博主直接在评论区进行操作。'
       data-type: bool
-      description: '评论中的二级评论按回复时间降序排序（默认为升序）。'
-      default: false
+      default: true
       options:
         - value: true
           label: 开启
@@ -560,17 +578,6 @@ comment:
     autoload_comment:
       name: autoload_comment
       label: 自动加载评论列表
-      type: switch
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    show_comment_ua:
-      name: show_comment_ua
-      label: 显示评论的UA信息
       type: switch
       data-type: bool
       default: true
@@ -592,42 +599,47 @@ comment:
           label: 圆圈
         - value: balls
           label: 小球
-    priority_qq_avatar:
-      name: priority_qq_avatar
-      label: 优先显示QQ头像
+    reply_desc_soft:
+      name: reply_desc_soft
+      label: 回复列表按时间降序
       type: switch
       data-type: bool
+      description: '评论中的二级回复列表按回复时间降序排序（默认为升序）。'
       default: false
-      description: '如果是QQ邮箱，则优先使用QQ头像。'
       options:
         - value: true
           label: 开启
         - value: false
           label: 关闭
-    avatar_loading:
-      name: avatar_loading
-      label: 头像加载动画
-      type: attachment
-      placeholder: '图片url链接'
-      description: '加载用户头像时的加载动画。'
-    default_avatar:
-      name: default_avatar
-      label: 默认评论头像
-      type: attachment
-      placeholder: '图片url链接'
-      description: '如果用户头像加载失败，则显示默认头像。'
-    enable_qq_info:
-      name: enable_qq_info
-      label: 获取QQ昵称和头像
+    unfold_reply_num:
+      name: unfold_reply_num
+      label: 默认展开的二级回复数量
+      type: text
+      default: 6
+      placeholder: '默认展开的二级回复数量'
+    show_comment_ua:
+      name: show_comment_ua
+      label: 显示评论的UA信息
       type: switch
       data-type: bool
-      default: false
-      description: '评论时，自动通过QQ号自动获取QQ昵称和邮箱。'
+      default: true
       options:
         - value: true
           label: 开启
         - value: false
           label: 关闭
+    enable_bullet_screen:
+      name: enable_bullet_screen
+      label: 开启评论弹幕
+      type: radio
+      data-type: bool
+      default: false
+      description: '如果文章或页面元数据配置了“enable_bullet_screen”项，则当前配置将被覆盖。'
+      options:
+        - value: true
+          label: 默认开启
+        - value: false
+          label: 默认关闭
     enable_comment_html:
       name: enable_comment_html
       label: 开启评论html内容
