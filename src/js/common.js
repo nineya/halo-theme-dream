@@ -6,13 +6,13 @@ const commonContext = {
   initWidget() {
     const $columnRight = $('.columns .column-right')
     const $columnRightShadow = $('.columns .column-right-shadow')
+    $('.widget.recent-comments .reply .link').html((i, html) => Utils.renderedEmojiHtml(html))
     // 实现将右边widget拷贝的左边
     if ($columnRight.length && $columnRightShadow.length && !$columnRightShadow[0].children.length) {
       for (const child of $columnRight[0].children) {
         $columnRightShadow[0].append(child.cloneNode(true))
       }
     }
-    $('.widget.recent-comments .reply .link').html((i, html) => Utils.renderedEmojiHtml(html))
   },
   /* 初始化悬浮操作按钮 */
   initActions() {
