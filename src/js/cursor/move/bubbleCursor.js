@@ -11,20 +11,20 @@ function bubbleCursor(options) {
   let canvImages = []
 
   function init(wrapperEl) {
-    canvas = document.createElement("canvas")
-    context = canvas.getContext("2d")
+    canvas = document.createElement('canvas')
+    context = canvas.getContext('2d')
 
-    canvas.style.top = "0px"
-    canvas.style.left = "0px"
-    canvas.style.pointerEvents = "none"
+    canvas.style.top = '0px'
+    canvas.style.left = '0px'
+    canvas.style.pointerEvents = 'none'
 
     if (hasWrapperEl) {
-      canvas.style.position = "absolute"
+      canvas.style.position = 'absolute'
       element.appendChild(canvas)
       canvas.width = element.clientWidth
       canvas.height = element.clientHeight
     } else {
-      canvas.style.position = "fixed"
+      canvas.style.position = 'fixed'
       document.body.appendChild(canvas)
       canvas.width = width
       canvas.height = height
@@ -36,10 +36,10 @@ function bubbleCursor(options) {
 
   // Bind events that are needed
   function bindEvents() {
-    element.addEventListener("mousemove", onMouseMove)
-    element.addEventListener("touchmove", onTouchMove, { passive: true })
-    element.addEventListener("touchstart", onTouchMove, { passive: true })
-    window.addEventListener("resize", onWindowResize)
+    element.addEventListener('mousemove', onMouseMove)
+    element.addEventListener('touchmove', onTouchMove, { passive: true })
+    element.addEventListener('touchstart', onTouchMove, { passive: true })
+    window.addEventListener('resize', onWindowResize)
   }
 
   function onWindowResize(e) {
@@ -128,8 +128,8 @@ function bubbleCursor(options) {
       const scale =
         0.2 + (this.initialLifeSpan - this.lifeSpan) / this.initialLifeSpan
 
-      context.fillStyle = "#e6f1f7"
-      context.strokeStyle = "#3a92c5"
+      context.fillStyle = '#e6f1f7'
+      context.strokeStyle = '#3a92c5'
       context.beginPath()
       context.arc(
         this.position.x - (this.baseDimension / 2) * scale,

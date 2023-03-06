@@ -2,7 +2,7 @@
 // code, to modern js & canvas
 // - http://www.yaldex.com/FSMessages/ElasticBullets.htm
 function springyEmojiCursor(options) {
-  let emoji = (options && options.emoji) || "🤪"
+  let emoji = (options && options.emoji) || '🤪'
   let hasWrapperEl = options && options.element
   let element = hasWrapperEl || document.body
 
@@ -27,39 +27,39 @@ function springyEmojiCursor(options) {
   let emojiAsImage
 
   function init() {
-    canvas = document.createElement("canvas")
-    context = canvas.getContext("2d")
-    canvas.style.top = "0px"
-    canvas.style.left = "0px"
-    canvas.style.pointerEvents = "none"
+    canvas = document.createElement('canvas')
+    context = canvas.getContext('2d')
+    canvas.style.top = '0px'
+    canvas.style.left = '0px'
+    canvas.style.pointerEvents = 'none'
 
     if (hasWrapperEl) {
-      canvas.style.position = "absolute"
+      canvas.style.position = 'absolute'
       element.appendChild(canvas)
       canvas.width = element.clientWidth
       canvas.height = element.clientHeight
     } else {
-      canvas.style.position = "fixed"
+      canvas.style.position = 'fixed'
       document.body.appendChild(canvas)
       canvas.width = width
       canvas.height = height
     }
 
     // Save emoji as an image for performance
-    context.font = "16px serif"
-    context.textBaseline = "middle"
-    context.textAlign = "center"
+    context.font = '16px serif'
+    context.textBaseline = 'middle'
+    context.textAlign = 'center'
 
     let measurements = context.measureText(emoji)
-    let bgCanvas = document.createElement("canvas")
-    let bgContext = bgCanvas.getContext("2d")
+    let bgCanvas = document.createElement('canvas')
+    let bgContext = bgCanvas.getContext('2d')
 
     bgCanvas.width = measurements.width
     bgCanvas.height = measurements.actualBoundingBoxAscent * 2
 
-    bgContext.textAlign = "center"
-    bgContext.font = "16px serif"
-    bgContext.textBaseline = "middle"
+    bgContext.textAlign = 'center'
+    bgContext.font = '16px serif'
+    bgContext.textBaseline = 'middle'
     bgContext.fillText(
       emoji,
       bgCanvas.width / 2,
@@ -79,10 +79,10 @@ function springyEmojiCursor(options) {
 
   // Bind events that are needed
   function bindEvents() {
-    element.addEventListener("mousemove", onMouseMove)
-    element.addEventListener("touchmove", onTouchMove, { passive: true })
-    element.addEventListener("touchstart", onTouchMove, { passive: true })
-    window.addEventListener("resize", onWindowResize)
+    element.addEventListener('mousemove', onMouseMove)
+    element.addEventListener('touchmove', onTouchMove, { passive: true })
+    element.addEventListener('touchstart', onTouchMove, { passive: true })
+    window.addEventListener('resize', onWindowResize)
   }
 
   function onWindowResize(e) {
@@ -123,6 +123,7 @@ function springyEmojiCursor(options) {
   }
 
   function updateParticles() {
+    // eslint-disable-next-line no-self-assign
     canvas.width = canvas.width
 
     // follow mouse

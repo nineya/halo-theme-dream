@@ -2,7 +2,7 @@ function snowflakeCursor(options) {
   let hasWrapperEl = options && options.element
   let element = hasWrapperEl || document.body
 
-  let possibleEmoji = ["❄️"]
+  let possibleEmoji = ['❄️']
   let width = window.innerWidth
   let height = window.innerHeight
   let cursor = { x: width / 2, y: width / 2 }
@@ -12,40 +12,40 @@ function snowflakeCursor(options) {
   let canvImages = []
 
   function init() {
-    canvas = document.createElement("canvas")
-    context = canvas.getContext("2d")
+    canvas = document.createElement('canvas')
+    context = canvas.getContext('2d')
 
-    canvas.style.top = "0px"
-    canvas.style.left = "0px"
-    canvas.style.pointerEvents = "none"
+    canvas.style.top = '0px'
+    canvas.style.left = '0px'
+    canvas.style.pointerEvents = 'none'
 
     if (hasWrapperEl) {
-      canvas.style.position = "absolute"
+      canvas.style.position = 'absolute'
       element.appendChild(canvas)
       canvas.width = element.clientWidth
       canvas.height = element.clientHeight
     } else {
-      canvas.style.position = "fixed"
+      canvas.style.position = 'fixed'
       document.body.appendChild(canvas)
       canvas.width = width
       canvas.height = height
     }
 
-    context.font = "12px serif"
-    context.textBaseline = "middle"
-    context.textAlign = "center"
+    context.font = '12px serif'
+    context.textBaseline = 'middle'
+    context.textAlign = 'center'
 
     possibleEmoji.forEach((emoji) => {
       let measurements = context.measureText(emoji)
-      let bgCanvas = document.createElement("canvas")
-      let bgContext = bgCanvas.getContext("2d")
+      let bgCanvas = document.createElement('canvas')
+      let bgContext = bgCanvas.getContext('2d')
 
       bgCanvas.width = measurements.width
       bgCanvas.height = measurements.actualBoundingBoxAscent * 2
 
-      bgContext.textAlign = "center"
-      bgContext.font = "12px serif"
-      bgContext.textBaseline = "middle"
+      bgContext.textAlign = 'center'
+      bgContext.font = '12px serif'
+      bgContext.textBaseline = 'middle'
       bgContext.fillText(
         emoji,
         bgCanvas.width / 2,
@@ -61,10 +61,10 @@ function snowflakeCursor(options) {
 
   // Bind events that are needed
   function bindEvents() {
-    element.addEventListener("mousemove", onMouseMove)
-    element.addEventListener("touchmove", onTouchMove, { passive: true })
-    element.addEventListener("touchstart", onTouchMove, { passive: true })
-    window.addEventListener("resize", onWindowResize)
+    element.addEventListener('mousemove', onMouseMove)
+    element.addEventListener('touchmove', onTouchMove, { passive: true })
+    element.addEventListener('touchstart', onTouchMove, { passive: true })
+    window.addEventListener('resize', onWindowResize)
   }
 
   function onWindowResize(e) {
