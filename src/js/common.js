@@ -485,12 +485,12 @@ const commonContext = {
   /* 初始化特效，只需要初始化一次，移动端设备不初始化 */
   initEffects() {
     if (Utils.isMobile()) return
-    DreamConfig.cursor_move && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/cursor/move/${DreamConfig.cursor_move}.min.js`)
-    DreamConfig.cursor_click && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/cursor/click/${DreamConfig.cursor_click}.min.js`)
-    DreamConfig.enable_live2d && Utils.cachedScript(`${DreamConfig.theme_base}/source/lib/live2d@1.0.1/autoload.js`)
-    DreamConfig.effects_sakura_mode && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/effects/sakura.min.js`)
-    DreamConfig.effects_universe_mode && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/effects/universe.min.js`)
-    DreamConfig.effects_circle_magic_mode && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/effects/circleMagic.min.js`)
+    DreamConfig.cursor_move && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/cursor/move/${DreamConfig.cursor_move}.min.js?mew=${DreamConfig.theme_version}`)
+    DreamConfig.cursor_click && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/cursor/click/${DreamConfig.cursor_click}.min.js?mew=${DreamConfig.theme_version}`)
+    DreamConfig.enable_live2d && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/autoload.min.js?mew=${DreamConfig.theme_version}`)
+    DreamConfig.effects_sakura_mode && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/effects/sakura.min.js?mew=${DreamConfig.theme_version}`)
+    DreamConfig.effects_universe_mode && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/effects/universe.min.js?mew=${DreamConfig.theme_version}`)
+    DreamConfig.effects_circle_magic_mode && Utils.cachedScript(`${DreamConfig.theme_base}/source/js/effects/circleMagic.min.js?mew=${DreamConfig.theme_version}`)
   },
   /* 加载主动推送、统计脚本等参数 */
   loadMaintain() {
