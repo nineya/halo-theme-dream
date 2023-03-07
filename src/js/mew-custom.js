@@ -28,8 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
             $this.before(this.innerHTML)
             $this.remove()
           } else {
+            let isToc = $this.find('h1,h2,h3,h4,h5').length !== 0
             this.setAttribute('hide', window.encrypt(this.innerHTML))
             this.innerHTML = ''
+            if(isToc) {
+              this.setAttribute('toc', true)
+              commonContext.initTocAndNotice()
+            }
             this.onclick = function () {
               let $haloComment = $(`halo-comment[id='${this.options.id}'][type='${this.options.target.substring(0, this.options.target.length - 1)}']`)
               if ($haloComment.length === 0 || $haloComment.is(':hidden')) {
@@ -374,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
               this.options.desc = `Error: ${error}`
             })
         }
-        const imageElem = this.options.img ? `<span class="mew-link-image"><img class="link-image" src="${this.options.img}"/></span>` : ''
+        const imageElem = this.options.img ? `<span class="mew-link-image"><img class="link-image not-gallery" src="${this.options.img}"/></span>` : ''
         const descElem = this.options.desc ? `<span class="info-desc">${this.options.desc}</span>` : `<span class="mew-link-href info-desc">${this.options.href}</span>`
         this.innerHTML = `<a class="mew-link" target="_blank" href="${this.options.href}"><span class="mew-link-info"><p class="info-title">${this.options.title || '我分享了一个网站'}</p>${descElem}</span>${imageElem}</a>`
         this.drawComplete()

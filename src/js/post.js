@@ -44,6 +44,7 @@ const postContext = {
           postContext.initCodeBlock()
           postContext.initLiterature()
           postContext.initHighlighting()
+          if (this.getAttribute('toc') === 'true') commonContext.initTocAndNotice()
         })
       localStorage.setItem(name, encrypt(JSON.stringify(commentIds)))
     }
