@@ -3117,12 +3117,19 @@ table td, table th {
       display: flex;
     }
 
-    .column-main.is-sticky, .column-left.is-sticky, .column-right.is-sticky, .column-right-shadow.is-sticky {
+    .column-left, .column-right {
       transition: all 0.5s;
-      align-self: flex-start;
-      position: -webkit-sticky;
-      position: sticky;
-      top: 5rem;
+      &.top-sticky {
+        align-self: flex-start;
+        position: sticky;
+        top: 5rem;
+      }
+
+      &.bottom-sticky {
+        align-self: flex-end;
+        position: sticky;
+        bottom: 1rem;
+      }
     }
 
     .pagination .pagination-previous {
@@ -3143,7 +3150,7 @@ table td, table th {
 
   body.move-up {
     .container {
-      .column-main.is-sticky, .column-left.is-sticky, .column-right.is-sticky, .column-right-shadow.is-sticky {
+      .column-left.top-sticky, .column-right.top-sticky {
         top: 1rem;
       }
     }

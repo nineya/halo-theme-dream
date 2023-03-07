@@ -1,5 +1,5 @@
 <#macro widget position>
-<aside class="column column-side column-${position} <#if position == 'left'><#if settings.left_sidebar_sticky?? && settings.left_sidebar_sticky == 'top'>is-sticky</#if><#if settings.left_sidebar_sticky?? && settings.left_sidebar_sticky == 'bottom'>is-sticky left-bottom</#if><#else><#if settings.right_sidebar_sticky?? && settings.right_sidebar_sticky == 'top'>is-sticky</#if><#if settings.right_sidebar_sticky?? && settings.right_sidebar_sticky == 'bottom'>is-sticky right-bottom</#if></#if>">
+<aside class="column column-side column-${position} ${settings[position+'_sidebar_sticky']!'none'}-sticky">
     <#assign sidebar_list=[]>
     <#list settings?keys as key>
         <#if key?index_of('sidebar_priority_') != -1>

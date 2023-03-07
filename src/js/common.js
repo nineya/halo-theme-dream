@@ -93,26 +93,6 @@ const commonContext = {
     }
     id = setInterval(updateDesc, isWrite? 500 : 80)
   },
-  /* widget固定底部 */
-  widgetFixedBottom() {
-    const columnLeft = $('.left-bottom')[0]
-    const columnRight = $('.right-bottom')[0]
-
-    function step() {
-      if (columnLeft) {
-        if (window.innerWidth < 769) {
-          columnLeft.style.top = null
-        } else {
-          columnLeft.style.top = window.innerHeight - columnLeft.scrollHeight - 10 + 'px'
-        }
-      }
-      if (columnRight && window.innerWidth >= 1216) {
-        columnRight.style.top = window.innerHeight - columnRight.scrollHeight - 10 + 'px'
-      }
-      window.requestAnimationFrame(step)
-    }
-    window.requestAnimationFrame(step)
-  },
   /* 激活图片预览功能 */
   initGallery() {
     // 用链接和标题包装图像
