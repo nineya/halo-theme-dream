@@ -98,26 +98,20 @@ const commonContext = {
     const columnLeft = $('.left-bottom')[0]
     const columnRight = $('.right-bottom')[0]
 
-    function leftSetBottom() {
-      if (window.innerWidth < 769) {
-        columnLeft.style.top = null
-      } else {
-        columnLeft.style.top = window.innerHeight - columnLeft.scrollHeight - 10 + 'px'
+    function step() {
+      if (columnLeft) {
+        if (window.innerWidth < 769) {
+          columnLeft.style.top = null
+        } else {
+          columnLeft.style.top = window.innerHeight - columnLeft.scrollHeight - 10 + 'px'
+        }
       }
-    }
-
-    function rightSetBottom() {
-      if (window.innerWidth >= 1216) {
+      if (columnRight && window.innerWidth >= 1216) {
         columnRight.style.top = window.innerHeight - columnRight.scrollHeight - 10 + 'px'
       }
+      window.requestAnimationFrame(step)
     }
-
-    if (columnLeft) {
-      leftSetBottom(), $(window).resize(leftSetBottom), document.addEventListener('scroll', leftSetBottom)
-    }
-    if (columnRight) {
-      rightSetBottom(), $(window).resize(rightSetBottom), document.addEventListener('scroll', rightSetBottom)
-    }
+    window.requestAnimationFrame(step)
   },
   /* 激活图片预览功能 */
   initGallery() {
