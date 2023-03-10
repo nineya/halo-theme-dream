@@ -126,7 +126,7 @@ task('js', () => {
 })
 
 task('zip', () => {
-  const target = ['./source/**', './template/**', './*.ftl', './*.yaml', 'README.md', 'screenshot.png', 'LICENSE']
+  const target = ['./source/**', './template/**', './mail_template/**', './*.ftl', './*.yaml', 'README.md', 'screenshot.png', 'LICENSE']
   return src(target, {base: '.'})
     .pipe(zip('halo-theme-dream.zip'))
     .pipe(dest(distPath))
