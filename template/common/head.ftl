@@ -5,6 +5,7 @@
 <meta charset="utf-8"/>
 <#assign description=(post??)?then(post.summary!, meta_description!)!user.description!>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta http-equiv="x-dns-prefetch-control" content="on">
 <meta name="keywords" content="${meta_keywords!}"/>
 <meta name="description" content="${description!}">
 <meta name="author" content="${user.nickname!}">
