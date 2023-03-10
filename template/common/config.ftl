@@ -78,6 +78,17 @@
       }
     };
     </#if>
+    <#if settings.copy_explain?? && settings.copy_explain!=''>
+    document.addEventListener('copy', function (event) {
+      let clipboardData = event.clipboardData || window.clipboardData;
+      if (!clipboardData) { return; }
+      let text = window.getSelection().toString();
+      if (text) {
+        event.preventDefault();
+        clipboardData.setData('text/plain', text + '\n${settings.copy_explain?trim?js_string}');
+      }
+    });
+    </#if>
     /** 主题配置 */
     const DreamConfig = {};
     DreamConfig["theme_version"] = '${theme_version!}';

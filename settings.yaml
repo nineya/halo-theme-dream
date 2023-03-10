@@ -23,6 +23,12 @@ basic_info:
       label: 离屏文案（回来）
       type: text
       placeholder: '浏览器返回到当前标签时页面标题展示的文字'
+    copy_explain:
+      name: copy_explain
+      label: 拷贝说明
+      type: textarea
+      placeholder: 说明内容
+      description: "当用户拷贝文本时，自动将该文本内容追加到最后面。"
     night_logo:
       name: night_logo
       label: 黑夜模式的logo(放空默认为网站logo)
