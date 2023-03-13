@@ -1,9 +1,9 @@
 <#macro article_list posts>
     <#list posts as post>
         <#assign thumbnail = (post.thumbnail?? && post.thumbnail!='')?then(post.thumbnail!, (settings.default_thumbnail?? && settings.default_thumbnail!='')?then(settings.default_thumbnail + settings.default_thumbnail?contains('?')?then("&","?") + "postId=" + post.id?c, ''))>
-        <#assign thumbnail_mode = (thumbnail?? && thumbnail!='')?then((post.metas?? && post.metas.thumbnail_mode?? && post.metas.thumbnail_mode?trim!='')?then(post.metas.thumbnail_mode?trim, (post.topPriority==1)?then(settings.top_thumbnail_mode!'back', settings.thumbnail_mode!'default')), 'default')>
+        <#assign thumbnail_mode = (post.metas?? && post.metas.thumbnail_mode?? && post.metas.thumbnail_mode?trim!='')?then(post.metas.thumbnail_mode?trim, (post.topPriority==1)?then(settings.top_thumbnail_mode!'back', settings.thumbnail_mode!'default'))>
         <div class="card widget">
-            <#if thumbnail_mode == "back">
+            <#if thumbnail != '' && thumbnail_mode == "back">
                 <div class="cover">
                     <a href="${post.fullPath!}">
                         <div class="cover-image" style="background-image: url(${thumbnail!})">
@@ -29,7 +29,7 @@
                         </div>
                     </#if>
                 </div>
-            <#elseif thumbnail_mode == "small" || (thumbnail_mode == "small-alter" && post_index%2 == 0)>
+            <#elseif thumbnail != '' && (thumbnail_mode == "small" || (thumbnail_mode == "small-alter" && post_index%2 == 0))>
                 <div class="card-small">
                     <a href="${post.fullPath!}"><div class="small-image" style="background-image: url(${thumbnail!})"></div></a>
                     <div class="card-content main">
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-            <#elseif thumbnail_mode == "small-right" || (thumbnail_mode == "small-alter" && post_index%2 == 1)>
+            <#elseif thumbnail != '' && (thumbnail_mode == "small-right" || (thumbnail_mode == "small-alter" && post_index%2 == 1))>
                 <div class="card-small">
                     <div class="card-content main">
                         <h2 class="title">
@@ -89,6 +89,14 @@
                     </div>
                     <a href="${post.fullPath!}"><div class="small-image" style="background-image: url(${thumbnail!})"></div></a>
                 </div>
+            <#elseif post.topPriority==1 && thumbnail_mode == "fold">
+                <h2 class="title">
+                    <span class="top">置顶</span><a href="${post.fullPath!}">${post.title!}</a>
+                </h2>
+                <ul class="breadcrumb">
+                    <li><@global.timeline datetime=post.createTime/></li>
+                    <li><i class="fa fa-eye"></i>${post.visits?c}</li>
+                </ul>
             <#else>
                 <#if thumbnail?? && thumbnail!=''>
                     <a class="thumbnail" href="${post.fullPath!}">

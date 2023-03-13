@@ -261,6 +261,8 @@ post:
           label: 小图模式（右侧）
         - value: small-alter
           label: 小图模式（交替）
+        - value: fold
+          label: 折叠
     thumbnail_mode:
       name: thumbnail_mode
       label: 文章列表缩略图模式
