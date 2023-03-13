@@ -3,9 +3,7 @@
     <@tagTag method="list">
         <#if tags?? && tags?size gt 0>
             <div class="card card-content">
-                <h3 class="menu-label">
-                    标签
-                </h3>
+                <div class="card-tab"><div>文章标签</div></div>
                 <div class="tags-field">
                     <#list tags as tag>
                         <a class="tags" href="${tag.fullPath!}">

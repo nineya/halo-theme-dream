@@ -30,10 +30,6 @@
 <link rel="preload stylesheet" as="style" href="${theme_base!}/source/lib/font-awesome@4.7.0/css/font-awesome.min.css">
 <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/style.min.css?mew=${theme_version!}">
 
-<#if is_tags??>
-    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/tags.min.css?mew=${theme_version!}"/>
-</#if>
-
 <#if post?? || is_journals?? || is_error??>
     <link data-pjax rel="preload stylesheet" as="style"
           href="${theme_base!}/source/lib/highlightjs@11.5.1/styles/${settings.code_pretty!'atom-one-light'}.min.css"/>

@@ -23,8 +23,8 @@
     </@categoryTag>
     <@categoryTag method="tree">
         <#if categories?? && categories?size gt 0>
-            <div class="card widget card-content">
-                <h3 class="menu-label">分类</h3>
+            <div class="card card-content">
+                <div class="card-tab"><div>文章分类</div></div>
                 <ul class="menu-list">
                     <@categoriesTree categories/>
                 </ul>

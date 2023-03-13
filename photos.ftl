@@ -2,7 +2,7 @@
 <@layout title="相册 - ${blog_title!}" canonical="${photos_url!}">
     <#if (photos.content)?? && photos.content?size gt 0>
         <div class="card card-content photos">
-            <div class="photos-title">我的相册</div>
+            <div class="card-tab"><div>我的相册</div></div>
             <ul class="photos-teams">
                 <li class="item">全部</li>
                 <@photoTag method="listTeams">

@@ -369,7 +369,7 @@ table td, table th {
   border-radius: 4px;
   color: var(--dark-c);
   display: inline-flex;
-  font-size: .75rem;
+  font-size: .75em;
   height: 2em;
   justify-content: center;
   line-height: 1.5;
@@ -1544,6 +1544,39 @@ table td, table th {
 
     &-image {
       border-radius: var(--radius-wrap) var(--radius-wrap) 0 0;
+    }
+
+    &-tab {
+      height: 52px;
+      border-bottom: 1px solid var(--light-b);
+      margin-bottom: 15px;
+
+      div {
+        position: absolute;
+        top: 15px;
+        left: -10px;
+        background: var(--theme);
+        color: #fff;
+        padding: 0 12px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        border-radius: 2px 2px 2px 0;
+        box-shadow: 2px 5px 10px rgb(49 58 70 / 15%);
+        user-select: none;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: -10px;
+          border-style: solid;
+          border-width: 10px;
+          border-color: var(--theme) transparent transparent;
+          transform: rotate(90deg);
+        }
+      }
     }
 
     &-title {
@@ -3722,41 +3755,11 @@ table td, table th {
 
 /* 相册界面 */
 .photos {
-  padding-top: 60px !important;
-
-  &-title {
-    position: absolute;
-    top: 15px;
-    left: -10px;
-    background: var(--theme);
-    color: #fff;
-    padding: 0 12px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    border-radius: 2px 2px 2px 0;
-    box-shadow: 2px 5px 10px rgb(49 58 70 / 15%);
-    user-select: none;
-
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: -10px;
-      border-style: solid;
-      border-width: 10px;
-      border-color: var(--theme) transparent transparent;
-      transform: rotate(90deg);
-    }
-  }
 
   &-teams {
     display: grid;
     gap: 15px;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    border-top: 1px solid var(--light-b);
-    padding-top: 15px;
 
     .item {
       user-select: none;
@@ -3921,6 +3924,36 @@ table td, table th {
 
       & > img {
         opacity: 1;
+      }
+    }
+  }
+}
+
+/* 标签界面 */
+.tags-field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 1.3em;
+
+  .tags {
+    display: flex;
+
+    &:not(:last-child) {
+      margin: 0 0.75rem 0.75rem 0;
+    }
+
+    .tag {
+      &:not(.is-grey) {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      &.is-grey {
+        background: var(--bg-e);
+        color: rgb(255 255 255 / 80%);
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
       }
     }
   }
