@@ -1524,9 +1524,13 @@ table td, table th {
 
     &:hover {
       background-color: var(--background-hover);
+
+      .thumbnail-image, &.card-cover .cover-image, .small-image {
+        transform: scale(1.1);
+        filter: brightness(0.9);
+      }
     }
 
-    //& + .card,
     & + .column-right-shadow {
       margin-top: 1.4rem;
     }
@@ -1660,75 +1664,108 @@ table td, table th {
       }
     }
 
-    .cover {
-      &-image {
-        min-height: 360px;
-        width: 100%;
-        margin: auto;
-        position: relative;
-        display: block;
-        background-position: 50% 50%;
-        background-size: cover;
-        transition: all 0.5s;
+    .cover-image {
+      min-height: 360px;
+      width: 100%;
+      margin: auto;
+      position: relative;
+      display: block;
+      background-position: 50% 50%;
+      background-size: cover;
+      transition: all 0.5s;
+    }
+
+    &.card-cover, .cover-image {
+      .category {
+        position: absolute;
+        font-size: 0.85rem;
+        right: 0.7em;
+        top: 10px;
+
+        a {
+          color: #fff;
+          background: rgba(0, 0, 0, 0.3);
+          padding: 4px 10px;
+          border-radius: var(--radius-inner);
+
+          &:hover {
+            color: var(--theme);
+          }
+        }
       }
 
-      &, &-image {
-        .category {
-          position: absolute;
-          font-size: 0.85rem;
-          right: 0.7em;
-          top: 10px;
+      .details {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        top: auto;
+        color: #fff;
+        background-image: linear-gradient(0deg, rgba(29, 41, 49, .5), rgba(255, 255, 255, 0));
+        padding: 2em 15px 15px;
+      }
 
-          a {
-            color: #fff;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 4px 10px;
-            border-radius: var(--radius-inner);
+      .title {
+        color: inherit;
+        position: relative;
+        padding-bottom: 8px;
 
-            &:hover {
-              color: var(--theme);
-            }
-          }
+        &:hover:before {
+          width: 60px;
         }
 
-        .details {
+        &:before {
+          content: '';
           position: absolute;
-          width: 100%;
-          bottom: 0;
+          width: 40px;
+          height: 3px;
           top: auto;
-          color: #fff;
-          background-image: linear-gradient(0deg, rgba(29, 41, 49, .5), rgba(255, 255, 255, 0));
-          padding: 2em 15px 15px;
+          left: 0;
+          bottom: 3px;
+          transition: 0.4s;
+          border-radius: 5px;
+          background: var(--theme);
+          box-shadow: 1px 1px 3px -1px var(--theme);
         }
 
-        .title {
-          color: inherit;
-          position: relative;
-          padding-bottom: 8px;
-
-          &:hover:before {
-            width: 60px;
-          }
-
-          &:before {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 3px;
-            top: auto;
-            left: 0;
-            bottom: 3px;
-            transition: 0.4s;
-            border-radius: 5px;
-            background: var(--theme);
-            box-shadow: 1px 1px 3px -1px var(--theme);
-          }
-
-        }
       }
     }
 
-    .card-small {
+    &.card-fold:not(.is-hidden-all) + .card {
+      margin-top: 0.7rem !important;
+    }
+
+    &-fold {
+      display: flex;
+      padding: 0.5em 0.75em;
+      justify-content: space-between;
+
+      &:hover {
+        border: 1px solid var(--theme);
+      }
+
+      .title {
+        margin: 0;
+        font-size: 1.2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        p {
+          display: inline;
+        }
+      }
+
+      & > p {
+        color: var(--dark-b);
+        font-size: .8rem;
+        min-width: 60px;
+        text-align: end;
+        align-self: center;
+        flex-shrink: 0;
+      }
+    }
+
+    &-small {
       display: flex;
 
       & > a {
@@ -1868,13 +1905,6 @@ table td, table th {
 
 .widget {
   overflow: hidden !important;
-
-  &:hover {
-    .thumbnail-image, .cover .cover-image, .small-image {
-      transform: scale(1.1);
-      filter: brightness(0.9);
-    }
-  }
 
   &.card {
     .card-empty {
@@ -3152,6 +3182,7 @@ table td, table th {
 
     .column-left, .column-right {
       transition: all 0.5s;
+
       &.top-sticky {
         align-self: flex-start;
         position: sticky;
@@ -3276,7 +3307,7 @@ table td, table th {
 @media (min-width: 1408px) {
   .section .card {
 
-    .card-small .main-content {
+    &-small .main-content {
       -webkit-line-clamp: 3 !important;
       min-height: 4em;
       max-height: 4.8em;
