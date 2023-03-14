@@ -17,16 +17,11 @@ const commonContext = {
   /* 初始化悬浮操作按钮 */
   initActions() {
     const $bulletScreen = $('.actions>.bullet-screen')
-    if ($('halo-comment[bullet-screen]').length === 0) {
-      $bulletScreen.addClass('is-hidden-all')
-      return
-    }
     if (localStorage.getItem('stop-bullet-screen') === 'true') {
       $bulletScreen.addClass('stop-bullet-screen')
     }
-    $bulletScreen.removeClass('is-hidden-all')
-    if (window.initActionsComplete) {
-      return
+    if ($('halo-comment[bullet-screen]').length !== 0) {
+      $bulletScreen.removeClass('is-hidden-all')
     }
     const applyStopBulletScreen = (stopBulletScreenValue) => {
       $('halo-comment[bullet-screen]').each(function () {
@@ -48,7 +43,6 @@ const commonContext = {
       let stopBulletScreen = localStorage.getItem('stop-bullet-screen') || false
       applyStopBulletScreen(stopBulletScreen.toString() !== 'true')
     })
-    window.initActionsComplete = true
   },
   /* 初始化目录和公告模块 */
   initTocAndNotice() {

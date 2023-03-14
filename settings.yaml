@@ -23,6 +23,12 @@ basic_info:
       label: 离屏文案（回来）
       type: text
       placeholder: '浏览器返回到当前标签时页面标题展示的文字'
+    index_inform:
+      name: index_inform
+      label: 首页通知
+      type: textarea
+      placeholder: 通知内容
+      description: "在首页最顶部显示一条通知。"
     copy_explain:
       name: copy_explain
       label: 拷贝说明

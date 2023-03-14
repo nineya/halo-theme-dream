@@ -9,6 +9,24 @@ const createSerialNumber = () => {
   return serialNumber
 }
 
+const $indexInform = $('.section .container > .tips')
+const $bulletScreen = $('.actions>.bullet-screen')
+// pjax请求时进行界面预处理
+const initPjax = () => {
+  /* 重新加载首页提示 */
+  if (location.pathname === '/') {
+    $indexInform.removeClass('is-hidden-all')
+  } else {
+    $indexInform.addClass('is-hidden-all')
+  }
+  /* 重新加载悬浮导航按钮 */
+  if ($('halo-comment[bullet-screen]').length === 0) {
+    $bulletScreen.addClass('is-hidden-all')
+  } else {
+    $bulletScreen.removeClass('is-hidden-all')
+  }
+}
+
 const computeScrollTop = (target) => {
   // 当前为横幅大图模式，处理滚动
   if (target.pathname !== '/' && $('.banner').length !== 0) {
@@ -109,12 +127,12 @@ $(document).on('pjax:success', async function (event, data, status, xhr, options
   const serialNumber = options.serialNumber
   console.log(`pjax:success sn = ${serialNumber}`)
   if (window.pjaxSerialNumber !== serialNumber) return
-  /* 重新加载悬浮导航按钮 */
-  commonContext.initActions()
   /* 重新激活图片预览功能 */
   commonContext.initGallery()
   /* 重新加载目录和公告 */
   commonContext.initTocAndNotice()
+  /* 初始化pjax加载 */
+  initPjax()
   /* 已经完成页面渲染 */
   $('html').removeClass('pjax-loading')
 
@@ -196,6 +214,8 @@ $(document).on('pjax:end', function (event, xhr, options) {
   if (xhr == null) {
     /* 重新加载目录和公告 */
     commonContext.initTocAndNotice()
+    /* 初始化pjax加载 */
+    initPjax()
     window.DProgress && DProgress.done()
     // 应该是由于浏览器缓存失效，有时候浏览器前后退还是会执行pjax:beforeSend
     $('html').removeClass('pjax-loading')

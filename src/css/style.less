@@ -40,6 +40,35 @@ body > .footer, body > .navbar, body > .section {
   transform-origin: center top;
 }
 
+.tips {
+  margin-bottom: -0.6rem;
+  background-color: rgb(221 234 255 / 90%)!important;
+  padding: 0.8rem;
+  border: none !important;
+  color: var(--theme) !important;
+  font-size: 1.15em;
+
+
+  &::before {
+    content: "\f028";
+    font: normal normal normal 14px/1 FontAwesome;
+    margin-right: 0.5rem;
+    font-size: 1.2em;
+  }
+
+  .click-close {
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1.2em;
+    float: right;
+
+    &:hover {
+      color: #333;
+    }
+  }
+}
+
 html {
   box-sizing: border-box;
   font-size: 14px;
@@ -1511,6 +1540,10 @@ table td, table th {
 .section {
   padding: 6rem 0.75rem 3rem 0.75rem;
 
+  .container > .tips {
+    margin-bottom: 1rem;
+  }
+
   .card {
     transition: background-color 0.5s ease, opacity 0.3s ease-out, transform 0.3s ease-out, backdrop-filter 0.3s ease-out;
     color: var(--dark-c);
@@ -1730,14 +1763,11 @@ table td, table th {
       }
     }
 
-    &.card-fold:not(.is-hidden-all) + .card {
-      margin-top: 0.7rem !important;
-    }
-
     &-fold {
       display: flex;
       padding: 0.5em 0.75em;
       justify-content: space-between;
+      margin-bottom: -0.7rem;
 
       &:hover {
         border: 1px solid var(--theme);
@@ -3117,6 +3147,11 @@ table td, table th {
 
   .section {
     padding-top: 5rem;
+
+    .container > .tips {
+      margin-left: -0.25px;
+      margin-right: -0.25px;
+    }
 
     .columns .column {
       padding: 0.5rem;
