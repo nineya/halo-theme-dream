@@ -24,7 +24,7 @@
     </#if>
     <#assign updateInterval = ((.now?long - post.updateTime?long)/86400000)?floor >
     <#if updateInterval gt (settings.invalid_tips_day!'99999999')?number >
-        <div class="card tips"><i class="fa fa-times click-close" data-close=".tips"></i>本文最后更新于 ${post.updateTime?string('yyyy-MM-dd')}，距今已有 ${updateInterval} 天，若文章内容或图片链接失效，请留言反馈。</div>
+        <div class="card tips brightness"><i class="fa fa-times click-close" data-close=".tips"></i>本文最后更新于 ${post.updateTime?string('yyyy-MM-dd')}，距今已有 ${updateInterval} 天，若文章内容或图片链接失效，请留言反馈。</div>
     </#if>
     <#if (metas?? && metas.tips?? && metas.tips!='')>
         <div class="card tips brightness"><i class="fa fa-times click-close" data-close=".tips"></i>${metas.tips}</div>
