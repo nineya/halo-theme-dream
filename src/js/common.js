@@ -50,7 +50,7 @@ const commonContext = {
     window.tocPjax && window.tocPjax()
     let hideToc = $('.widget.toc .card-content ul').length === 0
     let hideNotice = (DreamConfig.notice_show_mode === 'toc' && !hideToc)
-            || (DreamConfig.notice_show_mode === 'index' && pathname !== '/')
+      || (DreamConfig.notice_show_mode === 'index' && pathname !== '/')
     if (hideToc) {
       $('.widget.toc,.action-toc').addClass('is-hidden-all')
     } else {
@@ -82,10 +82,10 @@ const commonContext = {
       } else {
         clearInterval(id)
         isWrite = !isWrite
-        id = setInterval(updateDesc, isWrite? 500 : 80)
+        id = setInterval(updateDesc, isWrite ? 500 : 80)
       }
     }
-    id = setInterval(updateDesc, isWrite? 500 : 80)
+    id = setInterval(updateDesc, isWrite ? 500 : 80)
   },
   /* 激活图片预览功能 */
   initGallery() {
@@ -361,6 +361,29 @@ const commonContext = {
       }
     })
   },
+  /** 初始化轮播 **/
+  initCarousel() {
+    new Swiper('.swiper', {
+      loop: true,
+      parallax: true,
+      effect: 'slide',
+      spaceBetween: 10,
+      speed: 600,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    })
+  },
   /* 个人信息界面打印彩字 */
   sparkInput() {
     const sparkInputContent = DreamConfig.spark_input_content && DreamConfig.spark_input_content.filter(s => s.length > 0)
@@ -475,7 +498,7 @@ const commonContext = {
 window.commonContext = commonContext
 
 !(function () {
-  const loads = ['sparkInput', 'websiteTime']
+  const loads = ['initCarousel', 'sparkInput', 'websiteTime']
   const omits = ['initEffects', 'loadMaintain', 'showThemeVersion']
 
   Object.keys(commonContext).forEach(

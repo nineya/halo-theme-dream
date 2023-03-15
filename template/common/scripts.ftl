@@ -1,7 +1,10 @@
+<script src="${theme_base!}/source/js/utils.min.js?mew=${theme_version!}"></script>
 <#if (settings.sidebar_toc?? && settings.sidebar_toc != 'none') || settings.drawer_toc!true>
     <script src="${theme_base!}/source/js/btoc.min.js?mew=${theme_version!}"></script>
 </#if>
-<script src="${theme_base!}/source/js/utils.min.js?mew=${theme_version!}"></script>
+<#if is_carousel??>
+    <script data-pjax src="${theme_base!}/source/lib/swiper@8.4.6/swiper-bundle.min.js"></script>
+</#if>
 <script src="${theme_base!}/source/js/common.min.js?mew=${theme_version!}"></script>
 
 <#if post?? || is_journals?? || is_error??>

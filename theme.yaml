@@ -27,6 +27,7 @@ postMetaField:
   - enable_katex
   - enable_share
   - enable_bullet_screen
+  - index_carousel
 # 自定义页 meta 变量
 sheetMetaField:
   - enable_copyright
