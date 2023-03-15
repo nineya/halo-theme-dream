@@ -2,8 +2,11 @@
     <#if is_index??>
         <#local carousel_content>
           <#list posts as post>
-              <#if post.topPriority!=1 || !post.metas?? || (post.metas.index_carousel!'false')=='false'>
+              <#if post.topPriority!=1>
                   <#break>
+              </#if>
+              <#if !post.metas?? || (post.metas.index_carousel!'false')=='false'>
+                  <#continue>
               </#if>
               <#local thumbnail = (post.thumbnail?? && post.thumbnail!='')?then(post.thumbnail!, (settings.default_thumbnail?? && settings.default_thumbnail!='')?then(settings.default_thumbnail + settings.default_thumbnail?contains('?')?then("&","?") + "postId=" + post.id?c, ''))>
               <#if thumbnail != ''>

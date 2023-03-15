@@ -633,7 +633,6 @@ table td, table th {
 
 
 /** 通用样式 结束 */
-
 #dprogress {
   pointer-events: none;
   user-select: none;
@@ -1397,22 +1396,20 @@ table td, table th {
   }
 }
 
-:root {
-  --swiper-theme-color: #007aff;
-}
-
 .swiper {
   border: none !important;
 
-  &:hover {
-    .swiper-button-next {
-      opacity: 1;
-      right: 10px;
-    }
+  &-initialized {
+    &:hover {
+      .swiper-button-next {
+        opacity: 1;
+        right: 10px;
+      }
 
-    .swiper-button-prev {
-      opacity: 1;
-      left: 10px;
+      .swiper-button-prev {
+        opacity: 1;
+        left: 10px;
+      }
     }
   }
 }
@@ -1437,10 +1434,10 @@ table td, table th {
 
 .swiper-pointer-events {
   touch-action: pan-y;
-}
 
-.swiper-pointer-events.swiper-vertical {
-  touch-action: pan-x;
+  &.swiper-vertical {
+    touch-action: pan-x;
+  }
 }
 
 .swiper-slide {
@@ -1450,7 +1447,7 @@ table td, table th {
   overflow: hidden;
   transition: none !important;
 
-  &-details{
+  &-details {
     width: 100%;
     position: absolute;
     bottom: 15%;
@@ -1501,21 +1498,18 @@ table td, table th {
   transition-property: transform, height;
 }
 
-/* CSS Mode */
 .swiper-css-mode > .swiper-wrapper {
   overflow: auto;
   scrollbar-width: none;
-  /* For Firefox */
   -ms-overflow-style: none;
-  /* For Internet Explorer and Edge */
-}
 
-.swiper-css-mode > .swiper-wrapper::-webkit-scrollbar {
-  display: none;
-}
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
-.swiper-css-mode > .swiper-wrapper > .swiper-slide {
-  scroll-snap-align: start start;
+  & > .swiper-slide {
+    scroll-snap-align: start start;
+  }
 }
 
 .swiper-horizontal.swiper-css-mode > .swiper-wrapper {
@@ -1614,7 +1608,6 @@ table td, table th {
   }
 }
 
-
 /* Common Styles */
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
@@ -1668,6 +1661,16 @@ table td, table th {
   background: #f6f6f6;
   opacity: 0.2;
   transition: all 0.3s;
+
+  &:only-child {
+    display: none !important;
+  }
+
+  &-active {
+    width: 30px;
+    opacity: 1;
+    background: #fff;
+  }
 }
 
 button.swiper-pagination-bullet {
@@ -1681,16 +1684,6 @@ button.swiper-pagination-bullet {
 
 .swiper-pagination-clickable .swiper-pagination-bullet {
   cursor: pointer;
-}
-
-.swiper-pagination-bullet:only-child {
-  display: none !important;
-}
-
-.swiper-pagination-bullet-active {
-  width: 30px;
-  opacity: 1;
-  background: #fff;
 }
 
 .swiper-vertical > .swiper-pagination-bullets,
@@ -1744,17 +1737,17 @@ button.swiper-pagination-bullet {
 .swiper-pagination-progressbar {
   background: rgba(0, 0, 0, 0.25);
   position: absolute;
-}
 
-.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-  background: var(--theme);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transform: scale(0);
-  transform-origin: left top;
+  .swiper-pagination-progressbar-fill {
+    background: var(--theme);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    transform-origin: left top;
+  }
 }
 
 .swiper-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
@@ -3696,7 +3689,6 @@ button.swiper-pagination-bullet {
 
 @media (max-width: (@desktop-min-width - 1)) {
   .navbar {
-
     .navbar-search .input {
       width: 100px;
     }
@@ -3931,12 +3923,12 @@ button.swiper-pagination-bullet {
 
       &-side {
         flex: none;
-        width: 30%;
+        width: 28%;
       }
 
       &-main {
         flex: none;
-        width: 70%;
+        width: 72%;
       }
     }
   }
@@ -3971,18 +3963,17 @@ button.swiper-pagination-bullet {
   }
 
   &.two-column {
-    max-width: 1000px;
 
     .column {
 
       &-side {
         flex: none;
-        width: 28%;
+        width: 26%;
       }
 
       &-main {
         flex: none;
-        width: 72%;
+        width: 74%;
       }
     }
   }
@@ -4031,18 +4022,17 @@ button.swiper-pagination-bullet {
     }
 
     &.two-column {
-      max-width: 1150px;
 
       .column {
 
         &-side {
           flex: none;
-          width: 26%;
+          width: 25%;
         }
 
         &-main {
           flex: none;
-          width: 74%;
+          width: 75%;
         }
       }
     }
@@ -4077,7 +4067,7 @@ button.swiper-pagination-bullet {
     }
 
     &.two-column {
-      max-width: 1300px;
+      max-width: 1400px;
 
       .column {
 
@@ -4100,7 +4090,17 @@ button.swiper-pagination-bullet {
     font-size: 15px;
   }
 
-  .container:not(.two-column) {
+  .section .card {
+    .cover-image {
+      min-height: 340px;
+    }
+
+    .thumbnail-image {
+      min-height: 260px;
+    }
+  }
+
+  .container {
     max-width: 1800px;
 
     .column {
@@ -4113,6 +4113,23 @@ button.swiper-pagination-bullet {
       &-main {
         flex: none;
         width: 64%;
+      }
+    }
+
+    &.two-column {
+      max-width: 1500px;
+
+      .column {
+
+        &-side {
+          flex: none;
+          width: 22%;
+        }
+
+        &-main {
+          flex: none;
+          width: 78%;
+        }
       }
     }
   }
