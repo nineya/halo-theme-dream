@@ -26,7 +26,7 @@ basic_info:
     index_inform:
       name: index_inform
       label: 首页通知
-      type: textarea
+      type: text
       placeholder: 通知内容
       description: "在首页最顶部显示一条通知。"
     copy_explain:
