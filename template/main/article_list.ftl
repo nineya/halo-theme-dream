@@ -75,7 +75,7 @@
               </div>
             </#if>
             <#if settings.index_inform?? && settings.index_inform != ''>
-                <div class="card tips brightness}">${settings.index_inform}</div>
+                <div class="card tips brightness">${settings.index_inform}</div>
             </#if>
           <#assign is_carousel=true />
         <#elseif carousel_content != ''>
