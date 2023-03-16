@@ -631,6 +631,16 @@ table td, table th {
   background-size: 100% 100%;
 }
 
+.bg-shadow:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05));
+}
 
 /** 通用样式 结束 */
 #dprogress {
@@ -1473,14 +1483,6 @@ table td, table th {
       justify-content: center;
     }
   }
-
-  &:before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, .05));
-  }
 }
 
 .swiper-slide-invisible-blank {
@@ -2175,7 +2177,7 @@ button.swiper-pagination-bullet {
 
   .card.widget {
     flex-grow: 1;
-    min-height: 120px;
+    min-height: 140px;
     position: relative;
     background-position: 50% 50% !important;
     background-size: cover !important;
@@ -2186,17 +2188,6 @@ button.swiper-pagination-bullet {
 
     &[style] {
       border: 0;
-
-      &:before {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05));
-      }
     }
 
     &:hover {
@@ -2580,33 +2571,33 @@ button.swiper-pagination-bullet {
       }
     }
 
+    .title a {
+      color: inherit;
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--dark-b);
+      font-size: .8rem;
+      overflow-x: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .level-item a {
+        color: inherit;
+
+        &:hover {
+          color: var(--theme);
+        }
+      }
+    }
+
     .main {
       padding-top: 1.5rem;
-
-      .title a {
-        color: inherit;
-      }
-
-      .meta {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: var(--dark-b);
-        font-size: .8rem;
-        overflow-x: auto;
-
-        &::-webkit-scrollbar {
-          display: none;
-        }
-
-        .level-item a {
-          color: inherit;
-
-          &:hover {
-            color: var(--theme);
-          }
-        }
-      }
     }
 
     .post-navigation {
@@ -2664,6 +2655,51 @@ button.swiper-pagination-bullet {
 
       &-main {
         order: 2;
+
+        &-grid {
+          margin-top: 1.4rem;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(min(100%, max(260px, 100%/4)), 1fr));
+          gap: 1rem;
+
+          .breadcrumb {
+            margin: 15px 0 0 0;
+            color: var(--dark-b);
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+              display: none;
+            }
+
+            li {
+              flex-shrink: 0;
+            }
+          }
+
+          .card {
+            padding: 10px;
+
+            &.widget + .card.widget {
+              margin-top: 0 !important;
+            }
+          }
+
+          .thumbnail {
+            border-radius: var(--radius-img);
+          }
+
+          .title {
+            margin: 8px 0 0 0;
+            font-size: 1.3rem;
+            line-height: 1.8rem;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+          }
+        }
       }
 
       &-right {

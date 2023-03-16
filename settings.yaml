@@ -265,7 +265,7 @@ post:
       label: 置顶文章列表缩略图模式
       type: select
       default: back
-      description: '置顶的文章在列表的缩略图模式，如果文章元数据配置了“thumbnail_mode”项，则当前配置将被覆盖。'
+      description: '置顶的文章在列表的缩略图模式，除网格布局外，如果文章元数据配置了“thumbnail_mode”项，则当前配置将被覆盖。<br/>注：设置网格布局后，非置顶文章也会变成网格布局。'
       options:
         - value: default
           label: 默认模式
@@ -279,12 +279,14 @@ post:
           label: 小图模式（交替）
         - value: fold
           label: 折叠模式
+        - value: grid
+          label: 网格模式（强优先）
     thumbnail_mode:
       name: thumbnail_mode
       label: 文章列表缩略图模式
       type: select
       default: default
-      description: '文章列表缩略图模式，如果文章元数据配置了“thumbnail_mode”项，则当前配置将被覆盖。'
+      description: '文章列表缩略图模式，除网格布局外，如果文章元数据配置了“thumbnail_mode”项，则当前配置将被覆盖。'
       options:
         - value: default
           label: 默认模式
@@ -296,6 +298,8 @@ post:
           label: 小图模式（右侧）
         - value: small-alter
           label: 小图模式（交替）
+        - value: grid
+          label: 网格模式（强优先）
     code_pretty:
       name: code_pretty
       label: 代码块高亮主题
