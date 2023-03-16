@@ -11,9 +11,6 @@
     <#if settings.enable_banner!false ><#include "common/banner.ftl"></#if>
     <section class="section">
         <div class="container<#if settings.sidebar_column?? && settings.sidebar_column!='all'> two-column</#if>">
-            <#if settings.index_inform?? && settings.index_inform != '' && settings.sidebar_column!='module-left' && settings.sidebar_column!='module-right'>
-                <div class="card tips brightness ${(is_first_index!false)?then("", "is-hidden-all")}">${settings.index_inform}</div>
-            </#if>
             <div class="columns">
                 <div class="column column-main">
                     <#nested />

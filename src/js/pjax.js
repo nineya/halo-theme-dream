@@ -9,16 +9,9 @@ const createSerialNumber = () => {
   return serialNumber
 }
 
-const $indexInform = $('.section .container > .tips')
 const $bulletScreen = $('.actions>.bullet-screen')
 // pjax请求时进行界面预处理
 const initPjax = () => {
-  /* 重新加载首页提示 */
-  if (location.pathname === '/') {
-    $indexInform.removeClass('is-hidden-all')
-  } else {
-    $indexInform.addClass('is-hidden-all')
-  }
   /* 重新加载悬浮导航按钮 */
   if ($('halo-comment[bullet-screen]').length === 0) {
     $bulletScreen.addClass('is-hidden-all')

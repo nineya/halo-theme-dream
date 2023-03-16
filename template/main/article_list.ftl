@@ -74,9 +74,6 @@
                 </#list>
               </div>
             </#if>
-            <#if settings.index_inform?? && settings.index_inform != ''>
-                <div class="card tips brightness">${settings.index_inform}</div>
-            </#if>
           <#assign is_carousel=true />
         <#elseif carousel_content != ''>
           <div class="card widget swiper">
@@ -86,6 +83,9 @@
             <div class="swiper-button-next"></div>
           </div>
           <#assign is_carousel=true />
+        </#if>
+        <#if settings.index_inform?? && settings.index_inform != ''>
+            <div class="card tips brightness">${settings.index_inform}</div>
         </#if>
     </#if>
     <#list posts as post>
