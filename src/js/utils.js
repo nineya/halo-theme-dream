@@ -373,7 +373,7 @@ const Utils = {
   renderedEmojiHtml(html) {
     for (let emoji of emojiData) {
       let name = emoji.name
-      let img = `<img class="dream-emoji" src="/themes/dream/source/lib/halo-comment@1.1.1/assets/emoji/${emoji.fileName}.png" alt="${name}"/>`
+      let img = `<img class="dream-emoji" src="/themes/dream/source/lib/halo-comment@1.1.2/assets/emoji/${emoji.fileName}.png" alt="${name}"/>`
       html = html.replace(new RegExp(`\\[/${name}\\]`, 'gm'), img)
     }
     return html
