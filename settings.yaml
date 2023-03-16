@@ -217,6 +217,16 @@ basic_style:
           label: 仅显示左侧
         - value: 'only-right'
           label: 仅显示右侧
+        - value: 'module-left'
+          label: 模块化（左侧）
+        - value: 'module-right'
+          label: 模块化（右侧）
+    module_links:
+      name: module_links
+      label: 模块化布局链接
+      type: textarea
+      placeholder: '标签|文字说明|是否新界面打开(true/false)|背景图链接|跳转链接地址'
+      description: "以“标签|文字说明|是否新界面打开(true/false)|背景图链接|跳转链接地址”格式填写内容，一行表示一个模块链接，可填写1~6个链接。"
     left_sidebar_sticky:
       name: left_sidebar_sticky
       label: 左侧边栏悬浮

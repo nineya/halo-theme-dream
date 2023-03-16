@@ -1,5 +1,17 @@
+<#macro model_build content>
+    <#if content == ''>
+      <#return>
+    </#if>
+    <#local content_option=content?split('|')>
+    <#local tag=(content_option[0]!'')?trim>
+    <#local content=(content_option[1]!'')?trim>
+    <#local target=((content_option[2]!'false')?trim == 'true')?then('target="_blank"', '')>
+    <#local imageUrl=((content_option[3]!'')?trim != '')?then('style="background-image: url(${content_option[3]?trim})"', '')>
+    <#local targetUrl=((content_option[4]!'')?trim != '')?then('href="${content_option[4]?trim}"', '')>
+  <a class="card widget brightness" ${target} ${imageUrl} ${targetUrl}><div class="title">${content}</div><div class="tag">${tag}</div></a>
+</#macro>
 <#macro article_list posts>
-    <#if is_index??>
+    <#if is_first_index!false>
         <#local carousel_content>
           <#list posts as post>
               <#if post.topPriority!=1>
@@ -28,7 +40,45 @@
               </#if>
           </#list>
         </#local>
-        <#if carousel_content != ''>
+        <#if settings.sidebar_column=='module-left' || settings.sidebar_column=='module-right'>
+          <#if settings.module_links?? && settings.module_links?trim != ''>
+              <#local module_links=settings.module_links?split('\n')>
+          <#else>
+              <#local module_links=[]>
+              <#list 0..1 as i>
+                <#local post=posts[i]>
+                <#local module_links=module_links+["推荐|${post.title!}|false|${post.thumbnail!}|${post.fullPath!}"]>
+              </#list>
+          </#if>
+          <div class="model model-index">
+            <div class="card widget swiper">
+              <div class="swiper-wrapper">${carousel_content}</div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+            <div class="model model-index-side">
+              <#list 0..1 as i>
+                <#if i &lt; module_links?size >
+                    <@model_build module_links[i]/>
+                </#if>
+              </#list>
+            </div>
+          </div>
+            <#if module_links?size &gt; 2 && module_links?size&lt;=6>
+              <div class="model model-attach model-attach-${module_links?size-2}">
+                <#list 2..5 as i>
+                    <#if i &lt; module_links?size >
+                        <@model_build module_links[i]/>
+                    </#if>
+                </#list>
+              </div>
+            </#if>
+            <#if settings.index_inform?? && settings.index_inform != ''>
+                <div class="card tips brightness}">${settings.index_inform}</div>
+            </#if>
+          <#assign is_carousel=true />
+        <#elseif carousel_content != ''>
           <div class="card widget swiper">
             <div class="swiper-wrapper">${carousel_content}</div>
             <div class="swiper-pagination"></div>

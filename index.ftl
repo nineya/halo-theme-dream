@@ -1,4 +1,5 @@
 <#include "template/layout.ftl">
+<#global is_first_index=(posts.number == 0) >
 <@layout title="${blog_title!}" canonical="${blog_url!}">
     <#if posts.content?? && posts.content?size gt 0>
         <#include "template/main/article_list.ftl">
