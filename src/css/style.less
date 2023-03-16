@@ -2657,10 +2657,14 @@ button.swiper-pagination-bullet {
         order: 2;
 
         &-grid {
-          margin-top: 1rem;
+          margin: 1rem 0 1.4rem 0;
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(min(100%, max(260px, 100%/4)), 1fr));
           gap: 1rem;
+
+          &:first-child {
+            margin-top: 0;
+          }
 
           .breadcrumb {
             margin: 15px 0 0 0;
