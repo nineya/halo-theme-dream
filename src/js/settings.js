@@ -13,7 +13,7 @@
     margin: 0;
     display: block;
     position: absolute;
-    opacity: 0.5;
+    opacity: 0.2;
     background: url(/themes/dream/screenshot.png) no-repeat;
     background-size: 100% auto;
 }
