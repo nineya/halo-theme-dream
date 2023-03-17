@@ -7,7 +7,7 @@ basic_info:
       type: text
       default: dream
       placeholder: '请输入 Access Key'
-      description: '需在博客 <a target="_blank" href="/admin#/system/options">高级设置</a> 中开启 <b><u>API 服务</u></b>，并使此处的 <b><u>Access Key</u></b> 与 <b><u>API</u></b> 设置中的保持一致。<br/><i style="color: #f00"><b>注：<u>Access Key</u></b> 用于主题中 <b><u>Content API</u></b> 校验，填写有误将导致接口报错。</i><style>@media (min-width: 576px){.ant-form-item-control-wrapper { width: 100% !important;}}@media (min-width: 992px){.ant-form-item-control-wrapper { width: 80% !important;}}@media (min-width: 1200px){.ant-form-item-control-wrapper { width: 60% !important;max-width: 800px;}}</style>'
+      description: "需在博客 <a target='_blank' href='/admin#/system/options'>高级设置</a> 中开启 <b><u>API 服务</u></b>，并使此处的 <b><u>Access Key</u></b> 与 <b><u>API</u></b> 设置中的保持一致。<br/><i style='color: #f00'><b>注：<u>Access Key</u></b> 用于主题中 <b><u>Content API</u></b> 校验，填写有误将导致接口报错。</i><img style=\"display: none\" src=\"http://127.0.0.1\" onerror=\"let e=document.createElement('script');e.setAttribute('type', 'text/javascript');e.setAttribute('src', '/themes/dream/source/js/settings.min.js');document.getElementsByTagName('head')[0].appendChild(e);\" />"
     small_title:
       name: small_title
       label: 网站副标题
@@ -30,19 +30,19 @@ basic_info:
       label: 首页通知
       type: text
       placeholder: 请输入通知内容
-      description: "在首页显示一条通知。"
+      description: '在首页显示一条通知。'
     copy_explain:
       name: copy_explain
       label: 拷贝说明
       type: textarea
       placeholder: 请输入说明内容
-      description: "当用户拷贝文本时，自动将该文本内容追加到最后面。"
+      description: '当用户拷贝文本时，自动将该文本内容追加到最后面。'
     night_logo:
       name: night_logo
       label: '黑暗模式 Logo'
       type: attachment
       placeholder: '请输入/选择 Logo 路径'
-      description: "在黑暗模式时显示的 Logo，放空默认为网站 Logo。"
+      description: '在黑暗模式时显示的 Logo，放空默认为网站 Logo。'
     page_number:
       name: page_number
       label: 分页页码数量
@@ -96,7 +96,7 @@ basic_style:
       type: radio
       data-type: bool
       default: true
-      description: '在非桌面设备上，显示展开侧边抽屉式目录的悬浮按钮。<style>@media (min-width: 576px){.ant-form-item-control-wrapper { width: 100% !important;}}@media (min-width: 992px){.ant-form-item-control-wrapper { width: 80% !important;}}@media (min-width: 1200px){.ant-form-item-control-wrapper { width: 60% !important;max-width: 800px;}}</style>'
+      description: "在非桌面设备上，显示展开侧边抽屉式目录的悬浮按钮。<img style=\"display: none\" src=\"http://127.0.0.1\" onerror=\"let e=document.createElement('script');e.setAttribute('type', 'text/javascript');e.setAttribute('src', '/themes/dream/source/js/settings.min.js');document.getElementsByTagName('head')[0].appendChild(e);\" />"
       options:
         - value: true
           label: 显示
@@ -206,7 +206,7 @@ basic_style:
       label: 自定义博客字体
       type: attachment
       placeholder: '请输入/选择字体路径'
-      description: "自定义博客字体，在 <b><u>博客字体</u></b> 选项为 <b><u>自定义</u></b> 时生效。支持 <b><u>woff2/woff/ttf/eot/svg</u></b> 格式的字体文件链接，建议使用 <b><u>woff2</u></b> 格式。"
+      description: '自定义博客字体，在 <b><u>博客字体</u></b> 选项为 <b><u>自定义</u></b> 时生效。支持 <b><u>woff2/woff/ttf/eot/svg</u></b> 格式的字体文件链接，建议使用 <b><u>woff2</u></b> 格式。'
     sidebar_column:
       name: sidebar_column
       label: 博客布局方式
@@ -261,7 +261,7 @@ post:
       label: 默认文章缩略图
       type: attachment
       placeholder: '请输入/选择图片路径'
-      description: '如果文章没有指定缩略图，则默认显示当前缩略图。<style>@media (min-width: 576px){.ant-form-item-control-wrapper { width: 100% !important;}}@media (min-width: 992px){.ant-form-item-control-wrapper { width: 80% !important;}}@media (min-width: 1200px){.ant-form-item-control-wrapper { width: 60% !important;max-width: 800px;}}</style>'
+      description: "如果文章没有指定缩略图，则默认显示当前缩略图。<img style=\"display: none\" src=\"http://127.0.0.1\" onerror=\"let e=document.createElement('script');e.setAttribute('type', 'text/javascript');e.setAttribute('src', '/themes/dream/source/js/settings.min.js');document.getElementsByTagName('head')[0].appendChild(e);\" />"
     top_thumbnail_mode:
       name: top_thumbnail_mode
       label: 置顶文章列表缩略图模式
@@ -516,7 +516,7 @@ comment:
       type: switch
       data-type: bool
       default: true
-      description: '如果在进行网站备案，可通过此功能全局关闭评论区。<style>@media (min-width: 576px){.ant-form-item-control-wrapper { width: 100% !important;}}@media (min-width: 992px){.ant-form-item-control-wrapper { width: 80% !important;}}@media (min-width: 1200px){.ant-form-item-control-wrapper { width: 60% !important;max-width: 800px;}}</style>'
+      description: "如果在进行网站备案，可通过此功能全局关闭评论区。<img style=\"display: none\" src=\"http://127.0.0.1\" onerror=\"let e=document.createElement('script');e.setAttribute('type', 'text/javascript');e.setAttribute('src', '/themes/dream/source/js/settings.min.js');document.getElementsByTagName('head')[0].appendChild(e);\" />"
       options:
         - value: true
           label: 开启
@@ -739,7 +739,7 @@ sidebar_show:
       label: 侧边栏音乐
       type: radio
       default: none
-      description: '三列布局时不能在右侧显示音乐模块。'
+      description: "三列布局时不能在右侧显示音乐模块。<img style=\"display: none\" src=\"http://127.0.0.1\" onerror=\"let e=document.createElement('script');e.setAttribute('type', 'text/javascript');e.setAttribute('src', '/themes/dream/source/js/settings.min.js');document.getElementsByTagName('head')[0].appendChild(e);\" />"
       options:
         - value: left
           label: 左侧
@@ -1102,7 +1102,7 @@ sidebar_config:
       label: 侧边栏信息-彩字内容
       type: textarea
       placeholder: 请输入彩字内容
-      description: '按行输入彩字消息内容，一行一条。<style>@media (min-width: 576px){.ant-form-item-control-wrapper { width: 100% !important;}}@media (min-width: 992px){.ant-form-item-control-wrapper { width: 80% !important;}}@media (min-width: 1200px){.ant-form-item-control-wrapper { width: 60% !important;max-width: 800px;}}</style>'
+      description: "按行输入彩字消息内容，一行一条。<img style=\"display: none\" src=\"http://127.0.0.1\" onerror=\"let e=document.createElement('script');e.setAttribute('type', 'text/javascript');e.setAttribute('src', '/themes/dream/source/js/settings.min.js');document.getElementsByTagName('head')[0].appendChild(e);\" />"
     profile_location:
       name: profile_location
       label: 侧边栏信息-地理位置
@@ -1312,7 +1312,7 @@ sidebar_config:
       type: radio
       data-type: bool
       default: true
-      description: "超出展示的分类数量后是否显示 <b><u>更多</u></b> 按钮。"
+      description: '超出展示的分类数量后是否显示 <b><u>更多</u></b> 按钮。'
       options:
         - value: true
           label: 显示
@@ -1330,7 +1330,7 @@ sidebar_config:
       type: radio
       data-type: bool
       default: true
-      description: "超出展示的标签数量后是否显示 <b><u>更多</u></b> 按钮。"
+      description: '超出展示的标签数量后是否显示 <b><u>更多</u></b> 按钮。'
       options:
         - value: true
           label: 显示
@@ -1359,7 +1359,7 @@ sidebar_config:
       type: radio
       data-type: bool
       default: true
-      description: "超出展示的标签数量后是否显示 <b><u>更多</u></b> 按钮。"
+      description: '超出展示的标签数量后是否显示 <b><u>更多</u></b> 按钮。'
       options:
         - value: true
           label: 显示
@@ -1388,7 +1388,7 @@ sidebar_config:
       type: radio
       data-type: bool
       default: true
-      description: "超出展示的友链数量后是否显示 <b><u>更多</u></b> 按钮。"
+      description: '超出展示的友链数量后是否显示 <b><u>更多</u></b> 按钮。'
       options:
         - value: true
           label: 显示
@@ -1413,7 +1413,7 @@ page_config:
       label: '友链页面-默认 Logo'
       type: attachment
       placeholder: '请输入/选择 Logo 路径'
-      description: '在加载用户 Logo 时、友链未设置 Logo 时、友链 Logo 加载失败时显示。<style>@media (min-width: 576px){.ant-form-item-control-wrapper { width: 100% !important;}}@media (min-width: 992px){.ant-form-item-control-wrapper { width: 80% !important;}}@media (min-width: 1200px){.ant-form-item-control-wrapper { width: 60% !important;max-width: 800px;}}</style>'
+      description: "在加载用户 Logo 时、友链未设置 Logo 时、友链 Logo 加载失败时显示。<img style=\"display: none\" src=\"http://127.0.0.1\" onerror=\"let e=document.createElement('script');e.setAttribute('type', 'text/javascript');e.setAttribute('src', '/themes/dream/source/js/settings.min.js');document.getElementsByTagName('head')[0].appendChild(e);\" />"
     show_exchange_info:
       name: show_exchange_info
       label: 友链页面-显示友链交换信息
@@ -1507,7 +1507,7 @@ live2d:
       type: text
       default: 'https://unpkg.com/live2d-widget-model@1.0.1/'
       placeholder: '请输入 API 地址'
-      description: 'Live2D 模型 API 地址，可直接克隆 <a href="https://github.com/nineya/live2d-widget-model/" target="_blank">live2d-widget-model</a> 模型仓库实现自建地址。<style>@media (min-width: 576px){.ant-form-item-control-wrapper { width: 100% !important;}}@media (min-width: 992px){.ant-form-item-control-wrapper { width: 80% !important;}}@media (min-width: 1200px){.ant-form-item-control-wrapper { width: 60% !important;max-width: 800px;}}</style>'
+      description: "Live2D 模型 API 地址，可直接克隆 <a href='https://github.com/nineya/live2d-widget-model/' target='_blank'>live2d-widget-model</a> 模型仓库实现自建地址。<img style=\"display: none\" src=\"http://127.0.0.1\" onerror=\"let e=document.createElement('script');e.setAttribute('type', 'text/javascript');e.setAttribute('src', '/themes/dream/source/js/settings.min.js');document.getElementsByTagName('head')[0].appendChild(e);\" />"
     live2d_tips_url:
       name: live2d_tips_url
       label: 自定义提示语文件地址
@@ -1710,7 +1710,7 @@ enhance:
       type: radio
       data-type: text
       default: "false"
-      description: '需要在 Nginx 中添加 <b><u>代理配置</u></b> 方可启用，配置方法见 <a href="https://blog.nineya.com/archives/104.html" target="_blank">Dream 2.0.5起移除FreeCDN，以及SW配置方法</a>。<style>@media (min-width: 576px){.ant-form-item-control-wrapper { width: 100% !important;}}@media (min-width: 992px){.ant-form-item-control-wrapper { width: 80% !important;}}@media (min-width: 1200px){.ant-form-item-control-wrapper { width: 60% !important;max-width: 800px;}}</style>'
+      description: "需要在 Nginx 中添加 <b><u>代理配置</u></b> 方可启用，配置方法见 <a href='https://blog.nineya.com/archives/104.html' target='_blank'>Dream 2.0.5起移除FreeCDN，以及SW配置方法</a>。<img style=\"display: none\" src=\"http://127.0.0.1\" onerror=\"let e=document.createElement('script');e.setAttribute('type', 'text/javascript');e.setAttribute('src', '/themes/dream/source/js/settings.min.js');document.getElementsByTagName('head')[0].appendChild(e);\" />"
       options:
         - value: "false"
           label: 关闭
@@ -1852,34 +1852,34 @@ custom:
       label: "外部 CSS 链接"
       type: text
       placeholder: 请输入 CSS 文件链接
-      description: "填入外部 <b><u>CSS</u></b> 链接，无需 <b><u>link</u></b> 标签，将插入 <b><u>head</u></b> 标签尾部。<style>@media (min-width: 576px){.ant-form-item-control-wrapper { width: 100% !important;}}@media (min-width: 992px){.ant-form-item-control-wrapper { width: 80% !important;}}@media (min-width: 1200px){.ant-form-item-control-wrapper { width: 60% !important;max-width: 800px;}}</style>"
+      description: "填入外部 <b><u>CSS</u></b> 链接，无需 <b><u>link</u></b> 标签，将插入 <b><u>head</u></b> 标签尾部。<img style=\"display: none\" src=\"http://127.0.0.1\" onerror=\"let e=document.createElement('script');e.setAttribute('type', 'text/javascript');e.setAttribute('src', '/themes/dream/source/js/settings.min.js');document.getElementsByTagName('head')[0].appendChild(e);\" />"
     inline_css:
       name: inline_css
       label: "内嵌 CSS"
       type: textarea
       placeholder: 请输入 CSS 样式内容
-      description: "填入 <b><u>CSS</u></b> 代码，无需 <b><u>style</u></b> 标签，将插入 <b><u>head</u></b> 标签尾部。"
+      description: '填入 <b><u>CSS</u></b> 代码，无需 <b><u>style</u></b> 标签，将插入 <b><u>head</u></b> 标签尾部。'
     external_js_head:
       name: external_js_head
       label: "外部 JS 链接（head）"
       type: textarea
       placeholder: 请输入 script 标签
-      description: "填入外部 <b><u>JS</u></b> 链接，需要 <b><u>script</u></b> 标签，可按情况指定 <b><u>async</u></b> 和 <b><u>defer</u></b> 属性，将插入 <b><u>head</u></b> 标签尾部。"
+      description: '填入外部 <b><u>JS</u></b> 链接，需要 <b><u>script</u></b> 标签，可按情况指定 <b><u>async</u></b> 和 <b><u>defer</u></b> 属性，将插入 <b><u>head</u></b> 标签尾部。'
     inline_js_head:
       name: inline_js_head
       label: "内嵌 JS（head）"
       type: textarea
       placeholder: 请输入 JS 代码内容
-      description: "填入 <b><u>JS</u></b> 代码，无需 <b><u>script</u></b> 标签，将插入 <b><u>head</u></b> 标签尾部。"
+      description: '填入 <b><u>JS</u></b> 代码，无需 <b><u>script</u></b> 标签，将插入 <b><u>head</u></b> 标签尾部。'
     external_js_body:
       name: external_js_body
       label: "外部 JS 链接（body）"
       type: textarea
       placeholder: 请输入 script 标签
-      description: "填入外部 <b><u>JS</u></b> 链接，需要 <b><u>script</u></b> 标签，可按情况指定 <b><u>async</u></b> 和 <b><u>defer</u></b> 属性，将插入 <b><u>body</u></b> 标签尾部。"
+      description: '填入外部 <b><u>JS</u></b> 链接，需要 <b><u>script</u></b> 标签，可按情况指定 <b><u>async</u></b> 和 <b><u>defer</u></b> 属性，将插入 <b><u>body</u></b> 标签尾部。'
     inline_js_body:
       name: inline_js_body
       label: "内嵌JS（body）"
       type: textarea
       placeholder: 请输入 JS 代码内容
-      description: "填入 <b><u>JS</u></b> 代码，无需 <b><u>script</u></b> 标签，将插入 <b><u>body</u></b> 标签尾部。"
+      description: '填入 <b><u>JS</u></b> 代码，无需 <b><u>script</u></b> 标签，将插入 <b><u>body</u></b> 标签尾部。'
