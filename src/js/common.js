@@ -363,7 +363,7 @@ const commonContext = {
   },
   /** 初始化轮播 **/
   initCarousel() {
-    new Swiper('.swiper', {
+    window.Swiper && new Swiper('.swiper', {
       loop: true,
       parallax: true,
       effect: 'slide',
