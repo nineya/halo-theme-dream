@@ -12,6 +12,7 @@
 <a href="https://github.com/nineya/halo-theme-dream#donate"><img alt="donate" src="https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square"/></a>
 </p>
 
+`Halo 2.0` 的适配正在进行中，2.0主题不在当前仓库维护，详见：https://github.com/nineya/halo-theme-dream2.0
 
 ## 一、预览
 
@@ -38,7 +39,8 @@
 | ----------- | --------------------------- | -------------- |
 | 1.x         | 1.4.x及以下（不保证适配性） | 1.4.8          |
 | 2.0.0-2.0.1 | 1.4.x                       | 1.4.8          |
-| 2.0.2+      | 1.5.x                       | 1.5.3          |
+| 2.0.2+      | 1.5.x ~ 1.6.1                   | 1.6.1         |
+
 
 > 主题未在配置要求中对 Halo 最低版本限制得太死，但 Halo 不同版本开发接口略有不同，在不适配的版本中无法保证完全兼容。
 >
