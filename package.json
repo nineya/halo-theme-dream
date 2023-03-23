@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "eslint **/*.js && gulp release",
     "push": "eslint **/*.js && gulp push",
-    "zip": "eslint **/*.js && gulp zip",
+    "zip": "gulp zip",
     "build": "eslint **/*.js && gulp",
     "lint": "eslint **/*.js"
   },
