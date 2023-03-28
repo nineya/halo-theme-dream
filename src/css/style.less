@@ -3556,6 +3556,16 @@ button.swiper-pagination-bullet {
           &:before {
             content: none !important;
           }
+
+          &.code-select:after {
+            content: '';
+            width: 100%;
+            height: 1.5em;
+            left: 0;
+            background: rgba(151, 151, 151, 0.08);
+            position: absolute;
+            pointer-events: none;
+          }
         }
       }
 

@@ -1,55 +1,5 @@
 let postContextInitial = false
 const postContext = {
-  /* 初始化事件 */
-  initEvent() {
-    if (postContextInitial) return
-    let $body = $('body')
-    // 代码块展开和关闭点击事件
-    $body.on('click', 'figure>figcaption .fa-angle-down', function () {
-      let $this = $(this)
-      if ($this.is('.close')) {
-        $($this.attr('data-code')).parent().slideDown(200)
-        $this.removeClass('close')
-      } else {
-        $($this.attr('data-code')).parent().slideUp(200)
-        $this.addClass('close')
-      }
-    })
-    // 代码内容块展开和折叠点击事件
-    $body.on('click', 'figure > pre > .expand-done', function () {
-      Utils.foldBlock($(this).parent().parent())
-    })
-    // 图片的展开和折叠事件
-    $body.on('click', '.gallery-item .expand-done', function (e) {
-      e.stopPropagation()
-      Utils.foldBlock($(this).parent())
-    })
-    // 喜欢
-    Utils.initLikeEvent('.admire .agree.like', 'posts', ($elem) => $elem.find('span').find('span'))
-    // 隐藏内容
-    window.onCommentSuccessEvent = (comment, target) => {
-      let name = encrypt('mew-hide-' + target)
-      let commentIds = localStorage.getItem(name)
-      commentIds = commentIds ? JSON.parse(decrypt(commentIds)) : []
-      let id = String(comment.postId)
-      if (commentIds.includes(id)) {
-        return
-      }
-      commentIds.push(id)
-      $(`.main-content[data-target='${target}'][data-id='${id}'] mew-hide[hide]`)
-        .each(function () {
-          $(this).before(decrypt(this.getAttribute('hide')))
-          $(this).remove()
-          commonContext.initGallery()
-          postContext.initCodeBlock()
-          postContext.initLiterature()
-          postContext.initHighlighting()
-          if (this.getAttribute('toc') === 'true') commonContext.initTocAndNotice()
-        })
-      localStorage.setItem(name, encrypt(JSON.stringify(commentIds)))
-    }
-    postContextInitial = true
-  },
   /* 初始化代码块 */
   initCodeBlock() {
     const $code = $('*:not(figure) > pre > code')
@@ -59,35 +9,55 @@ const postContext = {
       let clazz = $(this).attr('class')
       // 通过class初始化代码块标题和是否默认关闭
       let title = ''
+      let lines = false
       let isClose = false
       if (clazz != null) {
-        let num = clazz.indexOf('|')
-        let closeNum = clazz.indexOf('<')
-        if (num !== -1 || closeNum !== -1) {
-          if (num === -1 || (closeNum !== -1 && closeNum < num)) {
-            isClose = true
-            num = closeNum
+        let str1 = clazz.match(/[|<](.*)$/)
+        let str2 = clazz.match(/:select/)
+        if (str1 || str2) {
+          let num = 0
+          if (str2) {
+            num = str2.index
+            if (str1) {
+              if (str1[1].endsWith(str2[0])) {
+                str1[1] = str1[1].substring(0, str1[1].length - str2[0].length)
+              }
+            } else {
+              title = clazz.substring(9, str2.index)
+            }
+            lines = true
+          }
+          if (str1) {
+            num = str1.index < num ? str1.index : num
+            if (str1[0][0] === '<') {
+              isClose = true
+            }
+            title = str1[1]
           }
           $(this).attr('class', clazz.substring(0, num))
-          title = num === clazz.length - 1 ? clazz.substring(9, num) : clazz.substring(num + 1)
+          if (!title) title = clazz.substring(9, num)
         } else {
           title = clazz.substring(9)
         }
       }
       // 生成行号
-      let nums = $(this).text().split('\n').length - 1 || 1
+      let codes = $(this).text().split('\n') || []
+      let nums = codes.length - 1
       let lineDigit = String(nums).length
       if (lineDigit === 1) lineDigit = 2
       let lis = ''
       for (var i = 0; i < nums; i++) {
-        lis += `<li>${String(i + 1).padStart(lineDigit, 0)}</li>`
+        lis += `<li ${(lines && /^\s*\|\+\s+/.test(codes[i]))? 'class="code-select"' : ''}>${String(i + 1).padStart(lineDigit, 0)}</li>`
+      }
+      if (lines) {
+        $(this).text($(this).text().replace(/(^\s*)\|\+\s/gm,'$1'))
       }
       // 代码块的id，用于代码块复制和折叠
       let id = `codeBlock${index}-${new Date().getTime()}`
       let close = ''
       if (isClose) {
         close = ' close'
-        $(this).hide()
+        $(this).parent().hide()
       }
       // 生成标题栏的按钮
       let titleButton = `<div><i class="fa fa-angle-down${close}" data-code='#${id}'></i><i class="fa fa-clone btn-clipboard" title="复制代码" data-clipboard-target='#${id}'></i></div>`
@@ -168,7 +138,57 @@ const postContext = {
         }
       }
     })
-  }
+  },
+  /* 初始化事件 */
+  initEvent() {
+    if (postContextInitial) return
+    let $body = $('body')
+    // 代码块展开和关闭点击事件
+    $body.on('click', 'figure>figcaption .fa-angle-down', function () {
+      let $this = $(this)
+      if ($this.is('.close')) {
+        $($this.attr('data-code')).parent().slideDown(200)
+        $this.removeClass('close')
+      } else {
+        $($this.attr('data-code')).parent().slideUp(200)
+        $this.addClass('close')
+      }
+    })
+    // 代码内容块展开和折叠点击事件
+    $body.on('click', 'figure > pre > .expand-done', function () {
+      Utils.foldBlock($(this).parent().parent())
+    })
+    // 图片的展开和折叠事件
+    $body.on('click', '.gallery-item .expand-done', function (e) {
+      e.stopPropagation()
+      Utils.foldBlock($(this).parent())
+    })
+    // 喜欢
+    Utils.initLikeEvent('.admire .agree.like', 'posts', ($elem) => $elem.find('span').find('span'))
+    // 隐藏内容
+    window.onCommentSuccessEvent = (comment, target) => {
+      let name = encrypt('mew-hide-' + target)
+      let commentIds = localStorage.getItem(name)
+      commentIds = commentIds ? JSON.parse(decrypt(commentIds)) : []
+      let id = String(comment.postId)
+      if (commentIds.includes(id)) {
+        return
+      }
+      commentIds.push(id)
+      $(`.main-content[data-target='${target}'][data-id='${id}'] mew-hide[hide]`)
+        .each(function () {
+          $(this).before(decrypt(this.getAttribute('hide')))
+          $(this).remove()
+          commonContext.initGallery()
+          postContext.initCodeBlock()
+          postContext.initLiterature()
+          postContext.initHighlighting()
+          if (this.getAttribute('toc') === 'true') commonContext.initTocAndNotice()
+        })
+      localStorage.setItem(name, encrypt(JSON.stringify(commentIds)))
+    }
+    postContextInitial = true
+  },
 }
 window.postPjax = function (serialNumber) {
   if ($('.main-content').length === 0) return
@@ -177,7 +197,7 @@ window.postPjax = function (serialNumber) {
   )
 }
 !(function () {
-  const advances = ['initEvent', 'initCodeBlock', 'initLiterature', 'initLike', 'foldImage']
+  const advances = ['initCodeBlock', 'initLiterature', 'initLike', 'foldImage', 'initEvent']
   Object.keys(postContext).forEach(
     (c) => !window.pjaxSerialNumber && advances.includes(c) && postContext[c]()
   )
