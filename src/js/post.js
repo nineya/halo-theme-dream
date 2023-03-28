@@ -9,11 +9,11 @@ const postContext = {
       let clazz = $(this).attr('class')
       // 通过class初始化代码块标题和是否默认关闭
       let title = ''
-      let lines = [0, 0]
+      let lines = false
       let isClose = false
       if (clazz != null) {
         let str1 = clazz.match(/[|<](.*)$/)
-        let str2 = clazz.match(/:(\d+)-(\d+)/)
+        let str2 = clazz.match(/:select/)
         if (str1 || str2) {
           let num = 0
           if (str2) {
@@ -25,8 +25,7 @@ const postContext = {
             } else {
               title = clazz.substring(9, str2.index)
             }
-            lines[0] = Number(str2[1])
-            lines[1] = Number(str2[2])
+            lines = true
           }
           if (str1) {
             num = str1.index < num ? str1.index : num
@@ -41,12 +40,16 @@ const postContext = {
         }
       }
       // 生成行号
-      let nums = $(this).text().split('\n').length - 1 || 1
+      let codes = $(this).text().split('\n') || []
+      let nums = codes.length - 1
       let lineDigit = String(nums).length
       if (lineDigit === 1) lineDigit = 2
       let lis = ''
-      for (var i = 1; i <= nums; i++) {
-        lis += `<li ${i >= lines[0] && i <= lines[1]? 'class="code-select"' : ''}>${String(i).padStart(lineDigit, 0)}</li>`
+      for (var i = 0; i < nums; i++) {
+        lis += `<li ${(lines && /^\s*\|\+\s+/.test(codes[i]))? 'class="code-select"' : ''}>${String(i + 1).padStart(lineDigit, 0)}</li>`
+      }
+      if (lines) {
+        $(this).text($(this).text().replace(/(^\s*)\|\+\s/gm,'$1'))
       }
       // 代码块的id，用于代码块复制和折叠
       let id = `codeBlock${index}-${new Date().getTime()}`
