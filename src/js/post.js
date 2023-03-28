@@ -20,7 +20,7 @@ const postContext = {
             num = str2.index
             if (str1) {
               if (str1[1].endsWith(str2[0])) {
-                str1[1] = str1[1].substring(0, str2[0].length)
+                str1[1] = str1[1].substring(0, str1[1].length - str2[0].length)
               }
             } else {
               title = clazz.substring(9, str2.index)
@@ -35,6 +35,7 @@ const postContext = {
             title = str1[1]
           }
           $(this).attr('class', clazz.substring(0, num))
+          if (!title) title = clazz.substring(9, num)
         } else {
           title = clazz.substring(9)
         }
