@@ -73,30 +73,6 @@
 > 2. 主题是经过源码编译的，直接从仓库下载包含了主题的源码以及开发所需的相关文件，这些文件并不是安装主题所需要的。
 
 
-
-### 4.3 安装配置邮件模板
-
-配置邮件模板需要登录服务器添加模板文件，并重启 `Halo`。
-
-1. 登录服务器，按步骤执行如下命令：
-```bash
-# 创建邮件模板目录
-mkdir -r ~/.halo/templates/common/mail_template/
-cd ~/.halo/templates/common/mail_template/
-
-# 创建mail_notice.ftl文件
-vi mail_notice.ftl
-## 文件内容如下（只需这一行即可）：
-<#include "../../themes/dream/mail_template/mail_notice.ftl">
-
-# 创建mail_reply.ftl文件
-vi mail_reply.ftl
-## 文件内容如下（只需这一行即可）：
-<#include "../../themes/dream/mail_template/mail_reply.ftl"
-```
-
-2. 重启 `Halo`
-
 ## 五、参与主题开发
 
 > 推荐使用 IDEA 进行主题开发，能够比较好的支持 FreeMarker。
