@@ -12,7 +12,7 @@
 <a href="https://github.com/nineya/halo-theme-dream#donate"><img alt="donate" src="https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square"/></a>
 </p>
 
-`Halo 2.0` 的适配正在进行中，2.0主题不在当前仓库维护，详见：https://github.com/nineya/halo-theme-dream2.0
+主题已完成 `Halo 2.0` 适配，2.x 的主题不在当前仓库维护，详见：https://github.com/nineya/halo-theme-dream2.0
 
 ## 一、预览
 
