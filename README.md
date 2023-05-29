@@ -29,9 +29,14 @@
 
 关于主题使用上的一些问题可以参见 [主题使用手册-基础篇](https://blog.nineya.com/archives/94.html)
 
-如果还有疑问，欢迎加入 <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=X7p7Bs21cgtkQ0dRfzmBsuWqNNQc10hn&jump_from=webapi">Dream 主题交流群：638168592</a>
+如有疑问，欢迎加入 <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=X7p7Bs21cgtkQ0dRfzmBsuWqNNQc10hn&jump_from=webapi">Dream 主题交流群：638168592</a>
 
 欢迎参与主题开发的一些<a href="https://github.com/nineya/halo-theme-dream/discussions">问题探讨</a>
+
+欢迎关注微信公众号《玖涯菜菜子》，主题版本更新消息与要点说明将在公众号发布。
+
+![微信公众号](https://cdn.jsdelivr.net/gh/nineya/halo-theme-dream@master/source/img/official-account.png)
+
 
 ## 三、版本适配关系
 
@@ -90,6 +95,6 @@
 
 ## 六、打赏项目
 
-感谢您对本项目的喜爱，您的打赏是对本项目最好的支持！本项目所有打赏收益将全部投入到支付宝公益项目，捐赠记录在[关于我的](https://blog.nineya.com/about)中可见，一起为公益事业加油。
+感谢您对本项目的喜爱，您的打赏是对本项目最好的支持！
 
 ![打赏项目](https://blog.nineya.com/upload/2022/08/funding.png)
