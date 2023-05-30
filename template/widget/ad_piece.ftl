@@ -2,9 +2,13 @@
 <#if ad_show>
     <div class="card widget ${settings.hide_ad_piece!}">
         <#if settings.ad_mode!true>
-            <a target="_blank" href="${settings.ad_target_url!}">
+            <#if settings.ad_target_url?? && settings.ad_target_url!=''>
+                <a target="_blank" href="${settings.ad_target_url}">
+                    <img width="100%" src="${settings.ad_image}" alt="广告"/>
+                </a>
+            <#else>
                 <img width="100%" src="${settings.ad_image}" alt="广告"/>
-            </a>
+            </#if>
         <#else>
             ${settings.ad_custom_code!}
         </#if>
