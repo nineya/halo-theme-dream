@@ -454,6 +454,17 @@ post:
       type: text
       placeholder: '请输入高度数值（px）'
       description: '图片高度超出指定高度（px）后默认进行折叠，指定的高度需大于等于 400px。'
+    show_img_name:
+      name: show_img_name
+      label: 显示图片名称
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     invalid_tips_day:
       name: invalid_tips_day
       label: 文章失效提示

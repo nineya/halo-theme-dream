@@ -93,7 +93,7 @@ const commonContext = {
     $('.main-content img:not(.not-gallery)').each(function () {
       if ($(this).parents('[data-fancybox],mew-photos').length === 0) {
         $(this).wrap(`<div class="gallery-item"><div data-fancybox="gallery" ${this.alt ? `data-caption="${this.alt}"` : ''} href="${$(this).attr('src')
-        }"></div>${this.alt ? `<p>${this.alt}</p>` : ''}</div>`)
+        }"></div>${(this.alt && DreamConfig.show_img_name) ? `<p>${this.alt}</p>` : ''}</div>`)
       }
     })
   },

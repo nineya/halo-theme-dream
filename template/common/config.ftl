@@ -139,6 +139,9 @@
     <#if settings.enable_toutiao_push!false>
     DreamConfig["enable_toutiao_push"] = true;
     </#if>
+    <#if settings.show_img_name!true>
+    DreamConfig["show_img_name"] = true;
+    </#if>
     <#if settings.load_progress?? && settings.load_progress != 'none'>
     DreamConfig["load_progress"] = '${settings.load_progress}';
     </#if>
