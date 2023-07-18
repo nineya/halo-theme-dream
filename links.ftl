@@ -1,12 +1,12 @@
 <#include "template/layout.ftl">
-<@layout title="友链 - ${blog_title!}" canonical="${links_url!}">
+<@layout title="${links_title!'友情链接'} - ${blog_title!}" canonical="${links_url!}">
     <div class="card">
         <#if settings.links_thumbnail?? && settings.links_thumbnail!=''>
             <div class="card-image cover-image" style="background-image: url(${settings.links_thumbnail!})">
             </div>
         </#if>
         <div class="card-content main">
-            <h1 class="title">友情链接 - ${user.nickname!}的小伙伴们</h1>
+            <h1 class="title">${links_title!'友情链接'} - ${user.nickname!}的小伙伴们</h1>
             <div class="main-content">
                 <@linkTag method="listTeams">
                     <#assign defaultAvatar= (settings.links_default_avatar?? && settings.links_default_avatar!='')?string(settings.links_default_avatar!, static + "/source/img/avatar.svg") />

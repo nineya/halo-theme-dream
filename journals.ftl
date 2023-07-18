@@ -1,5 +1,5 @@
 <#include "template/layout.ftl">
-<@layout title="动态 - ${blog_title!}" canonical="${journals_url!}">
+<@layout title="${journals_title!'动态'} - ${blog_title!}" canonical="${journals_url!}">
     <#if journals.content?? && journals.content?size gt 0>
         <#list journals.content as journal>
             <div class="card card-content journal">

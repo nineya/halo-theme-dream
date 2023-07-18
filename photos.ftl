@@ -1,8 +1,8 @@
 <#include "template/layout.ftl">
-<@layout title="相册 - ${blog_title!}" canonical="${photos_url!}">
+<@layout title="${photos_title!'我的相册'} - ${blog_title!}" canonical="${photos_url!}">
     <#if (photos.content)?? && photos.content?size gt 0>
         <div class="card card-content photos">
-            <div class="card-tab"><div>我的相册</div></div>
+            <div class="card-tab"><div>${photos_title!'我的相册'}</div></div>
             <ul class="photos-teams">
                 <li class="item">全部</li>
                 <@photoTag method="listTeams">
@@ -16,7 +16,7 @@
     <#else>
         <div class="card card-empty">
             <i class="fa fa-inbox"></i>
-            还没有上传过相册，回<a href="${context!}">主页</a>看看吧
+            内容为空，回<a href="${context!}">主页</a>看看吧
         </div>
     </#if>
 </@layout>
