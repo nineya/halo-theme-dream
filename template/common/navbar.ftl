@@ -87,7 +87,7 @@
             <div class="navbar-slideout-author">
                 <img width="50" height="50" src="${user.avatar!}" class="avatar" alt="${user.nickname!}"/>
                 <div class="info">
-                    <a class="link" target="_blank" rel="noopener noreferrer nofollow">${user.nickname!}</a>
+                    <p class="link">${user.nickname!}</p>
                     <p class="motto">${user.description!'一句话介绍自己吧！'}</p>
                 </div>
             </div>
