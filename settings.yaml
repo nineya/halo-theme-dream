@@ -223,12 +223,6 @@ basic_style:
           label: 模块化（左侧）
         - value: 'module-right'
           label: 模块化（右侧）
-    module_links:
-      name: module_links
-      label: 模块化布局链接
-      type: textarea
-      placeholder: '标签|文字说明|是否新界面打开(true/false)|背景图链接|跳转链接地址'
-      description: '以 <b><u>标签|文字说明|是否新界面打开(true/false)|背景图链接|跳转链接地址</u></b> 格式填写内容，一行表示一个模块链接，可填写 1~6 个链接。'
     left_sidebar_sticky:
       name: left_sidebar_sticky
       label: 左侧边栏悬浮
@@ -253,6 +247,37 @@ basic_style:
           label: 固定底部
         - value: none
           label: 不悬浮
+    module_options:
+      name: module_options
+      label: 模块化布局链接
+      type: repeater
+      description: '可填写 1~6 个链接。'
+      children:
+        - name: tag
+          label: 标签
+          type: text
+          placeholder: '请输入标签内容'
+        - name: title
+          label: 标题
+          type: text
+          placeholder: '请输入标题内容'
+        - name: url
+          label: 跳转地址
+          type: text
+          placeholder: '请输入跳转地址'
+        - name: image
+          label: 背景图链接
+          type: attachment
+          placeholder: '请输入图片地址'
+        - name: target
+          label: 打开方式
+          type: radio
+          default: '_blank'
+          options:
+            - value: '_blank'
+              label:  新窗口
+            - value: '_self'
+              label:  原窗口
 post:
   label: 文章设置
   items:

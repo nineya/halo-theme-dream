@@ -1,16 +1,15 @@
 <#include "template/layout.ftl">
 <#global is_first_index=(posts.number == 0) >
-<#macro model_build content>
-    <#if content == ''>
+<#macro model_build option>
+    <#if !option??>
         <#return>
     </#if>
-    <#local content_option=content?split('|')>
-    <#local tag=(content_option[0]!'')?trim>
-    <#local content=((content_option[1]!'')?trim != '')?then('<div class="title">${content_option[1]?trim}</div>', '')>
-    <#local target=((content_option[2]!'false')?trim == 'true')?then('target="_blank"', '')>
-    <#local imageUrl=((content_option[3]!'')?trim != '')?then('style="background-image: url(${content_option[3]?trim})"', '')>
-    <#local targetUrl=((content_option[4]!'')?trim != '')?then('href="${content_option[4]?trim}"', '')>
-    <a class="card widget brightness ${(content!='')?then('bg-shadow', '')}" ${target} ${imageUrl} ${targetUrl}>${content}<div class="tag">${tag}</div></a>
+    <#local tag=((option.tag!'')?trim != '')?then('<div class="tag">${option.tag?trim}</div>', '')>
+    <#local title=((option.title!'')?trim != '')?then('<div class="title">${option.title?trim}</div>', '')>
+    <#local target=((option.target!'')?trim != '')?then(' target="${option.target?trim}"', ' target="_blank"')>
+    <#local imageUrl=((option.image!'')?trim != '')?then(' style="background-image: url(${option.image?trim})"', '')>
+    <#local targetUrl=((option.url!'')?trim != '')?then(' href="${option.url?trim}"', '')>
+    <a class="card widget brightness ${(title!='')?then('bg-shadow', '')}"${target}${imageUrl}${targetUrl}>${title}${tag}</a>
 </#macro>
 <@layout title="${blog_title!}" canonical="${blog_url!}">
     <#if posts.content?? && posts.content?size gt 0>
@@ -44,15 +43,6 @@
                 </#list>
             </#assign>
             <#if settings.sidebar_column=='module-left' || settings.sidebar_column=='module-right'>
-                <#if settings.module_links?? && settings.module_links?trim != ''>
-                    <#assign module_links=settings.module_links?split('\n')>
-                <#else>
-                    <#assign module_links=[]>
-                    <#list 0..1 as i>
-                        <#assign post=posts[i]>
-                        <#assign module_links=module_links+["推荐|${post.title!}|false|${post.thumbnail!}|${post.fullPath!}"]>
-                    </#list>
-                </#if>
                 <div class="model model-index">
                     <div class="card widget swiper">
                         <div class="swiper-wrapper">${carousel_content}</div>
@@ -61,18 +51,27 @@
                         <div class="swiper-button-next"></div>
                     </div>
                     <div class="model model-index-side">
-                        <#list 0..1 as i>
-                            <#if i &lt; module_links?size >
-                                <@model_build module_links[i]/>
-                            </#if>
-                        </#list>
+                        <#if settings.module_options?? && settings.module_options?size &gt; 0>
+                            <#list 0..1 as i>
+                                <#if i &lt; settings.module_options?size >
+                                    <@model_build settings.module_options[i]/>
+                                </#if>
+                            </#list>
+                        <#else>
+                            <#list 0..1 as i>
+                                <#if i &lt; posts.content?size >
+                                    <#assign postOption=posts.content[i]>
+                                    <@model_build {"tag": "推荐", "title": "${postOption.title!}", "url": "${postOption.fullPath}", "image": "${postOption.thumbnail}", "target": "_self"}/>
+                                </#if>
+                            </#list>
+                        </#if>
                     </div>
                 </div>
-                <#if module_links?size &gt; 2 && module_links?size&lt;=6>
-                    <div class="model model-attach model-attach-${module_links?size-2}">
+                <#if settings.module_options?? && settings.module_options?size &gt; 2 && settings.module_options?size&lt;=6>
+                    <div class="model model-attach model-attach-${settings.module_options?size-2}">
                         <#list 2..5 as i>
-                            <#if i &lt; module_links?size >
-                                <@model_build module_links[i]/>
+                            <#if i &lt; settings.module_options?size >
+                                <@model_build settings.module_options[i]/>
                             </#if>
                         </#list>
                     </div>
