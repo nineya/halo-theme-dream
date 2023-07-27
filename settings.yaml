@@ -697,403 +697,90 @@ comment:
 sidebar_show:
   label: 侧边栏显示
   items:
-    sidebar_profile:
-      name: sidebar_profile
-      label: 侧边栏信息
-      type: radio
-      default: left
-      options:
-        - value: left
-          label: 左侧
-        - value: right
-          label: 右侧
-        - value: none
-          label: 关闭
-    sidebar_toc:
-      name: sidebar_toc
-      label: 侧边栏目录
-      type: radio
-      default: right
-      options:
-        - value: left
-          label: 左侧
-        - value: right
-          label: 右侧
-        - value: none
-          label: 关闭
-    sidebar_notice:
-      name: sidebar_notice
-      label: 侧边栏公告
-      type: radio
-      default: right
-      options:
-        - value: left
-          label: 左侧
-        - value: right
-          label: 右侧
-        - value: none
-          label: 关闭
-    sidebar_love:
-      name: sidebar_love
-      label: 侧边栏恋爱墙
-      type: radio
-      default: right
-      options:
-        - value: left
-          label: 左侧
-        - value: right
-          label: 右侧
-        - value: none
-          label: 关闭
-    sidebar_music:
-      name: sidebar_music
-      label: 侧边栏音乐
-      type: radio
-      default: none
-      description: "三列布局时不能在右侧显示音乐模块。<img style=\"display: none\" src=\"http://127.0.0.1\" onerror=\"let e=document.createElement('script');e.setAttribute('type', 'text/javascript');e.setAttribute('src', '/themes/dream/source/js/settings.min.js');document.getElementsByTagName('head')[0].appendChild(e);\" />"
-      options:
-        - value: left
-          label: 左侧
-        - value: right
-          label: 右侧
-        - value: none
-          label: 关闭
-    sidebar_ad_piece:
-      name: sidebar_ad_piece
-      label: 侧边栏广告
-      type: radio
-      default: none
-      options:
-        - value: left
-          label: 左侧
-        - value: right
-          label: 右侧
-        - value: none
-          label: 关闭
-    sidebar_recent_posts:
-      name: sidebar_recent_posts
-      label: 侧边栏最近文章
-      type: radio
-      default: right
-      options:
-        - value: left
-          label: 左侧
-        - value: right
-          label: 右侧
-        - value: none
-          label: 关闭
-    sidebar_recent_comments:
-      name: sidebar_recent_comments
-      label: 侧边栏最近评论
-      type: radio
-      default: right
-      options:
-        - value: left
-          label: 左侧
-        - value: right
-          label: 右侧
-        - value: none
-          label: 关闭
-    sidebar_categories:
-      name: sidebar_categories
-      label: 侧边栏分类
-      type: radio
-      default: left
-      options:
-        - value: left
-          label: 左侧
-        - value: right
-          label: 右侧
-        - value: none
-          label: 关闭
-    sidebar_tags:
-      name: sidebar_tags
-      label: 侧边栏标签
-      type: radio
-      default: left
-      options:
-        - value: left
-          label: 左侧
-        - value: right
-          label: 右侧
-        - value: none
-          label: 关闭
-    sidebar_tagcloud:
-      name: sidebar_tagcloud
-      label: 侧边栏标签云
-      type: radio
-      default: none
-      options:
-        - value: left
-          label: 左侧
-        - value: right
-          label: 右侧
-        - value: none
-          label: 关闭
-    sidebar_links:
-      name: sidebar_links
-      label: 侧边栏友链
-      type: radio
-      default: left
-      options:
-        - value: left
-          label: 左侧
-        - value: right
-          label: 右侧
-        - value: none
-          label: 关闭
-    sidebar_priority_profile:
-      name: sidebar_priority_profile
-      label: 侧边栏信息-优先级
-      type: text
-      default: 9900
-      placeholder: '请输入优先级数值'
-      description: '优先级越高，模块排序越靠前。'
-    sidebar_priority_toc:
-      name: sidebar_priority_toc
-      label: 侧边栏目录-优先级
-      type: text
-      default: 9800
-      placeholder: '请输入优先级数值'
-      description: '优先级越高，模块排序越靠前。'
-    sidebar_priority_notice:
-      name: sidebar_priority_notice
-      label: 侧边栏公告-优先级
-      type: text
-      default: 9700
-      placeholder: '请输入优先级数值'
-      description: '优先级越高，模块排序越靠前。'
-    sidebar_priority_love:
-      name: sidebar_priority_love
-      label: 侧边栏恋爱墙-优先级
-      type: text
-      default: 9600
-      placeholder: '请输入优先级数值'
-      description: '优先级越高，模块排序越靠前。'
-    sidebar_priority_music:
-      name: sidebar_priority_music
-      label: 侧边栏音乐-优先级
-      type: text
-      default: 9500
-      placeholder: '请输入优先级数值'
-      description: '优先级越高，模块排序越靠前。'
-    sidebar_priority_ad_piece:
-      name: sidebar_priority_ad_piece
-      label: 侧边栏广告-优先级
-      type: text
-      default: 9400
-      placeholder: '请输入优先级数值'
-      description: '优先级越高，模块排序越靠前。'
-    sidebar_priority_recent_posts:
-      name: sidebar_priority_recent_posts
-      label: 侧边栏最近文章-优先级
-      type: text
-      default: 9300
-      placeholder: '请输入优先级数值'
-      description: '优先级越高，模块排序越靠前。'
-    sidebar_priority_recent_comments:
-      name: sidebar_priority_recent_comments
-      label: 侧边栏最近评论-优先级
-      type: text
-      default: 9200
-      placeholder: '请输入优先级数值'
-      description: '优先级越高，模块排序越靠前。'
-    sidebar_priority_categories:
-      name: sidebar_priority_categories
-      label: 侧边栏分类-优先级
-      type: text
-      default: 9100
-      placeholder: '请输入优先级数值'
-      description: '优先级越高，模块排序越靠前。'
-    sidebar_priority_tags:
-      name: sidebar_priority_tags
-      label: 侧边栏标签-优先级
-      type: text
-      default: 9000
-      placeholder: '请输入优先级数值'
-      description: '优先级越高，模块排序越靠前。'
-    sidebar_priority_tagcloud:
-      name: sidebar_priority_tagcloud
-      label: 侧边栏标签云-优先级
-      type: text
-      default: 8900
-      placeholder: '请输入优先级数值'
-      description: '优先级越高，模块排序越靠前。'
-    sidebar_priority_links:
-      name: sidebar_priority_links
-      label: 侧边栏友链-优先级
-      type: text
-      default: 8800
-      placeholder: '请输入优先级数值'
-      description: '优先级越高，模块排序越靠前。'
-    hide_profile:
-      name: hide_profile
-      label: 侧边栏信息-隐藏方式
-      type: select
-      default: 'is-not-hidden'
-      options:
-        - value: 'is-hidden-mobile'
-          label: 移动设备隐藏
-        - value: 'is-hidden-not-desktop'
-          label: 移动、平板设备隐藏
-        - value: 'is-hidden-desktop'
-          label: 桌面设备隐藏
-        - value: 'is-not-hidden'
-          label: 不隐藏
-    hide_toc:
-      name: hide_toc
-      label: 侧边栏目录-隐藏方式
-      type: select
-      default: 'is-hidden-not-desktop'
-      options:
-        - value: 'is-hidden-mobile'
-          label: 移动设备隐藏
-        - value: 'is-hidden-not-desktop'
-          label: 移动、平板设备隐藏
-        - value: 'is-hidden-desktop'
-          label: 桌面设备隐藏
-        - value: 'is-not-hidden'
-          label: 不隐藏
-    hide_notice:
-      name: hide_notice
-      label: 侧边栏公告-隐藏方式
-      type: select
-      default: 'is-not-hidden'
-      options:
-        - value: 'is-hidden-mobile'
-          label: 移动设备隐藏
-        - value: 'is-hidden-not-desktop'
-          label: 移动、平板设备隐藏
-        - value: 'is-hidden-desktop'
-          label: 桌面设备隐藏
-        - value: 'is-not-hidden'
-          label: 不隐藏
-    hide_love:
-      name: hide_love
-      label: 侧边栏恋爱墙-隐藏方式
-      type: select
-      default: 'is-not-hidden'
-      options:
-        - value: 'is-hidden-mobile'
-          label: 移动设备隐藏
-        - value: 'is-hidden-not-desktop'
-          label: 移动、平板设备隐藏
-        - value: 'is-hidden-desktop'
-          label: 桌面设备隐藏
-        - value: 'is-not-hidden'
-          label: 不隐藏
-    hide_music:
-      name: hide_music
-      label: 侧边栏音乐-隐藏方式
-      type: select
-      default: 'is-hidden-mobile'
-      options:
-        - value: 'is-hidden-mobile'
-          label: 移动设备隐藏
-        - value: 'is-hidden-not-desktop'
-          label: 移动、平板设备隐藏
-        - value: 'is-hidden-desktop'
-          label: 桌面设备隐藏
-        - value: 'is-not-hidden'
-          label: 不隐藏
-    hide_ad_piece:
-      name: hide_ad_piece
-      label: 侧边栏广告-隐藏方式
-      type: select
-      default: 'is-not-hidden'
-      options:
-        - value: 'is-hidden-mobile'
-          label: 移动设备隐藏
-        - value: 'is-hidden-not-desktop'
-          label: 移动、平板设备隐藏
-        - value: 'is-hidden-desktop'
-          label: 桌面设备隐藏
-        - value: 'is-not-hidden'
-          label: 不隐藏
-    hide_recent_posts:
-      name: hide_recent_posts
-      label: 侧边栏最近文章-隐藏方式
-      type: select
-      default: 'is-not-hidden'
-      options:
-        - value: 'is-hidden-mobile'
-          label: 移动设备隐藏
-        - value: 'is-hidden-not-desktop'
-          label: 移动、平板设备隐藏
-        - value: 'is-hidden-desktop'
-          label: 桌面设备隐藏
-        - value: 'is-not-hidden'
-          label: 不隐藏
-    hide_recent_comments:
-      name: hide_recent_comments
-      label: 侧边栏最近评论-隐藏方式
-      type: select
-      default: 'is-not-hidden'
-      options:
-        - value: 'is-hidden-mobile'
-          label: 移动设备隐藏
-        - value: 'is-hidden-not-desktop'
-          label: 移动、平板设备隐藏
-        - value: 'is-hidden-desktop'
-          label: 桌面设备隐藏
-        - value: 'is-not-hidden'
-          label: 不隐藏
-    hide_categories:
-      name: hide_categories
-      label: 侧边栏分类-隐藏方式
-      type: select
-      default: 'is-not-hidden'
-      options:
-        - value: 'is-hidden-mobile'
-          label: 移动设备隐藏
-        - value: 'is-hidden-not-desktop'
-          label: 移动、平板设备隐藏
-        - value: 'is-hidden-desktop'
-          label: 桌面设备隐藏
-        - value: 'is-not-hidden'
-          label: 不隐藏
-    hide_tags:
-      name: hide_tags
-      label: 侧边栏标签-隐藏方式
-      type: select
-      default: 'is-not-hidden'
-      options:
-        - value: 'is-hidden-mobile'
-          label: 移动设备隐藏
-        - value: 'is-hidden-not-desktop'
-          label: 移动、平板设备隐藏
-        - value: 'is-hidden-desktop'
-          label: 桌面设备隐藏
-        - value: 'is-not-hidden'
-          label: 不隐藏
-    hide_tagcloud:
-      name: hide_tagcloud
-      label: 侧边栏标签云-隐藏方式
-      type: select
-      default: 'is-hidden-not-desktop'
-      options:
-        - value: 'is-hidden-mobile'
-          label: 移动设备隐藏
-        - value: 'is-hidden-not-desktop'
-          label: 移动、平板设备隐藏
-        - value: 'is-hidden-desktop'
-          label: 桌面设备隐藏
-        - value: 'is-not-hidden'
-          label: 不隐藏
-    hide_links:
-      name: hide_links
-      label: 侧边栏友链-隐藏方式
-      type: select
-      default: 'is-hidden-not-desktop'
-      options:
-        - value: 'is-hidden-mobile'
-          label: 移动设备隐藏
-        - value: 'is-hidden-not-desktop'
-          label: 移动、平板设备隐藏
-        - value: 'is-hidden-desktop'
-          label: 桌面设备隐藏
-        - value: 'is-not-hidden'
-          label: 不隐藏
+    sidebar_show:
+      name: sidebar_show
+      label: 侧边栏显示
+      type: repeater
+      description: '配置主题左右侧边栏显示位置和顺序。三列布局时<b>音乐模块</b>不能在右侧显示。'
+      default:
+        - type: profile
+          location: left
+          hide: 'is-not-hidden'
+        - type: toc
+          location: right
+          hide: 'is-hidden-not-desktop'
+        - type: notice
+          location: right
+          hide: 'is-not-hidden'
+        - type: recent_posts
+          location: right
+          hide: 'is-not-hidden'
+        - type: recent_comments
+          location: right
+          hide: 'is-not-hidden'
+        - type: categories
+          location: left
+          hide: 'is-not-hidden'
+        - type: tags
+          location: left
+          hide: 'is-not-hidden'
+        - type: links
+          location: right
+          hide: 'is-hidden-not-desktop'
+      children:
+        - name: type
+          type: select
+          label: 模块类型
+          default: profile
+          options:
+            - value: profile
+              label:  信息模块
+            - value: toc
+              label:  目录模块
+            - value: notice
+              label:  公告模块
+            - value: love
+              label:  恋爱墙模块
+            - value: music
+              label:  音乐模块
+            - value: ad_piece
+              label:  广告模块
+            - value: recent_posts
+              label:  最近文章模块
+            - value: recent_comments
+              label: 最近评论模块
+            - value: categories
+              label:  文章分类模块
+            - value: tags
+              label:  文章标签模块
+            - value: tagcloud
+              label:  文章标签云模块
+            - value: links
+              label:  友链模块
+        - name: location
+          label: 模块位置
+          type: radio
+          default: none
+          options:
+            - value: left
+              label:  左侧
+            - value: right
+              label:  右侧
+            - value: none
+              label:  关闭
+        - name: hide
+          label: 隐藏方式
+          type: select
+          default: 'is-not-hidden'
+          options:
+            - value: 'is-hidden-mobile'
+              label: 移动设备隐藏
+            - value: 'is-hidden-not-desktop'
+              label: 移动、平板设备隐藏
+            - value: 'is-hidden-desktop'
+              label: 桌面设备隐藏
+            - value: 'is-not-hidden'
+              label: 不隐藏
 sidebar_config:
   label: 侧边栏配置
   items:

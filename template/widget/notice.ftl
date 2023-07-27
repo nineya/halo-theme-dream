@@ -1,4 +1,4 @@
-<div class="card widget notice ${settings.hide_notice!} is-hidden-all">
+<div class="card widget notice ${sidebar.hide!} is-hidden-all">
     <div class="card-title">
         <i class="fa fa-volume-up card-title-label"></i><span>公告</span>
     </div>

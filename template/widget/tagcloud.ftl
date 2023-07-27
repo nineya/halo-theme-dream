@@ -1,5 +1,5 @@
 <#assign num= settings.tagcloud_num!32 />
-<div class="card widget tagcloud ${settings.hide_tagcloud!}">
+<div class="card widget tagcloud ${sidebar.hide!}">
     <@tagTag method="list">
         <div class="card-title">
             <i class="fa fa-cloud card-title-label"></i><span>标签云</span>

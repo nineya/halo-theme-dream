@@ -1,4 +1,4 @@
-<div class="card widget recent-comments ${settings.hide_recent_comments!}">
+<div class="card widget recent-comments ${sidebar.hide!}">
     <div class="card-title">
         <i class="fa fa-commenting-o card-title-label"></i><span>最新评论</span>
     </div>

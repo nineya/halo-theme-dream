@@ -1,4 +1,4 @@
-<div class="card widget profile ${settings.hide_profile!}">
+<div class="card widget profile ${sidebar.hide!}">
     <div class="card-content">
         <nav class="level">
             <div class="level-item" style="flex-direction: column;">

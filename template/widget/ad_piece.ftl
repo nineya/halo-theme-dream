@@ -1,6 +1,6 @@
 <#assign ad_show=(settings.ad_mode!true)?then(settings.ad_image?? && settings.ad_image != '', settings.ad_custom_code?? && settings.ad_custom_code!='')>
 <#if ad_show>
-    <div class="card widget ${settings.hide_ad_piece!}">
+    <div class="card widget ${sidebar.hide!}">
         <#if settings.ad_mode!true>
             <#if settings.ad_target_url?? && settings.ad_target_url!=''>
                 <a target="_blank" href="${settings.ad_target_url}">
