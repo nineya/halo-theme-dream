@@ -1579,30 +1579,30 @@ custom:
     inline_css:
       name: inline_css
       label: "内嵌 CSS"
-      type: textarea
+      type: code
       placeholder: 请输入 CSS 样式内容
       description: '填入 <b><u>CSS</u></b> 代码，无需 <b><u>style</u></b> 标签，将插入 <b><u>head</u></b> 标签尾部。'
     external_js_head:
       name: external_js_head
       label: "外部 JS 链接（head）"
-      type: textarea
+      type: code
       placeholder: 请输入 script 标签
       description: '填入外部 <b><u>JS</u></b> 链接，需要 <b><u>script</u></b> 标签，可按情况指定 <b><u>async</u></b> 和 <b><u>defer</u></b> 属性，将插入 <b><u>head</u></b> 标签尾部。'
     inline_js_head:
       name: inline_js_head
       label: "内嵌 JS（head）"
-      type: textarea
+      type: code
       placeholder: 请输入 JS 代码内容
       description: '填入 <b><u>JS</u></b> 代码，无需 <b><u>script</u></b> 标签，将插入 <b><u>head</u></b> 标签尾部。'
     external_js_body:
       name: external_js_body
       label: "外部 JS 链接（body）"
-      type: textarea
+      type: code
       placeholder: 请输入 script 标签
       description: '填入外部 <b><u>JS</u></b> 链接，需要 <b><u>script</u></b> 标签，可按情况指定 <b><u>async</u></b> 和 <b><u>defer</u></b> 属性，将插入 <b><u>body</u></b> 标签尾部。'
     inline_js_body:
       name: inline_js_body
       label: "内嵌JS（body）"
-      type: textarea
+      type: code
       placeholder: 请输入 JS 代码内容
       description: '填入 <b><u>JS</u></b> 代码，无需 <b><u>script</u></b> 标签，将插入 <b><u>body</u></b> 标签尾部。'
