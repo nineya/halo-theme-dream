@@ -105,10 +105,7 @@
   50%,100% { 
     transform: rotate(0deg); 
   } 
-}
-@media (min-width: 576px){.dream-bg .ant-form-item-control-wrapper { width: 100% !important;}}
-@media (min-width: 992px){.dream-bg .ant-form-item-control-wrapper { width: 80% !important;}}
-@media (min-width: 1200px){.dream-bg .ant-form-item-control-wrapper { width: 60% !important;max-width: 800px;}}`
+}`
     const style = document.createElement('style')
     style.appendChild(document.createTextNode(styleContent))
     document.getElementsByTagName('head')[0].appendChild(style)
