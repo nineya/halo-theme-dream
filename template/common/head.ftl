@@ -26,32 +26,32 @@
 
 <@global.head />
 
-<link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/theme.min.css?mew=${theme_version!}">
+<link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/theme.min.css?mew=${theme.version!}">
 <link rel="preload stylesheet" as="style" href="${theme_base!}/source/lib/font-awesome@4.7.0/css/font-awesome.min.css">
-<link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/style.min.css?mew=${theme_version!}">
+<link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/style.min.css?mew=${theme.version!}">
 
 <#if post?? || is_journals?? || is_error??>
     <link data-pjax rel="preload stylesheet" as="style"
           href="${theme_base!}/source/lib/highlightjs@11.5.1/styles/${settings.code_pretty!'atom-one-light'}.min.css"/>
-    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/post.min.css?mew=${theme_version!}"/>
+    <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/post.min.css?mew=${theme.version!}"/>
     <#assign enable_katex = (metas?? && metas.enable_katex?? && metas.enable_katex?trim!='')?then(metas.enable_katex?trim, (settings.enable_katex!false)?c)>
     <#if enable_katex=='true'>
         <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/lib/katex@0.12.0/katex.min.css"/>
     </#if>
     <#assign enable_share = (post?? && (metas?? && metas.enable_share?? && metas.enable_share?trim!='')?then(metas.enable_share?trim, (settings.enable_post_share!true)?c) == 'true') || (is_journals?? && settings.enable_journals_share!true)>
     <#if enable_share>
-        <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/dshare.min.css?mew=${theme_version!}">
+        <link data-pjax rel="preload stylesheet" as="style" href="${theme_base!}/source/css/dshare.min.css?mew=${theme.version!}">
     </#if>
 </#if>
 
-<link rel="stylesheet" href="${theme_base!}/source/css/mew-custom.min.css?mew=${theme_version!}">
+<link rel="stylesheet" href="${theme_base!}/source/css/mew-custom.min.css?mew=${theme.version!}">
 <#if is_post?? || is_sheet?? || is_photos?? || is_journals??>
     <link data-pjax rel="stylesheet" href="${theme_base!}/source/lib/fancybox@5.3.7/jquery.fancybox.min.css">
 </#if>
 <link rel="stylesheet" href="${theme_base!}/source/lib/qmsg/qmsg.min.css">
 
 <#if settings.cursor_style?? && settings.cursor_style!='none'>
-    <link rel="stylesheet" href="${theme_base!}/source/css/cursor/${settings.cursor_style}.min.css?mew=${theme_version!}">
+    <link rel="stylesheet" href="${theme_base!}/source/css/cursor/${settings.cursor_style}.min.css?mew=${theme.version!}">
 </#if>
 
 <#include "config.ftl">
