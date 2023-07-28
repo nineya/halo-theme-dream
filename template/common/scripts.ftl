@@ -1,5 +1,5 @@
 <script src="${theme_base!}/source/js/utils.min.js?mew=${theme.version!}"></script>
-<#if (settings.sidebar_toc?? && settings.sidebar_toc != 'none') || settings.drawer_toc!true>
+<#if (sidebar_toc!false) || settings.drawer_toc!true>
     <script src="${theme_base!}/source/js/btoc.min.js?mew=${theme.version!}"></script>
 </#if>
 <#if is_carousel??>
@@ -43,7 +43,7 @@
     <script data-pjax async src="${theme_base!}/source/lib/fancybox@5.3.7/jquery.fancybox.min.js"></script>
 </#if>
 
-<#if settings.sidebar_music?? && settings.sidebar_music != 'none'>
+<#if sidebar_music!false>
     <link rel="stylesheet" href="${theme_base!}/source/lib/aplayer@1.10.1/APlayer.min.css">
     <script defer src="${theme_base!}/source/lib/aplayer@1.10.1/APlayer.min.js"></script>
     <script defer src="${theme_base!}/source/lib/meting@2.0.1/Meting.min.js"></script>
