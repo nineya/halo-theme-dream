@@ -1301,83 +1301,33 @@ live2d:
           label: 显示
         - value: false
           label: 关闭
-    live2d_can_turn_to_home_page:
-      name: live2d_can_turn_to_home_page
-      label: 显示「返回首页」按钮
-      type: switch
-      data-type: bool
-      default: true
+    live2d_tool_button3:
+      name: live2d_tool_button3
+      label: 显示工具栏按钮
+      type: checkbox
+      default:
+        - live2d_can_turn_to_home_page
+        - live2d_can_switch_hitokoto
+        - live2d_can_switch_model
+        - live2d_can_switch_textures
+        - live2d_can_take_screenshot
+        - live2d_can_turn_to_about_page
+        - live2d_can_close_live2d
       options:
-        - value: true
-          label: 显示
-        - value: false
-          label: 关闭
-    live2d_can_switch_hitokoto:
-      name: live2d_can_switch_hitokoto
-      label: 显示「一言」按钮
-      type: switch
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 显示
-        - value: false
-          label: 关闭
-    live2d_can_switch_model:
-      name: live2d_can_switch_model
-      label: 显示「切换模型」按钮
-      type: switch
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 显示
-        - value: false
-          label: 关闭
-    live2d_can_switch_textures:
-      name: live2d_can_switch_textures
-      label: 显示「切换材质」按钮
-      type: switch
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 显示
-        - value: false
-          label: 关闭
-    live2d_can_take_screenshot:
-      name: live2d_can_take_screenshot
-      label: 显示「截图」按钮
-      type: switch
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 显示
-        - value: false
-          label: 关闭
-    live2d_can_turn_to_about_page:
-      name: live2d_can_turn_to_about_page
-      label: 显示「关于」按钮
-      type: switch
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 显示
-        - value: false
-          label: 关闭
-    live2d_can_close_live2d:
-      name: live2d_can_close_live2d
-      label: 显示「关闭看板娘」按钮
-      type: switch
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 显示
-        - value: false
-          label: 关闭
+              - value: live2d_can_turn_to_home_page
+                label: 返回首页
+              - value: live2d_can_switch_hitokoto
+                label: 一言
+              - value: live2d_can_switch_model
+                label: 切换模型
+              - value: live2d_can_switch_textures
+                label: 切换材质
+              - value: live2d_can_take_screenshot
+                label: 截图
+              - value: live2d_can_turn_to_about_page
+                label: 关于
+              - value: live2d_can_close_live2d
+                label: 关闭看板娘
 enhance:
   label: 增强功能
   items:

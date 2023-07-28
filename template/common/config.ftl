@@ -163,16 +163,12 @@
     DreamConfig["live2d_waifu_size"] = '${settings.live2d_waifu_size!'280x260'}';
     DreamConfig["live2d_model_id"] = '${settings.live2d_model_id!'0'}';
     DreamConfig["live2d_model_textures_id"] = '${settings.live2d_model_textures_id!'0'}';
-    DreamConfig["live2d_show_tool_menu"] = ${(settings.live2d_show_tool_menu!true)?c};
-    DreamConfig["live2d_can_turn_to_home_page"] = ${(settings.live2d_can_turn_to_home_page!true)?c};
-    DreamConfig["live2d_can_switch_hitokoto"] = ${(settings.live2d_can_switch_hitokoto!true)?c};
-    DreamConfig["live2d_can_switch_model"] = ${(settings.live2d_can_switch_model!true)?c};
-    DreamConfig["live2d_can_switch_textures"] = ${(settings.live2d_can_switch_textures!true)?c};
-    DreamConfig["live2d_can_take_screenshot"] = ${(settings.live2d_can_take_screenshot!true)?c};
-    DreamConfig["live2d_can_turn_to_about_page"] = ${(settings.live2d_can_turn_to_about_page!true)?c};
-    DreamConfig["live2d_can_close_live2d"] = ${(settings.live2d_can_close_live2d!true)?c};
     DreamConfig["live2d_model_rand_mode"] = '${settings.live2d_model_rand_mode!'switch'}';
     DreamConfig["live2d_model_textures_rand_mode"] = '${settings.live2d_model_textures_rand_mode!'rand'}';
+    DreamConfig["live2d_show_tool_menu"] = ${(settings.live2d_show_tool_menu!true)?c};
+    <#list settings.live2d_tool_button3 as button>
+    DreamConfig["${button!}"] = true;
+    </#list>
     </#if>
 
     /** 配置主题模式 */
