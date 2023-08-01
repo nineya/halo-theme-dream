@@ -46,7 +46,7 @@ basic_info:
     page_number:
       name: page_number
       label: 分页页码数量
-      type: text
+      type: number
       placeholder: '请输入数量数值'
       default: '5'
     record_number:
@@ -470,13 +470,13 @@ post:
     code_fold_line:
       name: code_fold_line
       label: 代码块折叠
-      type: text
+      type: number
       placeholder: '请输入代码行数数值'
       description: '代码行数超出指定行数后默认进行折叠，指定的行数需大于等于 20。'
     img_fold_height:
       name: img_fold_height
       label: 正文长图折叠
-      type: text
+      type: number
       placeholder: '请输入高度数值（px）'
       description: '图片高度超出指定高度（px）后默认进行折叠，指定的高度需大于等于 400px。'
     show_img_name:
@@ -493,7 +493,7 @@ post:
     invalid_tips_day:
       name: invalid_tips_day
       label: 文章失效提示
-      type: text
+      type: number
       default: 99999999
       placeholder: '请输入时间（天）'
       description: '文章超过指定天数未进行更新，展示文章或图片可能失效的温馨提示。'
@@ -681,7 +681,7 @@ comment:
     unfold_reply_num:
       name: unfold_reply_num
       label: 默认展开的二级回复数量
-      type: text
+      type: number
       default: 6
       placeholder: '请输入数量数值'
     show_comment_ua:
@@ -959,7 +959,7 @@ sidebar_config:
     music_config:
       name: music_config
       label: 侧边栏音乐-参数进阶配置
-      type: textarea
+      type: code
       placeholder: '请输入音乐参数配置'
       default: 'list-folded="true"
                 server="netease"
@@ -1014,19 +1014,19 @@ sidebar_config:
     ad_custom_code:
       name: ad_custom_code
       label: 侧边栏广告-自定义广告代码
-      type: textarea
+      type: code
       placeholder: '请输入广告代码'
       description: '在这里黏贴广告联盟提供的广告代码，<b><u>自定义广告代码</u></b> 模式时不能为空。'
     recent_posts_num:
       name: recent_posts_num
       label: 侧边栏最近文章-展示文章数量
-      type: text
+      type: number
       placeholder: 请输入数量数值
       default: 5
     recent_comments_num:
       name: recent_comments_num
       label: 侧边栏最近评论-展示评论数量
-      type: text
+      type: number
       placeholder: 请输入数量数值
       default: 5
     categories_more:
@@ -1044,7 +1044,7 @@ sidebar_config:
     categories_num:
       name: categories_num
       label: 侧边栏分类-展示分类数量
-      type: text
+      type: number
       placeholder: 请输入数量数值
       default: 10
     tags_more:
@@ -1062,7 +1062,7 @@ sidebar_config:
     tags_num:
       name: tags_num
       label: 侧边栏标签-展示标签数量
-      type: text
+      type: number
       placeholder: 请输入数量数值
       default: 18
     enable_tags_color:
@@ -1091,7 +1091,7 @@ sidebar_config:
     tagcloud_num:
       name: tagcloud_num
       label: 侧边栏标签云-展示标签数量
-      type: text
+      type: number
       placeholder: 请输入数量数值
       default: 32
     enable_tagcloud_color:
@@ -1120,7 +1120,7 @@ sidebar_config:
     links_num:
       name: links_num
       label: 侧边栏友链-展示友链数量
-      type: text
+      type: number
       placeholder: 请输入数量数值
       default: 10
 page_config:
@@ -1163,13 +1163,13 @@ page_config:
     link_comment_id:
       name: link_comment_id
       label: 友链页面-评论区ID
-      type: text
+      type: number
       placeholder: '请输入 ID'
       description: '友链页面没有 ID，需要指定一个自定义页面的 ID 用于评论，被指定的文章评论区将作为友链的评论区， <b>放空则不显示评论区。</b> '
     journals_fold_height:
       name: journals_fold_height
       label: 日志页面-动态内容折叠
-      type: text
+      type: number
       placeholder: '请输入高度数值（px）'
       description: '动态内容高度超出指定高度后默认进行折叠，指定的高度需大于等于 260px。'
     enable_journals_comment:
@@ -1246,15 +1246,15 @@ live2d:
     live2d_model_id:
       name: live2d_model_id
       label: '默认模型 ID'
-      type: text
-      default: '0'
+      type: number
+      default: 0
       placeholder: '请输入模型 ID'
       description: '默认模型 ID，参见 <a href="https://github.com/nineya/live2d-widget-model/blob/master/%E5%8F%AF%E7%94%A8model%E5%88%97%E8%A1%A8.md" target="_blank">可用model列表</a>。'
     live2d_model_textures_id:
       name: live2d_model_textures_id
       label: '默认材质 ID'
-      type: text
-      default: '0'
+      type: number
+      default: 0
       placeholder: '请输入材质 ID'
       description: '默认材质 ID，参见 <a href="https://github.com/nineya/live2d-widget-model/blob/master/%E5%8F%AF%E7%94%A8model%E5%88%97%E8%A1%A8.md" target="_blank">可用model列表</a>。'
     live2d_waifu_size:
@@ -1301,8 +1301,8 @@ live2d:
           label: 显示
         - value: false
           label: 关闭
-    live2d_tool_button3:
-      name: live2d_tool_button3
+    live2d_tool_button:
+      name: live2d_tool_button
       label: 显示工具栏按钮
       type: checkbox
       default:

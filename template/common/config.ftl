@@ -109,9 +109,7 @@
     <#if settings.website_time?? && settings.website_time!=''>
     DreamConfig["website_time"] = '${settings.website_time}';
     </#if>
-    <#if settings.sidebar_notice?? && settings.sidebar_notice!='none'>
     DreamConfig["notice_show_mode"] = '${settings.notice_show_mode!'index'}';
-    </#if>
     <#if settings.img_fold_height?? && settings.img_fold_height?number gte 400>
     DreamConfig["img_fold_height"] = ${settings.img_fold_height};
     </#if>
@@ -166,7 +164,7 @@
     DreamConfig["live2d_model_rand_mode"] = '${settings.live2d_model_rand_mode!'switch'}';
     DreamConfig["live2d_model_textures_rand_mode"] = '${settings.live2d_model_textures_rand_mode!'rand'}';
     DreamConfig["live2d_show_tool_menu"] = ${(settings.live2d_show_tool_menu!true)?c};
-    <#list settings.live2d_tool_button3 as button>
+    <#list settings.live2d_tool_button as button>
     DreamConfig["${button!}"] = true;
     </#list>
     </#if>
