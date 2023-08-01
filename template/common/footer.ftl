@@ -16,7 +16,7 @@
             <li>
                 <p class="icon-spot">
                     <span>&copy; ${.now?string('yyyy')} ${user.nickname!}</span><#if settings.record_number?? && settings.record_number!=''><a href="http://beian.miit.gov.cn/publish/query/indexFirst.action" target="_blank" rel="noopener noreferrer nofollow">${settings.record_number!
-                    }</a></#if><span class="footer-truncation">Powered by <a class="powered" href="https://halo.run/" target="_blank">Halo</a> & <a class="powered" href="https://github.com/nineya/halo-theme-dream" target="_blank">Dream</a></span></p>
+                    }</a></#if><span class="footer-truncation">Powered by <a class="powered" href="https://github.com/nineya/halo-plus" target="_blank">Halo</a> & <a class="powered" href="https://github.com/nineya/halo-theme-dream" target="_blank">Dream</a></span></p>
                 <#if (settings.website_time?? && settings.website_time!='') || settings.enable_busuanzi!true>
                     <p class="icon-spot">
                     <#if settings.website_time?? && settings.website_time!=''>
