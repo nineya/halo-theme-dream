@@ -9,6 +9,7 @@
     </#if>
 </#macro>
 <#macro layout title,canonical>
+    <#assign enable_comment = (settings.enable_comment!true) && ((post?? && (!post.disallowComment!false)) || (is_journals?? && settings.enable_journals_comment!true) || (is_links?? && settings.link_comment_id?? && settings.link_comment_id!=''))>
     <#if post?? || is_journals?? || is_error?? || (settings.enable_compress!'none')=='none'>
         <@layout0 title,canonical><#nested /></@layout0>
     <#elseif settings.enable_compress == 'format'>

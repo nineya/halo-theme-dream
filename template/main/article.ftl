@@ -95,7 +95,7 @@
             </div>
         </div>
     </#if>
-    <#if (!post.disallowComment!false) && settings.enable_comment!true>
+    <#if enable_comment>
         <div class="card card-content" id="comment-wrapper">
             <h3 class="comment-title">评论</h3>
             <#include "comment.ftl">

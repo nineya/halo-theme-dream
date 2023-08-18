@@ -1,4 +1,5 @@
 <#include "template/layout.ftl">
+<#include "template/main/comment.ftl">
 <@layout title="${journals_title!'动态'} - ${blog_title!}" canonical="${journals_url!}">
     <#if journals.content?? && journals.content?size gt 0>
         <#list journals.content as journal>
@@ -16,7 +17,7 @@
                                     class="fa fa-heart-o"></i><em>${(journal.likes != 0)?string(journal.likes?c,'喜欢')}</em></a>
                     </span>
 
-                    <#if settings.enable_journals_comment!true>
+                    <#if enable_comment>
                     <span class="journal-operation-item">
                         <a class="comment"><i
                                     class="fa fa-commenting-o"></i><em><#if journal.commentCount==0>评论<#else>${journal.commentCount}</#if></em></a>
@@ -28,9 +29,8 @@
                     </span>
                     </#if>
                 </div>
-                <#if settings.enable_journals_comment!true>
+                <#if enable_comment>
                 <div class="journal-comment">
-                    <#include "template/main/comment.ftl">
                     <@comment journal.id?c, "journal" />
                 </div>
                 </#if>

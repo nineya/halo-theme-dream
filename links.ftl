@@ -61,7 +61,7 @@
             </div>
         </div>
     </div>
-    <#if settings.link_comment_id?? && settings.link_comment_id!='' && settings.enable_comment!true>
+    <#if enable_comment>
         <div class="card card-content" id="comment-wrapper">
             <h3 class="comment-title">评论</h3>
             <#include "template/main/comment.ftl">
