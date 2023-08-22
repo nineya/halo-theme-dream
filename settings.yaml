@@ -1264,12 +1264,18 @@ live2d:
       default: '280x260'
       placeholder: '请输入宽度(px)x高度(px)'
       description: '看板娘的（宽度x高度），单位为px。'
+      options:
+        - value: '280x260'
+        - value: '320x300'
     live2d_edge_side:
       name: live2d_edge_side
       label: 看板娘贴边方向与距离
       type: text
       default: 'right:50'
       placeholder: '请输入位置:距离(px)'
+      options:
+        - value: 'right:50'
+        - value: 'left:50'
     live2d_model_rand_mode:
       name: live2d_model_rand_mode
       label: 模型切换方式
