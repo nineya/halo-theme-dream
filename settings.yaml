@@ -888,7 +888,7 @@ sidebar_config:
       label: 侧边栏信息-自定义社交渠道选项
       type: textarea
       placeholder: "名称|图标|链接地址"
-      description: 一行表示一个社交渠道，每个社交渠道需要名称、图标和链接地址三个参数，参数之间使用 “<b>|</b>” 分隔，主题内置图标采用 <a href="https://fontawesome.uihtm.com/icons.html" target="_blank">FontAwesome 4.7</a>'。
+      description: 一行表示一个社交渠道，每个社交渠道需要名称、图标和链接地址三个参数，参数之间使用 “<b>|</b>” 分隔，主题内置图标采用 <a href="https://www.remixicon.cn/" target="_blank">RemixIcon 3.5.0</a>'。
     notice_content:
       name: notice_content
       label: 侧边栏公告-博客公告

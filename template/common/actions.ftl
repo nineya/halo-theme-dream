@@ -3,14 +3,14 @@
         <span>弹</span>
     </div>
     <div id="toggle-mode">
-        <i class="fa fa-adjust"></i>
+        <i class="ri-contrast-fill"></i>
     </div>
     <#if settings.drawer_toc!true>
         <div class="action-toc is-hidden-desktop">
-            <i class="fa fa-list-ul"></i>
+            <i class="ri-list-unordered"></i>
         </div>
     </#if>
     <div id="back-to-top">
-        <i class="fa fa-arrow-up"></i>
+        <i class="ri-arrow-up-line"></i>
     </div>
 </div>

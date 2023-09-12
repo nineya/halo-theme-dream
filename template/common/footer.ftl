@@ -25,11 +25,11 @@
                     <#if settings.enable_busuanzi!true>
                         <span class="icon-spot footer-truncation">
                             <span id="busuanzi_container_site_uv" style="display: none">
-                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <i class="ri-account-circle-line" aria-hidden="true"></i>
 					        <span class="stand" id="busuanzi_value_site_uv">0</span>访客
 					        </span>
                             <span id="busuanzi_container_site_pv" style="display: none">
-                            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                            <i class="ri-pie-chart-line" aria-hidden="true"></i>
 					        <span class="stand" id="busuanzi_value_site_pv">0</span>访问
                         </span>
 					</span>

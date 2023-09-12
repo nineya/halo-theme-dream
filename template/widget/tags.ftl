@@ -2,9 +2,9 @@
 <div class="card widget tags ${sidebar.hide!}">
     <@tagTag method="list">
         <div class="card-title">
-            <i class="fa fa-tags card-title-label"></i><span>标签</span>
+            <i class="ri-price-tag-3-line card-title-label"></i><span>标签</span>
             <#if settings.tags_more?? && settings.tags_more== true && tags?size gt num?number>
-                <a class="card-more" href="${tags_url!}">更多<i class="fa fa-angle-double-right"></i></a>
+                <a class="card-more" href="${tags_url!}">更多<i class="ri-arrow-right-double-line"></i></a>
             </#if>
         </div>
         <#if tags?? && tags?size gt 0>

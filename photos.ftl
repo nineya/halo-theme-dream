@@ -15,7 +15,7 @@
         <div class="photos-gallery load-block"></div>
     <#else>
         <div class="card card-empty">
-            <i class="fa fa-inbox"></i>
+            <i class="ri-inbox-2-fill"></i>
             内容为空，回<a href="${context!}">主页</a>看看吧
         </div>
     </#if>

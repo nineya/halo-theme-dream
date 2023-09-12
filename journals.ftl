@@ -5,7 +5,7 @@
         <#list journals.content as journal>
             <div class="card card-content journal">
                 <p class="journal-date">
-                    <i class="fa fa-paper-plane-o"></i>
+                    <i class="ri-send-plane-line"></i>
                     <em>${journal.createTime?string('yyyy年MM月dd日 HH:mm:ss')}</em>
                 </p>
                 <div class="journal-content fold">
@@ -14,18 +14,18 @@
                 <div class="journal-operation">
                     <span class="journal-operation-item">
                         <a class="like" data-id="${journal.id?c}" data-likes="${(journal.likes!0)?c}"><i
-                                    class="fa fa-heart-o"></i><em>${(journal.likes != 0)?string(journal.likes?c,'喜欢')}</em></a>
+                                    class="ri-heart-3-line"></i><em>${(journal.likes != 0)?string(journal.likes?c,'喜欢')}</em></a>
                     </span>
 
                     <#if enable_comment>
                     <span class="journal-operation-item">
                         <a class="comment"><i
-                                    class="fa fa-commenting-o"></i><em><#if journal.commentCount==0>评论<#else>${journal.commentCount}</#if></em></a>
+                                    class="ri-message-3-line"></i><em><#if journal.commentCount==0>评论<#else>${journal.commentCount}</#if></em></a>
                     </span>
                     </#if>
                     <#if enable_share>
                     <span class="journal-operation-item">
-                        <a class="share"><i class="fa fa-share"></i><em>分享</em></a>
+                        <a class="share"><i class="ri-share-forward-line"></i><em>分享</em></a>
                     </span>
                     </#if>
                 </div>
@@ -40,7 +40,7 @@
         <@pagination method="journals" datas=journals display="${settings.page_number!5}" />
     <#else>
         <div class="card card-empty">
-            <i class="fa fa-inbox"></i>
+            <i class="ri-inbox-2-fill"></i>
             还没有发表过动态，回<a href="${context!}">主页</a>看看吧
         </div>
     </#if>

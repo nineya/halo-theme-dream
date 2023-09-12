@@ -19,7 +19,7 @@
             </div>
         <#else>
             <div class="card card-empty">
-                <i class="fa fa-inbox"></i>
+                <i class="ri-inbox-2-fill"></i>
                 还没有创建过标签，回<a href="${context!}">主页</a>看看吧
             </div>
         </#if>

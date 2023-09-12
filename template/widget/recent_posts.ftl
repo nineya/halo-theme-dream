@@ -1,6 +1,6 @@
 <div class="card widget recent-posts ${sidebar.hide!}">
     <div class="card-title">
-        <i class="fa fa-history card-title-label"></i><span>最新文章</span>
+        <i class="ri-history-line card-title-label"></i><span>最新文章</span>
     </div>
     <@postTag method="latest" top="${settings.recent_posts_num!5}">
         <#if posts?size gt 0>
@@ -9,7 +9,7 @@
                     <#list posts as post>
                         <li class="item">
                             <a class="link" href="${post.fullPath!}" title="${post.title!}">${post.title!}</a>
-                            <i class="fa fa-link"></i>
+                            <i class="ri-link"></i>
                         </li>
                     </#list>
                 </ul>

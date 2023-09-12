@@ -27,7 +27,7 @@
 <@global.head />
 
 <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/theme.min.css?mew=${theme.version!}">
-<link rel="preload stylesheet" as="style" href="${theme_base!}/source/lib/font-awesome@4.7.0/css/font-awesome.min.css">
+<link rel="preload stylesheet" as="style" href="${theme_base!}/source/lib/remixicon@3.5.0/remixicon.min.css">
 <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/style.min.css?mew=${theme.version!}">
 
 <#if post?? || is_journals?? || is_error??>

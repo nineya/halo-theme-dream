@@ -35,7 +35,7 @@ const journalContext = {
     $journals.each(function () {
       const $this = $(this)
       if (this.scrollHeight >= DreamConfig.journals_fold_height) {
-        $this.append('<div class="expand-done"><i class="fa fa-angle-double-up"></i></div>')
+        $this.append('<div class="expand-done"><i class="ri-arrow-up-double-line"></i></div>')
       } else {
         $this.removeClass('fold')
       }

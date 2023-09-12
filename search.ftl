@@ -7,7 +7,7 @@
         <@pagination method="search" datas=posts keyword="${keyword!}" display="${settings.page_number!5}" />
     <#else>
         <div class="card card-empty">
-            <i class="fa fa-inbox"></i>
+            <i class="ri-inbox-2-fill"></i>
             搜索结果为空，回<a href="${context!}">主页</a>看看吧
         </div>
     </#if>

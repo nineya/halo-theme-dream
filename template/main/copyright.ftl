@@ -19,7 +19,7 @@
         <div class="level-item">
             <h6>许可协议</h6>
             <a rel="noopener" target="_blank" title="CC BY 4.0"
-               href="https://creativecommons.org/licenses/by/4.0/deed.zh"><i class="icon fa fa-creative-commons"></i>CC BY 4.0</a>
+               href="https://creativecommons.org/licenses/by/4.0/deed.zh"><i class="icon ri-creative-commons-line"></i>CC BY 4.0</a>
         </div>
     </div>
 </div>

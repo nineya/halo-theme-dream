@@ -60,13 +60,13 @@ const postContext = {
         $(this).parent().hide()
       }
       // 生成标题栏的按钮
-      let titleButton = `<div><i class="fa fa-angle-down${close}" data-code='#${id}'></i><i class="fa fa-clone btn-clipboard" title="复制代码" data-clipboard-target='#${id}'></i></div>`
+      let titleButton = `<div><i class="ri-arrow-down-s-line${close}" data-code='#${id}'></i><i class="ri-file-copy-2-line btn-clipboard" title="复制代码" data-clipboard-target='#${id}'></i></div>`
 
       // 组装代码块
       $(this).attr('id', id)
       $pre.prepend(`<ul>${lis}</ul>`)
       if (nums > DreamConfig.code_fold_line) {
-        $pre.wrap('<figure class="fold hljs"></figure>').append('<div class="expand-done"><i class="fa fa-angle-double-up"></i></div>')
+        $pre.wrap('<figure class="fold hljs"></figure>').append('<div class="expand-done"><i class="ri-arrow-up-double-line"></i></div>')
       } else {
         $pre.wrap('<figure class="hljs"></figure>')
       }
@@ -124,14 +124,14 @@ const postContext = {
       const $gallery = $(this).parent()
       if (this.complete) {
         if (this.scrollHeight >= DreamConfig.img_fold_height) {
-          $gallery.append('<div class="expand-done"><i class="fa fa-angle-double-up"></i></div>')
+          $gallery.append('<div class="expand-done"><i class="ri-arrow-up-double-line"></i></div>')
         } else {
           $gallery.removeClass('fold')
         }
       } else {
         this.onload = function () {
           if (this.scrollHeight >= DreamConfig.img_fold_height) {
-            $gallery.append('<div class="expand-done"><i class="fa fa-angle-double-up"></i></div>')
+            $gallery.append('<div class="expand-done"><i class="ri-arrow-up-double-line"></i></div>')
           } else {
             $gallery.removeClass('fold')
           }
@@ -144,7 +144,7 @@ const postContext = {
     if (postContextInitial) return
     let $body = $('body')
     // 代码块展开和关闭点击事件
-    $body.on('click', 'figure>figcaption .fa-angle-down', function () {
+    $body.on('click', 'figure>figcaption .ri-arrow-down-s-line', function () {
       let $this = $(this)
       if ($this.is('.close')) {
         $($this.attr('data-code')).parent().slideDown(200)

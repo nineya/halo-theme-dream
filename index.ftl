@@ -29,10 +29,10 @@
                                 <p class="swiper-slide-details-title">${post.title!}</p>
                                 <ul class="breadcrumb">
                                     <li><@global.timeline datetime=post.createTime/></li>
-                                    <li><i class="fa fa-eye"></i>${post.visits?c}</li>
+                                    <li><i class="ri-eye-line"></i>${post.visits?c}</li>
                                     <#if !post.disallowComment!false>
-                                        <li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li></#if>
-                                    <li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li>
+                                        <li><i class="ri-question-answer-line"></i>${post.commentCount?c}</li></#if>
+                                    <li><i class="ri-thumb-up-line"></i>${post.likes?c}</li>
                                     <#assign heat= (24+post.visits*0.1+post.likes*2+post.commentCount*3) />
                                     <#assign heatColor= '#'+(heat < 37)?string('ffa87e',(heat < 120)?string('fb734a','e0081c')) />
                                     <li style="color: ${heatColor}">${heat}℃</li>
@@ -96,7 +96,7 @@
         <@pagination method="index" datas=posts display="${settings.page_number!5}" />
     <#else>
         <div class="card card-empty">
-            <i class="fa fa-inbox"></i>
+            <i class="ri-inbox-2-fill"></i>
             还没有发表过文章
         </div>
     </#if>

@@ -114,7 +114,7 @@ function triggerPosterShare(config) {
         config.image ? `<div class="dshare-poster-cover"><img alt="${config.title}封面" src="${config.image}"/></div>` : ''
       }${config.title !== '' ? `<div class="dshare-poster-content"><p class="dshare-poster-title">${config.title}</p>` : ''
       }<p class="dshare-poster-desc">${config.description}</p><div class="dshare-poster-footer"><img class="dshare-poster-qrcode" src="${data}" alt="${config.title
-      }分享海报"/><div class="dshare-poster-qrcode-info"><p class="dshare-poster-qrcode-site">${config.origin}</p><p class="dshare-poster-qrcode-msg">手机扫描二维码查看</p></div></div></div></div><i title="点击下载封面" class="dshare-poster-download fa fa-arrow-down"></i></div></div>`)
+      }分享海报"/><div class="dshare-poster-qrcode-info"><p class="dshare-poster-qrcode-site">${config.origin}</p><p class="dshare-poster-qrcode-msg">手机扫描二维码查看</p></div></div></div></div><i title="点击下载封面" class="dshare-poster-download ri-download-line"></i></div></div>`)
       let $posterCrad = $('.dshare-poster-crad')
       $posterCrad.click(e => e.stopPropagation())
       $('.dshare-poster-download').click(e => {

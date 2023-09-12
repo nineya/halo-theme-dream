@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 						<div class="mew-cloud-desc-type">来源：${type[this.options.type] || '网络来源'}${this.options.password ? ' | 提取码：' + this.options.password : ''}</div>
 					</div>
 					<a class="mew-cloud-link" href="${this.options.url}" target="_blank" rel="noopener noreferrer nofollow">
-						<i class="fa fa-download"></i>
+						<i class="ri-download-line"></i>
 					</a>
 				`
         this.drawComplete()
@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
           target: this.getAttribute('target') || '_blank',
           icon: this.getAttribute('icon'),
         }
-        this.innerHTML = `<a class="mew-btn">${this.options.icon ? `<i class="fa ${this.options.icon}"></i>` : ''}${this.innerHTML}</a>`
+        this.innerHTML = `<a class="mew-btn">${this.options.icon ? `<i class="${this.options.icon}"></i>` : ''}${this.innerHTML}</a>`
         const btn = this.querySelector('a.mew-btn')
         this.options.href && (btn.href = this.options.href, btn.target = this.options.target)
         this.drawComplete()

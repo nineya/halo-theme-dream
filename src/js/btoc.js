@@ -64,7 +64,7 @@ function Btoc(tocList, contentElement) {
           id = text + '_' + this.eIndex
           elem.setAttribute('id', id)
         }
-        tocStr += `<li><a data-id="#${id}"><i class="fa fa-paperclip"></i>${text}</a>`
+        tocStr += `<li><a data-id="#${id}"><i class="ri-attachment-2"></i>${text}</a>`
         this.eIndex++
         if (this.eIndex >= this.elementList.length) {
           tocStr += '</li>'

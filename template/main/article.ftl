@@ -13,10 +13,10 @@
                     <h1 class="title">${post.title!}</h1>
                     <ul class="breadcrumb">
                         <li><@global.timeline datetime=post.createTime/></li>
-                        <li><i class="fa fa-eye"></i>${post.visits?c}</li>
-                        <#if !post.disallowComment!false><li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li></#if>
-                        <#if !is_sheet??><li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li></#if>
-                        <li><i class="fa fa-pencil"></i>${post.wordCount?c}</li>
+                        <li><i class="ri-eye-line"></i>${post.visits?c}</li>
+                        <#if !post.disallowComment!false><li><i class="ri-question-answer-line"></i>${post.commentCount?c}</li></#if>
+                        <#if !is_sheet??><li><i class="ri-thumb-up-line"></i>${post.likes?c}</li></#if>
+                        <li><i class="ri-quill-pen-line"></i>${post.wordCount?c}</li>
                     </ul>
                 </div>
             </div>
@@ -24,10 +24,10 @@
     </#if>
     <#assign updateInterval = ((.now?long - post.updateTime?long)/86400000)?floor >
     <#if updateInterval gt (settings.invalid_tips_day!'99999999')?number >
-        <div class="card tips brightness"><i class="fa fa-times click-close" data-close=".tips"></i>本文最后更新于 ${post.updateTime?string('yyyy-MM-dd')}，距今已有 ${updateInterval} 天，若文章内容或图片链接失效，请留言反馈。</div>
+        <div class="card tips brightness"><i class="ri-close-line click-close" data-close=".tips"></i>本文最后更新于 ${post.updateTime?string('yyyy-MM-dd')}，距今已有 ${updateInterval} 天，若文章内容或图片链接失效，请留言反馈。</div>
     </#if>
     <#if (metas?? && metas.tips?? && metas.tips!='')>
-        <div class="card tips brightness"><i class="fa fa-times click-close" data-close=".tips"></i>${metas.tips}</div>
+        <div class="card tips brightness"><i class="ri-close-line click-close" data-close=".tips"></i>${metas.tips}</div>
     </#if>
     <div class="card">
         <div class="card-content main">
@@ -36,10 +36,10 @@
                 <div class="meta">
                     <ul class="breadcrumb">
                         <li><@global.timeline datetime=post.createTime/></li>
-                        <li><i class="fa fa-eye"></i>${post.visits?c}</li>
-                        <#if !post.disallowComment!false><li><i class="fa fa-comments-o"></i>${post.commentCount?c}</li></#if>
-                        <#if !is_sheet??><li><i class="fa fa-thumbs-o-up"></i>${post.likes?c}</li></#if>
-                        <li><i class="fa fa-pencil"></i>${post.wordCount?c}</li>
+                        <li><i class="ri-eye-line"></i>${post.visits?c}</li>
+                        <#if !post.disallowComment!false><li><i class="ri-question-answer-line"></i>${post.commentCount?c}</li></#if>
+                        <#if !is_sheet??><li><i class="ri-thumb-up-line"></i>${post.likes?c}</li></#if>
+                        <li><i class="ri-quill-pen-line"></i>${post.wordCount?c}</li>
                     </ul>
                     <#if post.categories?? && post.categories?size gt 0>
                         <div class="level-item">
@@ -82,14 +82,14 @@
             <div class="level post-navigation card-content">
                 <#if prevPost??>
                     <a class="level-item" href="${prevPost.fullPath!}">
-                        <i class="fa fa-angle-left"></i>
+                        <i class="ri-arrow-left-s-line"></i>
                         <span>${prevPost.title!}</span>
                     </a>
                 </#if>
                 <#if nextPost??>
                     <a class="level-item" href="${nextPost.fullPath!}">
                         <span>${nextPost.title!}</span>
-                        <i class="fa fa-angle-right"></i>
+                        <i class="ri-arrow-right-s-line"></i>
                     </a>
                 </#if>
             </div>

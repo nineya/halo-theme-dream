@@ -9,7 +9,7 @@
               <p class="motto spark-input">${user.description!}</p>
                 <#if settings.profile_location?? && settings.profile_location!=''>
                   <p class="address">
-                    <i class="fa fa-map-marker"></i>
+                    <i class="ri-map-pin-line"></i>
                     <span>${settings.profile_location!}</span>
                   </p>
                 </#if>
@@ -43,37 +43,37 @@
         </#if>
         <div class="level"><#if settings.social_github?? && settings.social_github!=''>
                 <a class="level-item button is-transparent" target="_blank" title="Github主页" href="https://github.com/${settings.social_github}" rel="nofollow noopener noreferrer">
-                    <i class="fa fa-github"></i>
+                    <i class="ri-github-fill"></i>
                 </a>
             </#if>
             <#if settings.social_qq?? && settings.social_qq!=''>
                 <a class="level-item button is-transparent" target="_blank" title="QQ聊天" href="tencent://message/?uin=${settings.social_qq}&Site=&Menu=yes" rel="nofollow noopener noreferrer">
-                    <i class="fa fa-qq"></i>
+                    <i class="ri-qq-fill"></i>
                 </a>
             </#if>
             <#if settings.social_weibo?? && settings.social_weibo!=''>
                 <a class="level-item button is-transparent" target="_blank" title="Weibo" href="https://weibo.com/${settings.social_weibo}" rel="nofollow noopener noreferrer">
-                    <i class="fa fa-weibo"></i>
+                    <i class="ri-weibo-fill"></i>
                 </a>
             </#if>
             <#if settings.social_twitter?? && settings.social_twitter!=''>
                 <a class="level-item button is-transparent" target="_blank" title="Twitter" href="https://twitter.com/${settings.social_twitter}" rel="nofollow noopener noreferrer">
-                    <i class="fa fa-twitter"></i>
+                    <i class="ri-twitter-fill"></i>
                 </a>
             </#if>
             <#if settings.social_facebook?? && settings.social_facebook!=''>
                 <a class="level-item button is-transparent" target="_blank" title="Facebook" href="https://www.facebook.com/${settings.social_facebook}" rel="nofollow noopener noreferrer">
-                    <i class="fa fa-facebook"></i>
+                    <i class="ri-facebook-fill"></i>
                 </a>
             </#if>
             <#if settings.social_email?? && settings.social_email!=''>
                 <a class="level-item button is-transparent" target="_blank" title="给我发邮件" href="mailto:${settings.social_email}" rel="nofollow noopener noreferrer">
-                    <i class="fa fa-envelope"></i>
+                    <i class="ri-mail-fill"></i>
                 </a>
             </#if>
             <#if settings.social_telegram?? && settings.social_telegram!=''>
                 <a class="level-item button is-transparent" target="_blank" title="Telegram" href="https://t.me/${settings.social_telegram}" rel="nofollow noopener noreferrer">
-                    <i class="fa fa-telegram"></i>
+                    <i class="ri-telegram-fill"></i>
                 </a>
             </#if>
             <#if settings.custom_social_options?? && settings.custom_social_options!=''>
@@ -92,7 +92,7 @@
             </#if>
             <#if settings.social_rss!true >
                 <a class="level-item button is-transparent" target="_blank" title="RSS订阅" href="${rss_url!}">
-                    <i class="fa fa-rss"></i>
+                    <i class="ri-rss-fill"></i>
                 </a>
             </#if></div>
     </div>

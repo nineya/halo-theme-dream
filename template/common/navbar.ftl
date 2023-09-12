@@ -2,7 +2,7 @@
 <header class="navbar">
     <div class="navbar-above">
         <div class="container<#if settings.sidebar_column?? && settings.sidebar_column!='all'> two-column</#if>">
-            <i class="fa fa-bars navbar-slideicon"></i>
+            <i class="ri-list-unordered navbar-slideicon"></i>
             <a class="navbar-item logo-title" href="${context!}">
                 <#if blog_logo?? && blog_logo!=''>
                     <img class="logo-img" src="${blog_logo!}" alt="${blog_title!}" height="28">
@@ -23,7 +23,7 @@
                                         <#else>
                                             <a class="item" style="cursor:default;" href="javascript:" title="${menu.name!}"><#if menu.icon?? && menu.icon!=''><i class="m-icon ${menu.icon}"></i></#if>${menu.name!}</a>
                                         </#if>
-                                        <i class="fa fa-angle-down item-dropdown-link-icon" style="color:var(--main)"></i>
+                                        <i class="ri-arrow-down-s-line item-dropdown-link-icon" style="color:var(--main)"></i>
                                     </div>
                                     <nav class="item-dropdown-menu">
                                         <#list menu.children?sort_by('priority') as child>
@@ -64,7 +64,7 @@
             </nav>
             <form data-pjax class="navbar-search" method="get" action="/search">
                 <input maxlength="16" autocomplete="off" placeholder="搜索内容..." name="keyword" value class="input" type="text">
-                <button type="submit" class="submit" aria-label="搜索按钮"><i class="fa fa-search"></i></button>
+                <button type="submit" class="submit" aria-label="搜索按钮"><i class="ri-search-line"></i></button>
                 <span class="icon"></span>
                 <@postTag method="latest" top="5">
                     <nav class="result">
@@ -77,7 +77,7 @@
                     </nav>
                 </@postTag>
             </form>
-            <i class="fa fa-search navbar-searchicon"></i>
+            <i class="ri-search-line navbar-searchicon"></i>
         </div>
     </div>
 
@@ -93,15 +93,15 @@
             </div>
             <ul class="navbar-slideout-menu">
                 <li class="item">
-                    <i class="fa fa-pencil-square-o"></i>
+                    <i class="ri-edit-circle-line"></i>
                     <@postTag method="count"><span>累计撰写 <strong>${count!"0"}</strong> 篇文章</span></@postTag>
                 </li>
                 <li class="item">
-                    <i class="fa fa-tags"></i>
+                    <i class="ri-price-tag-3-line"></i>
                     <@tagTag method="count"><span>累计创建 <strong>${count!"0"}</strong> 个标签</span></@tagTag>
                 </li>
                 <li class="item">
-                    <i class="fa fa-commenting-o"></i>
+                    <i class="ri-message-2-line"></i>
                     <@commentTag method="count"><span>累计收到 <strong>${count!"0"}</strong> 条评论</span></@commentTag>
                 </li>
             </ul>
@@ -109,7 +109,7 @@
                 <li>
                     <a class="link panel" href="#" rel="nofollow">
                         <span>导航</span>
-                        <i class="fa fa-angle-right"></i>
+                        <i class="ri-arrow-right-s-line"></i>
                     </a>
                     <ul class="slides panel-body panel-side-menu">
                         <@menuTag method="tree">
@@ -119,7 +119,7 @@
                                         <li>
                                             <div class="link panel">
                                                 <a href="${menu.url!}" title="${menu.name!}">${menu.name!}</a>
-                                                <i class="fa fa-angle-right"></i>
+                                                <i class="ri-arrow-right-s-line"></i>
                                             </div>
                                             <ul class="slides panel-body">
                                                 <#if menu.children?? && menu.children?size gt 0>
@@ -129,7 +129,7 @@
                                                                 <li>
                                                                     <div class="link panel">
                                                                         <a href="${child.url!}" title="${child.name!}">${child.name!}</a>
-                                                                        <i class="fa fa-angle-right"></i>
+                                                                        <i class="ri-arrow-right-s-line"></i>
                                                                     </div>
                                                                     <ul class="slides panel-body">
                                                                         <#list child.children?sort_by('priority') as child1>
@@ -187,7 +187,7 @@
                 <@tagTag method="list">
                     <#if tags?size gt 0>
                         <div class="tag-search">
-                            <i class="fa fa-bullseye"></i>标签搜索
+                            <i class="ri-focus-2-line"></i>标签搜索
                         </div>
                         <ul class="cloud">
                             <#assign colors=["#F8D800", "#0396FF", "#EA5455", "#7367F0", "#32CCBC", "#F6416C", "#28C76F", "#9F44D3", "#F55555", "#736EFE", "#E96D71", "#DE4313", "#D939CD", "#4C83FF", "#F072B6", "#C346C2", "#5961F9", "#FD6585", "#465EFB", "#FFC600", "#FA742B", "#5151E5", "#BB4E75", "#FF52E5", "#49C628", "#00EAFF", "#F067B4", "#F067B4", "#ff9a9e", "#00f2fe", "#4facfe", "#f093fb", "#6fa3ef", "#bc99c4", "#46c47c", "#f9bb3c", "#e8583d", "#f68e5f"]>

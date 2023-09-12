@@ -22,9 +22,9 @@
     <#assign postCounts = {}>
     <@categoryTag method="list">
         <div class="card-title">
-            <i class="fa fa-th-large card-title-label"></i><span>分类</span>
+            <i class="ri-apps-line card-title-label"></i><span>分类</span>
             <#if settings.categories_more?? && settings.categories_more== true && categories?size gt num?number>
-                <a class="card-more" href="${categories_url!}">更多<i class="fa fa-angle-double-right"></i></a>
+                <a class="card-more" href="${categories_url!}">更多<i class="ri-arrow-right-double-line"></i></a>
             </#if>
         </div>
         <#list categories as category>
