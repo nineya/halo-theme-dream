@@ -719,7 +719,7 @@ table td, table th {
         margin-right: 10px;
         user-select: none;
         white-space: nowrap;
-        color: var(--main);
+        color: var(--title);
         transition: color 0.35s;
 
         > i {
@@ -3868,6 +3868,12 @@ button.swiper-pagination-bullet {
 
   .card:not(.is-hidden-not-desktop):not(.is-hidden-all) ~ .card {
     margin-top: 1.4rem !important;
+  }
+}
+
+@media (max-width: (@desktop-min-width - 1)) {
+  .navbar-above .navbar-nav .item .m-icon {
+    display: none !important;
   }
 }
 
