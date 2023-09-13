@@ -375,6 +375,11 @@ const Utils = {
       let name = emoji.name
       let img = `<img class="dream-emoji" src="/themes/dream/source/lib/halo-comment@1.1.4/assets/emoji/${emoji.fileName}.png" alt="${name}"/>`
       html = html.replace(new RegExp(`\\[/${name}\\]`, 'gm'), img)
+        .replace(/\!\[[^\]]*\]\([^)]*\)/g, '[图片内容]')
+        .replace(/```\w*\n.*\n```/g, '[代码块内容]')
+        .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+        .replace(/^#+\s+([^\n]*)/gm, '$1')
+        .replace('\n', ' ')
     }
     return html
   }
