@@ -23,6 +23,8 @@ const initPjax = () => {
 const computeScrollTop = (target) => {
   // 当前为横幅大图模式，处理滚动
   if (target.pathname !== '/' && $('.banner').length !== 0) {
+    // 避免跳转时顶部导航栏收缩
+    window.initTop = 99999999
     return window.innerHeight / 4
   }
   return 0

@@ -174,12 +174,12 @@ const commonContext = {
   },
   /* 处理滚动 */
   initScroll() {
-    let initTop = 0
+    window.initTop = 0
 
     // true：上划，false：下滑
     function scrollDirection(currentTop) {
-      const result = currentTop > initTop
-      initTop = currentTop
+      const result = currentTop > window.initTop
+      window.initTop = currentTop
       return result
     }
 
