@@ -1553,15 +1553,17 @@ table td, table th {
   background: rgba(0, 0, 0, .1);
   border-radius: 2px;
   opacity: 0;
+  overflow: hidden;
   transition: all 0.3s;
 
   &:after {
     font-family: remixicon;
-    font-size: 40px;
+    font-size: 36px;
+    margin-left: -4px;
     letter-spacing: 0;
     text-transform: none;
     font-variant: initial;
-    line-height: 1;
+    line-height: 44px;
   }
 
   &:hover {
@@ -1581,7 +1583,7 @@ table td, table th {
   right: auto;
 
   &:after {
-    content: '\ea6e';
+    content: '\ea64';
   }
 }
 
@@ -1591,7 +1593,7 @@ table td, table th {
   left: auto;
 
   &:after {
-    content: '\ea64';
+    content: '\ea6e';
   }
 }
 
