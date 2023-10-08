@@ -66,7 +66,7 @@
                 <input maxlength="16" autocomplete="off" placeholder="搜索内容..." name="keyword" value class="input" type="text">
                 <button type="submit" class="submit" aria-label="搜索按钮"><i class="ri-search-line"></i></button>
                 <span class="icon"></span>
-                <@postTag method="latest" top="5">
+                <@postTag method="sort" count="5" direction="desc" sort="visits">
                     <nav class="result">
                         <#list posts as post>
                             <a href="${post.fullPath!}" title="${post.title!}" class="item">
