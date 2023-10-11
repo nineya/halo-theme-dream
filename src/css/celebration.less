@@ -1,9 +1,13 @@
 html.celebration {
   --main: hsla(0, 0%, 100%, 0.9);
   --theme: #ff3b3b!important;
-  --background: #cb1213;
+  --background: rgba(201, 57, 58, 0.95);
   --title: #fff;
+  --light-a: #fff;
   --light-b: #f13a3a;
+  --light-c: #dcdcdc;
+  --light-d: #f13a3a;
+  --dark-a: #eee;
   --dark-b: #eee;
   --dark-c: #fff;
   --dark-d: #e4e4e4;
@@ -13,10 +17,15 @@ html.celebration {
   --bg-b: #ec9494;
   --bg-c: #ea5454;
   --bg-d: rgba(189, 13, 14, 0.8);
+  --bg-e: #f13a3a;
   --bg-g: #ec9494;
   --bg-j: hsla(0, 0%, 100%, 0.102);
+  --bg-k: hsla(0, 0%, 100%, 0.102);
   --bg-l: rgb(239 107 107 / 80%);
   --bg-h: hsl(0deg 68% 53% / 80%);
+  --box-shadow: 1px 1px 3px 1px #cb0b0b;
+
+  background-color: #ec9494;
 
   body {
     background: rgb(145 11 11 / 90%);
@@ -24,6 +33,24 @@ html.celebration {
 
   .banner .banner-waves {
     fill: #b81213;
+  }
+
+  .navbar .navbar-search .input, .navbar .navbar-search-mobile .input {
+    &:focus {
+      background: var(--bg-a);
+    }
+
+    &::placeholder {
+      color: #ec9494;
+    }
+  }
+
+  .navbar-slideout {
+    background: rgb(145, 11, 11);
+  }
+
+  .navbar-slideout-menu {
+    background: var(--background);
   }
 
   .card {
@@ -48,5 +75,17 @@ html.celebration {
         background: rgb(255 132 132 / 40%);
       }
     }
+  }
+
+  .tips {
+    background-color: rgb(253 237 237 / 90%)!important;
+  }
+
+  .widget.profile .address {
+    color: #e4e4e4;
+  }
+
+  .links:not(.widget) .link-desc {
+    color: #e4e4e4;
   }
 }
