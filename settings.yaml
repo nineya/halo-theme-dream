@@ -166,6 +166,8 @@ basic_style:
           label: 默认
         - value: 'clean'
           label: 清爽
+        - value: 'celebration'
+          label: 庆典
     default_theme:
       name: default_theme
       label: 默认主题模式
