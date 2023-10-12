@@ -24,6 +24,14 @@ html.celebration {
   --bg-l: rgb(239 107 107 / 80%);
   --bg-h: hsl(0deg 68% 53% / 80%);
   --box-shadow: 1px 1px 3px 1px #cb0b0b;
+  --comm-color-a: #eee;
+  --comm-color-c: #eee;
+  --comm-color-b: #eee;
+  --comm-color-d: #bbb;
+  --comm-color-i: #ddd;
+  --comm-bg-a: rgb(181 51 51 / 80%);
+  --comm-bg-b: rgb(204 78 78 / 90%);
+  --comm-bg-h: rgb(204 78 78 / 90%);
 
   background-color: #ec9494;
 
@@ -74,6 +82,15 @@ html.celebration {
         color: #eebfbf;
         background: rgb(255 132 132 / 40%);
       }
+
+      pre code {
+        color: hsla(0, 25%, 94%, 0.9);
+      }
+    }
+
+    .pwd {
+      background: var(--bg-g);
+      color: var(--bg-g);
     }
   }
 
@@ -87,5 +104,17 @@ html.celebration {
 
   .links:not(.widget) .link-desc {
     color: #e4e4e4;
+  }
+
+  .aplayer .aplayer-info .aplayer-music .aplayer-author,
+  .aplayer .aplayer-lrc p,
+  .aplayer .aplayer-info .aplayer-controller .aplayer-time,
+  .aplayer .aplayer-list ol li .aplayer-list-author,
+  .aplayer .aplayer-list ol li .aplayer-list-index {
+    color: #ddd;
+  }
+
+  .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+    fill: #ddd;
   }
 }
