@@ -201,6 +201,8 @@ basic_style:
           label: 默认字体
         - value: 'WenCang.woff2'
           label: 问藏书房体
+        - value: 'AlimamaDaoLiTi.woff2'
+          label: 阿里巴巴刀隶体
         - value: 'custom'
           label: 自定义
     custom_font:

@@ -1,5 +1,5 @@
 <style>
-    <#assign fontSrc=(settings.web_font?? && settings.web_font!='default')?then((settings.web_font=='custom')?then((settings.custom_font?? && settings.custom_font!='')?then(settings.custom_font, ''), '${theme_base!}/source/font/${settings.web_font}'), '')>
+    <#assign fontSrc=(settings.web_font?? && settings.web_font!='default')?then((settings.web_font=='custom')?then(settings.custom_font!'', '${theme_base!}/source/font/${settings.web_font}'), '')>
     <#if fontSrc!=''>
       <#if fontSrc?ends_with(".woff")>
       <#assign fontFormat="woff">
