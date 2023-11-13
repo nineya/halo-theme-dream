@@ -20,18 +20,33 @@
     }
 
     </#if>
-    <#if settings.enable_gray_mode!false>
     html {
-        filter: grayscale(1) !important;
-    }
-
+    <#if settings.enable_gray_mode!false>
+      filter: grayscale(1) !important;
     </#if>
     <#if settings.theme_color?? && settings.theme_color!=''>
-    html {
         --theme: ${settings.theme_color};
+    </#if>
+    <#if settings.cursor_style??>
+    <#if settings.cursor_style=='breeze'>
+      --cursor-default: url(/themes/dream/source/cursor/breeze/Arrow.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/breeze/Hand.cur), auto;
+      --cursor-text: url(/themes/dream/source/cursor/breeze/IBeam.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/breeze/Cross.cur), auto;
+    <#elseif settings.cursor_style=='black_cat'>
+      --cursor-default: url(/themes/dream/source/cursor/black_cat/normal.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/black_cat/ayuda.cur), auto;
+      --cursor-text: url(/themes/dream/source/cursor/black_cat/texto.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/black_cat/precision.cur), auto;
+    <#elseif settings.cursor_style=='mellow'>
+      --cursor-default: url(/themes/dream/source/cursor/mellow/normal.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/mellow/link.cur), auto;
+      --cursor-text: url(/themes/dream/source/cursor/mellow/normal.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/mellow/normal.cur), auto;
+    </#if>
+    </#if>
     }
 
-    </#if>
     <#if settings.night_theme_color?? && settings.night_theme_color!=''>
     html.night {
         --theme: ${settings.night_theme_color};

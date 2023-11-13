@@ -1,7 +1,7 @@
-@default: url(../../cursor/breeze/Arrow.cur), auto;
-@pointer: url(../../cursor/breeze/Hand.cur), auto;
-@text: url(../../cursor/breeze/IBeam.cur), auto;
-@zoom-in: url(../../cursor/breeze/Arrow.cur), auto;
+@default: var(--cursor-default);
+@pointer: var(--cursor-pointer);
+@text: var(--cursor-text);
+@zoom-in: var(--cursor-zoom-in);
 
 body {
   cursor: @default;
@@ -11,7 +11,11 @@ a, button, .expand-done, .navbar-above .navbar-nav .item, .navbar-slideicon, .na
   cursor: @pointer;
 }
 
-.main-content img {
+.aplayer .aplayer-pic, .aplayer .aplayer-music, .aplayer .aplayer-bar-wrap, .aplayer .aplayer-icon {
+  cursor: @pointer !important;
+}
+
+.main-content :not(.jg-entry)>img:not([class]) {
   cursor: @zoom-in;
 }
 

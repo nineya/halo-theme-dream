@@ -54,7 +54,7 @@
 <link rel="stylesheet" href="${theme_base!}/source/lib/qmsg/qmsg.min.css">
 
 <#if settings.cursor_style?? && settings.cursor_style!='none'>
-    <link rel="stylesheet" href="${theme_base!}/source/css/cursor/${settings.cursor_style}.min.css?mew=${theme.version!}">
+    <link rel="stylesheet" href="${theme_base!}/source/css/cursor.min.css?mew=${theme.version!}">
 </#if>
 
 <#include "config.ftl">
