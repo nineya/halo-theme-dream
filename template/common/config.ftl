@@ -38,11 +38,11 @@
       --cursor-pointer: url(/themes/dream/source/cursor/black_cat/ayuda.cur), auto;
       --cursor-text: url(/themes/dream/source/cursor/black_cat/texto.cur), auto;
       --cursor-zoom-in: url(/themes/dream/source/cursor/black_cat/precision.cur), auto;
-    <#elseif settings.cursor_style=='mellow'>
-      --cursor-default: url(/themes/dream/source/cursor/mellow/normal.cur), auto;
-      --cursor-pointer: url(/themes/dream/source/cursor/mellow/link.cur), auto;
-      --cursor-text: url(/themes/dream/source/cursor/mellow/normal.cur), auto;
-      --cursor-zoom-in: url(/themes/dream/source/cursor/mellow/normal.cur), auto;
+    <#else>
+      --cursor-default: url(/themes/dream/source/cursor/${settings.cursor_style}/arrow.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/${settings.cursor_style}/hand.cur), auto;
+      --cursor-text: url(/themes/dream/source/cursor/${settings.cursor_style}/arrow.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/${settings.cursor_style}/arrow.cur), auto;
     </#if>
     </#if>
     }
