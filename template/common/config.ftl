@@ -27,7 +27,7 @@
     <#if settings.theme_color?? && settings.theme_color!=''>
         --theme: ${settings.theme_color};
     </#if>
-    <#if settings.cursor_style??>
+    <#if settings.cursor_style?? && settings.cursor_style!='none'>
     <#if settings.cursor_style=='breeze'>
       --cursor-default: url(/themes/dream/source/cursor/breeze/Arrow.cur), auto;
       --cursor-pointer: url(/themes/dream/source/cursor/breeze/Hand.cur), auto;
