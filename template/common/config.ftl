@@ -30,19 +30,34 @@
     <#if settings.cursor_style?? && settings.cursor_style!='none'>
     <#if settings.cursor_style=='breeze'>
       --cursor-default: url(/themes/dream/source/cursor/breeze/Arrow.cur), auto;
-      --cursor-pointer: url(/themes/dream/source/cursor/breeze/Hand.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/breeze/Hand.cur), pointer;
       --cursor-text: url(/themes/dream/source/cursor/breeze/IBeam.cur), auto;
-      --cursor-zoom-in: url(/themes/dream/source/cursor/breeze/Cross.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/breeze/Cross.cur), zoom-in;
     <#elseif settings.cursor_style=='black_cat'>
       --cursor-default: url(/themes/dream/source/cursor/black_cat/normal.cur), auto;
-      --cursor-pointer: url(/themes/dream/source/cursor/black_cat/ayuda.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/black_cat/ayuda.cur), pointer;
       --cursor-text: url(/themes/dream/source/cursor/black_cat/texto.cur), auto;
-      --cursor-zoom-in: url(/themes/dream/source/cursor/black_cat/precision.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/black_cat/precision.cur), zoom-in;
+    <#elseif settings.cursor_style=='overwatch'>
+      --cursor-default: url(/themes/dream/source/cursor/overwatch/pointer.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/overwatch/link.cur), pointer;
+      --cursor-text: url(/themes/dream/source/cursor/overwatch/text.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/overwatch/cross.cur), zoom-in;
+    <#elseif settings.cursor_style=='rainbow_rain'>
+      --cursor-default: url(/themes/dream/source/cursor/rainbow_rain/normal.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/rainbow_rain/link.cur), pointer;
+      --cursor-text: url(/themes/dream/source/cursor/rainbow_rain/texto.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/rainbow_rain/precision.cur), zoom-in;
+    <#elseif settings.cursor_style=='marry'>
+      --cursor-default: url(/themes/dream/source/cursor/marry/arrow.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/marry/arrow.cur), pointer;
+      --cursor-text: url(/themes/dream/source/cursor/marry/beam.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/marry/move.cur), zoom-in;
     <#else>
       --cursor-default: url(/themes/dream/source/cursor/${settings.cursor_style}/arrow.cur), auto;
-      --cursor-pointer: url(/themes/dream/source/cursor/${settings.cursor_style}/hand.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/${settings.cursor_style}/hand.cur), pointer;
       --cursor-text: url(/themes/dream/source/cursor/${settings.cursor_style}/arrow.cur), auto;
-      --cursor-zoom-in: url(/themes/dream/source/cursor/${settings.cursor_style}/arrow.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/${settings.cursor_style}/arrow.cur), zoom-in;
     </#if>
     </#if>
     }

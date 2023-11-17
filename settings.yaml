@@ -1365,6 +1365,12 @@ enhance:
           label: 彩虹小马
         - value: debris
           label: 彩色碎片
+        - value: overwatch
+          label: 守望先锋
+        - value: rainbow_rain
+          label: 彩虹云雨
+        - value: marry
+          label: 小樱茉莉
         - value: black_cat
           label: 黑色小猫
         - value: music_cat_01
