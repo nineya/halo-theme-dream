@@ -28,6 +28,7 @@ postMetaField:
   - enable_share
   - enable_bullet_screen
   - index_carousel
+  - enable_donate
 # 自定义页 meta 变量
 sheetMetaField:
   - enable_copyright
@@ -35,3 +36,4 @@ sheetMetaField:
   - enable_katex
   - enable_share
   - enable_bullet_screen
+  - enable_donate

@@ -537,6 +537,18 @@ post:
           label: 默认开启
         - value: false
           label: 默认关闭
+    enable_post_donate:
+      name: enable_post_donate
+      label:  开启文章打赏
+      type: radio
+      data-type: bool
+      default: true
+      description: '如果文章或页面元数据配置了 <b><u>enable_donate</u></b> 项，则当前配置将被覆盖。'
+      options:
+        - value: true
+          label:  默认开启
+        - value: false
+          label:  默认关闭
     donate_alipay:
       name: donate_alipay
       label: 支付宝捐赠二维码
