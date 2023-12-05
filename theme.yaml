@@ -18,7 +18,7 @@ repo: https://github.com/nineya/halo-theme-dream
 # 版本号
 version: 3.1.1
 # 最低支持的 Halo-Plus 版本
-require: 1.0.2
+require: 1.1.0
 # 文章页 meta 变量
 postMetaField:
   - enable_copyright
