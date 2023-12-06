@@ -16,9 +16,9 @@ website: https://blog.nineya.com
 # 主题github开源地址
 repo: https://github.com/nineya/halo-theme-dream
 # 版本号
-version: 3.1.1
+version: 3.2.0
 # 最低支持的 Halo-Plus 版本
-require: 1.0.2
+require: 1.1.0
 # 文章页 meta 变量
 postMetaField:
   - enable_copyright
@@ -28,6 +28,7 @@ postMetaField:
   - enable_share
   - enable_bullet_screen
   - index_carousel
+  - enable_donate
 # 自定义页 meta 变量
 sheetMetaField:
   - enable_copyright
@@ -35,3 +36,4 @@ sheetMetaField:
   - enable_katex
   - enable_share
   - enable_bullet_screen
+  - enable_donate

@@ -1,5 +1,5 @@
 <style>
-    <#assign fontSrc=(settings.web_font?? && settings.web_font!='default')?then((settings.web_font=='custom')?then((settings.custom_font?? && settings.custom_font!='')?then(settings.custom_font, ''), '${theme_base!}/source/font/${settings.web_font}'), '')>
+    <#assign fontSrc=(settings.web_font?? && settings.web_font!='default')?then((settings.web_font=='custom')?then(settings.custom_font!'', '${theme_base!}/source/font/${settings.web_font}'), '')>
     <#if fontSrc!=''>
       <#if fontSrc?ends_with(".woff")>
       <#assign fontFormat="woff">
@@ -20,18 +20,48 @@
     }
 
     </#if>
-    <#if settings.enable_gray_mode!false>
     html {
-        filter: grayscale(1) !important;
-    }
-
+    <#if settings.enable_gray_mode!false>
+      filter: grayscale(1) !important;
     </#if>
     <#if settings.theme_color?? && settings.theme_color!=''>
-    html {
         --theme: ${settings.theme_color};
+    </#if>
+    <#if settings.cursor_style?? && settings.cursor_style!='none'>
+    <#if settings.cursor_style=='breeze'>
+      --cursor-default: url(/themes/dream/source/cursor/breeze/Arrow.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/breeze/Hand.cur), pointer;
+      --cursor-text: url(/themes/dream/source/cursor/breeze/IBeam.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/breeze/Cross.cur), zoom-in;
+    <#elseif settings.cursor_style=='black_cat'>
+      --cursor-default: url(/themes/dream/source/cursor/black_cat/normal.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/black_cat/ayuda.cur), pointer;
+      --cursor-text: url(/themes/dream/source/cursor/black_cat/texto.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/black_cat/precision.cur), zoom-in;
+    <#elseif settings.cursor_style=='overwatch'>
+      --cursor-default: url(/themes/dream/source/cursor/overwatch/pointer.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/overwatch/link.cur), pointer;
+      --cursor-text: url(/themes/dream/source/cursor/overwatch/text.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/overwatch/cross.cur), zoom-in;
+    <#elseif settings.cursor_style=='rainbow_rain'>
+      --cursor-default: url(/themes/dream/source/cursor/rainbow_rain/normal.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/rainbow_rain/link.cur), pointer;
+      --cursor-text: url(/themes/dream/source/cursor/rainbow_rain/texto.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/rainbow_rain/precision.cur), zoom-in;
+    <#elseif settings.cursor_style=='marry'>
+      --cursor-default: url(/themes/dream/source/cursor/marry/arrow.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/marry/arrow.cur), pointer;
+      --cursor-text: url(/themes/dream/source/cursor/marry/beam.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/marry/move.cur), zoom-in;
+    <#else>
+      --cursor-default: url(/themes/dream/source/cursor/${settings.cursor_style}/arrow.cur), auto;
+      --cursor-pointer: url(/themes/dream/source/cursor/${settings.cursor_style}/hand.cur), pointer;
+      --cursor-text: url(/themes/dream/source/cursor/${settings.cursor_style}/arrow.cur), auto;
+      --cursor-zoom-in: url(/themes/dream/source/cursor/${settings.cursor_style}/arrow.cur), zoom-in;
+    </#if>
+    </#if>
     }
 
-    </#if>
     <#if settings.night_theme_color?? && settings.night_theme_color!=''>
     html.night {
         --theme: ${settings.night_theme_color};

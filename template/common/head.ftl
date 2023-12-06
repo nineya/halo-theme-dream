@@ -29,6 +29,9 @@
 <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/theme.min.css?mew=${theme.version!}">
 <link rel="preload stylesheet" as="style" href="${theme_base!}/source/lib/remixicon@3.5.0/remixicon.min.css">
 <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/style.min.css?mew=${theme.version!}">
+<#if settings.theme_style?? && settings.theme_style=='celebration'>
+    <link rel="preload stylesheet" as="style" href="${theme_base!}/source/css/celebration.min.css?mew=${theme.version!}">
+</#if>
 
 <#if post?? || is_journals?? || is_error??>
     <link data-pjax rel="preload stylesheet" as="style"
@@ -51,7 +54,7 @@
 <link rel="stylesheet" href="${theme_base!}/source/lib/qmsg/qmsg.min.css">
 
 <#if settings.cursor_style?? && settings.cursor_style!='none'>
-    <link rel="stylesheet" href="${theme_base!}/source/css/cursor/${settings.cursor_style}.min.css?mew=${theme.version!}">
+    <link rel="stylesheet" href="${theme_base!}/source/css/cursor.min.css?mew=${theme.version!}">
 </#if>
 
 <#include "config.ftl">

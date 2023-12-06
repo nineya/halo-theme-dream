@@ -1,4 +1,5 @@
-<#assign donate = (settings.donate_alipay?? && settings.donate_alipay!='') || (settings.donate_wechat?? && settings.donate_wechat!='') />
+<#assign donate = ((metas?? && metas.enable_donate?? && metas.enable_donate?trim!='')?then(metas.enable_donate?trim == 'true', (settings.enable_post_donate!true)))
+    && ((settings.donate_alipay?? && settings.donate_alipay!='') || (settings.donate_wechat?? && settings.donate_wechat!='')) />
 <#if donate || !is_sheet??>
     <div class="admire">
         <div class="admire-content">

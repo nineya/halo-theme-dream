@@ -166,6 +166,8 @@ basic_style:
           label: 默认
         - value: 'clean'
           label: 清爽
+        - value: 'celebration'
+          label: 庆典
     default_theme:
       name: default_theme
       label: 默认主题模式
@@ -199,6 +201,8 @@ basic_style:
           label: 默认字体
         - value: 'WenCang.woff2'
           label: 问藏书房体
+        - value: 'AlimamaDaoLiTi.woff2'
+          label: 阿里巴巴刀隶体
         - value: 'custom'
           label: 自定义
     custom_font:
@@ -533,6 +537,18 @@ post:
           label: 默认开启
         - value: false
           label: 默认关闭
+    enable_post_donate:
+      name: enable_post_donate
+      label:  开启文章打赏
+      type: radio
+      data-type: bool
+      default: true
+      description: '如果文章或页面元数据配置了 <b><u>enable_donate</u></b> 项，则当前配置将被覆盖。'
+      options:
+        - value: true
+          label:  默认开启
+        - value: false
+          label:  默认关闭
     donate_alipay:
       name: donate_alipay
       label: 支付宝捐赠二维码
@@ -1345,8 +1361,34 @@ enhance:
       options:
         - value: none
           label: 关闭
+        - value: OwO
+          label: OwO
+        - value: UwU
+          label: UwU
         - value: breeze
           label: 清风（深色）
+        - value: mellow
+          label: 卡通圆润
+        - value: water_01
+          label: 彩虹水滴（一）
+        - value: water_02
+          label: 彩虹水滴（二）
+        - value: horse
+          label: 彩虹小马
+        - value: debris
+          label: 彩色碎片
+        - value: overwatch
+          label: 守望先锋
+        - value: rainbow_rain
+          label: 彩虹云雨
+        - value: marry
+          label: 小樱茉莉
+        - value: black_cat
+          label: 黑色小猫
+        - value: music_cat_01
+          label: 音乐小猫（一）
+        - value: music_cat_02
+          label: 音乐小猫（二）
     cursor_move:
       name: cursor_move
       label: 鼠标移动特效
@@ -1383,6 +1425,8 @@ enhance:
           label: 烟花特效
         - value: granule
           label: 粒子爆炸
+        - value: prosperous
+          label: 富强民主
     enable_sw:
       name: enable_sw
       label: "启用 Service Worker 优化"
