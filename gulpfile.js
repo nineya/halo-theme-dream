@@ -43,6 +43,7 @@ task('version', (done) => {
   const packagePath = 'package.json'
   const themeData = fs.readFileSync(themePath, 'utf8')
     .replace(/^version:\s+[^\s]+$/m, 'version: ' + version)
+    .replace(/^(editorOptions:.+mew=)[^\s]+$/m, '$1' + version)
   fs.writeFileSync(themePath, themeData)
   let packageData = fs.readFileSync(packagePath, 'utf8')
     .replace(/"version":\s*"[^"]+"/, `"version": "${version}"`)
