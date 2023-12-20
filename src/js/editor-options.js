@@ -130,6 +130,7 @@
     width: 100%;
     height: 48px;
     overflow: hidden;
+    user-select: none;
 }
 
 ${item}:before {
