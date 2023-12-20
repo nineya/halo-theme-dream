@@ -1,4 +1,5 @@
-(function() {
+(function () {
+  const commentVersion = '1.1.6'
   const customElement = [
     {
       value: '<mew-subtitle>$副标题</mew-subtitle>',
@@ -105,6 +106,7 @@
     handleCustomElement()
     return {
       hint: {
+        emoji: handleEmojiImg(),
         extend: [
           {
             key: '<mew',
@@ -136,5 +138,14 @@
           }
         })
     })
+  }
+
+  function handleEmojiImg() {
+    let emojiList = ['hehe', 'haha', 'tushe', 'a', 'ku', 'nu', 'kaixin', 'han', 'lei', 'heixian', 'bishi', 'bugaoxing', 'zhenbang', 'qian', 'yiwen', 'yingxiang', 'tu', 'yi', 'weiqu', 'huaxin', 'hu', 'xiaoyan', 'len', 'taikaixin', 'huaji', 'mianqiang', 'kuanhan', 'guai', 'shuijiao', 'jingku', 'shengqi', 'jingya', 'pen', 'turanxingfen', 'wabi', 'tanshou', 'wuzuixiao', 'hejiu', 'xili', 'landeli', 'zhayao', 'chigua', 'xiaoguai', 'nidongde', 'heiheihei', 'huanhu', 'xiaoniao', 'suanshuang', 'jinzhang', 'anzhongguancha', 'xiaohonglian', 'yamiedie', 'weiweiyixiao', 'what', 'tuosai', 'pu', 'kunchenggou', 'kejianzhongguancha', 'caigou', 'laohu', 'aowu', 'aoteman', 'heitougaoxing', 'heitoudengyan', 'wangyuanjing', 'butin', 'ganfan', 'damuzhi', 'shengli', 'haha2', 'ok', 'honglingjin', 'aixin', 'xinsui', 'meigui', 'liwu', 'yanhua', 'caihong', 'taiyang', 'xingxingyueliang', 'dangao', 'chabei', 'xiangjiao', 'bianbian', 'yaowan', 'qianbi', 'lazhu', 'shafa', 'yinyue', 'dengpao', 'shouzhi']
+    let emojis = {}
+    emojiList.forEach(key => {
+      emojis[key] = `/themes/dream/source/lib/halo-comment@${commentVersion}/assets/emoji/${key}.png`
+    })
+    return emojis
   }
 })()
