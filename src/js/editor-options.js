@@ -50,7 +50,7 @@
       html: 'mew-message  | 消息'
     },
     {
-      value: '<mew-hr></mew-hr>>',
+      value: '<mew-hr></mew-hr>',
       html: 'mew-hr | 信封分割线'
     },
     {
