@@ -119,24 +119,36 @@
   }
 
   function handleCustomElement() {
-    let customs = new Set(customElement
-      .map(item => item.html)
-      .map(html => html.substring(0, html.indexOf(' '))))
-    customs.forEach(item => {
-      if (customElements.get(item)) {
-        return
-      }
-      customElements.define(item,
-        class extends HTMLElement {
-          constructor() {
-            super()
-            if (this.hasAttribute('draw')) return
-            this.innerText = this.outerHTML
-            this.style = 'display: block;background: #eee;padding: 9px;border-radius: 5px;color: #999;font-family: monospace;'
-            this.setAttribute('draw', true)
-          }
-        })
-    })
+    let cssText = Array.from(
+      new Set(customElement
+        .map(item => item.html)
+        .map(html => html.substring(0, html.indexOf(' ')))
+      )
+    ).map(item => `${item} {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 48px;
+    overflow: hidden;
+}
+
+${item}:before {
+    content: '${item} 自定义元素';
+    position: absolute;
+    display: block;
+    background: #eee;
+    border-radius: 8px;
+    height: 48px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-family: monospace;
+    color: #999;
+}`)
+      .join('\n')
+    const style = document.createElement('style')
+    style.appendChild(document.createTextNode(cssText))
+    document.getElementById('vditor').before(style)
   }
 
   function handleEmojiImg() {
