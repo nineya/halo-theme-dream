@@ -297,7 +297,10 @@
               })
             })
             .then((res) => {
-              if (res.status !== 200) reject(null)
+              if (res.status !== 200) {
+                reject(res)
+                return
+              }
               controller.abort() // 中断
               resolve(res)
             })
@@ -308,8 +311,8 @@
       // 判断浏览器是否支持 Promise.any
       if (!Promise.any) createPromiseAny()
 
-      // 谁先返回"成功状态"则返回谁的内容，如果都返回"失败状态"则返回null
-      return Promise.any(PromiseAll).catch(() => null)
+      // 谁先返回"成功状态"则返回谁的内容
+      return Promise.any(PromiseAll)
     }
   }
 })()
