@@ -1430,6 +1430,19 @@ enhance:
           label: 富强民主
         - value: heart
           label:  爱心特效
+    enable_compress:
+      name: enable_compress
+      label: "启用 HTML 压缩"
+      type: radio
+      data-type: text
+      default: format
+      options:
+        - value: none
+          label: 关闭
+        - value: format
+          label: 压缩空格
+        - value: single
+          label: 完全格式压缩
     enable_sw:
       name: enable_sw
       label: "启用 Service Worker 优化"
@@ -1458,19 +1471,6 @@ enhance:
           https://npm.elemecdn.com
       placeholder: 请输入 CDN 地址（一行一个）
       description: '填入可用的 <b><u>NPM 公共开源 CDN</u></b> 地址（一行一个），通过 <b><u>“{CDN 地址}/{项目名}@{版本号}/${文件路径}”</u></b> 可访问到文件，如：<u>https://unpkg.com/halo-theme-dream@3.2.1/source/js/utils.min.js</u>'
-    enable_compress:
-      name: enable_compress
-      label: "启用 HTML 压缩"
-      type: radio
-      data-type: text
-      default: format
-      options:
-        - value: none
-          label: 关闭
-        - value: format
-          label: 压缩空格
-        - value: single
-          label: 完全格式压缩
     effects_sakura_mode:
       name: effects_sakura_mode
       label: 樱花飘落特效显示模式
