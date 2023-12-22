@@ -977,10 +977,11 @@ sidebar_config:
       label: 侧边栏音乐-参数进阶配置
       type: code
       placeholder: '请输入音乐参数配置'
-      default: 'list-folded="true"
-                server="netease"
-                type="playlist"
-                id="7355014621"'
+      default: |-
+           list-folded="true"
+           server="netease"
+           type="playlist"
+           id="7355014621"
       description: '输入音乐参数配置(<b><u>id / server / type</u></b>必填)，详细配置方式见官方文档：<a href="https://github.com/metowolf/MetingJS/" target="_blank">MetingJS 2.0</a>。'
     show_ad_tag:
       name: show_ad_tag
@@ -1439,12 +1440,24 @@ enhance:
       options:
         - value: "false"
           label: 关闭
-        - value: "&install=true"
-          label: 开启CDN并发请求
-        - value: "&install=true&offLine=true"
+        - value: "&concurrent=true"
+          label: 开启并发CDN请求
+        - value: "&cache=true"
           label: 开启全站离线
+        - value: "&concurrent=true&cache=true"
+          label: 开启并发CDN与全站离线
         - value: "uninstall"
           label: 卸载
+    sw_cdn_source:
+      name: sw_cdn_source
+      label: "Service Worker 并发 CDN 源"
+      type: code
+      default: |-
+          https://unpkg.com
+          https://cdn.jsdelivr.net/npm
+          https://npm.elemecdn.com
+      placeholder: 请输入 CDN 地址（一行一个）
+      description: '填入可用的 <b><u>NPM 公共开源 CDN</u></b> 地址（一行一个），通过 <b><u>“{CDN 地址}/{项目名}@{版本号}/${文件路径}”</u></b> 可访问到文件，如：<u>https://unpkg.com/halo-theme-dream@3.2.1/source/js/utils.min.js</u>'
     enable_compress:
       name: enable_compress
       label: "启用 HTML 压缩"

@@ -1,6 +1,6 @@
 <title>${title!}<#if settings.small_title?? && settings.small_title!=''>|${settings.small_title!}</#if></title>
 <#if settings.enable_sw?? && settings.enable_sw != "false">
-    <script src="${(settings.enable_sw == "uninstall")?then('${theme_base!}/source/js/sw.min.js?mew=2.1.2','/sw.min.js?mew=2.1.2${settings.enable_sw!}')}"></script>
+    <script src="${(settings.enable_sw == "uninstall")?then('${theme_base!}/source/js/sw.min.js?mew=3.2.2&uninstall=true','/sw.min.js?mew=3.2.2${settings.enable_sw!}&cdn=${(settings.sw_cdn_source!)?replace("\n",",")}')}"></script>
 </#if>
 <meta charset="utf-8"/>
 <#assign description=(post??)?then(post.summary!, meta_description!)!user.description!>
