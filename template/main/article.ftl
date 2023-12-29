@@ -1,7 +1,8 @@
 <#macro article post,commentType>
-    <#if post.thumbnail?? && post.thumbnail!=''>
+    <#local thumbnail = (post.thumbnail?? && post.thumbnail!='')?then(post.thumbnail!, (settings.default_thumbnail?? && settings.default_thumbnail!='')?then(settings.default_thumbnail + settings.default_thumbnail?contains('?')?then("&","?") + "postId=" + post.id?c, ''))>
+    <#if thumbnail!=''>
         <div class="card widget">
-            <div class="cover-image" style="background-image: url(${post.thumbnail!})">
+            <div class="cover-image" style="background-image: url(${thumbnail!})">
                 <#if categories?? && categories?size gt 0>
                     <div class="category">
                         <#list categories as category>
@@ -31,7 +32,7 @@
     </#if>
     <div class="card">
         <div class="card-content main">
-            <#if !post.thumbnail?? || post.thumbnail==''>
+            <#if thumbnail==''>
                 <h1 class="title">${post.title!}</h1>
                 <div class="meta">
                     <ul class="breadcrumb">

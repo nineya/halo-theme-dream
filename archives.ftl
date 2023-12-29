@@ -6,10 +6,11 @@
                 <div class="timeline-title">${archive.year?c}</div>
                 <div class="timeline">
                     <#list archive.posts as post>
+                        <#assign thumbnail = (post.thumbnail?? && post.thumbnail!='')?then(post.thumbnail!, (settings.default_thumbnail?? && settings.default_thumbnail!='')?then(settings.default_thumbnail + settings.default_thumbnail?contains('?')?then("&","?") + "postId=" + post.id?c, ''))>
                         <article class="media">
-                            <#if post.thumbnail?? && post.thumbnail!=''>
+                            <#if thumbnail!=''>
                                 <a href="${post.fullPath}" class="media-left">
-                                    <img class="not-gallery" src="${post.thumbnail!}" alt="${post.title!}">
+                                    <img class="not-gallery" src="${thumbnail!}" alt="${post.title!}">
                                 </a>
                             </#if>
                             <div class="media-content">
