@@ -22,7 +22,7 @@
                     <#if settings.website_time?? && settings.website_time!=''>
                         <span id="websiteDate">建站<span class="stand">00</span>天<span class="stand">0</span>时<span class="stand">0</span>分<span class="stand">0</span>秒</span>
                     </#if>
-                    <#if settings.enable_busuanzi!true>
+                    <#if settings.enable_busuanzi?? && settings.enable_busuanzi=='show'>
                         <span class="icon-spot footer-truncation">
                             <span id="busuanzi_container_site_uv" style="display: none">
                             <i class="ri-account-circle-line" aria-hidden="true"></i>

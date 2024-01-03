@@ -1430,6 +1430,20 @@ enhance:
           label: 富强民主
         - value: heart
           label:  爱心特效
+    enable_busuanzi:
+      name: enable_busuanzi
+      label: 开启 busuanzi 访客统计
+      type: radio
+      data-type: text
+      default: show
+      description: '隐藏时不显示统计信息，但依旧会请求 busuanzi 统计访客信息。'
+      options:
+        - value: none
+          label: 关闭
+        - value: hide
+          label: 隐藏
+        - value: show
+          label: 显示
     enable_compress:
       name: enable_compress
       label: "启用 HTML 压缩"
@@ -1520,17 +1534,6 @@ enhance:
       data-type: bool
       default: false
       description: '向英雄致敬，愿精神长存！'
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    enable_busuanzi:
-      name: enable_busuanzi
-      label: 开启 busuanzi 访客统计
-      type: switch
-      data-type: bool
-      default: true
       options:
         - value: true
           label: 开启

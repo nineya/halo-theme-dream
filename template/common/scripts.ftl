@@ -48,7 +48,9 @@
     <script defer src="${theme_base!}/source/lib/aplayer@1.10.1/APlayer.min.js"></script>
     <script defer src="${theme_base!}/source/lib/meting@2.0.1/Meting.min.js"></script>
 </#if>
+<#if settings.enable_busuanzi?? && settings.enable_busuanzi!='none'>
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</#if>
 
 ${settings.external_js_body!}
 <#if settings.inline_js_body?? && settings.inline_js_body!=''>
