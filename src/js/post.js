@@ -76,7 +76,7 @@ const postContext = {
   /* 初始化文艺模式 */
   initLiterature() {
     $('.literature-content>p:not([class]),.literature-content>mew-hide>p:not([class])').each(function () {
-      if ($(this).children(':not(code,a,strong,em,ins,b,s,br,span.pwd)').length === 0) {
+      if ($(this).children(':not(code,a,strong,em,ins,b,s,br,span.pwd,img[class=emoji])').length === 0) {
         $(this).addClass('note')
       }
     })
