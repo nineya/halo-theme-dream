@@ -1485,11 +1485,39 @@ enhance:
           https://npm.elemecdn.com
       placeholder: 请输入 CDN 地址（一行一个）
       description: '填入可用的 <b><u>NPM 公共开源 CDN</u></b> 地址（一行一个），通过 <b><u>“{CDN 地址}/{项目名}@{版本号}/${文件路径}”</u></b> 可访问到文件，如：<u>https://unpkg.com/halo-theme-dream@3.2.1/source/js/utils.min.js</u>'
+    effects_lantern_mode:
+      name: effects_lantern_mode
+      label: 喜庆灯笼特效显示模式
+      type: radio
+      default: none
+      options:
+        - value: none
+          label: 不显示
+        - value: day
+          label: 明亮模式
+        - value: night
+          label: 黑暗模式
+        - value: all
+          label: 全模式
     effects_sakura_mode:
       name: effects_sakura_mode
       label: 樱花飘落特效显示模式
       type: radio
       default: day
+      options:
+        - value: none
+          label: 不显示
+        - value: day
+          label: 明亮模式
+        - value: night
+          label: 黑暗模式
+        - value: all
+          label: 全模式
+    effects_snowflake_mode:
+      name: effects_snowflake_mode
+      label: 雪花飘落特效显示模式
+      type: radio
+      default: none
       options:
         - value: none
           label: 不显示

@@ -152,8 +152,14 @@
     <#if settings.cursor_click?? && settings.cursor_click!='none'>
     DreamConfig["cursor_click"] = '${settings.cursor_click}';
     </#if>
+    <#if settings.effects_lantern_mode?? && settings.effects_lantern_mode!='none'>
+    DreamConfig["effects_lantern_mode"] = '${settings.effects_lantern_mode}';
+    </#if>
     <#if settings.effects_sakura_mode?? && settings.effects_sakura_mode!='none'>
     DreamConfig["effects_sakura_mode"] = '${settings.effects_sakura_mode}';
+    </#if>
+    <#if settings.effects_snowflake_mode?? && settings.effects_snowflake_mode!='none'>
+    DreamConfig["effects_snowflake_mode"] = '${settings.effects_snowflake_mode}';
     </#if>
     <#if settings.effects_universe_mode?? && settings.effects_universe_mode!='none'>
     DreamConfig["effects_universe_mode"] = '${settings.effects_universe_mode}';
