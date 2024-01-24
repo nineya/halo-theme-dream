@@ -22,7 +22,7 @@ const journalContext = {
         description: desc.length > 220 ? desc.substring(0, 220) + '...' :desc
       })
     })
-    Utils.initLikeEvent('.journal .like', 'journals', ($elem) => $elem.next())
+    Utils.initLikeEvent('.journal .like', 'journals', ($elem) => $elem.find('em'))
     journalContextInitial = true
   },
   /* 点赞 */
