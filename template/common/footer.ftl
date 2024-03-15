@@ -38,7 +38,7 @@
                 </#if>
                 <#if settings.record_number_ps?? && settings.record_number_ps!=''>
                     <p><a href="https://beian.mps.gov.cn/#/query/webSearch?code=${settings.record_number_ps?replace('[^\\d]','','ri')}"
-                          target="_blank" rel="noopener noreferrer nofollow"><img src="https://beian.mps.gov.cn/img/logo01.dd7ff50e.png" alt="公网安备" style="vertical-align: text-top; width: 1.2em; margin-right: 4px;"/>${settings.record_number_ps!}</a></p>
+                          target="_blank" rel="noopener noreferrer nofollow"><img src="${theme_base!}/source/img/ga.png" alt="公网安备" style="vertical-align: text-top; width: 1.2em; margin-right: 4px;"/>${settings.record_number_ps!}</a></p>
                 </#if>
                 <#if settings.cloud_by_logo?? && settings.cloud_by_logo!=''>
                     <p>本站由<a class="cloud-driven" target="_blank"
