@@ -775,29 +775,31 @@ sidebar_show:
           default: profile
           options:
             - value: profile
-              label:  信息模块
+              label: 信息模块
             - value: toc
-              label:  目录模块
+              label: 目录模块
             - value: notice
-              label:  公告模块
+              label: 公告模块
             - value: love
-              label:  恋爱墙模块
+              label: 恋爱墙模块
             - value: music
-              label:  音乐模块
+              label: 音乐模块
             - value: ad_piece
-              label:  广告模块
+              label: 广告模块
             - value: recent_posts
-              label:  最近文章模块
+              label: 最近文章模块
             - value: recent_comments
               label: 最近评论模块
             - value: categories
-              label:  文章分类模块
+              label: 文章分类模块
             - value: tags
-              label:  文章标签模块
+              label: 文章标签模块
             - value: tagcloud
-              label:  文章标签云模块
+              label: 文章标签云模块
             - value: links
-              label:  友链模块
+              label: 友链模块
+            - value: custom
+              label: 自定义模块
         - name: location
           label: 模块位置
           type: radio
@@ -822,6 +824,21 @@ sidebar_show:
               label: 桌面设备隐藏
             - value: 'is-not-hidden'
               label: 不隐藏
+        - name: title
+          label: 侧边栏标题
+          type: text
+          placeholder: 请输入标题内容
+          description: "可覆盖默认侧边栏标题。"
+        - name: icon
+          label: 侧边栏图标
+          type: text
+          placeholder: 请输入图标 class 内容
+          description: "可覆盖默认侧边栏图标。"
+        - name: content
+          label: 侧边栏内容
+          type: textarea
+          placeholder: 请输入 HTML 内容
+          description: "仅在侧边栏类型为自定义时生效。"
 sidebar_config:
   label: 侧边栏配置
   items:
