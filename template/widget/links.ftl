@@ -2,7 +2,7 @@
 <div class="card widget links ${sidebar.hide!}">
     <@linkTag method="listByRandom">
         <div class="card-title">
-            <i class="ri-links-line card-title-label"></i><span>友链</span>
+            <i class="${(sidebar.icon?? && sidebar.icon != "")?then(sidebar.icon, "ri-links-line")} card-title-label"></i><span>${(sidebar.title?? && sidebar.title != "")?then(sidebar.title, "友链")}</span>
             <#if settings.links_more?? && settings.links_more== true && links?size gt num?number>
                 <a class="card-more" href="${links_url!}">更多<i class="ri-arrow-right-double-line"></i></a>
             </#if>

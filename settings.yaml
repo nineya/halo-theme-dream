@@ -828,17 +828,17 @@ sidebar_show:
           label: 侧边栏标题
           type: text
           placeholder: 请输入标题内容
-          description: "可覆盖默认侧边栏标题。"
+          description: "非必填，可覆盖默认侧边栏标题。"
         - name: icon
           label: 侧边栏图标
           type: text
           placeholder: 请输入图标 class 内容
-          description: "可覆盖默认侧边栏图标。"
+          description: "非必填，可覆盖默认侧边栏图标。"
         - name: content
           label: 侧边栏内容
           type: textarea
           placeholder: 请输入 HTML 内容
-          description: "仅在侧边栏类型为自定义时生效。"
+          description: "非必填，仅在侧边栏类型为自定义时生效。"
 sidebar_config:
   label: 侧边栏配置
   items:

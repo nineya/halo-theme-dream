@@ -1,6 +1,6 @@
 <div class="card widget recent-posts ${sidebar.hide!}">
     <div class="card-title">
-        <i class="ri-history-line card-title-label"></i><span>最新文章</span>
+      <i class="${(sidebar.icon?? && sidebar.icon != "")?then(sidebar.icon, "ri-history-line")} card-title-label"></i><span>${(sidebar.title?? && sidebar.title != "")?then(sidebar.title, "最新文章")}</span>
     </div>
     <@postTag method="latest" top="${settings.recent_posts_num!5}">
         <#if posts?size gt 0>

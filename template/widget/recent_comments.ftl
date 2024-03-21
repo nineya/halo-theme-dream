@@ -1,6 +1,6 @@
 <div class="card widget recent-comments ${sidebar.hide!}">
     <div class="card-title">
-        <i class="ri-message-2-line card-title-label"></i><span>最新评论</span>
+      <i class="${(sidebar.icon?? && sidebar.icon != "")?then(sidebar.icon, "ri-message-2-line")} card-title-label"></i><span>${(sidebar.title?? && sidebar.title != "")?then(sidebar.title, "最新评论")}</span>
     </div>
     <@commentTag method="latest" top="${settings.recent_comments_num!5}">
         <#if comments.content?size gt 0>

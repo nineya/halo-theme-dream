@@ -2,7 +2,7 @@
 <div class="card widget tagcloud ${sidebar.hide!}">
     <@tagTag method="list">
         <div class="card-title">
-            <i class="ri-cloud-line card-title-label"></i><span>标签云</span>
+            <i class="${(sidebar.icon?? && sidebar.icon != "")?then(sidebar.icon, "ri-cloud-line")} card-title-label"></i><span>${(sidebar.title?? && sidebar.title != "")?then(sidebar.title, "标签云")}</span>
             <#if settings.tagcloud_more?? && settings.tagcloud_more== true && tags?size gt num?number>
                 <a class="card-more" href="${tags_url!}">更多<i class="ri-arrow-right-double-line"></i></a>
             </#if>

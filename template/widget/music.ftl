@@ -3,7 +3,7 @@
     <#assign sidebar_music = true>
     <div class="card widget music ${sidebar.hide!}">
         <div class="card-title">
-            <i class="ri-music-2-line card-title-label"></i><span>音乐</span>
+          <i class="${(sidebar.icon?? && sidebar.icon != "")?then(sidebar.icon, "ri-music-2-line")} card-title-label"></i><span>${(sidebar.title?? && sidebar.title != "")?then(sidebar.title, "音乐")}</span>
         </div>
         <div style="min-height: 90px;margin-top: -0.5rem;">
             <#if (settings.music_mode!'playlist') == 'playlist'>

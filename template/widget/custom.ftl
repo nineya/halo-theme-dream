@@ -4,5 +4,5 @@
         <i class="${sidebar.icon} card-title-label"></i><span>${sidebar.title}</span>
       </div>
     </#if>
-    ${sidebar.content}
+    ${sidebar.content!}
 </div>

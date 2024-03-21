@@ -1,6 +1,6 @@
 <div class="card widget love brightness ${sidebar.hide!}">
   <div class="card-title">
-    <i class="ri-heart-fill card-title-label"></i><span>恋爱墙</span>
+    <i class="${(sidebar.icon?? && sidebar.icon != "")?then(sidebar.icon, "ri-heart-fill")} card-title-label"></i><span>${(sidebar.title?? && sidebar.title != "")?then(sidebar.title, "恋爱墙")}</span>
   </div>
   <div class="card-content">
     <div class="love-content">
