@@ -31,6 +31,8 @@
 
 如有疑问，欢迎加入 <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=X7p7Bs21cgtkQ0dRfzmBsuWqNNQc10hn&jump_from=webapi">Dream 主题交流群：638168592</a>
 
+个人博客交流，友链交换，欢迎加入 <a target="_blank" href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=D7ZuSNSnuFN4G5IdsCN26r8jOzBAXy1u&authKey=RmgU54gpmm1HkigLUIp7AHAdSOde1Qr%2Fjple0WaMpDXNWdEA6K6vTfeujixwtGv4&noverify=0&group_code=582535349">个人博客交流群：582535349</a>
+
 欢迎参与主题开发的一些<a href="https://github.com/nineya/halo-theme-dream/discussions">问题探讨</a>
 
 欢迎关注微信公众号《玖涯菜菜子》，主题版本更新消息与要点说明将在公众号发布。
