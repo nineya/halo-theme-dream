@@ -35,7 +35,7 @@
 
 欢迎关注微信公众号《玖涯菜菜子》，主题版本更新消息与要点说明将在公众号发布。
 
-![微信公众号](https://blog.nineya.com/upload/2023/05/未标题-2.png)
+![微信公众号](https://blog.nineya.com/upload/2025/03/%E7%8E%96%E6%B6%AF%E5%90%8E%E7%AB%AF%E7%AC%94%E8%AE%B0.png)
 
 
 ## 三、版本适配关系
