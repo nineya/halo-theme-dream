@@ -7,7 +7,7 @@
     <#local content=content?replace('`([^`]*)`', '<code style="padding:3px 6px;word-break:break-word;background:#e8f3ff;margin:03px;border-radius:4px;color:#409eff;">$1</code>', 'ri')>
     <#local content=content?replace('\\n+', '\n', 'ri')>
     <#list emojis?keys as key>
-        <#local content=content?replace('\\[/${key}\\]','<img src="${blog_url!}/themes/dream/source/lib/halo-comment@1.1.6/assets/emoji/${emojis[key]}.png" style="width: 1.6em;height: 1.6em;margin: auto 2px;vertical-align: middle;"/>','ri')>
+        <#local content=content?replace('\\[/${key}\\]','<img src="${blog_url!}/themes/dream/source/lib/halo-comment@1.1.7/assets/emoji/${emojis[key]}.png" style="width: 1.6em;height: 1.6em;margin: auto 2px;vertical-align: middle;"/>','ri')>
     </#list>
     <#return content>
 </#function>
